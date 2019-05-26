@@ -18,34 +18,34 @@
 <div style="color: #317eac; font-size: large"><strong>Author :</strong> Jérôme Angibaud</div>
 <div style="color: #317eac; font-size: large"><strong>Version :</strong> 0.7.0-SNAPSHOT</div>
 <br />
-<a href="#Lexical" class="menuItem1">1. Lexical</a><br />
-<a href="#InstallJerkar" class="menuItem1">2. Install Jerkar</a><br />
-<a href="#ConfigureyourIDE" class="menuItem1">3. Configure your IDE</a><br />
-<a href="#Intellij" class="menuItem2">3.1 Intellij</a><br />
-<a href="#Eclipse" class="menuItem2">3.2 Eclipse</a><br />
-<a href="#Note" class="menuItem2">3.3 Note</a><br />
-<a href="#Basicautomationproject" class="menuItem1">4. Basic automation project</a><br />
-<a href="#Createaproject" class="menuItem2">4.1 Create a project</a><br />
-<a href="#Addarunmethod(methodinvokablefromcommandline)" class="menuItem2">4.2 Add a run method (method invokable from command line)</a><br />
-<a href="#Selfdocumentyourmethod" class="menuItem2">4.3 Self document your method</a><br />
-<a href="#Addanoption(parameter)" class="menuItem2">4.4 Add an option (parameter)</a><br />
-<a href="#Use3rdpartylibsinyourbuildclass" class="menuItem2">4.5 Use 3rd party libs in your build class</a><br />
-<a href="#ImportaJerkarbuildfromanotherproject" class="menuItem2">4.6 Import a Jerkar build from another project</a><br />
-<a href="#Restrictions" class="menuItem2">4.7 Restrictions</a><br />
-<a href="#BuildaJavaproject" class="menuItem1">5. Build a Java project</a><br />
-<a href="#BuildJavaprojectusinglow-levelAPI" class="menuItem2">5.1 Build Java project using low-level API</a><br />
-<a href="#BuildJavaprojectusinghighlevelAPI" class="menuItem2">5.2 Build Java project using high level API</a><br />
-<a href="#BuildJavaprojectusingJerkarJavaplugin." class="menuItem2">5.3 Build Java project using Jerkar Java plugin.</a><br />
-<a href="#Buildyourproject" class="menuItem2">5.4 Build your project</a><br />
-<a href="#Extrafunction" class="menuItem2">5.5 Extra function</a><br />
-<a href="#Explorefunctionsandoptionsprovidedout-of-thebox" class="menuItem2">5.6 Explore functions and options provided out-of-thebox</a><a name="Lexical"></a>
-<h1>1. Lexical</h1>
+<a href="#Lexical" class="menuItem1">Lexical</a><br />
+<a href="#InstallJerkar" class="menuItem1">Install Jerkar</a><br />
+<a href="#ConfigureyourIDE" class="menuItem1">Configure your IDE</a><br />
+<a href="#Intellij" class="menuItem2">Intellij</a><br />
+<a href="#Eclipse" class="menuItem2">Eclipse</a><br />
+<a href="#Note" class="menuItem2">Note</a><br />
+<a href="#Basicautomationproject" class="menuItem1">Basic automation project</a><br />
+<a href="#Createaproject" class="menuItem2">Create a project</a><br />
+<a href="#Addarunmethod(methodinvokablefromcommandline)" class="menuItem2">Add a run method (method invokable from command line)</a><br />
+<a href="#Selfdocumentyourmethod" class="menuItem2">Self document your method</a><br />
+<a href="#Addanoption(parameter)" class="menuItem2">Add an option (parameter)</a><br />
+<a href="#Use3rdpartylibsinyourbuildclass" class="menuItem2">Use 3rd party libs in your build class</a><br />
+<a href="#ImportaJerkarbuildfromanotherproject" class="menuItem2">Import a Jerkar build from another project</a><br />
+<a href="#Restrictions" class="menuItem2">Restrictions</a><br />
+<a href="#BuildaJavaproject" class="menuItem1">Build a Java project</a><br />
+<a href="#BuildJavaprojectusinglow-levelAPI" class="menuItem2">Build Java project using low-level API</a><br />
+<a href="#BuildJavaprojectusinghighlevelAPI" class="menuItem2">Build Java project using high level API</a><br />
+<a href="#BuildJavaprojectusingJerkarJavaplugin." class="menuItem2">Build Java project using Jerkar Java plugin.</a><br />
+<a href="#Buildyourproject" class="menuItem2">Build your project</a><br />
+<a href="#Extrafunction" class="menuItem2">Extra function</a><br />
+<a href="#Explorefunctionsandoptionsprovidedout-of-thebox" class="menuItem2">Explore functions and options provided out-of-thebox</a><a name="Lexical"></a>
+<h1>Lexical</h1>
 <p>These terms are used in this document, this short lexical disambiguates their meanings.</p>
 <p><strong>[JERKAR HOME]</strong> : refers to the folder where <em>Jerkar</em> is intalled. You should find <em>jerkar.bat</em> and <em>jerkar</em> shell files directly under this folder.</p>
 <p><strong>[JERKAR USER HOME]</strong> : refers to the folder where Jerkar stores caches, binary repository and global user configuration.</p>
 <p><strong>[USER HOME]</strong> : User Home within the meaning of Windows or Unix.</p>
 <a name="InstallJerkar"></a>
-<h1>2. Install Jerkar</h1>
+<h1>Install Jerkar</h1>
 <ol>
 <li>download and unzip the lastest <em>core-x.x.x-distrib.zip</em> file found on <a href="https://oss.sonatype.org/content/repositories/snapshots/org/jerkar/core/">snapshot</a> or <a href="https://repo1.maven.org/maven2/org/jerkar/core/">release</a> repository to the directory you want to install Jerkar (<em>[JERKAR HOME]</em>)</li>
 <li>make sure that either a valid JDK is on your <em>PATH</em> environment variable or that a <em>JAVA_HOME</em> variable is pointing on</li>
@@ -109,18 +109,18 @@ Method help succeeded in 660 milliseconds.
 
 </code></pre>
 <a name="ConfigureyourIDE"></a>
-<h1>3. Configure your IDE</h1>
+<h1>Configure your IDE</h1>
 <p>For now, there is no valuable Jerkar Visual Plugin for your IDE but you can work pretty well without thanks to Intellij and Eclipse Jerkar plugin whose generating IDE metadata files (.iml and .classpath among others).</p>
 <p>But first you have to instruct your IDE where is located Jerkar distribution and repositories.</p>
 <a name="Intellij"></a>
-<h2>3.1 Intellij</h2>
+<h2>Intellij</h2>
 <p>Declare the 2 path variables (go settings -&gt; Apparence &amp; behavior -&gt; Path Variables)</p>
 <ul>
 <li><code>JERKAR_HOME</code> which point to <em>[Jerkar Home]</em>,</li>
 <li><code>JERKAR_REPO</code> which point to <em>[Jerkar User Home]/cache/repo</em></li>
 </ul>
 <a name="Eclipse"></a>
-<h2>3.2 Eclipse</h2>
+<h2>Eclipse</h2>
 <p>Declare the 2 classpath variables in Eclipse.</p>
 <ol>
 <li>Open the Eclipse preference window : <em>Window -&gt; Preferences</em></li>
@@ -133,14 +133,14 @@ Method help succeeded in 660 milliseconds.
 </li>
 </ol>
 <a name="Note"></a>
-<h2>3.3 Note</h2>
+<h2>Note</h2>
 <p>By default <em>[Jerkar User Home]</em> point to <em>[User Home]/.jerkar</em> but can be overridden by defining the environment
 variable <code>JERKAR_USER_HOME</code>.</p>
 <a name="Basicautomationproject"></a>
-<h1>4. Basic automation project</h1>
+<h1>Basic automation project</h1>
 <p>First, let's create a simple automation project that read content from url and display it on the console.</p>
 <a name="Createaproject"></a>
-<h2>4.1 Create a project</h2>
+<h2>Create a project</h2>
 <ol>
 <li>Create the root directory of your project (here 'sample1').</li>
 <li>Open a terminal/console and cd to <em>sample1</em> directory. Jerkar should be always executed from the root of the project.</li>
@@ -171,7 +171,7 @@ class Build extends JkRun {
 }
 </code></pre>
 <a name="Addarunmethod(methodinvokablefromcommandline)"></a>
-<h2>4.2 Add a run method (method invokable from command line)</h2>
+<h2>Add a run method (method invokable from command line)</h2>
 <p>Add the following method to the Build java source.</p>
 <pre><code class="language-java">import org.jerkar.api.utils.JkUtilsIO;
 import org.jerkar.tool.JkRun;
@@ -210,7 +210,7 @@ From class org.jerkar.tool.JkRun :
 <p>Any public instance method with no-args and returning <code>void</code> fits to be a run method. You can call several run methods in a single row.</p>
 <p>You can also launch/debug the method directly from your IDE, using the <em>main</em> method.</p>
 <a name="Selfdocumentyourmethod"></a>
-<h2>4.3 Self document your method</h2>
+<h2>Self document your method</h2>
 <p>Add the following annotation to the newly created method.</p>
 <pre><code class="language-java">@JkDoc(&quot;Fetch Google page and display its source on the console.&quot;)
 public void displayGoogle() throws MalformedURLException {
@@ -224,7 +224,7 @@ public void displayGoogle() throws MalformedURLException {
     displayGoogle : Fetch Google page and display its source on the console.
 </code></pre>
 <a name="Addanoption(parameter)"></a>
-<h2>4.4 Add an option (parameter)</h2>
+<h2>Add an option (parameter)</h2>
 <p>May you like to see Google page source but you probably want to apply this method to any other url.</p>
 <p>To make it parametrizable, just declare the url in a public field so its value can be injected from command line.</p>
 <pre><code class="language-java">class Build extends JkRun {
@@ -255,7 +255,7 @@ From class Build :
 ...
 </code></pre>
 <a name="Use3rdpartylibsinyourbuildclass"></a>
-<h2>4.5 Use 3rd party libs in your build class</h2>
+<h2>Use 3rd party libs in your build class</h2>
 <p>You can mention inline the external library you need to compile and execute your build class. For exemple, you main need <em>Apache HttpClient</em> library to perform some non basic HTTP tasks.</p>
 <ol>
 <li>Annotate your class with module you want to use. There can be many.</li>
@@ -284,7 +284,7 @@ public void post() {
 </code></pre>
 <p>Execute <em>post</em> method as usual : <code>jerkar post</code>.</p>
 <a name="ImportaJerkarbuildfromanotherproject"></a>
-<h2>4.6 Import a Jerkar build from another project</h2>
+<h2>Import a Jerkar build from another project</h2>
 <p>Imagine that you want to want to reuse <em>displayContent</em> method from project <em>sample1</em> in another Jerkar project named <em>sample2</em>. Let's create a new <em>sample2</em> project located in a sibling folder than <em>sample1</em>.</p>
 <ol>
 <li>Execute <code>mkdir sample2</code> then <code>cd sample2</code> followed by <code>jerkar scaffold#run intellij#</code> (or <code>jerkar scaffold#run eclipse#</code>)</li>
@@ -339,13 +339,13 @@ public void post() {
 ...
 </code></pre>
 <a name="Restrictions"></a>
-<h2>4.7 Restrictions</h2>
+<h2>Restrictions</h2>
 <p>Except the following mentionned here, there is not known restriction about what you can do with you build class. You can define as many classes you want into def directoy. Organise them within Java packages or not.</p>
 <ul>
 <li>Classes invoked from command lines must have the same name than their file.</li>
 </ul>
 <a name="BuildaJavaproject"></a>
-<h1>5. Build a Java project</h1>
+<h1>Build a Java project</h1>
 <p>Now let's start more complicated tasks as building a Java poject. It involves compilation, testing, packaging, dependency resolution, releasing, ...
 There's many option to handle it in Jerkar :</p>
 <ul>
@@ -355,13 +355,13 @@ There's many option to handle it in Jerkar :</p>
 </ul>
 <p>The one you choose is a matter of taste, flexibility, verbosity, reusability and integration with existing tools.</p>
 <a name="BuildJavaprojectusinglow-levelAPI"></a>
-<h2>5.1 Build Java project using low-level API</h2>
+<h2>Build Java project using low-level API</h2>
 <p><em>TODO</em></p>
 <a name="BuildJavaprojectusinghighlevelAPI"></a>
-<h2>5.2 Build Java project using high level API</h2>
+<h2>Build Java project using high level API</h2>
 <p><em>TODO</em></p>
 <a name="BuildJavaprojectusingJerkarJavaplugin."></a>
-<h2>5.3 Build Java project using Jerkar Java plugin.</h2>
+<h2>Build Java project using Jerkar Java plugin.</h2>
 <ol>
 <li>Create the root directory of your project (here 'mygroup.myproject').</li>
 <li>Execute <code>jerkar scaffold#run java#</code> under this directory.
@@ -419,13 +419,13 @@ class Build extends JkRun {
 </code></pre>
 <p>Execute <code>jerkar java#info</code> to see an abstract of the project setup.</p>
 <a name="Buildyourproject"></a>
-<h2>5.4 Build your project</h2>
+<h2>Build your project</h2>
 <ol>
 <li>Edit the Build.java source file above. For example, you can add compile dependencies.</li>
 <li>Just execute <code>jerkar clean java#pack</code> under the project base directory. This will compile, run test and package your project in a jar file. You can also lauch the <code>main</code> method from your IDE.</li>
 </ol>
 <a name="Extrafunction"></a>
-<h2>5.5 Extra function</h2>
+<h2>Extra function</h2>
 <p>If you want to create javadoc, jar sources and  jar tests or checksums :
 just execute <code>jerkar clean java#pack -java#pack.tests -java#pack.sources -java#pack.checksums=sha-256</code>.</p>
 <p>Explanation  '-' prefix means that you want to set an option value. For example <code>-java#pack.sources</code> means that
@@ -439,7 +439,7 @@ just execute <code>jerkar clean java#pack -java#pack.tests -java#pack.sources -j
     }
 </code></pre>
 <a name="Explorefunctionsandoptionsprovidedout-of-thebox"></a>
-<h2>5.6 Explore functions and options provided out-of-thebox</h2>
+<h2>Explore functions and options provided out-of-thebox</h2>
 <p>Execute <code>jerkar help</code> to display all what you can do from the command line for the current project. As told on the help screen,
 you can execute <code>jerkar aGivenPluginName#help</code> to display help on a specific plugin.
 The list of available plugins on the Jerkar classpath is displayed in help screen.</p>
