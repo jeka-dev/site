@@ -15,8 +15,9 @@
 
 <body>
 <div class="title">Jerkar - Reference Guide</div>
-<div style="color: #317eac; font-size: large"><strong>Author :</strong> Jérôme Angibaud</div>
-<div style="color: #317eac; font-size: large"><strong>Version :</strong> 0.7.0-SNAPSHOT</div>
+<br/>
+<div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
+<div style="color: lightslategrey; font-size: large">Version : 0.7.0-SNAPSHOT</div>
 <br />
 <a href="#Introduction" class="menuItem1">Introduction</a><br />
 <a href="#LibraryPart" class="menuItem1">Library Part</a><br />
@@ -36,7 +37,7 @@
 <a href="#Publication" class="menuItem3">&bull;&nbsp;Publication</a><br />
 <a href="#PublishtoaMavenrepository" class="menuItem4">&bull;&nbsp;Publish to a Maven repository</a><br />
 <a href="#PublishtoaIvyrepository" class="menuItem4">&bull;&nbsp;Publish to a Ivy repository</a><br />
-<a href="#Java" class="menuItem2">Java</a><br />
+<a href="#JavaProjectMaking" class="menuItem2">Java Project Making</a><br />
 <a href="#Compilation" class="menuItem3">&bull;&nbsp;Compilation</a><br />
 <a href="#Javadoc" class="menuItem3">&bull;&nbsp;Javadoc</a><br />
 <a href="#Classpath" class="menuItem3">&bull;&nbsp;Classpath</a><br />
@@ -105,7 +106,7 @@ on its own without any knowledge of the tool part.</p>
 <a name="LibraryPart"></a>
 <h1>Library Part</h1>
 <p>Jerkar contains a library for all regular things you need to build/publish projects and especially Java projects.
-It can be embedded in your own tool or use in a simple <code>main</code> method.</p>
+It can be embedded in your own tool and used in a simple <code>main</code> method.</p>
 <p><span class="menuItem0">3rd party libraries</span></p>
 <p>The Jerkar core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em> but these libraries are embedded in the Jerkar
 jar and loaded in a specific class loader. These 3rd party APIs are not visible/accessible to client code so one can
@@ -128,9 +129,9 @@ use another version of these APIs without conflict : from user point of view, Je
     dependerProject.getMaker().clean().makeAllArtifacts();  // generate source and binary jars
     dependerProject.getMaker().getTasksForPublishing().publish(); // Publish artifacts on the default binary repository 
 </code></pre>
-<p>Those lines define two projects, one depending on the other.</p>
+<p>Above code defines two projects, one depending on the other.</p>
 <ul>
-<li>Building the depender project implies building the core project if the core jar is not present.</li>
+<li>Building the dependent project implies building the project it depends upon if ots jar is not present.</li>
 <li>Building a project implies compilation and passing unit tests.</li>
 <li>By default project module ids are inferred from the name of their hosting directories and version is set as <code>UNSPECIFIED-SNAPSHOT</code>.</li>
 </ul>
@@ -250,36 +251,36 @@ and <code>#endtask</code> methods.</p>
 <h3>Concepts</h3>
 <a name="Whatisadependency?"></a>
 <h4>What is a dependency ?</h4>
-<p>In Jerkar context, a <strong>dependency</strong> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
-Generally a <strong>dependency</strong> is resolved to 1 file (or forlder) but it can be 0 or many.</p>
+<p>In Jerkar context, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
+Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or many.</p>
 <p>A dependency is always an instance of <code>JkDependency</code>.</p>
-<p>Jerkar distinguishes 3 types of <strong>dependency</strong> :</p>
+<p>Jerkar distinguishes 3 types of dependency :</p>
 <ul>
 <li><strong>Arbitrary files</strong> located on the file system (represented by <code>JkFileSystemDependency</code> class). These files are assumed to be present on the file system when the build is running.</li>
 <li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
 <li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jerkar can consume and resolve transitively any artifact located in a repository as you would do with Maven or Ivy.</li>
 </ul>
-<p>For the last, Jerkar is using <b>Ivy 2.4.0</b> under the hood.
+<p>For the last, Jerkar is using <em>Ivy 2.4.0</em> under the hood.
 This library is embedded inside the Jerkar jar and is executed in a dedicated classloader.
 So all happens as if there where no dependency on Ivy.</p>
 <a name="Whatisascope?"></a>
 <h4>What is a scope ?</h4>
 <p>Projects may need dependencies to accomplish certain tasks and these dependencies may vary according the executed tasks.
-For example, to <strong>compile</strong> you may need <em>guava</em> library only but to <strong>test</strong> you'll need <em>junit</em> library too.
-To label dependencies according their usage, Jerkar uses the notion of <strong>scope</strong> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
-<p>A scope can <strong>inherit</strong> from one or several scopes. This means that if a scope <em>Foo</em> inherits from scope <em>Bar</em> then a dependencies declared with scope <em>Bar</em> will be also considered as declared with scope <em>Foo</em>.
+For example, to <em>compile</em> you may need <em>guava</em> library only but to <em>test</em> you'll need <em>junit</em> library too.
+To label dependencies according their usage, Jerkar uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
+<p>A scope can <em>inherit</em> from one or several scopes. This means that if a scope <em>Foo</em> inherits from scope <em>Bar</em> then a dependencies declared with scope <em>Bar</em> will be also considered as declared with scope <em>Foo</em>.
 For instance, in <code>JkJavaBuild</code>, scope <code>TEST</code> inherits from <code>RUNTIME</code> that inherits from <code>COMPILE</code> so every dependencies declared with scope <code>COMPILE</code> are considered to be declared with scope <code>RUNTIME</code> and <code>TEST</code> as well.</p>
-<p>By default, scopes are <strong>transitive</strong>. This has only a meaning for <strong>module dependencies</strong>.
-If we have 3 modules having the following dependency scheme : <code>A</code> -&gt; <code>B</code> -&gt; <code>C</code> and the <code>A</code>-&gt; <code>B</code> dependency is declared with a <strong>non transitive scope</strong>, then <code>A</code> won't depend from <code>C</code>.</p>
+<p>By default, scopes are <em>transitive</em>. This has only a meaning for <em>module dependencies</em>.
+If we have 3 modules having the following dependency scheme : <code>A</code> -&gt; <code>B</code> -&gt; <code>C</code> and the <code>A</code>-&gt; <code>B</code> dependency is declared with a <em>non transitive scope</em>, then <code>A</code> won't depend from <code>C</code>.</p>
 <p><code>JkJavaDepScope</code> class pre-defines scopes used in Java projects.</p>
 <p><strong>Scope Mapping</strong> : Projects consuming artifacts coming from Ivy repository can also use <code>JkScopeMapping</code> which is more powerful.
 This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.0/ivyfile/configurations.html">Ivy configuration</a> concept.</p>
 <a name="Whatisascopeddependency?"></a>
 <h4>What is a scoped dependency ?</h4>
-<p>A <strong>scoped dependency</strong> (represented by <code>JkScopedDependency</code> class) is simply a <strong>dependency</strong> associated with zero, one or many <strong>scopes</strong>.</p>
+<p>A <em>scoped dependency</em> (represented by <code>JkScopedDependency</code> class) is simply a dependency associated with zero, one or many scopes.</p>
 <a name="Defineasetofdependencies"></a>
 <h3>Define a set of dependencies</h3>
-<p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <strong>scoped dependencies</strong>.</p>
+<p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
 <p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides fluent API for easier instantiation.</p>
 <pre><code class="language-Java">import static org.jerkar.api.depmanagement.JkJavaDepScopes.*;
 ...
@@ -361,7 +362,7 @@ org.projectlombok:lombok:1.16.16
 </code></pre>
 <a name="Dependenciesonfilesproducedbycomputation"></a>
 <h4>Dependencies on files produced by computation</h4>
-<p>It is typically used for <strong>multi-modules</strong> or <strong>multi-techno</strong> projects.</p>
+<p>It is typically used for <em>multi-modules</em> or <em>multi-techno</em> projects.</p>
 <p>The principle is that if the specified files are not found, then the computation is run in order to generate the missing files.
 If some files still missing after the computation has run, the build fails.</p>
 <p>This mechanism is quite simple yet powerful as it addresses following use cases :</p>
@@ -483,8 +484,8 @@ provided elements.</p>
     publisher.publishIvy(versionedModule, publication, deps, JkJavaDepScopes.DEFAULT_SCOPE_MAPPING,
             Instant.now(), JkVersionProvider.of());
 </code></pre>
-<a name="Java"></a>
-<h2>Java</h2>
+<a name="JavaProjectMaking"></a>
+<h2>Java Project Making</h2>
 <p>Jerkar provides API for processing usual Java build tasks. To illustrate this, let's start from the following
 layout :</p>
 <pre><code class="language-java">    Path src = getBaseDir().resolve(&quot;src/main/java&quot;);
@@ -510,8 +511,6 @@ it or choose an external compiler for cross-compile purpose.</p>
 <p>Simple Javadoc tasks can be performed using <code>JkJavadocMaker</code> class.</p>
 <pre><code class="language-java">JkJavadocMaker.of(JkPathTreeSet.of(src), buildDir.resolve(&quot;javadoc&quot;)).process();
 </code></pre>
-<pre><code class="language-java">JkManifest.ofEmpty().addMainClass(&quot;org.jerkar.samples.RunClass&quot;).writeToStandardLocation(classDir);
-</code></pre>
 <a name="Classpath"></a>
 <h3>Classpath</h3>
 <p>Jerkar provides <code>JkClasspath</code> to construct and reason about classpath.</p>
@@ -522,6 +521,8 @@ Path guavaJar = classpath.getEntryContainingClass(&quot;com.google.common.base.S
 <h3>Java jar and manifest</h3>
 <p><code>JkpathTree</code> class help to produce simply jar files using <code>zipTo</code> method :  <code>JkPathTree.of(classDir).zipTo(jarFile)</code></p>
 <p>Nevertheless <code>JkJarPacker</code> along <code>JkManifest</code> provides powerful methods to read/write/edit manifests and create fat jars.</p>
+<pre><code class="language-java">JkManifest.ofEmpty().addMainClass(&quot;org.jerkar.samples.RunClass&quot;).writeToStandardLocation(classDir);
+</code></pre>
 <a name="Classloaders"></a>
 <h3>Classloaders</h3>
 <p><code>JkClassloader</code> provides utility methods to reason about classloaders and to invoke methods coming from class loaded
@@ -539,7 +540,7 @@ in other classloader than the current one.</p>
 <h3>Projects</h3>
 <p>Projects are file structures for hosting Java projects meaning source code, test codes, dependencies,
 build instructions ...</p>
-<p>From a project definition one can easily build it to produce binary artifacts and test executions.</p>
+<p>From a project definition, one can easily build it and produce artifacts and test executions.</p>
 <pre><code class="language-java">   JkJavaProject coreProject = JkJavaProject.ofMavenLayout(&quot;./projects/core&quot;);
     coreProject.addDependencies(
             JkDependencySet.of().and(&quot;junit:junit:4.11&quot;, JkJavaDepScopes.TEST));
@@ -555,7 +556,12 @@ build instructions ...</p>
     dependerProject.getMaker().clean().makeAllArtifacts();  // create depender.jar project along core.jar
     dependerProject.getMaker().getTasksForPublishing().publish();  // publish depender.jar on default binary repository
 </code></pre>
-<p>JkJavaProject instances are highly configurable so you can tune your project structure/build without limits.</p>
+<p>The principle is that each <code>JkJavaProject</code> holds a <code>JkJavaProjectMaker</code> responsible to achieved build tasks. The <em>maker</em>
+object defines atifacts to build. By default it defines <em>jar</em> and <em>sources</em> jar but it's a one liner to add <em>javadoc</em>
+artifact as well.</p>
+<p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
+deployed along the other ones.</p>
+<p>JkJavaProject instances are highly configurable. You can tune your project structure/build without limits.</p>
 <a name="ToolPart"></a>
 <h1>Tool Part</h1>
 <p><span class="menuItem0">Lexical</span></p>
@@ -638,12 +644,12 @@ executing <code>jerkar clean java#pack</code> (<a href="#Plugins">See Plugins</a
 <a name="JerkarRuntime"></a>
 <h2>Jerkar Runtime</h2>
 <p>This chapter describes how to use Jerkar with command line and mostly what happens behind the cover when Jerkar is run.</p>
-<p>Jerkar is a pure Java application requiring <strong>JDK 8</strong>. <strong>JDK</strong> is required and <strong>JRE</strong> is not sufficient as Jerkar uses the <strong>JDK tools</strong> to compile <em>def classes</em>.</p>
+<p>Jerkar is a pure Java application requiring JDK 8. JDK is required and JRE is not sufficient as Jerkar uses the JDK tools to compile <em>def classes</em>.</p>
 <p>Jerkar can be launched from both command line and your IDE.</p>
 <a name="JerkarfromCommandline"></a>
 <h3>Jerkar from Command line</h3>
-<p>To ease launching Java processes from command line, Jerkar provides shell scripts ( <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/META-INF/bin/jerkar.bat">jerkar.bat</a> for <strong>Windows</strong>
-and <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/META-INF/bin/jerkar">jerkar</a> for <strong>Unix</strong> ). They are located at root
+<p>To ease launching Java processes from command line, Jerkar provides shell scripts ( <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/META-INF/bin/jerkar.bat">jerkar.bat</a> for Windows
+and <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/META-INF/bin/jerkar">jerkar</a> for Unix ). They are located at root
 of <em>[JERKAR HOME]</em>. <em>[JERKAR HOME]</em> is supposed to be in your PATH environment variable.</p>
 <p>This script does the following :</p>
 <ol>
@@ -674,7 +680,7 @@ of <em>[JERKAR HOME]</em>. <em>[JERKAR HOME]</em> is supposed to be in your PATH
 <ul>
 <li>
 <p><strong>Argument starts with <code>@</code> :</strong> This is a library import clause : the text just next to, is added to the <em>run classpath</em>.
-For example <code>jarkar myMethod @org.jerkar:an-extra-plugin:3.3</code> augments the <em>run classpath</em> with the <em>an-extra-Plugin</em> jar.
+For example <code>jerkar myMethod @org.jerkar:an-extra-plugin:3.3</code> augments the <em>run classpath</em> with the <em>an-extra-Plugin</em> jar.
 This is similar to annotate a <em>def class</em> with <code>@JkImport(&quot;org.jerkar:an-extra-plugin:3.3&quot;)</code>.
 This is intended to modifiate behavior of <em>run class</em> by plugins dynamically.</p>
 </li>
@@ -815,15 +821,15 @@ of the presence and version of Jerkar installed in the host machine.</p>
 <p>__Enable embedded mode : __</p>
 <p>To enable embedded mode :</p>
 <ol>
-<li>Copy <em><strong>[JERKAR_HOME]/org.jerkar.core.jar</strong></em> into <em><strong>[PROJECT_DIR]/jerkar/boot/*</strong></em> directory.</li>
-<li>Copy <em><strong>[JERKAR_HOME]/jerkar.bat</strong></em> and <em><strong>[JERKAR_HOME]/jerkar</strong></em> at the root of <em><strong>[PROJECT_DIR]</strong></em> (optional).</li>
+<li>Copy <em>[JERKAR_HOME]/org.jerkar.core.jar</em> into <em>[PROJECT_DIR]/jerkar/boot/*</em> directory.</li>
+<li>Copy <em>[JERKAR_HOME]/jerkar.bat</em> and <em>[JERKAR_HOME]/jerkar</em> at the root of [PROJECT_DIR] (optional).</li>
 </ol>
 <p>Jerkar is provided with a <em>scaffold</em> plugin that do it for you : just execute <code>jerkar scaffold#run -scaffold#embed</code>.</p>
 <p><strong>Run in embedded mode : </strong></p>
 <p>You can go two ways :</p>
 <ul>
-<li>execute <code>jerkar myFunction ...</code> as you would do in regular mode. This works only if you have copied jerkar/jerkar.bat shell scripts into <em><strong>[PROJECT DIR]</strong></em></li>
-<li>or execute <code>java -cp jerkar/boot/* org.jerkar.tool.Main myFunction ...</code> from <em><strong>[PROJECT_DIR]</strong></em> .</li>
+<li>execute <code>jerkar myFunction ...</code> as you would do in regular mode. This works only if you have copied jerkar/jerkar.bat shell scripts into <em>[PROJECT DIR]</em></li>
+<li>or execute <code>java -cp jerkar/boot/* org.jerkar.tool.Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
 </ul>
 <a name="Defaultpathsettings"></a>
 <h3>Default path settings</h3>
@@ -878,9 +884,9 @@ the value using the standard <code>System#getenv</code> method.</p>
 <p>Jerkar proposes 3 ways of injecting system properties. They are considered in following order :</p>
 <ul>
 <li>Properties mentioned in Jerkar command line as <code>Jerkar doDefault -DmyProperty=myValue</code>.</li>
-<li>Properties mentioned in <em><strong>[Jerkar User Home]/system.properties</strong></em> file.</li>
-<li>Properties mentioned in <em><strong>[Jerkar Home]/system.properties</strong></em> file.
-Note that if you are running Jerkar in embedded mode, the <em><strong>[Jerkar Home]/system.properties</strong></em> file will not be taken in account but <em><strong>[project dir]/jerkar/boot/system.properties</strong></em>.</li>
+<li>Properties mentioned in <em>[Jerkar User Home]/system.properties</em> file.</li>
+<li>Properties mentioned in <em>[Jerkar Home]/system.properties</em> file.
+Note that if you are running Jerkar in embedded mode, the <em>[Jerkar Home]/system.properties</em> file will not be taken in account but <em>[project dir]/jerkar/boot/system.properties</em>.</li>
 </ul>
 <p>In every case, defined system properties are injected after the creation of the java process (via <code>System#setProperty</code> method).</p>
 <a name="JerkarOptions"></a>
@@ -893,9 +899,9 @@ or as set of key/string value.</p>
 <p>Jerkar proposes 3 ways to inject options. They are considered in following order :</p>
 <ul>
 <li>Options mentioned in Jerkar command line as <code>Jerkar doDefault -myOption=myValue</code>.</li>
-<li>Options mentioned in <em><strong>[Jerkar User Home]/options.properties</strong></em> file.</li>
-<li>Options mentioned in <em><strong>[Jerkar Home]/options.properties</strong></em> file.
-Note that if you are running Jerkar in embedded mode, the <em><strong>[Jerkar Home]/options.properties</strong></em> file will not be taken in account but <em><strong>[project dir]/jerkar/boot/options.properties</strong></em>.</li>
+<li>Options mentioned in <em>[Jerkar User Home]/options.properties</em> file.</li>
+<li>Options mentioned in <em>[Jerkar Home]/options.properties</em> file.
+Note that if you are running Jerkar in embedded mode, the <em>[Jerkar Home]/options.properties</em> file will not be taken in account but <em>[project dir]/jerkar/boot/options.properties</em>.</li>
 </ul>
 <p>Note for boolean options, when no value is specified, <code>true</code> will be used as default.</p>
 <a name="RetrieveOptionsasStringValues"></a>
