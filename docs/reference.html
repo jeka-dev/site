@@ -876,8 +876,8 @@ Jerkar Repository Cache : C:\Users\me\.jerkar\cache\repo
 </ul>
 <a name="EnvironmentVariables"></a>
 <h3>Environment Variables</h3>
-<p>There is nothing specific to Jerkar. Just set the environment variables as you usually do on your OS and get
-the value using the standard <code>System#getenv</code> method.</p>
+<p>You can fetch environment variables using the standard <code>System#getenv</code> method or by annotating a public instance field
+with <code>@JkEnv</code>. <em>JkOption</em> mechanism takes precedence on environment variable injection.</p>
 <a name="SystemProperties"></a>
 <h3>System Properties</h3>
 <p>As for environment variables, one can read system properties using the standard <code>System#getProperty</code> method.</p>
