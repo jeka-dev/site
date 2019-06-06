@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -254,17 +254,23 @@ implements java.lang.Runnable</pre>
 <tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/system/JkProcess.html#withLogCommand-boolean-">withLogCommand</a></span>(boolean&nbsp;logCommand)</code>
-<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging behavior.</div>
+<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging command behavior.</div>
 </td>
 </tr>
 <tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/system/JkProcess.html#withLogOutput-boolean-">withLogOutput</a></span>(boolean&nbsp;logOutput)</code>
+<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging output behavior.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/system/JkProcess.html#withParams-java.lang.String...-">withParams</a></span>(java.lang.String...&nbsp;parameters)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but with the
  specified parameters in place of this parameters.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/system/JkProcess.html#withParamsIf-boolean-java.lang.String...-">withParamsIf</a></span>(boolean&nbsp;condition,
             java.lang.String...&nbsp;parameters)</code>
@@ -272,14 +278,14 @@ implements java.lang.Runnable</pre>
  specified conditional is true.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/system/JkProcess.html#withWorkingDir-java.nio.file.Path-">withWorkingDir</a></span>(java.nio.file.Path&nbsp;workingDir)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but using the
  specified directory as the working directory.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/system/JkProcess.html#withWorkingDir-java.lang.String-">withWorkingDir</a></span>(java.lang.String&nbsp;workingDir)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but using the
@@ -461,9 +467,20 @@ implements java.lang.Runnable</pre>
 <li class="blockList">
 <h4>withLogCommand</h4>
 <pre>public&nbsp;<a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a>&nbsp;withLogCommand(boolean&nbsp;logCommand)</pre>
-<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging behavior.
+<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging command behavior.
  If parameter is <code>true</code>, a process execution will be wrapped in a log showing start and end of
  the execution showing details about the command to be executed and execution duration.</div>
+</li>
+</ul>
+<a name="withLogOutput-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withLogOutput</h4>
+<pre>public&nbsp;<a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a>&nbsp;withLogOutput(boolean&nbsp;logOutput)</pre>
+<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging output behavior.
+ If parameter is <code>true</code>, a process output will be redirected to JkLog.</div>
 </li>
 </ul>
 <a name="runSyncIf-boolean-">

@@ -1056,6 +1056,8 @@
 <dd>
 <div class="block">Filter to exclude signature files from fat jar (aka uber jar).</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#exec-java.lang.String...-">exec(String...)</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/tool/Main.html#exec-java.nio.file.Path-java.lang.String...-">exec(Path, String...)</a></span> - Static method in class org.jerkar.tool.<a href="org/jerkar/tool/Main.html" title="class in org.jerkar.tool">Main</a></dt>
 <dd>
 <div class="block">Entry point to call Jerkar on a given folder</div>
@@ -1384,6 +1386,10 @@
 <dd>
 <div class="block">Returns the getRealm of this repository.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#getCurrentBranch--">getCurrentBranch()</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#getCurrentCommit--">getCurrentCommit()</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/system/JkLog.html#getCurrentNestedLevel--">getCurrentNestedLevel()</a></span> - Static method in class org.jerkar.api.system.<a href="org/jerkar/api/system/JkLog.html" title="class in org.jerkar.api.system">JkLog</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/utils/JkUtilsReflect.html#getDeclaredMethod-java.lang.Class-java.lang.String-java.lang.Class...-">getDeclaredMethod(Class&lt;?&gt;, String, Class&lt;?&gt;...)</a></span> - Static method in class org.jerkar.api.utils.<a href="org/jerkar/api/utils/JkUtilsReflect.html" title="class in org.jerkar.api.utils">JkUtilsReflect</a></dt>
@@ -2088,6 +2094,8 @@
 <dd>
 <div class="block">Returns the ofSystem properties in use during the test suite execution.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#getTagsOfCurrentCommit--">getTagsOfCurrentCommit()</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/java/JkJavaCompileSpec.html#getTargetVersion--">getTargetVersion()</a></span> - Method in class org.jerkar.api.java.<a href="org/jerkar/api/java/JkJavaCompileSpec.html" title="class in org.jerkar.api.java">JkJavaCompileSpec</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/java/project/JkJavaProjectMaker.html#getTasksForCompilation--">getTasksForCompilation()</a></span> - Method in class org.jerkar.api.java.project.<a href="org/jerkar/api/java/project/JkJavaProjectMaker.html" title="class in org.jerkar.api.java.project">JkJavaProjectMaker</a></dt>
@@ -2191,6 +2199,10 @@
 <dd>
 <div class="block">The map groupId:ArtifactId -> version provideded by the <code>dependencyManagement</code>
  section of this POM.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#getVersionWithTagOrSnapshot--">getVersionWithTagOrSnapshot()</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>
+<div class="block">If the current commit is tagged then the version is the tag name (last in alphabetical order.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/tool/builtins/java/JkPluginWar.html#getWarFile--">getWarFile()</a></span> - Method in class org.jerkar.tool.builtins.java.<a href="org/jerkar/tool/builtins/java/JkPluginWar.html" title="class in org.jerkar.tool.builtins.java">JkPluginWar</a></dt>
 <dd>&nbsp;</dd>
@@ -2421,6 +2433,8 @@
 <dd>
 <div class="block">Returns <code>true</code> if this classloader is descendant or same as the specified classloader.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#isDirty--">isDirty()</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/depmanagement/JkVersion.html#isDynamic--">isDynamic()</a></span> - Method in class org.jerkar.api.depmanagement.<a href="org/jerkar/api/depmanagement/JkVersion.html" title="class in org.jerkar.api.depmanagement">JkVersion</a></dt>
 <dd>
 <div class="block">Returns <code>true</code> if the definition stands for a dynamic version
@@ -2780,6 +2794,10 @@
 <dt><a href="org/jerkar/api/file/JkFileSystemLocalizable.html" title="interface in org.jerkar.api.file"><span class="typeNameLink">JkFileSystemLocalizable</span></a> - Interface in <a href="org/jerkar/api/file/package-summary.html">org.jerkar.api.file</a></dt>
 <dd>
 <div class="block">Provides an information about its localisation on the file ofSystem.</div>
+</dd>
+<dt><a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling"><span class="typeNameLink">JkGitWrapper</span></a> - Class in <a href="org/jerkar/api/tooling/package-summary.html">org.jerkar.api.tooling</a></dt>
+<dd>
+<div class="block">Wrapper for Git command line interface.</div>
 </dd>
 <dt><a href="org/jerkar/tool/JkHelpOptions.html" title="class in org.jerkar.tool"><span class="typeNameLink">JkHelpOptions</span></a> - Class in <a href="org/jerkar/tool/package-summary.html">org.jerkar.tool</a></dt>
 <dd>
@@ -4060,6 +4078,8 @@
 <div class="block">Defines a <code>JkProcess</code> using the specified command and
  parameters.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#of-java.nio.file.Path-">of(Path)</a></span> - Static method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkMvn.html#of-java.nio.file.Path-java.lang.String...-">of(Path, String...)</a></span> - Static method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkMvn.html" title="class in org.jerkar.api.tooling">JkMvn</a></dt>
 <dd>
 <div class="block">Creates a Maven command.</div>
@@ -4972,6 +4992,8 @@
 </a>
 <h2 class="title">T</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/tooling/JkGitWrapper.html#tagAndPush-java.lang.String-">tagAndPush(String)</a></span> - Method in class org.jerkar.api.tooling.<a href="org/jerkar/api/tooling/JkGitWrapper.html" title="class in org.jerkar.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/java/JkJavaCompileSpec.html#TARGET_OPTS">TARGET_OPTS</a></span> - Static variable in class org.jerkar.api.java.<a href="org/jerkar/api/java/JkJavaCompileSpec.html" title="class in org.jerkar.api.java">JkJavaCompileSpec</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/depmanagement/JkJavaDepScopes.html#TEST">TEST</a></span> - Static variable in class org.jerkar.api.depmanagement.<a href="org/jerkar/api/depmanagement/JkJavaDepScopes.html" title="class in org.jerkar.api.depmanagement">JkJavaDepScopes</a></dt>
@@ -5488,7 +5510,11 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/system/JkProcess.html#withLogCommand-boolean-">withLogCommand(boolean)</a></span> - Method in class org.jerkar.api.system.<a href="org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></dt>
 <dd>
-<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging behavior.</div>
+<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging command behavior.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="org/jerkar/api/system/JkProcess.html#withLogOutput-boolean-">withLogOutput(boolean)</a></span> - Method in class org.jerkar.api.system.<a href="org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a></dt>
+<dd>
+<div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging output behavior.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="org/jerkar/api/java/JkJarPacker.html#withManifest-org.jerkar.api.java.JkManifest-">withManifest(JkManifest)</a></span> - Method in class org.jerkar.api.java.<a href="org/jerkar/api/java/JkJarPacker.html" title="class in org.jerkar.api.java">JkJarPacker</a></dt>
 <dd>&nbsp;</dd>
