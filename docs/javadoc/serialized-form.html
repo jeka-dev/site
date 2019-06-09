@@ -73,12 +73,12 @@
 <div class="serializedFormContainer">
 <ul class="blockList">
 <li class="blockList">
-<h2 title="Package">Package&nbsp;org.jerkar.api.crypto.pgp</h2>
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.crypto.pgp</h2>
 <ul class="blockList">
-<li class="blockList"><a name="org.jerkar.api.crypto.pgp.JkPgp">
+<li class="blockList"><a name="dev.jeka.core.api.crypto.pgp.JkPgp">
 <!--   -->
 </a>
-<h3>Class <a href="org/jerkar/api/crypto/pgp/JkPgp.html" title="class in org.jerkar.api.crypto.pgp">org.jerkar.api.crypto.pgp.JkPgp</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/crypto/pgp/JkPgp.html" title="class in dev.jeka.core.api.crypto.pgp">dev.jeka.core.api.crypto.pgp.JkPgp</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -98,6 +98,199 @@
 <li class="blockListLast">
 <h4>password</h4>
 <pre>java.lang.String password</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.java.junit</h2>
+<ul class="blockList">
+<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>-5353195584286473050L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>suiteName</h4>
+<pre>java.lang.String suiteName</pre>
+</li>
+<li class="blockList">
+<h4>testCaseResults</h4>
+<pre>java.util.List&lt;E&gt; testCaseResults</pre>
+</li>
+<li class="blockList">
+<h4>runCount</h4>
+<pre>int runCount</pre>
+</li>
+<li class="blockList">
+<h4>ignoreCount</h4>
+<pre>int ignoreCount</pre>
+</li>
+<li class="blockList">
+<h4>durationInMilis</h4>
+<pre>long durationInMilis</pre>
+</li>
+<li class="blockListLast">
+<h4>systemProperties</h4>
+<pre>java.util.Properties systemProperties</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkExceptionDescription">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkExceptionDescription</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>-8619868712236132763L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>className</h4>
+<pre>java.lang.String className</pre>
+</li>
+<li class="blockList">
+<h4>message</h4>
+<pre>java.lang.String message</pre>
+</li>
+<li class="blockList">
+<h4>stackTrace</h4>
+<pre>java.lang.StackTraceElement[] stackTrace</pre>
+</li>
+<li class="blockList">
+<h4>cause</h4>
+<pre><a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkExceptionDescription</a> cause</pre>
+</li>
+<li class="blockListLast">
+<h4>assertError</h4>
+<pre>boolean assertError</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkIgnoredCase">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkIgnoredCase.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkIgnoredCase</a> extends <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkTestCaseResult</a> implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseFailure">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseFailure.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseFailure</a> extends <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkTestCaseResult</a> implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>7089021299483181605L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockListLast">
+<h4>jkExceptionDescription</h4>
+<pre><a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkExceptionDescription</a> jkExceptionDescription</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseResult">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseResult</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>className</h4>
+<pre>java.lang.String className</pre>
+</li>
+<li class="blockList">
+<h4>testName</h4>
+<pre>java.lang.String testName</pre>
+</li>
+<li class="blockListLast">
+<h4>durationInSecond</h4>
+<pre>float durationInSecond</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.system</h2>
+<ul class="blockList">
+<li class="blockList"><a name="dev.jeka.core.api.system.JkException">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkException</a> extends java.lang.RuntimeException implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.system.JkHierarchicalConsoleLogHandler">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogHandler.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkHierarchicalConsoleLogHandler</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialization Methods</h3>
+<ul class="blockList">
+<li class="blockListLast">
+<h4>readObject</h4>
+<pre>private&nbsp;void&nbsp;readObject(java.io.ObjectInputStream&nbsp;objectInputStream)</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.system.JkLog">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/system/JkLog.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkLog</a> extends java.lang.Object implements Serializable</h3>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.system.JkLog.JkLogEvent">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/system/JkLog.JkLogEvent.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkLog.JkLogEvent</a> extends java.lang.Object implements Serializable</h3>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>type</h4>
+<pre><a href="dev/jeka/core/api/system/JkLog.Type.html" title="enum in dev.jeka.core.api.system">JkLog.Type</a> type</pre>
+</li>
+<li class="blockList">
+<h4>message</h4>
+<pre>java.lang.String message</pre>
+</li>
+<li class="blockListLast">
+<h4>duration</h4>
+<pre>long duration</pre>
 </li>
 </ul>
 </li>
@@ -987,199 +1180,6 @@
 <li class="blockListLast">
 <h4>map</h4>
 <pre>java.util.Map&lt;K,V&gt; map</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList">
-<h2 title="Package">Package&nbsp;org.jerkar.api.java.junit</h2>
-<ul class="blockList">
-<li class="blockList"><a name="org.jerkar.api.java.junit.JkTestSuiteResult">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/java/junit/JkTestSuiteResult.html" title="class in org.jerkar.api.java.junit">org.jerkar.api.java.junit.JkTestSuiteResult</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>-5353195584286473050L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>suiteName</h4>
-<pre>java.lang.String suiteName</pre>
-</li>
-<li class="blockList">
-<h4>testCaseResults</h4>
-<pre>java.util.List&lt;E&gt; testCaseResults</pre>
-</li>
-<li class="blockList">
-<h4>runCount</h4>
-<pre>int runCount</pre>
-</li>
-<li class="blockList">
-<h4>ignoreCount</h4>
-<pre>int ignoreCount</pre>
-</li>
-<li class="blockList">
-<h4>durationInMilis</h4>
-<pre>long durationInMilis</pre>
-</li>
-<li class="blockListLast">
-<h4>systemProperties</h4>
-<pre>java.util.Properties systemProperties</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="org.jerkar.api.java.junit.JkTestSuiteResult.JkExceptionDescription">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in org.jerkar.api.java.junit">org.jerkar.api.java.junit.JkTestSuiteResult.JkExceptionDescription</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>-8619868712236132763L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>className</h4>
-<pre>java.lang.String className</pre>
-</li>
-<li class="blockList">
-<h4>message</h4>
-<pre>java.lang.String message</pre>
-</li>
-<li class="blockList">
-<h4>stackTrace</h4>
-<pre>java.lang.StackTraceElement[] stackTrace</pre>
-</li>
-<li class="blockList">
-<h4>cause</h4>
-<pre><a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in org.jerkar.api.java.junit">JkTestSuiteResult.JkExceptionDescription</a> cause</pre>
-</li>
-<li class="blockListLast">
-<h4>assertError</h4>
-<pre>boolean assertError</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="org.jerkar.api.java.junit.JkTestSuiteResult.JkIgnoredCase">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkIgnoredCase.html" title="class in org.jerkar.api.java.junit">org.jerkar.api.java.junit.JkTestSuiteResult.JkIgnoredCase</a> extends <a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in org.jerkar.api.java.junit">JkTestSuiteResult.JkTestCaseResult</a> implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-</li>
-<li class="blockList"><a name="org.jerkar.api.java.junit.JkTestSuiteResult.JkTestCaseFailure">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkTestCaseFailure.html" title="class in org.jerkar.api.java.junit">org.jerkar.api.java.junit.JkTestSuiteResult.JkTestCaseFailure</a> extends <a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in org.jerkar.api.java.junit">JkTestSuiteResult.JkTestCaseResult</a> implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>7089021299483181605L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockListLast">
-<h4>jkExceptionDescription</h4>
-<pre><a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in org.jerkar.api.java.junit">JkTestSuiteResult.JkExceptionDescription</a> jkExceptionDescription</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="org.jerkar.api.java.junit.JkTestSuiteResult.JkTestCaseResult">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in org.jerkar.api.java.junit">org.jerkar.api.java.junit.JkTestSuiteResult.JkTestCaseResult</a> extends java.lang.Object implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>className</h4>
-<pre>java.lang.String className</pre>
-</li>
-<li class="blockList">
-<h4>testName</h4>
-<pre>java.lang.String testName</pre>
-</li>
-<li class="blockListLast">
-<h4>durationInSecond</h4>
-<pre>float durationInSecond</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList">
-<h2 title="Package">Package&nbsp;org.jerkar.api.system</h2>
-<ul class="blockList">
-<li class="blockList"><a name="org.jerkar.api.system.JkException">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/system/JkException.html" title="class in org.jerkar.api.system">org.jerkar.api.system.JkException</a> extends java.lang.RuntimeException implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-</li>
-<li class="blockList"><a name="org.jerkar.api.system.JkHierarchicalConsoleLogHandler">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/system/JkHierarchicalConsoleLogHandler.html" title="class in org.jerkar.api.system">org.jerkar.api.system.JkHierarchicalConsoleLogHandler</a> extends java.lang.Object implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialization Methods</h3>
-<ul class="blockList">
-<li class="blockListLast">
-<h4>readObject</h4>
-<pre>private&nbsp;void&nbsp;readObject(java.io.ObjectInputStream&nbsp;objectInputStream)</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="org.jerkar.api.system.JkLog">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/system/JkLog.html" title="class in org.jerkar.api.system">org.jerkar.api.system.JkLog</a> extends java.lang.Object implements Serializable</h3>
-</li>
-<li class="blockList"><a name="org.jerkar.api.system.JkLog.JkLogEvent">
-<!--   -->
-</a>
-<h3>Class <a href="org/jerkar/api/system/JkLog.JkLogEvent.html" title="class in org.jerkar.api.system">org.jerkar.api.system.JkLog.JkLogEvent</a> extends java.lang.Object implements Serializable</h3>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>type</h4>
-<pre><a href="org/jerkar/api/system/JkLog.Type.html" title="enum in org.jerkar.api.system">JkLog.Type</a> type</pre>
-</li>
-<li class="blockList">
-<h4>message</h4>
-<pre>java.lang.String message</pre>
-</li>
-<li class="blockListLast">
-<h4>duration</h4>
-<pre>long duration</pre>
 </li>
 </ul>
 </li>

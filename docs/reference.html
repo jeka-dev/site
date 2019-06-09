@@ -570,7 +570,7 @@ deployed along the other ones.</p>
 <p><strong>[JERKAR HOME]</strong> : Refers to the folder where is installed Jerkar. You should find <em>jerkar.bat</em> and <em>jerkar</em> shell scripts at the root of this folder.</p>
 <p><strong>[JERKAR USER HOME]</strong> : Refers to the folder where Jerkar stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jerkar.</p>
 <p><strong>Def classes :</strong> Java source files located under <em>[PROJECT DIR]/jerkar/def</em> compiled on the flight by Jerkar.</p>
-<p><strong>Run Classes :</strong> Classes extending <code>org.jerkar.tool.JkRun</code>. Their <em>run methods</em> can be invoked and
+<p><strong>Run Classes :</strong> Classes extending <code>JkRun</code>. Their <em>run methods</em> can be invoked and
 their pubic fields set from the command line. Generally <em>def classes</em> contains one <em>run class</em> though there can be many or
 none.</p>
 <p><strong>Run Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>run classes</em> to be executed.
@@ -602,9 +602,9 @@ as command line arguments, stored in specific files or hard coded in <em>run cla
 <p>A <em>run class</em> may look like :</p>
 <pre><code class="language-Java">import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
-import org.jerkar.tool.JkDoc;
-import org.jerkar.tool.JkImport;
-import org.jerkar.tool.JkRun;
+import JkDoc;
+import JkImport;
+import JkRun;
 import com.google.common.base.MoreObjects;
 
 @JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
@@ -636,7 +636,7 @@ public class MyRun extends JkRun {    // The run class
 <li>invoke <code>myMethod1()</code>,</li>
 <li>invoke <code>myMethod2()</code>.</li>
 </ol>
-<p>If no <em>run class</em> are present in <em>def classes</em>, Jerkar picks <code>org.jerkar.tool.JkRun</code>. In despite this class
+<p>If no <em>run class</em> are present in <em>def classes</em>, Jerkar picks <code>JkRun</code>. In despite this class
 does not provide any particular methods, you can still perform full Java builds by invoking built-in 'java' plugin
 executing <code>jerkar clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
 <p>Executing <code>jerkar</code> or <code>jerkar help</code> on command line displays all run methods and options for the current <em>run class</em>.</p>
@@ -661,7 +661,7 @@ of <em>[JERKAR HOME]</em>. <em>[JERKAR HOME]</em> is supposed to be in your PATH
 <li>the <em>[JERKAR_HOME]/org.jerkar.core.jar</em> file</li>
 </ul>
 </li>
-<li>Run the <em>java</em> process for launching <code>org.jerkar.tool.Main</code> class passing the command line argument as is. This class main method does the following :
+<li>Run the <em>java</em> process for launching <code>Main</code> class passing the command line argument as is. This class main method does the following :
 <ol>
 <li>Parse the command line.</li>
 <li>Populate system properties from configuration files and command line.</li>
@@ -758,7 +758,7 @@ short name among <em>run classes</em> present in <em>run classpath</em>.</li>
 <li>If this option is not set, Jerkar looks for a <em>run class</em> into <em>[PROJECT DIR]/jerkar/output/def-classes</em> .
 It looks in alphabetic order first then sub-package (deep first).
 This means that class <code>MyRun</code> will be selected prior <code>apackage.ARun</code>, and <code>aa.bb.MyClass</code> will be selected prior <code>ab.OtherClass</code>.</li>
-<li>If no such class found, Jerkar selects the built-in <code>org.jerkar.tool.JkRun</code> class.</li>
+<li>If no such class found, Jerkar selects the built-in <code>JkRun</code> class.</li>
 </ul>
 <a name="InstantiateRunClass"></a>
 <h4>Instantiate Run Class</h4>
@@ -786,7 +786,7 @@ Methods are invoked in order they appear in command line regardless if method is
 <a name="ErrorHandling"></a>
 <h4>Error Handling</h4>
 <p>If an exception is thrown during the execution, Jerkar displays full stack trace on the console except if
-this is a <code>org.jerkar.api.system.JkException</code>. In this case, only the message is displayed.</p>
+this is a <code>JkException</code>. In this case, only the message is displayed.</p>
 <a name="JerkarfromIDE"></a>
 <h3>Jerkar from IDE</h3>
 <a name="IDEClasspathSetting"></a>
@@ -810,7 +810,7 @@ This leads in a simpler and faster process.</p>
 </code></pre>
 <p>The <code>JkInit#instanceOf</code> method loads options from args and instantiates <em>run classes</em>. Then user can
 configure it using hard coding prior launching any method programmatically.</p>
-<p>The other way is to launch <code>org.jerkar.tool.Main</code> method from your IDE with same arguments as you would do with command line.</p>
+<p>The other way is to launch <code>Main</code> method from your IDE with same arguments as you would do with command line.</p>
 <a name="EmbeddedMode"></a>
 <h3>Embedded Mode</h3>
 <p>When launched from command line, <em><strong>[JERKAR_HOME]/org.jerkar.core.jar</strong></em> comes after <em><strong>[WORKING_DIR]/jerkar/boot/*</strong></em> in Jerkar classpath.
@@ -829,7 +829,7 @@ of the presence and version of Jerkar installed in the host machine.</p>
 <p>You can go two ways :</p>
 <ul>
 <li>execute <code>jerkar myFunction ...</code> as you would do in regular mode. This works only if you have copied jerkar/jerkar.bat shell scripts into <em>[PROJECT DIR]</em></li>
-<li>or execute <code>java -cp jerkar/boot/* org.jerkar.tool.Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
+<li>or execute <code>java -cp jerkar/boot/* Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
 </ul>
 <a name="Defaultpathsettings"></a>
 <h3>Default path settings</h3>
@@ -964,7 +964,7 @@ convention :</p>
 </ul>
 <a name="Plugins"></a>
 <h2>Plugins</h2>
-<p>Jerkar provides a plugable architecture. In Jerkar, a plugin is a class extending <code>org.jerkar.tool.JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
+<p>Jerkar provides a plugable architecture. In Jerkar, a plugin is a class extending <code>JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
 The plugin name is inferred from Plugin class name.</p>
 <p>Each plugin instance is owned by a JkRun object, and can access to it through <code>JkPlugin#run</code> protected field.</p>
 <p>Plugins has 3 capabilities :</p>
@@ -1110,7 +1110,7 @@ From class org.jerkar.CoreBuild :
   Options :
     -testSamples (boolean, default : false) : If true, executes black-box tests on sample projects prior ending the distrib.
 
-From class org.jerkar.tool.JkRun :
+From class JkRun :
   Methods :
     clean : Cleans the output directory.
     help : Displays all available methods defined in this build.
