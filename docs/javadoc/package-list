@@ -1,6 +1,8 @@
 dev.jeka.core.api.crypto.pgp
 dev.jeka.core.api.file
 dev.jeka.core.api.function
+dev.jeka.core.api.ide.eclipse
+dev.jeka.core.api.ide.intellij
 dev.jeka.core.api.java
 dev.jeka.core.api.java.junit
 dev.jeka.core.api.java.project
@@ -17,5 +19,3 @@ dev.jeka.core.tool.builtins.repos
 dev.jeka.core.tool.builtins.scaffold
 dev.jeka.core.tool.builtins.sonar
 org.jerkar.api.depmanagement
-org.jerkar.api.ide.eclipse
-org.jerkar.api.ide.intellij
