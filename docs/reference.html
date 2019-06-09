@@ -185,7 +185,7 @@ relies on other lower level ones provided by <em>Jeka</em>. In a glance these ar
 <p>File manipulation is a central part of building software.
 Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concept around and provides a powerful fluent style API to perform
 recurrent tasks with minimal effort.</p>
-<p>The following classes lie in <code>org.jeka.api.file</code> package :</p>
+<p>The following classes lie in <code>dev.jeka.core.api.file</code> package :</p>
 <ul>
 <li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
 checksum, deletion, creation features.</li>
@@ -224,7 +224,7 @@ JkResourceProcessor.of(JkPathTreeSet.of(Paths.get(&quot;src&quot;))).andInterpol
 </code></pre>
 <a name="System"></a>
 <h2>System</h2>
-<p>The <code>org.jeka.api.system</code> package provides classes providing low level functions :</p>
+<p>The <code>dev.jeka.core.api.system</code> package provides classes providing low level functions :</p>
 <ul>
 <li>
 <p><code>JkException</code> : Marker exception generally to mention user misuse.</p>
@@ -280,7 +280,7 @@ This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.
 <h3>Define a set of dependencies</h3>
 <p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
 <p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides fluent API for easier instantiation.</p>
-<pre><code class="language-Java">import static org.jeka.api.depmanagement.JkJavaDepScopes.*;
+<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
 ...
 JkDependencySet deps = JkDependencySet.of()
     .and(&quot;com.google.guava&quot;) 
@@ -646,8 +646,8 @@ executing <code>jeka clean java#pack</code> (<a href="#Plugins">See Plugins</a>)
 <p>Jeka can be launched from both command line and your IDE.</p>
 <a name="JekafromCommandline"></a>
 <h3>Jeka from Command line</h3>
-<p>To ease launching Java processes from command line, Jeka provides shell scripts ( <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/META-INF/bin/jeka.bat">jeka.bat</a> for Windows
-and <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/META-INF/bin/jeka">jeka</a> for Unix ). They are located at root
+<p>To ease launching Java processes from command line, Jeka provides shell scripts ( <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/META-INF/bin/jeka.bat">jeka.bat</a> for Windows
+and <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/META-INF/bin/jeka">jeka</a> for Unix ). They are located at root
 of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH environment variable.</p>
 <p>This script does the following :</p>
 <ol>
@@ -656,7 +656,7 @@ of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH env
 <li>Get the classpath in the following order :
 <ul>
 <li>all jar and zip files found under <em>[WORKING DIR]/jeka/boot</em></li>
-<li>the <em>[JEKA_HOME]/org.jeka.core.jar</em> file</li>
+<li>the <em>[JEKA_HOME]/dev.jeka.core.jar</em> file</li>
 </ul>
 </li>
 <li>Run the <em>java</em> process for launching <code>Main</code> class passing the command line argument as is. This class main method does the following :
@@ -678,8 +678,8 @@ of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH env
 <ul>
 <li>
 <p><strong>Argument starts with <code>@</code> :</strong> This is a library import clause : the text just next to, is added to the <em>run classpath</em>.
-For example <code>jeka myMethod @org.jeka:an-extra-plugin:3.3</code> augments the <em>run classpath</em> with the <em>an-extra-Plugin</em> jar.
-This is similar to annotate a <em>def class</em> with <code>@JkImport(&quot;org.jeka:an-extra-plugin:3.3&quot;)</code>.
+For example <code>jeka myMethod @dev.jeka:an-extra-plugin:3.3</code> augments the <em>run classpath</em> with the <em>an-extra-Plugin</em> jar.
+This is similar to annotate a <em>def class</em> with <code>@JkImport(&quot;dev.jeka:an-extra-plugin:3.3&quot;)</code>.
 This is intended to modifiate behavior of <em>run class</em> by plugins dynamically.</p>
 </li>
 <li>
@@ -740,7 +740,7 @@ If this directory does not exist or does not contains java sources, the compilat
 Compilation occurs upon the following classpath :</p>
 <ul>
 <li>Java libraries located in <em>[PROJECT DIR]/jeka/boot</em>.</li>
-<li>org.jeka.core.jar library</li>
+<li>dev.jeka.core.jar library</li>
 <li>Classpath defined in run classes as explained above.</li>
 </ul>
 <p>It outputs class files in <em>[PROJECT DIR]/jeka/output/def-classes</em> directory.</p>
@@ -791,7 +791,7 @@ this is a <code>JkException</code>. In this case, only the message is displayed.
 <h4>IDE Classpath Setting</h4>
 <p>In order your IDE compiles and launches your <em>def classes</em>, you must ensure that project/module classpath contains :</p>
 <ul>
-<li><code>org.jeka.core.jar</code> (found in Jeka distrib)</li>
+<li><code>dev.jeka.core.jar</code> (found in Jeka distrib)</li>
 <li>libs and folders mentioned in <code>@JkImport</code> annotations of your <em>def classes</em>.</li>
 <li>project/modules mentioned in <code>@JkImportProject</code> annotations of your <em>def run classes</em>.</li>
 </ul>
@@ -811,15 +811,15 @@ configure it using hard coding prior launching any method programmatically.</p>
 <p>The other way is to launch <code>Main</code> method from your IDE with same arguments as you would do with command line.</p>
 <a name="EmbeddedMode"></a>
 <h3>Embedded Mode</h3>
-<p>When launched from command line, <em><strong>[JEKA_HOME]/org.jeka.core.jar</strong></em> comes after <em><strong>[WORKING_DIR]/jeka/boot/*</strong></em> in Jeka classpath.
-This means that if a version of Jeka (org.jeka.core.jar) is in this directory, the run will be processed with
+<p>When launched from command line, <em><strong>[JEKA_HOME]/dev.jeka.core.jar</strong></em> comes after <em><strong>[WORKING_DIR]/jeka/boot/*</strong></em> in Jeka classpath.
+This means that if a version of Jeka (dev.jeka.core.jar) is in this directory, the run will be processed with
 this instance of Jeka instead of the one located in in <em>[JEKA HOME]</em>.</p>
 <p>This is called the <strong>Embedded</strong> mode. The Jeka tool is embded within your project so the run does not depends
 of the presence and version of Jeka installed in the host machine.</p>
 <p>__Enable embedded mode : __</p>
 <p>To enable embedded mode :</p>
 <ol>
-<li>Copy <em>[JEKA_HOME]/org.jeka.core.jar</em> into <em>[PROJECT_DIR]/jeka/boot/*</em> directory.</li>
+<li>Copy <em>[JEKA_HOME]/dev.jeka.core.jar</em> into <em>[PROJECT_DIR]/jeka/boot/*</em> directory.</li>
 <li>Copy <em>[JEKA_HOME]/jeka.bat</em> and <em>[JEKA_HOME]/jeka</em> at the root of [PROJECT_DIR] (optional).</li>
 </ol>
 <p>Jeka is provided with a <em>scaffold</em> plugin that do it for you : just execute <code>jeka scaffold#run -scaffold#embed</code>.</p>
@@ -858,7 +858,7 @@ Working Directory : C:\Users\me\IdeaProjects\playground\jeka-sample
 Java Home : C:\Program Files (x86)\Java\jdk1.8.0_121\jre
 Java Version : 1.8.0_121, Oracle Corporation
 Jeka Version : Xxxxx
-Jeka Home : C:\Users\me\IdeaProjects\jeka\org.jeka.core\jeka\output\distrib
+Jeka Home : C:\Users\me\IdeaProjects\jeka\dev.jeka.core\jeka\output\distrib
 Jeka User Home : C:\Users\angibaudj\.jeka
 Jeka Repository Cache : C:\Users\me\.jeka\cache\repo
 
@@ -920,7 +920,7 @@ All public non-final instance fields of the invoked <em>run class</em>, are like
 <p>Note that the injected string value will be automatically converted to the target type.</p>
 <p>Handled types are : <em>String</em>, <em>all primitive types (and their wrappers)</em>, <em>enum</em>, <em>File</em> and <em>composite object</em>.
 If the value is not parsable to the target type, run fails.</p>
-<p>To get a precise idea on how types are converted see <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/org/jeka/tool/OptionInjector.java">this code</a>.</p>
+<p>To get a precise idea on how types are converted see <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/OptionInjector.java">this code</a>.</p>
 <a name="Compositeoptions"></a>
 <h4>Composite options</h4>
 <p>Composite options are a way to structure your options. Say that you want to configure some server access with url, userName and passwsord.
@@ -982,7 +982,7 @@ to augment <em>run_classpath</em> .</p>
 mention a plugin <em>run method</em>, <em>options</em> or <em>[pluginName]#</em> in the command line will load the plugin.</p>
 <p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkRun instance.
 'java' plugin instance will modify 'scaffold' plugin instance in such it produces a run class code extending <code>JkJavaProjectBuild</code>
-instead of 'JkRun' when 'scaffold#run' command is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
+instead of 'JkRun' when 'scaffold#run' command is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
 to have a concrete view.</p>
 <p>You can also force a plugin to load in your <em>run class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
 <pre><code class="language-Java">public class MyBuild extends JkRun {
@@ -999,10 +999,10 @@ to have a concrete view.</p>
 <p>JkRun instances are created using <code>JkRun#of</code> factory method. This method invoke <code>JkPlugin#active</code> method on all plugin loaded in the JkRun instance.
 By default, this method does nothing but plugin implementations can override it in order to let the plugin modify its owning JkRun or owe of its plugins.</p>
 <p>In fact, many plugins act just as modifier/enhancer of other plugins.</p>
-<p>For example, <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
+<p>For example, <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
 does not provide <em>run method</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
 It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>
-<p>Some other plugins does not modify their owning JkRun instance, for example <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
+<p>Some other plugins does not modify their owning JkRun instance, for example <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
 does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkRun</code> instance. It only features <em>run methods</em>  along <em>options</em>.</p>
 <a name="ConfigurePluginsinJkRunClass"></a>
 <h3>Configure Plugins in JkRun Class</h3>
@@ -1022,13 +1022,13 @@ some values plugins may have set, override this method.</li>
         ...
     }
 </code></pre>
-<p><a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/jeka/def/org/jeka/CoreBuild.java">Jeka own build class</a> makes a good example.</p>
+<p><a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/jeka/def/org/jeka/CoreBuild.java">Jeka own build class</a> makes a good example.</p>
 <a name="DocumentPlugins"></a>
 <h3>Document Plugins</h3>
 <p>Plugin writers can embed self-documentation using <code>@JkDoc</code> annotation on classes, run methods and public fields.</p>
 <p>Writers can also mention that the plugin has dependencies on other plugins using <code>@JkDocPluginDeps</code> annotation. This annotation
 has only a documentation purpose and does not has influence on plugin loading mechanism.</p>
-<p>A good example is <a href="https://github.com/jeka/jeka/blob/master/org.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
+<p>A good example is <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
 <a name="ImportExternalRuns"></a>
 <h2>Import External Runs</h2>
 <p>There is many way to perform multi-project build. One of is to import runs from external projects.</p>
