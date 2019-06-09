@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">JkRepoConfigOptionLoader</span>
 extends java.lang.Object</pre>
-<div class="block">Provides static methods for defining <a href="../../../../org/jerkar/api/depmanagement/JkRepoSet.html" title="class in org.jerkar.api.depmanagement"><code>JkRepoSet</code></a> from <a href="../../../../dev/jeka/core/tool/JkOptions.html" title="class in dev.jeka.core.tool"><code>JkOptions</code></a>.</div>
+<div class="block">Provides static methods for defining <a href="../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepoSet</code></a> from <a href="../../../../dev/jeka/core/tool/JkOptions.html" title="class in dev.jeka.core.tool"><code>JkOptions</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -150,25 +150,25 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html#allRepositoryOptions--">allRepositoryOptions</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html#downloadRepository--">downloadRepository</a></span>()</code>
 <div class="block">Returns the repositories where are downloaded dependencies.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html#publishRepository--">publishRepository</a></span>()</code>
 <div class="block">Returns repository where are published artifacts.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html#repoFromOptions-java.lang.String-">repoFromOptions</a></span>(java.lang.String&nbsp;repoName)</code>
-<div class="block">Creates <a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement"><code>JkRepo</code></a> form Jerkar options.</div>
+<div class="block">Creates <a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a> form Jerkar options.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html#runRepository--">runRepository</a></span>()</code>
 <div class="block">Returns the repositories where are downloaded dependencies needed to execute the Jerkar run.</div>
 </td>
@@ -218,7 +218,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>publishRepository</h4>
-<pre>public static&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a>&nbsp;publishRepository()</pre>
+<pre>public static&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;publishRepository()</pre>
 <div class="block">Returns repository where are published artifacts. By default it
  takes the repository defined in options <code>repo.publish.url</code>,
  <code>repo.publish.username</code> and <code>repo.publish.password</code>
@@ -238,7 +238,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>downloadRepository</h4>
-<pre>public static&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a>&nbsp;downloadRepository()</pre>
+<pre>public static&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;downloadRepository()</pre>
 <div class="block">Returns the repositories where are downloaded dependencies. By default it
  takes the repository defined in options <code>repo.download.url</code>,
  <code>repo.publish.username</code> and <code>repo.download.password</code>
@@ -258,7 +258,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>runRepository</h4>
-<pre>public static&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a>&nbsp;runRepository()</pre>
+<pre>public static&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;runRepository()</pre>
 <div class="block">Returns the repositories where are downloaded dependencies needed to execute the Jerkar run.</div>
 </li>
 </ul>
@@ -268,8 +268,8 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>repoFromOptions</h4>
-<pre>public static&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement">JkRepo</a>&nbsp;repoFromOptions(java.lang.String&nbsp;repoName)</pre>
-<div class="block">Creates <a href="../../../../org/jerkar/api/depmanagement/JkRepo.html" title="class in org.jerkar.api.depmanagement"><code>JkRepo</code></a> form Jerkar options. the specified repository name
+<pre>public static&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;repoFromOptions(java.lang.String&nbsp;repoName)</pre>
+<div class="block">Creates <a href="../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a> form Jerkar options. the specified repository name
  will be turned to <code>repo.[repoName].url</code>,
  <code>repo.[repoName].username</code> and
  <code>repo.[repoName].password</code> options for creating according

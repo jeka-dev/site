@@ -521,7 +521,7 @@ Path guavaJar = classpath.getEntryContainingClass(&quot;com.google.common.base.S
 <h3>Java jar and manifest</h3>
 <p><code>JkpathTree</code> class help to produce simply jar files using <code>zipTo</code> method :  <code>JkPathTree.of(classDir).zipTo(jarFile)</code></p>
 <p>Nevertheless <code>JkJarPacker</code> along <code>JkManifest</code> provides powerful methods to read/write/edit manifests and create fat jars.</p>
-<pre><code class="language-java">JkManifest.ofEmpty().addMainClass(&quot;org.jerkar.samples.RunClass&quot;).writeToStandardLocation(classDir);
+<pre><code class="language-java">JkManifest.ofEmpty().addMainClass(&quot;RunClass&quot;).writeToStandardLocation(classDir);
 </code></pre>
 <a name="Classloaders"></a>
 <h3>Classloaders</h3>
@@ -1104,7 +1104,7 @@ Built-in options (these options are not specific to a plugin or a build class) :
 
 Available methods and options :
 
-From class org.jerkar.CoreBuild :
+From class CoreBuild :
   Methods :
     doDefault : Conventional method standing for the default operations to perform.
   Options :

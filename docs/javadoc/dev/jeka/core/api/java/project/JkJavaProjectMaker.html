@@ -107,13 +107,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html" title="interface in org.jerkar.api.depmanagement">JkArtifactLocator</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html" title="interface in org.jerkar.api.depmanagement">JkArtifactProducer</a></dd>
+<dd><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>, <a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">JkJavaProjectMaker</span>
 extends java.lang.Object
-implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html" title="interface in org.jerkar.api.depmanagement">JkArtifactProducer</a>, <a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a></pre>
+implements <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>, <a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a></pre>
 <div class="block">Mainly an artifact producer for a Java project. It embeds also methods for publishing produced artifacts. <p>
  By default instances of this class include two artifacts : the main artifacts consisting in the binary jar and the source jar.<p>
  One can include extra artifacts to produce or remove already defined ones. Including new artifacts suppose to provides
@@ -139,19 +139,19 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#JAVADOC_ARTIFACT_ID">JAVADOC_ARTIFACT_ID</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#SOURCES_ARTIFACT_ID">SOURCES_ARTIFACT_ID</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#TEST_ARTIFACT_ID">TEST_ARTIFACT_ID</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#TEST_SOURCE_ARTIFACT_ID">TEST_SOURCE_ARTIFACT_ID</a></span></code>&nbsp;</td>
 </tr>
 </table>
@@ -171,7 +171,7 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#addArtifact-org.jerkar.api.depmanagement.JkArtifactId-java.lang.Runnable-">addArtifact</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#addArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.lang.Runnable-">addArtifact</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
            java.lang.Runnable&nbsp;runnable)</code>
 <div class="block">Defines how to produce the specified artifact.</div>
 </td>
@@ -202,25 +202,25 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#fetchDependenciesFor-org.jerkar.api.depmanagement.JkScope...-">fetchDependenciesFor</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkScope.html" title="class in org.jerkar.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#fetchDependenciesFor-dev.jeka.core.api.depmanagement.JkScope...-">fetchDependenciesFor</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
 <div class="block">Returns lib paths standing for the resolution of this project dependencies for the specified dependency scopes.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#fetchRuntimeDependencies-org.jerkar.api.depmanagement.JkArtifactId-">fetchRuntimeDependencies</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactFileId)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">fetchRuntimeDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactFileId)</code>
 <div class="block">Returns the runtime dependencies of the specified artifact file.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>java.lang.Iterable&lt;<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&gt;</code></td>
+<td class="colFirst"><code>java.lang.Iterable&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getArtifactIds--">getArtifactIds</a></span>()</code>
 <div class="block">Returns all the artifact ids likely to be produced by this artifact producer.</div>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getArtifactPath-org.jerkar.api.depmanagement.JkArtifactId-">getArtifactPath</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Returns file ofSystem path where is supposed to be produced the specified artifact file id.</div>
 </td>
 </tr>
@@ -231,7 +231,7 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../org/jerkar/api/depmanagement/JkDependencyResolver.html" title="class in org.jerkar.api.depmanagement">JkDependencyResolver</a></code></td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getDependencyResolver--">getDependencyResolver</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
@@ -246,12 +246,12 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.Runnable</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getRunnable-org.jerkar.api.depmanagement.JkArtifactId-">getRunnable</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getRunnable-dev.jeka.core.api.depmanagement.JkArtifactId-">getRunnable</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Returns the runnable responsible for creating the specified artifactId.</div>
 </td>
 </tr>
 <tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../org/jerkar/api/depmanagement/JkDependencySet.html" title="class in org.jerkar.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getScopeDefaultedDependencies--">getScopeDefaultedDependencies</a></span>()</code>
 <div class="block">Returns dependencies declared for this project.</div>
 </td>
@@ -278,23 +278,23 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 </tr>
 <tr id="i21" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#makeArtifact-org.jerkar.api.depmanagement.JkArtifactId-">makeArtifact</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">makeArtifact</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Produces the specified artifact file.</div>
 </td>
 </tr>
 <tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#removeArtifact-org.jerkar.api.depmanagement.JkArtifactId-">removeArtifact</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">removeArtifact</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Removes the definition of the specified artifacts.</div>
 </td>
 </tr>
 <tr id="i23" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setDependencyResolver-org.jerkar.api.depmanagement.JkDependencyResolver-">setDependencyResolver</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkDependencyResolver.html" title="class in org.jerkar.api.depmanagement">JkDependencyResolver</a>&nbsp;dependencyResolver)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencyResolver-">setDependencyResolver</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;dependencyResolver)</code>&nbsp;</td>
 </tr>
 <tr id="i24" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setDownloadRepos-org.jerkar.api.depmanagement.JkRepoSet-">setDownloadRepos</a></span>(<a href="../../../../../../org/jerkar/api/depmanagement/JkRepoSet.html" title="class in org.jerkar.api.depmanagement">JkRepoSet</a>&nbsp;repos)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setDownloadRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">setDownloadRepos</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;repos)</code>&nbsp;</td>
 </tr>
 <tr id="i25" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
@@ -319,18 +319,18 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.jerkar.api.depmanagement.JkArtifactProducer">
+<li class="blockList"><a name="methods.inherited.from.class.dev.jeka.core.api.depmanagement.JkArtifactProducer">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;org.jerkar.api.depmanagement.<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html" title="interface in org.jerkar.api.depmanagement">JkArtifactProducer</a></h3>
-<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeAllArtifacts--">makeAllArtifacts</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeAllMissingArtifacts--">makeAllMissingArtifacts</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeArtifacts-java.lang.Iterable-">makeArtifacts</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeArtifacts-org.jerkar.api.depmanagement.JkArtifactId...-">makeArtifacts</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeMainArtifact--">makeMainArtifact</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeMissingArtifacts-java.lang.Iterable-">makeMissingArtifacts</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeMissingArtifacts-org.jerkar.api.depmanagement.JkArtifactId...-">makeMissingArtifacts</a></code></li>
+<h3>Methods inherited from interface&nbsp;dev.jeka.core.api.depmanagement.<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a></h3>
+<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeAllArtifacts--">makeAllArtifacts</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeAllMissingArtifacts--">makeAllMissingArtifacts</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifacts-java.lang.Iterable-">makeArtifacts</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifacts-dev.jeka.core.api.depmanagement.JkArtifactId...-">makeArtifacts</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeMainArtifact--">makeMainArtifact</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeMissingArtifacts-java.lang.Iterable-">makeMissingArtifacts</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeMissingArtifacts-dev.jeka.core.api.depmanagement.JkArtifactId...-">makeMissingArtifacts</a></code></li>
 </ul>
 <ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.org.jerkar.api.depmanagement.JkArtifactLocator">
+<li class="blockList"><a name="methods.inherited.from.class.dev.jeka.core.api.depmanagement.JkArtifactLocator">
 <!--   -->
 </a>
-<h3>Methods inherited from interface&nbsp;org.jerkar.api.depmanagement.<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html" title="interface in org.jerkar.api.depmanagement">JkArtifactLocator</a></h3>
-<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getAllArtifactPaths--">getAllArtifactPaths</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getArtifactIdsWithClassifier-java.lang.String...-">getArtifactIdsWithClassifier</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId</a>, <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getMainArtifactPath--">getMainArtifactPath</a></code></li>
+<h3>Methods inherited from interface&nbsp;dev.jeka.core.api.depmanagement.<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></h3>
+<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getAllArtifactPaths--">getAllArtifactPaths</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIdsWithClassifier-java.lang.String...-">getArtifactIdsWithClassifier</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId</a>, <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactPath--">getMainArtifactPath</a></code></li>
 </ul>
 </li>
 </ul>
@@ -352,7 +352,7 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockList">
 <li class="blockList">
 <h4>SOURCES_ARTIFACT_ID</h4>
-<pre>public static final&nbsp;<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a> SOURCES_ARTIFACT_ID</pre>
+<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a> SOURCES_ARTIFACT_ID</pre>
 </li>
 </ul>
 <a name="JAVADOC_ARTIFACT_ID">
@@ -361,7 +361,7 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockList">
 <li class="blockList">
 <h4>JAVADOC_ARTIFACT_ID</h4>
-<pre>public static final&nbsp;<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a> JAVADOC_ARTIFACT_ID</pre>
+<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a> JAVADOC_ARTIFACT_ID</pre>
 </li>
 </ul>
 <a name="TEST_ARTIFACT_ID">
@@ -370,7 +370,7 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockList">
 <li class="blockList">
 <h4>TEST_ARTIFACT_ID</h4>
-<pre>public static final&nbsp;<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a> TEST_ARTIFACT_ID</pre>
+<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a> TEST_ARTIFACT_ID</pre>
 </li>
 </ul>
 <a name="TEST_SOURCE_ARTIFACT_ID">
@@ -379,7 +379,7 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockListLast">
 <li class="blockList">
 <h4>TEST_SOURCE_ARTIFACT_ID</h4>
-<pre>public static final&nbsp;<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a> TEST_SOURCE_ARTIFACT_ID</pre>
+<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a> TEST_SOURCE_ARTIFACT_ID</pre>
 </li>
 </ul>
 </li>
@@ -434,13 +434,13 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
  just log a warn message. <code>false</code> by default.</div>
 </li>
 </ul>
-<a name="addArtifact-org.jerkar.api.depmanagement.JkArtifactId-java.lang.Runnable-">
+<a name="addArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.lang.Runnable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>addArtifact</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;addArtifact(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;addArtifact(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
                                       java.lang.Runnable&nbsp;runnable)</pre>
 <div class="block">Defines how to produce the specified artifact. <br/>
  The specified artifact can be an already defined artifact (as 'main' artifact), in this
@@ -450,30 +450,30 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
  or <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#JAVADOC_ARTIFACT_ID"><code>JAVADOC_ARTIFACT_ID</code></a>.</div>
 </li>
 </ul>
-<a name="removeArtifact-org.jerkar.api.depmanagement.JkArtifactId-">
+<a name="removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>removeArtifact</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;removeArtifact(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;removeArtifact(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
 <div class="block">Removes the definition of the specified artifacts. Once remove, invoking <code>makeArtifact(theRemovedArtifactId)</code>
  will raise an exception.</div>
 </li>
 </ul>
-<a name="makeArtifact-org.jerkar.api.depmanagement.JkArtifactId-">
+<a name="makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>makeArtifact</h4>
-<pre>public&nbsp;void&nbsp;makeArtifact(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeArtifact-org.jerkar.api.depmanagement.JkArtifactId-">JkArtifactProducer</a></code></span></div>
+<pre>public&nbsp;void&nbsp;makeArtifact(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">JkArtifactProducer</a></code></span></div>
 <div class="block">Produces the specified artifact file. This method is supposed to create it from scratch (should be working after
  a clean) but implementations can caches already processed phase result as compilation result or so.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#makeArtifact-org.jerkar.api.depmanagement.JkArtifactId-">makeArtifact</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html" title="interface in org.jerkar.api.depmanagement">JkArtifactProducer</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">makeArtifact</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -491,19 +491,19 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 </dl>
 </li>
 </ul>
-<a name="getArtifactPath-org.jerkar.api.depmanagement.JkArtifactId-">
+<a name="getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getArtifactPath</h4>
-<pre>public&nbsp;java.nio.file.Path&nbsp;getArtifactPath(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getArtifactPath-org.jerkar.api.depmanagement.JkArtifactId-">JkArtifactLocator</a></code></span></div>
+<pre>public&nbsp;java.nio.file.Path&nbsp;getArtifactPath(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">JkArtifactLocator</a></code></span></div>
 <div class="block">Returns file ofSystem path where is supposed to be produced the specified artifact file id. This method is supposed
  to only returns the file reference and not generate it.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getArtifactPath-org.jerkar.api.depmanagement.JkArtifactId-">getArtifactPath</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html" title="interface in org.jerkar.api.depmanagement">JkArtifactLocator</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -513,13 +513,13 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockList">
 <li class="blockList">
 <h4>getArtifactIds</h4>
-<pre>public final&nbsp;java.lang.Iterable&lt;<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&gt;&nbsp;getArtifactIds()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">JkArtifactLocator</a></code></span></div>
+<pre>public final&nbsp;java.lang.Iterable&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;getArtifactIds()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">JkArtifactLocator</a></code></span></div>
 <div class="block">Returns all the artifact ids likely to be produced by this artifact producer. By default it returns
  a single element list containing the main artifact file id</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">getArtifactIds</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactLocator.html" title="interface in org.jerkar.api.depmanagement">JkArtifactLocator</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">getArtifactIds</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -550,23 +550,23 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <pre>public&nbsp;void&nbsp;addJavadocArtifact()</pre>
 </li>
 </ul>
-<a name="getRunnable-org.jerkar.api.depmanagement.JkArtifactId-">
+<a name="getRunnable-dev.jeka.core.api.depmanagement.JkArtifactId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getRunnable</h4>
-<pre>public&nbsp;java.lang.Runnable&nbsp;getRunnable(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
+<pre>public&nbsp;java.lang.Runnable&nbsp;getRunnable(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
 <div class="block">Returns the runnable responsible for creating the specified artifactId.</div>
 </li>
 </ul>
-<a name="fetchDependenciesFor-org.jerkar.api.depmanagement.JkScope...-">
+<a name="fetchDependenciesFor-dev.jeka.core.api.depmanagement.JkScope...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>fetchDependenciesFor</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;fetchDependenciesFor(<a href="../../../../../../org/jerkar/api/depmanagement/JkScope.html" title="class in org.jerkar.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;fetchDependenciesFor(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
 <div class="block">Returns lib paths standing for the resolution of this project dependencies for the specified dependency scopes.</div>
 </li>
 </ul>
@@ -576,9 +576,9 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockList">
 <li class="blockList">
 <h4>getScopeDefaultedDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../org/jerkar/api/depmanagement/JkDependencySet.html" title="class in org.jerkar.api.depmanagement">JkDependencySet</a>&nbsp;getScopeDefaultedDependencies()</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getScopeDefaultedDependencies()</pre>
 <div class="block">Returns dependencies declared for this project. Dependencies declared without specifying
- scope are defaulted to scope <a href="../../../../../../org/jerkar/api/depmanagement/JkJavaDepScopes.html#COMPILE_AND_RUNTIME"><code>JkJavaDepScopes.COMPILE_AND_RUNTIME</code></a></div>
+ scope are defaulted to scope <a href="../../../../../../dev/jeka/core/api/depmanagement/JkJavaDepScopes.html#COMPILE_AND_RUNTIME"><code>JkJavaDepScopes.COMPILE_AND_RUNTIME</code></a></div>
 </li>
 </ul>
 <a name="getDependencyResolver--">
@@ -587,40 +587,40 @@ implements <a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactPro
 <ul class="blockList">
 <li class="blockList">
 <h4>getDependencyResolver</h4>
-<pre>public&nbsp;<a href="../../../../../../org/jerkar/api/depmanagement/JkDependencyResolver.html" title="class in org.jerkar.api.depmanagement">JkDependencyResolver</a>&nbsp;getDependencyResolver()</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;getDependencyResolver()</pre>
 </li>
 </ul>
-<a name="setDependencyResolver-org.jerkar.api.depmanagement.JkDependencyResolver-">
+<a name="setDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencyResolver-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setDependencyResolver</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;setDependencyResolver(<a href="../../../../../../org/jerkar/api/depmanagement/JkDependencyResolver.html" title="class in org.jerkar.api.depmanagement">JkDependencyResolver</a>&nbsp;dependencyResolver)</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;setDependencyResolver(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;dependencyResolver)</pre>
 </li>
 </ul>
-<a name="setDownloadRepos-org.jerkar.api.depmanagement.JkRepoSet-">
+<a name="setDownloadRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setDownloadRepos</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;setDownloadRepos(<a href="../../../../../../org/jerkar/api/depmanagement/JkRepoSet.html" title="class in org.jerkar.api.depmanagement">JkRepoSet</a>&nbsp;repos)</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;setDownloadRepos(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;repos)</pre>
 </li>
 </ul>
-<a name="fetchRuntimeDependencies-org.jerkar.api.depmanagement.JkArtifactId-">
+<a name="fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>fetchRuntimeDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;fetchRuntimeDependencies(<a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactId.html" title="class in org.jerkar.api.depmanagement">JkArtifactId</a>&nbsp;artifactFileId)</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#fetchRuntimeDependencies-org.jerkar.api.depmanagement.JkArtifactId-">JkArtifactProducer</a></code></span></div>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;fetchRuntimeDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactFileId)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">JkArtifactProducer</a></code></span></div>
 <div class="block">Returns the runtime dependencies of the specified artifact file. This is useful to use the artifact file as
  a transitive dependency.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html#fetchRuntimeDependencies-org.jerkar.api.depmanagement.JkArtifactId-">fetchRuntimeDependencies</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../org/jerkar/api/depmanagement/JkArtifactProducer.html" title="interface in org.jerkar.api.depmanagement">JkArtifactProducer</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">fetchRuntimeDependencies</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a></code></dd>
 </dl>
 </li>
 </ul>
