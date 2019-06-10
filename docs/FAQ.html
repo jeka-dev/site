@@ -10,25 +10,25 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="style/highlight-idea.css">
 
-    <title>Jeka - FAQ</title>
+    <title>Jerkar - Reference Guide</title>
 </head>
 
 <body>
-<div class="title">Jeka - FAQ</div>
+<div class="title">Jerkar - FAQ</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
+<div style="color: lightslategrey; font-size: large">Version : 0.7.0.RC7</div>
 <br />
 <a href="#General" class="menuItem1">General</a><br />
 <a href="#Canrunclassesandcodetobuildbehostedinseparateprojects?" class="menuItem3">Can run classes and code to build be hosted in separate projects ?</a><br />
-<a href="#MyrunclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?" class="menuItem3">My run class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</a><br />
+<a href="#MyrunclassdoesnotcompilesoIcan'tinvokeanyJerkarmethodas'help'or'scaffold#run'.WhatcanIdo?" class="menuItem3">My run class does not compile so I can't invoke any Jerkar method as 'help' or 'scaffold#run'. What can I do ?</a><br />
 <a href="#Compilation" class="menuItem1">Compilation</a><br />
 <a href="#HowcanIchoosetheJDKusedtocompile?" class="menuItem3">How can I choose the JDK used to compile ?</a><br />
-<a href="#HowcanIuseEclipsecompilerinJeka?" class="menuItem3">How can I use Eclipse compiler in Jeka ?</a><a name="General"></a>
+<a href="#HowcanIuseEclipsecompilerinJerkar?" class="menuItem3">How can I use Eclipse compiler in Jerkar ?</a><a name="General"></a>
 <h1>General</h1>
 <a name="Canrunclassesandcodetobuildbehostedinseparateprojects?"></a>
 <h3>Can run classes and code to build be hosted in separate projects ?</h3>
-<p>Of course yes. If you prefer that your Jeka run code lies in a distinct project, create a Jeka project in a sibling
+<p>Of course yes. If you prefer that your Jerkar run code lies in a distinct project, create a Jerkar project in a sibling
 folder and mention where is located the project to build.</p>
 <pre><code class="language-java">...
 @Override
@@ -37,26 +37,26 @@ protected void setup() {  // project to build lies in a sibling folder.
       project().setSourceLayout(JkProjectSourceLayout.ofMavenStyle().withBaseDir(projectPath));
       ...
 </code></pre>
-<a name="MyrunclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?"></a>
-<h3>My run class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</h3>
+<a name="MyrunclassdoesnotcompilesoIcan'tinvokeanyJerkarmethodas'help'or'scaffold#run'.WhatcanIdo?"></a>
+<h3>My run class does not compile so I can't invoke any Jerkar method as 'help' or 'scaffold#run'. What can I do ?</h3>
 <p>You can specify a built-in run class to run. This way, compilation won't occur.
-For example <code>jeka -RunClass=JkRun help</code> or <code>jeka -RC=JkRun scaffold#run java#&quot;</code>.</p>
+For example <code>jerkar -RunClass=JkRun help</code> or <code>jerkar -RC=JkRun scaffold#run java#&quot;</code>.</p>
 <a name="Compilation"></a>
 <h1>Compilation</h1>
 <a name="HowcanIchoosetheJDKusedtocompile?"></a>
 <h3>How can I choose the JDK used to compile ?</h3>
-<p>Jeka uses the JDK it is running on to compile production or test code.
+<p>Jerkar uses the JDK it is running on to compile production or test code.
 If code must be build on a another JDK version, you can specify JDK path for different version.
-Just mention it as option, for example in your <em>[JEKA HOME]/options.properties</em> file.</p>
+Just mention it as option, for example in your <em>[JERKAR HOME]/options.properties</em> file.</p>
 <pre><code>jdk.6=/software/jdk6
 jdk.7=/software/jdk7
 jdk.9=/software/jdk9
 ...
 </code></pre>
 <p>This way, if one of your project source code is declared to be in a specific Java version, the relevant JDK version will be used automatically to compile it.</p>
-<a name="HowcanIuseEclipsecompilerinJeka?"></a>
-<h3>How can I use Eclipse compiler in Jeka ?</h3>
-<p>Jeka can use any JSR199 Java compiler to compile your Java code. Just set the compiler instance you need as :</p>
+<a name="HowcanIuseEclipsecompilerinJerkar?"></a>
+<h3>How can I use Eclipse compiler in Jerkar ?</h3>
+<p>Jerkar can use any JSR199 Java compiler to compile your Java code. Just set the compiler instance you need as :</p>
 <pre><code class="language-java">import org.eclipse.jdt.internal.compiler.tool.EclipseCompiler;
 
 @JkImport(&quot;org.eclipse.jdt.core.compiler:ecj:4.6.1&quot;)

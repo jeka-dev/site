@@ -205,26 +205,26 @@ implements <a href="../../../../org/jerkar/api/depmanagement/JkFileDependency.ht
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.lang.Iterable-dev.jeka.core.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">of</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
-  <a href="../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;process,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.lang.Iterable-org.jerkar.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">of</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
+  <a href="../../../../org/jerkar/api/java/JkJavaProcess.html" title="class in org.jerkar.api.java">JkJavaProcess</a>&nbsp;process,
   java.lang.String&nbsp;className,
   java.lang.String...&nbsp;args)</code>
-<div class="block">Same as <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.nio.file.Path-dev.jeka.core.api.java.JkJavaProcess-java.lang.String-java.lang.String...-"><code>of(Path, JkJavaProcess, String, String...)</code></a> but you must specify a set of files
+<div class="block">Same as <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.nio.file.Path-org.jerkar.api.java.JkJavaProcess-java.lang.String-java.lang.String...-"><code>of(Path, JkJavaProcess, String, String...)</code></a> but you must specify a set of files
  instead of a single one.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-dev.jeka.core.api.system.JkProcess-java.nio.file.Path...-">of</a></span>(<a href="../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a>&nbsp;process,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-org.jerkar.api.system.JkProcess-java.nio.file.Path...-">of</a></span>(<a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a>&nbsp;process,
   java.nio.file.Path...&nbsp;files)</code>
-<div class="block">Creates a computed dependency to the specified files and <a href="../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system"><code>JkProcess</code></a> to run for
+<div class="block">Creates a computed dependency to the specified files and <a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system"><code>JkProcess</code></a> to run for
  generating them.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.nio.file.Path-dev.jeka.core.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">of</a></span>(java.nio.file.Path&nbsp;file,
-  <a href="../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;process,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.nio.file.Path-org.jerkar.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">of</a></span>(java.nio.file.Path&nbsp;file,
+  <a href="../../../../org/jerkar/api/java/JkJavaProcess.html" title="class in org.jerkar.api.java">JkJavaProcess</a>&nbsp;process,
   java.lang.String&nbsp;className,
   java.lang.String...&nbsp;args)</code>
 <div class="block">Creates a computed dependency to the specified file and the specified java program to run for
@@ -287,15 +287,15 @@ implements <a href="../../../../org/jerkar/api/depmanagement/JkFileDependency.ht
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="of-dev.jeka.core.api.system.JkProcess-java.nio.file.Path...-">
+<a name="of-org.jerkar.api.system.JkProcess-java.nio.file.Path...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static final&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a>&nbsp;of(<a href="../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a>&nbsp;process,
+<pre>public static final&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a>&nbsp;of(<a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system">JkProcess</a>&nbsp;process,
                                             java.nio.file.Path...&nbsp;files)</pre>
-<div class="block">Creates a computed dependency to the specified files and <a href="../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system"><code>JkProcess</code></a> to run for
+<div class="block">Creates a computed dependency to the specified files and <a href="../../../../org/jerkar/api/system/JkProcess.html" title="class in org.jerkar.api.system"><code>JkProcess</code></a> to run for
  generating them.</div>
 </li>
 </ul>
@@ -311,28 +311,28 @@ implements <a href="../../../../org/jerkar/api/depmanagement/JkFileDependency.ht
  generating them.</div>
 </li>
 </ul>
-<a name="of-java.lang.Iterable-dev.jeka.core.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">
+<a name="of-java.lang.Iterable-org.jerkar.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
 <pre>public static final&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a>&nbsp;of(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
-                                            <a href="../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;process,
+                                            <a href="../../../../org/jerkar/api/java/JkJavaProcess.html" title="class in org.jerkar.api.java">JkJavaProcess</a>&nbsp;process,
                                             java.lang.String&nbsp;className,
                                             java.lang.String...&nbsp;args)</pre>
-<div class="block">Same as <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.nio.file.Path-dev.jeka.core.api.java.JkJavaProcess-java.lang.String-java.lang.String...-"><code>of(Path, JkJavaProcess, String, String...)</code></a> but you must specify a set of files
+<div class="block">Same as <a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html#of-java.nio.file.Path-org.jerkar.api.java.JkJavaProcess-java.lang.String-java.lang.String...-"><code>of(Path, JkJavaProcess, String, String...)</code></a> but you must specify a set of files
  instead of a single one.</div>
 </li>
 </ul>
-<a name="of-java.nio.file.Path-dev.jeka.core.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">
+<a name="of-java.nio.file.Path-org.jerkar.api.java.JkJavaProcess-java.lang.String-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
 <pre>public static final&nbsp;<a href="../../../../org/jerkar/api/depmanagement/JkComputedDependency.html" title="class in org.jerkar.api.depmanagement">JkComputedDependency</a>&nbsp;of(java.nio.file.Path&nbsp;file,
-                                            <a href="../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;process,
+                                            <a href="../../../../org/jerkar/api/java/JkJavaProcess.html" title="class in org.jerkar.api.java">JkJavaProcess</a>&nbsp;process,
                                             java.lang.String&nbsp;className,
                                             java.lang.String...&nbsp;args)</pre>
 <div class="block">Creates a computed dependency to the specified file and the specified java program to run for
