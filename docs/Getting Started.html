@@ -41,10 +41,22 @@
 <a href="#Extrafunction" class="menuItem2">Extra function</a><br />
 <a href="#Explorefunctionsandoptionsprovidedout-of-thebox" class="menuItem2">Explore functions and options provided out-of-thebox</a><a name="Lexical"></a>
 <h1>Lexical</h1>
-<p>These terms are used in this document, this short lexical disambiguates their meanings.</p>
-<p><strong>[JEKA HOME]</strong> : refers to the folder where <em>Jeka</em> is intalled. You should find <em>jeka.bat</em> and <em>jeka</em> shell files directly under this folder.</p>
-<p><strong>[JEKA USER HOME]</strong> : refers to the folder where Jeka stores caches, binary repository and global user configuration.</p>
-<p><strong>[USER HOME]</strong> : User Home within the meaning of Windows or Unix.</p>
+<p>The following concepts are used all over the tool section :</p>
+<p><strong>[PROJECT DIR]</strong> : Refers to the root folder of the project to build (or to run commands on). This is where you would put pom.xml or build.xml files.</p>
+<p><strong>[JEKA HOME]</strong> : Refers to the folder where Jeka is installed. You should find <em>jeka.bat</em> and <em>jeka</em> shell scripts at the root of this folder.</p>
+<p><strong>[JEKA USER HOME]</strong> : Refers to the folder where Jeka stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jeka.</p>
+<p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
+<p><strong>Def Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>command classes</em> to be executed.
+By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or def Classpath coming
+from another project.
+Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is augmented with their <em>.class</em> counterpart.</p>
+<p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their <em>commands</em> can be invoked from the command line and
+their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>command class</em> though there can be many or
+none. Command class can be a <em>def class</em> but can also be imported from a library or external project.</p>
+<p><strong>Commands :</strong> Java methods member of <em>command classes</em> and invokable from Jeka command line.
+They must be instance method (not static), public, zero-args and returning void. Every method verifying these constraints is considered as a <em>command</em>.</p>
+<p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
+as command line arguments, stored in specific files or hard coded in <em>command classes</em>.</p>
 <a name="InstallJeka"></a>
 <h1>Install Jeka</h1>
 <ol>
@@ -89,12 +101,12 @@ Specified System Properties : none.
 Standard Options : RunClass=null, LogVerbose=false, LogHeaders=true, LogMaxLength=230
 Options :   LH=null  LML=230  jdk.9=C:/Program Files (x86)/Java/jdk9.0.1 jdk.10=C:/Program Files (x86)/Java/jdk10.0.2  repo.download.url=https://repo.maven.apache.org/maven2/
 Compile and initialise command classes ...
-│ Initializing class JkCommandsat C:\Users\djeang\IdeaProjects\jeka ...
+│ Initializing class JkCommands at C:\Users\djeang\IdeaProjects\jeka ...
 │ │ Run instance initialized with options []
 │ └ Done in 57 milliseconds.
 └ Done in 336 milliseconds.
 Jeka run is ready to start.
-Method : help on JkRun
+Method : help on JkCommands
 Usage:
 jeka (method | pluginName#method) [-optionName=&lt;value&gt;] [-pluginName#optionName=&lt;value&gt;] [-DsystemPropName=value]
 
@@ -163,10 +175,10 @@ This will generate a project skeleton as follow :</li>
 <ol start="4">
 <li>Import the project in your IDE. Eveything should be Ok, in particular <em>Build.java</em> should compile and execute within your IDE.</li>
 </ol>
-<pre><code class="language-java">import JkRun;
-import JkInit;
+<pre><code class="language-java">import dev.jeka.core.tool.JkCommands;
+import dev.jeka.core.tool.JkInit;
 
-class Build extends JkCommands{
+class Build extends JkCommands {
 
     public static void main(String[] args) throws Exception {
         Build build = JkInit.instanceOf(Build.class, args);
@@ -178,14 +190,14 @@ class Build extends JkCommands{
 <a name="Addarunmethod(methodinvokablefromcommandline)"></a>
 <h2>Add a run method (method invokable from command line)</h2>
 <p>Add the following method to the Build java source.</p>
-<pre><code class="language-java">import JkUtilsIO;
-import JkRun;
-import JkInit;
+<pre><code class="language-java">import dev.jeka.core.api.utils.JkUtilsIO;
+import dev.jeka.core.tool.JkCommands;
+import dev.jeka.core.tool.JkInit;
 
 import java.net.MalformedURLException;
 import java.net.URL;
 
-class Build extends JkCommands{
+class Build extends JkCommands {
 
     public void displayGoogle() throws MalformedURLException {
         String content = JkUtilsIO.read(new URL(&quot;https://www.google.com/&quot;));
@@ -206,7 +218,7 @@ From class Build :
   Methods :
     displayGoogle : No description available.
 
-From class JkCommands:
+From class JkCommands :
   Methods :
     clean : Cleans the output directory except the compiled command classes.
     help : Displays all available methods and options defined for this command class.
@@ -232,7 +244,7 @@ public void displayGoogle() throws MalformedURLException {
 <h2>Add an option (parameter)</h2>
 <p>May you like to see Google page source but you probably want to apply this method to any other url.</p>
 <p>To make it parametrizable, just declare the url in a public field so its value can be injected from command line.</p>
-<pre><code class="language-java">class Build extends JkCommands{
+<pre><code class="language-java">class Build extends JkCommands {
 
     @JkDoc(&quot;The url to display content.&quot;)   // Optional self documentation
     public String url = &quot;https://www.google.com/&quot;;
@@ -267,7 +279,7 @@ From class Build :
 </ol>
 <pre><code class="language-java">@JkImport(&quot;org.apache.httpcomponents:httpclient:jar:4.5.8&quot;)  // Can import files from Maven repos
 @JkImport(&quot;../local_libs/my-utility.jar&quot;)   // or simply located locally
-class Build extends JkCommands{
+class Build extends JkCommands {
    ...
 }
 </code></pre>
@@ -294,12 +306,12 @@ public void post() {
 <ol>
 <li>Execute <code>mkdir sample2</code> then <code>cd sample2</code> followed by <code>jeka scaffold#run intellij#</code> (or <code>jeka scaffold#run eclipse#</code>)</li>
 <li>Rename sample2 <em>Build</em> class 'Sample2Build` to avoid name collision. Be carefull, rename its filename as well unless Jeka will fail.</li>
-<li>Add a field of type JkCommandsannotated with <code>JkImportProject</code> and the relative path of <em>sample1</em> as value.</li>
+<li>Add a field of type JkCommands annotated with <code>JkImportProject</code> and the relative path of <em>sample1</em> as value.</li>
 </ol>
-<pre><code class="language-java">class Sample2Build extends JkCommands{
+<pre><code class="language-java">class Sample2Build extends JkCommands {
 
     @JkImportProject(&quot;../sample1&quot;)
-    private JkCommandsproject1Run;
+    private JkCommands project1Run;
 
     public void hello() throws MalformedURLException {
         System.out.println(&quot;Hello World&quot;);
@@ -312,10 +324,10 @@ public void post() {
 <p>Execute <code>jeka intellij#generateIml</code> (or <code>jeka eclipse#generateFiles</code>) to add <em>sample1</em> dependencies to your IDE. Now <em>Sampl2Build</em> can refer to the <em>Build</em> class of <em>sample1</em>.</p>
 </li>
 <li>
-<p>Replace <em>JkRun</em> Type by the <em>Build</em> type from <em>sample1</em> and use it in method implementation.</p>
+<p>Replace <em>JkCommands</em> Type by the <em>Build</em> type from <em>sample1</em> and use it in method implementation.</p>
 </li>
 </ol>
-<pre><code class="language-java">class Sample2Build extends JkCommands{
+<pre><code class="language-java">class Sample2Build extends JkCommands {
 
     @JkImportProject(&quot;../sample1&quot;)
     private Build project1Run;  // This Build come from sample1
@@ -388,15 +400,15 @@ This will generate a project skeleton with the following build class at <em>[PRO
 <p>By default the project mimics Maven layout convention so sources are supposed to lie in <em>src/main/java</em>.</p>
 <p>Below is the content of the generated build class. Guava and Junit are pesent only fo demo purpose. You can remove it safely and add
 any dependency you need.</p>
-<pre><code class="language-Java">import JkDependencySet;
-import JkJavaProject;
-import JkInit;
-import JkRun;
-import JkPluginJava;
+<pre><code class="language-Java">import dev.jeka.core.api.depmanagement.JkDependencySet;
+import dev.jeka.core.api.java.project.JkJavaProject;
+import dev.jeka.core.tool.JkInit;
+import dev.jeka.core.tool.JkCommands;
+import dev.jeka.core.tool.JkPluginJava;
 
 import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
 
-class Build extends JkCommands{
+class Build extends JkCommands {
 
     final JkPluginJava javaPlugin = getPlugin(JkPluginJava.class);
 
