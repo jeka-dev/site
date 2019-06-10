@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../dev/jeka/core/tool/JkRun.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../dev/jeka/core/tool/Main.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -109,7 +109,7 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">JkRunPlugins</span>
 extends java.lang.Object</pre>
-<div class="block">Set of plugins configured or activated in a <a href="../../../../dev/jeka/core/tool/JkRun.html" title="class in dev.jeka.core.tool"><code>JkRun</code></a>.</div>
+<div class="block">Set of plugins configured or activated in a <a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool"><code>JkCommands</code></a>.</div>
 </li>
 </ul>
 </div>
@@ -131,25 +131,25 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;<br>T</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#get-java.lang.Class-">get</a></span>(java.lang.Class&lt;T&gt;&nbsp;pluginClass)</code>
-<div class="block">Returns the plugin instance of the specified class loaded in the holding JkRun instance.</div>
+<div class="block">Returns the plugin instance of the specified class loaded in the holding JkCommands instance.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#get-java.lang.String-">get</a></span>(java.lang.String&nbsp;pluginName)</code>
-<div class="block">Returns the plugin instance of the specified name loaded in the holding JkRun instance.</div>
+<div class="block">Returns the plugin instance of the specified name loaded in the holding JkCommands instance.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#getAll--">getAll</a></span>()</code>
-<div class="block">Returns a list of all loaded plugins in the holding JkRun instance.</div>
+<div class="block">Returns a list of all loaded plugins in the holding JkCommands instance.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#hasLoaded-java.lang.Class-">hasLoaded</a></span>(java.lang.Class&lt;? extends <a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;&nbsp;pluginClass)</code>
-<div class="block">Returns <code>true</code> if the specified plugin class has been loaded in the holding JkRun instance.</div>
+<div class="block">Returns <code>true</code> if the specified plugin class has been loaded in the holding JkCommands instance.</div>
 </td>
 </tr>
 </table>
@@ -181,7 +181,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;&lt;T extends <a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;&nbsp;T&nbsp;get(java.lang.Class&lt;T&gt;&nbsp;pluginClass)</pre>
-<div class="block">Returns the plugin instance of the specified class loaded in the holding JkRun instance. If it does not hold
+<div class="block">Returns the plugin instance of the specified class loaded in the holding JkCommands instance. If it does not hold
  a plugin of the specified class at call time, the plugin is loaded then returned.</div>
 </li>
 </ul>
@@ -192,7 +192,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;<a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&nbsp;get(java.lang.String&nbsp;pluginName)</pre>
-<div class="block">Returns the plugin instance of the specified name loaded in the holding JkRun instance. If it does not hold
+<div class="block">Returns the plugin instance of the specified name loaded in the holding JkCommands instance. If it does not hold
  a plugin of the specified name at call time, the plugin is loaded then returned.<br/>
  Caution : this method may be significantly slower than <a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#get-java.lang.Class-"><code>get(Class)</code></a> as it may involve classpath scanning.</div>
 </li>
@@ -204,7 +204,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>hasLoaded</h4>
 <pre>public&nbsp;boolean&nbsp;hasLoaded(java.lang.Class&lt;? extends <a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;&nbsp;pluginClass)</pre>
-<div class="block">Returns <code>true</code> if the specified plugin class has been loaded in the holding JkRun instance.</div>
+<div class="block">Returns <code>true</code> if the specified plugin class has been loaded in the holding JkCommands instance.</div>
 </li>
 </ul>
 <a name="getAll--">
@@ -214,7 +214,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getAll</h4>
 <pre>public&nbsp;java.util.List&lt;<a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;&nbsp;getAll()</pre>
-<div class="block">Returns a list of all loaded plugins in the holding JkRun instance.</div>
+<div class="block">Returns a list of all loaded plugins in the holding JkCommands instance.</div>
 </li>
 </ul>
 </li>
@@ -244,7 +244,7 @@ extends java.lang.Object</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../dev/jeka/core/tool/JkRun.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../dev/jeka/core/tool/JkRepoConfigOptionLoader.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../dev/jeka/core/tool/Main.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

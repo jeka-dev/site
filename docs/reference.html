@@ -10,14 +10,14 @@
     <script>hljs.initHighlightingOnLoad();</script>
     <link rel="stylesheet" href="style/highlight-idea.css">
 
-    <title>Jerkar - Reference Guide</title>
+    <title>Jeka - Reference Guide</title>
 </head>
 
 <body>
-<div class="title">Jerkar - Reference Guide</div>
+<div class="title">Jeka - Reference Guide</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : 0.7.0.RELEASE</div>
+<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
 <br />
 <a href="#Introduction" class="menuItem1">Introduction</a><br />
 <a href="#LibraryPart" class="menuItem1">Library Part</a><br />
@@ -46,8 +46,8 @@
 <a href="#Junittests" class="menuItem3">Junit tests</a><br />
 <a href="#Projects" class="menuItem3">Projects</a><br />
 <a href="#ToolPart" class="menuItem1">Tool Part</a><br />
-<a href="#JerkarRuntime" class="menuItem2">Jerkar Runtime</a><br />
-<a href="#JerkarfromCommandline" class="menuItem3">Jerkar from Command line</a><br />
+<a href="#JekaRuntime" class="menuItem2">Jeka Runtime</a><br />
+<a href="#JekafromCommandline" class="menuItem3">Jeka from Command line</a><br />
 <a href="#ParsetheCommandLine" class="menuItem4">Parse the Command Line</a><br />
 <a href="#PopulateSystemPropertiesfromConfigurationFilesandCommandline" class="menuItem4">Populate System Properties from Configuration Files and Command line</a><br />
 <a href="#Pre-process" class="menuItem4">Pre-process </a><br />
@@ -56,18 +56,18 @@
 <a href="#InstantiateRunClass" class="menuItem4">Instantiate Run Class</a><br />
 <a href="#InvokeCommandLineMethods" class="menuItem4">Invoke Command Line Methods</a><br />
 <a href="#ErrorHandling" class="menuItem4">Error Handling</a><br />
-<a href="#JerkarfromIDE" class="menuItem3">Jerkar from IDE</a><br />
+<a href="#JekafromIDE" class="menuItem3">Jeka from IDE</a><br />
 <a href="#IDEClasspathSetting" class="menuItem4">IDE Classpath Setting</a><br />
 <a href="#LaunchfromIDE" class="menuItem4">Launch from IDE</a><br />
 <a href="#EmbeddedMode" class="menuItem3">Embedded Mode</a><br />
 <a href="#Defaultpathsettings" class="menuItem3">Default path settings</a><br />
-<a href="#SpecifyJerkarUserHome" class="menuItem4">Specify Jerkar User Home</a><br />
+<a href="#SpecifyJekaUserHome" class="menuItem4">Specify Jeka User Home</a><br />
 <a href="#SpecifythelocalRepositoryCache" class="menuItem4">Specify the local Repository Cache</a><br />
 <a href="#SeeEffectivePaths" class="menuItem4">See Effective Paths</a><br />
 <a href="#RunParameters" class="menuItem2">Run Parameters</a><br />
 <a href="#EnvironmentVariables" class="menuItem3">Environment Variables</a><br />
 <a href="#SystemProperties" class="menuItem3">System Properties</a><br />
-<a href="#JerkarOptions" class="menuItem3">Jerkar Options</a><br />
+<a href="#JekaOptions" class="menuItem3">Jeka Options</a><br />
 <a href="#InjectOptions" class="menuItem4">Inject Options</a><br />
 <a href="#RetrieveOptionsasStringValues" class="menuItem4">Retrieve Options as String Values</a><br />
 <a href="#RetrieveOptioninRunClassFields" class="menuItem4">Retrieve Option in Run Class Fields</a><br />
@@ -87,15 +87,15 @@
 <a href="#AccessImportedRunsProgrammatically" class="menuItem3">Access Imported Runs Programmatically</a><br />
 <a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><a name="Introduction"></a>
 <h1>Introduction</h1>
-<p>This document stands for reference guide and provides details about Jerkar behaviour. If you are looking for
-how exactly Jerkar behaves or you want to get a pretty exhaustive list of Jerkar features, you are in the right place.</p>
-<p>However, a document can not replace a source code or API for exhaustion. Jerkar philosophy is to be <strong>as transparent and
+<p>This document stands for reference guide and provides details about Jeka behaviour. If you are looking for
+how exactly Jeka behaves or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
+<p>However, a document can not replace a source code or API for exhaustion. Jeka philosophy is to be <strong>as transparent and
 easy to master as possible</strong>. We hope that no user will ever feel the need to buy some trainings or books to master it.</p>
 <p>The source code has been written with intelligibility in mind in order to navigate easily from the user code
-to the Jerkar engine room. For Java developers, reading source code and placing break points troubleshoots faster
+to the Jeka engine room. For Java developers, reading source code and placing break points troubleshoots faster
 than documentation/support most of the time.</p>
-<p><strong>What is Jerkar ?</strong></p>
-<p>Jerkar contains both a library and a tool.</p>
+<p><strong>What is Jeka ?</strong></p>
+<p>Jeka contains both a library and a tool.</p>
 <p>The library is for dealing with file sets, compilation, dependency management, testing,
 external processes, crypto signatures, ... in a glance, all regular things you need to build/publish projects and especially Java projects.
 The library can be used in any Java program and does not have any dependency.</p>
@@ -105,13 +105,11 @@ reuse of build elements (logic, settings, doc, ...) across projects.</p>
 on its own without any knowledge of the tool part.</p>
 <a name="LibraryPart"></a>
 <h1>Library Part</h1>
-<p>Jerkar contains a library for all regular things you need to build/publish projects and especially Java projects.
+<p>Jeka contains a library for all regular things you need to build/publish projects and especially Java projects.
 It can be embedded in your own tool and used in a simple <code>main</code> method.</p>
-<p><span class="menuItem0">3rd party libraries</span></p>
-<p>The Jerkar core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em> but these libraries are embedded in the Jerkar
+<p>The Jeka core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em> but these libraries are embedded in the Jeka
 jar and loaded in a specific class loader. These 3rd party APIs are not visible/accessible to client code so one can
-use another version of these APIs without conflict : from user point of view, Jerkar is a <em>zero-dependency library</em>.</p>
-<p><span class="menuItem0">Example</span></p>
+use another version of these APIs without conflict : from user point of view, Jeka is a <em>zero-dependency library</em>.</p>
 <p>This is an example for building and publishing a multi-module project :</p>
 <pre><code class="language-java">    JkLog.registerHierarchicalConsoleHandler();  // activate console logging
 
@@ -136,12 +134,12 @@ use another version of these APIs without conflict : from user point of view, Je
 <li>By default project module ids are inferred from the name of their hosting directories and version is set as <code>UNSPECIFIED-SNAPSHOT</code>.</li>
 </ul>
 <p><span class="menuItem0">API Style</span></p>
-<p><em>Jerkar</em> tries to stick with a consistent API design style.</p>
+<p><em>Jeka</em> tries to stick with a consistent API design style.</p>
 <p><strong>Class and Interface Naming Convenytion</strong></p>
-<p>All Jerkar public classes/interfaces starts with <code>Jk</code>. Its for easing distinction in IDE between classes supposed be used
+<p>All Jeka public classes/interfaces starts with <code>Jk</code>. Its for easing distinction in IDE between classes supposed be used
 in production or test and the ones used for building.</p>
 <p><strong>Mutable Vs Immutable</strong></p>
-<p>As a rule of thumb <em>Jerkar</em> favors immutable objects. Nevertheless when object structure is pretty deep, immutability
+<p>As a rule of thumb <em>Jeka</em> favors immutable objects. Nevertheless when object structure is pretty deep, immutability
 makes object cumbersome to configure, that's why objects of the API with deep structure are mutable while simpler are
 immutable.</p>
 <p><strong>Instantiation</strong></p>
@@ -149,14 +147,14 @@ immutable.</p>
 <p><strong>Read Accessors</strong></p>
 <p>All accessor method names (methods returning a result without requiring IO, just computation) starts with <code>get</code>.</p>
 <p><strong>Withers/Anders for Immutable Objects</strong></p>
-<p>To create a subtly different object from an other immutable one, <em>Jerkar</em> provides :</p>
+<p>To create a subtly different object from an other immutable one, <em>Jeka</em> provides :</p>
 <ul>
 <li>Methods starting with <code>with</code> when a property is to be replaced by another.</li>
 <li>Methods starting with <code>and</code> when a collection property is to be replaced by the same one plus an extra element.</li>
 <li>Methods starting with <code>minus</code> when a collection property is to be replaced by the same one minus a specified element.</li>
 </ul>
 <p><strong>Setters/Adders for Mutable Objects</strong></p>
-<p>To modify a mutable object, <em>Jerkar</em> provides :</p>
+<p>To modify a mutable object, <em>Jeka</em> provides :</p>
 <ul>
 <li>Methods starting with <code>set</code> to replace a single property value by an other.</li>
 <li>Methods starting with <code>add</code> to add a value to a collection property.
@@ -164,10 +162,10 @@ Those methods returns the object itself for chaining.</li>
 </ul>
 <p><strong>Translators</strong></p>
 <p>To translate an object to another representation (for example a <code>JkDependencySet</code> to a  list of <code>JkScopedDependency</code>)
-<em>Jerkar</em> provides methods starting with <code>to</code>.</p>
+<em>Jeka</em> provides methods starting with <code>to</code>.</p>
 <p><span class="menuItem0">Domains Covered by the API</span></p>
 <p>The previous example demonstrates how the Java/project API can be used to build and publish Java projects. This API
-relies on other lower level ones provided by <em>Jerkar</em>. In a glance these are the domains covered by the <em>Jerkar</em> APIs :</p>
+relies on other lower level ones provided by <em>Jeka</em>. In a glance these are the domains covered by the <em>Jeka</em> APIs :</p>
 <ul>
 <li><strong>Files :</strong> File trees, filters, zip, path sequence</li>
 <li><strong>System :</strong> Launching external process, Logging, Meta-info</li>
@@ -185,9 +183,9 @@ relies on other lower level ones provided by <em>Jerkar</em>. In a glance these 
 <a name="Files"></a>
 <h2>Files</h2>
 <p>File manipulation is a central part of building software.
-Jerkar embraces JDK7 <em>java.nio.file</em> API by adding some concept around and provides a powerful fluent style API to perform
+Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concept around and provides a powerful fluent style API to perform
 recurrent tasks with minimal effort.</p>
-<p>The following classes lie in <code>org.jerkar.api.file</code> package :</p>
+<p>The following classes lie in <code>dev.jeka.core.api.file</code> package :</p>
 <ul>
 <li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
 checksum, deletion, creation features.</li>
@@ -205,7 +203,7 @@ checksum, deletion, creation features.</li>
 <p>Used in path trees to filter in/out files according name patterns.</p>
 <ul>
 <li><code>JkPathTree</code> : A root folder (or a zip file) along a <code>PathMatcher</code> providing operations as copy, navigate, zip, iterate.
-This central class is spread all over Jerkar APIs.</li>
+This central class is spread all over Jeka APIs.</li>
 </ul>
 <p>The following snippet copy all non java source files to another directory preserving structure.</p>
 <pre><code class="language-java">JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
@@ -226,19 +224,19 @@ JkResourceProcessor.of(JkPathTreeSet.of(Paths.get(&quot;src&quot;))).andInterpol
 </code></pre>
 <a name="System"></a>
 <h2>System</h2>
-<p>The <code>org.jerkar.api.system</code> package provides classes providing low level functions :</p>
+<p>The <code>dev.jeka.core.api.system</code> package provides classes providing low level functions :</p>
 <ul>
 <li>
 <p><code>JkException</code> : Marker exception generally to mention user misuse.</p>
 </li>
 <li>
-<p><code>JkInfo</code> : Provides information as current version of Jerkar.</p>
+<p><code>JkInfo</code> : Provides information as current version of Jeka.</p>
 </li>
 <li>
-<p><code>JkLocator</code> : Provides information about where is located folder as repository cache or Jerkar user home.</p>
+<p><code>JkLocator</code> : Provides information about where is located folder as repository cache or Jeka user home.</p>
 </li>
 <li>
-<p><code>JkLog</code> : Provides API to log Jerkar event. It supports hierarchical logs through <code>#startTask</code>
+<p><code>JkLog</code> : Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
 and <code>#endtask</code> methods.</p>
 </li>
 <li>
@@ -251,23 +249,23 @@ and <code>#endtask</code> methods.</p>
 <h3>Concepts</h3>
 <a name="Whatisadependency?"></a>
 <h4>What is a dependency ?</h4>
-<p>In Jerkar context, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
+<p>In Jeka context, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
 Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or many.</p>
 <p>A dependency is always an instance of <code>JkDependency</code>.</p>
-<p>Jerkar distinguishes 3 types of dependency :</p>
+<p>Jeka distinguishes 3 types of dependency :</p>
 <ul>
 <li><strong>Arbitrary files</strong> located on the file system (represented by <code>JkFileSystemDependency</code> class). These files are assumed to be present on the file system when the build is running.</li>
 <li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
-<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jerkar can consume and resolve transitively any artifact located in a repository as you would do with Maven or Ivy.</li>
+<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven or Ivy.</li>
 </ul>
-<p>For the last, Jerkar is using <em>Ivy 2.4.0</em> under the hood.
-This library is embedded inside the Jerkar jar and is executed in a dedicated classloader.
+<p>For the last, Jeka is using <em>Ivy 2.4.0</em> under the hood.
+This library is embedded inside the Jeka jar and is executed in a dedicated classloader.
 So all happens as if there where no dependency on Ivy.</p>
 <a name="Whatisascope?"></a>
 <h4>What is a scope ?</h4>
 <p>Projects may need dependencies to accomplish certain tasks and these dependencies may vary according the executed tasks.
 For example, to <em>compile</em> you may need <em>guava</em> library only but to <em>test</em> you'll need <em>junit</em> library too.
-To label dependencies according their usage, Jerkar uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
+To label dependencies according their usage, Jeka uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
 <p>A scope can <em>inherit</em> from one or several scopes. This means that if a scope <em>Foo</em> inherits from scope <em>Bar</em> then a dependencies declared with scope <em>Bar</em> will be also considered as declared with scope <em>Foo</em>.
 For instance, in <code>JkJavaBuild</code>, scope <code>TEST</code> inherits from <code>RUNTIME</code> that inherits from <code>COMPILE</code> so every dependencies declared with scope <code>COMPILE</code> are considered to be declared with scope <code>RUNTIME</code> and <code>TEST</code> as well.</p>
 <p>By default, scopes are <em>transitive</em>. This has only a meaning for <em>module dependencies</em>.
@@ -282,7 +280,7 @@ This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.
 <h3>Define a set of dependencies</h3>
 <p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
 <p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides fluent API for easier instantiation.</p>
-<pre><code class="language-Java">import static org.jerkar.api.depmanagement.JkJavaDepScopes.*;
+<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
 ...
 JkDependencySet deps = JkDependencySet.of()
     .and(&quot;com.google.guava&quot;) 
@@ -348,8 +346,8 @@ org.projectlombok:lombok:1.16.16
 <p>There is many way to indicate a module dependency, see Javadoc for browsing possibilities.</p>
 <p>Note that :</p>
 <ul>
-<li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jerkar will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
-<li>As Jerkar relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
+<li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jeka will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
+<li>As Jeka relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
 </ul>
 <a name="Dependenciesonlocalfiles"></a>
 <h4>Dependencies on local files</h4>
@@ -367,17 +365,17 @@ org.projectlombok:lombok:1.16.16
 If some files still missing after the computation has run, the build fails.</p>
 <p>This mechanism is quite simple yet powerful as it addresses following use cases :</p>
 <ul>
-<li>Dependencies on files produced by an artifact producer (<code>JkArtifactProducer</code>). A Jerkar Java project is an artifact producer.</li>
+<li>Dependencies on files produced by an artifact producer (<code>JkArtifactProducer</code>). A Jeka Java project is an artifact producer.</li>
 <li>Dependencies on files produced by external project built with any type of technology (Ant, Grunt, Maven, Gradle, SBT, Android SDK, Make, ...).</li>
 <li>Dependencies on files produced by any means.</li>
 </ul>
 <p>The generic way is to construct this kind of dependency using a <code>java.lang.Runnable</code>.</p>
 <p>The following snippet constructs a set of dependencies on two external project : one is built with maven, the other with
-<em>Jerkar</em>.</p>
+<em>Jeka</em>.</p>
 <pre><code class="language-Java">Path mavenProject = Paths.get(&quot;../a-maven-project&quot;);
 JkProcess mavenBuild = JkProcess.of(&quot;mvn&quot;, &quot;clean&quot;, &quot;install&quot;).withWorkingDir(mavenProject);
 Path mavenProjectJar = mavenProject.resolve(&quot;target/maven-project.jar&quot;);
-JkJavaProject externalProject = JkJavaProject.ofSimple(Paths.get(&quot;../a-jerkar-project&quot;)); 
+JkJavaProject externalProject = JkJavaProject.ofSimple(Paths.get(&quot;../a-jeka-project&quot;)); 
 JkDependencySet deps = JkDependencySet.of()
     .and(JkComputedDependency.of(mavenBuild, mavenProjectJar))
     .and(externalProject);
@@ -419,11 +417,11 @@ Iterable&lt;Path&gt; files = JkDependencyResolver.of(JkRepo.ofMavenCentral()).re
 </code></pre>
 <a name="Publication"></a>
 <h3>Publication</h3>
-<p>Jerkar is able to publish on both Maven and Ivy repository. This includes repositories as <a href="http://www.sonatype.org/nexus/">Sonatype Nexus</a> or <a href="http://www.jfrog.com/artifactory/">Jfrog Artifactory</a>.</p>
-<p>Maven and Ivy have different publication model, so Jerkar proposes specific APIs according you want to publish on a Maven or Ivy repository.</p>
+<p>Jeka is able to publish on both Maven and Ivy repository. This includes repositories as <a href="http://www.sonatype.org/nexus/">Sonatype Nexus</a> or <a href="http://www.jfrog.com/artifactory/">Jfrog Artifactory</a>.</p>
+<p>Maven and Ivy have different publication model, so Jeka proposes specific APIs according you want to publish on a Maven or Ivy repository.</p>
 <a name="PublishtoaMavenrepository"></a>
 <h4>Publish to a Maven repository</h4>
-<p>Jerkar proposes a complete API to pubish on Maven repository. POM files will be generated by Jerkar according
+<p>Jeka proposes a complete API to pubish on Maven repository. POM files will be generated by Jeka according
 provided elements.</p>
 <p>The following snippet demonstrate a pretty sophisticated publishing on Maven :</p>
 <pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6&quot;);
@@ -438,10 +436,10 @@ provided elements.</p>
             .withChecksums(&quot;sha-2&quot;, &quot;md5&quot;)
             .withSigner(JkPgp.of(Paths.get(&quot;myPubring&quot;), Paths.get(&quot;mySecretRing&quot;), &quot;mypassword&quot;))
             .with(JkMavenPublicationInfo.of(&quot;My sample project&quot;,
-                    &quot;A project to demonstrate publishing on Jerkar&quot;,
-                    &quot;http://project.jerkar.org&quot;)
+                    &quot;A project to demonstrate publishing on Jeka&quot;,
+                    &quot;http://project.jeka.org&quot;)
                     .andApache2License()
-                    .andDeveloper(&quot;djeang&quot;, &quot;myemail@gmail.com&quot;, &quot;jerkar.org&quot;, &quot;http://project.jerkar.org/&quot;));
+                    .andDeveloper(&quot;djeang&quot;, &quot;myemail@gmail.com&quot;, &quot;jeka.org&quot;, &quot;http://project.jeka.org/&quot;));
 
     // A complex case for repo (credential + signature + filtering) 
     JkRepo repo = JkRepo.of(&quot;http://myserver/myrepo&quot;)
@@ -457,7 +455,7 @@ provided elements.</p>
     JkPublisher publisher = JkPublisher.of(repo);
     publisher.publishMaven(versionedModule, mavenPublication, deps);
 </code></pre>
-<p>Notice that Jerkar allows to :</p>
+<p>Notice that Jeka allows to :</p>
 <ul>
 <li>Publish more than one artifact.</li>
 <li>Produce &amp; publish checksum files for each published artifact.</li>
@@ -466,7 +464,7 @@ provided elements.</p>
 <li>Sign published artifact with PGP</li>
 <li>Publish to multiple repository by creating the publisher using a <code>JkRepoSet</code> instead of a <code>JkRepo</code>.</li>
 </ul>
-<p>To sign with PGP, no need to have PGP installed on Jerkar machine. Jerkar uses <a href="https://www.bouncycastle.org/">Bouncy Castle</a> internally to sign artifacts.</p>
+<p>To sign with PGP, no need to have PGP installed on Jeka machine. Jeka uses <a href="https://www.bouncycastle.org/">Bouncy Castle</a> internally to sign artifacts.</p>
 <a name="PublishtoaIvyrepository"></a>
 <h4>Publish to a Ivy repository</h4>
 <p>Publishing on Ivy repo is pretty similar than on Maven though there is specific options to Ivy.</p>
@@ -486,7 +484,7 @@ provided elements.</p>
 </code></pre>
 <a name="JavaProjectMaking"></a>
 <h2>Java Project Making</h2>
-<p>Jerkar provides API for processing usual Java build tasks. To illustrate this, let's start from the following
+<p>Jeka provides API for processing usual Java build tasks. To illustrate this, let's start from the following
 layout :</p>
 <pre><code class="language-java">    Path src = getBaseDir().resolve(&quot;src/main/java&quot;);
     Path buildDir = getBaseDir().resolve(&quot;build/output&quot;);
@@ -513,7 +511,7 @@ it or choose an external compiler for cross-compile purpose.</p>
 </code></pre>
 <a name="Classpath"></a>
 <h3>Classpath</h3>
-<p>Jerkar provides <code>JkClasspath</code> to construct and reason about classpath.</p>
+<p>Jeka provides <code>JkClasspath</code> to construct and reason about classpath.</p>
 <pre><code class="language-java">JkClasspath classpath = JkUrlClassLoader.ofCurrent().getFullClasspath();
 Path guavaJar = classpath.getEntryContainingClass(&quot;com.google.common.base.Strings&quot;);
 </code></pre>
@@ -521,7 +519,7 @@ Path guavaJar = classpath.getEntryContainingClass(&quot;com.google.common.base.S
 <h3>Java jar and manifest</h3>
 <p><code>JkpathTree</code> class help to produce simply jar files using <code>zipTo</code> method :  <code>JkPathTree.of(classDir).zipTo(jarFile)</code></p>
 <p>Nevertheless <code>JkJarPacker</code> along <code>JkManifest</code> provides powerful methods to read/write/edit manifests and create fat jars.</p>
-<pre><code class="language-java">JkManifest.ofEmpty().addMainClass(&quot;org.jerkar.samples.RunClass&quot;).writeToStandardLocation(classDir);
+<pre><code class="language-java">JkManifest.ofEmpty().addMainClass(&quot;RunClass&quot;).writeToStandardLocation(classDir);
 </code></pre>
 <a name="Classloaders"></a>
 <h3>Classloaders</h3>
@@ -567,27 +565,27 @@ deployed along the other ones.</p>
 <p><span class="menuItem0">Lexical</span></p>
 <p>The following terms are used all over this section :</p>
 <p><strong>[PROJECT DIR]</strong> : Refers to the root folder of the project to build (or to run tasks on). This is where you would put pom.xml or build.xml files.</p>
-<p><strong>[JERKAR HOME]</strong> : Refers to the folder where is installed Jerkar. You should find <em>jerkar.bat</em> and <em>jerkar</em> shell scripts at the root of this folder.</p>
-<p><strong>[JERKAR USER HOME]</strong> : Refers to the folder where Jerkar stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jerkar.</p>
-<p><strong>Def classes :</strong> Java source files located under <em>[PROJECT DIR]/jerkar/def</em> compiled on the flight by Jerkar.</p>
-<p><strong>Run Classes :</strong> Classes extending <code>org.jerkar.tool.JkRun</code>. Their <em>run methods</em> can be invoked and
+<p><strong>[JEKA HOME]</strong> : Refers to the folder where is installed Jeka. You should find <em>jeka.bat</em> and <em>jeka</em> shell scripts at the root of this folder.</p>
+<p><strong>[JEKA USER HOME]</strong> : Refers to the folder where Jeka stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jeka.</p>
+<p><strong>Def classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em> compiled on the flight by Jeka.</p>
+<p><strong>Run Classes :</strong> Classes extending <code>JkRun</code>. Their <em>run methods</em> can be invoked and
 their pubic fields set from the command line. Generally <em>def classes</em> contains one <em>run class</em> though there can be many or
 none.</p>
 <p><strong>Run Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>run classes</em> to be executed.
-By default, it consists in <em>Jerkar</em> core classes. it can be augmented with any third party lib or run classpath coming
+By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or run classpath coming
 from another project.
 Once <em>def classes</em> sources have been compiled, <em>run classpath</em> is augmented with their <em>.class</em> counterpart.</p>
-<p><strong>Run Methods :</strong> Java methods member of <em>run classes</em> and invokable from Jerkar command line.
+<p><strong>Run Methods :</strong> Java methods member of <em>run classes</em> and invokable from Jeka command line.
 They must be instance method (not static), public, zero-args and returning void. Every method verigfying these constraints is considered as a <em>run method</em>.</p>
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
 as command line arguments, stored in specific files or hard coded in <em>run classes</em>.</p>
 <p><span class="menuItem0">In a Glance</span></p>
-<p>The Jerkar tool consists in an engine able to run Java source code or Java compiled code from the command line.</p>
+<p>The Jeka tool consists in an engine able to run Java source code or Java compiled code from the command line.</p>
 <p>Generally this code is intended to build Java projects but it can be used for any purpose.</p>
 <p>In practice, your project has a structure respecting the following layout :</p>
 <pre><code>[Project Dir]
    |
-   + jerkar
+   + jeka
       + boot             &lt;-------- Put extra jars here to augment run classpath.
       + def
          + MyRun.java   &lt;----- Class extending JkRun 
@@ -602,9 +600,9 @@ as command line arguments, stored in specific files or hard coded in <em>run cla
 <p>A <em>run class</em> may look like :</p>
 <pre><code class="language-Java">import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
-import org.jerkar.tool.JkDoc;
-import org.jerkar.tool.JkImport;
-import org.jerkar.tool.JkRun;
+import JkDoc;
+import JkImport;
+import JkRun;
 import com.google.common.base.MoreObjects;
 
 @JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
@@ -628,40 +626,40 @@ public class MyRun extends JkRun {    // The run class
 }
 </code></pre>
 <p>From <strong>[Project Dir]</strong>,  you can invoke any run method defined on <code>MyRun</code> class from the command line.</p>
-<p>For example, executing <code>jerkar myMethod1 myMethod2 -myParam1=foo</code> does the following :</p>
+<p>For example, executing <code>jeka myMethod1 myMethod2 -myParam1=foo</code> does the following :</p>
 <ol>
-<li>compile sources located in <em>jerkar/def</em> directory,</li>
+<li>compile sources located in <em>jeka/def</em> directory,</li>
 <li>instantiate a <code>MyRun</code> instance,</li>
 <li>inject <em>&quot;foo&quot;</em> in the <code>myParam1</code> field,</li>
 <li>invoke <code>myMethod1()</code>,</li>
 <li>invoke <code>myMethod2()</code>.</li>
 </ol>
-<p>If no <em>run class</em> are present in <em>def classes</em>, Jerkar picks <code>org.jerkar.tool.JkRun</code>. In despite this class
+<p>If no <em>run class</em> are present in <em>def classes</em>, Jeka picks <code>JkRun</code>. In despite this class
 does not provide any particular methods, you can still perform full Java builds by invoking built-in 'java' plugin
-executing <code>jerkar clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
-<p>Executing <code>jerkar</code> or <code>jerkar help</code> on command line displays all run methods and options for the current <em>run class</em>.</p>
+executing <code>jeka clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
+<p>Executing <code>jeka</code> or <code>jeka help</code> on command line displays all run methods and options for the current <em>run class</em>.</p>
 <p>The following chapters detail about how the mechanism works and what you can do with.</p>
-<a name="JerkarRuntime"></a>
-<h2>Jerkar Runtime</h2>
-<p>This chapter describes how to use Jerkar with command line and mostly what happens behind the cover when Jerkar is run.</p>
-<p>Jerkar is a pure Java application requiring JDK 8. JDK is required and JRE is not sufficient as Jerkar uses the JDK tools to compile <em>def classes</em>.</p>
-<p>Jerkar can be launched from both command line and your IDE.</p>
-<a name="JerkarfromCommandline"></a>
-<h3>Jerkar from Command line</h3>
-<p>To ease launching Java processes from command line, Jerkar provides shell scripts ( <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/META-INF/bin/jerkar.bat">jerkar.bat</a> for Windows
-and <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/META-INF/bin/jerkar">jerkar</a> for Unix ). They are located at root
-of <em>[JERKAR HOME]</em>. <em>[JERKAR HOME]</em> is supposed to be in your PATH environment variable.</p>
+<a name="JekaRuntime"></a>
+<h2>Jeka Runtime</h2>
+<p>This chapter describes how to use Jeka with command line and mostly what happens behind the cover when Jeka is run.</p>
+<p>Jeka is a pure Java application requiring JDK 8. JDK is required and JRE is not sufficient as Jeka uses the JDK tools to compile <em>def classes</em>.</p>
+<p>Jeka can be launched from both command line and your IDE.</p>
+<a name="JekafromCommandline"></a>
+<h3>Jeka from Command line</h3>
+<p>To ease launching Java processes from command line, Jeka provides shell scripts ( <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/META-INF/bin/jeka.bat">jeka.bat</a> for Windows
+and <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/META-INF/bin/jeka">jeka</a> for Unix ). They are located at root
+of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH environment variable.</p>
 <p>This script does the following :</p>
 <ol>
 <li>Find the <em>java</em> executable path : If a <code>JAVA_HOME</code> environment variable is defined then it takes the one lying in this JDK, otherwise it takes the one accessible in the <em>PATH</em> of your OS.</li>
-<li>Get java execution option : If an environment variable <code>JERKAR_OPTS</code> exists then its value is passed to the <code>java</code> command line parameters.</li>
+<li>Get java execution option : If an environment variable <code>JEKA_OPTS</code> exists then its value is passed to the <code>java</code> command line parameters.</li>
 <li>Get the classpath in the following order :
 <ul>
-<li>all jar and zip files found under <em>[WORKING DIR]/jerkar/boot</em></li>
-<li>the <em>[JERKAR_HOME]/org.jerkar.core.jar</em> file</li>
+<li>all jar and zip files found under <em>[WORKING DIR]/jeka/boot</em></li>
+<li>the <em>[JEKA_HOME]/dev.jeka.jeka-core.jar</em> file</li>
 </ul>
 </li>
-<li>Run the <em>java</em> process for launching <code>org.jerkar.tool.Main</code> class passing the command line argument as is. This class main method does the following :
+<li>Run the <em>java</em> process for launching <code>Main</code> class passing the command line argument as is. This class main method does the following :
 <ol>
 <li>Parse the command line.</li>
 <li>Populate system properties from configuration files and command line.</li>
@@ -676,17 +674,17 @@ of <em>[JERKAR HOME]</em>. <em>[JERKAR HOME]</em> is supposed to be in your PATH
 <p>The following sub-sections detail about these steps.</p>
 <a name="ParsetheCommandLine"></a>
 <h4>Parse the Command Line</h4>
-<p>Jerkar parses the command line and processes each arguments according the following pattern :</p>
+<p>Jeka parses the command line and processes each arguments according the following pattern :</p>
 <ul>
 <li>
 <p><strong>Argument starts with <code>@</code> :</strong> This is a library import clause : the text just next to, is added to the <em>run classpath</em>.
-For example <code>jerkar myMethod @org.jerkar:an-extra-plugin:3.3</code> augments the <em>run classpath</em> with the <em>an-extra-Plugin</em> jar.
-This is similar to annotate a <em>def class</em> with <code>@JkImport(&quot;org.jerkar:an-extra-plugin:3.3&quot;)</code>.
+For example <code>jeka myMethod @dev.jeka:an-extra-plugin:3.3</code> augments the <em>run classpath</em> with the <em>an-extra-Plugin</em> jar.
+This is similar to annotate a <em>def class</em> with <code>@JkImport(&quot;dev.jeka:an-extra-plugin:3.3&quot;)</code>.
 This is intended to modifiate behavior of <em>run class</em> by plugins dynamically.</p>
 </li>
 <li>
 <p><strong>Argument starts with <code>-</code> :</strong> This is an option declaration. The content following is is expected to be formatted as <em>optionName=optionValue</em>.
-For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.repo.milestone/' in the 'repo.run.url' Jerkar option.</p>
+For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.repo.milestone/' in the 'repo.run.url' Jeka option.</p>
 </li>
 <li>
 <p><strong>In other cases :</strong> argument is considered as a run method name to be invoked on the <em>run class</em> instance.</p>
@@ -694,75 +692,75 @@ For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.re
 </ul>
 <a name="PopulateSystemPropertiesfromConfigurationFilesandCommandline"></a>
 <h4>Populate System Properties from Configuration Files and Command line</h4>
-<p>Jerkar loads system properties in order from :</p>
+<p>Jeka loads system properties in order from :</p>
 <ul>
-<li><em>[JERKAR HOME]</em>/system.properties</li>
-<li><em>[JERKAR USER HOME]</em>/system.properties</li>
+<li><em>[JEKA HOME]</em>/system.properties</li>
+<li><em>[JEKA USER HOME]</em>/system.properties</li>
 <li>command line parsed above</li>
 </ul>
 <p>The last loaded properties override the previous ones if there is some conflicts.</p>
-<p>Jerkar follows a similar process to load options. It loads in order :</p>
+<p>Jeka follows a similar process to load options. It loads in order :</p>
 <ul>
-<li><em>[JERKAR HOME]</em>/options.properties</li>
-<li><em>[JERKAR USER HOME]</em>/options.properties</li>
+<li><em>[JEKA HOME]</em>/options.properties</li>
+<li><em>[JEKA USER HOME]</em>/options.properties</li>
 <li>command line parsed above</li>
 </ul>
 <p>The last loaded options override the previous ones if there is some conflicts.</p>
 <a name="Pre-process"></a>
 <h4>Pre-process <em>Def Class</em> Code (Import 3rd party library into <em>Run Classpath</em>)</h4>
-<p>In order to compile <em>def classes</em>, Jerkar has to compute <em>run classpath</em> first. With Jerkar you can specify run dependencies
+<p>In order to compile <em>def classes</em>, Jeka has to compute <em>run classpath</em> first. With Jeka you can specify run dependencies
 directly inside the source code using <code>@JkImport</code> or <code>@JkImportProject</code> annotations as shown below.</p>
 <pre><code class="language-Java">@JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
 @JkImport(&quot;com.google.guava:guava:18.0&quot;)
 @JkImport(&quot;../local/library/bin&quot;)
 public class HttpClientTaskRun extends JkRun {
 
-    @JkImportProject(&quot;../another/project/using/jerkar&quot;)
+    @JkImportProject(&quot;../another/project/using/jeka&quot;)
     private OtherRun otherRun;  // Run class from another project
     
     ...
 </code></pre>
-<p>To achieve this, Jerkar parses source code of <em>all</em> classes under <em>jerkar/def</em> and add the detected imports to the <em>run classpath</em>.
+<p>To achieve this, Jeka parses source code of <em>all</em> classes under <em>jeka/def</em> and add the detected imports to the <em>run classpath</em>.
 Note that classes having a name starting by a '_' are skipped.</p>
-<p>When a dependency is expressed as a maven/ivy module, Jerkar tries to resolve it using repository url defined by in order :</p>
+<p>When a dependency is expressed as a maven/ivy module, Jeka tries to resolve it using repository url defined by in order :</p>
 <ul>
 <li>If option <code>repo.runName</code> is present and option <code>repo.${repo.runName}.url</code> is present as well, it takes the value of this property.</li>
 <li>If no url is defined as such, it takes the value of <code>repo.run.url</code> option.</li>
 <li>If this option is not set, then it takes the value of <code>repo.download.url</code> option.</li>
 <li>If the latest is not present as well, it falls back to Maven Central.</li>
 </ul>
-<p>If a repository needs credentials, you need to supply it through Jerkar options <code>repo.[repo name].username</code> and <code>repo.[repo name].password</code>.</p>
+<p>If a repository needs credentials, you need to supply it through Jeka options <code>repo.[repo name].username</code> and <code>repo.[repo name].password</code>.</p>
 <p>Note that you can define several urls for a <code>repo.[repo name].url</code> by separating then with coma (as <code>repo.run.url=http://my.repo1, http://my.repo2.snapshot</code>).</p>
 <p>As with other repo, if the download repository is an Ivy repo, you must prefix url with <code>ivy:</code> so for example you'll get <code>repo.run.url=ivy:file://my.ivy/repo</code>.</p>
 <a name="CompileDefClasses(defclasses)"></a>
 <h4>Compile Def Classes (def classes)</h4>
-<p>Jerkar compiles def class files prior to execute it. Def class files are expected to be in <em>[PROJECT DIR]/jerkar/def</em>.
+<p>Jeka compiles def class files prior to execute it. Def class files are expected to be in <em>[PROJECT DIR]/jeka/def</em>.
 Classes having a name starting by a '_' are skipped.
 If this directory does not exist or does not contains java sources, the compilation is skipped.
 Compilation occurs upon the following classpath :</p>
 <ul>
-<li>Java libraries located in <em>[PROJECT DIR]/jerkar/boot</em>.</li>
-<li>org.jerkar.core.jar library</li>
+<li>Java libraries located in <em>[PROJECT DIR]/jeka/boot</em>.</li>
+<li>dev.jeka.jeka-core.jar library</li>
 <li>Classpath defined in run classes as explained above.</li>
 </ul>
-<p>It outputs class files in <em>[PROJECT DIR]/jerkar/output/def-classes</em> directory.</p>
-<p>Jerkar uses the compiler provided by the running JDK.</p>
+<p>It outputs class files in <em>[PROJECT DIR]/jeka/output/def-classes</em> directory.</p>
+<p>Jeka uses the compiler provided by the running JDK.</p>
 <a name="SelectRunClass"></a>
 <h4>Select Run Class</h4>
-<p>Once compiled, Jerkar augments the <em>run classpath</em> with classes compiled in previous step.
+<p>Once compiled, Jeka augments the <em>run classpath</em> with classes compiled in previous step.
 Then it selects one <em>run class</em> from <em>run classpath</em> and instantiate it.</p>
 <p>The selection logic is :</p>
 <ul>
-<li>If <code>-RunClass</code> option (shorthand <code>-RC</code>) is specified, then Jerkar selects a class having the same name or same
+<li>If <code>-RunClass</code> option (shorthand <code>-RC</code>) is specified, then Jeka selects a class having the same name or same
 short name among <em>run classes</em> present in <em>run classpath</em>.</li>
-<li>If this option is not set, Jerkar looks for a <em>run class</em> into <em>[PROJECT DIR]/jerkar/output/def-classes</em> .
+<li>If this option is not set, Jeka looks for a <em>run class</em> into <em>[PROJECT DIR]/jeka/output/def-classes</em> .
 It looks in alphabetic order first then sub-package (deep first).
 This means that class <code>MyRun</code> will be selected prior <code>apackage.ARun</code>, and <code>aa.bb.MyClass</code> will be selected prior <code>ab.OtherClass</code>.</li>
-<li>If no such class found, Jerkar selects the built-in <code>org.jerkar.tool.JkRun</code> class.</li>
+<li>If no such class found, Jeka selects the built-in <code>JkRun</code> class.</li>
 </ul>
 <a name="InstantiateRunClass"></a>
 <h4>Instantiate Run Class</h4>
-<p>The run instantiation process is defined in <code>ork.jerkar.tool.JkRun#of</code> factory method. It consists in :</p>
+<p>The run instantiation process is defined in <code>ork.jeka.tool.JkRun#of</code> factory method. It consists in :</p>
 <ol>
 <li>Creating a new <em>run class</em> instance (Invoking default constructor).</li>
 <li>Injecting defined options in public instance fields.</li>
@@ -773,27 +771,27 @@ This means that class <code>MyRun</code> will be selected prior <code>apackage.A
 </ol>
 <a name="InvokeCommandLineMethods"></a>
 <h4>Invoke Command Line Methods</h4>
-<p>Once <em>run class</em> instantiated, Jerkar invokes instance methods mentioned in command line as <code>jerkar myFistMethod mySecondMethod ...</code>.
+<p>Once <em>run class</em> instantiated, Jeka invokes instance methods mentioned in command line as <code>jeka myFistMethod mySecondMethod ...</code>.
 Methods are invoked in order they appear in command line regardless if method is defined on the <em>run class</em> itself or in a plugin.</p>
-<p>In order a method to be considered as a <em>run method</em> (invokable from Jerkar command line), it must :</p>
+<p>In order a method to be considered as a <em>run method</em> (invokable from Jeka command line), it must :</p>
 <ul>
 <li>Be public</li>
 <li>Be instance method (no static method)</li>
 <li>Accept no arguments</li>
 <li>Return void</li>
 </ul>
-<p>If Jerkar command line specifies no method, then <code>help</code> method is invoked.</p>
+<p>If Jeka command line specifies no method, then <code>help</code> method is invoked.</p>
 <a name="ErrorHandling"></a>
 <h4>Error Handling</h4>
-<p>If an exception is thrown during the execution, Jerkar displays full stack trace on the console except if
-this is a <code>org.jerkar.api.system.JkException</code>. In this case, only the message is displayed.</p>
-<a name="JerkarfromIDE"></a>
-<h3>Jerkar from IDE</h3>
+<p>If an exception is thrown during the execution, Jeka displays full stack trace on the console except if
+this is a <code>JkException</code>. In this case, only the message is displayed.</p>
+<a name="JekafromIDE"></a>
+<h3>Jeka from IDE</h3>
 <a name="IDEClasspathSetting"></a>
 <h4>IDE Classpath Setting</h4>
 <p>In order your IDE compiles and launches your <em>def classes</em>, you must ensure that project/module classpath contains :</p>
 <ul>
-<li><code>org.jerkar.core.jar</code> (found in Jerkar distrib)</li>
+<li><code>dev.jeka.jeka-core.jar</code> (found in Jeka distrib)</li>
 <li>libs and folders mentioned in <code>@JkImport</code> annotations of your <em>def classes</em>.</li>
 <li>project/modules mentioned in <code>@JkImportProject</code> annotations of your <em>def run classes</em>.</li>
 </ul>
@@ -802,7 +800,7 @@ this is a <code>org.jerkar.api.system.JkException</code>. In this case, only the
 <h4>Launch from IDE</h4>
 <p>If launched from the IDE, <em>def classes</em> are already compiled and the classpath already set by the IDE.
 This leads in a simpler and faster process.</p>
-<p>To launch Jerkar from your IDE, you can go two ways :</p>
+<p>To launch Jeka from your IDE, you can go two ways :</p>
 <p>One is to create a main method in one of your <em>def classes</em> as below and invoke it.</p>
 <pre><code class="language-Java">public static void main(String[] args) {
     JkInit.instanceOf(MyRun.class, args).doDefault();
@@ -810,44 +808,44 @@ This leads in a simpler and faster process.</p>
 </code></pre>
 <p>The <code>JkInit#instanceOf</code> method loads options from args and instantiates <em>run classes</em>. Then user can
 configure it using hard coding prior launching any method programmatically.</p>
-<p>The other way is to launch <code>org.jerkar.tool.Main</code> method from your IDE with same arguments as you would do with command line.</p>
+<p>The other way is to launch <code>Main</code> method from your IDE with same arguments as you would do with command line.</p>
 <a name="EmbeddedMode"></a>
 <h3>Embedded Mode</h3>
-<p>When launched from command line, <em><strong>[JERKAR_HOME]/org.jerkar.core.jar</strong></em> comes after <em><strong>[WORKING_DIR]/jerkar/boot/*</strong></em> in Jerkar classpath.
-This means that if a version of Jerkar (org.jerkar.core.jar) is in this directory, the run will be processed with
-this instance of Jerkar instead of the one located in in <em>[JERKAR HOME]</em>.</p>
-<p>This is called the <strong>Embedded</strong> mode. The Jerkar tool is embded within your project so the run does not depends
-of the presence and version of Jerkar installed in the host machine.</p>
+<p>When launched from command line, <em><strong>[JEKA_HOME]/dev.jeka.jeka-core.jar</strong></em> comes after <em><strong>[WORKING_DIR]/jeka/boot/*</strong></em> in Jeka classpath.
+This means that if a version of Jeka (dev.jeka.jeka-core.jar) is in this directory, the run will be processed with
+this instance of Jeka instead of the one located in in <em>[JEKA HOME]</em>.</p>
+<p>This is called the <strong>Embedded</strong> mode. The Jeka tool is embded within your project so the run does not depends
+of the presence and version of Jeka installed in the host machine.</p>
 <p>__Enable embedded mode : __</p>
 <p>To enable embedded mode :</p>
 <ol>
-<li>Copy <em>[JERKAR_HOME]/org.jerkar.core.jar</em> into <em>[PROJECT_DIR]/jerkar/boot/*</em> directory.</li>
-<li>Copy <em>[JERKAR_HOME]/jerkar.bat</em> and <em>[JERKAR_HOME]/jerkar</em> at the root of [PROJECT_DIR] (optional).</li>
+<li>Copy <em>[JEKA_HOME]/dev.jeka.jeka-core.jar</em> into <em>[PROJECT_DIR]/jeka/boot/*</em> directory.</li>
+<li>Copy <em>[JEKA_HOME]/jeka.bat</em> and <em>[JEKA_HOME]/jeka</em> at the root of [PROJECT_DIR] (optional).</li>
 </ol>
-<p>Jerkar is provided with a <em>scaffold</em> plugin that do it for you : just execute <code>jerkar scaffold#run -scaffold#embed</code>.</p>
+<p>Jeka is provided with a <em>scaffold</em> plugin that do it for you : just execute <code>jeka scaffold#run -scaffold#embed</code>.</p>
 <p><strong>Run in embedded mode : </strong></p>
 <p>You can go two ways :</p>
 <ul>
-<li>execute <code>jerkar myFunction ...</code> as you would do in regular mode. This works only if you have copied jerkar/jerkar.bat shell scripts into <em>[PROJECT DIR]</em></li>
-<li>or execute <code>java -cp jerkar/boot/* org.jerkar.tool.Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
+<li>execute <code>jeka myFunction ...</code> as you would do in regular mode. This works only if you have copied jeka/jeka.bat shell scripts into <em>[PROJECT DIR]</em></li>
+<li>or execute <code>java -cp jeka/boot/* Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
 </ul>
 <a name="Defaultpathsettings"></a>
 <h3>Default path settings</h3>
-<a name="SpecifyJerkarUserHome"></a>
-<h4>Specify Jerkar User Home</h4>
-<p>Jerkar uses user directory to store user-specific configuration and cache files, in this document we refer to this directory using [Jerkar User Home].
-By default the this directory is located at <em>[User Home]/.jerkar</em> (<em>[User Home]</em> being the path given by <code>System.getProperty(&quot;user.home&quot;);</code>.
-You can override this setting by defining the <code>JERKAR_USER_HOME</code> environment variable.
-You can get this location programmatically using <code>JkLocator.jerkarUserHome()</code> method.</p>
+<a name="SpecifyJekaUserHome"></a>
+<h4>Specify Jeka User Home</h4>
+<p>Jeka uses user directory to store user-specific configuration and cache files, in this document we refer to this directory using [Jeka User Home].
+By default the this directory is located at <em>[User Home]/.jeka</em> (<em>[User Home]</em> being the path given by <code>System.getProperty(&quot;user.home&quot;);</code>.
+You can override this setting by defining the <code>JEKA_USER_HOME</code> environment variable.
+You can get this location programmatically using <code>JkLocator.jekaUserHome()</code> method.</p>
 <a name="SpecifythelocalRepositoryCache"></a>
 <h4>Specify the local Repository Cache</h4>
-<p>Jerkar uses <a href="http://ant.apache.org/ivy/">Apache Ivy</a> under the hood to handle module dependencies. Ivy downloads and stores locally artifacts consumed by projects.
-By default the location is <em>[JERKAR USER HOME]/cache/repo</em> but you can redefine it by defining the <code>JERKAR_REPO</code> environment variable.
-You can get this location programmatically using <code>JkLocator.jerkarRepositoryCache()</code> method.</p>
+<p>Jeka uses <a href="http://ant.apache.org/ivy/">Apache Ivy</a> under the hood to handle module dependencies. Ivy downloads and stores locally artifacts consumed by projects.
+By default the location is <em>[JEKA USER HOME]/cache/repo</em> but you can redefine it by defining the <code>JEKA_REPO</code> environment variable.
+You can get this location programmatically using <code>JkLocator.jekaRepositoryCache()</code> method.</p>
 <a name="SeeEffectivePaths"></a>
 <h4>See Effective Paths</h4>
-<p>The Jerkar displays the effective path at the very start of the process if launched with <code>-LogHeaders=true</code> option :</p>
-<p>For example, <code>jerkar help -LogHeaders</code> will output :</p>
+<p>The Jeka displays the effective path at the very start of the process if launched with <code>-LogHeaders=true</code> option :</p>
+<p>For example, <code>jeka help -LogHeaders</code> will output :</p>
 <pre><code> _______           _                 
 (_______)         | |                
      _ _____  ____| |  _ _____  ____ 
@@ -856,23 +854,23 @@ You can get this location programmatically using <code>JkLocator.jerkarRepositor
  \___/|_____)_|   |_| \_)_____|_|
                                      The 100% Java build tool.
 
-Working Directory : C:\Users\me\IdeaProjects\playground\jerkar-sample
+Working Directory : C:\Users\me\IdeaProjects\playground\jeka-sample
 Java Home : C:\Program Files (x86)\Java\jdk1.8.0_121\jre
 Java Version : 1.8.0_121, Oracle Corporation
-Jerkar Version : Xxxxx
-Jerkar Home : C:\Users\me\IdeaProjects\jerkar\org.jerkar.core\jerkar\output\distrib
-Jerkar User Home : C:\Users\angibaudj\.jerkar
-Jerkar Repository Cache : C:\Users\me\.jerkar\cache\repo
+Jeka Version : Xxxxx
+Jeka Home : C:\Users\me\IdeaProjects\jeka\dev.jeka.core\jeka\output\distrib
+Jeka User Home : C:\Users\angibaudj\.jeka
+Jeka Repository Cache : C:\Users\me\.jeka\cache\repo
 
 ...
 </code></pre>
 <a name="RunParameters"></a>
 <h2>Run Parameters</h2>
-<p>Jerkar runs are parameterizable. One can retrieve values defined at runtime by reading :</p>
+<p>Jeka runs are parameterizable. One can retrieve values defined at runtime by reading :</p>
 <ul>
 <li>environment variables</li>
 <li>system properties</li>
-<li>Jerkar options</li>
+<li>Jeka options</li>
 </ul>
 <a name="EnvironmentVariables"></a>
 <h3>Environment Variables</h3>
@@ -881,27 +879,27 @@ with <code>@JkEnv</code>. <em>JkOption</em> mechanism takes precedence on enviro
 <a name="SystemProperties"></a>
 <h3>System Properties</h3>
 <p>As for environment variables, one can read system properties using the standard <code>System#getProperty</code> method.</p>
-<p>Jerkar proposes 3 ways of injecting system properties. They are considered in following order :</p>
+<p>Jeka proposes 3 ways of injecting system properties. They are considered in following order :</p>
 <ul>
-<li>Properties mentioned in Jerkar command line as <code>Jerkar doDefault -DmyProperty=myValue</code>.</li>
-<li>Properties mentioned in <em>[Jerkar User Home]/system.properties</em> file.</li>
-<li>Properties mentioned in <em>[Jerkar Home]/system.properties</em> file.
-Note that if you are running Jerkar in embedded mode, the <em>[Jerkar Home]/system.properties</em> file will not be taken in account but <em>[project dir]/jerkar/boot/system.properties</em>.</li>
+<li>Properties mentioned in Jeka command line as <code>Jeka doDefault -DmyProperty=myValue</code>.</li>
+<li>Properties mentioned in <em>[Jeka User Home]/system.properties</em> file.</li>
+<li>Properties mentioned in <em>[Jeka Home]/system.properties</em> file.
+Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/system.properties</em> file will not be taken in account but <em>[project dir]/jeka/boot/system.properties</em>.</li>
 </ul>
 <p>In every case, defined system properties are injected after the creation of the java process (via <code>System#setProperty</code> method).</p>
-<a name="JerkarOptions"></a>
-<h3>Jerkar Options</h3>
-<p>Jerkar options are similar to system properties as it stands for a set of key/value.</p>
+<a name="JekaOptions"></a>
+<h3>Jeka Options</h3>
+<p>Jeka options are similar to system properties as it stands for a set of key/value.</p>
 <p>Options are globally available in all run classes but can be retrieve in a static typed way (injected in <em>run class</em> fields)
 or as set of key/string value.</p>
 <a name="InjectOptions"></a>
 <h4>Inject Options</h4>
-<p>Jerkar proposes 3 ways to inject options. They are considered in following order :</p>
+<p>Jeka proposes 3 ways to inject options. They are considered in following order :</p>
 <ul>
-<li>Options mentioned in Jerkar command line as <code>Jerkar doDefault -myOption=myValue</code>.</li>
-<li>Options mentioned in <em>[Jerkar User Home]/options.properties</em> file.</li>
-<li>Options mentioned in <em>[Jerkar Home]/options.properties</em> file.
-Note that if you are running Jerkar in embedded mode, the <em>[Jerkar Home]/options.properties</em> file will not be taken in account but <em>[project dir]/jerkar/boot/options.properties</em>.</li>
+<li>Options mentioned in Jeka command line as <code>Jeka doDefault -myOption=myValue</code>.</li>
+<li>Options mentioned in <em>[Jeka User Home]/options.properties</em> file.</li>
+<li>Options mentioned in <em>[Jeka Home]/options.properties</em> file.
+Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/options.properties</em> file will not be taken in account but <em>[project dir]/jeka/boot/options.properties</em>.</li>
 </ul>
 <p>Note for boolean options, when no value is specified, <code>true</code> will be used as default.</p>
 <a name="RetrieveOptionsasStringValues"></a>
@@ -918,11 +916,11 @@ All public non-final instance fields of the invoked <em>run class</em>, are like
    ...
 }
 </code></pre>
-<p>Then you can override the value by mentioning in command line <code>jerkar doSomething -size=5</code>.</p>
+<p>Then you can override the value by mentioning in command line <code>jeka doSomething -size=5</code>.</p>
 <p>Note that the injected string value will be automatically converted to the target type.</p>
 <p>Handled types are : <em>String</em>, <em>all primitive types (and their wrappers)</em>, <em>enum</em>, <em>File</em> and <em>composite object</em>.
 If the value is not parsable to the target type, run fails.</p>
-<p>To get a precise idea on how types are converted see <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/org/jerkar/tool/OptionInjector.java">this code</a>.</p>
+<p>To get a precise idea on how types are converted see <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/OptionInjector.java">this code</a>.</p>
 <a name="Compositeoptions"></a>
 <h4>Composite options</h4>
 <p>Composite options are a way to structure your options. Say that you want to configure some server access with url, userName and passwsord.
@@ -947,14 +945,14 @@ deployServer.password=myPassword
 </code></pre>
 <a name="DocumentOptions"></a>
 <h4>Document Options</h4>
-<p>If you want your option been displayed when invoking <code>jerkar help</code> you need to annotate it with <code>@JkDoc</code>.</p>
+<p>If you want your option been displayed when invoking <code>jeka help</code> you need to annotate it with <code>@JkDoc</code>.</p>
 <p>For example :</p>
 <pre><code>@JkDoc(&quot;Make the test run in a forked process&quot;)
 public boolean forkTests = false;
 </code></pre>
 <a name="Built-inOptions"></a>
 <h4>Built-in Options</h4>
-<p>Jerkar defines some built-in options that are used by the engine itself. Unlike regular options, they respect an UpperCamelCase naming
+<p>Jeka defines some built-in options that are used by the engine itself. Unlike regular options, they respect an UpperCamelCase naming
 convention :</p>
 <ul>
 <li>-LogVerbose (shorthand -LV) : if true, logs will display 'trace' level logs.</li>
@@ -964,7 +962,7 @@ convention :</p>
 </ul>
 <a name="Plugins"></a>
 <h2>Plugins</h2>
-<p>Jerkar provides a plugable architecture. In Jerkar, a plugin is a class extending <code>org.jerkar.tool.JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
+<p>Jeka provides a plugable architecture. In Jeka, a plugin is a class extending <code>JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
 The plugin name is inferred from Plugin class name.</p>
 <p>Each plugin instance is owned by a JkRun object, and can access to it through <code>JkPlugin#run</code> protected field.</p>
 <p>Plugins has 3 capabilities :</p>
@@ -973,18 +971,18 @@ The plugin name is inferred from Plugin class name.</p>
 <li>Expose <em>run methods</em> and <em>options</em> to command line.</li>
 <li>Provide self documentation.</li>
 </ul>
-<p>Jerkar is bundled with a bunch plugins (java, scaffold, eclipse, intellij, ...) but one can add extra plugins just
+<p>Jeka is bundled with a bunch plugins (java, scaffold, eclipse, intellij, ...) but one can add extra plugins just
 by adding the jar or directory containing the plugin class to your <em>run classpath</em>.</p>
-<p>To see all available plugins in the <em>run classpath</em>, just execute <code>jerkar help</code>.
+<p>To see all available plugins in the <em>run classpath</em>, just execute <code>jeka help</code>.
 See <a href="#CommandLineParsing">Command Line Parsing</a> and <a href="#RunClassPre-processing(Import3rdpartylibraryintoRunClasspath)">Run Class Pre-processing</a>
 to augment <em>run_classpath</em> .</p>
 <a name="LoadPlugins"></a>
 <h3>Load Plugins</h3>
 <p>Plugins need not to be mentioned in <em>run class</em> code in order to be bound to the JkRun instance. Just the fact to
 mention a plugin <em>run method</em>, <em>options</em> or <em>[pluginName]#</em> in the command line will load the plugin.</p>
-<p>For example <code>jerkar scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkRun instance.
+<p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkRun instance.
 'java' plugin instance will modify 'scaffold' plugin instance in such it produces a run class code extending <code>JkJavaProjectBuild</code>
-instead of 'JkRun' when 'scaffold#run' command is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/org/jerkar/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
+instead of 'JkRun' when 'scaffold#run' command is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
 to have a concrete view.</p>
 <p>You can also force a plugin to load in your <em>run class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
 <pre><code class="language-Java">public class MyBuild extends JkRun {
@@ -1001,10 +999,10 @@ to have a concrete view.</p>
 <p>JkRun instances are created using <code>JkRun#of</code> factory method. This method invoke <code>JkPlugin#active</code> method on all plugin loaded in the JkRun instance.
 By default, this method does nothing but plugin implementations can override it in order to let the plugin modify its owning JkRun or owe of its plugins.</p>
 <p>In fact, many plugins act just as modifier/enhancer of other plugins.</p>
-<p>For example, <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/org/jerkar/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
+<p>For example, <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
 does not provide <em>run method</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
 It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>
-<p>Some other plugins does not modify their owning JkRun instance, for example <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/org/jerkar/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
+<p>Some other plugins does not modify their owning JkRun instance, for example <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
 does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkRun</code> instance. It only features <em>run methods</em>  along <em>options</em>.</p>
 <a name="ConfigurePluginsinJkRunClass"></a>
 <h3>Configure Plugins in JkRun Class</h3>
@@ -1024,13 +1022,13 @@ some values plugins may have set, override this method.</li>
         ...
     }
 </code></pre>
-<p><a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/jerkar/def/org/jerkar/CoreBuild.java">Jerkar own build class</a> makes a good example.</p>
+<p><a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/jeka/def/org/jeka/CoreBuild.java">Jeka own build class</a> makes a good example.</p>
 <a name="DocumentPlugins"></a>
 <h3>Document Plugins</h3>
 <p>Plugin writers can embed self-documentation using <code>@JkDoc</code> annotation on classes, run methods and public fields.</p>
 <p>Writers can also mention that the plugin has dependencies on other plugins using <code>@JkDocPluginDeps</code> annotation. This annotation
 has only a documentation purpose and does not has influence on plugin loading mechanism.</p>
-<p>A good example is <a href="https://github.com/jerkar/jerkar/blob/master/org.jerkar.core/src/main/java/org/jerkar/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
+<p>A good example is <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
 <a name="ImportExternalRuns"></a>
 <h2>Import External Runs</h2>
 <p>There is many way to perform multi-project build. One of is to import runs from external projects.</p>
@@ -1056,12 +1054,12 @@ last will be also imported.</p>
 <a name="OptionPropagation"></a>
 <h3>Option Propagation</h3>
 <p>Options mentioned in command line are propagated to the imported runs.</p>
-<p>So for example you execute <code>jerkar java#pack -java#tests.fork</code>, test will be forked for the main run and all imported ones.</p>
+<p>So for example you execute <code>jeka java#pack -java#tests.fork</code>, test will be forked for the main run and all imported ones.</p>
 <a name="Methodpropagation"></a>
 <h3>Method propagation</h3>
-<p>Methods mentioned in the command line are not automatically propagated to imported runs. Executing <code>jerkar clean</code> will
+<p>Methods mentioned in the command line are not automatically propagated to imported runs. Executing <code>jeka clean</code> will
 only clean the current run project.</p>
-<p>To propagate method call to every imported runs, method name should be prefixed with a '*'. Executing <code>jerkar clean*</code> will
+<p>To propagate method call to every imported runs, method name should be prefixed with a '*'. Executing <code>jeka clean*</code> will
 invoke 'clean' method on the current <em>run class</em> along along all imported run classes.</p>
 <a name="AccessImportedRunsProgrammatically"></a>
 <h3>Access Imported Runs Programmatically</h3>
@@ -1079,10 +1077,10 @@ invoke 'clean' method on the current <em>run class</em> along along all imported
 <a name="SelfDocumentation"></a>
 <h2>Self Documentation</h2>
 <p><em>Run classes</em> and plugins can provide self documentation.</p>
-<p>When properly auto-documented, users can display documentation by executing <code>jerkar help</code>.</p>
+<p>When properly auto-documented, users can display documentation by executing <code>jeka help</code>.</p>
 <p>The displayed documentation consist in :</p>
 <ul>
-<li>The Jerkar Built-in option</li>
+<li>The Jeka Built-in option</li>
 <li>A general description of the run class (its purpose). This information is provided by using <code>@JkDoc</code> annotation at class level.</li>
 <li>A description of each <em>run method</em>. The description is provided by using <code>@JkDoc</code>.</li>
 <li>A description of accept options, with its type and default value. The description is provided by using <code>@JkDoc</code> annotation on public fields.</li>
@@ -1090,11 +1088,11 @@ invoke 'clean' method on the current <em>run class</em> along along all imported
 </ul>
 <p>If <em>run class</em> or plugin declares a public instance field without <code>@JkDoc</code> annotation, then it will be displayed in help screen but mentioning that there is no description available.</p>
 <p>If <em>run class</em> or plugin declares a <em>run method</em> without <code>@JkDoc</code>, it will be also displayed in help screen but mentioning that there is no description available.</p>
-<p>This is the display screen for the build class of Jerkar itsef :</p>
-<pre><code>Usage: jerkar [methodA...] [pluginName#methodB...] [-optionName=value...] [-pluginName#optionName=value...] [-DsystemPropName=value...]
+<p>This is the display screen for the build class of Jeka itsef :</p>
+<pre><code>Usage: jeka [methodA...] [pluginName#methodB...] [-optionName=value...] [-pluginName#optionName=value...] [-DsystemPropName=value...]
 Execute the specified methods defined in run class or plugins using the specified options and system properties.
 When no method specified, 'doDefault' method is invoked.
-Ex: jerkar clean java#pack -java#pack.sources=true -LogVerbose -other=xxx -DmyProp=Xxxx
+Ex: jeka clean java#pack -java#pack.sources=true -LogVerbose -other=xxx -DmyProp=Xxxx
 
 Built-in options (these options are not specific to a plugin or a build class) :
   -LogVerbose (shorthand -LV) : if true, logs will display 'trace' level logs.
@@ -1104,21 +1102,21 @@ Built-in options (these options are not specific to a plugin or a build class) :
 
 Available methods and options :
 
-From class org.jerkar.CoreBuild :
+From class CoreBuild :
   Methods :
     doDefault : Conventional method standing for the default operations to perform.
   Options :
     -testSamples (boolean, default : false) : If true, executes black-box tests on sample projects prior ending the distrib.
 
-From class org.jerkar.tool.JkRun :
+From class JkRun :
   Methods :
     clean : Cleans the output directory.
     help : Displays all available methods defined in this build.
 
 Available plugins in classpath : eclipse, eclipsePath, intellij, jacoco, java, pgp, pom, repo, scaffold, sonar.
 
-Type 'jerkar [pluginName]#help' to get help on a perticular plugin (ex : 'jerkar java#help').
-Type 'jerkar help -Plugins' to get help on all available plugins in the classpath.
+Type 'jeka [pluginName]#help' to get help on a perticular plugin (ex : 'jeka java#help').
+Type 'jeka help -Plugins' to get help on all available plugins in the classpath.
 
 </code></pre>
 </body>
