@@ -20,15 +20,15 @@
 <div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
 <br />
 <a href="#General" class="menuItem1">General</a><br />
-<a href="#Canrunclassesandcodetobuildbehostedinseparateprojects?" class="menuItem3">Can run classes and code to build be hosted in separate projects ?</a><br />
-<a href="#MyrunclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?" class="menuItem3">My run class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</a><br />
+<a href="#Cancommandclassesandcodetobuildbehostedinseparateprojects?" class="menuItem3">Can command classes and code to build be hosted in separate projects ?</a><br />
+<a href="#MycommandclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?" class="menuItem3">My command class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</a><br />
 <a href="#Compilation" class="menuItem1">Compilation</a><br />
 <a href="#HowcanIchoosetheJDKusedtocompile?" class="menuItem3">How can I choose the JDK used to compile ?</a><br />
 <a href="#HowcanIuseEclipsecompilerinJeka?" class="menuItem3">How can I use Eclipse compiler in Jeka ?</a><a name="General"></a>
 <h1>General</h1>
-<a name="Canrunclassesandcodetobuildbehostedinseparateprojects?"></a>
-<h3>Can run classes and code to build be hosted in separate projects ?</h3>
-<p>Of course yes. If you prefer that your Jeka run code lies in a distinct project, create a Jeka project in a sibling
+<a name="Cancommandclassesandcodetobuildbehostedinseparateprojects?"></a>
+<h3>Can command classes and code to build be hosted in separate projects ?</h3>
+<p>Of course yes. If you prefer that your Jeka code lies in a distinct project, create a Jeka project in a sibling
 folder and mention where is located the project to build.</p>
 <pre><code class="language-java">...
 @Override
@@ -37,10 +37,10 @@ protected void setup() {  // project to build lies in a sibling folder.
       project().setSourceLayout(JkProjectSourceLayout.ofMavenStyle().withBaseDir(projectPath));
       ...
 </code></pre>
-<a name="MyrunclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?"></a>
-<h3>My run class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</h3>
-<p>You can specify a built-in run class to run. This way, compilation won't occur.
-For example <code>jeka -RunClass=JkRun help</code> or <code>jeka -RC=JkRun scaffold#run java#&quot;</code>.</p>
+<a name="MycommandclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?"></a>
+<h3>My command class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</h3>
+<p>You can specify a built-in command class to run. This way, compilation won't occur.
+For example <code>jeka -CommandClass=JkCommandshelp</code> or <code>jeka -CC=JkCommands scaffold#run java#&quot;</code>.</p>
 <a name="Compilation"></a>
 <h1>Compilation</h1>
 <a name="HowcanIchoosetheJDKusedtocompile?"></a>
@@ -60,7 +60,7 @@ jdk.9=/software/jdk9
 <pre><code class="language-java">import org.eclipse.jdt.internal.compiler.tool.EclipseCompiler;
 
 @JkImport(&quot;org.eclipse.jdt.core.compiler:ecj:4.6.1&quot;)
-public class Build extends JkRun {
+public class Build extends JkCommands{
     ...
     maker().setCompiler(JkJavaCompiler.of(new EclipseCompiler()));
     ...

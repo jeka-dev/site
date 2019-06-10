@@ -194,7 +194,7 @@ extends java.lang.Object</pre>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getRunDependencies--">getRunDependencies</a></span>()</code>
-<div class="block">Dependencies necessary to compile the this run class.</div>
+<div class="block">Dependencies necessary to compile the this command class.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -212,7 +212,7 @@ extends java.lang.Object</pre>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>static &lt;T extends <a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&gt;<br>T</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#of-java.lang.Class-">of</a></span>(java.lang.Class&lt;T&gt;&nbsp;runClass)</code>
-<div class="block">Creates a instance of the specified run class (extending JkCommands), including option injection, plugin loading
+<div class="block">Creates a instance of the specified command class (extending JkCommands), including option injection, plugin loading
  and plugin activation.</div>
 </td>
 </tr>
@@ -281,7 +281,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>of</h4>
 <pre>public static&nbsp;&lt;T extends <a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&gt;&nbsp;T&nbsp;of(java.lang.Class&lt;T&gt;&nbsp;runClass)</pre>
-<div class="block">Creates a instance of the specified run class (extending JkCommands), including option injection, plugin loading
+<div class="block">Creates a instance of the specified command class (extending JkCommands), including option injection, plugin loading
  and plugin activation.</div>
 </li>
 </ul>
@@ -377,7 +377,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getRunDependencies</h4>
 <pre>public final&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getRunDependencies()</pre>
-<div class="block">Dependencies necessary to compile the this run class. It is not the dependencies for building the project.</div>
+<div class="block">Dependencies necessary to compile the this command class. It is not the dependencies for building the project.</div>
 </li>
 </ul>
 <a name="getImportedRuns--">

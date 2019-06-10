@@ -88,8 +88,8 @@ Command Line : -LH help
 Specified System Properties : none.
 Standard Options : RunClass=null, LogVerbose=false, LogHeaders=true, LogMaxLength=230
 Options :   LH=null  LML=230  jdk.9=C:/Program Files (x86)/Java/jdk9.0.1 jdk.10=C:/Program Files (x86)/Java/jdk10.0.2  repo.download.url=https://repo.maven.apache.org/maven2/
-Compile and initialise run classes ...
-│ Initializing class JkRun at C:\Users\djeang\IdeaProjects\jeka ...
+Compile and initialise command classes ...
+│ Initializing class JkCommandsat C:\Users\djeang\IdeaProjects\jeka ...
 │ │ Run instance initialized with options []
 │ └ Done in 57 milliseconds.
 └ Done in 336 milliseconds.
@@ -98,7 +98,7 @@ Method : help on JkRun
 Usage:
 jeka (method | pluginName#method) [-optionName=&lt;value&gt;] [-pluginName#optionName=&lt;value&gt;] [-DsystemPropName=value]
 
-Execute the specified methods defined in run class or plugins using the specified options and system properties.
+Execute the specified methods defined in command class or plugins using the specified options and system properties.
 Ex: jeka clean java#pack -java#pack.sources=true -LogVerbose -other=xxx -DmyProp=Xxxx
 ...
 
@@ -166,7 +166,7 @@ This will generate a project skeleton as follow :</li>
 <pre><code class="language-java">import JkRun;
 import JkInit;
 
-class Build extends JkRun {
+class Build extends JkCommands{
 
     public static void main(String[] args) throws Exception {
         Build build = JkInit.instanceOf(Build.class, args);
@@ -185,7 +185,7 @@ import JkInit;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-class Build extends JkRun {
+class Build extends JkCommands{
 
     public void displayGoogle() throws MalformedURLException {
         String content = JkUtilsIO.read(new URL(&quot;https://www.google.com/&quot;));
@@ -206,10 +206,10 @@ From class Build :
   Methods :
     displayGoogle : No description available.
 
-From class JkRun :
+From class JkCommands:
   Methods :
-    clean : Cleans the output directory except the compiled run classes.
-    help : Displays all available methods and options defined for this run class.
+    clean : Cleans the output directory except the compiled command classes.
+    help : Displays all available methods and options defined for this command class.
 ...
 </code></pre>
 <p>Any public instance method with no-args and returning <code>void</code> fits to be a run method. You can call several run methods in a single row.</p>
@@ -232,7 +232,7 @@ public void displayGoogle() throws MalformedURLException {
 <h2>Add an option (parameter)</h2>
 <p>May you like to see Google page source but you probably want to apply this method to any other url.</p>
 <p>To make it parametrizable, just declare the url in a public field so its value can be injected from command line.</p>
-<pre><code class="language-java">class Build extends JkRun {
+<pre><code class="language-java">class Build extends JkCommands{
 
     @JkDoc(&quot;The url to display content.&quot;)   // Optional self documentation
     public String url = &quot;https://www.google.com/&quot;;
@@ -267,7 +267,7 @@ From class Build :
 </ol>
 <pre><code class="language-java">@JkImport(&quot;org.apache.httpcomponents:httpclient:jar:4.5.8&quot;)  // Can import files from Maven repos
 @JkImport(&quot;../local_libs/my-utility.jar&quot;)   // or simply located locally
-class Build extends JkRun {
+class Build extends JkCommands{
    ...
 }
 </code></pre>
@@ -294,12 +294,12 @@ public void post() {
 <ol>
 <li>Execute <code>mkdir sample2</code> then <code>cd sample2</code> followed by <code>jeka scaffold#run intellij#</code> (or <code>jeka scaffold#run eclipse#</code>)</li>
 <li>Rename sample2 <em>Build</em> class 'Sample2Build` to avoid name collision. Be carefull, rename its filename as well unless Jeka will fail.</li>
-<li>Add a field of type JkRun annotated with <code>JkImportProject</code> and the relative path of <em>sample1</em> as value.</li>
+<li>Add a field of type JkCommandsannotated with <code>JkImportProject</code> and the relative path of <em>sample1</em> as value.</li>
 </ol>
-<pre><code class="language-java">class Sample2Build extends JkRun {
+<pre><code class="language-java">class Sample2Build extends JkCommands{
 
     @JkImportProject(&quot;../sample1&quot;)
-    private JkRun project1Run;
+    private JkCommandsproject1Run;
 
     public void hello() throws MalformedURLException {
         System.out.println(&quot;Hello World&quot;);
@@ -315,7 +315,7 @@ public void post() {
 <p>Replace <em>JkRun</em> Type by the <em>Build</em> type from <em>sample1</em> and use it in method implementation.</p>
 </li>
 </ol>
-<pre><code class="language-java">class Sample2Build extends JkRun {
+<pre><code class="language-java">class Sample2Build extends JkCommands{
 
     @JkImportProject(&quot;../sample1&quot;)
     private Build project1Run;  // This Build come from sample1
@@ -396,12 +396,12 @@ import JkPluginJava;
 
 import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
 
-class Build extends JkRun {
+class Build extends JkCommands{
 
     final JkPluginJava javaPlugin = getPlugin(JkPluginJava.class);
 
     /*
-     * Configures plugins to be bound to this run class. When this method is called, option
+     * Configures plugins to be bound to this command class. When this method is called, option
      * fields have already been injected from command line.
      */
     @Override
