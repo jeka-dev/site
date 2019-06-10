@@ -55,13 +55,17 @@ For now, Jeka only runs with JDK8 (though it can build Java project of any Java 
 <li>execute <code>jeka help</code> in the command line. You should get an output starting by :</li>
 </ol>
 <pre><code>Usage:
-jeka (method | pluginName#method) [-optionName=&lt;value&gt;] [-pluginName#optionName=&lt;value&gt;] [-DsystemPropName=value]
 
-Execute the specified methods defined in run class or plugins using the specified options and system properties.
+jeka (method | pluginName#method) [-optionName=&lt;value&gt;] [-pluginName#optionName=&lt;value&gt;] [-DsystemPropertyName=value]
+
+Executes the specified methods defined in command class or plugins using the specified options and system properties.
+
 Ex: jeka clean java#pack -java#pack.sources=true -LogVerbose -other=xxx -DmyProp=Xxxx
 ...
 </code></pre>
-<p><strong>Tips:</strong> You can display Jeka metadata information by adding <code>-LH</code> (or <code>-LogHeaders</code>) to the command line. You should get the following output.</p>
+<div class="alert alert-primary" role="alert">
+You can display Jeka metadata information by adding `-LH` (or `-LogHeaders`) to the command line. You should get the following output.
+</div>
 <pre><code> _______           _
 (_______)         | |
      _ _____  ____| |  _ _____  ____
