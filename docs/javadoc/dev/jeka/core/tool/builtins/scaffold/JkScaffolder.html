@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -116,25 +116,6 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- =========== FIELD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Field and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#extraActions">extraActions</a></span></code>&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -149,17 +130,27 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#embed--">embed</a></span>()</code>
+<div class="block">Copies script an Jeka jar inside the project in order to be executable in embedded mode.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#getExtraActions--">getExtraActions</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#run--">run</a></span>()</code>
 <div class="block">Runs the scaffolding.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setEmbbed-boolean-">setEmbbed</a></span>(boolean&nbsp;embed)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setClassFilename-java.lang.String-">setClassFilename</a></span>(java.lang.String&nbsp;classFilename)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setRunClassCode-java.lang.String-">setRunClassCode</a></span>(java.lang.String&nbsp;code)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setCommandClassCode-java.lang.String-">setCommandClassCode</a></span>(java.lang.String&nbsp;code)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -177,38 +168,12 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a name="extraActions">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>extraActions</h4>
-<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a> extraActions</pre>
-</li>
-</ul>
-</li>
-</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="setEmbbed-boolean-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setEmbbed</h4>
-<pre>public&nbsp;void&nbsp;setEmbbed(boolean&nbsp;embed)</pre>
-</li>
-</ul>
 <a name="run--">
 <!--   -->
 </a>
@@ -219,13 +184,41 @@ extends java.lang.Object</pre>
 <div class="block">Runs the scaffolding.</div>
 </li>
 </ul>
-<a name="setRunClassCode-java.lang.String-">
+<a name="embed--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>embed</h4>
+<pre>public&nbsp;void&nbsp;embed()</pre>
+<div class="block">Copies script an Jeka jar inside the project in order to be executable in embedded mode.</div>
+</li>
+</ul>
+<a name="setCommandClassCode-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCommandClassCode</h4>
+<pre>public&nbsp;void&nbsp;setCommandClassCode(java.lang.String&nbsp;code)</pre>
+</li>
+</ul>
+<a name="setClassFilename-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setClassFilename</h4>
+<pre>public&nbsp;void&nbsp;setClassFilename(java.lang.String&nbsp;classFilename)</pre>
+</li>
+</ul>
+<a name="getExtraActions--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>setRunClassCode</h4>
-<pre>public&nbsp;void&nbsp;setRunClassCode(java.lang.String&nbsp;code)</pre>
+<h4>getExtraActions</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getExtraActions()</pre>
 </li>
 </ul>
 </li>
@@ -281,13 +274,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

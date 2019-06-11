@@ -133,8 +133,6 @@
 <dd>
 <div class="block">Same as <a href="dev/jeka/core/api/java/JkUrlClassLoader.html#addEntries-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-"><code>JkUrlClassLoader.addEntries(Path, Path, Path...)</code></a>.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#addExtraAction-java.lang.Runnable-">addExtraAction(Runnable)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#addJavadocArtifact--">addJavadocArtifact()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#addMainAttribute-java.util.jar.Attributes.Name-java.lang.String-">addMainAttribute(Attributes.Name, String)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
@@ -1045,8 +1043,12 @@
 <div class="block">Returns the specified string truncated and ending with <i>...</i> if the specified
  string is longer than the specified max length.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#embed">embed</a></span> - Variable in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#embed--">embed()</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#embed--">embed()</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
+<dd>
+<div class="block">Copies script an Jeka jar inside the project in order to be executable in embedded mode.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/jacoco/JkocoJunitEnhancer.html#enabled-boolean-">enabled(boolean)</a></span> - Method in class dev.jeka.core.tool.builtins.jacoco.<a href="dev/jeka/core/tool/builtins/jacoco/JkocoJunitEnhancer.html" title="class in dev.jeka.core.tool.builtins.jacoco">JkocoJunitEnhancer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html#enabled-boolean-">enabled(boolean)</a></span> - Method in class dev.jeka.core.tool.builtins.sonar.<a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkSonar</a></dt>
@@ -1136,8 +1138,6 @@
 <div class="block">Returns <code>true</code> if the root directory exists.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#externalDir">externalDir</a></span> - Variable in class dev.jeka.core.tool.builtins.intellij.<a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#extraActions">extraActions</a></span> - Variable in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="I:F">
@@ -1271,7 +1271,7 @@
 <dd>
 <div class="block">Returns the plugin instance of the specified name loaded in the holding JkCommands instance.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getAll--">getAll()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getAll--">getAll()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
 <dd>
 <div class="block">Returns direct and transitive importedRuns.</div>
 </dd>
@@ -1297,9 +1297,9 @@
 <div class="block">Returns all fields declared in the class passed as argument or andAccept its
  super classes.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getAllOf-java.lang.Class-">getAllOf(Class&lt;T&gt;)</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getAllOf-java.lang.Class-">getAllOf(Class&lt;T&gt;)</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
 <dd>
-<div class="block">Same as <a href="dev/jeka/core/tool/JkImportedRuns.html#getAll--"><code>JkImportedRuns.getAll()</code></a> but only returns run instance of the specified class or its subclasses.</div>
+<div class="block">Same as <a href="dev/jeka/core/tool/JkImportedCommands.html#getAll--"><code>JkImportedCommands.getAll()</code></a> but only returns run instance of the specified class or its subclasses.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkOptions.html#getAllStartingWith-java.lang.String-">getAllStartingWith(String)</a></span> - Static method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkOptions.html" title="class in dev.jeka.core.tool">JkOptions</a></dt>
 <dd>
@@ -1472,6 +1472,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html#getDeclaredVersion--">getDeclaredVersion()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkModuleNodeInfo</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getDefDependencies--">getDefDependencies()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
+<dd>
+<div class="block">Dependencies necessary to compile the this command class.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkClassLoader.html#getDelegate--">getDelegate()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java">JkClassLoader</a></dt>
 <dd>
 <div class="block">Return the <code>URLClassLoader</code> wrapped by this object.</div>
@@ -1521,7 +1525,7 @@
 <div class="block">Returns the classpath of this classloader without mentioning classpath of
  the parent classloaders.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getDirects--">getDirects()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getDirects--">getDirects()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
 <dd>
 <div class="block">Returns only the direct slave of this master run.</div>
 </dd>
@@ -1598,6 +1602,8 @@
 <dd>
 <div class="block">File getExtension</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#getExtraActions--">getExtraActions()</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#getExtraFilesToIncludeInJar--">getExtraFilesToIncludeInJar()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkMavenPublication.html#getExtraInfo--">getExtraInfo()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></dt>
@@ -1708,12 +1714,12 @@
 <dd>
 <div class="block">Returns how many test has been ignored.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getImportedRunRoots--">getImportedRunRoots()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getImportedRuns--">getImportedRuns()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getImportedCommands--">getImportedCommands()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
 <dd>
 <div class="block">Returns imported runs with plugins applied on.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getImportedRunRoots--">getImportedRunRoots()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackTasks.html#getIncludingVersionFileNameSupplier--">getIncludingVersionFileNameSupplier()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackTasks</a></dt>
 <dd>
 <div class="block">Returns an artifact file name supplier for including version in artifact file names.</div>
@@ -2057,10 +2063,6 @@
 <dd>
 <div class="block">Returns how many test has been run.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getRunDependencies--">getRunDependencies()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
-<dd>
-<div class="block">Dependencies necessary to compile the this command class.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getRunDependencyResolver--">getRunDependencyResolver()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
 <dd>
 <div class="block">Returns the dependency resolver used to compile/run scripts of this project.</div>
@@ -2070,6 +2072,8 @@
 <div class="block">Returns the runnable responsible for creating the specified artifactId.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTestTasks.html#getRunner--">getRunner()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTestTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTestTasks</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#getScaffolder--">getScaffolder()</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#getScaffoldPlugin--">getScaffoldPlugin()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
@@ -2895,7 +2899,7 @@
 <dd>
 <div class="block">Repeatable container.</div>
 </dd>
-<dt><a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">JkImportedRuns</span></a> - Class in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
+<dt><a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">JkImportedCommands</span></a> - Class in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
 <div class="block">A command class can import one or several command classes.</div>
 </dd>
@@ -4724,11 +4728,15 @@
 <dd>
 <div class="block">Defines the algorithms to sign the produced artifacts.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setClassFilename-java.lang.String-">setClassFilename(String)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaCompileSpec.html#setClasspath-java.lang.Iterable-">setClasspath(Iterable&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a></dt>
 <dd>
 <div class="block">Creates a copy of this <a href="dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with the specified
  classpath.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setCommandClassCode-java.lang.String-">setCommandClassCode(String)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectCompileTasks.html#setCompiler-dev.jeka.core.api.java.JkJavaCompiler-">setCompiler(JkJavaCompiler)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectCompileTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectCompileTasks</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTestTasks.html#setCompiler-dev.jeka.core.api.java.JkJavaCompiler-">setCompiler(JkJavaCompiler)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTestTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTestTasks</a></dt>
@@ -4742,8 +4750,6 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencyResolver-">setDependencyResolver(JkDependencyResolver)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setDownloadRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">setDownloadRepos(JkRepoSet)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setEmbbed-boolean-">setEmbbed(boolean)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaCompileSpec.html#setEncoding-java.lang.String-">setEncoding(String)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a></dt>
 <dd>
@@ -4815,10 +4821,6 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#setProject-dev.jeka.core.api.java.project.JkJavaProject-">setProject(JkJavaProject)</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#setPublishRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">setPublishRepos(JkRepoSet)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublishTasks</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#setRunClassClode-java.lang.String-">setRunClassClode(String)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#setRunClassCode-java.lang.String-">setRunClassCode(String)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/ide/eclipse/JkEclipseClasspathGenerator.html#setRunDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setRunDependencies(JkDependencyResolver, JkDependencySet)</a></span> - Method in class dev.jeka.core.api.ide.eclipse.<a href="dev/jeka/core/api/ide/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.ide.eclipse">JkEclipseClasspathGenerator</a></dt>
 <dd>

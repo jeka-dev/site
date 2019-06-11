@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -121,25 +121,6 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- =========== FIELD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Field and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#embed">embed</a></span></code>&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -173,15 +154,15 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#addExtraAction-java.lang.Runnable-">addExtraAction</a></span>(java.lang.Runnable&nbsp;runnable)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#embed--">embed</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#run--">run</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#getScaffolder--">getScaffolder</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#setRunClassClode-java.lang.String-">setRunClassClode</a></span>(java.lang.String&nbsp;code)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#run--">run</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -206,23 +187,6 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a name="embed">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>embed</h4>
-<pre>public&nbsp;boolean embed</pre>
-</li>
-</ul>
-</li>
-</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
@@ -246,31 +210,31 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="addExtraAction-java.lang.Runnable-">
+<a name="getScaffolder--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addExtraAction</h4>
-<pre>public&nbsp;void&nbsp;addExtraAction(java.lang.Runnable&nbsp;runnable)</pre>
-</li>
-</ul>
-<a name="setRunClassClode-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setRunClassClode</h4>
-<pre>public&nbsp;void&nbsp;setRunClassClode(java.lang.String&nbsp;code)</pre>
+<h4>getScaffolder</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a>&nbsp;getScaffolder()</pre>
 </li>
 </ul>
 <a name="run--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>run</h4>
 <pre>public&nbsp;void&nbsp;run()</pre>
+</li>
+</ul>
+<a name="embed--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>embed</h4>
+<pre>public&nbsp;void&nbsp;embed()</pre>
 </li>
 </ul>
 </li>
@@ -326,13 +290,13 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
