@@ -1271,7 +1271,7 @@
 <dd>
 <div class="block">Returns the plugin instance of the specified name loaded in the holding JkCommands instance.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getAll--">getAll()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getAll--">getAll()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
 <dd>
 <div class="block">Returns direct and transitive importedRuns.</div>
 </dd>
@@ -1297,9 +1297,9 @@
 <div class="block">Returns all fields declared in the class passed as argument or andAccept its
  super classes.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getAllOf-java.lang.Class-">getAllOf(Class&lt;T&gt;)</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getAllOf-java.lang.Class-">getAllOf(Class&lt;T&gt;)</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
 <dd>
-<div class="block">Same as <a href="dev/jeka/core/tool/JkImportedCommands.html#getAll--"><code>JkImportedCommands.getAll()</code></a> but only returns run instance of the specified class or its subclasses.</div>
+<div class="block">Same as <a href="dev/jeka/core/tool/JkImportedRuns.html#getAll--"><code>JkImportedRuns.getAll()</code></a> but only returns run instance of the specified class or its subclasses.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkOptions.html#getAllStartingWith-java.lang.String-">getAllStartingWith(String)</a></span> - Static method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkOptions.html" title="class in dev.jeka.core.tool">JkOptions</a></dt>
 <dd>
@@ -1472,10 +1472,6 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html#getDeclaredVersion--">getDeclaredVersion()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkModuleNodeInfo</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getDefDependencies--">getDefDependencies()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
-<dd>
-<div class="block">Dependencies necessary to compile the this command class.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkClassLoader.html#getDelegate--">getDelegate()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java">JkClassLoader</a></dt>
 <dd>
 <div class="block">Return the <code>URLClassLoader</code> wrapped by this object.</div>
@@ -1525,7 +1521,7 @@
 <div class="block">Returns the classpath of this classloader without mentioning classpath of
  the parent classloaders.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getDirects--">getDirects()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getDirects--">getDirects()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
 <dd>
 <div class="block">Returns only the direct slave of this master run.</div>
 </dd>
@@ -1712,12 +1708,12 @@
 <dd>
 <div class="block">Returns how many test has been ignored.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getImportedCommands--">getImportedCommands()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedRuns.html#getImportedRunRoots--">getImportedRunRoots()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getImportedRuns--">getImportedRuns()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
 <dd>
 <div class="block">Returns imported runs with plugins applied on.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkImportedCommands.html#getImportedRunRoots--">getImportedRunRoots()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackTasks.html#getIncludingVersionFileNameSupplier--">getIncludingVersionFileNameSupplier()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackTasks</a></dt>
 <dd>
 <div class="block">Returns an artifact file name supplier for including version in artifact file names.</div>
@@ -2060,6 +2056,10 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.html#getRunCount--">getRunCount()</a></span> - Method in class dev.jeka.core.api.java.junit.<a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult</a></dt>
 <dd>
 <div class="block">Returns how many test has been run.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getRunDependencies--">getRunDependencies()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
+<dd>
+<div class="block">Dependencies necessary to compile the this command class.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommands.html#getRunDependencyResolver--">getRunDependencyResolver()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></dt>
 <dd>
@@ -2895,7 +2895,7 @@
 <dd>
 <div class="block">Repeatable container.</div>
 </dd>
-<dt><a href="dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">JkImportedCommands</span></a> - Class in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
+<dt><a href="dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">JkImportedRuns</span></a> - Class in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
 <div class="block">A command class can import one or several command classes.</div>
 </dd>
