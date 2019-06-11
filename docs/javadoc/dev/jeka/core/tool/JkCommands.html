@@ -168,33 +168,33 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getImportedRuns--">getImportedRuns</a></span>()</code>
-<div class="block">Returns imported runs with plugins applied on.</div>
+<td class="colFirst"><code><a href="../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getDefDependencies--">getDefDependencies</a></span>()</code>
+<div class="block">Dependencies necessary to compile the this command class.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getImportedCommands--">getImportedCommands</a></span>()</code>
+<div class="block">Returns imported runs with plugins applied on.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getOutputDir--">getOutputDir</a></span>()</code>
 <div class="block">Returns the output directory where all the final and intermediate artifacts are generated.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>&lt;T extends <a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;<br>T</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getPlugin-java.lang.Class-">getPlugin</a></span>(java.lang.Class&lt;T&gt;&nbsp;pluginClass)</code>
 <div class="block">Shorthand to <code>getPlugins().get(<Pluginclass>)</code>.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html" title="class in dev.jeka.core.tool">JkRunPlugins</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getPlugins--">getPlugins</a></span>()</code>
 <div class="block">Returns the container of loaded plugins for this instance.</div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommands.html#getRunDependencies--">getRunDependencies</a></span>()</code>
-<div class="block">Dependencies necessary to compile the this command class.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -370,23 +370,23 @@ extends java.lang.Object</pre>
 <div class="block">Returns the dependency resolver used to compile/run scripts of this project.</div>
 </li>
 </ul>
-<a name="getRunDependencies--">
+<a name="getDefDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getRunDependencies</h4>
-<pre>public final&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getRunDependencies()</pre>
+<h4>getDefDependencies</h4>
+<pre>public final&nbsp;<a href="../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getDefDependencies()</pre>
 <div class="block">Dependencies necessary to compile the this command class. It is not the dependencies for building the project.</div>
 </li>
 </ul>
-<a name="getImportedRuns--">
+<a name="getImportedCommands--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getImportedRuns</h4>
-<pre>public final&nbsp;<a href="../../../../dev/jeka/core/tool/JkImportedRuns.html" title="class in dev.jeka.core.tool">JkImportedRuns</a>&nbsp;getImportedRuns()</pre>
+<h4>getImportedCommands</h4>
+<pre>public final&nbsp;<a href="../../../../dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool">JkImportedCommands</a>&nbsp;getImportedCommands()</pre>
 <div class="block">Returns imported runs with plugins applied on.</div>
 </li>
 </ul>
