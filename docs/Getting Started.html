@@ -27,12 +27,13 @@
 <a href="#Note" class="menuItem2">Note</a><br />
 <a href="#Basicautomationproject" class="menuItem1">Basic automation project</a><br />
 <a href="#Createaproject" class="menuItem2">Create a project</a><br />
-<a href="#Addarunmethod(methodinvokablefromcommandline)" class="menuItem2">Add a run method (method invokable from command line)</a><br />
+<a href="#Addacommand" class="menuItem2">Add a command</a><br />
 <a href="#Selfdocumentyourmethod" class="menuItem2">Self document your method</a><br />
 <a href="#Addanoption(parameter)" class="menuItem2">Add an option (parameter)</a><br />
-<a href="#Use3rdpartylibsinyourbuildclass" class="menuItem2">Use 3rd party libs in your build class</a><br />
-<a href="#ImportaJekabuildfromanotherproject" class="menuItem2">Import a Jeka build from another project</a><br />
+<a href="#Use3rdpartylibsinyourcommandclass" class="menuItem2">Use 3rd party libs in your command class</a><br />
+<a href="#Importacommandclassfromanotherproject" class="menuItem2">Import a command class from another project</a><br />
 <a href="#Restrictions" class="menuItem2">Restrictions</a><br />
+<a href="#Workwithplugins" class="menuItem1">Work with plugins</a><br />
 <a href="#BuildaJavaproject" class="menuItem1">Build a Java project</a><br />
 <a href="#BuildJavaprojectusinglow-levelAPI" class="menuItem2">Build Java project using low-level API</a><br />
 <a href="#BuildJavaprojectusinghighlevelAPI" class="menuItem2">Build Java project using high level API</a><br />
@@ -41,22 +42,25 @@
 <a href="#Extrafunction" class="menuItem2">Extra function</a><br />
 <a href="#Explorefunctionsandoptionsprovidedout-of-thebox" class="menuItem2">Explore functions and options provided out-of-thebox</a><a name="Lexical"></a>
 <h1>Lexical</h1>
-<p>The following concepts are used all over the tool section :</p>
+<p>The following concepts are used all over this document :</p>
 <p><strong>[PROJECT DIR]</strong> : Refers to the root folder of the project to build (or to run commands on). This is where you would put pom.xml or build.xml files.</p>
 <p><strong>[JEKA HOME]</strong> : Refers to the folder where Jeka is installed. You should find <em>jeka.bat</em> and <em>jeka</em> shell scripts at the root of this folder.</p>
 <p><strong>[JEKA USER HOME]</strong> : Refers to the folder where Jeka stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jeka.</p>
 <p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
-<p><strong>Def Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>command classes</em> to be executed.
+<p><strong>Def Classpath :</strong> Classpath on which depend <em>def classes</em> to get compiled and <em>command classes</em> to be executed.
 By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or def Classpath coming
-from another project.
-Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is augmented with their <em>.class</em> counterpart.</p>
+from imported project.
+Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is augmented with compiled  <em>def classes</em>.</p>
 <p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their <em>commands</em> can be invoked from the command line and
 their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>command class</em> though there can be many or
-none. Command class can be a <em>def class</em> but can also be imported from a library or external project.</p>
-<p><strong>Commands :</strong> Java methods member of <em>command classes</em> and invokable from Jeka command line.
-They must be instance method (not static), public, zero-args and returning void. Every method verifying these constraints is considered as a <em>command</em>.</p>
+none. Command classes can come from <em>def classes</em> but can also be imported from a library or external project.</p>
+<p><strong>Commands :</strong> Java methods member of <em>command classes</em> and invokable from command line.
+They must be instance method (not static), public, zero-args and returning void.
+Every method verifying these constraints within a <em>command class</em> or a <em>plugin</em>  is considered as a <em>command</em>.</p>
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
 as command line arguments, stored in specific files or hard coded in <em>command classes</em>.</p>
+<p><strong>Plugins :</strong> Classes extending <code>JkPlugin</code> and named as <em>JkPluginXxxxx</em> where_Xxxxx_ is the name of the plugin. In short, a plugin
+add dynamically commands and options to the running <em>command class</em>.</p>
 <a name="InstallJeka"></a>
 <h1>Install Jeka</h1>
 <ol>
@@ -179,18 +183,18 @@ This will generate a project skeleton as follow :</li>
 <pre><code class="language-java">import dev.jeka.core.tool.JkCommands;
 import dev.jeka.core.tool.JkInit;
 
-class Build extends JkCommands {
+class Commands extends JkCommands {
 
-    public static void main(String[] args) throws Exception {
-        Build build = JkInit.instanceOf(Build.class, args);
-        build.clean();
+    public static void main(String[] args) {
+        Commands commands = JkInit.instanceOf(Commands.class, args);
+        commands.clean();
     }
 
 }
 </code></pre>
-<a name="Addarunmethod(methodinvokablefromcommandline)"></a>
-<h2>Add a run method (method invokable from command line)</h2>
-<p>Add the following method to the Build java source.</p>
+<a name="Addacommand"></a>
+<h2>Add a command</h2>
+<p>Add the following method to the <code>Commands</code> class.</p>
 <pre><code class="language-java">import dev.jeka.core.api.utils.JkUtilsIO;
 import dev.jeka.core.tool.JkCommands;
 import dev.jeka.core.tool.JkInit;
@@ -198,7 +202,7 @@ import dev.jeka.core.tool.JkInit;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-class Build extends JkCommands {
+class Commands extends JkCommands {
 
     public void displayGoogle() throws MalformedURLException {
         String content = JkUtilsIO.read(new URL(&quot;https://www.google.com/&quot;));
@@ -206,7 +210,7 @@ class Build extends JkCommands {
     }
 
     public static void main(String[] args) throws Exception {
-        JkInit.instanceOf(Build.class, args).displayGoogle();
+        JkInit.instanceOf(Commands.class, args).displayGoogle();
     }
 
 }
@@ -215,7 +219,7 @@ class Build extends JkCommands {
 <p>Open a  console/:terminal in <em>sample1</em> directory and execute <code>jeka displayGoogle</code>. You should see the Google source displayed.</p>
 <p>Execute <code>jeka help</code> and the output should mention your new method.</p>
 <pre><code>...
-From class Build :
+From class Commands :
   Methods :
     displayGoogle : No description available.
 
@@ -225,18 +229,19 @@ From class JkCommands :
     help : Displays all available methods and options defined for this command class.
 ...
 </code></pre>
-<p>Any public instance method with no-args and returning <code>void</code> fits to be a run method. You can call several run methods in a single row.</p>
-<p>You can also launch/debug the method directly from your IDE, using the <em>main</em> method.</p>
+<p>Any public instance method with no-args and returning <code>void</code> fits to be a <em>command</em>. You can call several <em>commands</em> in a single row.</p>
+<p>You can also launch/debug command directly from your IDE, using the <em>main</em> method. Note that for so, you must instantiate
+your <em>command class</em> using <code>JkInit.instanceOf</code>.</p>
 <a name="Selfdocumentyourmethod"></a>
 <h2>Self document your method</h2>
-<p>Add the following annotation to the newly created method.</p>
+<p>Add the following annotation to the <em>command</em>.</p>
 <pre><code class="language-java">@JkDoc(&quot;Fetch Google page and display its source on the console.&quot;)
 public void displayGoogle() throws MalformedURLException {
     String content = JkUtilsIO.read(new URL(&quot;https://www.google.com/&quot;));
     System.out.println(content);
 }
 </code></pre>
-<p>Execute <code>jeka help</code> and the output should mention doculentation.</p>
+<p>Execute <code>jeka help</code> and the output should mention documentation.</p>
 <pre><code>From class Build :
   Methods :
     displayGoogle : Fetch Google page and display its source on the console.
@@ -244,8 +249,8 @@ public void displayGoogle() throws MalformedURLException {
 <a name="Addanoption(parameter)"></a>
 <h2>Add an option (parameter)</h2>
 <p>May you like to see Google page source but you probably want to apply this method to any other url.</p>
-<p>To make it parametrizable, just declare the url in a public field so its value can be injected from command line.</p>
-<pre><code class="language-java">class Build extends JkCommands {
+<p>To make it configurable, just declare the url in a public field so its value can be injected from command line.</p>
+<pre><code class="language-java">class Commands extends JkCommands {
 
     @JkDoc(&quot;The url to display content.&quot;)   // Optional self documentation
     public String url = &quot;https://www.google.com/&quot;;
@@ -257,7 +262,7 @@ public void displayGoogle() throws MalformedURLException {
     }
 
     public static void main(String[] args) throws Exception {
-        JkInit.instanceOf(Build.class, args).displayContent();
+        JkInit.instanceOf(Commands.class, args).displayContent();
     }
 
 }
@@ -265,22 +270,22 @@ public void displayGoogle() throws MalformedURLException {
 <p>Execute <code>jeka displayContent -url=https://github.com/github</code> and you should see the Github page source displayed.</p>
 <p>If you execute <code>jeka help</code> you should see the url option mentioned.</p>
 <pre><code>...
-From class Build :
+From class Commands :
   Methods :
     displayContent : Fetch Google page and display its source on the console.
   Options :
     -url (String, default : https://www.google.com/) : The url to display content.
 ...
 </code></pre>
-<a name="Use3rdpartylibsinyourbuildclass"></a>
-<h2>Use 3rd party libs in your build class</h2>
-<p>You can mention inline the external library you need to compile and execute your build class. For exemple, you main need <em>Apache HttpClient</em> library to perform some non basic HTTP tasks.</p>
+<a name="Use3rdpartylibsinyourcommandclass"></a>
+<h2>Use 3rd party libs in your command class</h2>
+<p>You can mention inline the external libraries you need to compile and execute your <em>command class</em>. For exemple, you main need <em>Apache HttpClient</em> library to perform some non basic HTTP tasks.</p>
 <ol>
 <li>Annotate your class with modules or jar files you want to use.</li>
 </ol>
 <pre><code class="language-java">@JkImport(&quot;org.apache.httpcomponents:httpclient:jar:4.5.8&quot;)  // Can import files from Maven repos
 @JkImport(&quot;../local_libs/my-utility.jar&quot;)   // or simply located locally
-class Build extends JkCommands {
+class Commands extends JkCommands {
    ...
 }
 </code></pre>
@@ -301,15 +306,15 @@ public void post() {
 }
 </code></pre>
 <p>Execute <em>post</em> method as usual : <code>jeka post</code>.</p>
-<a name="ImportaJekabuildfromanotherproject"></a>
-<h2>Import a Jeka build from another project</h2>
-<p>Imagine that you want to want to reuse <em>displayContent</em> method from project <em>sample1</em> in another Jeka project named <em>sample2</em>. Let's create a new <em>sample2</em> project located in a sibling folder than <em>sample1</em>.</p>
+<a name="Importacommandclassfromanotherproject"></a>
+<h2>Import a command class from another project</h2>
+<p>Imagine that you want to want to reuse <em>displayContent</em> method from project <em>sample1</em> in another project. Let's create a new <em>sample2</em> project located in a sibling folder than <em>sample1</em>.</p>
 <ol>
 <li>Execute <code>mkdir sample2</code> then <code>cd sample2</code> followed by <code>jeka scaffold#run intellij#</code> (or <code>jeka scaffold#run eclipse#</code>)</li>
-<li>Rename sample2 <em>Build</em> class 'Sample2Build` to avoid name collision. Be carefull, rename its filename as well unless Jeka will fail.</li>
+<li>Rename sample2 <em>command class</em> 'Sample2Commands` to avoid name collision. Be careful to rename its filename as well unless Jeka will fail.</li>
 <li>Add a field of type JkCommands annotated with <code>JkImportProject</code> and the relative path of <em>sample1</em> as value.</li>
 </ol>
-<pre><code class="language-java">class Sample2Build extends JkCommands {
+<pre><code class="language-java">class Sample2Commands extends JkCommands {
 
     @JkImportProject(&quot;../sample1&quot;)
     private JkCommands project1Run;
@@ -322,20 +327,20 @@ public void post() {
 </code></pre>
 <ol start="4">
 <li>
-<p>Execute <code>jeka intellij#generateIml</code> (or <code>jeka eclipse#generateFiles</code>) to add <em>sample1</em> dependencies to your IDE. Now <em>Sampl2Build</em> can refer to the <em>Build</em> class of <em>sample1</em>.</p>
+<p>Execute <code>jeka intellij#generateIml</code> (or <code>jeka eclipse#generateFiles</code>) to add <em>sample1</em> dependencies to your IDE. Now <em>Sampl2Commands</em> can refer to the <em>command class</em> of <em>sample1</em>.</p>
 </li>
 <li>
-<p>Replace <em>JkCommands</em> Type by the <em>Build</em> type from <em>sample1</em> and use it in method implementation.</p>
+<p>Replace <em>JkCommands</em> Type by the <em>Commands</em> type from <em>sample1</em> and use it in method implementation.</p>
 </li>
 </ol>
-<pre><code class="language-java">class Sample2Build extends JkCommands {
+<pre><code class="language-java">class Sample2Commands extends JkCommands {
 
     @JkImportProject(&quot;../sample1&quot;)
-    private Build project1Run;  // This Build come from sample1
+    private Commands sample1Commands;  // This class comes from sample1
 
     public void printUrlContent() throws MalformedURLException {
-        System.out.println(&quot;Content of &quot; + project1Run.url);
-        project1Run.displayContent();
+        System.out.println(&quot;Content of &quot; + sample1Commands.url);
+        sample1Commands.displayContent();
     }
 
 }
@@ -346,22 +351,24 @@ public void post() {
     g&quot; itemprop=&quot;image&quot;&gt;&lt;title&gt;Google&lt;/title&gt;&lt;script nonce=&quot;JkJFrHNh1i7pdGGBGDk/tw==&quot;&gt;(function(){window.google={kEI:'AyndXKnDGrLgkgW-kp7gAw',kEXPI:'0,1353747,57,1958,1640,782,698,527,731,223,1575,1257,1894,58,320,207,1017,167,438,
 ...
 </code></pre>
-<p>You can set directly the value of the url on the command line as option values are injected on all imported build recursively.</p>
+<p>You can set directly the value of the url on the command line as option values are injected on all imported commands recursively.</p>
 <p><code>jeka printUrlContent -url=https://github.com/github</code> displays :</p>
 <pre><code>Content of https://fr.wikipedia.org
 &lt;!DOCTYPE html&gt;
-&lt;html class=&quot;client-nojs&quot; lang=&quot;fr&quot; dir=&quot;ltr&quot;&gt;
+&lt;html class=&quot;client-nojs&quot; lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;UTF-8&quot;/&gt;
-&lt;title&gt;Wikipédia, l'encyclopédie libre&lt;/title&gt;
+&lt;title&gt;Wikipedia, the free encyclopedia&lt;/title&gt;
 ...
 </code></pre>
 <a name="Restrictions"></a>
 <h2>Restrictions</h2>
-<p>Except the following mentioned below, there is not known restriction about what you can do with you build class. You can define as many classes as you want into def directoy. Organise them within Java packages or not.</p>
-<ul>
-<li>Classes invoked from command lines must have the same name than their file.</li>
-</ul>
+<p>Except that <em>command classes</em> must have the same name than their filename, there is not known restriction about what you can do with <em>command classes</em> or <em>def classes</em>.
+You can define as many classes as you want into def directory. Organise them within Java packages or not.</p>
+<a name="Workwithplugins"></a>
+<h1>Work with plugins</h1>
+<p>Each <em>command class</em> instance acts as a registry for plugins. In turn, plugins can interact each other through this registry.</p>
+<p>Let's implements similar commands than previously but using plugins. TODO</p>
 <a name="BuildaJavaproject"></a>
 <h1>Build a Java project</h1>
 <p>Now let's start more complicated tasks as building a Java poject. It involves compilation, testing, packaging, dependency resolution, releasing, ...
