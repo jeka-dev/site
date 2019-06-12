@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10};
+var methods = {"i0":10,"i1":10,"i2":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -165,7 +165,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#JkPluginPgp-dev.jeka.core.tool.JkCommands-">JkPluginPgp</a></span>(<a href="../../../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;run)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#JkPluginPgp-dev.jeka.core.tool.JkCommands-">JkPluginPgp</a></span>(<a href="../../../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;commands)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -190,6 +190,12 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/crypto/pgp/JkPgp.html" title="class in dev.jeka.core.api.crypto.pgp">JkPgp</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#get--">get</a></span>()</code>
 <div class="block">Returns JkPgp from option settings</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#init--">init</a></span>()</code>
+<div class="block">This method is invoked right after plugin options has been injected</div>
 </td>
 </tr>
 </table>
@@ -271,7 +277,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <ul class="blockListLast">
 <li class="blockList">
 <h4>JkPluginPgp</h4>
-<pre>protected&nbsp;JkPluginPgp(<a href="../../../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;run)</pre>
+<pre>protected&nbsp;JkPluginPgp(<a href="../../../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;commands)</pre>
 </li>
 </ul>
 </li>
@@ -282,6 +288,21 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="init--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>init</h4>
+<pre>protected&nbsp;void&nbsp;init()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">JkPlugin</a></code></span></div>
+<div class="block">This method is invoked right after plugin options has been injected</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
+<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
+</dl>
+</li>
+</ul>
 <a name="get--">
 <!--   -->
 </a>
