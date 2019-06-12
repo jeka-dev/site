@@ -51,20 +51,20 @@
 <a href="#ParsetheCommandLine" class="menuItem4">Parse the Command Line</a><br />
 <a href="#PopulateSystemPropertiesfromConfigurationFilesandCommandline" class="menuItem4">Populate System Properties from Configuration Files and Command line</a><br />
 <a href="#Pre-process" class="menuItem4">Pre-process </a><br />
-<a href="#CompileDefClasses(defclasses)" class="menuItem4">Compile Def Classes (def classes)</a><br />
-<a href="#SelectcommandClass" class="menuItem4">Select command Class</a><br />
-<a href="#InstantiateRunClass" class="menuItem4">Instantiate Run Class</a><br />
+<a href="#CompileDefClasses" class="menuItem4">Compile Def Classes</a><br />
+<a href="#SelectCommandClass" class="menuItem4">Select Command Class</a><br />
+<a href="#InstantiateCommandClass" class="menuItem4">Instantiate Command Class</a><br />
 <a href="#InvokeCommandLineMethods" class="menuItem4">Invoke Command Line Methods</a><br />
 <a href="#ErrorHandling" class="menuItem4">Error Handling</a><br />
 <a href="#JekafromIDE" class="menuItem3">Jeka from IDE</a><br />
 <a href="#IDEClasspathSetting" class="menuItem4">IDE Classpath Setting</a><br />
 <a href="#LaunchfromIDE" class="menuItem4">Launch from IDE</a><br />
 <a href="#EmbeddedMode" class="menuItem3">Embedded Mode</a><br />
-<a href="#Defaultpathsettings" class="menuItem3">Default path settings</a><br />
+<a href="#DefaultPathSettings" class="menuItem3">Default Path Settings</a><br />
 <a href="#SpecifyJekaUserHome" class="menuItem4">Specify Jeka User Home</a><br />
-<a href="#SpecifythelocalRepositoryCache" class="menuItem4">Specify the local Repository Cache</a><br />
+<a href="#SpecifytheLocalRepositoryCache" class="menuItem4">Specify the Local Repository Cache</a><br />
 <a href="#SeeEffectivePaths" class="menuItem4">See Effective Paths</a><br />
-<a href="#RunParameters" class="menuItem2">Run Parameters</a><br />
+<a href="#CommandsParameters" class="menuItem2">Commands Parameters</a><br />
 <a href="#EnvironmentVariables" class="menuItem3">Environment Variables</a><br />
 <a href="#SystemProperties" class="menuItem3">System Properties</a><br />
 <a href="#JekaOptions" class="menuItem3">Jeka Options</a><br />
@@ -707,7 +707,7 @@ For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.re
 </ul>
 <p>The last loaded options override the previous ones if there is some conflicts.</p>
 <a name="Pre-process"></a>
-<h4>Pre-process <em>Def Class</em> Code (Import 3rd party library into <em>Run Classpath</em>)</h4>
+<h4>Pre-process <em>Def Class</em> Code (Import 3rd party library into <em>Def Classpath</em>)</h4>
 <p>In order to compile <em>def classes</em>, Jeka has to compute <em>def Classpath</em> first. With Jeka you can specify run dependencies
 directly inside the source code using <code>@JkImport</code> or <code>@JkImportProject</code> annotations as shown below.</p>
 <pre><code class="language-Java">@JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
@@ -732,8 +732,8 @@ Note that classes having a name starting by a '_' are skipped.</p>
 <p>If a repository needs credentials, you need to supply it through Jeka options <code>repo.[repo name].username</code> and <code>repo.[repo name].password</code>.</p>
 <p>Note that you can define several urls for a <code>repo.[repo name].url</code> by separating then with coma (as <code>repo.run.url=http://my.repo1, http://my.repo2.snapshot</code>).</p>
 <p>As with other repo, if the download repository is an Ivy repo, you must prefix url with <code>ivy:</code> so for example you'll get <code>repo.run.url=ivy:file://my.ivy/repo</code>.</p>
-<a name="CompileDefClasses(defclasses)"></a>
-<h4>Compile Def Classes (def classes)</h4>
+<a name="CompileDefClasses"></a>
+<h4>Compile Def Classes</h4>
 <p>Jeka compiles def class source files prior to execute it. Def class source files are expected to be in <em>[PROJECT DIR]/jeka/def</em>.
 Classes having a name starting by a '_' are skipped.
 If this directory does not exist or does not contains java sources, the compilation is skipped.
@@ -745,8 +745,8 @@ Compilation occurs upon the following classpath :</p>
 </ul>
 <p>It outputs class files in <em>[PROJECT DIR]/jeka/output/def-classes</em> directory.</p>
 <p>Jeka uses the compiler provided by the running JDK.</p>
-<a name="SelectcommandClass"></a>
-<h4>Select command Class</h4>
+<a name="SelectCommandClass"></a>
+<h4>Select Command Class</h4>
 <p>Once compiled, Jeka augments the <em>def Classpath</em> with classes compiled in previous step.
 Then it selects one <em>command class</em> from <em>def classpath</em> and instantiate it.</p>
 <p>The selection logic is :</p>
@@ -758,8 +758,8 @@ It looks in alphabetic order first then sub-package (deep first).
 This means that class <code>SomeCommands</code> will be selected prior <code>apackage.SomeCommands</code>, and <code>aa.bb.SomeCommands</code> will be selected prior <code>ab.OtherCommands</code>.</li>
 <li>If no such class found, Jeka selects the built-in <code>JkCommands</code> class.</li>
 </ul>
-<a name="InstantiateRunClass"></a>
-<h4>Instantiate Run Class</h4>
+<a name="InstantiateCommandClass"></a>
+<h4>Instantiate Command Class</h4>
 <p>The commands instantiation process is defined in <code>ork.jeka.tool.JkCommands#of</code> factory method. It consists in :</p>
 <ol>
 <li>Creating a new <em>command class</em> instance (Invoking default constructor).</li>
@@ -803,7 +803,7 @@ This leads in a simpler and faster process.</p>
 <p>To launch Jeka from your IDE, you can go two ways :</p>
 <p>One is to create a main method in one of your <em>def classes</em> as below and invoke it.</p>
 <pre><code class="language-Java">public static void main(String[] args) {
-    JkInit.instanceOf(MyRun.class, args).doDefault();
+    JkInit.instanceOf(MyCommands.class, args).doDefault();
 } 
 </code></pre>
 <p>The <code>JkInit#instanceOf</code> method loads options from args and instantiates <em>command classes</em>. Then user can
@@ -829,15 +829,15 @@ of the presence and version of Jeka installed in the host machine.</p>
 <li>execute <code>jeka myFunction ...</code> as you would do in regular mode. This works only if you have copied jeka/jeka.bat shell scripts into <em>[PROJECT DIR]</em></li>
 <li>or execute <code>java -cp jeka/boot/* Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
 </ul>
-<a name="Defaultpathsettings"></a>
-<h3>Default path settings</h3>
+<a name="DefaultPathSettings"></a>
+<h3>Default Path Settings</h3>
 <a name="SpecifyJekaUserHome"></a>
 <h4>Specify Jeka User Home</h4>
 <p>Jeka uses user directory to store user-specific configuration and cache files, in this document we refer to this directory using [Jeka User Home].
 By default this directory is located at <em>[User Home]/.jeka</em> (<em>[User Home]</em> being the path given by <code>System.getProperty(&quot;user.home&quot;);</code>.
 You can override this setting by defining the <code>JEKA_USER_HOME</code> environment variable.</p>
-<a name="SpecifythelocalRepositoryCache"></a>
-<h4>Specify the local Repository Cache</h4>
+<a name="SpecifytheLocalRepositoryCache"></a>
+<h4>Specify the Local Repository Cache</h4>
 <p>Jeka uses <a href="http://ant.apache.org/ivy/">Apache Ivy</a> under the hood to handle module dependencies. Ivy downloads and stores locally artifacts consumed by projects.
 By default the location is <em>[JEKA USER HOME]/cache/repo</em> but you can redefine it by defining the <code>JEKA_REPO</code> environment variable.
 You can get this location programmatically using <code>JkLocator.getJekaRepositoryCache()</code> method.</p>
@@ -845,13 +845,15 @@ You can get this location programmatically using <code>JkLocator.getJekaReposito
 <h4>See Effective Paths</h4>
 <p>The Jeka displays the effective path at the very start of the process if launched with <code>-LogHeaders=true</code> option :</p>
 <p>For example, <code>jeka help -LogHeaders</code> will output :</p>
-<pre><code> _______           _                 
-(_______)         | |                
-     _ _____  ____| |  _ _____  ____ 
- _  | | ___ |/ ___) |_/ |____ |/ ___)
-| |_| | ____| |   |  _ (/ ___ | |    
- \___/|_____)_|   |_| \_)_____|_|
-                                     The 100% Java build tool.
+<pre><code>
+ _______     _
+(_______)   | |
+     _ _____| |  _ _____
+ _  | | ___ | |_/ |____ |
+| |_| | ____|  _ (/ ___ |
+ \___/|_____)_| \_)_____|
+
+                           The 100% Java build tool.
 
 Working Directory : C:\Users\me\IdeaProjects\playground\jeka-sample
 Java Home : C:\Program Files (x86)\Java\jdk1.8.0_121\jre
@@ -863,8 +865,8 @@ Jeka Repository Cache : C:\Users\me\.jeka\cache\repo
 
 ...
 </code></pre>
-<a name="RunParameters"></a>
-<h2>Run Parameters</h2>
+<a name="CommandsParameters"></a>
+<h2>Commands Parameters</h2>
 <p>Jeka commands are parameterizable. One can retrieve values defined at runtime by reading :</p>
 <ul>
 <li>environment variables</li>
@@ -1087,7 +1089,7 @@ invoke 'clean' method on the current <em>command class</em> along along all impo
 </ul>
 <p>If <em>command class</em> or plugin declares a public instance field without <code>@JkDoc</code> annotation, then it will be displayed in help screen but mentioning that there is no description available.</p>
 <p>If <em>command class</em> or plugin declares a <em>command</em> without <code>@JkDoc</code>, it will be also displayed in help screen but mentioning that there is no description available.</p>
-<p>This is the display screen for the build class of Jeka itsef :</p>
+<p>This is the display screen for the Jeka project command class :</p>
 <pre><code>Usage: jeka [methodA...] [pluginName#methodB...] [-optionName=value...] [-pluginName#optionName=value...] [-DsystemPropName=value...]
 Execute the specified methods defined in command class or plugins using the specified options and system properties.
 When no method specified, 'doDefault' method is invoked.
@@ -1097,7 +1099,7 @@ Built-in options (these options are not specific to a plugin or a build class) :
   -LogVerbose (shorthand -LV) : if true, logs will display 'trace' level logs.
   -LogHeaders (shorthand -LH) : if true, meta-information about the build creation itself and method execution will be logged.
   -LogMaxLength (shorthand -LML) : Console will do a carriage return automatically after N characters are outputted in a single line (ex : -LML=120).
-  -RunClass (shorthand -RC) : Force to use the specified class as the command class to be invoked. It can be the short name of the class (without package prefix).
+  -CommandClass (shorthand -CC) : Force to use the specified class as the command class to be invoked. It can be the short name of the class (without package prefix).
 
 Available methods and options :
 

@@ -12,6 +12,7 @@ dev.jeka.core.api.tooling
 dev.jeka.core.api.utils
 dev.jeka.core.tool
 dev.jeka.core.tool.builtins.eclipse
+dev.jeka.core.tool.builtins.git
 dev.jeka.core.tool.builtins.intellij
 dev.jeka.core.tool.builtins.jacoco
 dev.jeka.core.tool.builtins.java

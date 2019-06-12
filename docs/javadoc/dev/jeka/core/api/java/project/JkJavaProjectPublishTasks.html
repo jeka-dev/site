@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -128,28 +128,36 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#getMavenPublicationInfo--">getMavenPublicationInfo</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#getPostActions--">getPostActions</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#getPublishRepos--">getPublishRepos</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#publish--">publish</a></span>()</code>
 <div class="block">Publishes all defined artifacts.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#publishLocal--">publishLocal</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublishTasks</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#setMavenPublicationInfo-dev.jeka.core.api.depmanagement.JkMavenPublicationInfo-">setMavenPublicationInfo</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;mavenPublicationInfo)</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublishTasks</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#setPublishRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">setPublishRepos</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;publishRepos)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#setSigner-java.util.function.UnaryOperator-">setSigner</a></span>(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>&nbsp;</td>
 </tr>
@@ -201,6 +209,24 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getPostActions</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getPostActions()</pre>
+</li>
+</ul>
+<a name="getMavenPublicationInfo--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMavenPublicationInfo</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;getMavenPublicationInfo()</pre>
+</li>
+</ul>
+<a name="setMavenPublicationInfo-dev.jeka.core.api.depmanagement.JkMavenPublicationInfo-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMavenPublicationInfo</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublishTasks</a>&nbsp;setMavenPublicationInfo(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;mavenPublicationInfo)</pre>
 </li>
 </ul>
 <a name="getPublishRepos--">

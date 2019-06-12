@@ -137,7 +137,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#keyName">keyName</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#publicRingPath">publicRingPath</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
@@ -145,7 +145,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#secretKeyPassword">secretKeyPassword</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#secretRingPath">secretRingPath</a></span></code>&nbsp;</td>
 </tr>
 </table>
@@ -189,7 +189,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/crypto/pgp/JkPgp.html" title="class in dev.jeka.core.api.crypto.pgp">JkPgp</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#get--">get</a></span>()</code>
-<div class="block">Creates a JkPgp from option settings</div>
+<div class="block">Returns JkPgp from option settings</div>
 </td>
 </tr>
 </table>
@@ -198,7 +198,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dev.jeka.core.tool.<a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></h3>
-<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getRun--">getRun</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
+<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommands--">getCommands</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -227,7 +227,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <ul class="blockList">
 <li class="blockList">
 <h4>publicRingPath</h4>
-<pre>public&nbsp;java.lang.String publicRingPath</pre>
+<pre>public&nbsp;java.nio.file.Path publicRingPath</pre>
 </li>
 </ul>
 <a name="secretRingPath">
@@ -236,7 +236,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <ul class="blockList">
 <li class="blockList">
 <h4>secretRingPath</h4>
-<pre>public&nbsp;java.lang.String secretRingPath</pre>
+<pre>public&nbsp;java.nio.file.Path secretRingPath</pre>
 </li>
 </ul>
 <a name="secretKeyPassword">
@@ -289,7 +289,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/crypto/pgp/JkPgp.html" title="class in dev.jeka.core.api.crypto.pgp">JkPgp</a>&nbsp;get()</pre>
-<div class="block">Creates a JkPgp from option settings</div>
+<div class="block">Returns JkPgp from option settings</div>
 </li>
 </ul>
 <a name="display--">

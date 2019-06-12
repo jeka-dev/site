@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a>, <a href="../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipsePath.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipsePath</a>, <a href="../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a>, <a href="../../../../dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html" title="class in dev.jeka.core.tool.builtins.jacoco">JkPluginJacoco</a>, <a href="../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a>, <a href="../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a>, <a href="../../../../dev/jeka/core/tool/builtins/maven/JkPluginPom.html" title="class in dev.jeka.core.tool.builtins.maven">JkPluginPom</a>, <a href="../../../../dev/jeka/core/tool/builtins/repos/JkPluginRepo.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginRepo</a>, <a href="../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a>, <a href="../../../../dev/jeka/core/tool/builtins/sonar/JkPluginSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkPluginSonar</a>, <a href="../../../../dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dd>
+<dd><a href="../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a>, <a href="../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipsePath.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipsePath</a>, <a href="../../../../dev/jeka/core/tool/builtins/git/JkPluginGit.html" title="class in dev.jeka.core.tool.builtins.git">JkPluginGit</a>, <a href="../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a>, <a href="../../../../dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html" title="class in dev.jeka.core.tool.builtins.jacoco">JkPluginJacoco</a>, <a href="../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a>, <a href="../../../../dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a>, <a href="../../../../dev/jeka/core/tool/builtins/maven/JkPluginPom.html" title="class in dev.jeka.core.tool.builtins.maven">JkPluginPom</a>, <a href="../../../../dev/jeka/core/tool/builtins/repos/JkPluginRepo.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginRepo</a>, <a href="../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a>, <a href="../../../../dev/jeka/core/tool/builtins/sonar/JkPluginSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkPluginSonar</a>, <a href="../../../../dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dd>
 </dl>
 <hr>
 <br>
@@ -137,7 +137,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#JkPlugin-dev.jeka.core.tool.JkCommands-">JkPlugin</a></span>(<a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;run)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#JkPlugin-dev.jeka.core.tool.JkCommands-">JkPlugin</a></span>(<a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;commands)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -157,12 +157,12 @@ extends java.lang.Object</pre>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a></span>()</code>
-<div class="block">Override this method to modify the run itself or its bound plugins.</div>
+<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getRun--">getRun</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getCommands--">getCommands</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -204,7 +204,7 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>JkPlugin</h4>
-<pre>protected&nbsp;JkPlugin(<a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;run)</pre>
+<pre>protected&nbsp;JkPlugin(<a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;commands)</pre>
 </li>
 </ul>
 </li>
@@ -231,7 +231,7 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>activate</h4>
 <pre>protected&nbsp;void&nbsp;activate()</pre>
-<div class="block">Override this method to modify the run itself or its bound plugins.</div>
+<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
 </li>
 </ul>
 <a name="name--">
@@ -243,13 +243,13 @@ extends java.lang.Object</pre>
 <pre>public final&nbsp;java.lang.String&nbsp;name()</pre>
 </li>
 </ul>
-<a name="getRun--">
+<a name="getCommands--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getRun</h4>
-<pre>protected&nbsp;<a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;getRun()</pre>
+<h4>getCommands</h4>
+<pre>protected&nbsp;<a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool">JkCommands</a>&nbsp;getCommands()</pre>
 </li>
 </ul>
 <a name="toString--">
