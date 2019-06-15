@@ -204,7 +204,10 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getSibling-java.lang.Iterable-">getSibling</a></span>(java.lang.Iterable&lt;java.net.URL&gt;&nbsp;fileOrUrls)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getSibling-java.lang.Iterable-">getSibling</a></span>(java.lang.Iterable&lt;java.net.URL&gt;&nbsp;fileOrUrls)</code>
+<div class="block">Creates a <code>JkClassLoader</code> loader having the same parent and
+ the same entries as this one plus the specified entries.</div>
+</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
@@ -448,10 +451,9 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSibling</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a>&nbsp;getSibling(java.lang.Iterable&lt;java.net.URL&gt;&nbsp;fileOrUrls)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getSibling-java.lang.Iterable-"><code>getSibling(Iterable)</code></a></dd>
-</dl>
+<div class="block">Creates a <code>JkClassLoader</code> loader having the same parent and
+ the same entries as this one plus the specified entries. URL entries that
+ are not file are transformed to file (created in temp folder).</div>
 </li>
 </ul>
 <a name="getSiblingWithOptional-java.net.URL...-">
