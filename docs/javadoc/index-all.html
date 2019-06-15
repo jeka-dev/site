@@ -110,10 +110,6 @@
 <dd>
 <div class="block">Adds items to the specified recipient list.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#addArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.lang.Runnable-">addArtifact(JkArtifactId, Runnable)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
-<dd>
-<div class="block">Defines how to produce the specified artifact.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#addAutodetectMain-java.nio.file.Path-">addAutodetectMain(Path)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
 <dd>
 <div class="block">Adds the main class entry by auto-detecting the class holding the main method.</div>
@@ -794,6 +790,11 @@
 <div class="block">Creates an instance of the specified class in this classloader and
  callable from the current thread classloader.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html#createCrossClassloaderProxy-java.lang.Class-java.lang.String-java.lang.String-java.lang.Object...-">createCrossClassloaderProxy(Class&lt;T&gt;, String, String, Object...)</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java">JkInternalEmbeddedClassloader</a></dt>
+<dd>
+<div class="block">Creates an instance of the specified class in this classloader and
+ callable from the current thread classloader.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#CREATED_BY">CREATED_BY</a></span> - Static variable in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
 <dd>
 <div class="block">The software that has created this manifest.</div>
@@ -1283,6 +1284,8 @@
 <dd>
 <div class="block">Returns path relative to this root of the specified relative path.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html#get--">get()</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java">JkInternalEmbeddedClassloader</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaVersion.html#get--">get()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a></dt>
 <dd>
 <div class="block">Returns literal of this version.</div>
@@ -2320,6 +2323,14 @@
 <dd>
 <div class="block">Returns the working directory of this process.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsZip.html#getZipEntries-java.util.zip.ZipFile-">getZipEntries(ZipFile)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsZip.html" title="class in dev.jeka.core.api.utils">JkUtilsZip</a></dt>
+<dd>
+<div class="block">Returns all zip entry of the specified zip file.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsZip.html#getZipFile-java.io.File-">getZipFile(File)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsZip.html" title="class in dev.jeka.core.api.utils">JkUtilsZip</a></dt>
+<dd>
+<div class="block">Creates a <code>ZipFile</code> to file without checked exception.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPopularModules.html#GLIB">GLIB</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement">JkPopularModules</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPopularModules.html#GOOGLE_PROTOCOL_BUFFER">GOOGLE_PROTOCOL_BUFFER</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement">JkPopularModules</a></dt>
@@ -2990,6 +3001,12 @@
 <dd>
 <div class="block">Not part of the public API.</div>
 </dd>
+<dt><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">JkInternalEmbeddedClassloader</span></a> - Class in <a href="dev/jeka/core/api/java/package-summary.html">dev.jeka.core.api.java</a></dt>
+<dd>
+<div class="block">Not part of the public API</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html#JkInternalEmbeddedClassloader--">JkInternalEmbeddedClassloader()</a></span> - Constructor for class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java">JkInternalEmbeddedClassloader</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/jeka/core/api/depmanagement/JkInternalPublisher.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">JkInternalPublisher</span></a> - Interface in <a href="dev/jeka/core/api/depmanagement/package-summary.html">dev.jeka.core.api.depmanagement</a></dt>
 <dd>
 <div class="block">Not part of the public API</div>
@@ -4619,6 +4636,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginRepo.html#publishUsername">publishUsername</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginRepo.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginRepo</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.lang.Runnable-">putArtifact(JkArtifactId, Runnable)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
+<dd>
+<div class="block">Defines how to produce the specified artifact.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsIterable.html#putMultiEntry-java.util.Map-java.lang.Iterable-V-">putMultiEntry(Map&lt;K, V&gt;, Iterable&lt;K&gt;, V)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsIterable.html" title="class in dev.jeka.core.api.utils">JkUtilsIterable</a></dt>
 <dd>
 <div class="block">Convenient method to put several entry in a map having the same value at
@@ -5904,17 +5925,9 @@ the order they are declared.</div>
 </a>
 <h2 class="title">Z</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsZip.html#zipEntries-java.util.zip.ZipFile-">zipEntries(ZipFile)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsZip.html" title="class in dev.jeka.core.api.utils">JkUtilsZip</a></dt>
-<dd>
-<div class="block">Returns all zip entry of the specified zip file.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavadocMaker.html#zipFile--">zipFile()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java">JkJavadocMaker</a></dt>
 <dd>
 <div class="block">Returns the zip file containing all the produced Javadoc.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsZip.html#zipFile-java.io.File-">zipFile(File)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsZip.html" title="class in dev.jeka.core.api.utils">JkUtilsZip</a></dt>
-<dd>
-<div class="block">Creates a <code>ZipFile</code> to file without checked exception.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsPath.html#zipRoot-java.nio.file.Path-">zipRoot(Path)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsPath.html" title="class in dev.jeka.core.api.utils">JkUtilsPath</a></dt>
 <dd>&nbsp;</dd>
