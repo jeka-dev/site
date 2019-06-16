@@ -1,4 +1,4 @@
-dev.jeka.core.api.crypto.pgp
+dev.jeka.core.api.crypto.gpg
 dev.jeka.core.api.depmanagement
 dev.jeka.core.api.file
 dev.jeka.core.api.function
