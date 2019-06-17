@@ -29,7 +29,7 @@
 <a href="#Whatisascope?" class="menuItem4">What is a scope ?</a><br />
 <a href="#Whatisascopeddependency?" class="menuItem4">What is a scoped dependency ?</a><br />
 <a href="#Defineasetofdependencies" class="menuItem3">Define a set of dependencies</a><br />
-<a href="#Definingdifferenttypeofdependencies" class="menuItem3">Defining different type of dependencies</a><br />
+<a href="#HHierarchyofDependencyTypes." class="menuItem3">HHierarchy of Dependency Types.</a><br />
 <a href="#DependenciesonModule" class="menuItem4">Dependencies on Module</a><br />
 <a href="#Dependenciesonlocalfiles" class="menuItem4">Dependencies on local files</a><br />
 <a href="#Dependenciesonfilesproducedbycomputation" class="menuItem4">Dependencies on files produced by computation</a><br />
@@ -87,7 +87,7 @@
 <a href="#AccessImportedRunsProgrammatically" class="menuItem3">Access Imported Runs Programmatically</a><br />
 <a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><a name="Introduction"></a>
 <h1>Introduction</h1>
-<p>This document stands for reference guide and provides details about Jeka behaviour. If you are looking for
+<p>This document stands for reference guide to provide details about Jeka behaviour. If you are looking for
 how exactly Jeka behaves or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
 <p>However, a document can not replace a source code or API for exhaustion. Jeka philosophy is to be as transparent and
 easy to master as possible. We hope that no user will ever feel the need to buy some trainings or books to master it.</p>
@@ -127,25 +127,20 @@ use another version of these APIs without conflict : from user point of view, Je
     dependerProject.getMaker().clean().makeAllArtifacts();  // generate source and binary jars
     dependerProject.getMaker().getTasksForPublishing().publish(); // Publish artifacts on the default binary repository 
 </code></pre>
-<p>Above code defines two projects, one depending on the other.</p>
-<ul>
-<li>Building the dependent project implies building the project it depends upon if ots jar is not present.</li>
-<li>Building a project implies compilation and passing unit tests.</li>
-<li>By default project module ids are inferred from the name of their hosting directories and version is set as <code>UNSPECIFIED-SNAPSHOT</code>.</li>
-</ul>
+<p>Above code defines two projects, one depending on the other : building the depender project implies building the core project if not already done.</p>
 <p><span class="menuItem0">API Style</span></p>
 <p><em>Jeka</em> tries to stick with a consistent API design style.</p>
-<p><strong>Class and Interface Naming Convenytion</strong></p>
-<p>All Jeka public classes/interfaces starts with <code>Jk</code>. Its for easing distinction in IDE between classes supposed be used
+<p><strong>Class and Interface Naming Convention</strong></p>
+<p>All Jeka public classes/interfaces starts with <code>Jk</code>. The reason is easing distinction in IDE between classes supposed be used
 in production or test and the ones used for building.</p>
 <p><strong>Mutable Vs Immutable</strong></p>
-<p>As a rule of thumb <em>Jeka</em> favors immutable objects. Nevertheless when object structure is pretty deep, immutability
+<p>As a rule of thumb <em>Jeka</em> favors immutable objects. Nevertheless when object structure is getting deep, immutability
 makes object cumbersome to configure, that's why objects of the API with deep structure are mutable while simpler are
 immutable.</p>
 <p><strong>Instantiation</strong></p>
 <p>All objects are instantiated using static factory methods. Every factory method names start with <code>of</code>.</p>
 <p><strong>Read Accessors</strong></p>
-<p>All accessor method names (methods returning a result without requiring IO, just computation) starts with <code>get</code>.</p>
+<p>All accessor method names (methods returning a result without requiring IO, only computation) starts with <code>get</code>.</p>
 <p><strong>Withers/Anders for Immutable Objects</strong></p>
 <p>To create a subtly different object from an other immutable one, <em>Jeka</em> provides :</p>
 <ul>
@@ -177,20 +172,20 @@ relies on other lower level ones provided by <em>Jeka</em>. In a glance these ar
 <li><strong>Project :</strong> Project structure to build</li>
 </ul>
 </li>
-<li><strong>Tooling :</strong> Eclipse integration, intellij integration, Maven interaction</li>
+<li><strong>Tooling :</strong> Eclipse integration, intellij integration, Maven interaction, Git</li>
 <li><strong>Support :</strong> Set of utility class with static methods to handle low-level concerns</li>
 </ul>
 <a name="Files"></a>
 <h2>Files</h2>
 <p>File manipulation is a central part of building software.
-Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concept around and provides a powerful fluent style API to perform
+Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concept around to provide a powerful fluent style API to performing
 recurrent tasks with minimal effort.</p>
 <p>The following classes lie in <code>dev.jeka.core.api.file</code> package :</p>
 <ul>
 <li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
 checksum, deletion, creation features.</li>
 </ul>
-<p>The following snippet creates a file on file system and copy the content of the specified url into it</p>
+<p>The following snippet creates a file on file system and copies the content of the specified url into it</p>
 <pre><code class="language-java">JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
 </code></pre>
 <ul>
@@ -200,18 +195,18 @@ checksum, deletion, creation features.</li>
 <ul>
 <li><code>JkPathMatcher</code> : A <code>java.nio.file.PathMatcher</code> based on <code>java.nio.file</code> glob pattern or regerxp.</li>
 </ul>
-<p>Used in path trees to filter in/out files according name patterns.</p>
+<p>Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
 <ul>
 <li><code>JkPathTree</code> : A root folder (or a zip file) along a <code>PathMatcher</code> providing operations as copy, navigate, zip, iterate.
 This central class is spread all over Jeka APIs.</li>
 </ul>
-<p>The following snippet copy all non java source files to another directory preserving structure.</p>
+<p>The following snippet copies all non java source files to another directory preserving structure.</p>
 <pre><code class="language-java">JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
 </code></pre>
 <ul>
 <li><code>JkPathTreeSet</code> : A set of <code>JkPathTree</code>.</li>
 </ul>
-<p>Instances of this class are used by Java project api to defines source and resource files.</p>
+<p>Instances of this class are used by Java project api to defines source and resource files. It also helps to create fat jars.</p>
 <ul>
 <li><code>JkResourceProcessor</code> : Provides a means to copy a set of files, preserving the structure and
 replacing some text by other text. Typically used for replacing token as <code>${server.ip}</code> by concrete value.</li>
@@ -224,13 +219,13 @@ JkResourceProcessor.of(JkPathTreeSet.of(Paths.get(&quot;src&quot;))).andInterpol
 </code></pre>
 <a name="System"></a>
 <h2>System</h2>
-<p>The <code>dev.jeka.core.api.system</code> package provides classes providing low level functions :</p>
+<p>The <code>dev.jeka.core.api.system</code> package provides systeml level functions :</p>
 <ul>
 <li>
 <p><code>JkException</code> : Marker exception generally to mention user misuse.</p>
 </li>
 <li>
-<p><code>JkInfo</code> : Provides information as current version of Jeka.</p>
+<p><code>JkInfo</code> : Provides meta information as the running version of Jeka.</p>
 </li>
 <li>
 <p><code>JkLocator</code> : Provides information about where is located folder as repository cache or Jeka user home.</p>
@@ -256,7 +251,7 @@ Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or man
 <ul>
 <li><strong>Arbitrary files</strong> located on the file system (represented by <code>JkFileSystemDependency</code> class). These files are assumed to be present on the file system when the build is running.</li>
 <li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
-<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven or Ivy.</li>
+<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven, Ivy or Gradle.</li>
 </ul>
 <p>For the last, Jeka is using <em>Ivy 2.4.0</em> under the hood.
 This library is embedded inside the Jeka jar and is executed in a dedicated classloader.
@@ -265,7 +260,7 @@ So all happens as if there where no dependency on Ivy.</p>
 <h4>What is a scope ?</h4>
 <p>Projects may need dependencies to accomplish certain tasks and these dependencies may vary according the executed tasks.
 For example, to <em>compile</em> you may need <em>guava</em> library only but to <em>test</em> you'll need <em>junit</em> library too.
-To label dependencies according their usage, Jeka uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
+To tag dependencies according their usage, Jeka uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
 <p>A scope can <em>inherit</em> from one or several scopes. This means that if a scope <em>Foo</em> inherits from scope <em>Bar</em> then a dependencies declared with scope <em>Bar</em> will be also considered as declared with scope <em>Foo</em>.
 For instance, in <code>JkJavaBuild</code>, scope <code>TEST</code> inherits from <code>RUNTIME</code> that inherits from <code>COMPILE</code> so every dependencies declared with scope <code>COMPILE</code> are considered to be declared with scope <code>RUNTIME</code> and <code>TEST</code> as well.</p>
 <p>By default, scopes are <em>transitive</em>. This has only a meaning for <em>module dependencies</em>.
@@ -279,7 +274,7 @@ This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.
 <a name="Defineasetofdependencies"></a>
 <h3>Define a set of dependencies</h3>
 <p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
-<p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides fluent API for easier instantiation.</p>
+<p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides a fluent API for easier instantiation.</p>
 <pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
 ...
 JkDependencySet deps = JkDependencySet.of()
@@ -323,9 +318,8 @@ org.fluentlenium:fluentlenium-junit:3.2.0
 - PROVIDED
 org.projectlombok:lombok:1.16.16
 </code></pre>
-<a name="Definingdifferenttypeofdependencies"></a>
-<h3>Defining different type of dependencies</h3>
-<p>This section describes how to declare different types of dependencies.</p>
+<a name="HHierarchyofDependencyTypes."></a>
+<h3>HHierarchy of Dependency Types.</h3>
 <ul>
 <li><code>JkModuleDependency</code> : Dependency on Maven modules</li>
 <li><code>JkFileDependency</code> (Abstract): Dependency on files to be found on file system
@@ -370,7 +364,7 @@ If some files still missing after the computation has run, the build fails.</p>
 <li>Dependencies on files produced by any means.</li>
 </ul>
 <p>The generic way is to construct this kind of dependency using a <code>java.lang.Runnable</code>.</p>
-<p>The following snippet constructs a set of dependencies on two external project : one is built with maven, the other with
+<p>The following snippet constructs a set of dependencies on two external projects : one is built with Maven, the other with
 <em>Jeka</em>.</p>
 <pre><code class="language-Java">Path mavenProject = Paths.get(&quot;../a-maven-project&quot;);
 JkProcess mavenBuild = JkProcess.of(&quot;mvn&quot;, &quot;clean&quot;, &quot;install&quot;).withWorkingDir(mavenProject);
