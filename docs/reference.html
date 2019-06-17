@@ -594,14 +594,14 @@ as command line arguments, stored in specific files or hard coded in <em>command
 <p>A <em>command class</em> may look like :</p>
 <pre><code class="language-Java">import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
-import JkDoc;
-import JkImport;
-import JkRun;
+import dev.jeka.core.tool.JkDoc;
+import dev.jeka.core.tool.JkImport;
+import dev.jeka.core.tool.JkCommands;
 import com.google.common.base.MoreObjects;
 
 @JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
 @JkImport(&quot;com.google.guava:guava:21.0&quot;)
-public class MyRun extends JkCommands {    // The command class
+public class MyCommands extends JkCommands {    // The command class
     
     public String myParam1 = &quot;myDefault&quot;;    // Overridable by injecting options in command line
 
@@ -619,18 +619,18 @@ public class MyRun extends JkCommands {    // The command class
 
 }
 </code></pre>
-<p>From <strong>[Project Dir]</strong>,  you can invoke any run method defined on <code>MyRun</code> class from the command line.</p>
+<p>From <strong>[Project Dir]</strong>,  you can invoke any command method defined on <code>MyCommands</code> class from the command line.</p>
 <p>For example, executing <code>jeka myMethod1 myMethod2 -myParam1=foo</code> does the following :</p>
 <ol>
 <li>compile sources located in <em>jeka/def</em> directory,</li>
-<li>instantiate a <code>MyRun</code> instance,</li>
+<li>instantiate a <code>MyCommands</code> instance,</li>
 <li>inject <em>&quot;foo&quot;</em> in the <code>myParam1</code> field,</li>
 <li>invoke <code>myMethod1()</code>,</li>
 <li>invoke <code>myMethod2()</code>.</li>
 </ol>
-<p>If no <em>command class</em> are present in <em>def classes</em>, Jeka picks <code>JkRun</code>. In despite this class
-does not provide any particular methods, you can still perform full Java builds by invoking built-in 'java' plugin
-executing <code>jeka clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
+<p>If no <em>command class</em> are present in <em>def classes</em>, Jeka picks <code>JkCommands</code>. In despite this class
+does not provide any particular methods, you can still perform full Java builds by invoking built-in 'java' plugin.
+For such, execute <code>jeka clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
 <p>Executing <code>jeka</code> or <code>jeka help</code> on command line displays all run methods and options for the current <em>command class</em>.</p>
 <p>The following chapters detail about how the mechanism works and what you can do with.</p>
 <a name="JekaRuntime"></a>
