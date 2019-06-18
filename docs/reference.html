@@ -645,7 +645,7 @@ and <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/jav
 of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH environment variable.</p>
 <p>This script does the following :</p>
 <ol>
-<li>Find the <em>java</em> executable path : If a <code>JAVA_HOME</code> environment variable is defined then it takes the one lying in this JDK, otherwise it takes the one accessible in the <em>PATH</em> of your OS.</li>
+<li>Find the <em>Java</em> executable path : Look first at <code>JEKA_JDK</code> environment variable thhen <code>JAVA_HOME</code>. If no such variables are  defined it takes the one lying in this JDK, otherwise it takes the one accessible in the <em>PATH</em> of your OS. <code>JEKA_JDK/bin/java</code> or <code>JAVA_HOME/bin/java</code> must resolve to the <em>Java</em> executable.</li>
 <li>Get java execution option : If an environment variable <code>JEKA_OPTS</code> exists then its value is passed to the <code>java</code> command line parameters.</li>
 <li>Get the classpath in the following order :
 <ul>
