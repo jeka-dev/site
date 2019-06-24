@@ -49,10 +49,9 @@
 <p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
 <p><strong>Def Classpath :</strong> Classpath on which depend <em>def classes</em> to get compiled and <em>command classes</em> to be executed.
 By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or def Classpath coming
-from imported project.
-Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is augmented with compiled  <em>def classes</em>.</p>
-<p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their <em>commands</em> can be invoked from the command line and
-their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>command class</em> though there can be many or
+from imported project.</p>
+<p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their public no-arg methods can be invoked from the command line and
+their pubic fields set from the command line. Generally <em>def classes</em> contains one <em>command class</em> though there can be many or
 none. Command classes can come from <em>def classes</em> but can also be imported from a library or external project.</p>
 <p><strong>Commands :</strong> Java methods member of <em>command classes</em> and invokable from command line.
 They must be instance method (not static), public, zero-args and returning void.
@@ -170,12 +169,11 @@ variable <code>JEKA_USER_HOME</code>.</p>
 This will generate a project skeleton as follow :</li>
 </ol>
 <pre><code>sample1
-   + .idea
-       + sample1.iml    &lt;----- Intellij metadata containing project dependencies (At least dev.jeka.core)
    + jeka             
       + def             &lt;-----  Java code that build your project goes here
          + Build.java   
       + output          &lt;---- Genererated files are supposed to lie here  
+   + sample1.iml    &lt;----- Intellij metadata containing project dependencies (At least dev.jeka.core)
 </code></pre>
 <ol start="4">
 <li>Import the project in your IDE. Eveything should be Ok, in particular <em>Build.java</em> should compile and execute within your IDE.</li>
