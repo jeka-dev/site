@@ -151,16 +151,16 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsSystem.html#addOnExitAction-java.lang.Runnable-">addOnExitAction</a></span>(java.lang.Runnable&nbsp;runnable)</code>
-<div class="block">Adds an action to be executed when he JVM shuts down.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code>static java.util.List&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsSystem.html#classloaderEntries-java.net.URLClassLoader-">classloaderEntries</a></span>(java.net.URLClassLoader&nbsp;classLoader)</code>
 <div class="block">Returns the classpath of this classloader without mentioning classpath of
  the parent classloaders.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code>static void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsSystem.html#disableUnsafeWarning--">disableUnsafeWarning</a></span>()</code>
+<div class="block">On Jdk 9+, a warning is emitted while attempting to access private fields by reflection.</div>
 </td>
 </tr>
 </table>
@@ -215,14 +215,15 @@ extends java.lang.Object</pre>
  the parent classloaders.</div>
 </li>
 </ul>
-<a name="addOnExitAction-java.lang.Runnable-">
+<a name="disableUnsafeWarning--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>addOnExitAction</h4>
-<pre>public static&nbsp;void&nbsp;addOnExitAction(java.lang.Runnable&nbsp;runnable)</pre>
-<div class="block">Adds an action to be executed when he JVM shuts down.</div>
+<h4>disableUnsafeWarning</h4>
+<pre>public static&nbsp;void&nbsp;disableUnsafeWarning()</pre>
+<div class="block">On Jdk 9+, a warning is emitted while attempting to access private fields by reflection. This hack aims at
+ removing this warning.</div>
 </li>
 </ul>
 </li>

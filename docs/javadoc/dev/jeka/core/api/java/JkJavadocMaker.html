@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":10,"i5":10,"i6":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -169,14 +169,8 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java">JkJavadocMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html#withDoclet-java.lang.Class-">withDoclet</a></span>(java.lang.Class&lt;?&gt;&nbsp;doclet)</code>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><code>JkJavadocMaker</code></a> identical to this one but using the specified doclet.</div>
-</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>java.nio.file.Path</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html#zipFile--">zipFile</a></span>()</code>
-<div class="block">Returns the zip file containing all the produced Javadoc.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html#withDisplayOutput-boolean-">withDisplayOutput</a></span>(boolean&nbsp;displayOutput)</code>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><code>JkJavadocMaker</code></a> identical to this one but using the specified classpath.</div>
 </td>
 </tr>
 </table>
@@ -226,26 +220,6 @@ extends java.lang.Object</pre>
  the specified directory.</div>
 </li>
 </ul>
-<a name="zipFile--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>zipFile</h4>
-<pre>public&nbsp;java.nio.file.Path&nbsp;zipFile()</pre>
-<div class="block">Returns the zip file containing all the produced Javadoc.</div>
-</li>
-</ul>
-<a name="withDoclet-java.lang.Class-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withDoclet</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java">JkJavadocMaker</a>&nbsp;withDoclet(java.lang.Class&lt;?&gt;&nbsp;doclet)</pre>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><code>JkJavadocMaker</code></a> identical to this one but using the specified doclet.</div>
-</li>
-</ul>
 <a name="andOptions-java.lang.String...-">
 <!--   -->
 </a>
@@ -273,6 +247,16 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>withClasspath</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java">JkJavadocMaker</a>&nbsp;withClasspath(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;classpath)</pre>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><code>JkJavadocMaker</code></a> identical to this one but using the specified classpath.</div>
+</li>
+</ul>
+<a name="withDisplayOutput-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withDisplayOutput</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java">JkJavadocMaker</a>&nbsp;withDisplayOutput(boolean&nbsp;displayOutput)</pre>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><code>JkJavadocMaker</code></a> identical to this one but using the specified classpath.</div>
 </li>
 </ul>
