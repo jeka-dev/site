@@ -131,9 +131,10 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static int</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsPath.html#childrenCount-java.nio.file.Path-int-boolean-">childrenCount</a></span>(java.nio.file.Path&nbsp;dir,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsPath.html#childrenCount-java.nio.file.Path-int-boolean-java.nio.file.PathMatcher-">childrenCount</a></span>(java.nio.file.Path&nbsp;dir,
              int&nbsp;max,
-             boolean&nbsp;includeDirectories)</code>
+             boolean&nbsp;includeDirectories,
+             java.nio.file.PathMatcher&nbsp;pathMatcher)</code>
 <div class="block">Returns the file count contained in the specified directory (recursively) to concurrence to specified max count.</div>
 </td>
 </tr>
@@ -613,7 +614,7 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="childrenCount-java.nio.file.Path-int-boolean-">
+<a name="childrenCount-java.nio.file.Path-int-boolean-java.nio.file.PathMatcher-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -621,7 +622,8 @@ extends java.lang.Object</pre>
 <h4>childrenCount</h4>
 <pre>public static&nbsp;int&nbsp;childrenCount(java.nio.file.Path&nbsp;dir,
                                 int&nbsp;max,
-                                boolean&nbsp;includeDirectories)</pre>
+                                boolean&nbsp;includeDirectories,
+                                java.nio.file.PathMatcher&nbsp;pathMatcher)</pre>
 <div class="block">Returns the file count contained in the specified directory (recursively) to concurrence to specified max count.
  If the effective count is greater than max count, returns <code>max + 1</code>.
  This method is designed to stop file traversal as soon as count is greater than max.</div>
