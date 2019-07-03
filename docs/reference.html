@@ -797,7 +797,7 @@ This leads in a simpler and faster process.</p>
 <p>To launch Jeka from your IDE, you can go two ways :</p>
 <p>One is to create a main method in one of your <em>def classes</em> as below and invoke it.</p>
 <pre><code class="language-Java">public static void main(String[] args) {
-    JkInit.instanceOf(MyCommands.class, args).doDefault();
+    JkInit.instanceOf(MyCommands.class, args).doSomething();
 } 
 </code></pre>
 <p>The <code>JkInit#instanceOf</code> method loads options from args and instantiates <em>command classes</em>. Then user can
