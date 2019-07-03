@@ -579,10 +579,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html#BRANCH">BRANCH</a></span> - Static variable in class dev.jeka.core.tool.builtins.sonar.<a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkSonar</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#bring-java.lang.Iterable-java.nio.file.StandardCopyOption...-">bring(Iterable&lt;Path&gt;, StandardCopyOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
-<dd>
-<div class="block">Copies the specified files at the root of this tree.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#BUILD_JDK">BUILD_JDK</a></span> - Static variable in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
 <dd>
 <div class="block">The JDK version who was running while bulding this manifest.</div>
@@ -652,6 +648,10 @@
 <dd>
 <div class="block">Serializes an object to the current classloader and unserializes it in
  the specified classloader.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#close--">close()</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
+<dd>
+<div class="block">This method close the underlying file system.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsIO.html#closeifClosable-java.lang.Object-">closeifClosable(Object)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsIO.html" title="class in dev.jeka.core.api.utils">JkUtilsIO</a></dt>
 <dd>
@@ -2465,6 +2465,18 @@
 <dd>
 <div class="block">The version of the implementation.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#importDir-java.nio.file.Path-java.nio.file.CopyOption...-">importDir(Path, CopyOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
+<dd>
+<div class="block">Copies the specified directory and its content at the root of this tree.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#importFiles-java.lang.Iterable-java.nio.file.StandardCopyOption...-">importFiles(Iterable&lt;Path&gt;, StandardCopyOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
+<dd>
+<div class="block">Copies the specified files at the root of this tree.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#importTree-dev.jeka.core.api.file.JkPathTree-java.nio.file.CopyOption...-">importTree(JkPathTree, CopyOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
+<dd>
+<div class="block">Copies the content of the specified tree at the root of this one.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkLog.html#info-java.lang.String-">info(String)</a></span> - Static method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkLog.html" title="class in dev.jeka.core.api.system">JkLog</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#info--">info()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
@@ -3732,14 +3744,6 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_PUBLIC_DOWNLOAD_RELEASE_AND_SNAPSHOT">MAVEN_OSSRH_PUBLIC_DOWNLOAD_RELEASE_AND_SNAPSHOT</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></dt>
 <dd>
 <div class="block">URL of the OSSRH repository for downloading both snapshot and released artifacts.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#merge-java.nio.file.Path-java.nio.file.CopyOption...-">merge(Path, CopyOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
-<dd>
-<div class="block">Short hand for <code>#merge(JkPathTree.of(dirToCopy, copyOptions)</code>.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTree.html#merge-dev.jeka.core.api.file.JkPathTree-java.nio.file.CopyOption...-">merge(JkPathTree, CopyOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></dt>
-<dd>
-<div class="block">Copies the content of the specified tree at the root of this one.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#merge-dev.jeka.core.api.java.JkManifest-">merge(JkManifest)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
 <dd>
