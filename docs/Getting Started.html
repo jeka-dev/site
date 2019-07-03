@@ -63,10 +63,10 @@ add dynamically commands and options to the running <em>command class</em>.</p>
 <a name="InstallJeka"></a>
 <h1>Install Jeka</h1>
 <ol>
-<li>Download and unzip the lastest <em>core-x.x.x-distrib.zip</em> file found on <a href="https://oss.sonatype.org/content/repositories/snapshots/org/jeka/core/">snapshot</a> or <a href="https://repo1.maven.org/maven2/org/jeka/core/">release</a> repository to the directory you want to install Jeka</li>
-<li>Make sure that either a valid JDK is on your <em>PATH</em> environment variable or that a <em>JAVA_HOME</em> variable is pointing on.
-For now, Jeka only runs with JDK8 (though it can build Java project of any Java version). If your defaulf JDK version is not 8 or your <em>JAVA_HOME</em> environment variable does not point to a JDK8 then add a <em>JEKA_JDK</em> environment variable pointing on a JDK8 (<em>JEKA_JDK</em>/bin/java must point on a java execuable).</li>
-<li>Add <em>[JEKA HOME]</em> to your <em>PATH</em> environment variable</li>
+<li>Download and unzip the lastest <em>core-x.x.x-distrib.zip</em> file found on <a href="https://oss.sonatype.org/content/repositories/snapshots/org/jeka/core/">snapshot</a> or <a href="https://repo1.maven.org/maven2/org/jeka/core/">release</a> repository to the directory you want to install Jeka.</li>
+<li>Make sure that either a valid JDK is on your <em>PATH</em> environment variable or that a <em>JAVA_HOME</em> variable is pointing on (<em>JAVA_HOME</em>/bin/java must point on a java executable).
+Note that you can choose a specific JDK instance to run Jeka without affecting <em>JAVA_HOME</em> variable by setting <em>JEKA_JDK</em> environment variable (<em>JEKA_JDK</em>/bin/java must point on a java executable).
+Required Jdk version for running Jeka is 8 or more (tested until 12). Jdk 7 is no more supported.</li>
 <li>execute <code>jeka help</code> in the command line. You should get an output starting by :</li>
 </ol>
 <pre><code>Usage:
