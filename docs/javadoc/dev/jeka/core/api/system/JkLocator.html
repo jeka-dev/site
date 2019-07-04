@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":9,"i3":9};
+var methods = {"i0":9,"i1":9,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -169,6 +169,18 @@ extends java.lang.Object</pre>
 <div class="block">Returns the Jeka user directory.</div>
 </td>
 </tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLocator.html#getWrappedJekaVersion-java.nio.file.Path-">getWrappedJekaVersion</a></span>(java.nio.file.Path&nbsp;projectRoot)</code>
+<div class="block">Returns the Jeka wrapped version declared in the specified project.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLocator.html#getWrappedVersionRelativeDir-java.lang.String-">getWrappedVersionRelativeDir</a></span>(java.lang.String&nbsp;version)</code>
+<div class="block">Returns the relative path from Jeka User Dir</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -227,6 +239,27 @@ extends java.lang.Object</pre>
 <h4>getJekaHomeDir</h4>
 <pre>public static&nbsp;java.nio.file.Path&nbsp;getJekaHomeDir()</pre>
 <div class="block">Returns the directory where is installed the running Jeka instance.</div>
+</li>
+</ul>
+<a name="getWrappedJekaVersion-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWrappedJekaVersion</h4>
+<pre>public static&nbsp;java.lang.String&nbsp;getWrappedJekaVersion(java.nio.file.Path&nbsp;projectRoot)</pre>
+<div class="block">Returns the Jeka wrapped version declared in the specified project. Returns <code>null</code> if no wrapped
+ version is declared.</div>
+</li>
+</ul>
+<a name="getWrappedVersionRelativeDir-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getWrappedVersionRelativeDir</h4>
+<pre>public static&nbsp;java.lang.String&nbsp;getWrappedVersionRelativeDir(java.lang.String&nbsp;version)</pre>
+<div class="block">Returns the relative path from Jeka User Dir</div>
 </li>
 </ul>
 <a name="getJekaUserHomeDir--">
