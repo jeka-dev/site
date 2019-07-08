@@ -1014,12 +1014,12 @@ The plugin name is inferred from Plugin class name.</p>
 <p>Each plugin instance is owned by a JkCommands object, and can access to it through <code>JkPlugin#owner</code> protected field.</p>
 <p>Plugins has 3 capabilities :</p>
 <ul>
-<li>Access to their owning JkCommands instance (so potentially modify it, load/modify other plugins)</li>
+<li>Access to their owning JkCommands instance (so potentially modify it, load/modify other plugins).</li>
 <li>Expose <em>commands</em> and <em>options</em> to command line.</li>
 <li>Provide self documentation.</li>
 </ul>
 <p>Jeka is bundled with a bunch of plugins (java, scaffold, eclipse, intellij, ...) but one can add extra plugins just
-by adding the jar or directory containing the plugin class to the <em>def classpath</em>.</p>
+by adding a jar or directory containing the plugin class to the <em>def classpath</em>.</p>
 <p>To see all available plugins in the <em>def classpath</em>, just execute <code>jeka help</code>.
 See <a href="#CommandLineParsing">Command Line Parsing</a> and <a href="#RunClassPre-processing(Import3rdpartylibraryintoRunClasspath)">Run Class Pre-processing</a>
 to augment <em>def classpath</em> .</p>
@@ -1028,43 +1028,45 @@ to augment <em>def classpath</em> .</p>
 <p>Plugins need not to be mentioned in <em>command class</em> code in order to be bound to the JkCommands instance. Just the fact to
 mention a plugin in the command line loads it.</p>
 <p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkCommands instance.
-'java' plugin instance will modify 'scaffold' plugin instance in such it produces a command class code extending <code>JkJavaProjectBuild</code>
-instead of 'JkCommands' when 'scaffold#run' command is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
+'java' plugin instance will modify 'scaffold' plugin instance in such it produces a command class declaring 'java' plugin
+when 'scaffold#run' is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
 to have a concrete view.</p>
-<p>You can also force a plugin to load in your <em>command class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
+<p>You can also force a plugin to be loaded in your <em>command class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
 <pre><code class="language-Java">public class MyBuild extends JkCommands {
     
     MyBuild() {
-        getPlugin(JkPluginJava.class);  // Loads 'java' plugins in this instance, a second call on 'plugins().get(JkPluginJava.class)' will return same instance.
-        getPlugin(&quot;intellij&quot;);   // You can also load plugin by mentioning its name but it's slower cause it involves classpath scanning
+        getPlugin(JkPluginJava.class);  // Loads 'java' plugins in MyBuild instances, a second call on 'plugins().get(JkPluginJava.class)' would return the same JkPluginJava instance.
+        getPlugin(&quot;intellij&quot;);   // You can also load plugins by mentioning their name but it's slower cause it involves classpath scanning
     }
     
 }
 </code></pre>
 <a name="ModifyOwingJkCommandsInstance"></a>
 <h3>Modify Owing JkCommands Instance</h3>
-<p>JkCommands instances are created using <code>JkCommands#of</code> factory method. This method invoke <code>JkPlugin#active</code> method on all plugin loaded in the JkCommands instance.
-By default, this method does nothing but plugin implementations can override it in order to let the plugin modify its owning JkCommands or one of its plugins.</p>
+<p>JkCommands instances are created using <code>JkCommands#of</code> factory method. This method invoke <code>JkPlugin#activate</code> method on all plugins loaded in the JkCommands instance.
+By default, <code>activate</code> method does nothing but plugin implementations can override it in order to let the plugin modify its owning JkCommands or one of its plugins at instantiation time.</p>
 <p>In fact, many plugins act just as modifier/enhancer of other plugins.</p>
 <p>For example, <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
-does not provide <em>command</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
+does not provide <em>commands</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
 It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>
 <p>Some other plugins does not modify their owning JkCommands instance, for example <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
-does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkRun</code> instance. It only features <em>commands</em>  along <em>options</em>.</p>
+does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkCommands</code> instance. It only features extra <em>commands</em> and <em>options</em>.</p>
 <a name="ConfigurePluginsinJkCommandsClass"></a>
 <h3>Configure Plugins in JkCommands Class</h3>
 <p>There is three places where you can configure plugins :</p>
 <ul>
-<li>In <code>JkCommands</code> subclass constructor : at this point options has yet been injected so it's the place to configure default option values.</li>
+<li>In <code>JkCommands</code> subclass constructors : at this point options has not yet been injected so it's the place to configure default option values.</li>
 <li>In <code>JkCommands#setup</code> subclass method : at this point, options has been injected but plugins has not been activated yet.
-It is the place to configure plugins and other instance member to take options in account.</li>
+It is the place to configure plugins and other instance member to take options in account before activation.</li>
 <li>In <code>JkCommands#setupAfterPluginActivations</code> subclass method : at this point plugins has been activated. If you wan't to override
-some values plugins may have set, override this method.</li>
+some values plugin activation may have set, override this method.</li>
 </ul>
 <p>Example of configuring a plugin in <em>command class</em>.</p>
-<pre><code class="language-Java">    ...
+<pre><code class="language-Java">
+    JkPluginSonar sonarPlugin = getPlugin(JkPluginSonar.class);  // Load sonar plugin 
+    
+    ...
     public MyBuild() {
-        JkPluginSonar sonarPlugin = getPlugin(JkPluginSonar.class);  // Load sonar plugin 
 		sonarPlugin.prop(JkSonar.BRANCH, &quot;myBranch&quot;);  // define a default for sonar.branch property
         ...
     }
@@ -1072,7 +1074,7 @@ some values plugins may have set, override this method.</li>
 <p><a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/jeka/def/org/jeka/CoreBuild.java">Jeka own build class</a> makes a good example.</p>
 <a name="DocumentPlugins"></a>
 <h3>Document Plugins</h3>
-<p>Plugin writers can embed self-documentation using <code>@JkDoc</code> annotation on classes, run methods and public fields.</p>
+<p>Plugin authors can embed self-documentation using <code>@JkDoc</code> annotation on classes, command methods and option fields.</p>
 <p>Writers can also mention that the plugin has dependencies on other plugins using <code>@JkDocPluginDeps</code> annotation. This annotation
 has only a documentation purpose and does not has influence on plugin loading mechanism.</p>
 <p>A good example is <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
