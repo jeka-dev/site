@@ -37,7 +37,7 @@
 <a href="#Publication" class="menuItem3">Publication</a><br />
 <a href="#PublishtoaMavenrepository" class="menuItem4">Publish to a Maven repository</a><br />
 <a href="#PublishtoaIvyrepository" class="menuItem4">Publish to a Ivy repository</a><br />
-<a href="#JavaProjectMaking" class="menuItem2">Java Project Making</a><br />
+<a href="#JavaProjectBuilding" class="menuItem2">Java Project Building</a><br />
 <a href="#Compilation" class="menuItem3">Compilation</a><br />
 <a href="#Javadoc" class="menuItem3">Javadoc</a><br />
 <a href="#Classpath" class="menuItem3">Classpath</a><br />
@@ -45,6 +45,11 @@
 <a href="#Classloaders" class="menuItem3">Classloaders</a><br />
 <a href="#Junittests" class="menuItem3">Junit tests</a><br />
 <a href="#Projects" class="menuItem3">Projects</a><br />
+<a href="#ThirdPartyToolIntegration" class="menuItem2">Third Party Tool Integration</a><br />
+<a href="#Eclipse" class="menuItem3">Eclipse</a><br />
+<a href="#Intellij" class="menuItem3">Intellij</a><br />
+<a href="#Git" class="menuItem3">Git</a><br />
+<a href="#Maven" class="menuItem3">Maven</a><br />
 <a href="#ToolPart" class="menuItem1">Tool Part</a><br />
 <a href="#JekaRuntime" class="menuItem2">Jeka Runtime</a><br />
 <a href="#JekafromCommandline" class="menuItem3">Jeka from Command line</a><br />
@@ -87,13 +92,6 @@
 <a href="#AccessImportedRunsProgrammatically" class="menuItem3">Access Imported Runs Programmatically</a><br />
 <a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><a name="Introduction"></a>
 <h1>Introduction</h1>
-<p>This document stands for reference guide to provide details about Jeka behaviour. If you are looking for
-how exactly Jeka behaves or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
-<p>However, a document can not replace a source code or API for exhaustion. Jeka philosophy is to be as transparent and
-easy to master as possible. We hope that no user will ever feel the need to buy some trainings or books to master it.</p>
-<p>The source code has been written with intelligibility in mind in order to navigate easily from the user code
-to the Jeka engine room. For Java developers, reading source code and placing break points troubleshoots faster
-than documentation/support most of the time.</p>
 <p><strong>What is Jeka ?</strong></p>
 <p>Jeka contains both a library and a tool.</p>
 <p>The library is for dealing with file sets, compilation, dependency management, testing,
@@ -102,7 +100,19 @@ The library can be used in any Java program and does not have any dependency.</p
 <p>The tool is intended to execute Java source code from the console in a parameterizable way. Its architecture eases the
 reuse of build elements (logic, settings, doc, ...) across projects.</p>
 <p>Although library and tool are bundled in the same jar, the library does not depend on the tool at all. It can be understood
-on its own without any knowledge of the tool part.</p>
+on its own without any knowledge of the tool.</p>
+<p><strong>What this document stands for ?</strong></p>
+<p>This document stands for reference guide to provide :</p>
+<ul>
+<li>An overview of the API for giving a idea of what it can do for you.</li>
+<li>Details about Jeka tool behaviour.</li>
+</ul>
+<p>If you are looking for how exactly Jeka behaves or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
+<p>If you are looking for further details about API, please consult Javadoc or source code. Jeka source code has been
+written with intelligibility in mind in order to navigate easily from the user code to the Jeka engine room.
+For Java developers, reading source code and putting break points troubleshoots faster than documentation/support most of the time.</p>
+<p>Jeka philosophy is to be transparent and easy to master. We hope that no user will ever feel the need to buy some
+trainings or books to master it.</p>
 <a name="Library"></a>
 <h1>Library</h1>
 <p>Jeka contains a library for all regular things you need to build/publish projects and especially Java projects.
@@ -219,7 +229,7 @@ JkResourceProcessor.of(JkPathTreeSet.of(Paths.get(&quot;src&quot;))).andInterpol
 </code></pre>
 <a name="System"></a>
 <h2>System</h2>
-<p>The <code>dev.jeka.core.api.system</code> package provides systeml level functions :</p>
+<p>The <code>dev.jeka.core.api.system</code> package provides system level functions :</p>
 <ul>
 <li>
 <p><code>JkException</code> : Marker exception generally to mention user misuse.</p>
@@ -476,8 +486,8 @@ provided elements.</p>
     publisher.publishIvy(versionedModule, publication, deps, JkJavaDepScopes.DEFAULT_SCOPE_MAPPING,
             Instant.now(), JkVersionProvider.of());
 </code></pre>
-<a name="JavaProjectMaking"></a>
-<h2>Java Project Making</h2>
+<a name="JavaProjectBuilding"></a>
+<h2>Java Project Building</h2>
 <p>Jeka provides API for processing usual Java build tasks. To illustrate this, let's start from the following
 layout :</p>
 <pre><code class="language-java">    Path src = getBaseDir().resolve(&quot;src/main/java&quot;);
@@ -554,6 +564,23 @@ artifact as well.</p>
 <p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
 deployed along the other ones.</p>
 <p>JkJavaProject instances are highly configurable. You can tune your project structure/build without limits.</p>
+<a name="ThirdPartyToolIntegration"></a>
+<h2>Third Party Tool Integration</h2>
+<p>The <code>dev.jeka.core.api.tooling</code> package provides integration with tools developers generally deal with.</p>
+<a name="Eclipse"></a>
+<h3>Eclipse</h3>
+<p><code>JkEclipseClasspathGenerator</code> and <code>JkEclipseProjectGenerator</code> provides method to generate a proper .classpath and .project file respectively.</p>
+<p><code>JkEclipseClasspathApplier</code> reads information from a .classpath file.</p>
+<a name="Intellij"></a>
+<h3>Intellij</h3>
+<p><code>JkIntellijImlGenerator</code> generates proper .iml files.</p>
+<a name="Git"></a>
+<h3>Git</h3>
+<p><code>JkGitWrapper</code> wraps common Git commands in a lean API.</p>
+<a name="Maven"></a>
+<h3>Maven</h3>
+<p><code>JkMvn</code> wraps Maven command line in a lean API while <code>JkPom</code> reads POM/BOM to extract information from
+as declared dependencies, dependency management, repos, properties, version and artifactId.</p>
 <a name="ToolPart"></a>
 <h1>Tool Part</h1>
 <p><span class="menuItem0">Lexical</span></p>
