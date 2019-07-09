@@ -292,7 +292,7 @@ class Commands extends JkCommands {
 </code></pre>
 <ol start="2">
 <li>
-<p>Execute <code>jeka intellij#generateIml</code> or <code>jeka eclipse#generateFiles</code> to add properly the dependencies to your IDE (You may need to refresh it).</p>
+<p>Execute <code>jeka intellij#iml</code> or <code>jeka eclipse#files</code> to add properly the dependencies to your IDE (You may need to refresh it).</p>
 </li>
 <li>
 <p>You can add code depending on the imported libs</p>
@@ -328,7 +328,7 @@ public void post() {
 </code></pre>
 <ol start="4">
 <li>
-<p>Execute <code>jeka intellij#generateIml</code> (or <code>jeka eclipse#generateFiles</code>) to add <em>sample1</em> dependencies to your IDE. Now <em>Sampl2Commands</em> can refer to the <em>command class</em> of <em>sample1</em>.</p>
+<p>Execute <code>jeka intellij#iml</code> (or <code>jeka eclipse#files</code>) to add <em>sample1</em> dependencies to your IDE. Now <em>Sampl2Commands</em> can refer to the <em>command class</em> of <em>sample1</em>.</p>
 </li>
 <li>
 <p>Replace <em>JkCommands</em> Type by the <em>Commands</em> type from <em>sample1</em> and use it in method implementation.</p>
