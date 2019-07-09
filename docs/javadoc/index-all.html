@@ -1175,8 +1175,6 @@
 </a>
 <h2 class="title">F</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html#FACTORY_CLASS_NAME">FACTORY_CLASS_NAME</a></span> - Static variable in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalDepResolver</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkInternalPublisher.html#FACTORY_CLASS_NAME">FACTORY_CLASS_NAME</a></span> - Static variable in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalPublisher.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalPublisher</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkResolveResult.JkErrorReport.html#failure-java.util.List-">failure(List&lt;JkModuleDepProblem&gt;)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkResolveResult.JkErrorReport.html" title="class in dev.jeka.core.api.depmanagement">JkResolveResult.JkErrorReport</a></dt>
@@ -2831,6 +2829,8 @@
 <dd>
 <div class="block">Relative path to the project where Jeka elements lie.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkInfo.html#JEKA_MODULE_ID">JEKA_MODULE_ID</a></span> - Static variable in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkInfo.html" title="class in dev.jeka.core.api.system">JkInfo</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPopularModules.html#JERSEY_CORE">JERSEY_CORE</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement">JkPopularModules</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPopularModules.html#JERSEY_SERVER">JERSEY_SERVER</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement">JkPopularModules</a></dt>
@@ -4861,6 +4861,24 @@
 <dd>
 <div class="block">Scopes necessary for both compiling tests and run them.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchGroups--">searchGroups()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
+<dd>
+<div class="block">Returns an alphabetical sorted list of groupId present in these repositories</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html#searchGroups--">searchGroups()</a></span> - Method in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalDepResolver</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchModules-java.lang.String-">searchModules(String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
+<dd>
+<div class="block">Returns an alphabetical sorted list of module ids present in these repositories for the specified groupId.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html#searchModules-java.lang.String-">searchModules(String)</a></span> - Method in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalDepResolver</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchVersions-dev.jeka.core.api.depmanagement.JkModuleId-">searchVersions(JkModuleId)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
+<dd>
+<div class="block">Returns an alphabetical sorted list of version present in these repositories for the specified moduleId.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html#searchVersions-dev.jeka.core.api.depmanagement.JkModuleId-">searchVersions(JkModuleId)</a></span> - Method in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalDepResolver</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#secretKeyPassword">secretKeyPassword</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#secretRingPath">secretRingPath</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
@@ -5927,7 +5945,7 @@ the order they are declared.</div>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html#wrap--">wrap()</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#wrap--">wrap()</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html#wrap-dev.jeka.core.api.depmanagement.JkDependencyResolver-">wrap(JkDependencyResolver)</a></span> - Method in class dev.jeka.core.tool.builtins.scaffold.<a href="dev/jeka/core/tool/builtins/scaffold/JkScaffolder.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkScaffolder</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathFile.html#write-byte:A-java.nio.file.OpenOption...-">write(byte[], OpenOption...)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></dt>
 <dd>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -172,34 +172,52 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i8" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchGroups--">searchGroups</a></span>()</code>
+<div class="block">Returns an alphabetical sorted list of groupId present in these repositories</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchModules-java.lang.String-">searchModules</a></span>(java.lang.String&nbsp;groupId)</code>
+<div class="block">Returns an alphabetical sorted list of module ids present in these repositories for the specified groupId.</div>
+</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchVersions-dev.jeka.core.api.depmanagement.JkModuleId-">searchVersions</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>
+<div class="block">Returns an alphabetical sorted list of version present in these repositories for the specified moduleId.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#withBasedir-java.nio.file.Path-">withBasedir</a></span>(java.nio.file.Path&nbsp;baseDir)</code>
 <div class="block">Returns an dependency resolver identical to this one but with specified the base directory.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#withModuleHolder-dev.jeka.core.api.depmanagement.JkVersionedModule-">withModuleHolder</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</code>
 <div class="block">The underlying dependency manager can cache the resolution on file ofSystem
  for faster result.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#withParams-dev.jeka.core.api.depmanagement.JkResolutionParameters-">withParams</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement">JkResolutionParameters</a>&nbsp;params)</code>
 <div class="block">Returns an dependency resolver identical to this one but with the specified repositories.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#withRepos-dev.jeka.core.api.depmanagement.JkRepo-dev.jeka.core.api.depmanagement.JkRepo...-">withRepos</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;repo,
          <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>...&nbsp;otherRepos)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html#withRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">withRepos</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;otherRepos)</code>
 <div class="block">Returns an dependency resolver identical to this one but with the specified repositories.</div>
@@ -379,6 +397,36 @@ extends java.lang.Object</pre>
 <h4>getParams</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement">JkResolutionParameters</a>&nbsp;getParams()</pre>
 <div class="block">Returns the parameters of this dependency resolver.</div>
+</li>
+</ul>
+<a name="searchGroups--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>searchGroups</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;searchGroups()</pre>
+<div class="block">Returns an alphabetical sorted list of groupId present in these repositories</div>
+</li>
+</ul>
+<a name="searchModules-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>searchModules</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;searchModules(java.lang.String&nbsp;groupId)</pre>
+<div class="block">Returns an alphabetical sorted list of module ids present in these repositories for the specified groupId.</div>
+</li>
+</ul>
+<a name="searchVersions-dev.jeka.core.api.depmanagement.JkModuleId-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>searchVersions</h4>
+<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;searchVersions(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
+<div class="block">Returns an alphabetical sorted list of version present in these repositories for the specified moduleId.</div>
 </li>
 </ul>
 <a name="toString--">
