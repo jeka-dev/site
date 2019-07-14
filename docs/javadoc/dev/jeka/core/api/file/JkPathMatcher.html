@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":9,"i9":9,"i10":9,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -200,12 +200,16 @@ implements java.nio.file.PathMatcher</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html#or-java.nio.file.PathMatcher-">or</a></span>(java.nio.file.PathMatcher&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html" title="class in dev.jeka.core.api.file">JkPathMatcher</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html#reversed--">reversed</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>java.util.function.Predicate&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html#toPredicate--">toPredicate</a></span>()</code>
 <div class="block">Returns this matcher as a <code>Predicate</code></div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -385,11 +389,20 @@ implements java.nio.file.PathMatcher</pre>
 <a name="and-boolean-java.lang.String...-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html" title="class in dev.jeka.core.api.file">JkPathMatcher</a>&nbsp;and(boolean&nbsp;positive,
                          java.lang.String...&nbsp;patterns)</pre>
+</li>
+</ul>
+<a name="reversed--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>reversed</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html" title="class in dev.jeka.core.api.file">JkPathMatcher</a>&nbsp;reversed()</pre>
 </li>
 </ul>
 </li>

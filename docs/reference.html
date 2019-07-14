@@ -83,7 +83,7 @@
 <a href="#Built-inOptions" class="menuItem4">Built-in Options</a><br />
 <a href="#Plugins" class="menuItem2">Plugins</a><br />
 <a href="#LoadPlugins" class="menuItem3">Load Plugins</a><br />
-<a href="#ModifyOwingJkCommandsInstance" class="menuItem3">Modify Owing JkCommands Instance</a><br />
+<a href="#ModifyJkCommandsInstance" class="menuItem3">Modify JkCommands Instance</a><br />
 <a href="#ConfigurePluginsinJkCommandsClass" class="menuItem3">Configure Plugins in JkCommands Class</a><br />
 <a href="#DocumentPlugins" class="menuItem3">Document Plugins</a><br />
 <a href="#ImportExternalRuns" class="menuItem2">Import External Runs</a><br />
@@ -1041,11 +1041,12 @@ to have a concrete view.</p>
     
 }
 </code></pre>
-<a name="ModifyOwingJkCommandsInstance"></a>
-<h3>Modify Owing JkCommands Instance</h3>
-<p>JkCommands instances are created using <code>JkCommands#of</code> factory method. This method invoke <code>JkPlugin#activate</code> method on all plugins loaded in the JkCommands instance.
-By default, <code>activate</code> method does nothing but plugin implementations can override it in order to let the plugin modify its owning JkCommands or one of its plugins at instantiation time.</p>
-<p>In fact, many plugins act just as modifier/enhancer of other plugins.</p>
+<a name="ModifyJkCommandsInstance"></a>
+<h3>Modify JkCommands Instance</h3>
+<p>JkCommands instances are created using <code>JkCommands#of</code> factory method.
+This method invokes <code>JkPlugin#activate</code> method on all plugins loaded in the JkCommands instance.
+By default, <code>activate</code> method does nothing but plugin implementations can override it in order to let the plugin modify its JkCommands instance or one of its plugins.
+In fact, many plugins act just as modifier/enhancer of other plugins.</p>
 <p>For example, <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
 does not provide <em>commands</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
 It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>

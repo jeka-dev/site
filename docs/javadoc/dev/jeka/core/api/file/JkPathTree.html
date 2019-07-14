@@ -307,7 +307,7 @@ implements java.io.Closeable</pre>
 <tr id="i26" class="altColor">
 <td class="colFirst"><code>java.util.stream.Stream&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#stream-java.nio.file.FileVisitOption...-">stream</a></span>(java.nio.file.FileVisitOption...&nbsp;options)</code>
-<div class="block">Returns a path getOutputStream of all files of this tree.</div>
+<div class="block">Returns a path stream of all files of this tree.</div>
 </td>
 </tr>
 <tr id="i27" class="rowColor">
@@ -445,9 +445,9 @@ implements java.io.Closeable</pre>
 <li class="blockList">
 <h4>stream</h4>
 <pre>public&nbsp;java.util.stream.Stream&lt;java.nio.file.Path&gt;&nbsp;stream(java.nio.file.FileVisitOption...&nbsp;options)</pre>
-<div class="block">Returns a path getOutputStream of all files of this tree. Returned paths are resolved against this tree root.
+<div class="block">Returns a path stream of all files of this tree. Returned paths are resolved against this tree root.
  This means that if this tree root is absolute then streamed paths are absolute as well.
- Note that the root folder is included in the returned getOutputStream.
+ Note that the root folder is included in the returned stream.
  If this method is called for a zip tree instance, then it should be closed or called within
  <i>try-with-resources</i> statement in order to avoid resource leaks.</div>
 </li>
