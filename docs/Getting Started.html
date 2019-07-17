@@ -34,6 +34,8 @@
 <a href="#Importacommandclassfromanotherproject" class="menuItem2">Import a command class from another project</a><br />
 <a href="#Restrictions" class="menuItem2">Restrictions</a><br />
 <a href="#Workwithplugins" class="menuItem1">Work with plugins</a><br />
+<a href="#Writeyourfirstplugin" class="menuItem2">Write your first plugin</a><br />
+<a href="#Whatdidhappenedbehindthescene?" class="menuItem2">What did happened behind the scene ?</a><br />
 <a href="#BuildaJavaproject" class="menuItem1">Build a Java project</a><br />
 <a href="#BuildJavaprojectusinglow-levelAPI" class="menuItem2">Build Java project using low-level API</a><br />
 <a href="#BuildJavaprojectusinghighlevelAPI" class="menuItem2">Build Java project using high level API</a><br />
@@ -368,8 +370,51 @@ public void post() {
 You can define as many classes as you want into def directory. Organise them within Java packages or not.</p>
 <a name="Workwithplugins"></a>
 <h1>Work with plugins</h1>
+<a name="Writeyourfirstplugin"></a>
+<h2>Write your first plugin</h2>
 <p>Each <em>command class</em> instance acts as a registry for plugins. In turn, plugins can interact each other through this registry.</p>
-<p>Let's implements similar commands than previously but using plugins. TODO</p>
+<p>Let's implements similar commands than previously but using plugins :</p>
+<ul>
+<li>Create a new project 'sample-plugins' as we did for 'sample1&quot;.</li>
+<li>Remove the class <code>JkCommands</code> that has been created in 'jeka/def' : we don't need it for now.</li>
+<li>Create a the following class inside 'jeka/def' : it could lie in a package or not.</li>
+</ul>
+<pre><code>@JkDoc(&quot;Provide command and option to display url content on the console&quot;)
+public class JkPluginWebReader extends JkPlugin {
+
+    @JkDoc(&quot;The url to display content.&quot;)
+    public String url = &quot;https://www.google.com/&quot;;
+
+    protected JkPluginWebReader(JkCommands commands) {
+        super(commands);
+    }
+
+    @JkDoc(&quot;Display source cotent of the url option on the console.&quot;)
+    public void displayContent() throws MalformedURLException {
+        String content = JkUtilsIO.read(new URL(url));
+        System.out.println(content);
+    }
+
+}
+</code></pre>
+<ul>
+<li>execute <code>jeka help</code> in the console at the root of the project. At the end of the output your plugin should be mentioned
+<code>Available plugins in classpath : eclipse, eclipsePath, git, intellij, jacoco, java, pgp, pom, repo, scaffold, sonar, war, webReader.</code></li>
+</ul>
+<p>Jeka has discovered automatically your plugin called 'webReader'. For this your plugin class must follow 3 requirements :</p>
+<ul>
+<li>Be public.</li>
+<li>Extend <code>JkPlugin</code>.</li>
+<li>Having a name starting with 'JkPlugin' : plugin names are inferred from their class name.</li>
+</ul>
+<p>Now you can execute <code>jeka webReader#help</code> to display which options and commands are available on this plugin.</p>
+<p>To execute <code>displayContent</code> command : <code>jeka webReader#displayContent -webReader#url=https://twitter.com</code>.</p>
+<p>You don't need to have a <em>command class</em> defined in <em>jeka/def</em> by default Jeka will used <code>dev.jeka.core.tool.JkCommands</code>.</p>
+<a name="Whatdidhappenedbehindthescene?"></a>
+<h2>What did happened behind the scene ?</h2>
+<p>Mentioning <code>webReader#</code> has led in instantiating <em>JkPluginWebReader</em> class, attaching it to the current _command class instance.</p>
+<p>Mentioning <code>webReader#displayContent -webReader#url=https://twitter.com</code>  has led on injecting the url value and invoke
+method <code>displayContent</code> on the instance plugin. This mechanism is similar to options/commands existing on command class.</p>
 <a name="BuildaJavaproject"></a>
 <h1>Build a Java project</h1>
 <p>Now let's start more complicated tasks as building a Java poject. It involves compilation, testing, packaging, dependency resolution, releasing, ...
