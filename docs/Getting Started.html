@@ -36,6 +36,12 @@
 <a href="#Workwithplugins" class="menuItem1">Work with plugins</a><br />
 <a href="#Writeyourfirstplugin" class="menuItem2">Write your first plugin</a><br />
 <a href="#Whatdidhappenedbehindthescene?" class="menuItem2">What did happened behind the scene ?</a><br />
+<a href="#Configurepluginswithinthecommandclass" class="menuItem2">Configure plugins within the command class</a><br />
+<a href="#Configure/EnhanceaPluginFromAnotherOne" class="menuItem2">Configure/Enhance a Plugin From Another One</a><br />
+<a href="#Reuseapluginacrossproject" class="menuItem2">Reuse a plugin across project</a><br />
+<a href="#Develop" class="menuItem3">Develop</a><br />
+<a href="#Pack" class="menuItem2">Pack</a><br />
+<a href="#Reuse" class="menuItem2">Reuse</a><br />
 <a href="#BuildaJavaproject" class="menuItem1">Build a Java project</a><br />
 <a href="#BuildJavaprojectusinglow-levelAPI" class="menuItem2">Build Java project using low-level API</a><br />
 <a href="#BuildJavaprojectusinghighlevelAPI" class="menuItem2">Build Java project using high level API</a><br />
@@ -415,6 +421,62 @@ public class JkPluginWebReader extends JkPlugin {
 <p>Mentioning <code>webReader#</code> has led in instantiating <em>JkPluginWebReader</em> class, attaching it to the current _command class instance.</p>
 <p>Mentioning <code>webReader#displayContent -webReader#url=https://twitter.com</code>  has led on injecting the url value and invoke
 method <code>displayContent</code> on the instance plugin. This mechanism is similar to options/commands existing on command class.</p>
+<a name="Configurepluginswithinthecommandclass"></a>
+<h2>Configure plugins within the command class</h2>
+<p>You may need to configure default options on plugins and invoke them from the <em>command classes</em> without specifying
+everything from the command line.</p>
+<p>For such create a <em>command class</em> within the same project and declare the plugin as below. In the <em>command class</em> constructor
+you can redefine plugin state as its default field values.</p>
+<pre><code>public class MyCommands extends JkCommands {
+
+    private final JkPluginWebReader webReaderPlugin = getPlugin(JkPluginWebReader.class);
+
+    MyCommands() {
+        webReaderPlugin.url = &quot;https://twitter.com&quot;;  // define a new default url
+    }
+
+    public void show() throws MalformedURLException {
+        webReaderPlugin.displayContent();
+    }
+
+}
+</code></pre>
+<p>Now, if you execute <code>jeka webReader#help</code> you'll notice that the default <code>url</code> value is now the one defined above.</p>
+<p>You can also use <code>jeka show</code> as a shorthand for <code>jeka webReader#displayContent</code>.</p>
+<p>Note : You can also configure plugin by overriding <code>JkCommands@setup</code> methods. In this case
+the values set here will override the ones provided by command line.</p>
+<a name="Configure/EnhanceaPluginFromAnotherOne"></a>
+<h2>Configure/Enhance a Plugin From Another One</h2>
+<p>Its quite common to have a plugin that act as an enhancer of another one. For example <em>Jacoco</em> plugin enhance <em>Java</em>
+plugin by adding test coverage measurement when tests are run.</p>
+<p>Of course this kind of mechanism is possible because <em>Java</em> plugin test feature has been designed to be extendable
+but the idea is that a plugin can access or load any other plugins for its <em>command class</em> owner.</p>
+<a name="Reuseapluginacrossproject"></a>
+<h2>Reuse a plugin across project</h2>
+<p>You can pack your plugin in a jar, publish it on a repository and reuse it any build.</p>
+<a name="Develop"></a>
+<h3>Develop</h3>
+<p>For those just create a regular Java project and add Jeka as <em><strong>PROVIDED</strong></em> dependency.</p>
+<pre><code>// Use same Jeka version both for building and compiling
+project.addDependencies(JkDependencySet.of()
+        .andFile(JkLocator.getJekaJarPath(), PROVIDED));
+</code></pre>
+<p>Code your plugin in <em>src/main/java</em> as you will do for any regular Java project. Of course you an use
+any third party lib as you want but keep in mind that the more deps you have the more dependency issues
+you may face with other plugins.</p>
+<a name="Pack"></a>
+<h2>Pack</h2>
+<p>Execute <code>Java java#pack java#publish</code> to build your plugin project and deploy it to your default repository.</p>
+<a name="Reuse"></a>
+<h2>Reuse</h2>
+<p>You have to import the jar containing the plugin you want to use.
+As for any other jar, you can declare it in a <code>@JkImport</code> annotation.</p>
+<pre><code>@JkImport(&quot;org.myorg:myjekaplugin:0.1&quot;)
+class MyBuid extends JkCommands {
+}
+</code></pre>
+<p>If you don't have declared it in a <em>command class</em> <code>@JkImport</code> annotation you can still invoke it from
+the command line : <code>jeka @org.myorg:myjekaplugin:0.1 myPlugin#doSomething</code>.</p>
 <a name="BuildaJavaproject"></a>
 <h1>Build a Java project</h1>
 <p>Now let's start more complicated tasks as building a Java poject. It involves compilation, testing, packaging, dependency resolution, releasing, ...
