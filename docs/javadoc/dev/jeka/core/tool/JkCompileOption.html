@@ -96,7 +96,9 @@
  @Repeatable(value=<a href="../../../../dev/jeka/core/tool/JkCompileOption.JkCompileOptions.html" title="annotation in dev.jeka.core.tool">JkCompileOption.JkCompileOptions.class</a>)
 public @interface <span class="memberNameLabel">JkCompileOption</span></pre>
 <div class="block">Specifies the options of the Jeka compiler for def classes.
- Normally, one option by annotation is expected tough this annotation is repeatable.</div>
+ Normally, one option by annotation is expected tough this annotation is repeatable.
+ You can declare it has follow :
+ <pre><code></div>
 </li>
 </ul>
 </div>
@@ -116,7 +118,7 @@ public @interface <span class="memberNameLabel">JkCompileOption</span></pre>
 <th class="colLast" scope="col">Required Element and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colFirst"><code>java.lang.String[]</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCompileOption.html#value--">value</a></span></code>
 <div class="block">The dependency to import.</div>
 </td>
@@ -142,7 +144,7 @@ public @interface <span class="memberNameLabel">JkCompileOption</span></pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>value</h4>
-<pre>public abstract&nbsp;java.lang.String&nbsp;value</pre>
+<pre>public abstract&nbsp;java.lang.String[]&nbsp;value</pre>
 <div class="block">The dependency to import. It can be a module dependency (as "com.google.guava:guava:18.0")
  or a file dependency (as "../lib-folder.mylib.jar").</div>
 </li>
