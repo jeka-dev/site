@@ -646,7 +646,33 @@ public class AntStyleBuild extends JkCommands {
 </code></pre>
 <a name="BuildJavaprojectusinghighlevelAPI"></a>
 <h2>Build Java project using high level API</h2>
-<p><em>TODO</em></p>
+<p>Defining all tasks needed to build a project can be verbose and tedious. Therefore Jeka provides a higher level API
+to build Java project. This API mainly consist in a <code>JkJavaProject</code> class defining the project structure, dependencies,
+artifacts it produces and how they are produced.</p>
+<pre><code class="language-Java">        // Bar project depends on Foo one.
+
+        JkVersionProvider versionProvider = JkVersionProvider.of()
+                .and(&quot;com.google.guava:guava&quot;, &quot;21.0&quot;)
+                .and(&quot;junit:junit&quot;, &quot;4.12&quot;);
+
+        JkJavaProject fooProject = JkJavaProject.ofMavenLayout(this.getBaseDir().resolve(&quot;foo&quot;));
+        fooProject.setDependencies(JkDependencySet.of()
+                .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
+                .and(&quot;com.google.guava:guava&quot;)
+                .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+                .withVersionProvider(versionProvider)
+        );
+        fooProject.getMaker().addJavadocArtifact();  // Generate Javadoc by default
+
+        JkJavaProject barProject = JkJavaProject.ofMavenLayout(this.getBaseDir().resolve(&quot;bar&quot;));
+        fooProject.setDependencies(JkDependencySet.of()
+                .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
+                .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+                .and(fooProject)
+        );
+        barProject.getMaker().defineMainArtifactAsFatJar(true); // Produced jar will embed dependencies
+        barProject.getMaker().clean().makeAllArtifacts();  // Creates Bar jar along Foo jar (if not already built)
+</code></pre>
 <a name="BuildJavaprojectusingJekaJavaplugin."></a>
 <h2>Build Java project using Jeka Java plugin.</h2>
 <ol>
