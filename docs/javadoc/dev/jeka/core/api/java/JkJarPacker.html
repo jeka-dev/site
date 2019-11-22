@@ -151,8 +151,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJarPacker.html#makeFatJar-java.nio.file.Path-java.lang.Iterable-">makeFatJar</a></span>(java.nio.file.Path&nbsp;resultFile,
-          java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;otherJars)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJarPacker.html#makeFatJar-java.nio.file.Path-java.lang.Iterable-java.nio.file.PathMatcher-">makeFatJar</a></span>(java.nio.file.Path&nbsp;resultFile,
+          java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;otherJars,
+          java.nio.file.PathMatcher&nbsp;filter)</code>
 <div class="block">Creates a fat jar file according specified parameters.</div>
 </td>
 </tr>
@@ -268,14 +269,15 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="makeFatJar-java.nio.file.Path-java.lang.Iterable-">
+<a name="makeFatJar-java.nio.file.Path-java.lang.Iterable-java.nio.file.PathMatcher-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>makeFatJar</h4>
 <pre>public&nbsp;void&nbsp;makeFatJar(java.nio.file.Path&nbsp;resultFile,
-                       java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;otherJars)</pre>
+                       java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;otherJars,
+                       java.nio.file.PathMatcher&nbsp;filter)</pre>
 <div class="block">Creates a fat jar file according specified parameters. Fat jar file including the content of other jars.
  The result jar does not contains other jars as zip entry but content of the other jars is merged with the content
  of original jar.</div>
@@ -283,6 +285,8 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>resultFile</code> - Result file</dd>
 <dd><code>otherJars</code> - content of other jar to merge with the original jar</dd>
+<dd><code>filter</code> - Only files matching this filter will be included in the resulting fat jar, either it comes from
+               dependencies or not.</dd>
 </dl>
 </li>
 </ul>
