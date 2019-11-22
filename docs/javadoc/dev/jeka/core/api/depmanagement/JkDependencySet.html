@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":9,"i33":9,"i34":9,"i35":9,"i36":9,"i37":9,"i38":9,"i39":10,"i40":10,"i41":10,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -435,11 +435,17 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 </tr>
 <tr id="i50" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withoutDuplicate--">withoutDuplicate</a></span>()</code>
+<div class="block">Returns a JkDependencySet similar to this one but removing duplicates on module dependencies.</div>
+</td>
+</tr>
+<tr id="i51" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withoutLastIf-boolean-">withoutLastIf</a></span>(boolean&nbsp;condition)</code>
 <div class="block">Returns a clone of this dependencySet but removing the last element if the specified condition is met.</div>
 </td>
 </tr>
-<tr id="i51" class="rowColor">
+<tr id="i52" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withVersionProvider-dev.jeka.core.api.depmanagement.JkVersionProvider-">withVersionProvider</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a>&nbsp;versionProvider)</code>
 <div class="block">Returns a clone of this object but using specified version provider to override
@@ -968,6 +974,19 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
                                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclude)</pre>
 <div class="block">Returns a set a dependency set identical to this one but excluding the specified exclude
  from the transitive dependencies of the specified module.</div>
+</li>
+</ul>
+<a name="withoutDuplicate--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withoutDuplicate</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withoutDuplicate()</pre>
+<div class="block">Returns a JkDependencySet similar to this one but removing duplicates on module dependencies. Such duplicates
+ occurres when two module dependencies have been declared with the same JkModuleId. The removed dependency is
+ the one with the lower or unspecified version.
+ It has been introduced to satisfy https://github.com/jerkar/jeka/issues/135</div>
 </li>
 </ul>
 <a name="assertNoUnspecifiedVersion--">

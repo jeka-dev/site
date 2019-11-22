@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":9,"i24":9,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":9,"i25":9,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -171,164 +171,172 @@ implements java.io.Closeable</pre>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#copyFile-java.lang.String-java.nio.file.Path-java.nio.file.CopyOption...-">copyFile</a></span>(java.lang.String&nbsp;sourcePath,
+        java.nio.file.Path&nbsp;destinationDir,
+        java.nio.file.CopyOption...&nbsp;copyOptions)</code>
+<div class="block">Copies a single file contained in this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> to the specified directory.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#copyTo-java.nio.file.Path-java.nio.file.CopyOption...-">copyTo</a></span>(java.nio.file.Path&nbsp;destinationDir,
       java.nio.file.CopyOption...&nbsp;copyOptions)</code>
 <div class="block">Copies files contained in this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> to the specified directory.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#count-int-boolean-">count</a></span>(int&nbsp;max,
      boolean&nbsp;includeDirectories)</code>
 <div class="block">Returns the file count contained in this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> to concurrence to specified max count.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#createIfNotExist--">createIfNotExist</a></span>()</code>
 <div class="block">Creates root directory if not exists.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#deleteContent--">deleteContent</a></span>()</code>
 <div class="block">Deletes each and every files in this tree except the root and files not matching this tree filter.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#deleteRoot--">deleteRoot</a></span>()</code>
 <div class="block">Deletes root directory of this tree.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#exists--">exists</a></span>()</code>
 <div class="block">Returns <code>true</code> if the root directory exists.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#get-java.lang.String-">get</a></span>(java.lang.String&nbsp;relativePath)</code>
 <div class="block">Returns path relative to this root of the specified relative path.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#getFiles--">getFiles</a></span>()</code>
 <div class="block">Returns list of paths returned by <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#stream-java.nio.file.FileVisitOption...-"><code>stream(FileVisitOption...)</code></a> but excluding directories from the result.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html" title="class in dev.jeka.core.api.file">JkPathMatcher</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#getMatcher--">getMatcher</a></span>()</code>
 <div class="block">Returns the filter defined on this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a>, never <code>null</code>.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#getRelativeFiles--">getRelativeFiles</a></span>()</code>
 <div class="block">Same as <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#getFiles--"><code>getFiles()</code></a> but returning paths relative to this tree root.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#getRoot--">getRoot</a></span>()</code>
 <div class="block">Returns the root directory.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#getRootDirOrZipFile--">getRootDirOrZipFile</a></span>()</code>
 <div class="block">Returns root directory if this tree is a directory tree and returns a zip file if this
  tree has been created from a zip file.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#goTo-java.lang.String-">goTo</a></span>(java.lang.String&nbsp;relativePath)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> having the specified relative path to this root as getRoot directory.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#importDir-java.nio.file.Path-java.nio.file.CopyOption...-">importDir</a></span>(java.nio.file.Path&nbsp;dirToCopy,
          java.nio.file.CopyOption...&nbsp;copyOptions)</code>
 <div class="block">Copies the specified directory and its content at the root of this tree.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#importFile-java.nio.file.Path-java.lang.String-java.nio.file.StandardCopyOption...-">importFile</a></span>(java.nio.file.Path&nbsp;src,
           java.lang.String&nbsp;targetName,
           java.nio.file.StandardCopyOption...&nbsp;copyOptions)</code>
-<div class="block">Copies the specified file at the root of this tree with the specified name.</div>
+<div class="block">Copies the specified file at the specified path within this tree.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#importFiles-java.lang.Iterable-java.nio.file.StandardCopyOption...-">importFiles</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
            java.nio.file.StandardCopyOption...&nbsp;copyOptions)</code>
 <div class="block">Copies the specified files at the root of this tree.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#importTree-dev.jeka.core.api.file.JkPathTree-java.nio.file.CopyOption...-">importTree</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a>&nbsp;tree,
           java.nio.file.CopyOption...&nbsp;copyOptions)</code>
 <div class="block">Copies the content of the specified tree at the root of this one.</div>
 </td>
 </tr>
-<tr id="i22" class="altColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#isDefineMatcher--">isDefineMatcher</a></span>()</code>
 <div class="block">Returns true if a matcher has explicitly been defined on this tree.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
+<tr id="i24" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#of-java.nio.file.Path-">of</a></span>(java.nio.file.Path&nbsp;rootDir)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> having the specified root directory.</div>
 </td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i25" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#ofZip-java.nio.file.Path-">ofZip</a></span>(java.nio.file.Path&nbsp;zipFile)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> having the specified root directory.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i26" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#resolve-java.nio.file.Path-">resolve</a></span>(java.nio.file.Path&nbsp;path)</code>
 <div class="block">If the root of this tree is absolute then this method returns this tree.</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i27" class="rowColor">
 <td class="colFirst"><code>java.util.stream.Stream&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#stream-java.nio.file.FileVisitOption...-">stream</a></span>(java.nio.file.FileVisitOption...&nbsp;options)</code>
 <div class="block">Returns a path stream of all files of this tree.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#toSet--">toSet</a></span>()</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file"><code>JkPathTreeSet</code></a> containing this tree as its single
  element.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#withMatcher-dev.jeka.core.api.file.JkPathMatcher-">withMatcher</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathMatcher.html" title="class in dev.jeka.core.api.file">JkPathMatcher</a>&nbsp;pathMatcher)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> which is a copy of this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a>
  but the matcher is replaced with the specified one.</div>
 </td>
 </tr>
-<tr id="i30" class="altColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathTree.html#zipTo-java.nio.file.Path-">zipTo</a></span>(java.nio.file.Path&nbsp;destination)</code>
 <div class="block">Zips the content of this tree to the specified destination file.</div>
@@ -538,7 +546,7 @@ implements java.io.Closeable</pre>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a>&nbsp;importFile(java.nio.file.Path&nbsp;src,
                              java.lang.String&nbsp;targetName,
                              java.nio.file.StandardCopyOption...&nbsp;copyOptions)</pre>
-<div class="block">Copies the specified file at the root of this tree with the specified name. The copy is not recursive.</div>
+<div class="block">Copies the specified file at the specified path within this tree.</div>
 </li>
 </ul>
 <a name="deleteContent--">
@@ -581,6 +589,22 @@ implements java.io.Closeable</pre>
 <pre>public&nbsp;int&nbsp;copyTo(java.nio.file.Path&nbsp;destinationDir,
                   java.nio.file.CopyOption...&nbsp;copyOptions)</pre>
 <div class="block">Copies files contained in this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> to the specified directory.</div>
+</li>
+</ul>
+<a name="copyFile-java.lang.String-java.nio.file.Path-java.nio.file.CopyOption...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copyFile</h4>
+<pre>public&nbsp;void&nbsp;copyFile(java.lang.String&nbsp;sourcePath,
+                     java.nio.file.Path&nbsp;destinationDir,
+                     java.nio.file.CopyOption...&nbsp;copyOptions)</pre>
+<div class="block">Copies a single file contained in this <a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file"><code>JkPathTree</code></a> to the specified directory. File name remains the same.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>sourcePath</code> - The relative path of the source file from this tree root.</dd>
+</dl>
 </li>
 </ul>
 <a name="andMatcher-java.nio.file.PathMatcher-">

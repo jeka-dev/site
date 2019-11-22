@@ -549,13 +549,137 @@ There's many option to handle it in Jeka :</p>
 <li>Use high level <em>JkJavaProject</em> API</li>
 <li>Use Jeka Java Plugin</li>
 </ul>
-<p>The one you choose is a matter of taste, flexibility, verbosity, reusability and integration with existing tools.</p>
+<p>The one you choose is a matter of taste, flexibility, verbosity, re-usability and integration with existing tools.</p>
 <a name="BuildJavaprojectusinglow-levelAPI"></a>
 <h2>Build Java project using low-level API</h2>
-<p><em>TODO</em></p>
+<p>This approach is similar to what developers do when they use ANT. They just define explicitly where are
+stored the materials and define specific tasks for their needs. Just define public methods for tasks.</p>
+<p>Jeka provides a library providing what is needed for building and deploy Java projects of any structure.</p>
+<pre><code class="language-Java">import dev.jeka.core.api.depmanagement.*;
+import dev.jeka.core.api.file.JkPathTree;
+import dev.jeka.core.api.file.JkPathTreeSet;
+import dev.jeka.core.api.file.JkResourceProcessor;
+import dev.jeka.core.api.java.*;
+import dev.jeka.core.api.java.junit.JkJavaTestClasses;
+import dev.jeka.core.api.java.junit.JkUnit;
+import dev.jeka.core.api.java.junit.JkUnit.JunitReportDetail;
+import dev.jeka.core.tool.JkCommands;
+import dev.jeka.core.tool.JkImport;
+import dev.jeka.core.tool.JkInit;
+
+import java.nio.charset.Charset;
+import java.nio.file.Path;
+import java.util.HashMap;
+import java.util.Map;
+
+@JkImport(&quot;org.apache.httpcomponents:httpclient:jar:4.5.6&quot;)
+public class AntStyleBuild extends JkCommands {
+
+    Path src = getBaseDir().resolve(&quot;src/main/javaPlugin&quot;);
+    Path buildDir = getBaseDir().resolve(&quot;build/output&quot;);
+    Path classDir = getOutputDir().resolve(&quot;classes&quot;);
+    Path jarFile = getOutputDir().resolve(&quot;jar/&quot; + getBaseTree().getRoot().getFileName() + &quot;.jar&quot;);
+    JkClasspath classpath;
+    Path reportDir = buildDir.resolve(&quot;junitRreport&quot;);
+
+    public void doDefault() {
+        clean();
+        run();
+    }
+
+    @Override
+    protected void setup() {
+       JkResolveResult depResolution = JkDependencyResolver.of(JkRepo.ofMavenCentral()).resolve(JkDependencySet.of()
+               .and(&quot;org.hibernate:hibernate-entitymanager:jar:5.4.2.Final&quot;)
+               .and(&quot;junit:junit:4.11&quot;, JkJavaDepScopes.TEST)
+       );
+       classpath = JkClasspath.of(getBaseTree().andMatching(true,&quot;libs/**/*.jar&quot;).getFiles())
+            .and(depResolution.getFiles());
+    }
+
+    public void compile() {
+        JkJavaCompiler.ofJdk().compile(JkJavaCompileSpec.of()
+                .setOutputDir(classDir)
+                .setClasspath(classpath)
+                .setSourceAndTargetVersion(JkJavaVersion.V8)
+                .addSources(src));
+        Map&lt;String, String&gt; varReplacement = new HashMap&lt;&gt;();
+        varReplacement.put(&quot;${server.ip}&quot;, &quot;123.211.11.0&quot;);
+        JkResourceProcessor.of(JkPathTreeSet.of(src)).andInterpolate(&quot;**/*.properties&quot;, varReplacement)
+                .generateTo(classDir, Charset.forName(&quot;UTF-8&quot;));
+        JkPathTree.of(src).andMatching(false, &quot;**/*.javaPlugin&quot;).copyTo(classDir);
+    }
+
+    public void jar() {
+        compile();
+        JkManifest.ofEmpty().addMainClass(&quot;RunClass&quot;).writeToStandardLocation(classDir);
+        JkPathTree.of(classDir).zipTo(jarFile);
+    }
+
+    public void javadoc() {
+        JkJavadocMaker.of(JkPathTreeSet.of(src), buildDir.resolve(&quot;javadoc&quot;)).process();
+    }
+
+    public void run() {
+        jar();
+        JkJavaProcess.of().withWorkingDir(jarFile.getParent())
+            .andClasspath(classpath)
+            .runJarSync(jarFile);
+    }
+
+    public void cleanBuild() {
+        clean();
+        jar();
+    }
+
+    public void junit() {
+        jar();
+        JkUnit.of().withForking()
+        .withReportDir(reportDir)
+        .withReport(JunitReportDetail.FULL)
+        .run(JkJavaTestClasses.of(
+                classpath.andPrepending(jarFile),
+                JkPathTree.of(classDir).andMatching(true, &quot;**/*Test.class&quot;, &quot;*Test.class&quot;) ));
+    }
+
+}
+</code></pre>
 <a name="BuildJavaprojectusinghighlevelAPI"></a>
 <h2>Build Java project using high level API</h2>
-<p><em>TODO</em></p>
+<p>Defining all tasks needed to build a project can be verbose and tedious. Therefore Jeka provides a higher level API
+to build Java project. This API mainly consist in a <code>JkJavaProject</code> class defining the project structure, dependencies,
+artifacts it produces and how they are produced.</p>
+<p>Basically, A Java build definition can stand in one single instance of <code>JkJavaProject</code>.
+This class implements <code>JkArtifactProducer</code> which defines methods to produce artifacts as jar files, javadoc and any
+other files you want to produces from the project build.</p>
+<p>To avoid to get to much bloated <code>JkJavaProject</code> class, methods are splitted between <code>JkJavaProject</code> itself and
+<code>JkJavaProjectMaker</code> classes. The first host methods relative to the project 'statical' structure
+(Name, version, layout, dependencies, Java version, default compilation options, manifest) and the second host methods
+and lambdas to produces artifacts and publish them.</p>
+<pre><code class="language-Java">        // Bar project depends on Foo one.
+
+        JkVersionProvider versionProvider = JkVersionProvider.of()
+                .and(&quot;com.google.guava:guava&quot;, &quot;21.0&quot;)
+                .and(&quot;junit:junit&quot;, &quot;4.12&quot;);
+
+        JkJavaProject fooProject = JkJavaProject.ofMavenLayout(this.getBaseDir().resolve(&quot;foo&quot;));
+        fooProject.setDependencies(JkDependencySet.of()
+                .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
+                .and(&quot;com.google.guava:guava&quot;)
+                .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+                .withVersionProvider(versionProvider)
+        );
+        fooProject.getMaker().addJavadocArtifact();  // Generate Javadoc by default
+
+        JkJavaProject barProject = JkJavaProject.ofMavenLayout(this.getBaseDir().resolve(&quot;bar&quot;));
+        fooProject.setDependencies(JkDependencySet.of()
+                .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
+                .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+                .and(fooProject)
+        );
+        barProject.getMaker().defineMainArtifactAsFatJar(true); // Produced jar will embed dependencies
+        barProject.getMaker().clean().makeAllArtifacts();  // Creates Bar jar along Foo jar (if not already built)
+</code></pre>
 <a name="BuildJavaprojectusingJekaJavaplugin."></a>
 <h2>Build Java project using Jeka Java plugin.</h2>
 <ol>
@@ -577,7 +701,7 @@ This will generate a project skeleton with the following build class at <em>[PRO
 <p>Explanation : <code>scaffold#run</code> invokes 'run' method on the 'scaffold' plugin.  <code>java#</code> forces the <code>java</code> plugin to be loaded. When loaded,
 'java' plugin has the effect to instruct scaffold plugin extra actions for generating a Java project.</p>
 <p>By default the project mimics Maven layout convention so sources are supposed to lie in <em>src/main/java</em>.</p>
-<p>Below is the content of the generated build class. Guava and Junit are pesent only fo demo purpose. You can remove it safely and add
+<p>Below is the content of the generated build class. Guava and Junit are present only fo demo purpose. You can remove it safely and add
 any dependency you need.</p>
 <pre><code class="language-Java">import dev.jeka.core.api.depmanagement.JkDependencySet;
 import dev.jeka.core.api.java.project.JkJavaProject;
