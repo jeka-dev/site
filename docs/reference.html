@@ -265,7 +265,7 @@ Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or man
 <li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
 <li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven, Ivy or Gradle.</li>
 </ul>
-<p>For the last, Jeka is using <em>Ivy 2.4.0</em> under the hood.
+<p>For the last, Jeka is using <em>Ivy 2.5.0</em> under the hood.
 This library is embedded inside the Jeka jar and is executed in a dedicated classloader.
 So all happens as if there where no dependency on Ivy.</p>
 <a name="Whatisascope?"></a>
