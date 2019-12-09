@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":42,"i1":9,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":9,"i18":10,"i19":10};
+var methods = {"i0":42,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10,"i8":10,"i9":10,"i10":10,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"],32:["t6","Deprecated Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -157,69 +157,62 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#findMainClass-java.nio.file.Path-">findMainClass</a></span>(java.nio.file.Path&nbsp;classDirOrJar)</code>
-<div class="block">Returns the first class having a main method from the specified class
- directory or Jar.</div>
-</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>java.lang.ClassLoader</code></td>
+<td class="colFirst"><code>java.net.URLClassLoader</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#get--">get</a></span>()</code>
 <div class="block">Return the <code>URLClassLoader</code> wrapped by this object.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getChild-java.lang.Iterable-">getChild</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;extraEntries)</code>
 <div class="block">Creates a <code>JkClassLoader</code>, child of this one and having the specified entries.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getDirectClasspath--">getDirectClasspath</a></span>()</code>
 <div class="block">Returns the classpath of this classloader without mentioning classpath of
  the parent classloaders.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getFullClasspath--">getFullClasspath</a></span>()</code>
 <div class="block">Returns the complete classpath of this classloader.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java">JkClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getParent--">getParent</a></span>()</code>
 <div class="block">Returns the class loader parent of this one.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>static java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#getUrlCacheDir--">getUrlCacheDir</a></span>()</code>
 <div class="block">Get the directory where are cached urls.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#loadAllServices--">loadAllServices</a></span>()</code>
 <div class="block">Reloads all J2SE service providers.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.util.Set&lt;java.lang.Class&lt;?&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#loadClasses-java.lang.String...-">loadClasses</a></span>(java.lang.String...&nbsp;globPatterns)</code>
 <div class="block">Loads all class having a relative path matching the supplied ANT pattern.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>java.util.Set&lt;java.lang.Class&lt;?&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#loadClassesIn-dev.jeka.core.api.file.JkPathTreeSet-">loadClassesIn</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;jkPathTreeSet)</code>
 <div class="block">Returns all classes of this <code>classloader</code> that are defined
  inside the provided <code>JkPathTreeSet</code>.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;java.lang.Class&lt;? extends T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#loadFromNameOrSimpleName-java.lang.String-java.lang.Class-">loadFromNameOrSimpleName</a></span>(java.lang.String&nbsp;name,
                         java.lang.Class&lt;T&gt;&nbsp;superClassArg)</code>
@@ -227,43 +220,43 @@ extends java.lang.Object</pre>
  name.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#of-java.lang.Iterable-">of</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#of-java.lang.Iterable-java.lang.ClassLoader-">of</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths,
   java.lang.ClassLoader&nbsp;parent)</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#of-java.net.URLClassLoader-">of</a></span>(java.net.URLClassLoader&nbsp;urlClassLoader)</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#ofCurrent--">ofCurrent</a></span>()</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java"><code>JkUrlClassLoader</code></a> wrapping the current thread context classloader.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#ofLoaderOf-java.lang.Class-">ofLoaderOf</a></span>(java.lang.Class&lt;?&gt;&nbsp;clazz)</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java"><code>JkUrlClassLoader</code></a> wrapping the class loader having loaded
  the specified class.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#ofSystem--">ofSystem</a></span>()</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java"><code>JkUrlClassLoader</code></a> wrapping the ofSystem class loader.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java">JkClassLoader</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#toJkClassLoader--">toJkClassLoader</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkUrlClassLoader.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -392,7 +385,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;java.lang.ClassLoader&nbsp;get()</pre>
+<pre>public&nbsp;java.net.URLClassLoader&nbsp;get()</pre>
 <div class="block">Return the <code>URLClassLoader</code> wrapped by this object.</div>
 </li>
 </ul>
@@ -490,17 +483,6 @@ extends java.lang.Object</pre>
 <dt><span class="returnLabel">Returns:</span></dt>
 <dd>The loaded class or <code>null</code>.</dd>
 </dl>
-</li>
-</ul>
-<a name="findMainClass-java.nio.file.Path-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>findMainClass</h4>
-<pre>public static&nbsp;java.lang.String&nbsp;findMainClass(java.nio.file.Path&nbsp;classDirOrJar)</pre>
-<div class="block">Returns the first class having a main method from the specified class
- directory or Jar. Returns <code>null</code> if no such class found.</div>
 </li>
 </ul>
 <a name="toString--">
