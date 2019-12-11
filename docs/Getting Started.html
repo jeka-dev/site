@@ -24,6 +24,7 @@
 <a href="#Intellij" class="menuItem2">Intellij</a><br />
 <a href="#Eclipse" class="menuItem2">Eclipse</a><br />
 <a href="#Note" class="menuItem2">Note</a><br />
+<a href="#Jeka'sconcepts" class="menuItem1">Jeka's concepts</a><br />
 <a href="#Basicautomationproject" class="menuItem1">Basic automation project</a><br />
 <a href="#Createaproject" class="menuItem2">Create a project</a><br />
 <a href="#Addacommand" class="menuItem2">Add a command</a><br />
@@ -152,9 +153,8 @@ Method help succeeded in 660 milliseconds.
 <h2>Note</h2>
 <p>By default <em>[Jeka User Home]</em> point to <em>[User Home]/.jeka</em> but can be overridden by defining the environment
 variable <code>JEKA_USER_HOME</code>.</p>
-<a name="Basicautomationproject"></a>
-<h1>Basic automation project</h1>
-<p>First, let introduce common Jeka concepts :</p>
+<a name="Jeka'sconcepts"></a>
+<h1>Jeka's concepts</h1>
 <p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
 <p><strong>Def Classpath :</strong> Classpath on which depend <em>def classes</em> to get compiled and run.
 By default, it consists in <em>Jeka</em> core classes but it can be augmented with any third party lib or <em>def classpath</em> coming
@@ -170,7 +170,9 @@ as command line arguments, stored in specific files or hard coded in <em>command
 in <em>command class</em> or <em>plugin</em> instance fields.</p>
 <p><strong>Plugins :</strong> Classes extending <code>JkPlugin</code> and named as <em>JkPluginXxxxx</em> where_Xxxxx_ is the name of the plugin. In short, a plugin
 add dynamically commands and options to the running <em>command class</em>.</p>
-<p>Now, let's create a simple automation project that read content from url and display it on the console.</p>
+<a name="Basicautomationproject"></a>
+<h1>Basic automation project</h1>
+<p>First, let's create a simple automation project that read content from url and display it on the console.</p>
 <a name="Createaproject"></a>
 <h2>Create a project</h2>
 <ol>
