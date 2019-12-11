@@ -17,9 +17,8 @@
 <div class="title">Jeka - Getting Started</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : 0.8.11.RELEASE</div>
+<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
 <br />
-<a href="#Lexical" class="menuItem1">Lexical</a><br />
 <a href="#InstallJeka" class="menuItem1">Install Jeka</a><br />
 <a href="#ConfigureyourIDE" class="menuItem1">Configure your IDE</a><br />
 <a href="#Intellij" class="menuItem2">Intellij</a><br />
@@ -48,28 +47,12 @@
 <a href="#BuildJavaprojectusingJekaJavaplugin." class="menuItem2">Build Java project using Jeka Java plugin.</a><br />
 <a href="#Buildyourproject" class="menuItem2">Build your project</a><br />
 <a href="#Extrafunction" class="menuItem2">Extra function</a><br />
-<a href="#Explorefunctionsandoptionsprovidedout-of-thebox" class="menuItem2">Explore functions and options provided out-of-thebox</a><a name="Lexical"></a>
-<h1>Lexical</h1>
-<p>The following concepts are used all over this document :</p>
+<a href="#Explorefunctionsandoptionsprovidedout-of-thebox" class="menuItem2">Explore functions and options provided out-of-thebox</a><a name="InstallJeka"></a>
+<h1>Install Jeka</h1>
+<p>Jeka deals with 3 directories :</p>
 <p><strong>[PROJECT DIR]</strong> : Refers to the root folder of the project to build (or to run commands on). This is where you would put pom.xml or build.xml files.</p>
 <p><strong>[JEKA HOME]</strong> : Refers to the folder where Jeka is installed. You should find <em>jeka.bat</em> and <em>jeka</em> shell scripts at the root of this folder.</p>
 <p><strong>[JEKA USER HOME]</strong> : Refers to the folder where Jeka stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jeka.</p>
-<p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
-<p><strong>Def Classpath :</strong> Classpath on which depend <em>def classes</em> to get compiled and <em>command classes</em> to be executed.
-By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or def Classpath coming
-from imported project.</p>
-<p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their public no-arg methods can be invoked from the command line and
-their pubic fields set from the command line. Generally <em>def classes</em> contains one <em>command class</em> though there can be many or
-none. Command classes can come from <em>def classes</em> but can also be imported from a library or external project.</p>
-<p><strong>Commands :</strong> Java methods member of <em>command classes</em> and invokable from command line.
-They must be instance method (not static), public, zero-args and returning void.
-Every method verifying these constraints within a <em>command class</em> or a <em>plugin</em>  is considered as a <em>command</em>.</p>
-<p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
-as command line arguments, stored in specific files or hard coded in <em>command classes</em>.</p>
-<p><strong>Plugins :</strong> Classes extending <code>JkPlugin</code> and named as <em>JkPluginXxxxx</em> where_Xxxxx_ is the name of the plugin. In short, a plugin
-add dynamically commands and options to the running <em>command class</em>.</p>
-<a name="InstallJeka"></a>
-<h1>Install Jeka</h1>
 <p>Thank to the wrapper feature, you don't need to install Jeka on your machine to run it... except if you are
 creating projects from scratch.
 As it's what we are going to do in this tutorial, you need to get it properly installed.</p>
@@ -171,7 +154,23 @@ Method help succeeded in 660 milliseconds.
 variable <code>JEKA_USER_HOME</code>.</p>
 <a name="Basicautomationproject"></a>
 <h1>Basic automation project</h1>
-<p>First, let's create a simple automation project that read content from url and display it on the console.</p>
+<p>First, let introduce common Jeka concepts :</p>
+<p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
+<p><strong>Def Classpath :</strong> Classpath on which depend <em>def classes</em> to get compiled and run.
+By default, it consists in <em>Jeka</em> core classes but it can be augmented with any third party lib or <em>def classpath</em> coming
+from other projects.</p>
+<p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their public no-arg methods can be invoked from the command line
+if they belong to <em>def classpath</em>. Their public fields can be set from the command line as well. Typically, <em>def classes</em>
+include one <em>command class</em>.</p>
+<p><strong>Commands :</strong> Java methods member of <em>command classes</em> invokable from command line.
+They must be instance method (not static), public, zero-args and returning void.
+Every method verifying these constraints within a <em>command class</em> or a <em>plugin</em>  is considered as a <em>command</em>.</p>
+<p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
+as command line arguments, stored in specific files or hard coded in <em>command classes</em>. Options can be injected
+in <em>command class</em> or <em>plugin</em> instance fields.</p>
+<p><strong>Plugins :</strong> Classes extending <code>JkPlugin</code> and named as <em>JkPluginXxxxx</em> where_Xxxxx_ is the name of the plugin. In short, a plugin
+add dynamically commands and options to the running <em>command class</em>.</p>
+<p>Now, let's create a simple automation project that read content from url and display it on the console.</p>
 <a name="Createaproject"></a>
 <h2>Create a project</h2>
 <ol>
