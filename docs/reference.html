@@ -198,7 +198,7 @@ recurrent tasks with minimal effort.</p>
 <li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
 checksum, deletion, creation features.</li>
 </ul>
-<p>The following snippet creates a file on file system and copies the content of the specified url into it</p>
+<p>The following snippet creates a file on file system and copies into it the content of the specified url.</p>
 <pre><code class="language-java">JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
 </code></pre>
 <ul>
@@ -210,7 +210,7 @@ checksum, deletion, creation features.</li>
 </ul>
 <p>Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
 <ul>
-<li><code>JkPathTree</code> : A root folder (or a zip file) along a <code>PathMatcher</code> providing operations as copy, navigate, zip, iterate.
+<li><code>JkPathTree</code> : A root folder (or a zip file) along a <code>PathMatcher</code> providing operations to copy, navigate, zip or iterate.
 This central class is spread all over Jeka APIs.</li>
 </ul>
 <p>The following snippet copies all non java source files to another directory preserving structure.</p>
@@ -241,7 +241,7 @@ JkResourceProcessor.of(JkPathTreeSet.of(Paths.get(&quot;src&quot;))).andInterpol
 <p><code>JkInfo</code> : Provides meta information as the running version of Jeka.</p>
 </li>
 <li>
-<p><code>JkLocator</code> : Provides information about where is located folder as repository cache or Jeka user home.</p>
+<p><code>JkLocator</code> : Provides information about where is located repository cache or Jeka user home.</p>
 </li>
 <li>
 <p><code>JkLog</code> : Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
@@ -257,7 +257,7 @@ and <code>#endtask</code> methods.</p>
 <h3>Concepts</h3>
 <a name="Whatisadependency?"></a>
 <h4>What is a dependency ?</h4>
-<p>In Jeka context, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
+<p>For Jeka, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
 Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or many.</p>
 <p>A dependency is always an instance of <code>JkDependency</code>.</p>
 <p>Jeka distinguishes 3 types of dependency :</p>
@@ -268,7 +268,7 @@ Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or man
 </ul>
 <p>For the last, Jeka is using <em>Ivy 2.5.0</em> under the hood.
 This library is embedded inside the Jeka jar and is executed in a dedicated classloader.
-So all happens as if there where no dependency on Ivy.</p>
+So all happens as if there where no dependency at all.</p>
 <a name="Whatisascope?"></a>
 <h4>What is a scope ?</h4>
 <p>Projects may need dependencies to accomplish certain tasks and these dependencies may vary according the executed tasks.
