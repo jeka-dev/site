@@ -98,6 +98,21 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   background-color: #F5FAFD;
 }
 
+/* Modified */
+.aa-screenshots .carousel-inner .carousel-item img {
+    height: max-content;
+    width:  max-content;
+}
+
+.carousel-control.left {
+  left: -5%;
+}
+
+.carousel-control.right {
+    left: 102%;
+}
+/* End og modified */
+
 @media (max-width: 992px) {
   .aa-screenshots .carousel-inner .carousel-item img {
     height: 300px;
