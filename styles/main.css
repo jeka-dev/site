@@ -115,6 +115,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 
 @media (max-width: 992px) {
   .aa-screenshots .carousel-inner .carousel-item img {
+    width:  auto;
     height: 300px;
   }
 }
