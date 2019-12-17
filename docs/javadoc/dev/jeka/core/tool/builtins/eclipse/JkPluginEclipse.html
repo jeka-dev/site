@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -185,14 +185,30 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#addAccessRule-dev.jeka.core.api.depmanagement.JkDependency-java.lang.String-java.lang.String-">addAccessRule</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency,
+             java.lang.String&nbsp;kind,
+             java.lang.String&nbsp;pattern)</code>
+<div class="block">For the specified dependency, specify a child accessrule tag to add to the mapping classpathentry tag.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#addAttribute-dev.jeka.core.api.depmanagement.JkDependency-java.lang.String-java.lang.String-">addAttribute</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency,
+            java.lang.String&nbsp;name,
+            java.lang.String&nbsp;value)</code>
+<div class="block">For the specified dependency, specify a child attribute tag to add to the mapping classpathentry tag.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#all--">all</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#files--">files</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#setStandardJREContainer-java.lang.String-">setStandardJREContainer</a></span>(java.lang.String&nbsp;jreName)</code>
 <div class="block">Set the JRE container to the Eclipse Standard VM type with the desired name.</div>
@@ -309,10 +325,50 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <a name="all--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>all</h4>
 <pre>public&nbsp;void&nbsp;all()</pre>
+</li>
+</ul>
+<a name="addAttribute-dev.jeka.core.api.depmanagement.JkDependency-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addAttribute</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a>&nbsp;addAttribute(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency,
+                                    java.lang.String&nbsp;name,
+                                    java.lang.String&nbsp;value)</pre>
+<div class="block">For the specified dependency, specify a child attribute tag to add to the mapping classpathentry tag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dependency</code> - The dependency paired to the classpathentry we want generate `<attributes></attributes>` children
+                   for. It can be a <a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a> or a
+                   <a href="../../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkFileSystemDependency</code></a>.
+                   If it is a module dependency, it can be a direct or transitive dependency and only group:name
+                   is relevant.</dd>
+</dl>
+</li>
+</ul>
+<a name="addAccessRule-dev.jeka.core.api.depmanagement.JkDependency-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>addAccessRule</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a>&nbsp;addAccessRule(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency,
+                                     java.lang.String&nbsp;kind,
+                                     java.lang.String&nbsp;pattern)</pre>
+<div class="block">For the specified dependency, specify a child accessrule tag to add to the mapping classpathentry tag.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>dependency</code> - The dependency paired to the classpathentry we want generate `<attributes></attributes>` children
+                   for. It can be a <a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a> or a
+                   <a href="../../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkFileSystemDependency</code></a>.
+                   If it is a module dependency, it can be a direct or transitive dependency and only group:name
+                   is relevant.</dd>
+</dl>
 </li>
 </ul>
 </li>
