@@ -196,7 +196,7 @@ recurrent tasks with minimal effort.</p>
 <li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
 checksum, deletion, creation features.</li>
 </ul>
-<p>The following snippet creates a file on file system and copies into it the content of the specified url.</p>
+<p>The following snippet creates a file and fill it the content of the specified url.</p>
 <pre><code class="language-java">JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
 </code></pre>
 <ul>
