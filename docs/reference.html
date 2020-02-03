@@ -353,6 +353,7 @@ org.projectlombok:lombok:1.16.16
 <ul>
 <li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jeka will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
 <li>As Jeka relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
+<li>Dependency files are downloaded in <em>[USER HOME]</em>/.jeka/cache/repo</li>
 </ul>
 <a name="Dependenciesonlocalfiles"></a>
 <h4>Dependencies on local files</h4>
