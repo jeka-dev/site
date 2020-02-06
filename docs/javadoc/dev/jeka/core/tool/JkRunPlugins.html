@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -147,6 +147,12 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code>&lt;T&gt;&nbsp;java.util.List&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#getLoadedPluginInstanceOf-java.lang.Class-">getLoadedPluginInstanceOf</a></span>(java.lang.Class&lt;T&gt;&nbsp;clazz)</code>
+<div class="block">Returns the list of loaded plugin instance of the specified class/interface.</div>
+</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkRunPlugins.html#hasLoaded-java.lang.Class-">hasLoaded</a></span>(java.lang.Class&lt;? extends <a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;&nbsp;pluginClass)</code>
 <div class="block">Returns <code>true</code> if the specified plugin class has been loaded in the holding JkCommands instance.</div>
@@ -210,11 +216,21 @@ extends java.lang.Object</pre>
 <a name="getAll--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>getAll</h4>
 <pre>public&nbsp;java.util.List&lt;<a href="../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>&gt;&nbsp;getAll()</pre>
 <div class="block">Returns a list of all loaded plugins in the holding JkCommands instance.</div>
+</li>
+</ul>
+<a name="getLoadedPluginInstanceOf-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getLoadedPluginInstanceOf</h4>
+<pre>public&nbsp;&lt;T&gt;&nbsp;java.util.List&lt;T&gt;&nbsp;getLoadedPluginInstanceOf(java.lang.Class&lt;T&gt;&nbsp;clazz)</pre>
+<div class="block">Returns the list of loaded plugin instance of the specified class/interface.</div>
 </li>
 </ul>
 </li>
