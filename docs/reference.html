@@ -956,7 +956,8 @@ Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/options.
 <a name="RetrieveOptioninCommandClassFields"></a>
 <h4>Retrieve Option in Command Class Fields</h4>
 <p>You can retrieve options just by declaring fields in <em>command classes</em>.
-All public non-final instance fields of the invoked <em>command class</em>, are likely to be injected as an option.</p>
+All public non-final instance fields of the invoked <em>command class</em>, are likely to be injected as an option. Note that
+it can be private, but a public setter must be present.</p>
 <p>For example, if you declare a field like :</p>
 <pre><code>class MyRun extends JkCommands {
    public int size = 10;
