@@ -603,7 +603,7 @@ They must be instance method (not static), public, zero-args and returning void.
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
 as command line arguments, stored in specific files or hard coded in <em>command classes</em>.</p>
 <p><span class="menuItem0">In a Glance</span></p>
-<p>The Jeka tool consists in an engine able to run Java source code or Java compiled code from the command line.</p>
+<p>The Jeka tool consists in an engine able to run Java/Kotlin source code or compiled code from the command line.</p>
 <p>Generally this code is intended to build Java projects but it can be used for any purpose.</p>
 <p>In practice, your project has a structure respecting the following layout :</p>
 <pre><code>[Project Dir]
@@ -612,7 +612,8 @@ as command line arguments, stored in specific files or hard coded in <em>command
       + boot             &lt;-------- Put extra jars here to augment def Classpath.
       + def
          + MyCommands.java   &lt;----- Class extending JkCommands
-         + MyUtility.java   &lt;---- Utility class consumed by MyRun
+         + MyUtility.java    &lt;---- Utility class consumed by MyCommands
+         + OtherUtility.kt   &lt;---- Kotlin code is also accepted
       + output              &lt;---- Build artifacts are generated here
    + src
       + main
