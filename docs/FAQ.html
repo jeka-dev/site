@@ -24,7 +24,8 @@
 <a href="#MycommandclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?" class="menuItem3">My command class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</a><br />
 <a href="#Compilation" class="menuItem1">Compilation</a><br />
 <a href="#HowcanIchoosetheJDKusedtocompile?" class="menuItem3">How can I choose the JDK used to compile ?</a><br />
-<a href="#HowcanIuseEclipsecompilerinJeka?" class="menuItem3">How can I use Eclipse compiler in Jeka ?</a><a name="General"></a>
+<a href="#HowcanIuseEclipsecompilerinJeka?" class="menuItem3">How can I use Eclipse compiler in Jeka ?</a><br />
+<a href="#HowcanIgenerateEclipse/IntellijwithoutusingJavaplugin(JkPluginJava)?" class="menuItem3">How can I generate Eclipse/Intellij without using Java plugin (JkPluginJava) ?</a><a name="General"></a>
 <h1>General</h1>
 <a name="Cancommandclassesandcodetobuildbehostedinseparateprojects?"></a>
 <h3>Can command classes and code to build be hosted in separate projects ?</h3>
@@ -66,5 +67,8 @@ public class Build extends JkCommands{
     ...
 }
 </code></pre>
+<a name="HowcanIgenerateEclipse/IntellijwithoutusingJavaplugin(JkPluginJava)?"></a>
+<h3>How can I generate Eclipse/Intellij without using Java plugin (JkPluginJava) ?</h3>
+<p>Just make your command class implements <code>dev.jeka.core.api.java.project.JkJavaProjectIdeSupplier</code>.</p>
 </body>
 </html>

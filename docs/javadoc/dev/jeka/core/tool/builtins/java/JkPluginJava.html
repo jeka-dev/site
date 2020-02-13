@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -110,10 +110,15 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
+<dl>
+<dt>All Implemented Interfaces:</dt>
+<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a></dd>
+</dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">JkPluginJava</span>
-extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></pre>
+extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a>
+implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a></pre>
 <div class="block">Plugin for building Java projects. It comes with a <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProject</code></a> pre-configured with <a href="../../../../../../dev/jeka/core/tool/JkOptions.html" title="class in dev.jeka.core.tool"><code>JkOptions</code></a>.
  and a decoration for scaffolding.</div>
 </li>
@@ -226,52 +231,56 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#compile--">compile</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getJavaProjectIde--">getJavaProjectIde</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getProject--">getProject</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginRepo.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getRepoPlugin--">getRepoPlugin</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getScaffoldPlugin--">getScaffoldPlugin</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#info--">info</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#ouputTree--">ouputTree</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#pack--">pack</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#publish--">publish</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#publishLocal--">publishLocal</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#refreshDeps--">refreshDeps</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#setProject-dev.jeka.core.api.java.project.JkJavaProject-">setProject</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;javaProject)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#showDependencies--">showDependencies</a></span>()</code>
 <div class="block">Displays the resolved dependency tree on the console.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#test--">test</a></span>()</code>&nbsp;</td>
 </tr>
@@ -505,10 +514,23 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <a name="refreshDeps--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>refreshDeps</h4>
 <pre>public&nbsp;void&nbsp;refreshDeps()</pre>
+</li>
+</ul>
+<a name="getJavaProjectIde--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getJavaProjectIde</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a>&nbsp;getJavaProjectIde()</pre>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html#getJavaProjectIde--">getJavaProjectIde</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a></code></dd>
+</dl>
 </li>
 </ul>
 </li>

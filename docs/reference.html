@@ -122,11 +122,9 @@ trainings or books to master it.</p>
 It can be embedded in your own tool and used in a simple <code>main</code> method.</p>
 <p>The Jeka core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em> but these libraries are embedded in the Jeka
 jar and loaded in a specific class loader. These 3rd party APIs are not visible/accessible to client code so one can
-use another version of these APIs without conflict : from user point of view, Jeka is a <em>zero-dependency library</em>.</p>
+use another version of these libraries without conflict : from user point of view, Jeka is a <em>zero-dependency library</em>.</p>
 <p>This is an example for building and publishing a multi-module project :</p>
-<pre><code class="language-java">    JkLog.registerHierarchicalConsoleHandler();  // activate console logging
-
-    // A project with ala Maven layout (src/main/java, src/test/java, ...)
+<pre><code class="language-java">    // A project with ala Maven layout (src/main/java, src/test/java, ...)
     JkJavaProject coreProject = JkJavaProject.ofMavenLayout(&quot;../org.myorg.mycore&quot;);
     coreProject.addDependencies(
             JkDependencySet.of().and(&quot;junit:junit:4.11&quot;, JkJavaDepScopes.TEST));
@@ -198,7 +196,7 @@ recurrent tasks with minimal effort.</p>
 <li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
 checksum, deletion, creation features.</li>
 </ul>
-<p>The following snippet creates a file on file system and copies into it the content of the specified url.</p>
+<p>The following snippet creates a file and fill it the content of the specified url.</p>
 <pre><code class="language-java">JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
 </code></pre>
 <ul>
@@ -355,6 +353,7 @@ org.projectlombok:lombok:1.16.16
 <ul>
 <li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jeka will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
 <li>As Jeka relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
+<li>Dependency files are downloaded in <em>[USER HOME]</em>/.jeka/cache/repo</li>
 </ul>
 <a name="Dependenciesonlocalfiles"></a>
 <h4>Dependencies on local files</h4>
@@ -604,7 +603,7 @@ They must be instance method (not static), public, zero-args and returning void.
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
 as command line arguments, stored in specific files or hard coded in <em>command classes</em>.</p>
 <p><span class="menuItem0">In a Glance</span></p>
-<p>The Jeka tool consists in an engine able to run Java source code or Java compiled code from the command line.</p>
+<p>The Jeka tool consists in an engine able to run Java/Kotlin source code or compiled code from the command line.</p>
 <p>Generally this code is intended to build Java projects but it can be used for any purpose.</p>
 <p>In practice, your project has a structure respecting the following layout :</p>
 <pre><code>[Project Dir]
@@ -613,7 +612,8 @@ as command line arguments, stored in specific files or hard coded in <em>command
       + boot             &lt;-------- Put extra jars here to augment def Classpath.
       + def
          + MyCommands.java   &lt;----- Class extending JkCommands
-         + MyUtility.java   &lt;---- Utility class consumed by MyRun
+         + MyUtility.java    &lt;---- Utility class consumed by MyCommands
+         + OtherUtility.kt   &lt;---- Kotlin code is also accepted
       + output              &lt;---- Build artifacts are generated here
    + src
       + main
@@ -957,7 +957,8 @@ Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/options.
 <a name="RetrieveOptioninCommandClassFields"></a>
 <h4>Retrieve Option in Command Class Fields</h4>
 <p>You can retrieve options just by declaring fields in <em>command classes</em>.
-All public non-final instance fields of the invoked <em>command class</em>, are likely to be injected as an option.</p>
+All public non-final instance fields of the invoked <em>command class</em>, are likely to be injected as an option. Note that
+it can be private, but a public setter must be present.</p>
 <p>For example, if you declare a field like :</p>
 <pre><code>class MyRun extends JkCommands {
    public int size = 10;

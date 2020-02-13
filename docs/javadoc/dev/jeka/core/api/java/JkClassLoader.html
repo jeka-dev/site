@@ -334,6 +334,19 @@ extends java.lang.Object</pre>
  will load the class <code>mypack1.subpack.MyClass</code>.</div>
 </li>
 </ul>
+<a name="loadGivenClassSourcePathIfExist-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>loadGivenClassSourcePathIfExist</h4>
+<pre>public&nbsp;&lt;T&gt;&nbsp;java.lang.Class&lt;T&gt;&nbsp;loadGivenClassSourcePathIfExist(java.lang.String&nbsp;classSourcePath)</pre>
+<div class="block">Loads a class given its source relative path if exists. For example
+ <code>loadGivenSourcePath("mypack1/subpack/MyClass.java")
+ will load the class <code>mypack1.subpack.MyClass</code>. Returns
+ <code>null</code> if no such class exists.</div>
+</li>
+</ul>
 <a name="isDescendantOf-java.lang.ClassLoader-">
 <!--   -->
 </a>
@@ -404,19 +417,6 @@ extends java.lang.Object</pre>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>from</code> - If not <code>null</code> the result is transformed to be used in a specified classloader.</dd>
 </dl>
-</li>
-</ul>
-<a name="loadGivenClassSourcePathIfExist-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>loadGivenClassSourcePathIfExist</h4>
-<pre>public&nbsp;&lt;T&gt;&nbsp;java.lang.Class&lt;T&gt;&nbsp;loadGivenClassSourcePathIfExist(java.lang.String&nbsp;classSourcePath)</pre>
-<div class="block">Loads a class given its source relative path if exists. For example
- <code>loadGivenSourcePath("mypack1/subpack/MyClass.java")
- will load the class <code>mypack1.subpack.MyClass</code>. Returns
- <code>null</code> if no such class exists.</div>
 </li>
 </ul>
 <a name="findClassesHavingMainMethod--">
