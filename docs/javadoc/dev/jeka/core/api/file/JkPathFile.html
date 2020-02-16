@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":10,"i12":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":10,"i13":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -130,11 +130,19 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#addExecPerm-boolean-boolean-boolean-">addExecPerm</a></span>(boolean&nbsp;owner,
+           boolean&nbsp;group,
+           boolean&nbsp;other)</code>
+<div class="block">Adds execute permition on this files.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#checksum-java.lang.String...-">checksum</a></span>(java.lang.String...&nbsp;algorithms)</code>
 <div class="block">Produces a files, in the same directory, that contains the checksum og this file.</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#copyReplacingTokens-java.nio.file.Path-java.util.Map-java.nio.charset.Charset-">copyReplacingTokens</a></span>(java.nio.file.Path&nbsp;to,
                    java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;tokens,
@@ -142,64 +150,64 @@ extends java.lang.Object</pre>
 <div class="block">Creates a copy of this file replacing all occurrences of specified map keys by their matching value.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#copyToDir-java.nio.file.Path-java.nio.file.CopyOption...-">copyToDir</a></span>(java.nio.file.Path&nbsp;dir,
          java.nio.file.CopyOption...&nbsp;options)</code>
 <div class="block">Copies this file to the specified directory.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#createIfNotExist--">createIfNotExist</a></span>()</code>
 <div class="block">Creates a file at this location if such file does not exist yet.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#deleteIfExist--">deleteIfExist</a></span>()</code>
 <div class="block">Deletes this file if exists.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#exists--">exists</a></span>()</code>
 <div class="block">Returns <code>true</code> if a file already exists at this location.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#get--">get</a></span>()</code>
 <div class="block">Returns the underlying path.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#getChecksum-java.lang.String-">getChecksum</a></span>(java.lang.String&nbsp;algorithm)</code>
 <div class="block">Returns a ASCII string representation of the checksum of this file for the specified algorithm.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#of-java.nio.file.Path-">of</a></span>(java.nio.file.Path&nbsp;path)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file"><code>instance from the specified path.</code></a></div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#of-java.lang.String-">of</a></span>(java.lang.String&nbsp;path)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#of-java.net.URL-">of</a></span>(java.net.URL&nbsp;url)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#replaceContentBy-java.net.URL-">replaceContentBy</a></span>(java.net.URL&nbsp;url)</code>
 <div class="block">Copies the content of the specified url into this files, replacing the previous content.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#write-byte:A-java.nio.file.OpenOption...-">write</a></span>(byte[]&nbsp;bytes,
      java.nio.file.OpenOption...&nbsp;options)</code>
@@ -358,11 +366,23 @@ extends java.lang.Object</pre>
 <a name="checksum-java.lang.String...-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>checksum</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a>&nbsp;checksum(java.lang.String...&nbsp;algorithms)</pre>
 <div class="block">Produces a files, in the same directory, that contains the checksum og this file.</div>
+</li>
+</ul>
+<a name="addExecPerm-boolean-boolean-boolean-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>addExecPerm</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a>&nbsp;addExecPerm(boolean&nbsp;owner,
+                              boolean&nbsp;group,
+                              boolean&nbsp;other)</pre>
+<div class="block">Adds execute permition on this files. No effect on windows system.</div>
 </li>
 </ul>
 </li>
