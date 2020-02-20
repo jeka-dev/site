@@ -3084,8 +3084,7 @@
 </dd>
 <dt><a href="dev/jeka/core/tool/JkImport.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">JkImport</span></a> - Annotation Type in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
-<div class="block">Specifies the libraries necessary to compile and run the annotated class as a
- Jeka run.</div>
+<div class="block">Adds an element to def classpath.</div>
 </dd>
 <dt><a href="dev/jeka/core/tool/JkImport.JkImports.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">JkImport.JkImports</span></a> - Annotation Type in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
@@ -3097,7 +3096,7 @@
 </dd>
 <dt><a href="dev/jeka/core/tool/JkImportProject.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">JkImportProject</span></a> - Annotation Type in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
-<div class="block">Specifies that the annotated element is a JkCommands of a another project.</div>
+<div class="block">Adds a Jeka project def classpath to the Jeka project where this annotation is declared.</div>
 </dd>
 <dt><a href="dev/jeka/core/tool/JkImportRepo.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">JkImportRepo</span></a> - Annotation Type in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
@@ -3740,6 +3739,8 @@
 <dd>
 <div class="block">Loads all class having a relative path matching the supplied ANT pattern.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html#loadClassesHavingNameOrSimpleName-java.lang.String-java.lang.Class-">loadClassesHavingNameOrSimpleName(String, Class&lt;T&gt;)</a></span> - Method in interface dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java">JkInternalClasspathScanner</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html#loadClassesHavingSimpleName-java.lang.String-">loadClassesHavingSimpleName(String)</a></span> - Method in interface dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java">JkInternalClasspathScanner</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html#loadClassesHavingSimpleNameMatching-java.util.function.Predicate-">loadClassesHavingSimpleNameMatching(Predicate&lt;String&gt;)</a></span> - Method in interface dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java">JkInternalClasspathScanner</a></dt>
@@ -3748,11 +3749,6 @@
 <dd>
 <div class="block">Returns all classes of this <code>classloader</code> that are defined
  inside the provided <code>JkPathTreeSet</code>.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkUrlClassLoader.html#loadFromNameOrSimpleName-java.lang.String-java.lang.Class-">loadFromNameOrSimpleName(String, Class&lt;T&gt;)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></dt>
-<dd>
-<div class="block">Loads the class having the specified full name or the specified simple
- name.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkClassLoader.html#loadGivenClassSourcePath-java.lang.String-">loadGivenClassSourcePath(String)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java">JkClassLoader</a></dt>
 <dd>
@@ -5067,6 +5063,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#setCompileSpec-dev.jeka.core.api.java.JkJavaCompileSpec-">setCompileSpec(JkJavaCompileSpec)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setDefDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setDefDependencies(JkDependencyResolver, JkDependencySet)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies(JkDependencySet)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies(JkDependencyResolver, JkDependencySet)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
@@ -5167,8 +5165,6 @@
 <dd>
 <div class="block">If the build script depends on external libraries, you must set the resolver of this dependencies here.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setRunDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setRunDependencies(JkDependencyResolver, JkDependencySet)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTestTasks.html#setRunner-dev.jeka.core.api.java.junit.JkUnit-">setRunner(JkUnit)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTestTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTestTasks</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html#setSigner-java.util.function.UnaryOperator-">setSigner(UnaryOperator&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublishTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublishTasks</a></dt>
