@@ -706,7 +706,7 @@ This is intended to modifiate behavior of <em>command class</em> by plugins dyna
 </li>
 <li>
 <p><strong>Argument starts with <code>-</code> :</strong> This is an option declaration. The content following is is expected to be formatted as <em>optionName=optionValue</em>.
-For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.repo.milestone/' in the 'repo.run.url' Jeka option.</p>
+For example, `-repo.def.url=http://my.repo.milestone/' will inject 'http://my.repo.milestone/' in the 'repo.def.url' Jeka option.</p>
 </li>
 <li>
 <p><strong>In other cases :</strong> argument is considered as a run method name to be invoked on the <em>command class</em> instance.</p>
@@ -731,13 +731,13 @@ For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.re
 <a name="Pre-process"></a>
 <h4>Pre-process <em>Def Class</em> Code (Import 3rd party library into <em>Def Classpath</em>)</h4>
 <p>In order to compile <em>def classes</em>, Jeka has to compute <em>def Classpath</em> first. With Jeka you can specify run dependencies
-directly inside the source code using <code>@JkDefClasspath</code> or <code>@JkImportProject</code> annotations as shown below.</p>
+directly inside the source code using <code>@JkDefClasspath</code> or <code>@JkDefImport</code> annotations as shown below.</p>
 <pre><code class="language-Java">@JkDefClasspath(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
 @JkDefClasspath(&quot;com.google.guava:guava:18.0&quot;)
 @JkDefClasspath(&quot;../local/library/bin&quot;)
 public class HttpClientTaskRun extends JkCommandSet {
 
-    @JkImportProject(&quot;../another/project/using/jeka&quot;)
+    @JkDefImport(&quot;../another/project/using/jeka&quot;)
     private OtherCommandSet otherCommandSet;  // CommandSet class from another project
     
     ...
@@ -752,8 +752,8 @@ Note that classes having a name starting by a '_' are skipped.</p>
 <li>If the latest is not present as well, it falls back to Maven Central.</li>
 </ul>
 <p>If a repository needs credentials, you need to supply it through Jeka options <code>repo.[repo name].username</code> and <code>repo.[repo name].password</code>.</p>
-<p>Note that you can define several urls for a <code>repo.[repo name].url</code> by separating then with coma (as <code>repo.run.url=http://my.repo1, http://my.repo2.snapshot</code>).</p>
-<p>As with other repo, if the download repository is an Ivy repo, you must prefix url with <code>ivy:</code> so for example you'll get <code>repo.run.url=ivy:file://my.ivy/repo</code>.</p>
+<p>Note that you can define several urls for a <code>repo.[repo name].url</code> by separating then with coma (as <code>repo.def.url=http://my.repo1, http://my.repo2.snapshot</code>).</p>
+<p>As with other repo, if the download repository is an Ivy repo, you must prefix url with <code>ivy:</code> so for example you'll get <code>repo.def.url=ivy:file://my.ivy/repo</code>.</p>
 <a name="CompileDefClasses"></a>
 <h4>Compile Def Classes</h4>
 <p>Jeka compiles def class source files prior to execute it. Def class source files are expected to be in <em>[PROJECT DIR]/jeka/def</em>.
@@ -815,7 +815,7 @@ this is a <code>JkException</code>. In this case, only the message is displayed.
 <ul>
 <li><code>dev.jeka.jeka-core.jar</code> (found in Jeka distrib)</li>
 <li>libs and folders mentioned in <code>@JkDefClasspath</code> annotations of your <em>def classes</em>.</li>
-<li>project/modules mentioned in <code>@JkImportProject</code> annotations of your <em>def command classes</em>.</li>
+<li>project/modules mentioned in <code>@JkDefImport</code> annotations of your <em>def command classes</em>.</li>
 </ul>
 <p>Plugin methods <code>eclipse#files</code> and <code>intellij#iml</code> achieve this for you.</p>
 <a name="LaunchfromIDE"></a>
@@ -1089,10 +1089,10 @@ has only a documentation purpose and does not has influence on plugin loading me
 <p>Imported runs are not aware they are imported. In fact any run can be imported. The relation is uni-directional.</p>
 <a name="DeclareRunImport"></a>
 <h3>Declare Run Import</h3>
-<p>To import a <em>commandSet class</em> from an external project, use the <code>@JkImportProject</code> annotation as shown below :</p>
+<p>To import a <em>commandSet class</em> from an external project, use the <code>@JkDefImport</code> annotation as shown below :</p>
 <pre><code class="language-Java">public class MyCommands extends JkCommandSet {
     
-    @JkImportProject(&quot;../otherProject&quot;)   
+    @JkDefImport(&quot;../otherProject&quot;)   
     private BarCommands importedCommands;  
 
     public void doSomesthing() {
