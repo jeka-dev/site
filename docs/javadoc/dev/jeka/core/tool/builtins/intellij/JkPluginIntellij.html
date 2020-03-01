@@ -134,15 +134,15 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#externalDir">externalDir</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#failOnDepsResolutionError">failOnDepsResolutionError</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#failOnDepsResolutionError">failOnDepsResolutionError</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#forceJdkVersion">forceJdkVersion</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#forceJdkVersion">forceJdkVersion</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlSkipJeka">imlSkipJeka</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -214,7 +214,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dev.jeka.core.tool.<a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></h3>
-<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommands--">getCommands</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
+<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommands--">getCommands</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -246,15 +246,6 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <pre>public&nbsp;boolean useVarPath</pre>
 </li>
 </ul>
-<a name="externalDir">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>externalDir</h4>
-<pre>public&nbsp;boolean externalDir</pre>
-</li>
-</ul>
 <a name="forceJdkVersion">
 <!--   -->
 </a>
@@ -267,10 +258,19 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <a name="failOnDepsResolutionError">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>failOnDepsResolutionError</h4>
 <pre>public&nbsp;boolean failOnDepsResolutionError</pre>
+</li>
+</ul>
+<a name="imlSkipJeka">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>imlSkipJeka</h4>
+<pre>public&nbsp;boolean imlSkipJeka</pre>
 </li>
 </ul>
 </li>

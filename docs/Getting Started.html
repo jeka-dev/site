@@ -17,14 +17,14 @@
 <div class="title">Jeka - Getting Started</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : 0.8.17.RELEASE</div>
+<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
 <br />
 <a href="#InstallJeka" class="menuItem1">Install Jeka</a><br />
 <a href="#ConfigureyourIDE" class="menuItem1">Configure your IDE</a><br />
 <a href="#Intellij" class="menuItem2">Intellij</a><br />
 <a href="#Eclipse" class="menuItem2">Eclipse</a><br />
 <a href="#Note" class="menuItem2">Note</a><br />
-<a href="#Jeka'sconcepts" class="menuItem1">Jeka's concepts</a><br />
+<a href="#Jekaconcepts" class="menuItem1">Jeka concepts</a><br />
 <a href="#Basicautomationproject" class="menuItem1">Basic automation project</a><br />
 <a href="#Createaproject" class="menuItem2">Create a project</a><br />
 <a href="#Addacommand" class="menuItem2">Add a command</a><br />
@@ -154,16 +154,16 @@ You can still work pretty well thanks to Intellij and Eclipse Jeka plugin whose 
 <h2>Note</h2>
 <p>By default <em>[Jeka User Home]</em> point to <em>[User Home]/.jeka</em> but can be overridden by defining the environment
 variable <code>JEKA_USER_HOME</code>.</p>
-<a name="Jeka'sconcepts"></a>
-<h1>Jeka's concepts</h1>
+<a name="Jekaconcepts"></a>
+<h1>Jeka concepts</h1>
 <p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
 <p><strong>Def Classpath :</strong> Classpath on which depend <em>def classes</em> to get compiled and run.
 By default, it consists in <em>Jeka</em> core classes but it can be augmented with any third party lib or <em>def classpath</em> coming
 from other projects.</p>
 <p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their public no-arg methods can be invoked from the command line
-if they belong to <em>def classpath</em>. Their public fields can be set from the command line as well. Typically, <em>def classes</em>
+if they belong to <em>def classpath</em>. Their public properties can be set from the command line as well. Typically, <em>def classes</em>
 include one <em>command class</em>.</p>
-<p><strong>Commands :</strong> Java methods member of <em>command classes</em> invokable from command line.
+<p><strong>Command :</strong> Java method member of <em>command class</em> invokable from command line.
 They must be instance method (not static), public, zero-args and returning void.
 Every method verifying these constraints within a <em>command class</em> or a <em>plugin</em>  is considered as a <em>command</em>.</p>
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
