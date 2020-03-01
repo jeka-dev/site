@@ -60,7 +60,7 @@ jdk.9=/software/jdk9
 <p>Jeka can use any JSR199 Java compiler to compile your Java code. Just set the compiler instance you need as :</p>
 <pre><code class="language-java">import org.eclipse.jdt.internal.compiler.tool.EclipseCompiler;
 
-@JkImport(&quot;org.eclipse.jdt.core.compiler:ecj:4.6.1&quot;)
+@JkDefClasspath(&quot;org.eclipse.jdt.core.compiler:ecj:4.6.1&quot;)
 public class Build extends JkCommandSet{
     ...
     maker().setCompiler(JkJavaCompiler.of(new EclipseCompiler()));

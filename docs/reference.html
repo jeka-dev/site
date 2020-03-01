@@ -622,14 +622,13 @@ as command line arguments, stored in specific files or hard coded in <em>command
    + ...
 </code></pre>
 <p>A <em>command class</em> may look like :</p>
-<pre><code class="language-Java">import dev.jeka.core.tool.JkCommandSet;import org.apache.commons.httpclient.HttpClient;
+<pre><code class="language-Java">import dev.jeka.core.tool.JkCommandSet;import dev.jeka.core.tool.JkDefClasspath;import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import dev.jeka.core.tool.JkDoc;
-import dev.jeka.core.tool.JkImport;
 import com.google.common.base.MoreObjects;
 
-@JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
-@JkImport(&quot;com.google.guava:guava:21.0&quot;)
+@JkDefClasspath(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
+@JkDefClasspath(&quot;com.google.guava:guava:21.0&quot;)
 public class MyCommands extends JkCommandSet {    // The command class
     
     public String myParam1 = &quot;myDefault&quot;;    // Overridable by injecting options in command line
@@ -702,7 +701,7 @@ of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH env
 <li>
 <p><strong>Argument starts with <code>@</code> :</strong> This is a library import clause : the text just next to, is added to the <em>def Classpath</em>.
 For example <code>jeka myMethod @dev.jeka:an-extra-plugin:3.3</code> augments the <em>def Classpath</em> with the <em>an-extra-Plugin</em> jar.
-This is similar to annotate a <em>def class</em> with <code>@JkImport(&quot;dev.jeka:an-extra-plugin:3.3&quot;)</code>.
+This is similar to annotate a <em>def class</em> with <code>@JkDefClasspath(&quot;dev.jeka:an-extra-plugin:3.3&quot;)</code>.
 This is intended to modifiate behavior of <em>command class</em> by plugins dynamically.</p>
 </li>
 <li>
@@ -732,10 +731,10 @@ For example, `-repo.run.url=http://my.repo.milestone/' will inject 'http://my.re
 <a name="Pre-process"></a>
 <h4>Pre-process <em>Def Class</em> Code (Import 3rd party library into <em>Def Classpath</em>)</h4>
 <p>In order to compile <em>def classes</em>, Jeka has to compute <em>def Classpath</em> first. With Jeka you can specify run dependencies
-directly inside the source code using <code>@JkImport</code> or <code>@JkImportProject</code> annotations as shown below.</p>
-<pre><code class="language-Java">@JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
-@JkImport(&quot;com.google.guava:guava:18.0&quot;)
-@JkImport(&quot;../local/library/bin&quot;)
+directly inside the source code using <code>@JkDefClasspath</code> or <code>@JkImportProject</code> annotations as shown below.</p>
+<pre><code class="language-Java">@JkDefClasspath(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
+@JkDefClasspath(&quot;com.google.guava:guava:18.0&quot;)
+@JkDefClasspath(&quot;../local/library/bin&quot;)
 public class HttpClientTaskRun extends JkCommandSet {
 
     @JkImportProject(&quot;../another/project/using/jeka&quot;)
@@ -815,7 +814,7 @@ this is a <code>JkException</code>. In this case, only the message is displayed.
 <p>In order your IDE compiles and launches your <em>def classes</em>, you must ensure that project/module classpath contains :</p>
 <ul>
 <li><code>dev.jeka.jeka-core.jar</code> (found in Jeka distrib)</li>
-<li>libs and folders mentioned in <code>@JkImport</code> annotations of your <em>def classes</em>.</li>
+<li>libs and folders mentioned in <code>@JkDefClasspath</code> annotations of your <em>def classes</em>.</li>
 <li>project/modules mentioned in <code>@JkImportProject</code> annotations of your <em>def command classes</em>.</li>
 </ul>
 <p>Plugin methods <code>eclipse#files</code> and <code>intellij#iml</code> achieve this for you.</p>

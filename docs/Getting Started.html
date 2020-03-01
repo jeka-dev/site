@@ -295,8 +295,8 @@ From class Commands :
 <ol>
 <li>Annotate your class with modules or jar files you want to use.</li>
 </ol>
-<pre><code class="language-java">@JkImport(&quot;org.apache.httpcomponents:httpclient:jar:4.5.8&quot;)  // Can import files from Maven repos
-@JkImport(&quot;../local_libs/my-utility.jar&quot;)   // or simply located locally
+<pre><code class="language-java">@JkDefClasspath(&quot;org.apache.httpcomponents:httpclient:jar:4.5.8&quot;)  // Can import files from Maven repos
+@JkDefClasspath(&quot;../local_libs/my-utility.jar&quot;)   // or simply located locally
 class Commands extends JkCommandSet {
    ...
 }
@@ -328,7 +328,7 @@ public void post() {
 </ol>
 <pre><code class="language-java">class Sample2Commands extends JkCommandSet {
 
-    @JkImportProject(&quot;../sample1&quot;)
+    @JkDefClasspathProject(&quot;../sample1&quot;)
     private JkCommandSet sample1Commands;
 
     public void hello() throws MalformedURLException {
@@ -347,7 +347,7 @@ public void post() {
 </ol>
 <pre><code class="language-java">class Sample2Commands extends JkCommandSet {
 
-    @JkImportProject(&quot;../sample1&quot;)
+    @JkDefClasspathProject(&quot;../sample1&quot;)
     private Commands sample1Commands;  // This class comes from sample1
 
     public void printUrlContent() throws MalformedURLException {
@@ -535,12 +535,12 @@ you may face with other plugins.</p>
 <a name="Reuse"></a>
 <h2>Reuse</h2>
 <p>You have to import the jar containing the plugin you want to use.
-As for any other jar, you can declare it in a <code>@JkImport</code> annotation.</p>
-<pre><code>@JkImport(&quot;org.myorg:myjekaplugin:0.1&quot;)
+As for any other jar, you can declare it in a <code>@JkDefClasspath</code> annotation.</p>
+<pre><code>@JkDefClasspath(&quot;org.myorg:myjekaplugin:0.1&quot;)
 class MyBuid extends JkCommandSet {
 }
 </code></pre>
-<p>If you don't have declared it in a <em>commandSet class</em> <code>@JkImport</code> annotation you can still invoke it from
+<p>If you don't have declared it in a <em>commandSet class</em> <code>@JkDefClasspath</code> annotation you can still invoke it from
 the command line : <code>jeka @org.myorg:myjekaplugin:0.1 myPlugin#doSomething</code>.</p>
 <a name="BuildaJavaproject"></a>
 <h1>Build a Java project</h1>
@@ -565,14 +565,14 @@ import dev.jeka.core.api.java.junit.JkJavaTestClasses;
 import dev.jeka.core.api.java.junit.JkUnit;
 import dev.jeka.core.api.java.junit.JkUnit.JunitReportDetail;
 import dev.jeka.core.tool.JkCommandSet;
-import dev.jeka.core.tool.JkImport;
+import dev.jeka.core.tool.JkDefClasspath;
 
 import java.nio.charset.Charset;
 import java.nio.file.Path;
 import java.util.HashMap;
 import java.util.Map;
 
-@JkImport(&quot;org.apache.httpcomponents:httpclient:jar:4.5.6&quot;)
+@JkDefClasspath(&quot;org.apache.httpcomponents:httpclient:jar:4.5.6&quot;)
 public class AntStyleBuild extends JkCommandSet {
 
     Path src = getBaseDir().resolve(&quot;src/main/javaPlugin&quot;);
