@@ -41,7 +41,7 @@
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../dev/jeka/core/tool/JkImportedCommandSets.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../dev/jeka/core/tool/JkImportRepo.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -95,12 +95,12 @@
  @Target(value={FIELD,TYPE})
 public @interface <span class="memberNameLabel">JkImportProject</span></pre>
 <div class="block">Adds a Jeka project def classpath to the Jeka project where this annotation is declared.
- Typically, the annotated element is a a class from 'jeka/def' source directory.
- When used on a public field of type  <code>JkCommands</code> the annotated field is
- injected with the instance of the imported project.
+ Typically, the annotated element is a <code>JkCommandSet</code> class from 'jeka/def' source directory.
+ But when used on a public field of type  <code>JkCommandSet</code> within a <code>JkCommandSet</code> class,
+ the annotated field is injected with an initialised <code>JkCommandSet</code> instance of the imported project.
 
  Examples : <code>@JkImportProject("../importedProject")</code>
- a <a href="../../../../dev/jeka/core/tool/JkCommands.html" title="class in dev.jeka.core.tool"><code>JkCommands</code></a> field with value <code>../FooB</code>.</div>
+ a <a href="../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool"><code>JkCommandSet</code></a> field with value <code>../FooB</code>.</div>
 </li>
 </ul>
 </div>
@@ -177,7 +177,7 @@ public @interface <span class="memberNameLabel">JkImportProject</span></pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../dev/jeka/core/tool/JkImportedCommands.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../dev/jeka/core/tool/JkImportedCommandSets.html" title="class in dev.jeka.core.tool"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../dev/jeka/core/tool/JkImportRepo.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

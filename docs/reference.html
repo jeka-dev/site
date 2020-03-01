@@ -57,9 +57,9 @@
 <a href="#PopulateSystemPropertiesfromConfigurationFilesandCommandline" class="menuItem4">Populate System Properties from Configuration Files and Command line</a><br />
 <a href="#Pre-process" class="menuItem4">Pre-process </a><br />
 <a href="#CompileDefClasses" class="menuItem4">Compile Def Classes</a><br />
-<a href="#SelectCommandClass" class="menuItem4">Select Command Class</a><br />
-<a href="#InstantiateCommandClass" class="menuItem4">Instantiate Command Class</a><br />
-<a href="#InvokeCommandLineMethods" class="menuItem4">Invoke Command Line Methods</a><br />
+<a href="#SelectCommandSetClass" class="menuItem4">Select CommandSet Class</a><br />
+<a href="#InstantiateCommandSetClass" class="menuItem4">Instantiate CommandSet Class</a><br />
+<a href="#InvokeMethodsSpecifiedinJekaCommandLinearguments" class="menuItem4">Invoke Methods Specified in Jeka Command Line arguments</a><br />
 <a href="#ErrorHandling" class="menuItem4">Error Handling</a><br />
 <a href="#JekafromIDE" class="menuItem3">Jeka from IDE</a><br />
 <a href="#IDEClasspathSetting" class="menuItem4">IDE Classpath Setting</a><br />
@@ -71,20 +71,20 @@
 <a href="#SpecifyJekaUserHome" class="menuItem4">Specify Jeka User Home</a><br />
 <a href="#SpecifytheLocalRepositoryCache" class="menuItem4">Specify the Local Repository Cache</a><br />
 <a href="#SeeEffectivePaths" class="menuItem4">See Effective Paths</a><br />
-<a href="#CommandsParameters" class="menuItem2">Commands Parameters</a><br />
+<a href="#CommandSetParameters" class="menuItem2">CommandSet Parameters</a><br />
 <a href="#EnvironmentVariables" class="menuItem3">Environment Variables</a><br />
 <a href="#SystemProperties" class="menuItem3">System Properties</a><br />
 <a href="#JekaOptions" class="menuItem3">Jeka Options</a><br />
 <a href="#InjectOptions" class="menuItem4">Inject Options</a><br />
 <a href="#RetrieveOptionsasStringValues" class="menuItem4">Retrieve Options as String Values</a><br />
-<a href="#RetrieveOptioninCommandClassFields" class="menuItem4">Retrieve Option in Command Class Fields</a><br />
+<a href="#RetrieveOptionsinCommandSetClassFields" class="menuItem4">Retrieve Options in CommandSet Class Fields</a><br />
 <a href="#Compositeoptions" class="menuItem4">Composite options</a><br />
 <a href="#DocumentOptions" class="menuItem4">Document Options</a><br />
 <a href="#Built-inOptions" class="menuItem4">Built-in Options</a><br />
 <a href="#Plugins" class="menuItem2">Plugins</a><br />
 <a href="#LoadPlugins" class="menuItem3">Load Plugins</a><br />
-<a href="#ModifyJkCommandsInstance" class="menuItem3">Modify JkCommands Instance</a><br />
-<a href="#ConfigurePluginsinJkCommandsClass" class="menuItem3">Configure Plugins in JkCommands Class</a><br />
+<a href="#ModifyJkCommandSetInstance" class="menuItem3">Modify JkCommandSet Instance</a><br />
+<a href="#ConfigurePluginsinJkCommandSetClass" class="menuItem3">Configure Plugins in JkCommandSet Class</a><br />
 <a href="#DocumentPlugins" class="menuItem3">Document Plugins</a><br />
 <a href="#ImportExternalRuns" class="menuItem2">Import External Runs</a><br />
 <a href="#Principle" class="menuItem3">Principle</a><br />
@@ -591,17 +591,17 @@ as declared dependencies, dependency management, repos, properties, version and 
 <p><strong>[JEKA HOME]</strong> : Refers to the folder where Jeka is installed. You should find <em>jeka.bat</em> and <em>jeka</em> shell scripts at the root of this folder.</p>
 <p><strong>[JEKA USER HOME]</strong> : Refers to the folder where Jeka stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jeka.</p>
 <p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
-<p><strong>Def Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>command classes</em> to be executed.
+<p><strong>Def Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>commandSet classes</em> to be executed.
 By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or def Classpath coming
 from another project.
 Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is augmented with their <em>.class</em> counterpart.</p>
-<p><strong>Command Classes :</strong> Classes extending <code>JkCommands</code>. Their <em>commands</em> can be invoked from the command line and
-their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>command class</em> though there can be many or
-none. Command class can be a <em>def class</em> but can also be imported from a library or external project.</p>
-<p><strong>Commands :</strong> Java methods member of <em>command classes</em> and invokable from Jeka command line.
+<p><strong>CommandSet Classes :</strong> Classes extending <code>JkCommandSet</code>. Their <em>commands</em> can be invoked from the command line and
+their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>commandSet class</em> though there can be many or
+none. CommandSet class can be a <em>def class</em> but can also be imported from a library or external project.</p>
+<p><strong>Commands :</strong> Java methods member of <em>commandSet classes</em> and invokable from Jeka command line.
 They must be instance method (not static), public, zero-args and returning void. Every method verifying these constraints is considered as a <em>command</em>.</p>
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
-as command line arguments, stored in specific files or hard coded in <em>command classes</em>.</p>
+as command line arguments, stored in specific files or hard coded in <em>commandSet classes</em>.</p>
 <p><span class="menuItem0">In a Glance</span></p>
 <p>The Jeka tool consists in an engine able to run Java/Kotlin source code or compiled code from the command line.</p>
 <p>Generally this code is intended to build Java projects but it can be used for any purpose.</p>
@@ -611,7 +611,7 @@ as command line arguments, stored in specific files or hard coded in <em>command
    + jeka
       + boot             &lt;-------- Put extra jars here to augment def Classpath.
       + def
-         + MyCommands.java   &lt;----- Class extending JkCommands
+         + MyCommands.java   &lt;----- Class extending JkCommandSet
          + MyUtility.java    &lt;---- Utility class consumed by MyCommands
          + OtherUtility.kt   &lt;---- Kotlin code is also accepted
       + output              &lt;---- Build artifacts are generated here
@@ -622,16 +622,15 @@ as command line arguments, stored in specific files or hard coded in <em>command
    + ...
 </code></pre>
 <p>A <em>command class</em> may look like :</p>
-<pre><code class="language-Java">import org.apache.commons.httpclient.HttpClient;
+<pre><code class="language-Java">import dev.jeka.core.tool.JkCommandSet;import org.apache.commons.httpclient.HttpClient;
 import org.apache.commons.httpclient.methods.GetMethod;
 import dev.jeka.core.tool.JkDoc;
 import dev.jeka.core.tool.JkImport;
-import dev.jeka.core.tool.JkCommands;
 import com.google.common.base.MoreObjects;
 
 @JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
 @JkImport(&quot;com.google.guava:guava:21.0&quot;)
-public class MyCommands extends JkCommands {    // The command class
+public class MyCommands extends JkCommandSet {    // The command class
     
     public String myParam1 = &quot;myDefault&quot;;    // Overridable by injecting options in command line
 
@@ -658,7 +657,7 @@ public class MyCommands extends JkCommands {    // The command class
 <li>invoke <code>myMethod1()</code>,</li>
 <li>invoke <code>myMethod2()</code>.</li>
 </ol>
-<p>If no <em>command class</em> are present in <em>def classes</em>, Jeka picks <code>JkCommands</code>. In despite this class
+<p>If no <em>command class</em> are present in <em>def classes</em>, Jeka picks <code>JkCommandSet</code>. In despite this class
 does not provide any particular methods, you can still perform full Java builds by invoking built-in 'java' plugin.
 For such, execute <code>jeka clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
 <p>Executing <code>jeka</code> or <code>jeka help</code> on command line displays all run methods and options for the current <em>command class</em>.</p>
@@ -737,10 +736,10 @@ directly inside the source code using <code>@JkImport</code> or <code>@JkImportP
 <pre><code class="language-Java">@JkImport(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
 @JkImport(&quot;com.google.guava:guava:18.0&quot;)
 @JkImport(&quot;../local/library/bin&quot;)
-public class HttpClientTaskRun extends JkCommands {
+public class HttpClientTaskRun extends JkCommandSet {
 
     @JkImportProject(&quot;../another/project/using/jeka&quot;)
-    private OtherRun otherRun;  // Command class from another project
+    private OtherCommandSet otherCommandSet;  // CommandSet class from another project
     
     ...
 </code></pre>
@@ -769,8 +768,8 @@ Compilation occurs upon the following classpath :</p>
 </ul>
 <p>It outputs class files in <em>[PROJECT DIR]/jeka/.work/def-classes</em> directory.</p>
 <p>Jeka uses the compiler provided by the running JDK.</p>
-<a name="SelectCommandClass"></a>
-<h4>Select Command Class</h4>
+<a name="SelectCommandSetClass"></a>
+<h4>Select CommandSet Class</h4>
 <p>Once compiled, Jeka augments the <em>def Classpath</em> with classes compiled in previous step.
 Then it selects one <em>command class</em> from <em>def classpath</em> and instantiate it.</p>
 <p>The selection logic is :</p>
@@ -780,22 +779,22 @@ short name among <em>command classes</em> present in <em>def classpath</em>.</li
 <li>If this option is not set, Jeka looks for a <em>command class</em> into <em>[PROJECT DIR]/jeka/output/def-classes</em> .
 It looks in alphabetic order first then sub-package (deep first).
 This means that class <code>SomeCommands</code> will be selected prior <code>apackage.SomeCommands</code>, and <code>aa.bb.SomeCommands</code> will be selected prior <code>ab.OtherCommands</code>.</li>
-<li>If no such class found, Jeka selects the built-in <code>JkCommands</code> class.</li>
+<li>If no such class found, Jeka selects the built-in <code>JkCommandSet</code> class.</li>
 </ul>
-<a name="InstantiateCommandClass"></a>
-<h4>Instantiate Command Class</h4>
-<p>The commands instantiation process is defined in <code>ork.jeka.tool.JkCommands#of</code> factory method. It consists in :</p>
+<a name="InstantiateCommandSetClass"></a>
+<h4>Instantiate CommandSet Class</h4>
+<p>The commands instantiation process is defined in <code>ork.jeka.tool.JkCommandSet#of</code> factory method. It consists in :</p>
 <ol>
 <li>Creating a new <em>command class</em> instance (Invoking default constructor).</li>
 <li>Injecting defined options in public instance fields.</li>
-<li>Invoking <code>JkCommands#setup</code> method on <em>command class</em>. This method might be overridden by users to configure run and plugins before they have been activated.</li>
+<li>Invoking <code>JkCommandSet#setup</code> method on <em>command class</em>. This method might be overridden by users to configure run and plugins before they have been activated.</li>
 <li>Loading plugins defined in command line into the <em>command class</em> instance.</li>
 <li>Invoking <code>JkPlugin#activate</code> method on each loaded plugins. This method is defined by plugin authors.</li>
-<li>Invoking <code>JkCommands#setupAfterPluginActivations</code> on <em>command class</em>. This method might be overridden by users to configure <em>command class</em> instance once plugins have been activated.</li>
+<li>Invoking <code>JkCommandSet#setupAfterPluginActivations</code> on <em>command class</em>. This method might be overridden by users to configure <em>command class</em> instance once plugins have been activated.</li>
 </ol>
-<a name="InvokeCommandLineMethods"></a>
-<h4>Invoke Command Line Methods</h4>
-<p>Once <em>command class</em> instantiated, Jeka invokes instance methods mentioned in command line as <code>jeka myFistMethod mySecondMethod ...</code>.
+<a name="InvokeMethodsSpecifiedinJekaCommandLinearguments"></a>
+<h4>Invoke Methods Specified in Jeka Command Line arguments</h4>
+<p>Once <em>commandSet class</em> instantiated, Jeka invokes instance methods mentioned in command line as <code>jeka myFistMethod mySecondMethod ...</code>.
 Methods are invoked in order they appear in command line regardless if method is defined on the <em>command class</em> itself or in a plugin.</p>
 <p>In order a method to be considered as a <em>command</em> (invokable from Jeka command line), it must :</p>
 <ul>
@@ -912,8 +911,8 @@ Jeka Repository Cache : C:\Users\me\.jeka\cache\repo
 
 ...
 </code></pre>
-<a name="CommandsParameters"></a>
-<h2>Commands Parameters</h2>
+<a name="CommandSetParameters"></a>
+<h2>CommandSet Parameters</h2>
 <p>Jeka commands are parameterizable. One can retrieve values defined at runtime by reading :</p>
 <ul>
 <li>environment variables</li>
@@ -954,13 +953,13 @@ Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/options.
 <h4>Retrieve Options as String Values</h4>
 <p>You can retrieve string values using the <code>JkOptions</code> API providing convenient static methods as <code>JkOptions#get</code>, <code>JkOptions#getAll</code> or <code>JkOptions#getAllStartingWith(String prefix)</code>.</p>
 <p>This way you only get the string literal value for the option and you have to parse it if the intended type was a boolean or a number.</p>
-<a name="RetrieveOptioninCommandClassFields"></a>
-<h4>Retrieve Option in Command Class Fields</h4>
+<a name="RetrieveOptionsinCommandSetClassFields"></a>
+<h4>Retrieve Options in CommandSet Class Fields</h4>
 <p>You can retrieve options just by declaring fields in <em>command classes</em>.
 All public non-final instance fields of the invoked <em>command class</em>, are likely to be injected as an option. Note that
 it can be private, but a public setter must be present.</p>
 <p>For example, if you declare a field like :</p>
-<pre><code>class MyRun extends JkCommands {
+<pre><code>class MyRun extends JkCommandSet {
    public int size = 10;
    ...
 }
@@ -982,7 +981,7 @@ You can group all these information into a single object as :</p>
 }
 </code></pre>
 <p>Declare a new field of type <code>Server</code> in your command class :</p>
-<pre><code class="language-Java">class MyRun extends JkCommands {
+<pre><code class="language-Java">class MyRun extends JkCommandSet {
    public Server deployServer = new Server();
    ...
 }
@@ -1013,10 +1012,10 @@ convention :</p>
 <h2>Plugins</h2>
 <p>Jeka provides a pluggble architecture. In Jeka, a plugin is a class extending <code>JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
 The plugin name is inferred from Plugin class name.</p>
-<p>Each plugin instance is owned by a JkCommands object, and can access to it through <code>JkPlugin#owner</code> protected field.</p>
+<p>Each plugin instance is owned by a JkCommandSet object, and can access to it through <code>JkPlugin#owner</code> protected field.</p>
 <p>Plugins has 3 capabilities :</p>
 <ul>
-<li>Access to their owning JkCommands instance (so potentially modify it, load/modify other plugins).</li>
+<li>Access to their owning JkCommandSet instance (so potentially modify it, load/modify other plugins).</li>
 <li>Expose <em>commands</em> and <em>options</em> to command line.</li>
 <li>Provide self documentation.</li>
 </ul>
@@ -1027,14 +1026,14 @@ See <a href="#CommandLineParsing">Command Line Parsing</a> and <a href="#RunClas
 to augment <em>def classpath</em> .</p>
 <a name="LoadPlugins"></a>
 <h3>Load Plugins</h3>
-<p>Plugins need not to be mentioned in <em>command class</em> code in order to be bound to the JkCommands instance. Just the fact to
+<p>Plugins need not to be mentioned in <em>commandSet class</em> code in order to be bound to the JkCommandSet instance. Just the fact to
 mention a plugin in the command line loads it.</p>
-<p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkCommands instance.
-'java' plugin instance will modify 'scaffold' plugin instance in such it produces a command class declaring 'java' plugin
+<p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkCommandSet instance.
+'java' plugin instance will modify 'scaffold' plugin instance in such it produces a commandSet class declaring 'java' plugin
 when 'scaffold#run' is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
 to have a concrete view.</p>
-<p>You can also force a plugin to be loaded in your <em>command class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
-<pre><code class="language-Java">public class MyBuild extends JkCommands {
+<p>You can also force a plugin to be loaded in your <em>commandSet class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
+<pre><code class="language-Java">public class MyBuild extends JkCommandSet {
     
     MyBuild() {
         getPlugin(JkPluginJava.class);  // Loads 'java' plugins in MyBuild instances, a second call on 'plugins().get(JkPluginJava.class)' would return the same JkPluginJava instance.
@@ -1043,28 +1042,28 @@ to have a concrete view.</p>
     
 }
 </code></pre>
-<a name="ModifyJkCommandsInstance"></a>
-<h3>Modify JkCommands Instance</h3>
-<p>JkCommands instances are created using <code>JkCommands#of</code> factory method.
-This method invokes <code>JkPlugin#activate</code> method on all plugins loaded in the JkCommands instance.
-By default, <code>activate</code> method does nothing but plugin implementations can override it in order to let the plugin modify its JkCommands instance or one of its plugins.
+<a name="ModifyJkCommandSetInstance"></a>
+<h3>Modify JkCommandSet Instance</h3>
+<p>JkCommandSet instances are created using <code>JkCommandSet#of</code> factory method.
+This method invokes <code>JkPlugin#activate</code> method on all plugins loaded in the JkCommandSet instance.
+By default, <code>activate</code> method does nothing but plugin implementations can override it in order to let the plugin modify its JkCommandSet instance or one of its plugins.
 In fact, many plugins act just as modifier/enhancer of other plugins.</p>
 <p>For example, <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
 does not provide <em>commands</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
 It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>
-<p>Some other plugins does not modify their owning JkCommands instance, for example <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
-does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkCommands</code> instance. It only features extra <em>commands</em> and <em>options</em>.</p>
-<a name="ConfigurePluginsinJkCommandsClass"></a>
-<h3>Configure Plugins in JkCommands Class</h3>
+<p>Some other plugins does not modify their owning JkCommandSet instance, for example <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
+does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkCommandSet</code> instance. It only features extra <em>commands</em> and <em>options</em>.</p>
+<a name="ConfigurePluginsinJkCommandSetClass"></a>
+<h3>Configure Plugins in JkCommandSet Class</h3>
 <p>There is three places where you can configure plugins :</p>
 <ul>
-<li>In <code>JkCommands</code> subclass constructors : at this point options has not yet been injected so it's the place to configure default option values.</li>
-<li>In <code>JkCommands#setup</code> subclass method : at this point, options has been injected but plugins has not been activated yet.
+<li>In <code>JkCommandSet</code> subclass constructors : at this point options has not yet been injected so it's the place to configure default option values.</li>
+<li>In <code>JkCommandSet#setup</code> subclass method : at this point, options has been injected but plugins has not been activated yet.
 It is the place to configure plugins and other instance member to take options in account before activation.</li>
-<li>In <code>JkCommands#setupAfterPluginActivations</code> subclass method : at this point plugins has been activated. If you wan't to override
+<li>In <code>JkCommandSet#setupAfterPluginActivations</code> subclass method : at this point plugins has been activated. If you wan't to override
 some values plugin activation may have set, override this method.</li>
 </ul>
-<p>Example of configuring a plugin in <em>command class</em>.</p>
+<p>Example of configuring a plugin in <em>commandSet class</em>.</p>
 <pre><code class="language-Java">
     JkPluginSonar sonarPlugin = getPlugin(JkPluginSonar.class);  // Load sonar plugin 
     
@@ -1086,13 +1085,13 @@ has only a documentation purpose and does not has influence on plugin loading me
 <p>There is many way to perform multi-project build. One of is to import runs from external projects.</p>
 <a name="Principle"></a>
 <h3>Principle</h3>
-<p>A <em>command class</em> instance can import <em>command class</em> instances from other projects.</p>
+<p>A <em>commandSet class</em> instance can import <em>commandSet class</em> instances from other projects.</p>
 <p>The current <em>def classpath</em> is augmented with the <em>def classpath</em> of imported projects.</p>
 <p>Imported runs are not aware they are imported. In fact any run can be imported. The relation is uni-directional.</p>
 <a name="DeclareRunImport"></a>
 <h3>Declare Run Import</h3>
-<p>To import a <em>command class</em> from an external project, use the <code>@JkImportProject</code> annotation as shown below :</p>
-<pre><code class="language-Java">public class MyCommands extends JkCommands {
+<p>To import a <em>commandSet class</em> from an external project, use the <code>@JkImportProject</code> annotation as shown below :</p>
+<pre><code class="language-Java">public class MyCommands extends JkCommandSet {
     
     @JkImportProject(&quot;../otherProject&quot;)   
     private BarCommands importedCommands;  
@@ -1101,48 +1100,48 @@ has only a documentation purpose and does not has influence on plugin loading me
        importedCommands.doBar();   // use the command class defined in ../otherProject
        ...
 </code></pre>
-<p><em>Command classes</em> are imported transitively, this means that, in above example, if <code>BarCommands</code> imports an other project, this
+<p><em>CommandSet classes</em> are imported transitively, this means that, in above example, if <code>BarCommands</code> imports an other project, this
 last will be also imported.</p>
 <a name="OptionPropagation"></a>
 <h3>Option Propagation</h3>
-<p>Options mentioned in command line are propagated to the imported commands.</p>
+<p>Options mentioned in command line are propagated to the imported commandSets.</p>
 <p>So for example you execute <code>jeka java#pack -java#tests.fork</code>, test will be forked for the main run and all imported ones.</p>
 <a name="Methodpropagation"></a>
 <h3>Method propagation</h3>
 <p>Methods mentioned in the command line are not automatically propagated to imported runs. Executing <code>jeka clean</code> will
 only clean the current run project.</p>
-<p>To propagate method call to every imported commands, method name should be prefixed with a '*'. Executing <code>jeka clean*</code> will
-invoke 'clean' method on the current <em>command class</em> along along all imported command classes.</p>
+<p>To propagate method call to every imported commandSets, method name should be prefixed with a '*'. Executing <code>jeka clean*</code> will
+invoke 'clean' method on the current <em>commandSet class</em> along along all imported commandSet classes.</p>
 <a name="AccessImportedRunsProgrammatically"></a>
 <h3>Access Imported Runs Programmatically</h3>
-<p>You can access to the list of imported command classes within using <code>JkCommands#getImportedCommands</code> methods as show below :</p>
-<pre><code class="language-Java">public class MyRun extends JkRun{
+<p>You can access to the list of imported commandSet classes within using <code>JkCommandSet#getImportedCommandSets</code> methods as show below :</p>
+<pre><code class="language-Java">public class MyRun extends JkCommandSet {
 
     ...
 
     public void doForAll() {
         this.clean();
-        this.getImportedCommands().all().forEach(JkRun::clean);
-        this.getImportedCommands().allOf(JkJavaProjectBuild.class).forEach(build -&gt; build.java().pack());
+        this.getImportedCommandSets().getAll().forEach(JkRun::clean);
+        this.getImportedCommandSets().getAllOf(JkJavaProjectBuild.class).forEach(build -&gt; build.java().pack());
     }
 </code></pre>
 <a name="SelfDocumentation"></a>
 <h2>Self Documentation</h2>
-<p><em>Command classes</em> and plugins can provide self documentation.</p>
+<p><em>CommandSet classes</em> and plugins can provide self documentation.</p>
 <p>When properly auto-documented, users can display documentation by executing <code>jeka help</code>.</p>
 <p>The displayed documentation consist in :</p>
 <ul>
 <li>The Jeka Built-in option</li>
-<li>A general description of the command class (its purpose). This information is provided by using <code>@JkDoc</code> annotation at class level.</li>
+<li>A general description of the commandSet class (its purpose). This information is provided by using <code>@JkDoc</code> annotation at class level.</li>
 <li>A description of each <em>command</em>. The description is provided by using <code>@JkDoc</code>.</li>
 <li>A description of accept options, with its type and default value. The description is provided by using <code>@JkDoc</code> annotation on public fields.</li>
 <li>The plugins available in the classpath.</li>
 </ul>
-<p>If <em>command class</em> or plugin declares a public instance field without <code>@JkDoc</code> annotation, then it will be displayed in help screen but mentioning that there is no description available.</p>
-<p>If <em>command class</em> or plugin declares a <em>command</em> without <code>@JkDoc</code>, it will be also displayed in help screen but mentioning that there is no description available.</p>
-<p>This is the display screen for the Jeka project command class :</p>
+<p>If <em>commandSet class</em> or plugin declares a public instance field without <code>@JkDoc</code> annotation, then it will be displayed in help screen but mentioning that there is no description available.</p>
+<p>If <em>commandSet class</em> or plugin declares a <em>command</em> without <code>@JkDoc</code>, it will be also displayed in help screen but mentioning that there is no description available.</p>
+<p>This is the display screen for the Jeka project commandSet class :</p>
 <pre><code>Usage: jeka [methodA...] [pluginName#methodB...] [-optionName=value...] [-pluginName#optionName=value...] [-DsystemPropName=value...]
-Execute the specified methods defined in command class or plugins using the specified options and system properties.
+Execute the specified methods defined in commandSet class or plugins using the specified options and system properties.
 When no method specified, 'doDefault' method is invoked.
 Ex: jeka clean java#pack -java#pack.sources=true -LogVerbose -other=xxx -DmyProp=Xxxx
 
@@ -1150,7 +1149,7 @@ Built-in options (these options are not specific to a plugin or a build class) :
   -LogVerbose (shorthand -LV) : if true, logs will display 'trace' level logs.
   -LogHeaders (shorthand -LH) : if true, meta-information about the build creation itself and method execution will be logged.
   -LogMaxLength (shorthand -LML) : Console will do a carriage return automatically after N characters are outputted in a single line (ex : -LML=120).
-  -CommandClass (shorthand -CC) : Force to use the specified class as the command class to be invoked. It can be the short name of the class (without package prefix).
+  -CommandClass (shorthand -CC) : Force to use the specified class as the commandSet class to be invoked. It can be the short name of the class (without package prefix).
 
 Available methods and options :
 
@@ -1160,7 +1159,7 @@ From class CoreBuild :
   Options :
     -testSamples (boolean, default : false) : If true, executes black-box tests on sample projects prior ending the distrib.
 
-From class JkCommands :
+From class JkCommandSet :
   Methods :
     clean : Cleans the output directory.
     help : Displays all available methods defined in this build.
