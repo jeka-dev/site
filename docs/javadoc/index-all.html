@@ -94,8 +94,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipsePath.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.eclipse.<a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipsePath.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipsePath</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.intellij.<a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.jacoco.<a href="dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html" title="class in dev.jeka.core.tool.builtins.jacoco">JkPluginJacoco</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
@@ -2556,6 +2554,8 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlSkipJeka">imlSkipJeka</a></span> - Variable in class dev.jeka.core.tool.builtins.intellij.<a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlTestExtraModules">imlTestExtraModules</a></span> - Variable in class dev.jeka.core.tool.builtins.intellij.<a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#IMPLEMENTATION_TITLE">IMPLEMENTATION_TITLE</a></span> - Static variable in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
 <dd>
 <div class="block">The title of the implementation.</div>
@@ -3897,6 +3897,13 @@
 <dd>
 <div class="block">Returns a JkDependencySet similar to this one but removing duplicates on module dependencies.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkFileSystemDependency.html#minusFile-java.nio.file.Path-">minusFile(Path)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement">JkFileSystemDependency</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencySet.html#minusFiles-java.util.function.Predicate-">minusFiles(Predicate&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></dt>
+<dd>
+<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
+ <a href="dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencySet.html#minusLastIf-boolean-">minusLastIf(boolean)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></dt>
 <dd>
 <div class="block">Returns a clone of this dependencySet but removing the last element if the specified condition is met.</div>
@@ -5129,7 +5136,7 @@
 <dd>
 <div class="block">If the build script depends on build script located in another projects, you must add those projects here.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setImportedProjects-java.lang.Iterable-">setImportedProjects(Iterable&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setImportedTestModules-java.lang.Iterable-">setImportedTestModules(Iterable&lt;String&gt;)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#setIncludeJavadoc-boolean-">setIncludeJavadoc(boolean)</a></span> - Method in class dev.jeka.core.api.tooling.eclipse.<a href="dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></dt>
 <dd>
