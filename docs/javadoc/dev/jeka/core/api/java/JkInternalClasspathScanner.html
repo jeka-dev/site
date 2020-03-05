@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6,"i2":18,"i3":6,"i4":17};
+var methods = {"i0":6,"i1":6,"i2":6,"i3":18,"i4":6,"i5":17};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -143,19 +143,24 @@ var activeTableTab = "activeTableTab";
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html#findClassesHavingMainMethod-java.lang.ClassLoader-">findClassesHavingMainMethod</a></span>(java.lang.ClassLoader&nbsp;extraCclassLoader)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html#findClassesMatchingAnnotations-java.lang.ClassLoader-java.util.function.Predicate-">findClassesMatchingAnnotations</a></span>(java.lang.ClassLoader&nbsp;classloader,
+                              java.util.function.Predicate&lt;java.util.List&lt;java.lang.String&gt;&gt;&nbsp;annotationPredicate)</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>&lt;T&gt;&nbsp;java.lang.Class&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html#loadClassesHavingNameOrSimpleName-java.lang.String-java.lang.Class-">loadClassesHavingNameOrSimpleName</a></span>(java.lang.String&nbsp;name,
                                  java.lang.Class&lt;T&gt;&nbsp;superClass)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>default java.util.Set&lt;java.lang.Class&lt;?&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html#loadClassesHavingSimpleName-java.lang.String-">loadClassesHavingSimpleName</a></span>(java.lang.String&nbsp;simpleName)</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.util.Set&lt;java.lang.Class&lt;?&gt;&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html#loadClassesHavingSimpleNameMatching-java.util.function.Predicate-">loadClassesHavingSimpleNameMatching</a></span>(java.util.function.Predicate&lt;java.lang.String&gt;&nbsp;predicate)</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java">JkInternalClasspathScanner</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html#of--">of</a></span>()</code>&nbsp;</td>
 </tr>
@@ -231,10 +236,20 @@ var activeTableTab = "activeTableTab";
 <a name="loadClassesHavingSimpleName-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>loadClassesHavingSimpleName</h4>
 <pre>default&nbsp;java.util.Set&lt;java.lang.Class&lt;?&gt;&gt;&nbsp;loadClassesHavingSimpleName(java.lang.String&nbsp;simpleName)</pre>
+</li>
+</ul>
+<a name="findClassesMatchingAnnotations-java.lang.ClassLoader-java.util.function.Predicate-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>findClassesMatchingAnnotations</h4>
+<pre>java.util.List&lt;java.lang.String&gt;&nbsp;findClassesMatchingAnnotations(java.lang.ClassLoader&nbsp;classloader,
+                                                                java.util.function.Predicate&lt;java.util.List&lt;java.lang.String&gt;&gt;&nbsp;annotationPredicate)</pre>
 </li>
 </ul>
 </li>
