@@ -838,7 +838,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackTasks.html#createBinJar-java.nio.file.Path-">createBinJar(Path)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackTasks.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackTasks</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html#createCrossClassloaderProxy-java.lang.Class-java.lang.String-java.lang.String-java.lang.Object...-">createCrossClassloaderProxy(Class&lt;T&gt;, String, String, Object...)</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java">JkInternalEmbeddedClassloader</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#createCrossClassloaderProxy-java.lang.Class-java.lang.String-java.lang.String-java.lang.Object...-">createCrossClassloaderProxy(Class&lt;T&gt;, String, String, Object...)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
 <dd>
 <div class="block">Creates an instance of the specified class in this classloader and
  callable from the current thread classloader.</div>
@@ -1361,7 +1361,7 @@
 <dd>
 <div class="block">Return the <code>URLClassLoader</code> wrapped by this object.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html#get--">get()</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java">JkInternalEmbeddedClassloader</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#get--">get()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaVersion.html#get--">get()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a></dt>
 <dd>
@@ -3134,6 +3134,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkInit.html#JkInit--">JkInit()</a></span> - Constructor for class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkInit.html" title="class in dev.jeka.core.tool">JkInit</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">JkInternalClassloader</span></a> - Class in <a href="dev/jeka/core/api/java/package-summary.html">dev.jeka.core.api.java</a></dt>
+<dd>
+<div class="block">Not part of the public API</div>
+</dd>
 <dt><a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java"><span class="typeNameLink">JkInternalClasspathScanner</span></a> - Interface in <a href="dev/jeka/core/api/java/package-summary.html">dev.jeka.core.api.java</a></dt>
 <dd>
 <div class="block">Not part of public api</div>
@@ -3142,12 +3146,6 @@
 <dd>
 <div class="block">Not part of the public API.</div>
 </dd>
-<dt><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">JkInternalEmbeddedClassloader</span></a> - Class in <a href="dev/jeka/core/api/java/package-summary.html">dev.jeka.core.api.java</a></dt>
-<dd>
-<div class="block">Not part of the public API</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html#JkInternalEmbeddedClassloader--">JkInternalEmbeddedClassloader()</a></span> - Constructor for class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalEmbeddedClassloader.html" title="class in dev.jeka.core.api.java">JkInternalEmbeddedClassloader</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="dev/jeka/core/api/crypto/gpg/JkInternalGpgDoer.html" title="interface in dev.jeka.core.api.crypto.gpg"><span class="typeNameLink">JkInternalGpgDoer</span></a> - Interface in <a href="dev/jeka/core/api/crypto/gpg/package-summary.html">dev.jeka.core.api.crypto.gpg</a></dt>
 <dd>&nbsp;</dd>
 <dt><a href="dev/jeka/core/api/depmanagement/JkInternalPublisher.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">JkInternalPublisher</span></a> - Interface in <a href="dev/jeka/core/api/depmanagement/package-summary.html">dev.jeka.core.api.depmanagement</a></dt>
@@ -4351,6 +4349,8 @@
 <dd>
 <div class="block">Creates a <code>JkClasspath</code> form specified file entries.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#of-java.lang.ClassLoader-">of(ClassLoader)</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html#of--">of()</a></span> - Static method in interface dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java">JkInternalClasspathScanner</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJarPacker.html#of-dev.jeka.core.api.file.JkPathTreeSet-">of(JkPathTreeSet)</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJarPacker.html" title="class in dev.jeka.core.api.java">JkJarPacker</a></dt>
@@ -4491,6 +4491,8 @@
 <dd>
 <div class="block">Creates a <a href="dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> with default GnuPgp file location.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#ofEmbeddedLibs--">ofEmbeddedLibs()</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathTreeSet.html#ofEmpty--">ofEmpty()</a></span> - Static method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></dt>
 <dd>
 <div class="block">Creates an empty <a href="dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file"><code>JkPathTreeSet</code></a>.</div>
