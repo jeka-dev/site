@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":9,"i3":9};
+var methods = {"i0":10,"i1":10,"i2":9,"i3":9,"i4":9,"i5":9};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -116,6 +116,25 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static java.nio.file.Path</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#URL_CACHE_DIR">URL_CACHE_DIR</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -143,12 +162,20 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#get--">get</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#of-java.lang.ClassLoader-">of</a></span>(java.lang.ClassLoader&nbsp;classLoader)</code>&nbsp;</td>
+<td class="colFirst"><code>static java.nio.file.Path</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#getEmbeddedLibAsPath-java.lang.String-">getEmbeddedLibAsPath</a></span>(java.lang.String&nbsp;resourcePath)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#ofEmbeddedLibs--">ofEmbeddedLibs</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#of-java.lang.ClassLoader-">of</a></span>(java.lang.ClassLoader&nbsp;classLoader)</code>&nbsp;</td>
+</tr>
+<tr id="i4" class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#ofMainEmbeddedLibs--">ofMainEmbeddedLibs</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html#ofMainEmbeddedLibs-java.util.List-">ofMainEmbeddedLibs</a></span>(java.util.List&lt;java.nio.file.Path&gt;&nbsp;extraEntries)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -166,6 +193,23 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="URL_CACHE_DIR">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>URL_CACHE_DIR</h4>
+<pre>public static final&nbsp;java.nio.file.Path URL_CACHE_DIR</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
@@ -181,13 +225,31 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a>&nbsp;of(java.lang.ClassLoader&nbsp;classLoader)</pre>
 </li>
 </ul>
-<a name="ofEmbeddedLibs--">
+<a name="ofMainEmbeddedLibs--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ofEmbeddedLibs</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a>&nbsp;ofEmbeddedLibs()</pre>
+<h4>ofMainEmbeddedLibs</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a>&nbsp;ofMainEmbeddedLibs()</pre>
+</li>
+</ul>
+<a name="ofMainEmbeddedLibs-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ofMainEmbeddedLibs</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a>&nbsp;ofMainEmbeddedLibs(java.util.List&lt;java.nio.file.Path&gt;&nbsp;extraEntries)</pre>
+</li>
+</ul>
+<a name="getEmbeddedLibAsPath-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getEmbeddedLibAsPath</h4>
+<pre>public static&nbsp;java.nio.file.Path&nbsp;getEmbeddedLibAsPath(java.lang.String&nbsp;resourcePath)</pre>
 </li>
 </ul>
 <a name="get--">
@@ -267,13 +329,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

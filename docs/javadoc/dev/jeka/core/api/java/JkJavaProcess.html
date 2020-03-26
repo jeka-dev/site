@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -228,6 +228,13 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#withPrintCommand-boolean-">withPrintCommand</a></span>(boolean&nbsp;printCommand)</code>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one specifying if the launch command should be printed
+ in the console</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#withWorkingDir-java.nio.file.Path-">withWorkingDir</a></span>(java.nio.file.Path&nbsp;workingDir)</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one but using the specified
  working dir.</div>
@@ -369,6 +376,17 @@ extends java.lang.Object</pre>
 <dd><code>paths</code> - As <code>Path</code> class implements { @link Iterable<Path> } the argument can be a single <code>Path</code>
  instance, if so it will be interpreted as a list containing a single element which is this argument.</dd>
 </dl>
+</li>
+</ul>
+<a name="withPrintCommand-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withPrintCommand</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;withPrintCommand(boolean&nbsp;printCommand)</pre>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one specifying if the launch command should be printed
+ in the console</div>
 </li>
 </ul>
 <a name="withClasspath-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-">
