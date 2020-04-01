@@ -137,7 +137,7 @@
 <div class="block">Fills this manifest with contextual infoString : <a href="dev/jeka/core/api/java/JkManifest.html#CREATED_BY"><code>JkManifest.CREATED_BY</code></a>,
  <a href="dev/jeka/core/api/java/JkManifest.html#BUILT_BY"><code>JkManifest.BUILT_BY</code></a> and <a href="dev/jeka/core/api/java/JkManifest.html#BUILD_JDK"><code>JkManifest.BUILD_JDK</code></a></div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#addDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">addDependencies(JkDependencySet)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#addDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">addDependencies(JkDependencySet)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkUrlClassLoader.html#addEntries-java.lang.Iterable-">addEntries(Iterable&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></dt>
 <dd>
@@ -686,10 +686,6 @@
 <div class="block">Returns the classpath of this classloader without mentioning classpath of
  the parent classloaders.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#clean--">clean()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
-<dd>
-<div class="block">Deletes project build outputs.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#clean--">clean()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>
 <div class="block">Cleans the output directory for the project</div>
@@ -698,7 +694,7 @@
 <dd>
 <div class="block">Cleans the output directory.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#cleanCache--">cleanCache()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#cleanCache--">cleanCache()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/JkMvn.html#cleanInstall--">cleanInstall()</a></span> - Method in class dev.jeka.core.api.tooling.<a href="dev/jeka/core/api/tooling/JkMvn.html" title="class in dev.jeka.core.api.tooling">JkMvn</a></dt>
 <dd>
@@ -1260,7 +1256,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkResolveResult.JkErrorReport.html#failure-java.util.List-">failure(List&lt;JkModuleDepProblem&gt;)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkResolveResult.JkErrorReport.html" title="class in dev.jeka.core.api.depmanagement">JkResolveResult.JkErrorReport</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#fetchDependencies-dev.jeka.core.api.depmanagement.JkScope...-">fetchDependencies(JkScope...)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#fetchDependencies-dev.jeka.core.api.depmanagement.JkScope...-">fetchDependencies(JkScope...)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>
 <div class="block">Returns lib paths standing for the resolution of this project dependencies for the specified dependency scopes.</div>
 </dd>
@@ -1620,6 +1616,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/crypto/gpg/JkGpg.html#getDefaultPubring--">getDefaultPubring()</a></span> - Static method in class dev.jeka.core.api.crypto.gpg.<a href="dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#getDefaultScope--">getDefaultScope()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/crypto/gpg/JkGpg.html#getDefaultSecring--">getDefaultSecring()</a></span> - Static method in class dev.jeka.core.api.crypto.gpg.<a href="dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommandSet.html#getDefDependencies--">getDefDependencies()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a></dt>
@@ -1630,9 +1628,9 @@
 <dd>
 <div class="block">Returns the dependency resolver used to compile/run scripts of this project.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html#getDependencies--">getDependencies()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#getDependencies--">getDependencies()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#getDependencies--">getDependencies()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html#getDependencies--">getDependencies()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/JkPom.html#getDependencies--">getDependencies()</a></span> - Method in class dev.jeka.core.api.tooling.<a href="dev/jeka/core/api/tooling/JkPom.html" title="class in dev.jeka.core.api.tooling">JkPom</a></dt>
 <dd>
@@ -2100,12 +2098,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkDeveloperInfo.html#getOrganisationUrl--">getOrganisationUrl()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo.JkDeveloperInfo</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getOutLayout--">getOutLayout()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#getOutLayout--">getOutLayout()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getOutputCleaner--">getOutputCleaner()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
-<dd>
-<div class="block">Holds runnables executed while <a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#clean--"><code>JkJavaProjectMaker.clean()</code></a> method is invoked.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaCompileSpec.html#getOutputDir--">getOutputDir()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/kotlin/JkKotlinJvmCompileSpec.html#getOutputDir--">getOutputDir()</a></span> - Method in class dev.jeka.core.api.kotlin.<a href="dev/jeka/core/api/kotlin/JkKotlinJvmCompileSpec.html" title="class in dev.jeka.core.api.kotlin">JkKotlinJvmCompileSpec</a></dt>
@@ -2222,7 +2216,7 @@
 <dd>
 <div class="block">Returns the resolved version for this node and all its children.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#getResolver--">getResolver()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#getResolver--">getResolver()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getResourceGenerator--">getResourceGenerator()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a></dt>
 <dd>
@@ -2258,7 +2252,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#getScaffoldPlugin--">getScaffoldPlugin()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#getScopeDefaultedDependencies--">getScopeDefaultedDependencies()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#getScopeDefaultedDependencies--">getScopeDefaultedDependencies()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>
 <div class="block">Returns dependencies declared for this project.</div>
 </dd>
@@ -3067,6 +3061,10 @@
 <dd>
 <div class="block">Holds information about transitive dependencies to exclude.</div>
 </dd>
+<dt><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">JkDependencyManagement</span></a>&lt;<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="type parameter in JkDependencyManagement">T</a>&gt; - Class in <a href="dev/jeka/core/api/depmanagement/package-summary.html">dev.jeka.core.api.depmanagement</a></dt>
+<dd>
+<div class="block">A structure to manage consistently dependencies and their resolution.</div>
+</dd>
 <dt><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">JkDependencyNode</span></a> - Class in <a href="dev/jeka/core/api/depmanagement/package-summary.html">dev.jeka.core.api.depmanagement</a></dt>
 <dd>
 <div class="block">A representation of a node in a dependency tree.</div>
@@ -3264,8 +3262,6 @@
 
  Beside, java projects are highly extensible so you can add build tasks or alter existing ones.</div>
 </dd>
-<dt><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProject.JkDependencyManagement</span></a>&lt;<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="type parameter in JkJavaProject.JkDependencyManagement">T</a>&gt; - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProjectMaker</span></a> - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
 <dd>
 <div class="block">Mainly an artifact producer for a Java project.</div>
@@ -4090,6 +4086,8 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyExclusions.html#of--">of()</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyExclusions.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusions</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#of-T-">of(T)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkFileNodeInfo.html#of-java.util.Set-dev.jeka.core.api.depmanagement.JkFileDependency-">of(Set&lt;JkScope&gt;, JkFileDependency)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkFileNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkFileNodeInfo</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html#of-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkVersion-java.util.Set-java.util.Set-dev.jeka.core.api.depmanagement.JkVersion-java.util.List-">of(JkModuleId, JkVersion, Set&lt;JkScope&gt;, Set&lt;JkScope&gt;, JkVersion, List&lt;Path&gt;)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkModuleNodeInfo</a></dt>
@@ -4889,7 +4887,7 @@
 <dd>
 <div class="block">Removes the definition of the specified artifacts.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#removeDependencies--">removeDependencies()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#removeDependencies--">removeDependencies()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsString.html#repeat-java.lang.String-int-">repeat(String, int)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsString.html" title="class in dev.jeka.core.api.utils">JkUtilsString</a></dt>
 <dd>
@@ -4903,6 +4901,10 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkRepoConfigOptionLoader.html#repoFromOptions-java.lang.String-">repoFromOptions(String)</a></span> - Static method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkRepoConfigOptionLoader.html" title="class in dev.jeka.core.tool">JkRepoConfigOptionLoader</a></dt>
 <dd>
 <div class="block">Creates <a href="dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a> form Jeka options.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#reset--">reset()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
+<dd>
+<div class="block">Deletes project build outputs.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#resolve-dev.jeka.core.api.depmanagement.JkDependencySet-java.lang.Iterable-">resolve(JkDependencySet, Iterable&lt;JkScope&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
 <dd>&nbsp;</dd>
@@ -5120,6 +5122,8 @@
 <dd>
 <div class="block">Sets to default underlying compiler, meaning the compiler tool embedded in the running JDK</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#setDefaultScope-dev.jeka.core.api.depmanagement.JkScope:A-">setDefaultScope(JkScope[])</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setDefDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setDefDependencies(JkDependencyResolver, JkDependencySet)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies(JkDependencyResolver, JkDependencySet)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
@@ -5145,7 +5149,7 @@
 <dd>
 <div class="block">File trees specified here will be added to the fat jar.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#setFailOnDependencyResolutionError-boolean-">setFailOnDependencyResolutionError(boolean)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#setFailOnDependencyResolutionError-boolean-">setFailOnDependencyResolutionError(boolean)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
 <dd>
 <div class="block">If <code>true</code> this object will throw a JkException whenever a dependency resolution occurs.</div>
 </dd>
@@ -5257,7 +5261,7 @@
 <dd>
 <div class="block">Some options of a compileRunner are set in a couple of name/value (version, classpath, .....).</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setOutLayout-dev.jeka.core.api.java.project.JkProjectOutLayout-">setOutLayout(JkProjectOutLayout)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#setOutLayout-dev.jeka.core.api.java.project.JkProjectOutLayout-">setOutLayout(JkProjectOutLayout)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaCompileSpec.html#setOutputDir-java.nio.file.Path-">setOutputDir(Path)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a></dt>
 <dd>&nbsp;</dd>
@@ -6226,6 +6230,10 @@ the order they are declared.</div>
 </a>
 <h2 class="title">_</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html#Z:Z__">__</a></span> - Variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a></dt>
+<dd>
+<div class="block">For parent chaining</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#Z:Z__">__</a></span> - Variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
 <dd>
 <div class="block">For parent chaining</div>
@@ -6255,10 +6263,6 @@ the order they are declared.</div>
 <div class="block">For parent chaining</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#Z:Z__">__</a></span> - Variable in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
-<dd>
-<div class="block">For parent chaining</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html#Z:Z__">__</a></span> - Variable in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a></dt>
 <dd>
 <div class="block">For parent chaining</div>
 </dd>

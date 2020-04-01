@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?dev/jeka/core/api/java/project/JkJavaProject.html" target="_top">Frames</a></li>
@@ -72,7 +72,7 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -141,25 +141,6 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
-<ul class="blockList">
-<li class="blockList"><a name="nested.class.summary">
-<!--   -->
-</a>
-<h3>Nested Class Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
-<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Class and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="type parameter in JkJavaProject.JkDependencyManagement">T</a>&gt;</span></code>&nbsp;</td>
-</tr>
-</table>
-</li>
-</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -183,7 +164,7 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&gt;</code></td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getDependencyManagement--">getDependencyManagement</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -199,34 +180,42 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getMaker--">getMaker</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getOutLayout--">getOutLayout</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getSourceLayout--">getSourceLayout</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#of-dev.jeka.core.api.java.project.JkProjectSourceLayout-">of</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;layout)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofMavenLayout-java.nio.file.Path-">ofMavenLayout</a></span>(java.nio.file.Path&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofMavenLayout-java.lang.String-">ofMavenLayout</a></span>(java.lang.String&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofSimpleLayout-java.nio.file.Path-">ofSimpleLayout</a></span>(java.nio.file.Path&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofSimpleLayout-java.lang.String-">ofSimpleLayout</a></span>(java.lang.String&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setOutLayout-dev.jeka.core.api.java.project.JkProjectOutLayout-">setOutLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a>&nbsp;outLayout)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setSourceLayout-dev.jeka.core.api.java.project.JkProjectSourceLayout-">setSourceLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;sourceLayout)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -321,6 +310,15 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;getSourceLayout()</pre>
 </li>
 </ul>
+<a name="getOutLayout--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getOutLayout</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a>&nbsp;getOutLayout()</pre>
+</li>
+</ul>
 <a name="getMaker--">
 <!--   -->
 </a>
@@ -339,13 +337,22 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setSourceLayout(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;sourceLayout)</pre>
 </li>
 </ul>
+<a name="setOutLayout-dev.jeka.core.api.java.project.JkProjectOutLayout-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setOutLayout</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setOutLayout(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a>&nbsp;outLayout)</pre>
+</li>
+</ul>
 <a name="getDependencyManagement--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDependencyManagement</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project">JkJavaProject.JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&gt;&nbsp;getDependencyManagement()</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&gt;&nbsp;getDependencyManagement()</pre>
 </li>
 </ul>
 <a name="toString--">
@@ -424,7 +431,7 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?dev/jeka/core/api/java/project/JkJavaProject.html" target="_top">Frames</a></li>
@@ -448,7 +455,7 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

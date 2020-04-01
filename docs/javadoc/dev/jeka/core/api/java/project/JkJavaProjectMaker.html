@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -202,90 +202,76 @@ implements <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifact
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#clean--">clean</a></span>()</code>
-<div class="block">Deletes project build outputs.</div>
-</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#defineMainArtifactAsFatJar-boolean-">defineMainArtifactAsFatJar</a></span>(boolean&nbsp;defineOriginal)</code>
 <div class="block">Convenient method for defining a fat jar artifact having the specified classifier name.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">fetchRuntimeDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactFileId)</code>
 <div class="block">Returns the runtime dependencies of the specified artifact file.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.Iterable&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getArtifactIds--">getArtifactIds</a></span>()</code>
 <div class="block">Returns all the artifact ids likely to be produced by this artifact producer.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Returns file ofSystem path where is supposed to be produced the specified artifact file id.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getBaseDir--">getBaseDir</a></span>()</code>
 <div class="block">Returns the base directory of this object.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getOutLayout--">getOutLayout</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getOutputCleaner--">getOutputCleaner</a></span>()</code>
-<div class="block">Holds runnables executed while <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#clean--"><code>clean()</code></a> method is invoked.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.Runnable</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getRunnable-dev.jeka.core.api.depmanagement.JkArtifactId-">getRunnable</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Returns the runnable responsible for creating the specified artifactId.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker.JkSteps</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#getSteps--">getSteps</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">makeArtifact</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Produces the specified artifact file.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.lang.Runnable-">putArtifact</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
            java.lang.Runnable&nbsp;runnable)</code>
 <div class="block">Defines how to produce the specified artifact.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">removeArtifact</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Removes the definition of the specified artifacts.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#reset--">reset</a></span>()</code>
+<div class="block">Deletes project build outputs.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setMainArtifact-java.lang.Runnable-">setMainArtifact</a></span>(java.lang.Runnable&nbsp;runnable)</code>
 <div class="block">Shorthand for <code>putArtifact(this.getMainArtifact, runnable)</code>.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#setOutLayout-dev.jeka.core.api.java.project.JkProjectOutLayout-">setOutLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a>&nbsp;outLayout)</code>&nbsp;</td>
-</tr>
-<tr id="i18" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -382,24 +368,6 @@ implements <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifact
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code><a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html#getBaseDir--">getBaseDir</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a></code></dd>
 </dl>
-</li>
-</ul>
-<a name="getOutLayout--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getOutLayout</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a>&nbsp;getOutLayout()</pre>
-</li>
-</ul>
-<a name="setOutLayout-dev.jeka.core.api.java.project.JkProjectOutLayout-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setOutLayout</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;setOutLayout(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a>&nbsp;outLayout)</pre>
 </li>
 </ul>
 <a name="putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.lang.Runnable-">
@@ -554,24 +522,13 @@ implements <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifact
 </dl>
 </li>
 </ul>
-<a name="getOutputCleaner--">
+<a name="reset--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getOutputCleaner</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getOutputCleaner()</pre>
-<div class="block">Holds runnables executed while <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html#clean--"><code>clean()</code></a> method is invoked. Add your own runnable if you want to
- improve the <code>clean</code> method.</div>
-</li>
-</ul>
-<a name="clean--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>clean</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;clean()</pre>
+<h4>reset</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a>&nbsp;reset()</pre>
 <div class="block">Deletes project build outputs.</div>
 </li>
 </ul>
@@ -624,7 +581,7 @@ implements <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifact
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.JkDependencyManagement.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
