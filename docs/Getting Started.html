@@ -561,9 +561,9 @@ import dev.jeka.core.api.file.JkPathTree;
 import dev.jeka.core.api.file.JkPathTreeSet;
 import dev.jeka.core.api.file.JkResourceProcessor;
 import dev.jeka.core.api.java.*;
-import dev.jeka.core.api.java.junit.JkJavaTestClasses;
-import dev.jeka.core.api.java.junit.JkUnit;
-import dev.jeka.core.api.java.junit.JkUnit.JunitReportDetail;
+import dev.jeka.core.api.java.testing.JkJavaTestClasses;
+import dev.jeka.core.api.java.testing.JkUnit;
+import dev.jeka.core.api.java.testing.JkUnit.JunitReportDetail;
 import dev.jeka.core.tool.JkCommandSet;
 import dev.jeka.core.tool.JkDefClasspath;
 
@@ -605,7 +605,7 @@ public class AntStyleBuild extends JkCommandSet {
                 .addSources(src));
         Map&lt;String, String&gt; varReplacement = new HashMap&lt;&gt;();
         varReplacement.put(&quot;${server.ip}&quot;, &quot;123.211.11.0&quot;);
-        JkResourceProcessor.of(JkPathTreeSet.of(src)).andInterpolate(&quot;**/*.properties&quot;, varReplacement)
+        JkResourceProcessor.of(JkPathTreeSet.of(src)).addInterpolator(&quot;**/*.properties&quot;, varReplacement)
                 .generateTo(classDir, Charset.forName(&quot;UTF-8&quot;));
         JkPathTree.of(src).andMatching(false, &quot;**/*.javaPlugin&quot;).copyTo(classDir);
     }
@@ -617,7 +617,7 @@ public class AntStyleBuild extends JkCommandSet {
     }
 
     public void javadoc() {
-        JkJavadocMaker.of(JkPathTreeSet.of(src), buildDir.resolve(&quot;javadoc&quot;)).process();
+        JkJavadocProcessor.of(JkPathTreeSet.of(src), buildDir.resolve(&quot;javadoc&quot;)).process();
     }
 
     public void run() {

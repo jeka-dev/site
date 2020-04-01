@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":10,"i3":9,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var methods = {"i0":10,"i1":9,"i2":10,"i3":9,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,14 +91,14 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">dev.jeka.core.api.java</div>
-<h2 title="Class JkJavaCompiler" class="title">Class JkJavaCompiler</h2>
+<h2 title="Class JkJavaCompiler" class="title">Class JkJavaCompiler&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>dev.jeka.core.api.java.JkJavaCompiler</li>
+<li>dev.jeka.core.api.java.JkJavaCompiler&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -107,16 +107,37 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public final class <span class="typeNameLabel">JkJavaCompiler</span>
+<pre>public final class <span class="typeNameLabel">JkJavaCompiler&lt;T&gt;</span>
 extends java.lang.Object</pre>
-<div class="block">Stand for a compilation setting and process. Use this class to perform java
- compilation.</div>
+<div class="block">Compiler for Java source code. Underlying, it uses either a <code>JavaCompiler</code> instance either an external
+ process (forked mode).</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#Z:Z__">__</a></span></code>
+<div class="block">Owner for parent chaining</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -150,60 +171,46 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#of-javax.tools.JavaCompiler-">of</a></span>(javax.tools.JavaCompiler&nbsp;compiler)</code>&nbsp;</td>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;java.lang.Void&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#of--">of</a></span>()</code>
+<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> without specifying a <code>JavaCompiler</code> instance or an external process.</div>
+</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#ofJdk--">ofJdk</a></span>()</code>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> besed on <code>JavaCompiler</code> provided with the JDK.</div>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#of-T-">of</a></span>(T&nbsp;parent)</code>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#of--"><code>of()</code></a> but mentioning a owner for parent chaining.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withCompiler-javax.tools.JavaCompiler-">withCompiler</a></span>(javax.tools.JavaCompiler&nbsp;compiler)</code>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with the specified compileRunner instance.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setCompilerTool-javax.tools.JavaCompiler-">setCompilerTool</a></span>(javax.tools.JavaCompiler&nbsp;compiler)</code>
+<div class="block">Sets underlying java compiler tool to use.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withFailOnError-boolean-">withFailOnError</a></span>(boolean&nbsp;fail)</code>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with the specified
- failed-on-error parameter.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setDefault--">setDefault</a></span>()</code>
+<div class="block">Sets to default underlying compiler, meaning the compiler tool embedded in the running JDK</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-boolean-java.lang.String...-">withForking</a></span>(boolean&nbsp;fork,
-           java.lang.String...&nbsp;parameters)</code>
-<div class="block">As <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-java.lang.String...-"><code>withForking(String...)</code></a> but the fork is actually done only if the
- <code>fork</code> parameter is <code>true</code>.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setForkingProcess-dev.jeka.core.api.system.JkProcess-">setForkingProcess</a></span>(<a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a>&nbsp;compileProcess)</code>
+<div class="block">Sets the underlying compiler with the specified process.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-dev.jeka.core.api.system.JkProcess-">withForking</a></span>(<a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a>&nbsp;compileProcess)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setForkingWithJavac-java.lang.String...-">setForkingWithJavac</a></span>(java.lang.String...&nbsp;parameters)</code>
+<div class="block">Set the underlying compiler as an external process of the 'javac' tool provided with the running JDK.</div>
+</td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-java.lang.String...-">withForking</a></span>(java.lang.String...&nbsp;parameters)</code>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with forking the javac
- process.</div>
-</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForkingOnCompiler-java.lang.String-java.lang.String...-">withForkingOnCompiler</a></span>(java.lang.String&nbsp;executable,
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setForkingWithJavacIf-boolean-java.lang.String...-">setForkingWithJavacIf</a></span>(boolean&nbsp;condition,
                      java.lang.String...&nbsp;parameters)</code>
-<div class="block">As <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-java.lang.String...-"><code>withForking(String...)</code></a> but specifying the executable for the compileRunner.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withJavacBin-dev.jeka.core.api.java.JkJavaVersion-java.nio.file.Path-">withJavacBin</a></span>(<a href="../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;version,
-            java.nio.file.Path&nbsp;javacBin)</code>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but adding an external java compileRunner for
- the specified source version.</div>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setForkingWithJavac-java.lang.String...-"><code>setForkingWithJavac(String...)</code></a> but only operates if the specified condition is <code>true</code></div>
 </td>
 </tr>
 </table>
@@ -222,114 +229,109 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a> __</pre>
+<div class="block">Owner for parent chaining</div>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="ofJdk--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofJdk</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;ofJdk()</pre>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> besed on <code>JavaCompiler</code> provided with the JDK.</div>
-</li>
-</ul>
-<a name="of-javax.tools.JavaCompiler-">
+<a name="of--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;of(javax.tools.JavaCompiler&nbsp;compiler)</pre>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;java.lang.Void&gt;&nbsp;of()</pre>
+<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> without specifying a <code>JavaCompiler</code> instance or an external process.
+ When nothing is specified, this compiler will try the default <code>JavaCompiler</code> instance provided
+ by the running JDK.</div>
 </li>
 </ul>
-<a name="withFailOnError-boolean-">
+<a name="of-java.lang.Object-">
+<!--   -->
+</a><a name="of-T-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withFailOnError</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withFailOnError(boolean&nbsp;fail)</pre>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with the specified
- failed-on-error parameter. If <code>true</code> then
- a compilation error will throw a <code>IllegalStateException</code>.</div>
+<h4>of</h4>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;T&gt;&nbsp;of(T&nbsp;parent)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#of--"><code>of()</code></a> but mentioning a owner for parent chaining.</div>
 </li>
 </ul>
-<a name="withForking-java.lang.String...-">
+<a name="setCompilerTool-javax.tools.JavaCompiler-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withForking</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withForking(java.lang.String...&nbsp;parameters)</pre>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with forking the javac
- process. The javac process is created using specified argument defined in
- <a href="../../../../../dev/jeka/core/api/system/JkProcess.html#ofJavaTool-java.lang.String-java.lang.String...-"><code>JkProcess.ofJavaTool(String, String...)</code></a></div>
-</li>
-</ul>
-<a name="withForking-boolean-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withForking</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withForking(boolean&nbsp;fork,
-                                  java.lang.String...&nbsp;parameters)</pre>
-<div class="block">As <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-java.lang.String...-"><code>withForking(String...)</code></a> but the fork is actually done only if the
- <code>fork</code> parameter is <code>true</code>.</div>
-</li>
-</ul>
-<a name="withForking-dev.jeka.core.api.system.JkProcess-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withForking</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withForking(<a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a>&nbsp;compileProcess)</pre>
-</li>
-</ul>
-<a name="withForkingOnCompiler-java.lang.String-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withForkingOnCompiler</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withForkingOnCompiler(java.lang.String&nbsp;executable,
-                                            java.lang.String...&nbsp;parameters)</pre>
-<div class="block">As <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#withForking-java.lang.String...-"><code>withForking(String...)</code></a> but specifying the executable for the compileRunner.</div>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>executable</code> - The executable for the compileRunner as 'jike' or '/my/specific/jdk/javac'</dd>
-</dl>
-</li>
-</ul>
-<a name="withCompiler-javax.tools.JavaCompiler-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withCompiler</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withCompiler(javax.tools.JavaCompiler&nbsp;compiler)</pre>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but with the specified compileRunner instance.
- Since in-process compilers cannot be run andAccept a withForking process, this method disables any
+<h4>setCompilerTool</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;&nbsp;setCompilerTool(javax.tools.JavaCompiler&nbsp;compiler)</pre>
+<div class="block">Sets underlying java compiler tool to use.
+ Since in-process compilers cannot be run in forking process mode, this method disables any
  previous fork options that may have been set.</div>
 </li>
 </ul>
-<a name="withJavacBin-dev.jeka.core.api.java.JkJavaVersion-java.nio.file.Path-">
+<a name="setForkingProcess-dev.jeka.core.api.system.JkProcess-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withJavacBin</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;withJavacBin(<a href="../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;version,
-                                   java.nio.file.Path&nbsp;javacBin)</pre>
-<div class="block">Creates a copy of this <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> but adding an external java compileRunner for
- the specified source version. The compileRunner will try to get compliant compileRunner to
- compile source.</div>
+<h4>setForkingProcess</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;&nbsp;setForkingProcess(<a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a>&nbsp;compileProcess)</pre>
+<div class="block">Sets the underlying compiler with the specified process. The process is typically a 'javac' command.</div>
+</li>
+</ul>
+<a name="setDefault--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDefault</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;&nbsp;setDefault()</pre>
+<div class="block">Sets to default underlying compiler, meaning the compiler tool embedded in the running JDK</div>
+</li>
+</ul>
+<a name="setForkingWithJavac-java.lang.String...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setForkingWithJavac</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;&nbsp;setForkingWithJavac(java.lang.String...&nbsp;parameters)</pre>
+<div class="block">Set the underlying compiler as an external process of the 'javac' tool provided with the running JDK.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setForkingProcess-dev.jeka.core.api.system.JkProcess-"><code>setForkingProcess(JkProcess)</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setForkingWithJavacIf-boolean-java.lang.String...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setForkingWithJavacIf</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="type parameter in JkJavaCompiler">T</a>&gt;&nbsp;setForkingWithJavacIf(boolean&nbsp;condition,
+                                               java.lang.String...&nbsp;parameters)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/java/JkJavaCompiler.html#setForkingWithJavac-java.lang.String...-"><code>setForkingWithJavac(String...)</code></a> but only operates if the specified condition is <code>true</code></div>
 </li>
 </ul>
 <a name="isDefault--">
@@ -427,13 +429,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

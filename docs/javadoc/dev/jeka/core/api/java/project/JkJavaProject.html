@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":9,"i16":9,"i17":9,"i18":9,"i19":9,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,8 +47,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li>Prev&nbsp;Class</li>
-<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectCompileTasks.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?dev/jeka/core/api/java/project/JkJavaProject.html" target="_top">Frames</a></li>
@@ -107,13 +107,13 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd><a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a>, <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a>, java.util.function.Supplier&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&gt;</dd>
+<dd><a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a>, <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaIdeSupportSupplier</a>, java.util.function.Supplier&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">JkJavaProject</span>
 extends java.lang.Object
-implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a>, <a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a>, java.util.function.Supplier&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&gt;</pre>
+implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaIdeSupportSupplier</a>, <a href="../../../../../../dev/jeka/core/api/file/JkFileSystemLocalizable.html" title="interface in dev.jeka.core.api.file">JkFileSystemLocalizable</a>, java.util.function.Supplier&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&gt;</pre>
 <div class="block">Container for a Java project with classic characteristic :
  <ul>
      <li>Contains Java source files to be compiled</li>
@@ -158,129 +158,91 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProje
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#addDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">addDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#addResourceInterpolator-java.nio.file.PathMatcher-java.util.Map-">addResourceInterpolator</a></span>(java.nio.file.PathMatcher&nbsp;pathMatcher,
-                       java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;valueReplacements)</code>&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#addResourceInterpolator-java.lang.String-java.util.Map-">addResourceInterpolator</a></span>(java.lang.String&nbsp;acceptPattern,
-                       java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;valueReplacements)</code>&nbsp;</td>
-</tr>
-<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#get--">get</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getBaseDir--">getBaseDir</a></span>()</code>
 <div class="block">Returns the base directory of this object.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getCompileSpec--">getCompileSpec</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i6" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getDependencies--">getDependencies</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getExtraFilesToIncludeInJar--">getExtraFilesToIncludeInJar</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getInfo--">getInfo</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getJavaProjectIde--">getJavaProjectIde</a></span>()</code>&nbsp;</td>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getJavaIdeSupport--">getJavaIdeSupport</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getMaker--">getMaker</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getManifest--">getManifest</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getResourceInterpolators--">getResourceInterpolators</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i13" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getSourceLayout--">getSourceLayout</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getVersionedModule--">getVersionedModule</a></span>()</code>
 <div class="block">Returns the module name and version of this project.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#of-dev.jeka.core.api.java.project.JkProjectSourceLayout-">of</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;layout)</code>&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofMavenLayout-java.nio.file.Path-">ofMavenLayout</a></span>(java.nio.file.Path&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofMavenLayout-java.lang.String-">ofMavenLayout</a></span>(java.lang.String&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofSimpleLayout-java.nio.file.Path-">ofSimpleLayout</a></span>(java.nio.file.Path&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#ofSimpleLayout-java.lang.String-">ofSimpleLayout</a></span>(java.lang.String&nbsp;baseDir)</code>&nbsp;</td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setCompileSpec-dev.jeka.core.api.java.JkJavaCompileSpec-">setCompileSpec</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a>&nbsp;compileSpec)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#removeDependencies--">removeDependencies</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i21" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</code>&nbsp;</td>
-</tr>
-<tr id="i22" class="altColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">setExtraFilesToIncludeInFatJar</a></span>(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</code>
 <div class="block">File trees specified here will be added to the fat jar.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setManifest-dev.jeka.core.api.java.JkManifest-">setManifest</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&nbsp;manifest)</code>&nbsp;</td>
-</tr>
-<tr id="i24" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setSourceEncoding-java.lang.String-">setSourceEncoding</a></span>(java.lang.String&nbsp;encoding)</code>&nbsp;</td>
-</tr>
-<tr id="i25" class="rowColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setSourceLayout-dev.jeka.core.api.java.project.JkProjectSourceLayout-">setSourceLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;sourceLayout)</code>&nbsp;</td>
 </tr>
-<tr id="i26" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setSourceVersion-dev.jeka.core.api.java.JkJavaVersion-">setSourceVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;version)</code>&nbsp;</td>
-</tr>
-<tr id="i27" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">setVersionedModule</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</code>
 <div class="block">Sets the specified module name and version for this project.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setVersionedModule-java.lang.String-java.lang.String-">setVersionedModule</a></span>(java.lang.String&nbsp;groupAndName,
                   java.lang.String&nbsp;version)</code>&nbsp;</td>
 </tr>
-<tr id="i29" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -415,13 +377,13 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProje
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setSourceLayout(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;sourceLayout)</pre>
 </li>
 </ul>
-<a name="setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">
+<a name="removeDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</pre>
+<h4>removeDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;removeDependencies()</pre>
 </li>
 </ul>
 <a name="addDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">
@@ -431,53 +393,6 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProje
 <li class="blockList">
 <h4>addDependencies</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;addDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</pre>
-</li>
-</ul>
-<a name="setSourceEncoding-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setSourceEncoding</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setSourceEncoding(java.lang.String&nbsp;encoding)</pre>
-</li>
-</ul>
-<a name="setSourceVersion-dev.jeka.core.api.java.JkJavaVersion-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setSourceVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setSourceVersion(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;version)</pre>
-</li>
-</ul>
-<a name="getResourceInterpolators--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getResourceInterpolators</h4>
-<pre>public&nbsp;java.util.List&lt;<a href="../../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a>&gt;&nbsp;getResourceInterpolators()</pre>
-</li>
-</ul>
-<a name="addResourceInterpolator-java.nio.file.PathMatcher-java.util.Map-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>addResourceInterpolator</h4>
-<pre>public&nbsp;void&nbsp;addResourceInterpolator(java.nio.file.PathMatcher&nbsp;pathMatcher,
-                                    java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;valueReplacements)</pre>
-</li>
-</ul>
-<a name="addResourceInterpolator-java.lang.String-java.util.Map-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>addResourceInterpolator</h4>
-<pre>public&nbsp;void&nbsp;addResourceInterpolator(java.lang.String&nbsp;acceptPattern,
-                                    java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;valueReplacements)</pre>
 </li>
 </ul>
 <a name="getVersionedModule--">
@@ -517,42 +432,6 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProje
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-"><code>setVersionedModule(JkVersionedModule)</code></a></dd>
 </dl>
-</li>
-</ul>
-<a name="getCompileSpec--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getCompileSpec</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a>&nbsp;getCompileSpec()</pre>
-</li>
-</ul>
-<a name="setCompileSpec-dev.jeka.core.api.java.JkJavaCompileSpec-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setCompileSpec</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setCompileSpec(<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a>&nbsp;compileSpec)</pre>
-</li>
-</ul>
-<a name="getManifest--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getManifest</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&nbsp;getManifest()</pre>
-</li>
-</ul>
-<a name="setManifest-dev.jeka.core.api.java.JkManifest-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setManifest</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;setManifest(<a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&nbsp;manifest)</pre>
 </li>
 </ul>
 <a name="getExtraFilesToIncludeInJar--">
@@ -596,16 +475,16 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProje
 <pre>public&nbsp;java.lang.String&nbsp;getInfo()</pre>
 </li>
 </ul>
-<a name="getJavaProjectIde--">
+<a name="getJavaIdeSupport--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getJavaProjectIde</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a>&nbsp;getJavaProjectIde()</pre>
+<h4>getJavaIdeSupport</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;getJavaIdeSupport()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html#getJavaProjectIde--">getJavaProjectIde</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html#getJavaIdeSupport--">getJavaIdeSupport</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaIdeSupportSupplier</a></code></dd>
 </dl>
 </li>
 </ul>
@@ -636,8 +515,8 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProje
 </div>
 <div class="subNav">
 <ul class="navList">
-<li>Prev&nbsp;Class</li>
-<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectCompileTasks.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupportSupplier.html" title="interface in dev.jeka.core.api.java.project"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?dev/jeka/core/api/java/project/JkJavaProject.html" target="_top">Frames</a></li>
