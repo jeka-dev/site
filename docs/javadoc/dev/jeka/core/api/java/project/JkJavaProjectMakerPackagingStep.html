@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -170,34 +170,44 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#getArtifactFileNameSupplier--">getArtifactFileNameSupplier</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#getExtraFilesToIncludeInJar--">getExtraFilesToIncludeInJar</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.util.function.Supplier&lt;java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#getIncludingVersionFileNameSupplier--">getIncludingVersionFileNameSupplier</a></span>()</code>
 <div class="block">Returns an artifact file name supplier for including version in artifact file names.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#getManifest--">getManifest</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.util.function.Supplier&lt;java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#getModuleNameFileNameSupplier--">getModuleNameFileNameSupplier</a></span>()</code>
 <div class="block">Returns an artifact file name supplier for NOT including version in artifact file names.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#setArtifactFileNameSupplier-java.util.function.Supplier-">setArtifactFileNameSupplier</a></span>(java.util.function.Supplier&lt;java.lang.String&gt;&nbsp;artifactFileNameSupplier)</code>
 <div class="block">Specifies how the name of the artifact files will be constructed.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#setChecksumAlgorithms-java.lang.String...-">setChecksumAlgorithms</a></span>(java.lang.String...&nbsp;algorithms)</code>
 <div class="block">Defines the algorithms to sign the produced artifacts.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">setExtraFilesToIncludeInFatJar</a></span>(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</code>
+<div class="block">File trees specified here will be added to the fat jar.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html#setFatJarFilter-java.nio.file.PathMatcher-">setFatJarFilter</a></span>(java.nio.file.PathMatcher&nbsp;fatJarFilter)</code>
 <div class="block">Defines witch files from main jar and dependency jars will be included in the fat jar.</div>
@@ -346,12 +356,31 @@ extends java.lang.Object</pre>
 <a name="setFatJarFilter-java.nio.file.PathMatcher-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setFatJarFilter</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a>&nbsp;setFatJarFilter(java.nio.file.PathMatcher&nbsp;fatJarFilter)</pre>
 <div class="block">Defines witch files from main jar and dependency jars will be included in the fat jar.
  By default, it is valued to "all".</div>
+</li>
+</ul>
+<a name="getExtraFilesToIncludeInJar--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getExtraFilesToIncludeInJar</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;getExtraFilesToIncludeInJar()</pre>
+</li>
+</ul>
+<a name="setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setExtraFilesToIncludeInFatJar</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a>&nbsp;setExtraFilesToIncludeInFatJar(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</pre>
+<div class="block">File trees specified here will be added to the fat jar.</div>
 </li>
 </ul>
 </li>
