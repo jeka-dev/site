@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -115,6 +115,27 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker.JkSteps</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#Z:Z__">__</a></span></code>
+<div class="block">For parent chaining</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -144,26 +165,43 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#getPublishRepos--">getPublishRepos</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#getVersionedModule--">getVersionedModule</a></span>()</code>
+<div class="block">Returns the module name and version of this project.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#publish--">publish</a></span>()</code>
 <div class="block">Publishes all defined artifacts.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#publishLocal--">publishLocal</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#setMavenPublicationInfo-dev.jeka.core.api.depmanagement.JkMavenPublicationInfo-">setMavenPublicationInfo</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;mavenPublicationInfo)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#setPublishRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">setPublishRepos</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;publishRepos)</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#setSigner-java.util.function.UnaryOperator-">setSigner</a></span>(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">setVersionedModule</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</code>
+<div class="block">Sets the specified module name and version for this project.</div>
+</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#setVersionedModule-java.lang.String-java.lang.String-">setVersionedModule</a></span>(java.lang.String&nbsp;groupAndName,
+                  java.lang.String&nbsp;version)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -181,12 +219,69 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker.JkSteps</a> __</pre>
+<div class="block">For parent chaining</div>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
+<a name="getVersionedModule--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;getVersionedModule()</pre>
+<div class="block">Returns the module name and version of this project. This information is used for naming produced artifact files,
+ publishing. It is also consumed by tools as SonarQube.</div>
+</li>
+</ul>
+<a name="setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a>&nbsp;setVersionedModule(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</pre>
+<div class="block">Sets the specified module name and version for this project.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#getVersionedModule--"><code>getVersionedModule()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setVersionedModule-java.lang.String-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a>&nbsp;setVersionedModule(java.lang.String&nbsp;groupAndName,
+                                                           java.lang.String&nbsp;version)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html#setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-"><code>setVersionedModule(JkVersionedModule)</code></a></dd>
+</dl>
+</li>
+</ul>
 <a name="publish--">
 <!--   -->
 </a>
@@ -322,13 +417,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
