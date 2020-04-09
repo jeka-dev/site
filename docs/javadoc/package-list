@@ -8,8 +8,8 @@ dev.jeka.core.api.function
 dev.jeka.core.api.java
 dev.jeka.core.api.java.embedded.classgraph
 dev.jeka.core.api.java.project
-dev.jeka.core.api.java.testing
-dev.jeka.core.api.java.testing.embedded.junitplatform
+dev.jeka.core.api.java.testplatform
+dev.jeka.core.api.java.testplatform.embedded.junitplatform
 dev.jeka.core.api.kotlin
 dev.jeka.core.api.system
 dev.jeka.core.api.tooling

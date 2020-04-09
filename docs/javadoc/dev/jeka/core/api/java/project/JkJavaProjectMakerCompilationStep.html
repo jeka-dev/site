@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,14 +91,14 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">dev.jeka.core.api.java.project</div>
-<h2 title="Class JkJavaProjectMakerCompilationStep" class="title">Class JkJavaProjectMakerCompilationStep&lt;T&gt;</h2>
+<h2 title="Class JkJavaProjectMakerCompilationStep" class="title">Class JkJavaProjectMakerCompilationStep</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>dev.jeka.core.api.java.project.JkJavaProjectMakerCompilationStep&lt;T&gt;</li>
+<li>dev.jeka.core.api.java.project.JkJavaProjectMakerCompilationStep</li>
 </ul>
 </li>
 </ul>
@@ -107,37 +107,14 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">JkJavaProjectMakerCompilationStep&lt;T&gt;</span>
+<pre>public class <span class="typeNameLabel">JkJavaProjectMakerCompilationStep</span>
 extends java.lang.Object</pre>
-<div class="block">Handles project compilation step. Users can configure inner phases by chaining runnables.
- They also can modify <a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a> and <a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompileSpec</code></a> to use.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- =========== FIELD SUMMARY =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.summary">
-<!--   -->
-</a>
-<h3>Field Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
-<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Field and Description</th>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#Z:Z__">__</a></span></code>
-<div class="block">For parent chaining</div>
-</td>
-</tr>
-</table>
-</li>
-</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -151,82 +128,34 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#addOptions-java.lang.String...-">addOptions</a></span>(java.lang.String...&nbsp;options)</code>
-<div class="block">Adds options to be passed to Java compiler</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getCompiler--">getCompiler</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#apply-java.util.function.Consumer-">apply</a></span>(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&gt;&nbsp;consumer)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getCompileRunner--">getCompileRunner</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getAfterCompile--">getAfterCompile</a></span>()</code>
-<div class="block">Returns the runnables to be run after compilation.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getPostActions--">getPostActions</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getAfterGenerate--">getAfterGenerate</a></span>()</code>
-<div class="block">Returns the runnables to run after source and resource generation.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getPreCompile--">getPreCompile</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getBeforeGenerate--">getBeforeGenerate</a></span>()</code>
-<div class="block">Returns the runnables to run prior source and resource generation.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getResourceGenerator--">getResourceGenerator</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getCompileOptions--">getCompileOptions</a></span>()</code>
-<div class="block">Returns extra compile options passed to the compiler</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getResourceProcessor--">getResourceProcessor</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getCompiler--">getCompiler</a></span>()</code>
-<div class="block">Returns the compiler compiling Java sources of this project.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getSourceGenerator--">getSourceGenerator</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getComputedCompileSpec--">getComputedCompileSpec</a></span>()</code>
-<div class="block">Computes and returns the compile specification to pass to Java computer.</div>
-</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getJavaVersion--">getJavaVersion</a></span>()</code>
-<div class="block">Gets the Java version used as source and target version</div>
-</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getResourceGenerator--">getResourceGenerator</a></span>()</code>
-<div class="block">Returns the runnables generating resources.</div>
-</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getResourceProcessor--">getResourceProcessor</a></span>()</code>
-<div class="block">Returns the resource processor.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getSourceEncoding--">getSourceEncoding</a></span>()</code>
-<div class="block">Returns encoding to use to read Java source files</div>
-</td>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#getSourceGenerator--">getSourceGenerator</a></span>()</code>
-<div class="block">Returns the runnables generating sources.</div>
-</td>
-</tr>
-<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#run--">run</a></span>()</code>
 <div class="block">Performs entire compilation phase, including : 
@@ -237,23 +166,20 @@ extends java.lang.Object</pre>
  </div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#runIfNecessary--">runIfNecessary</a></span>()</code>
 <div class="block">As #run but perform only if not already done.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#setJavaVersion-dev.jeka.core.api.java.JkJavaVersion-">setJavaVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;javaVersion)</code>
-<div class="block">Sets the Java version used for both source and target.</div>
-</td>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#setCompiler-dev.jeka.core.api.java.JkJavaCompiler-">setCompiler</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;compiler)</code>&nbsp;</td>
 </tr>
-<tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#setSourceEncoding-java.lang.String-">setSourceEncoding</a></span>(java.lang.String&nbsp;sourceEncoding)</code>
-<div class="block">Set the encoding to use to read Java source files</div>
-</td>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html#setFork-boolean-java.lang.String...-">setFork</a></span>(boolean&nbsp;fork,
+       java.lang.String...&nbsp;params)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -271,39 +197,12 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
-<!-- ============ FIELD DETAIL =========== -->
-<ul class="blockList">
-<li class="blockList"><a name="field.detail">
-<!--   -->
-</a>
-<h3>Field Detail</h3>
-<a name="Z:Z__">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>__</h4>
-<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a> __</pre>
-<div class="block">For parent chaining</div>
-</li>
-</ul>
-</li>
-</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="apply-java.util.function.Consumer-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>apply</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&nbsp;apply(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&gt;&nbsp;consumer)</pre>
-</li>
-</ul>
 <a name="run--">
 <!--   -->
 </a>
@@ -329,26 +228,13 @@ extends java.lang.Object</pre>
 <div class="block">As #run but perform only if not already done.</div>
 </li>
 </ul>
-<a name="getBeforeGenerate--">
+<a name="getPreCompile--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getBeforeGenerate</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getBeforeGenerate()</pre>
-<div class="block">Returns the runnables to run prior source and resource generation. User can chain its own runnable
- to customise the process. Empty by default.</div>
-</li>
-</ul>
-<a name="getAfterGenerate--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getAfterGenerate</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getAfterGenerate()</pre>
-<div class="block">Returns the runnables to run after source and resource generation. User can chain its own runnable
- to customise the process. Empty by default.</div>
+<h4>getPreCompile</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getPreCompile()</pre>
 </li>
 </ul>
 <a name="getSourceGenerator--">
@@ -358,8 +244,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getSourceGenerator</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getSourceGenerator()</pre>
-<div class="block">Returns the runnables generating sources. User can chain its own runnable
- to customise the process. Empty by default.</div>
 </li>
 </ul>
 <a name="getResourceGenerator--">
@@ -369,70 +253,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getResourceGenerator</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getResourceGenerator()</pre>
-<div class="block">Returns the runnables generating resources. User can chain its own runnable
- to customise the process. Empty by default.</div>
 </li>
 </ul>
-<a name="getCompiler--">
+<a name="getPostActions--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getCompiler</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&gt;&nbsp;getCompiler()</pre>
-<div class="block">Returns the compiler compiling Java sources of this project. The returned instance is mutable
- so users can modify it from this method return.</div>
-</li>
-</ul>
-<a name="getAfterCompile--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getAfterCompile</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getAfterCompile()</pre>
-<div class="block">Returns the runnables to be run after compilation. User can chain its own runnable
- to customise the process. Empty by default.</div>
-</li>
-</ul>
-<a name="getSourceEncoding--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getSourceEncoding</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getSourceEncoding()</pre>
-<div class="block">Returns encoding to use to read Java source files</div>
-</li>
-</ul>
-<a name="setSourceEncoding-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setSourceEncoding</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&nbsp;setSourceEncoding(java.lang.String&nbsp;sourceEncoding)</pre>
-<div class="block">Set the encoding to use to read Java source files</div>
-</li>
-</ul>
-<a name="getCompileOptions--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getCompileOptions</h4>
-<pre>public&nbsp;java.util.List&lt;java.lang.String&gt;&nbsp;getCompileOptions()</pre>
-<div class="block">Returns extra compile options passed to the compiler</div>
-</li>
-</ul>
-<a name="addOptions-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>addOptions</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&nbsp;addOptions(java.lang.String...&nbsp;options)</pre>
-<div class="block">Adds options to be passed to Java compiler</div>
+<h4>getPostActions</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getPostActions()</pre>
 </li>
 </ul>
 <a name="getResourceProcessor--">
@@ -441,39 +270,44 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getResourceProcessor</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&gt;&nbsp;getResourceProcessor()</pre>
-<div class="block">Returns the resource processor.</div>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getResourceProcessor()</pre>
 </li>
 </ul>
-<a name="getJavaVersion--">
+<a name="getCompileRunner--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getJavaVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;getJavaVersion()</pre>
-<div class="block">Gets the Java version used as source and target version</div>
+<h4>getCompileRunner</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getCompileRunner()</pre>
 </li>
 </ul>
-<a name="setJavaVersion-dev.jeka.core.api.java.JkJavaVersion-">
+<a name="getCompiler--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setJavaVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="type parameter in JkJavaProjectMakerCompilationStep">T</a>&gt;&nbsp;setJavaVersion(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;javaVersion)</pre>
-<div class="block">Sets the Java version used for both source and target.</div>
+<h4>getCompiler</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;getCompiler()</pre>
 </li>
 </ul>
-<a name="getComputedCompileSpec--">
+<a name="setCompiler-dev.jeka.core.api.java.JkJavaCompiler-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCompiler</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&nbsp;setCompiler(<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;compiler)</pre>
+</li>
+</ul>
+<a name="setFork-boolean-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getComputedCompileSpec</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java">JkJavaCompileSpec</a>&nbsp;getComputedCompileSpec()</pre>
-<div class="block">Computes and returns the compile specification to pass to Java computer. The returned result is created
- at each invokation and modify it has no side effect.</div>
+<h4>setFork</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&nbsp;setFork(boolean&nbsp;fork,
+                                                 java.lang.String...&nbsp;params)</pre>
 </li>
 </ul>
 </li>
@@ -529,13 +363,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
+<li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

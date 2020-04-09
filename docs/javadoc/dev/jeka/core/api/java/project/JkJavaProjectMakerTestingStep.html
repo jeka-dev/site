@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -109,10 +109,6 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">JkJavaProjectMakerTestingStep</span>
 extends java.lang.Object</pre>
-<div class="block">Handles project testing step. This involve both test compilation and run.
- Users can configure inner phases by chaining runnables.
- They also can modify <a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompiler</code></a>, <a href="../../../../../../dev/jeka/core/api/java/JkJavaCompileSpec.html" title="class in dev.jeka.core.api.java"><code>JkJavaCompileSpec</code></a> for test compilation and
- <a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testing"><code>JkTestProcessor</code></a>, <a href="../../../../../../dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing"><code>JkTestSelection</code></a> for test run.</div>
 </li>
 </ul>
 </div>
@@ -132,14 +128,12 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker.JkSteps</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#Z:Z__">__</a></span></code>
-<div class="block">For parent chaining</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#postTest">postTest</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#afterTest">afterTest</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#testExecutor">testExecutor</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -157,43 +151,46 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getCompilation--">getCompilation</a></span>()</code>
-<div class="block">Returns the compilation step for the test part.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getCompiler--">getCompiler</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getTestClasspath--">getTestClasspath</a></span>()</code>
-<div class="block">Returns the classpath to run the test.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getCompileRunner--">getCompileRunner</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testing">JkTestProcessor</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getTestProcessor--">getTestProcessor</a></span>()</code>
-<div class="block">Returns processor running the tests.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getPreTest--">getPreTest</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing">JkTestSelection</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getTestSelection--">getTestSelection</a></span>()</code>
-<div class="block">Returns tests to be run.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getResourceGenerator--">getResourceGenerator</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#isBreakOnFailures--">isBreakOnFailures</a></span>()</code>
-<div class="block">Returns if #run should fail (throwing a <a href="../../../../../../dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system"><code>JkException</code></a>) if
- test result has failures.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getResourceProcessor--">getResourceProcessor</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#isSkipped--">isSkipped</a></span>()</code>
-<div class="block">Returns if the tests should be skipped.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getTestClasspath--">getTestClasspath</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/testplatform/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testplatform">JkTestProcessor</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getTestProcessor--">getTestProcessor</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/testplatform/JkTestSelection.html" title="class in dev.jeka.core.api.java.testplatform">JkTestSelection</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#getTestSelection--">getTestSelection</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#isBreakOnFailures--">isBreakOnFailures</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#isTestSkipped--">isTestSkipped</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#run--">run</a></span>()</code>
 <div class="block">Performs entire test phase, including : 
@@ -205,21 +202,28 @@ extends java.lang.Object</pre>
  </div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#runIfNecessary--">runIfNecessary</a></span>()</code>
 <div class="block">As #run but perfom only if not already done.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#setBreakOnFailures-boolean-">setBreakOnFailures</a></span>(boolean&nbsp;breakOnFailures)</code>&nbsp;</td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#setCompiler-dev.jeka.core.api.java.JkJavaCompiler-">setCompiler</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;compiler)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#setForkCompile-boolean-java.lang.String...-">setForkCompile</a></span>(boolean&nbsp;fork,
+              java.lang.String...&nbsp;params)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#setSkipped-boolean-">setSkipped</a></span>(boolean&nbsp;skipped)</code>
-<div class="block">Specifies if the tests should be skipped.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html#setSkipTests-boolean-">setSkipTests</a></span>(boolean&nbsp;skipTests)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -243,23 +247,22 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Field Detail</h3>
-<a name="afterTest">
+<a name="postTest">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>afterTest</h4>
-<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a> afterTest</pre>
+<h4>postTest</h4>
+<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a> postTest</pre>
 </li>
 </ul>
-<a name="Z:Z__">
+<a name="testExecutor">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>__</h4>
-<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker.JkSteps</a> __</pre>
-<div class="block">For parent chaining</div>
+<h4>testExecutor</h4>
+<pre>public final&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a> testExecutor</pre>
 </li>
 </ul>
 </li>
@@ -270,36 +273,68 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="getTestSelection--">
+<a name="getPreTest--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTestSelection</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing">JkTestSelection</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&gt;&nbsp;getTestSelection()</pre>
-<div class="block">Returns tests to be run. The returned instance is mutable so users can modify it
- from this method return.</div>
+<h4>getPreTest</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getPreTest()</pre>
 </li>
 </ul>
-<a name="getTestProcessor--">
+<a name="getResourceGenerator--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getTestProcessor</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testing">JkTestProcessor</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&gt;&nbsp;getTestProcessor()</pre>
-<div class="block">Returns processor running the tests. The returned instance is mutable so users can modify it
- from this method return.</div>
+<h4>getResourceGenerator</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getResourceGenerator()</pre>
 </li>
 </ul>
-<a name="getCompilation--">
+<a name="getResourceProcessor--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getCompilation</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&gt;&nbsp;getCompilation()</pre>
-<div class="block">Returns the compilation step for the test part.</div>
+<h4>getResourceProcessor</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getResourceProcessor()</pre>
+</li>
+</ul>
+<a name="getCompileRunner--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompileRunner</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;getCompileRunner()</pre>
+</li>
+</ul>
+<a name="getCompiler--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getCompiler</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;getCompiler()</pre>
+</li>
+</ul>
+<a name="setCompiler-dev.jeka.core.api.java.JkJavaCompiler-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setCompiler</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&nbsp;setCompiler(<a href="../../../../../../dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a>&nbsp;compiler)</pre>
+</li>
+</ul>
+<a name="setForkCompile-boolean-java.lang.String...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setForkCompile</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&nbsp;setForkCompile(boolean&nbsp;fork,
+                                                    java.lang.String...&nbsp;params)</pre>
 </li>
 </ul>
 <a name="getTestClasspath--">
@@ -309,48 +344,24 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getTestClasspath</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;getTestClasspath()</pre>
-<div class="block">Returns the classpath to run the test. It consists in test classes + prod classes +
- dependencies involved in TEST scope.</div>
 </li>
 </ul>
-<a name="isSkipped--">
+<a name="isTestSkipped--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isSkipped</h4>
-<pre>public&nbsp;boolean&nbsp;isSkipped()</pre>
-<div class="block">Returns if the tests should be skipped.</div>
+<h4>isTestSkipped</h4>
+<pre>public&nbsp;boolean&nbsp;isTestSkipped()</pre>
 </li>
 </ul>
-<a name="setSkipped-boolean-">
+<a name="setSkipTests-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setSkipped</h4>
-<pre>public&nbsp;void&nbsp;setSkipped(boolean&nbsp;skipped)</pre>
-<div class="block">Specifies if the tests should be skipped.</div>
-</li>
-</ul>
-<a name="isBreakOnFailures--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isBreakOnFailures</h4>
-<pre>public&nbsp;boolean&nbsp;isBreakOnFailures()</pre>
-<div class="block">Returns if #run should fail (throwing a <a href="../../../../../../dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system"><code>JkException</code></a>) if
- test result has failures.</div>
-</li>
-</ul>
-<a name="setBreakOnFailures-boolean-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setBreakOnFailures</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&nbsp;setBreakOnFailures(boolean&nbsp;breakOnFailures)</pre>
+<h4>setSkipTests</h4>
+<pre>public&nbsp;void&nbsp;setSkipTests(boolean&nbsp;skipTests)</pre>
 </li>
 </ul>
 <a name="run--">
@@ -372,11 +383,47 @@ extends java.lang.Object</pre>
 <a name="runIfNecessary--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>runIfNecessary</h4>
 <pre>public&nbsp;void&nbsp;runIfNecessary()</pre>
 <div class="block">As #run but perfom only if not already done.</div>
+</li>
+</ul>
+<a name="isBreakOnFailures--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isBreakOnFailures</h4>
+<pre>public&nbsp;boolean&nbsp;isBreakOnFailures()</pre>
+</li>
+</ul>
+<a name="setBreakOnFailures-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBreakOnFailures</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a>&nbsp;setBreakOnFailures(boolean&nbsp;breakOnFailures)</pre>
+</li>
+</ul>
+<a name="getTestSelection--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTestSelection</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testplatform/JkTestSelection.html" title="class in dev.jeka.core.api.java.testplatform">JkTestSelection</a>&nbsp;getTestSelection()</pre>
+</li>
+</ul>
+<a name="getTestProcessor--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getTestProcessor</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testplatform/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testplatform">JkTestProcessor</a>&nbsp;getTestProcessor()</pre>
 </li>
 </ul>
 </li>
