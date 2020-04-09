@@ -42,7 +42,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../../dev/jeka/core/api/java/embedded/classgraph/package-summary.html">Prev&nbsp;Package</a></li>
-<li><a href="../../../../../../dev/jeka/core/api/java/testplatform/package-summary.html">Next&nbsp;Package</a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/testing/package-summary.html">Next&nbsp;Package</a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?dev/jeka/core/api/java/project/package-summary.html" target="_top">Frames</a></li>
@@ -81,7 +81,7 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIdeSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaProjectIdeSupplier</a></td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.JkSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaIdeSupport.JkSupplier</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
@@ -96,6 +96,18 @@
 </tr>
 <tbody>
 <tr class="altColor">
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">Folder layout for a project output.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></td>
+<td class="colLast">
+<div class="block">Minimal information necessary to generate metadata project file for IDE.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></td>
 <td class="colLast">
 <div class="block">Container for a Java project with classic characteristic :
@@ -104,68 +116,58 @@
      All Java sources file (prod + test) are wrote against the same Java version and encoding
      JkJavaProject may contain unit tests
      It can depends on any accepted dependencies (Maven module, other project, files on fs, ...)
-
      It produces a bin jar, a source jar and a javadoc jar
      It can produce any other artifact files (fat-jar, test jar, doc, ...)
-     It can be identified as a Maven module (means it can provide a group, artifact id, version) in order to be published/reused
+     It can be identified as a Maven module (means it can provide a group, artifact id, version) in order to be published/consumed
      It can be published on any Maven/Ivy repository, including Maven central
-
      Part of the sources/resources may be generated
-     By default, passing test suite is required to produce artifact.
+     By default, passing test suite is required to produce bin artifacts.
  
 
- Beside, java projects are highly extensible so you can add build tasks or alter existing ones.</div>
+ It provides cache mechanism in order compile or unit test phases are executed once when generating
+ several artifact files so be aware of clean it if you want to replay some tasks with different settings.</div>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a></td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectCompilation.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectCompilation</a>&lt;T&gt;</td>
 <td class="colLast">
-<div class="block">Minimal information necessary to generate metadata project file for IDE.</div>
+<div class="block">Handles project compilation step.</div>
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></td>
-<td class="colLast">
-<div class="block">Mainly an artifact producer for a Java project.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.JkSteps.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker.JkSteps</a></td>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerCompilationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerCompilationStep</a></td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectDocumentation</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerDocumentationStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerDocumentationStep</a></td>
-<td class="colLast">&nbsp;</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPackagingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPackagingStep</a></td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPackaging.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackaging</a></td>
 <td class="colLast">
 <div class="block">Tasks for packaging artifacts created by the holding project.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerPublishingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerPublishingStep</a></td>
-<td class="colLast">&nbsp;</td>
-</tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectMakerTestingStep.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMakerTestingStep</a></td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkProjectOutLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectOutLayout</a></td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></td>
 <td class="colLast">
-<div class="block">Folder layout for a project output.</div>
+<div class="block">Handles project testing step.</div>
 </td>
 </tr>
+</tbody>
+</table>
+</li>
+<li class="blockList">
+<table class="typeSummary" border="0" cellpadding="3" cellspacing="0" summary="Enum Summary table, listing enums, and an explanation">
+<caption><span>Enum Summary</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Enum</th>
+<th class="colLast" scope="col">Description</th>
+</tr>
+<tbody>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a></td>
-<td class="colLast">
-<div class="block">Describes a project layout about the source parts.</div>
-</td>
+<td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkCompileLayout.Concern.html" title="enum in dev.jeka.core.api.java.project">JkCompileLayout.Concern</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 </tbody>
 </table>
@@ -193,7 +195,7 @@
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../../dev/jeka/core/api/java/embedded/classgraph/package-summary.html">Prev&nbsp;Package</a></li>
-<li><a href="../../../../../../dev/jeka/core/api/java/testplatform/package-summary.html">Next&nbsp;Package</a></li>
+<li><a href="../../../../../../dev/jeka/core/api/java/testing/package-summary.html">Next&nbsp;Package</a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../../index.html?dev/jeka/core/api/java/project/package-summary.html" target="_top">Frames</a></li>

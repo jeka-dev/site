@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/file/JkResourceProcessor.html" target="_top">Frames</a></li>
@@ -72,14 +72,14 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,14 +91,14 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">dev.jeka.core.api.file</div>
-<h2 title="Class JkResourceProcessor" class="title">Class JkResourceProcessor</h2>
+<h2 title="Class JkResourceProcessor" class="title">Class JkResourceProcessor&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>dev.jeka.core.api.file.JkResourceProcessor</li>
+<li>dev.jeka.core.api.file.JkResourceProcessor&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public final class <span class="typeNameLabel">JkResourceProcessor</span>
+<pre>public final class <span class="typeNameLabel">JkResourceProcessor&lt;T&gt;</span>
 extends java.lang.Object</pre>
 <div class="block">This processor basically copies some resource files to a target folder
  (generally the class folder). It can also proceed to token replacement, i.e
@@ -121,23 +121,22 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
+<!-- =========== FIELD SUMMARY =========== -->
 <ul class="blockList">
-<li class="blockList"><a name="nested.class.summary">
+<li class="blockList"><a name="field.summary">
 <!--   -->
 </a>
-<h3>Nested Class Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
-<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Class and Description</th>
+<th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a></span></code>
-<div class="block">Defines values to be interpolated (replacing key by their
- value), and the file filter to apply it.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#Z:Z__">__</a></span></code>
+<div class="block">For parent chaining</div>
 </td>
 </tr>
 </table>
@@ -156,66 +155,66 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-java.lang.Iterable-">and</a></span>(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a>&gt;&nbsp;interpolators)</code>
-<div class="block">Creates a <code>JkResourceProcessor</code> identical at this one but
- adding the specified interpolator.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolator-java.nio.file.PathMatcher-java.util.Map-">addInterpolator</a></span>(java.nio.file.PathMatcher&nbsp;pathMatcher,
+               java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-dev.jeka.core.api.file.JkPathTree-">and</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a>&nbsp;tree)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolator-java.lang.String-java.util.Map-">addInterpolator</a></span>(java.lang.String&nbsp;acceptPattern,
+               java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-dev.jeka.core.api.file.JkPathTreeSet-">and</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;trees)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolator-java.lang.String-java.lang.String...-">addInterpolator</a></span>(java.lang.String&nbsp;acceptPattern,
+               java.lang.String...&nbsp;keyValues)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator-">and</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a>&nbsp;interpolator)</code>
-<div class="block">Creates a <code>JkResourceProcessor</code> identical at this one but
- adding the specified interpolator.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolators-java.lang.Iterable-">addInterpolators</a></span>(java.lang.Iterable&lt;dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator&gt;&nbsp;interpolators)</code>
+<div class="block">Adds specified interpolators to this resource processor.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-java.nio.file.Path-">and</a></span>(java.nio.file.Path&nbsp;dir)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolators-dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator...-">addInterpolators</a></span>(dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator...&nbsp;interpolators)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#andInterpolate-java.nio.file.PathMatcher-java.util.Map-">andInterpolate</a></span>(java.nio.file.PathMatcher&nbsp;pathMatcher,
-              java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#apply-java.util.function.Consumer-">apply</a></span>(java.util.function.Consumer&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&gt;&nbsp;consumer)</code>
+<div class="block">Applies the specified consumer to this object.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#andInterpolate-java.lang.String-java.util.Map-">andInterpolate</a></span>(java.lang.String&nbsp;acceptPattern,
-              java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</code>&nbsp;</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#andInterpolate-java.lang.String-java.lang.String...-">andInterpolate</a></span>(java.lang.String&nbsp;acceptPattern,
-              java.lang.String...&nbsp;keyValues)</code>&nbsp;</td>
-</tr>
-<tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#generateTo-java.nio.file.Path-java.nio.charset.Charset-">generateTo</a></span>(java.nio.file.Path&nbsp;outputDir,
-          java.nio.charset.Charset&nbsp;charset)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#generate-dev.jeka.core.api.file.JkPathTreeSet-java.nio.file.Path-">generate</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;resourceTrees,
+        java.nio.file.Path&nbsp;outputDir)</code>
 <div class="block">Actually processes the resources, meaning copies the getResources to the
  specified output directory along replacing specified tokens.</div>
 </td>
 </tr>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code>java.nio.charset.Charset</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#getInterpolationCharset--">getInterpolationCharset</a></span>()</code>
+<div class="block">Returns the charset used for interpolation</div>
+</td>
+</tr>
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;java.lang.Void&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#of--">of</a></span>()</code>
+<div class="block">Creates an empty resource processor</div>
+</td>
+</tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#of-dev.jeka.core.api.file.JkPathTree-">of</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a>&nbsp;tree)</code>
-<div class="block">Creates a <code>JkResourceProcessor</code> jump the given
- <code>JkPathTree</code> without processing any token replacement.</div>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#ofParent-T-">ofParent</a></span>(T&nbsp;parent)</code>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#of--"><code>of()</code></a> with providing a parent chaining</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#of-dev.jeka.core.api.file.JkPathTreeSet-">of</a></span>(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;trees)</code>
-<div class="block">Creates a <code>JkResourceProcessor</code> jump the given
- <code>JkPathTreeSet</code> without processing any token replacement.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#setInterpolationCharset-java.nio.charset.Charset-">setInterpolationCharset</a></span>(java.nio.charset.Charset&nbsp;interpolationCharset)</code>
+<div class="block">Set the charset used for interpolation.</div>
 </td>
 </tr>
 </table>
@@ -234,135 +233,157 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a> __</pre>
+<div class="block">For parent chaining</div>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="of-dev.jeka.core.api.file.JkPathTreeSet-">
+<a name="apply-java.util.function.Consumer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>apply</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;apply(java.util.function.Consumer&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&gt;&nbsp;consumer)</pre>
+<div class="block">Applies the specified consumer to this object.</div>
+</li>
+</ul>
+<a name="of--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;of(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;trees)</pre>
-<div class="block">Creates a <code>JkResourceProcessor</code> jump the given
- <code>JkPathTreeSet</code> without processing any token replacement.</div>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;java.lang.Void&gt;&nbsp;of()</pre>
+<div class="block">Creates an empty resource processor</div>
 </li>
 </ul>
-<a name="of-dev.jeka.core.api.file.JkPathTree-">
+<a name="ofParent-java.lang.Object-">
+<!--   -->
+</a><a name="ofParent-T-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;of(<a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a>&nbsp;tree)</pre>
-<div class="block">Creates a <code>JkResourceProcessor</code> jump the given
- <code>JkPathTree</code> without processing any token replacement.</div>
+<h4>ofParent</h4>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;T&gt;&nbsp;ofParent(T&nbsp;parent)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#of--"><code>of()</code></a> with providing a parent chaining</div>
 </li>
 </ul>
-<a name="generateTo-java.nio.file.Path-java.nio.charset.Charset-">
+<a name="addInterpolators-java.lang.Iterable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>generateTo</h4>
-<pre>public&nbsp;void&nbsp;generateTo(java.nio.file.Path&nbsp;outputDir,
-                       java.nio.charset.Charset&nbsp;charset)</pre>
-<div class="block">Actually processes the resources, meaning copies the getResources to the
- specified output directory along replacing specified tokens.</div>
+<h4>addInterpolators</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;addInterpolators(java.lang.Iterable&lt;dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator&gt;&nbsp;interpolators)</pre>
+<div class="block">Adds specified interpolators to this resource processor.</div>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.file.JkPathTreeSet-">
+<a name="addInterpolators-dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;trees)</pre>
+<h4>addInterpolators</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;addInterpolators(dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator...&nbsp;interpolators)</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-dev.jeka.core.api.file.JkPathTreeSet-"><code>and(JkPathTreeSet)</code></a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolators-java.lang.Iterable-"><code>addInterpolators(Iterable)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.file.JkPathTree-">
+<a name="addInterpolator-java.nio.file.PathMatcher-java.util.Map-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/file/JkPathTree.html" title="class in dev.jeka.core.api.file">JkPathTree</a>&nbsp;tree)</pre>
+<h4>addInterpolator</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;addInterpolator(java.nio.file.PathMatcher&nbsp;pathMatcher,
+                                              java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-dev.jeka.core.api.file.JkPathTreeSet-"><code>and(JkPathTreeSet)</code></a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolators-java.lang.Iterable-"><code>addInterpolators(Iterable)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="and-java.nio.file.Path-">
+<a name="addInterpolator-java.lang.String-java.util.Map-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;and(java.nio.file.Path&nbsp;dir)</pre>
+<h4>addInterpolator</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;addInterpolator(java.lang.String&nbsp;acceptPattern,
+                                              java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#and-dev.jeka.core.api.file.JkPathTree-"><code>and(JkPathTree)</code></a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolators-java.lang.Iterable-"><code>addInterpolators(Iterable)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.file.JkResourceProcessor.JkInterpolator-">
+<a name="addInterpolator-java.lang.String-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a>&nbsp;interpolator)</pre>
-<div class="block">Creates a <code>JkResourceProcessor</code> identical at this one but
- adding the specified interpolator.</div>
+<h4>addInterpolator</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;addInterpolator(java.lang.String&nbsp;acceptPattern,
+                                              java.lang.String...&nbsp;keyValues)</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html#addInterpolators-java.lang.Iterable-"><code>addInterpolators(Iterable)</code></a></dd>
+</dl>
 </li>
 </ul>
-<a name="andInterpolate-java.nio.file.PathMatcher-java.util.Map-">
+<a name="getInterpolationCharset--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andInterpolate</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;andInterpolate(java.nio.file.PathMatcher&nbsp;pathMatcher,
-                                          java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</pre>
+<h4>getInterpolationCharset</h4>
+<pre>public&nbsp;java.nio.charset.Charset&nbsp;getInterpolationCharset()</pre>
+<div class="block">Returns the charset used for interpolation</div>
 </li>
 </ul>
-<a name="andInterpolate-java.lang.String-java.util.Map-">
+<a name="setInterpolationCharset-java.nio.charset.Charset-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andInterpolate</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;andInterpolate(java.lang.String&nbsp;acceptPattern,
-                                          java.util.Map&lt;java.lang.String,java.lang.String&gt;&nbsp;keyValues)</pre>
+<h4>setInterpolationCharset</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="type parameter in JkResourceProcessor">T</a>&gt;&nbsp;setInterpolationCharset(java.nio.charset.Charset&nbsp;interpolationCharset)</pre>
+<div class="block">Set the charset used for interpolation. This charset is not used if no interpolation occurs.</div>
 </li>
 </ul>
-<a name="andInterpolate-java.lang.String-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>andInterpolate</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;andInterpolate(java.lang.String&nbsp;acceptPattern,
-                                          java.lang.String...&nbsp;keyValues)</pre>
-</li>
-</ul>
-<a name="and-java.lang.Iterable-">
+<a name="generate-dev.jeka.core.api.file.JkPathTreeSet-java.nio.file.Path-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.html" title="class in dev.jeka.core.api.file">JkResourceProcessor</a>&nbsp;and(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file">JkResourceProcessor.JkInterpolator</a>&gt;&nbsp;interpolators)</pre>
-<div class="block">Creates a <code>JkResourceProcessor</code> identical at this one but
- adding the specified interpolator.</div>
+<h4>generate</h4>
+<pre>public&nbsp;void&nbsp;generate(<a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;resourceTrees,
+                     java.nio.file.Path&nbsp;outputDir)</pre>
+<div class="block">Actually processes the resources, meaning copies the getResources to the
+ specified output directory along replacing specified tokens.</div>
 </li>
 </ul>
 </li>
@@ -393,7 +414,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/file/JkResourceProcessor.JkInterpolator.html" title="class in dev.jeka.core.api.file"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li>Next&nbsp;Class</li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/file/JkResourceProcessor.html" target="_top">Frames</a></li>
@@ -417,14 +438,14 @@ extends java.lang.Object</pre>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

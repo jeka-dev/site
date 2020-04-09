@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":9,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -162,17 +162,15 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#of-dev.jeka.core.api.java.project.JkJavaProjectIde-">of</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a>&nbsp;projectDef)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#of-dev.jeka.core.api.java.project.JkJavaIdeSupport-">of</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;ideSupport)</code>
 <div class="block">Constructs a <a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse"><code>JkEclipseClasspathGenerator</code></a>.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#of-dev.jeka.core.api.java.project.JkProjectSourceLayout-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.java.JkJavaVersion-">of</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;sourceLayout,
-  <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies,
-  <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;resolver,
-  <a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;sourceVersion)</code>
-<div class="block">Constructs a <a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse"><code>JkEclipseClasspathGenerator</code></a>.</div>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#setDefDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setDefDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;buildDependencyResolver,
+                  <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;buildDependencies)</code>
+<div class="block">If the build script depends on external libraries, you must set the resolver of this dependencies here.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
@@ -194,13 +192,6 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#setRunDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">setRunDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;buildDependencyResolver,
-                  <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;buildDependencies)</code>
-<div class="block">If the build script depends on external libraries, you must set the resolver of this dependencies here.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#setUsePathVariables-boolean-">setUsePathVariables</a></span>(boolean&nbsp;usePathVariables)</code>
 <div class="block">If <code>true</code> dependencies path will use JEKA_HOME and JEKA_REPO classpath variable instead of absolute paths.</div>
@@ -228,26 +219,13 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="of-dev.jeka.core.api.java.project.JkProjectSourceLayout-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.java.JkJavaVersion-">
+<a name="of-dev.jeka.core.api.java.project.JkJavaIdeSupport-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a>&nbsp;of(<a href="../../../../../../dev/jeka/core/api/java/project/JkProjectSourceLayout.html" title="class in dev.jeka.core.api.java.project">JkProjectSourceLayout</a>&nbsp;sourceLayout,
-                                             <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies,
-                                             <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;resolver,
-                                             <a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;sourceVersion)</pre>
-<div class="block">Constructs a <a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse"><code>JkEclipseClasspathGenerator</code></a>.</div>
-</li>
-</ul>
-<a name="of-dev.jeka.core.api.java.project.JkJavaProjectIde-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a>&nbsp;of(<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectIde.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectIde</a>&nbsp;projectDef)</pre>
+<pre>public static&nbsp;<a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a>&nbsp;of(<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;ideSupport)</pre>
 <div class="block">Constructs a <a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse"><code>JkEclipseClasspathGenerator</code></a>.</div>
 </li>
 </ul>
@@ -291,13 +269,13 @@ extends java.lang.Object</pre>
 <div class="block">If the build script depends on build script located in another projects, you must add those projects here.</div>
 </li>
 </ul>
-<a name="setRunDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">
+<a name="setDefDependencies-dev.jeka.core.api.depmanagement.JkDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencySet-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setRunDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a>&nbsp;setRunDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;buildDependencyResolver,
+<h4>setDefDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a>&nbsp;setDefDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;buildDependencyResolver,
                                                       <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;buildDependencies)</pre>
 <div class="block">If the build script depends on external libraries, you must set the resolver of this dependencies here.</div>
 </li>

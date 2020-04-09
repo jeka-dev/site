@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":9,"i12":9,"i13":9,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -192,26 +192,31 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#move-java.nio.file.Path-java.nio.file.CopyOption...-">move</a></span>(java.nio.file.Path&nbsp;to,
+    java.nio.file.CopyOption...&nbsp;options)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#of-java.nio.file.Path-">of</a></span>(java.nio.file.Path&nbsp;path)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file"><code>instance from the specified path.</code></a></div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#of-java.lang.String-">of</a></span>(java.lang.String&nbsp;path)</code>&nbsp;</td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#of-java.net.URL-">of</a></span>(java.net.URL&nbsp;url)</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#replaceContentBy-java.net.URL-">replaceContentBy</a></span>(java.net.URL&nbsp;url)</code>
 <div class="block">Copies the content of the specified url into this files, replacing the previous content.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathFile.html#write-byte:A-java.nio.file.OpenOption...-">write</a></span>(byte[]&nbsp;bytes,
      java.nio.file.OpenOption...&nbsp;options)</code>
@@ -310,6 +315,16 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a>&nbsp;copyToDir(java.nio.file.Path&nbsp;dir,
                             java.nio.file.CopyOption...&nbsp;options)</pre>
 <div class="block">Copies this file to the specified directory. If the specified directory does not exist, it is created.</div>
+</li>
+</ul>
+<a name="move-java.nio.file.Path-java.nio.file.CopyOption...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>move</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a>&nbsp;move(java.nio.file.Path&nbsp;to,
+                       java.nio.file.CopyOption...&nbsp;options)</pre>
 </li>
 </ul>
 <a name="replaceContentBy-java.net.URL-">

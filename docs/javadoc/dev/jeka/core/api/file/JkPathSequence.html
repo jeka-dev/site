@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -153,15 +153,15 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#andPrepending-java.lang.Iterable-">andPrepending</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#andPrepend-java.lang.Iterable-">andPrepend</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</code>
 <div class="block">Returns a <code>JkPathSequence</code> made of the specified entries followed by the sequence entries of this object.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#andPrepending-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-">andPrepending</a></span>(java.nio.file.Path&nbsp;path1,
-             java.nio.file.Path&nbsp;path2,
-             java.nio.file.Path...&nbsp;entries)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#andPrepend-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-">andPrepend</a></span>(java.nio.file.Path&nbsp;path1,
+          java.nio.file.Path&nbsp;path2,
+          java.nio.file.Path...&nbsp;entries)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
@@ -209,28 +209,35 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#resolveTo-java.nio.file.Path-">resolveTo</a></span>(java.nio.file.Path&nbsp;baseDir)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#relativizedTo-java.nio.file.Path-">relativizedTo</a></span>(java.nio.file.Path&nbsp;baseDir)</code>
 <div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
  specified base directory.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#resolvedTo-java.nio.file.Path-">resolvedTo</a></span>(java.nio.file.Path&nbsp;baseDir)</code>
+<div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
+ specified base directory.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#toPath--">toPath</a></span>()</code>
 <div class="block">Returns the file names concatenated with ';' on Windows and ':' on unix.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>java.util.Set&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#toSet--">toSet</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#toString--">toString</a></span>()</code>
 <div class="block">Returns the file names concatenated with ';'.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#withoutDuplicates--">withoutDuplicates</a></span>()</code>
 <div class="block">Returns a <code>JkPathSequence</code> identical to this one but without duplicates.</div>
@@ -348,28 +355,28 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
 </dl>
 </li>
 </ul>
-<a name="andPrepending-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-">
+<a name="andPrepend-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andPrepending</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;andPrepending(java.nio.file.Path&nbsp;path1,
-                                    java.nio.file.Path&nbsp;path2,
-                                    java.nio.file.Path...&nbsp;entries)</pre>
+<h4>andPrepend</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;andPrepend(java.nio.file.Path&nbsp;path1,
+                                 java.nio.file.Path&nbsp;path2,
+                                 java.nio.file.Path...&nbsp;entries)</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#andPrepending-java.lang.Iterable-"><code>andPrepending(Iterable)</code></a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#andPrepend-java.lang.Iterable-"><code>andPrepend(Iterable)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="andPrepending-java.lang.Iterable-">
+<a name="andPrepend-java.lang.Iterable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andPrepending</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;andPrepending(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</pre>
+<h4>andPrepend</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;andPrepend(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</pre>
 <div class="block">Returns a <code>JkPathSequence</code> made of the specified entries followed by the sequence entries of this object.</div>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
@@ -404,13 +411,24 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
  one plus the specified ones.</div>
 </li>
 </ul>
-<a name="resolveTo-java.nio.file.Path-">
+<a name="resolvedTo-java.nio.file.Path-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>resolveTo</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;resolveTo(java.nio.file.Path&nbsp;baseDir)</pre>
+<h4>resolvedTo</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;resolvedTo(java.nio.file.Path&nbsp;baseDir)</pre>
+<div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
+ specified base directory.</div>
+</li>
+</ul>
+<a name="relativizedTo-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>relativizedTo</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;relativizedTo(java.nio.file.Path&nbsp;baseDir)</pre>
 <div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
  specified base directory.</div>
 </li>
