@@ -656,14 +656,6 @@
 <dd>
 <div class="block">Produces a files, in the same directory, that contains the checksum of this file.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkJavaPackOptions.html#checksums">checksums</a></span> - Variable in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkJavaPackOptions.html" title="class in dev.jeka.core.tool.builtins.java">JkJavaPackOptions</a></dt>
-<dd>
-<div class="block">Comma separated list of algorithm to use to produce checksums (ex : 'sha-1,md5').</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkJavaPackOptions.html#checksums--">checksums()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkJavaPackOptions.html" title="class in dev.jeka.core.tool.builtins.java">JkJavaPackOptions</a></dt>
-<dd>
-<div class="block">Returns the checksums algorithms to checksum artifact files.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsPath.html#childrenCount-java.nio.file.Path-int-boolean-java.nio.file.PathMatcher-">childrenCount(Path, int, boolean, PathMatcher)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsPath.html" title="class in dev.jeka.core.api.utils">JkUtilsPath</a></dt>
 <dd>
 <div class="block">Returns the file count contained in the specified directory (recursively) to concurrence to specified max count.</div>
@@ -1417,8 +1409,6 @@
 <dd>
 <div class="block">Returns scopes this scope inherits from.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html#getArtifactFileNameSupplier--">getArtifactFileNameSupplier()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackaging</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/JkPom.html#getArtifactId--">getArtifactId()</a></span> - Method in class dev.jeka.core.api.tooling.<a href="dev/jeka/core/api/tooling/JkPom.html" title="class in dev.jeka.core.api.tooling">JkPom</a></dt>
 <dd>
 <div class="block">The artifzctId for this POM.</div>
@@ -1823,10 +1813,6 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestSelection.html#getIncludeTags--">getIncludeTags()</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing">JkTestSelection</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html#getIncludingVersionFileNameSupplier--">getIncludingVersionFileNameSupplier()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackaging</a></dt>
-<dd>
-<div class="block">Returns an artifact file name supplier for including version in artifact file names.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkCompileLayout.html#getInfo--">getInfo()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#getInfo--">getInfo()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
@@ -2243,6 +2229,10 @@
 <div class="block">Returns file that are created if a signature occurs on specified files.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/crypto/gpg/JkGpg.html#getSigner-java.lang.String-">getSigner(String)</a></span> - Method in class dev.jeka.core.api.crypto.gpg.<a href="dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></dt>
+<dd>
+<div class="block">Creates a signer based on this secret ring and passphrase and using the the specified key.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getSigner--">getSigner()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html#getSkipped--">getSkipped()</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html" title="class in dev.jeka.core.api.java.testing">JkTestResult.JkCount</a></dt>
 <dd>&nbsp;</dd>
@@ -2646,8 +2636,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html#isBreakOnFailures--">isBreakOnFailures()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></dt>
 <dd>
-<div class="block">Returns if #run should fail (throwing a <a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system"><code>JkException</code></a>) if
- test result has failures.</div>
+<div class="block">Returns if #run should fail (throwing a <code>IllegalArgumentException</code>) if test result has failures.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkFileNodeInfo.html#isComputed--">isComputed()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkFileNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkFileNodeInfo</a></dt>
 <dd>
@@ -2782,10 +2771,6 @@
 <dd>
 <div class="block">Returns <code>true</code> if the dependencies defined with this scope should be resolved recursively
  (meaning returning the dependencies of the dependencies and so on)</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsAssert.html#isTrue-boolean-java.lang.String-">isTrue(boolean, String)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsAssert.html" title="class in dev.jeka.core.api.utils">JkUtilsAssert</a></dt>
-<dd>
-<div class="block">Throws an <code>IllegalArgumentException</code> if the specified condition is <code>false</code>.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#isUniqueSnapshot--">isUniqueSnapshot()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></dt>
 <dd>&nbsp;</dd>
@@ -3068,14 +3053,6 @@
 <dt><a href="dev/jeka/core/tool/JkEnv.html" title="annotation in dev.jeka.core.tool"><span class="typeNameLink">JkEnv</span></a> - Annotation Type in <a href="dev/jeka/core/tool/package-summary.html">dev.jeka.core.tool</a></dt>
 <dd>
 <div class="block">Injects the environment variable value if such a one exists and an option as not been already injected on.</div>
-</dd>
-<dt><a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system"><span class="typeNameLink">JkException</span></a> - Exception in <a href="dev/jeka/core/api/system/package-summary.html">dev.jeka.core.api.system</a></dt>
-<dd>
-<div class="block">Marker exception to notice a misconfiguration from the user.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkException.html#JkException-java.lang.String-">JkException(String)</a></span> - Constructor for exception dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system">JkException</a></dt>
-<dd>
-<div class="block">Constructs a <a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system"><code>JkException</code></a> with the specified message.</div>
 </dd>
 <dt><a href="dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">JkFileDependency</span></a> - Interface in <a href="dev/jeka/core/api/depmanagement/package-summary.html">dev.jeka.core.api.depmanagement</a></dt>
 <dd>
@@ -3779,6 +3756,8 @@
 <dd>
 <div class="block">Entry point for Jeka application when launched from command-line</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkArtifactId.html#MAIN_ARTIFACT_NAME">MAIN_ARTIFACT_NAME</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavadocProcessor.html#make-java.lang.Iterable-dev.jeka.core.api.file.JkPathTreeSet-java.nio.file.Path-">make(Iterable&lt;Path&gt;, JkPathTreeSet, Path)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavadocProcessor.html" title="class in dev.jeka.core.api.java">JkJavadocProcessor</a></dt>
 <dd>
 <div class="block">Actually processes and creates the javadoc files.</div>
@@ -3951,10 +3930,6 @@
 <dd>
 <div class="block">Creates a no-op print getOutputStream.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsAssert.html#notNull-java.lang.Object-java.lang.String-">notNull(Object, String)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsAssert.html" title="class in dev.jeka.core.api.utils">JkUtilsAssert</a></dt>
-<dd>
-<div class="block">Throws an <code>IllegalArgumentException</code> if the specified object is <code>null</code>.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsTime.html#now--">now()</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsTime.html" title="class in dev.jeka.core.api.utils">JkUtilsTime</a></dt>
 <dd>
 <div class="block">Returns the current ofSystem date</div>
@@ -3983,7 +3958,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkArtifactId.html#of-java.lang.String-java.lang.String-">of(String, String)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></dt>
 <dd>
-<div class="block">Creates an artifact file id with the specified classifier and getExtension.</div>
+<div class="block">Creates an artifact id with the specified name and extension.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkComputedDependency.html#of-dev.jeka.core.api.system.JkProcess-java.nio.file.Path...-">of(JkProcess, Path...)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a></dt>
 <dd>
@@ -4465,7 +4440,9 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkRepoSet.html#ofLocal--">ofLocal()</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkArtifactId.html#ofMainArtifact-java.lang.String-">ofMainArtifact(String)</a></span> - Static method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Shorthand for <code>of(MAIN_ARTIFACT_NAME, String)</code>.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#ofMainEmbeddedLibs--">ofMainEmbeddedLibs()</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#ofMainEmbeddedLibs-java.util.List-">ofMainEmbeddedLibs(List&lt;Path&gt;)</a></span> - Static method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
@@ -5029,10 +5006,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html#setBreakOnFailures-boolean-">setBreakOnFailures(boolean)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html#setChecksumAlgorithms-java.lang.String...-">setChecksumAlgorithms(String...)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackaging</a></dt>
-<dd>
-<div class="block">Defines the algorithms to sign the produced artifacts.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setChecksumAlgos-java.lang.String...-">setChecksumAlgos(String...)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkCompileLayout.html#setClassDir-java.lang.String-">setClassDir(String)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a></dt>
@@ -5123,10 +5096,6 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html#setFailOnDepsResolutionError-boolean-">setFailOnDepsResolutionError(boolean)</a></span> - Method in class dev.jeka.core.api.tooling.intellij.<a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij">JkImlGenerator</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html#setFatJarFilter-java.nio.file.PathMatcher-">setFatJarFilter(PathMatcher)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPackaging.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPackaging</a></dt>
-<dd>
-<div class="block">Defines witch files from main jar and dependency jars will be included in the fat jar.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsReflect.html#setFieldValue-java.lang.Object-java.lang.reflect.Field-java.lang.Object-">setFieldValue(Object, Field, Object)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsReflect.html" title="class in dev.jeka.core.api.utils">JkUtilsReflect</a></dt>
 <dd>
 <div class="block">Sets the specified value for the specified field and object.</div>
@@ -5498,10 +5467,6 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#tests">tests</a></span> - Variable in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>
 <div class="block">Options for the testing tasks.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkException.html#throwIf-boolean-java.lang.String-">throwIf(boolean, String)</a></span> - Static method in exception dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system">JkException</a></dt>
-<dd>
-<div class="block">Throws a JkException with the specified message if the specified condition is met.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkMavenMetadata.Versioning.JkSnapshot.html#timestamp">timestamp</a></span> - Variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkMavenMetadata.Versioning.JkSnapshot.html" title="class in dev.jeka.core.api.depmanagement">JkMavenMetadata.Versioning.JkSnapshot</a></dt>
 <dd>&nbsp;</dd>
