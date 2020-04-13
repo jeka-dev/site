@@ -227,11 +227,11 @@
 <dd>
 <div class="block">See <a href="dev/jeka/core/api/kotlin/JkKotlinJvmCompileSpec.html#addOptions-java.lang.String...-"><code>JkKotlinJvmCompileSpec.addOptions(String...)</code></a></div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html#addRepo-dev.jeka.core.api.depmanagement.JkRepo-">addRepo(JkRepo)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#addRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">addRepos(JkRepoSet)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#addRepos-dev.jeka.core.api.depmanagement.JkRepo...-">addRepos(JkRepo...)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html#addRepos-dev.jeka.core.api.depmanagement.JkRepo...-">addRepos(JkRepo...)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkCompileLayout.html#addResource-dev.jeka.core.api.file.JkPathTree-">addResource(JkPathTree)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a></dt>
 <dd>&nbsp;</dd>
@@ -3874,6 +3874,10 @@
 <div class="block">Returns a dependency set identical to this one minus the dependencies on the given
  <a href="dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-java.lang.String-">minus(String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></dt>
+<dd>
+<div class="block">Same as #minus(JkModuleId) but using a string as <code>my.group:my.name</code> to specify the moduleId.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html#minus-dev.jeka.core.api.depmanagement.JkScope-">minus(JkScope)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencySet.html#minusDuplicates--">minusDuplicates()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></dt>
@@ -4681,10 +4685,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html#PROJECT_VERSION">PROJECT_VERSION</a></span> - Static variable in class dev.jeka.core.tool.builtins.sonar.<a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkSonar</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/sonar/JkPluginSonar.html#prop-java.lang.String-java.lang.String-">prop(String, String)</a></span> - Method in class dev.jeka.core.tool.builtins.sonar.<a href="dev/jeka/core/tool/builtins/sonar/JkPluginSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkPluginSonar</a></dt>
-<dd>
-<div class="block">Adds a property to setupAfterPluginActivations sonar instance to run.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsIterable.html#propertiesToMap-java.util.Properties-">propertiesToMap(Properties)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsIterable.html" title="class in dev.jeka.core.api.utils">JkUtilsIterable</a></dt>
 <dd>
 <div class="block">Creates a <code>Map</code> and populates it with specified properties.</div>
@@ -4818,6 +4818,13 @@
 <dd>
 <div class="block">Copies the content of the specified url into this files, replacing the previous content.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencySet.html#replaceScope-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkScope...-">replaceScope(JkModuleId, JkScope...)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></dt>
+<dd>
+<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
+ <a href="dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencySet.html#replaceScope-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">replaceScope(String, JkScope...)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkRepoConfigOptionLoader.html#repoFromOptions-java.lang.String-">repoFromOptions(String)</a></span> - Static method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkRepoConfigOptionLoader.html" title="class in dev.jeka.core.tool">JkRepoConfigOptionLoader</a></dt>
 <dd>
 <div class="block">Creates <a href="dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a> form Jeka options.</div>
@@ -5093,6 +5100,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies(JkDependencySet)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setDependencies-java.util.function.UnaryOperator-">setDependencies(UnaryOperator&lt;JkDependencySet&gt;)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencyResolver-">setDependencyResolver(JkDependencyResolver)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPublishedPomMetadata.JkProjectInfo.html#setDescription-java.lang.String-">setDescription(String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPublishedPomMetadata.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPublishedPomMetadata.JkProjectInfo</a></dt>
@@ -5256,6 +5265,10 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#setProject-dev.jeka.core.api.java.project.JkJavaProject-">setProject(JkJavaProject)</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/sonar/JkPluginSonar.html#setProp-java.lang.String-java.lang.String-">setProp(String, String)</a></span> - Method in class dev.jeka.core.tool.builtins.sonar.<a href="dev/jeka/core/tool/builtins/sonar/JkPluginSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkPluginSonar</a></dt>
+<dd>
+<div class="block">Adds a property to setupAfterPluginActivations sonar instance to run.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkResolutionParameters.html#setRefreshed-boolean-">setRefreshed(boolean)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement">JkResolutionParameters</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html#setReportDir-java.lang.String-">setReportDir(String)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></dt>
@@ -5345,6 +5358,8 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkLog.html#setVerbosity-dev.jeka.core.api.system.JkLog.Verbosity-">setVerbosity(JkLog.Verbosity)</a></span> - Static method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkLog.html" title="class in dev.jeka.core.api.system">JkLog</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersion-dev.jeka.core.api.depmanagement.JkVersion-">setVersion(JkVersion)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersion-java.lang.String-">setVersion(String)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setVersionFilter-java.util.function.Predicate-">setVersionFilter(Predicate&lt;JkVersion&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></dt>
 <dd>&nbsp;</dd>
