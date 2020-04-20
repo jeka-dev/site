@@ -17,6 +17,12 @@
     catch(err) {
     }
 //-->
+var methods = {"i0":6,"i1":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var altColor = "altColor";
+var rowColor = "rowColor";
+var tableTab = "tableTab";
+var activeTableTab = "activeTableTab";
 </script>
 <noscript>
 <div>JavaScript is disabled on your browser.</div>
@@ -69,13 +75,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.top">
@@ -97,19 +103,93 @@
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement">JkFileSystemDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement">JkFileSystemDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">JkDependency</span></pre>
-<div class="block">Marker interface for a dependency. It can be a either :
+<div class="block">Interface standing for a dependency. It can be a either :
  <ul>
  <li>An external module as <code>org.hibernate:hibernate-core:3.0.+</code></li>
  <li>A project inside a multi-project build</li>
- <li>Some files on the file ofSystem</li>
+ <li>Some files on the file system</li>
  </ul>
  Each dependency is associated with a scope mapping to determine precisely in
  which scenario the dependency is necessary.</div>
+</li>
+</ul>
+</div>
+<div class="summary">
+<ul class="blockList">
+<li class="blockList">
+<!-- ========== METHOD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.summary">
+<!--   -->
+</a>
+<h3>Method Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Method and Description</th>
+</tr>
+<tr id="i0" class="altColor">
+<td class="colFirst"><code>java.nio.file.Path</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--">getIdeProjectDir</a></span>()</code>
+<div class="block">In the IDE, a dependency can be provided by a project exporting it.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></span>(java.nio.file.Path&nbsp;path)</code>
+<div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="details">
+<ul class="blockList">
+<li class="blockList">
+<!-- ============ METHOD DETAIL ========== -->
+<ul class="blockList">
+<li class="blockList"><a name="method.detail">
+<!--   -->
+</a>
+<h3>Method Detail</h3>
+<a name="getIdeProjectDir--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdeProjectDir</h4>
+<pre>java.nio.file.Path&nbsp;getIdeProjectDir()</pre>
+<div class="block">In the IDE, a dependency can be provided by a project exporting it. When generating IDE metadata files
+ (.classpath, xxx.iml), its preferable to mention only the project exporting it rather then dependency
+ itself.
+ This method simply returns <code>null</code> when the dependencies is not coming from another project.</div>
+</li>
+</ul>
+<a name="withIdeProjectDir-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>withIdeProjectDir</h4>
+<pre><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;withIdeProjectDir(java.nio.file.Path&nbsp;path)</pre>
+<div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--"><code>getIdeProjectDir()</code></a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </div>
@@ -163,13 +243,13 @@
 <li>Nested&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
-<li>Method</li>
+<li><a href="#method.detail">Method</a></li>
 </ul>
 </div>
 <a name="skip.navbar.bottom">

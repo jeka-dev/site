@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9,"i9":9,"i10":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9,"i9":9,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -109,6 +109,10 @@ var activeTableTab = "activeTableTab";
 <dt>All Implemented Interfaces:</dt>
 <dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency</a></dd>
 </dl>
+<dl>
+<dt>Direct Known Subclasses:</dt>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a></dd>
+</dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">JkComputedDependency</span>
@@ -131,6 +135,29 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>protected java.lang.Iterable&lt;java.nio.file.Path&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#files">files</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>protected java.lang.Runnable</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#runnable">runnable</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ======== CONSTRUCTOR SUMMARY ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.summary">
@@ -145,10 +172,9 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#JkComputedDependency-java.lang.Runnable-java.nio.file.Path-java.lang.Iterable-java.util.function.Supplier-">JkComputedDependency</a></span>(java.lang.Runnable&nbsp;runnable,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#JkComputedDependency-java.lang.Runnable-java.nio.file.Path-java.lang.Iterable-">JkComputedDependency</a></span>(java.lang.Runnable&nbsp;runnable,
                     java.nio.file.Path&nbsp;ideProjectBaseDir,
-                    java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
-                    java.util.function.Supplier&lt;java.lang.Iterable&lt;java.nio.file.Path&gt;&gt;&nbsp;extraFileSupplier)</code>
+                    java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files)</code>
 <div class="block">Constructs a computed dependency to the specified files and the specified <code>Runnable</code> to run for
  generating them.</div>
 </td>
@@ -178,7 +204,7 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#getIdeProjectBaseDir--">getIdeProjectBaseDir</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#getIdeProjectDir--">getIdeProjectDir</a></span>()</code>
 <div class="block">If this dependency can be represented as a project dependency in a IDE,
  this field mentions the baseTree dir of the project.</div>
 </td>
@@ -239,6 +265,12 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></span>(java.nio.file.Path&nbsp;path)</code>
+<div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
+</td>
+</tr>
 </table>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -255,13 +287,39 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="runnable">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>runnable</h4>
+<pre>protected final&nbsp;java.lang.Runnable runnable</pre>
+</li>
+</ul>
+<a name="files">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>files</h4>
+<pre>protected final&nbsp;java.lang.Iterable&lt;java.nio.file.Path&gt; files</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ========= CONSTRUCTOR DETAIL ======== -->
 <ul class="blockList">
 <li class="blockList"><a name="constructor.detail">
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="JkComputedDependency-java.lang.Runnable-java.nio.file.Path-java.lang.Iterable-java.util.function.Supplier-">
+<a name="JkComputedDependency-java.lang.Runnable-java.nio.file.Path-java.lang.Iterable-">
 <!--   -->
 </a>
 <ul class="blockListLast">
@@ -269,8 +327,7 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 <h4>JkComputedDependency</h4>
 <pre>protected&nbsp;JkComputedDependency(java.lang.Runnable&nbsp;runnable,
                                java.nio.file.Path&nbsp;ideProjectBaseDir,
-                               java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
-                               java.util.function.Supplier&lt;java.lang.Iterable&lt;java.nio.file.Path&gt;&gt;&nbsp;extraFileSupplier)</pre>
+                               java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files)</pre>
 <div class="block">Constructs a computed dependency to the specified files and the specified <code>Runnable</code> to run for
  generating them.</div>
 </li>
@@ -368,15 +425,36 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 </dl>
 </li>
 </ul>
-<a name="getIdeProjectBaseDir--">
+<a name="getIdeProjectDir--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getIdeProjectBaseDir</h4>
-<pre>public&nbsp;java.nio.file.Path&nbsp;getIdeProjectBaseDir()</pre>
+<h4>getIdeProjectDir</h4>
+<pre>public&nbsp;java.nio.file.Path&nbsp;getIdeProjectDir()</pre>
 <div class="block">If this dependency can be represented as a project dependency in a IDE,
  this field mentions the baseTree dir of the project.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--">getIdeProjectDir</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="withIdeProjectDir-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withIdeProjectDir</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a>&nbsp;withIdeProjectDir(java.nio.file.Path&nbsp;path)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#withIdeProjectDir-java.nio.file.Path-">JkDependency</a></code></span></div>
+<div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--"><code>JkDependency.getIdeProjectDir()</code></a></dd>
+</dl>
 </li>
 </ul>
 <a name="toString--">
@@ -471,13 +549,13 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.summary">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li><a href="#constructor.detail">Constr</a>&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
