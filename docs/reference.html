@@ -543,26 +543,83 @@ in other classloader than the current one.</p>
 <a name="Projects"></a>
 <h3>Projects</h3>
 <p>Projects are file structures for hosting Java projects meaning source code, test codes, dependencies,
-build instructions ...</p>
-<p>From a project definition, one can easily build it and produce artifacts and test executions.</p>
-<pre><code class="language-java">   JkJavaProject coreProject = JkJavaProject.ofMavenLayout(&quot;./projects/core&quot;);
-    coreProject.addDependencies(
-            JkDependencySet.of().and(&quot;junit:junit:4.11&quot;, JkJavaDepScopes.TEST));
-
-    // A project depending on the first project + Guava
-    JkJavaProject dependerProject = JkJavaProject.ofMavenLayout(&quot;.project/depender&quot;);
-    dependerProject.setVersionedModule(&quot;mygroup:depender&quot;, &quot;1.0-SNAPSHOT&quot;);
-    dependerProject.addDependencies(JkDependencySet.of()
-            .and(&quot;com.google.guava:guava:22.0&quot;)
-            .and(coreProject));
-
-    coreProject.getMaker().clean();
-    dependerProject.getMaker().clean().makeAllArtifacts();  // create depender.jar project along core.jar
-    dependerProject.getMaker().getTasksForPublishing().publish();  // publish depender.jar on default binary repository
+build instructions.</p>
+<p>The principle is that each <code>JkJavaProject</code> holds everything needed to compile, test, pack and publish
+artifacts. The API embrace the <em>parent-chaining</em> patten</p>
+<p>This is a pretty complete example taken from the Jeka build itself.</p>
+<pre><code>java.getProject()
+    .getArtifactProducer()
+        .putMainArtifact(this::doPackWithEmbedded)
+        .putArtifact(DISTRIB_FILE_ID, this::doDistrib)
+        .putArtifact(WRAPPER_ARTIFACT_ID, this::doWrapper).__ // define wrapper
+    .getCompilation()
+        .getLayout()
+            .includeSourceDirsInResources().__
+        .addOptions(&quot;-Xlint:none&quot;,&quot;-g&quot;)
+        .setJavaVersion(JkJavaVersion.V8)
+        .getCompiler()
+            .setForkingWithJavac().__.__
+    .getTesting()
+        .getCompilation()
+            .getLayout()
+                .includeSourceDirsInResources().__
+            .getCompiler()
+                .setDefault().__.__
+        .getTestProcessor()
+            .setForkingProcess(false)
+            .getEngineBehavior()
+                .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.ONE_LINE).__.__
+        .getTestSelection()
+            .addIncludePatterns(JkTestSelection.STANDARD_INCLUDE_PATTERN)
+            .addIncludePatternsIf(runIT, JkTestSelection.IT_INCLUDE_PATTERN).__.__
+    .getPackaging()
+        .getManifest()
+            .addMainClass(&quot;dev.jeka.core.tool.Main&quot;).__.__
+    .getDocumentation()
+        .getJavadocProcessor()
+            .setDisplayOutput(false)
+            .addOptions(&quot;-notimestamp&quot;).__.__
+    .getPublication()
+        .setModuleId(&quot;dev.jeka:jeka-core&quot;)
+        .setVersionSupplier(git::getJkVersionFromTags)
+        .setRepos(JkRepoSet.ofOssrhSnapshotAndRelease(ossrhUser, ossrhPwd))
+        .getPublishedPomMetadata()
+            .getProjectInfo()
+                .setName(&quot;jeka&quot;)
+                .setUrl(&quot;https://jeka.dev&quot;)
+                .setDescription(&quot;Automate with plain Java code and nothing else.&quot;).__
+            .getScm()
+                .setUrl(&quot;https://github.com/jerkar/jeka.git&quot;).__
+            .addApache2License()
+            .addGithubDeveloper(&quot;djeang&quot;, &quot;djeangdev@yahoo.fr&quot;).__
+        .getPostActions()
+            .append(() -&gt; createGithubRelease());
 </code></pre>
-<p>The principle is that each <code>JkJavaProject</code> holds a <code>JkJavaProjectMaker</code> responsible to achieved build tasks. The <em>maker</em>
-object defines atifacts to build. By default it defines <em>jar</em> and <em>sources</em> jar but it's a one liner to add <em>javadoc</em>
-artifact as well.</p>
+<p>This is another example of 3 projects depending on each other.</p>
+<pre><code class="language-java">   JkVersionProvider versionProvider = JkVersionProvider.of()
+                   .and(&quot;com.google.guava:guava&quot;, &quot;21.0&quot;)
+                   .and(&quot;junit:junit&quot;, &quot;4.12&quot;);
+   
+           JkJavaProject fooProject = JkJavaProject.of()
+               .setBaseDir(this.getBaseDir().resolve(&quot;foo&quot;))
+               .getDependencyManagement()
+                   .addDependencies(JkDependencySet.of()
+                       .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
+                       .and(&quot;com.google.guava:guava&quot;)
+                       .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+                       .withVersionProvider(versionProvider)).__;
+   
+           JkJavaProject barProject = JkJavaProject.of()
+               .setBaseDir(this.getBaseDir().resolve(&quot;bar&quot;))
+               .getDependencyManagement().addDependencies(JkDependencySet.of()
+                   .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
+                   .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+                   .and(fooProject.toDependency())).__;
+   
+           barProject.getArtifactProducer()
+               .putMainArtifact(barProject.getPackaging()::createFatJar) // Produced jar will embed dependencies
+               .makeAllArtifacts();
+</code></pre>
 <p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
 deployed along the other ones.</p>
 <p>JkJavaProject instances are highly configurable. You can tune your project structure/build without limits.</p>
