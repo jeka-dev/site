@@ -379,14 +379,17 @@ extends java.lang.Object</pre>
  product (similar to Maven scope 'provided').</div>
 </li>
 </ul>
-<a name="SCOPES_FOR_COMPILATION">
+<a name="TEST">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>SCOPES_FOR_COMPILATION</h4>
-<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[] SCOPES_FOR_COMPILATION</pre>
-<div class="block">Scopes necessary for compiling production code.</div>
+<h4>TEST</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> TEST</pre>
+<div class="block">A dependency declared with this scope will be present in testing classpath only.
+
+ A dependency resolution made with this scope will fetch dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or  <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST"><code>TEST</code></a>
+ plus their transitive dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST"><code>TEST</code></a>.</div>
 </li>
 </ul>
 <a name="COMPILE_AND_RUNTIME">
@@ -400,17 +403,14 @@ extends java.lang.Object</pre>
  It is equivalent to Maven 'compile'.</div>
 </li>
 </ul>
-<a name="TEST">
+<a name="SCOPES_FOR_COMPILATION">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>TEST</h4>
-<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> TEST</pre>
-<div class="block">A dependency declared with this scope will be present in testing classpath only.
-
- A dependency resolution made with this scope will fetch dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or  <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST"><code>TEST</code></a>
- plus their transitive dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST"><code>TEST</code></a>.</div>
+<h4>SCOPES_FOR_COMPILATION</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[] SCOPES_FOR_COMPILATION</pre>
+<div class="block">Scopes necessary for compiling production code.</div>
 </li>
 </ul>
 <a name="SCOPES_FOR_TEST">
