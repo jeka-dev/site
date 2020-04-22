@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":9,"i4":9,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -185,31 +185,30 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactPro
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#getMainArtifactExt--">getMainArtifactExt</a></span>()</code>
+<div class="block">Returns the extension used by the main artifact.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">makeArtifact</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Produces the specified artifact file.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;java.lang.Void&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#of--">of</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;T&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#ofParent-T-">ofParent</a></span>(T&nbsp;__)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.nio.file.Path-java.lang.Runnable-">putArtifact</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
            java.nio.file.Path&nbsp;target,
            java.lang.Runnable&nbsp;fileMaker)</code>&nbsp;</td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.nio.file.Path-java.lang.Runnable-java.util.function.Supplier-">putArtifact</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
-           java.nio.file.Path&nbsp;target,
-           java.lang.Runnable&nbsp;fileMaker,
-           java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&gt;&nbsp;artifactRuntimeClasspathSupplier)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;</code></td>
@@ -218,13 +217,11 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactPro
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putMainArtifact-java.nio.file.Path-java.lang.Runnable-java.util.function.Supplier-">putMainArtifact</a></span>(java.nio.file.Path&nbsp;target,
-               java.lang.Runnable&nbsp;fileMaker,
-               java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&gt;&nbsp;artifactRuntimeClasspathSupplier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">removeArtifact</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">removeArtifact</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#setMainArtifactExt-java.lang.String-">setMainArtifactExt</a></span>(java.lang.String&nbsp;mainArtifactExt)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -348,18 +345,6 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactPro
 </dl>
 </li>
 </ul>
-<a name="putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.nio.file.Path-java.lang.Runnable-java.util.function.Supplier-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>putArtifact</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;&nbsp;putArtifact(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
-                                                     java.nio.file.Path&nbsp;target,
-                                                     java.lang.Runnable&nbsp;fileMaker,
-                                                     java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&gt;&nbsp;artifactRuntimeClasspathSupplier)</pre>
-</li>
-</ul>
 <a name="putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.nio.file.Path-java.lang.Runnable-">
 <!--   -->
 </a>
@@ -369,17 +354,6 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactPro
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;&nbsp;putArtifact(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId,
                                                      java.nio.file.Path&nbsp;target,
                                                      java.lang.Runnable&nbsp;fileMaker)</pre>
-</li>
-</ul>
-<a name="putMainArtifact-java.nio.file.Path-java.lang.Runnable-java.util.function.Supplier-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>putMainArtifact</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;&nbsp;putMainArtifact(java.nio.file.Path&nbsp;target,
-                                                         java.lang.Runnable&nbsp;fileMaker,
-                                                         java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&gt;&nbsp;artifactRuntimeClasspathSupplier)</pre>
 </li>
 </ul>
 <a name="putMainArtifact-java.nio.file.Path-java.lang.Runnable-">
@@ -395,10 +369,34 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactPro
 <a name="removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>removeArtifact</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;&nbsp;removeArtifact(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
+</li>
+</ul>
+<a name="getMainArtifactExt--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMainArtifactExt</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getMainArtifactExt()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactExt--">JkArtifactLocator</a></code></span></div>
+<div class="block">Returns the extension used by the main artifact.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactExt--">getMainArtifactExt</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="setMainArtifactExt-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setMainArtifactExt</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="type parameter in JkSuppliedFileArtifactProducer">T</a>&gt;&nbsp;setMainArtifactExt(java.lang.String&nbsp;mainArtifactExt)</pre>
 </li>
 </ul>
 </li>

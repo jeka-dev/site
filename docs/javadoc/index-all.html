@@ -82,8 +82,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkPlugin.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></dt>
 <dd>
 <div class="block">Override this method to modify the commands itself or its bound plugins.</div>
@@ -1895,6 +1893,14 @@
 <dd>
 <div class="block">Returns a the lowest Jeka version which is compatible with this plugin.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactExt--">getMainArtifactExt()</a></span> - Method in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></dt>
+<dd>
+<div class="block">Returns the extension used by the main artifact.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#getMainArtifactExt--">getMainArtifactExt()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#getMainArtifactExt--">getMainArtifactExt()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId()</a></span> - Method in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></dt>
 <dd>
 <div class="block">Returns the main artifact file id for this producer.</div>
@@ -2254,7 +2260,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html#getStarted--">getStarted()</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html" title="class in dev.jeka.core.api.java.testing">JkTestResult.JkCount</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#getStaticResouceComputation--">getStaticResouceComputation()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#getStaticResourceComputation--">getStaticResourceComputation()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/kotlin/JkKotlinCompiler.html#getStdLib--">getStdLib()</a></span> - Method in class dev.jeka.core.api.kotlin.<a href="dev/jeka/core/api/kotlin/JkKotlinCompiler.html" title="class in dev.jeka.core.api.kotlin">JkKotlinCompiler</a></dt>
 <dd>&nbsp;</dd>
@@ -2375,8 +2381,6 @@
 <div class="block">The map groupId:ArtifactId -> version provideded by the <code>dependencyManagement</code>
  section of this POM.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#getWarFile--">getWarFile()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkProcess.html#getWorkingDir--">getWorkingDir()</a></span> - Method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></dt>
 <dd>
 <div class="block">Returns the working directory of this process.</div>
@@ -2557,6 +2561,8 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogConsumer.html#init--">init()</a></span> - Method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogConsumer.html" title="class in dev.jeka.core.api.system">JkHierarchicalConsoleLogConsumer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkLog.JkEventLogConsumer.html#init--">init()</a></span> - Method in interface dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkLog.JkEventLogConsumer.html" title="interface in dev.jeka.core.api.system">JkLog.JkEventLogConsumer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
 <dd>&nbsp;</dd>
@@ -4714,19 +4720,11 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginRepo.html#publishUsername">publishUsername</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginRepo.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginRepo</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.util.function.Consumer-java.util.function.Supplier-">putArtifact(JkArtifactId, Consumer&lt;Path&gt;, Supplier&lt;JkPathSequence&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.util.function.Consumer-">putArtifact(JkArtifactId, Consumer&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.nio.file.Path-java.lang.Runnable-java.util.function.Supplier-">putArtifact(JkArtifactId, Path, Runnable, Supplier&lt;JkPathSequence&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-java.nio.file.Path-java.lang.Runnable-">putArtifact(JkArtifactId, Path, Runnable)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#putMainArtifact-java.util.function.Consumer-java.util.function.Supplier-">putMainArtifact(Consumer&lt;Path&gt;, Supplier&lt;JkPathSequence&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
-<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#putMainArtifact-java.util.function.Consumer-">putMainArtifact(Consumer&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putMainArtifact-java.nio.file.Path-java.lang.Runnable-java.util.function.Supplier-">putMainArtifact(Path, Runnable, Supplier&lt;JkPathSequence&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#putMainArtifact-java.nio.file.Path-java.lang.Runnable-">putMainArtifact(Path, Runnable)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dt>
 <dd>&nbsp;</dd>
@@ -5178,6 +5176,10 @@
 <dd>
 <div class="block">Sets the directory where will be generated the legacy standard XML report.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#setMainArtifactExt-java.lang.String-">setMainArtifactExt(String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html#setMainArtifactExt-java.lang.String-">setMainArtifactExt(String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkManifest.html#setManifest-java.util.jar.Manifest-">setManifest(Manifest)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a></dt>
 <dd>
 <div class="block">Sets the underlying <code>Manifest</code> object.</div>

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":6,"i2":18,"i3":18,"i4":18};
+var methods = {"i0":18,"i1":6,"i2":18,"i3":18,"i4":18,"i5":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -140,18 +140,24 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code>default java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactExt--">getMainArtifactExt</a></span>()</code>
+<div class="block">Returns the extension used by the main artifact.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>default <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId</a></span>()</code>
 <div class="block">Returns the main artifact file id for this producer.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>default java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactPath--">getMainArtifactPath</a></span>()</code>
 <div class="block">Returns the main artifact path.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>default java.util.List&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMissingFiles--">getMissingFiles</a></span>()</code>
 <div class="block">Returns non existing files matching for artifacts.</div>
@@ -192,6 +198,16 @@ var activeTableTab = "activeTableTab";
 <pre>default&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;getMainArtifactId()</pre>
 <div class="block">Returns the main artifact file id for this producer. By default it returns a artifact file id with no
  classifier and 'jar" getExtension.</div>
+</li>
+</ul>
+<a name="getMainArtifactExt--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMainArtifactExt</h4>
+<pre>default&nbsp;java.lang.String&nbsp;getMainArtifactExt()</pre>
+<div class="block">Returns the extension used by the main artifact.</div>
 </li>
 </ul>
 <a name="getArtifactIds--">
