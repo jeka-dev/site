@@ -286,7 +286,7 @@ This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.
 <h3>Define a set of dependencies</h3>
 <p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
 <p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides a fluent API for easier instantiation.</p>
-<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
+<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkScopes.*;
 ...
 JkDependencySet deps = JkDependencySet.of()
     .and(&quot;com.google.guava&quot;) 

@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":9,"i14":9,"i15":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":9,"i14":9,"i15":9,"i16":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -122,6 +122,91 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#ARCHIVE_MASTER">ARCHIVE_MASTER</a></span></code>
+<div class="block">Useful when using scope mapping.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE">COMPILE</a></span></code>
+<div class="block">A dependency resolution made with this scope will only fetch dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> scope and
+ transitive dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> scope as well.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE_AND_RUNTIME">COMPILE_AND_RUNTIME</a></span></code>
+<div class="block">Shorthand to declare both COMPILE and RUNTIME scope at once.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#DEFAULT_SCOPE_MAPPING">DEFAULT_SCOPE_MAPPING</a></span></code>
+<div class="block">Scope mapping used</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#JAVADOC">JAVADOC</a></span></code>
+<div class="block">This scope is used for publication purpose</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#PROVIDED">PROVIDED</a></span></code>
+<div class="block">A dependency declared with this scope will be available at compile time but won't be part of the packaged
+ product (similar to Maven scope 'provided').</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME">RUNTIME</a></span></code>
+<div class="block">A dependency declared with this scope will be present in the classpath for packaging or running the module.<b/>
+ If it is a library, dependencies will be included in the fat jar.<b/>
+ If it is a war, dependencies will be included in war file.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#SCOPES_FOR_COMPILATION">SCOPES_FOR_COMPILATION</a></span></code>
+<div class="block">Scopes necessary for compiling production code.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[]</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#SCOPES_FOR_TEST">SCOPES_FOR_TEST</a></span></code>
+<div class="block">Scopes necessary for both compiling tests and run them.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#SOURCES">SOURCES</a></span></code>
+<div class="block">This scope is used for publication purpose</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST">TEST</a></span></code>
+<div class="block">A dependency declared with this scope will be present in testing classpath only.</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -221,6 +306,10 @@ extends java.lang.Object</pre>
   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;extending)</code>&nbsp;</td>
 </tr>
 <tr id="i15" class="rowColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#ofMavenScope-java.lang.String-">ofMavenScope</a></span>(java.lang.String&nbsp;name)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -240,6 +329,146 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="COMPILE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMPILE</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> COMPILE</pre>
+<div class="block">A dependency resolution made with this scope will only fetch dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> scope and
+ transitive dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> scope as well. <p>>
+
+ <b>CAUTION :</b> Using default scope mapping, when resolving <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> dependencies, transitive 'runtime' dependencies won't be fetched if
+ it's coming to a 'compile' one. <b/>
+ In such, it differs from Maven 'compile' scope : resolving 'runtime' in Maven will fetch transitive 'runtime' dependencies coming from 'compile' ones.<b/>
+ If you want to have a dependency scope equivalent to Maven 'compile', you need to declare dependencies with
+ two scopes : <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> and <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or their shorthand <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE_AND_RUNTIME"><code>COMPILE_AND_RUNTIME</code></a>.</div>
+</li>
+</ul>
+<a name="RUNTIME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>RUNTIME</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> RUNTIME</pre>
+<div class="block">A dependency declared with this scope will be present in the classpath for packaging or running the module.<b/>
+ If it is a library, dependencies will be included in the fat jar.<b/>
+ If it is a war, dependencies will be included in war file. <b/>
+ If it is a main application, dependencies will be part of the runtime classpath.<p>
+
+ A dependency resolution made with this scope will fetch dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> or <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a>
+ plus their transitive dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a> or <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a>.</div>
+</li>
+</ul>
+<a name="PROVIDED">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>PROVIDED</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> PROVIDED</pre>
+<div class="block">A dependency declared with this scope will be available at compile time but won't be part of the packaged
+ product (similar to Maven scope 'provided').</div>
+</li>
+</ul>
+<a name="SCOPES_FOR_COMPILATION">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SCOPES_FOR_COMPILATION</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[] SCOPES_FOR_COMPILATION</pre>
+<div class="block">Scopes necessary for compiling production code.</div>
+</li>
+</ul>
+<a name="COMPILE_AND_RUNTIME">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>COMPILE_AND_RUNTIME</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[] COMPILE_AND_RUNTIME</pre>
+<div class="block">Shorthand to declare both COMPILE and RUNTIME scope at once. This is the default scope for dependencies.
+ It is equivalent to Maven 'compile'.</div>
+</li>
+</ul>
+<a name="TEST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>TEST</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> TEST</pre>
+<div class="block">A dependency declared with this scope will be present in testing classpath only.
+
+ A dependency resolution made with this scope will fetch dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or  <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST"><code>TEST</code></a>
+ plus their transitive dependencies declared with <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>COMPILE</code></a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#RUNTIME"><code>RUNTIME</code></a> or <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html#TEST"><code>TEST</code></a>.</div>
+</li>
+</ul>
+<a name="SCOPES_FOR_TEST">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SCOPES_FOR_TEST</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>[] SCOPES_FOR_TEST</pre>
+<div class="block">Scopes necessary for both compiling tests and run them.</div>
+</li>
+</ul>
+<a name="SOURCES">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>SOURCES</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> SOURCES</pre>
+<div class="block">This scope is used for publication purpose</div>
+</li>
+</ul>
+<a name="JAVADOC">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>JAVADOC</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a> JAVADOC</pre>
+<div class="block">This scope is used for publication purpose</div>
+</li>
+</ul>
+<a name="ARCHIVE_MASTER">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ARCHIVE_MASTER</h4>
+<pre>public static final&nbsp;java.lang.String ARCHIVE_MASTER</pre>
+<div class="block">Useful when using scope mapping. As documented in Ivy, it stands for the main archive.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#dev.jeka.core.api.depmanagement.JkScope.ARCHIVE_MASTER">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+<a name="DEFAULT_SCOPE_MAPPING">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>DEFAULT_SCOPE_MAPPING</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a> DEFAULT_SCOPE_MAPPING</pre>
+<div class="block">Scope mapping used</div>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
@@ -266,6 +495,15 @@ extends java.lang.Object</pre>
                          java.lang.String&nbsp;description,
                          boolean&nbsp;transitive,
                          <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;extending)</pre>
+</li>
+</ul>
+<a name="ofMavenScope-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ofMavenScope</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&nbsp;ofMavenScope(java.lang.String&nbsp;name)</pre>
 </li>
 </ul>
 <a name="getName--">
@@ -475,13 +713,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
