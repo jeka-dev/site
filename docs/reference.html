@@ -22,6 +22,8 @@
 <a href="#Introduction" class="menuItem1">Introduction</a><br />
 <a href="#Library" class="menuItem1">Library</a><br />
 <a href="#Files" class="menuItem2">Files</a><br />
+<a href="#ClassesfromJekaFileAPI" class="menuItem3">Classes from Jeka File API</a><br />
+<a href="#Examples" class="menuItem3">Examples</a><br />
 <a href="#System" class="menuItem2">System</a><br />
 <a href="#DependencyManagement" class="menuItem2">Dependency Management</a><br />
 <a href="#Concepts" class="menuItem3">Concepts</a><br />
@@ -95,22 +97,22 @@
 <a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><a name="Introduction"></a>
 <h1>Introduction</h1>
 <p><strong>What is Jeka ?</strong></p>
-<p>Jeka is both a build library and an automation tool.</p>
+<p>Jeka is both a build library, and a thin automation tool.</p>
 <p>The build library helps for dealing with file sets, compilation, dependency management, testing, publishing,
 launching external processes, crypto signatures... in a glance, all regular things you need to build/publish projects and especially Java projects.
 The library can be used in any Java program and does not have any dependency.</p>
-<p>The tool is intended to execute Java source code from the console in a parameterizable way. Its architecture eases the
-reuse of build elements (logic, settings, doc, ...) across projects.</p>
-<p>Combined it provides a full feature build tool with endless possibilities of extension.</p>
+<p>The tool aims at executing Java <strong>source</strong> code from the command line. Its design eases reuse of build
+elements (logic, settings, doc, ...) across projects.</p>
+<p>Combined, it provides a full feature build tool with endless possibilities of extension.</p>
 <p>Although library and tool are bundled in the same jar, the library does not depend on the tool at all. It can be understood
-on its own without any knowledge of the tool.</p>
-<p><strong>What is this document for  ?</strong></p>
-<p>This document stands for reference guide. It provides :</p>
+on its own.</p>
+<p><strong>What is this document for ?</strong></p>
+<p>This document stands for reference guide. It provides:</p>
 <ul>
 <li>An overview of the build library API.</li>
 <li>Details about Jeka tool behaviour.</li>
 </ul>
-<p>If you are looking for how exactly Jeka behaves or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
+<p>If you are looking for how exactly Jeka behaves, or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
 <p>If you are looking for further details about API, please consult Javadoc or source code. Jeka source code has been
 written with intelligibility in mind in order to navigate easily from the user code to the Jeka engine room.
 For Java developers, reading source code and putting break points troubleshoots faster than documentation/support most of the time.</p>
@@ -125,7 +127,7 @@ due to a specific classloading mechanism, preventing version clashing with clien
 <p><span class="menuItem0">API Style</span></p>
 <p><em>Jeka</em> tries to stick with a consistent API design style.</p>
 <p><strong>Class and Interface Naming Convention</strong></p>
-<p>All Jeka public classes/interfaces starts with <code>Jk</code>. The reason is for easing distinction in IDE between classes supposed be used
+<p>All Jeka public classes/interfaces start with <code>Jk</code>. The reason is for easing distinction, in IDE, between classes supposed be used
 in production or test and the ones used for building. It also helps to explore Jeka API.</p>
 <p><strong>Mutable Vs Immutable</strong></p>
 <p>As a rule of thumb <em>Jeka</em> favors immutable objects for shallow structures and
@@ -171,65 +173,60 @@ relies on other lower level ones provided by <em>Jeka</em>. In a glance these ar
 </ul>
 <a name="Files"></a>
 <h2>Files</h2>
-<p>File manipulation is a central part of building software.
-Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concept around to provide a powerful fluent style API to performing
+<p>File manipulation is a central part for building software.
+Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concepts around, to provide a powerful fluent style API performing
 recurrent tasks with minimal effort.</p>
-<p>The following classes lie in <code>dev.jeka.core.api.file</code> package :</p>
+<a name="ClassesfromJekaFileAPI"></a>
+<h3>Classes from Jeka File API</h3>
+<p>The following classes lie in <code>dev.jeka.core.api.file</code> package:</p>
 <ul>
-<li><code>JkPathFile</code> : A simple wrapper around  for file (not folder) with copy, content interpolation,
-checksum, deletion, creation features.</li>
+<li>
+<p><code>JkPathFile</code> A simple wrapper for files (not folders). It provides copying, interpolation, checksum, deletion and creation methods.</p>
+</li>
+<li>
+<p><code>JkPathSequence</code> An Immutable sequence of <code>java.nio.file.Path</code> providing methods for filtering or appending.</p>
+</li>
+<li>
+<p><code>JkPathMatcher</code> An immutable <code>java.nio.file.PathMatcher</code> based on <code>java.nio.file</code> glob pattern or regerxp.
+Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
+</li>
+<li>
+<p><code>JkPathTree</code> An Immutable root folder (or a zip file) along a <code>PathMatcher</code> providing operations to copy, navigate, zip or iterate.
+This is a central class in Jeka API.</p>
+</li>
+<li>
+<p><code>JkPathTreeSet</code> An Immutable set of <code>JkPathTree</code>. Helpful to define set of sources/resources and create jar/zip files.</p>
+</li>
+<li>
+<p><code>JkResourceProcessor</code> A mutable processor for copying a set of files, preserving the structure and
+replacing some text by other text. Typically, used for replacing token as <code>${server.ip}</code> by an actual value.</p>
+</li>
 </ul>
-<p>The following snippet creates a file and fill it the content of the specified url.</p>
-<pre><code class="language-java">JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
-</code></pre>
-<ul>
-<li><code>JkPathSequence</code> : A list of <code>java.nio.file.Path</code>.</li>
-</ul>
-<p>Instances of this class are returned by dependency manager to turn a set of dependency into a resolved classpath.</p>
-<ul>
-<li><code>JkPathMatcher</code> : A <code>java.nio.file.PathMatcher</code> based on <code>java.nio.file</code> glob pattern or regerxp.</li>
-</ul>
-<p>Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
-<ul>
-<li><code>JkPathTree</code> : A root folder (or a zip file) along a <code>PathMatcher</code> providing operations to copy, navigate, zip or iterate.
-This central class is spread all over Jeka APIs.</li>
-</ul>
-<p>The following snippet copies all non java source files to another directory preserving structure.</p>
-<pre><code class="language-java">JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
-</code></pre>
-<ul>
-<li><code>JkPathTreeSet</code> : A set of <code>JkPathTree</code>.</li>
-</ul>
-<p>Instances of this class are used by Java project api to defines source and resource files. It also helps to create fat jars.</p>
-<ul>
-<li><code>JkResourceProcessor</code> : Provides a means to copy a set of files, preserving the structure and
-replacing some text by other text. Typically used for replacing token as <code>${server.ip}</code> by concrete value.</li>
-</ul>
-<pre><code class="language-java">Map&lt;String, String&gt; varReplacement = new HashMap&lt;&gt;();
-varReplacement.put(&quot;${server.ip}&quot;, &quot;123.211.11.0&quot;);
-varReplacement.put(&quot;${server.port}&quot;, &quot;8881&quot;);
-JkResourceProcessor.of(JkPathTreeSet.of(Paths.get(&quot;src&quot;))).andInterpolate(&quot;**/*.properties&quot;, varReplacement)
-    .generateTo(Paths.get(&quot;build/classes&quot;), Charset.forName(&quot;UTF-8&quot;));
+<a name="Examples"></a>
+<h3>Examples</h3>
+<pre><code class="language-Java">// creates a file and writes the content of the specified url.
+JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
+
+// copies all non java source files to another directory preserving structure
+JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
+
 </code></pre>
 <a name="System"></a>
 <h2>System</h2>
 <p>The <code>dev.jeka.core.api.system</code> package provides system level functions :</p>
 <ul>
 <li>
-<p><code>JkException</code> : Marker exception generally to mention user misuse.</p>
+<p><code>JkInfo</code> Provides meta information as the running version of Jeka.</p>
 </li>
 <li>
-<p><code>JkInfo</code> : Provides meta information as the running version of Jeka.</p>
+<p><code>JkLocator</code> Provides information about where is located repository cache or Jeka user home.</p>
 </li>
 <li>
-<p><code>JkLocator</code> : Provides information about where is located repository cache or Jeka user home.</p>
-</li>
-<li>
-<p><code>JkLog</code> : Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
+<p><code>JkLog</code> Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
 and <code>#endtask</code> methods.</p>
 </li>
 <li>
-<p><code>JkProcess</code> : Launcher for external process.</p>
+<p><code>JkProcess</code> Launcher for external process.</p>
 </li>
 </ul>
 <a name="DependencyManagement"></a>
