@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -155,29 +155,33 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createBinJar-java.nio.file.Path-">createBinJar</a></span>(java.nio.file.Path&nbsp;target)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createBinJar--">createBinJar</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createFatJar-java.nio.file.Path-">createFatJar</a></span>(java.nio.file.Path&nbsp;target)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createBinJar-java.nio.file.Path-">createBinJar</a></span>(java.nio.file.Path&nbsp;target)</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createSourceJar-java.nio.file.Path-">createSourceJar</a></span>(java.nio.file.Path&nbsp;target)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createFatJar--">createFatJar</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#createFatJar-java.nio.file.Path-">createFatJar</a></span>(java.nio.file.Path&nbsp;target)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectCompilation.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectCompilation</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getCompilation--">getCompilation</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getExtraFilesToIncludeInJar--">getExtraFilesToIncludeInJar</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getManifest--">getManifest</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">setExtraFilesToIncludeInFatJar</a></span>(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</code>
 <div class="block">File trees specified here will be added to the fat jar.</div>
@@ -259,6 +263,15 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;createBinJar(java.nio.file.Path&nbsp;target)</pre>
 </li>
 </ul>
+<a name="createBinJar--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>createBinJar</h4>
+<pre>public&nbsp;void&nbsp;createBinJar()</pre>
+</li>
+</ul>
 <a name="createFatJar-java.nio.file.Path-">
 <!--   -->
 </a>
@@ -268,13 +281,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;createFatJar(java.nio.file.Path&nbsp;target)</pre>
 </li>
 </ul>
-<a name="createSourceJar-java.nio.file.Path-">
+<a name="createFatJar--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>createSourceJar</h4>
-<pre>public&nbsp;void&nbsp;createSourceJar(java.nio.file.Path&nbsp;target)</pre>
+<h4>createFatJar</h4>
+<pre>public&nbsp;void&nbsp;createFatJar()</pre>
 </li>
 </ul>
 <a name="getExtraFilesToIncludeInJar--">
