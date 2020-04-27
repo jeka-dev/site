@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10,"i15":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -107,23 +107,19 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Implemented Interfaces:</dt>
-<dd>java.io.Serializable, java.lang.Iterable&lt;java.nio.file.Path&gt;</dd>
+<dd>java.lang.Iterable&lt;java.nio.file.Path&gt;</dd>
 </dl>
 <hr>
 <br>
 <pre>public final class <span class="typeNameLabel">JkClasspath</span>
 extends java.lang.Object
-implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</pre>
+implements java.lang.Iterable&lt;java.nio.file.Path&gt;</pre>
 <div class="block">A sequence of file to be used as a <code>class path</code>.<br/>
  Each file is called an <code>entry</code>.<br/>
  Each entry is supposed to be either a <code>jar</code> file either a
  <code>folder</code>.<br/>
  Non existing files are accepted as valid <code>entry</code>, though they
  won't contain any classes.</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../serialized-form.html#dev.jeka.core.api.java.JkClasspath">Serialized Form</a></dd>
-</dl>
 </li>
 </ul>
 </div>
@@ -222,20 +218,8 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code>java.net.URL[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#toArrayOfUrl--">toArrayOfUrl</a></span>()</code>
-<div class="block">Returns this classpath as an array of URL.</div>
-</td>
-</tr>
-<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#toString--">toString</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#withoutDuplicates--">withoutDuplicates</a></span>()</code>
-<div class="block">Returns a <code>JkClasspath</code> identical to this one but without duplicates.</div>
-</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -336,16 +320,6 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
 </dl>
 </li>
 </ul>
-<a name="toArrayOfUrl--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>toArrayOfUrl</h4>
-<pre>public&nbsp;java.net.URL[]&nbsp;toArrayOfUrl()</pre>
-<div class="block">Returns this classpath as an array of URL.</div>
-</li>
-</ul>
 <a name="getEntryContainingClass-java.lang.String-">
 <!--   -->
 </a>
@@ -410,18 +384,6 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
                                  java.nio.file.Path&nbsp;path2,
                                  java.nio.file.Path...&nbsp;others)</pre>
 <div class="block">See <a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#andPrepending-java.lang.Iterable-"><code>andPrepending(Iterable)</code></a></div>
-</li>
-</ul>
-<a name="withoutDuplicates--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withoutDuplicates</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;withoutDuplicates()</pre>
-<div class="block">Returns a <code>JkClasspath</code> identical to this one but without duplicates.
- If a given file in this sequence exist twice or more, then only the first occurrence is kept in the returned
- sequence.</div>
 </li>
 </ul>
 <a name="toString--">

@@ -196,7 +196,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/testing/JkTestResult.html" title="class in dev.jeka.core.api.java.testing">JkTestResult</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html#launch-dev.jeka.core.api.java.JkClasspath-dev.jeka.core.api.java.testing.JkTestSelection-">launch</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;extraTestClasspath,
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html#launch-dev.jeka.core.api.file.JkPathSequence-dev.jeka.core.api.java.testing.JkTestSelection-">launch</a></span>(<a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;extraTestClasspath,
       <a href="../../../../../../dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing">JkTestSelection</a>&nbsp;testSelection)</code>
 <div class="block">Launches the specified test set with the underlying junit-platform.</div>
 </td>
@@ -328,13 +328,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testing">JkTestProcessor</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/testing/JkTestProcessor.html" title="type parameter in JkTestProcessor">T</a>&gt;&nbsp;setForkingProcess(boolean&nbsp;fork)</pre>
 </li>
 </ul>
-<a name="launch-dev.jeka.core.api.java.JkClasspath-dev.jeka.core.api.java.testing.JkTestSelection-">
+<a name="launch-dev.jeka.core.api.file.JkPathSequence-dev.jeka.core.api.java.testing.JkTestSelection-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>launch</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testing/JkTestResult.html" title="class in dev.jeka.core.api.java.testing">JkTestResult</a>&nbsp;launch(<a href="../../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;extraTestClasspath,
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/testing/JkTestResult.html" title="class in dev.jeka.core.api.java.testing">JkTestResult</a>&nbsp;launch(<a href="../../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;extraTestClasspath,
                            <a href="../../../../../../dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing">JkTestSelection</a>&nbsp;testSelection)</pre>
 <div class="block">Launches the specified test set with the underlying junit-platform. The classloader running the tests includes
  the classpath of the current classloader plus the specified one.</div>

@@ -427,7 +427,7 @@
 <div class="block">Returns a <a href="dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one but augnmented with the
  specified agent library.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaProcess.html#andClasspath-dev.jeka.core.api.java.JkClasspath-">andClasspath(JkClasspath)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaProcess.html#andClasspath-java.lang.Iterable-">andClasspath(Iterable&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></dt>
 <dd>
 <div class="block">Returns a <a href="dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one but augmenting this
  classpath with the specified one.</div>
@@ -3649,7 +3649,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkInternalJunitDoer.html#launch-dev.jeka.core.api.java.testing.JkTestProcessor.JkEngineBehavior-dev.jeka.core.api.java.testing.JkTestSelection-">launch(JkTestProcessor.JkEngineBehavior, JkTestSelection)</a></span> - Method in interface dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkInternalJunitDoer.html" title="interface in dev.jeka.core.api.java.testing">JkInternalJunitDoer</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestProcessor.html#launch-dev.jeka.core.api.java.JkClasspath-dev.jeka.core.api.java.testing.JkTestSelection-">launch(JkClasspath, JkTestSelection)</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testing">JkTestProcessor</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestProcessor.html#launch-dev.jeka.core.api.file.JkPathSequence-dev.jeka.core.api.java.testing.JkTestSelection-">launch(JkPathSequence, JkTestSelection)</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestProcessor.html" title="class in dev.jeka.core.api.java.testing">JkTestProcessor</a></dt>
 <dd>
 <div class="block">Launches the specified test set with the underlying junit-platform.</div>
 </dd>
@@ -5490,10 +5490,6 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScopeMapping.Partial.html#to-java.lang.Iterable-">to(Iterable&lt;String&gt;)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScopeMapping.Partial.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping.Partial</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkClasspath.html#toArrayOfUrl--">toArrayOfUrl()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></dt>
-<dd>
-<div class="block">Returns this classpath as an array of URL.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#toDependency--">toDependency()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#toDependency-dev.jeka.core.api.depmanagement.JkArtifactId-">toDependency(JkArtifactId)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
@@ -5981,10 +5977,6 @@ the order they are declared.</div>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathSequence.html#withoutDuplicates--">withoutDuplicates()</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></dt>
 <dd>
 <div class="block">Returns a <code>JkPathSequence</code> identical to this one but without duplicates.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkClasspath.html#withoutDuplicates--">withoutDuplicates()</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></dt>
-<dd>
-<div class="block">Returns a <code>JkClasspath</code> identical to this one but without duplicates.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkProcess.html#withParams-java.lang.String...-">withParams(String...)</a></span> - Method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></dt>
 <dd>
