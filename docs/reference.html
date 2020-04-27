@@ -210,6 +210,9 @@ JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceConten
 // copies all non java source files to another directory preserving structure
 JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
 
+// One liner to zip an entire directory
+JkPathTree.of(&quot;build/classes&quot;).zipTo(Paths.get(&quot;mylib.jar&quot;));
+
 </code></pre>
 <a name="System"></a>
 <h2>System</h2>

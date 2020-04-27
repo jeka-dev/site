@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,29 +91,24 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">dev.jeka.core.api.depmanagement</div>
-<h2 title="Class JkIvyPublication" class="title">Class JkIvyPublication</h2>
+<h2 title="Class JkIvyPublication" class="title">Class JkIvyPublication&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>dev.jeka.core.api.depmanagement.JkIvyPublication</li>
+<li>dev.jeka.core.api.depmanagement.JkIvyPublication&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd>java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;</dd>
-</dl>
 <hr>
 <br>
-<pre>public final class <span class="typeNameLabel">JkIvyPublication</span>
-extends java.lang.Object
-implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;</pre>
+<pre>public final class <span class="typeNameLabel">JkIvyPublication&lt;T&gt;</span>
+extends java.lang.Object</pre>
 <div class="block">Information required to publish a module in an Ivy repository.</div>
 </li>
 </ul>
@@ -140,6 +135,25 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 </table>
 </li>
 </ul>
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#Z:Z__">__</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -153,74 +167,96 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.nio.file.Path-java.lang.String...-">and</a></span>(java.nio.file.Path&nbsp;file,
-   java.lang.String...&nbsp;scopes)</code>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkIvyPublication</code></a> identical to this one but adding the specified
- artifact.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifact-java.lang.String-java.nio.file.Path-java.lang.String-java.lang.String...-">addArtifact</a></span>(java.lang.String&nbsp;artifactName,
+           java.nio.file.Path&nbsp;artifactFile,
+           java.lang.String&nbsp;type,
+           java.lang.String...&nbsp;scopes)</code>
+<div class="block">Adds the specified artifact to the publication.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.nio.file.Path-java.lang.String-java.lang.String...-">and</a></span>(java.nio.file.Path&nbsp;file,
-   java.lang.String&nbsp;type,
-   java.lang.String...&nbsp;scopes)</code>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkIvyPublication</code></a> identical to this one but adding the specified
- artifact.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifacts-dev.jeka.core.api.depmanagement.JkArtifactProducer-">addArtifacts</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&nbsp;artifactProducer)</code>
+<div class="block">see <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifacts-java.util.function.Supplier-"><code>addArtifacts(Supplier)</code></a></div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.lang.String-java.nio.file.Path-java.lang.String-java.lang.String...-">and</a></span>(java.lang.String&nbsp;name,
-   java.nio.file.Path&nbsp;file,
-   java.lang.String&nbsp;type,
-   java.lang.String...&nbsp;scopes)</code>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkIvyPublication</code></a> identical to this one but adding the specified
- artifact and giving it the specified name (otherwise the value it the file of).</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifacts-java.util.function.Supplier-">addArtifacts</a></span>(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&gt;&nbsp;artifactLocator)</code>
+<div class="block">Adds all the artifacts defined in the specified artifactLocator.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#andOptional-java.nio.file.Path-java.lang.String...-">andOptional</a></span>(java.nio.file.Path&nbsp;file,
-           java.lang.String...&nbsp;scopes)</code>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.nio.file.Path-java.lang.String...-"><code>and(Path, String...)</code></a> but effective only if the specified file exists.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addOptionalArtifact-java.nio.file.Path-java.lang.String...-">addOptionalArtifact</a></span>(java.nio.file.Path&nbsp;file,
+                   java.lang.String...&nbsp;scopes)</code>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setMainArtifact-java.nio.file.Path-java.lang.String...-"><code>setMainArtifact(Path, String...)</code></a> (Path, String...)} but effective only if the specified file exists.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#andOptionalWithType-java.nio.file.Path-java.lang.String-java.lang.String...-">andOptionalWithType</a></span>(java.nio.file.Path&nbsp;file,
-                   java.lang.String&nbsp;type,
-                   java.lang.String...&nbsp;scopes)</code>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>and(Path, String, String...)</code></a> but effective only if the specified file
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addOptionalArtifactWithType-java.nio.file.Path-java.lang.String-java.lang.String...-">addOptionalArtifactWithType</a></span>(java.nio.file.Path&nbsp;file,
+                           java.lang.String&nbsp;type,
+                           java.lang.String...&nbsp;scopes)</code>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setMainArtifact-java.nio.file.Path-java.lang.String...-"><code>setMainArtifact(Path, String...)</code></a> (Path, String, String...)} but effective only if the specified file
  exists.</div>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.Iterator&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#iterator--">iterator</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#clear--">clear</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#of-dev.jeka.core.api.depmanagement.JkArtifactProducer-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&nbsp;artifactProducer)</code>
-<div class="block">Creates an Ivy publication from the specified artifact producer.</div>
-</td>
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#getAllArtifacts--">getAllArtifacts</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#of-java.nio.file.Path-java.lang.String...-">of</a></span>(java.nio.file.Path&nbsp;file,
-  java.lang.String...&nbsp;scopes)</code>
-<div class="block">Creates a publication for a single artifact embodied by the specified file and
- to published for the specified scopes.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#getDependencies--">getDependencies</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#ofType-java.nio.file.Path-java.lang.String-java.lang.String...-">ofType</a></span>(java.nio.file.Path&nbsp;file,
-      java.lang.String&nbsp;type,
-      java.lang.String...&nbsp;scopes)</code>
-<div class="block">Creates a publication for a single artifact embodied by the specified file and
- to published as the specified type and scopes.</div>
-</td>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;java.lang.Void&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#of--">of</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#of-T-">of</a></span>(T&nbsp;parent)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code>void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#publish-dev.jeka.core.api.depmanagement.JkRepoSet-">publish</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;repos)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setDependencies-java.util.function.UnaryOperator-">setDependencies</a></span>(java.util.function.UnaryOperator&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setMainArtifact-java.nio.file.Path-java.lang.String...-">setMainArtifact</a></span>(java.nio.file.Path&nbsp;file,
+               java.lang.String...&nbsp;scopes)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setMainArtifactWithType-java.nio.file.Path-java.lang.String-java.lang.String...-">setMainArtifactWithType</a></span>(java.nio.file.Path&nbsp;file,
+                       java.lang.String&nbsp;type,
+                       java.lang.String...&nbsp;scopes)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setResolvedVersionProvider-java.util.function.Supplier-">setResolvedVersionProvider</a></span>(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a>&gt;&nbsp;resolvedVersionProvider)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setScopeMapping-dev.jeka.core.api.depmanagement.JkScopeMapping-">setScopeMapping</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">setVersionedModule</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setVersionedModule-java.util.function.Supplier-">setVersionedModule</a></span>(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&gt;&nbsp;versionedModule)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -230,13 +266,6 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, toString, wait, wait, wait</code></li>
 </ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3>
-<code>forEach, spliterator</code></li>
-</ul>
 </li>
 </ul>
 </li>
@@ -245,134 +274,214 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a> __</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="ofType-java.nio.file.Path-java.lang.String-java.lang.String...-">
+<a name="of-java.lang.Object-">
 <!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofType</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;ofType(java.nio.file.Path&nbsp;file,
-                                      java.lang.String&nbsp;type,
-                                      java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Creates a publication for a single artifact embodied by the specified file and
- to published as the specified type and scopes. Here, scopes maps directly to
- Ivy configurations (scope = configuration).</div>
-</li>
-</ul>
-<a name="of-dev.jeka.core.api.depmanagement.JkArtifactProducer-">
+</a><a name="of-T-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;of(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&nbsp;artifactProducer)</pre>
-<div class="block">Creates an Ivy publication from the specified artifact producer.</div>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;T&gt;&nbsp;of(T&nbsp;parent)</pre>
 </li>
 </ul>
-<a name="of-java.nio.file.Path-java.lang.String...-">
+<a name="of--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;of(java.nio.file.Path&nbsp;file,
-                                  java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Creates a publication for a single artifact embodied by the specified file and
- to published for the specified scopes.</div>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;java.lang.Void&gt;&nbsp;of()</pre>
+</li>
+</ul>
+<a name="setVersionedModule-java.util.function.Supplier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setVersionedModule(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&gt;&nbsp;versionedModule)</pre>
+</li>
+</ul>
+<a name="setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setVersionedModule(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</pre>
+</li>
+</ul>
+<a name="setDependencies-java.util.function.UnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setDependencies(java.util.function.UnaryOperator&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
+</li>
+</ul>
+<a name="getDependencies--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getDependencies()</pre>
+</li>
+</ul>
+<a name="setResolvedVersionProvider-java.util.function.Supplier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setResolvedVersionProvider</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setResolvedVersionProvider(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a>&gt;&nbsp;resolvedVersionProvider)</pre>
+</li>
+</ul>
+<a name="setScopeMapping-dev.jeka.core.api.depmanagement.JkScopeMapping-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setScopeMapping</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setScopeMapping(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</pre>
+</li>
+</ul>
+<a name="clear--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>clear</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;clear()</pre>
+</li>
+</ul>
+<a name="addArtifacts-java.util.function.Supplier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addArtifacts</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;addArtifacts(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&gt;&nbsp;artifactLocator)</pre>
+<div class="block">Adds all the artifacts defined in the specified artifactLocator.</div>
+</li>
+</ul>
+<a name="addArtifacts-dev.jeka.core.api.depmanagement.JkArtifactProducer-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>addArtifacts</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;addArtifacts(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer</a>&nbsp;artifactProducer)</pre>
+<div class="block">see <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifacts-java.util.function.Supplier-"><code>addArtifacts(Supplier)</code></a></div>
+</li>
+</ul>
+<a name="setMainArtifact-java.nio.file.Path-java.lang.String...-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setMainArtifact</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setMainArtifact(java.nio.file.Path&nbsp;file,
+                                           java.lang.String...&nbsp;scopes)</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#ofType-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>ofType(Path, String, String...)</code></a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifact-java.lang.String-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>addArtifact(String, Path, String, String...)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="and-java.nio.file.Path-java.lang.String-java.lang.String...-">
+<a name="setMainArtifactWithType-java.nio.file.Path-java.lang.String-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;and(java.nio.file.Path&nbsp;file,
-                            java.lang.String&nbsp;type,
-                            java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkIvyPublication</code></a> identical to this one but adding the specified
- artifact.</div>
+<h4>setMainArtifactWithType</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;setMainArtifactWithType(java.nio.file.Path&nbsp;file,
+                                                   java.lang.String&nbsp;type,
+                                                   java.lang.String...&nbsp;scopes)</pre>
 <dl>
 <dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#ofType-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>ofType(Path, String, String...)</code></a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#addArtifact-java.lang.String-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>addArtifact(String, Path, String, String...)</code></a></dd>
 </dl>
 </li>
 </ul>
-<a name="and-java.lang.String-java.nio.file.Path-java.lang.String-java.lang.String...-">
+<a name="addArtifact-java.lang.String-java.nio.file.Path-java.lang.String-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;and(java.lang.String&nbsp;name,
-                            java.nio.file.Path&nbsp;file,
-                            java.lang.String&nbsp;type,
-                            java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkIvyPublication</code></a> identical to this one but adding the specified
- artifact and giving it the specified name (otherwise the value it the file of).</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#ofType-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>ofType(Path, String, String...)</code></a></dd>
-</dl>
+<h4>addArtifact</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;addArtifact(java.lang.String&nbsp;artifactName,
+                                       java.nio.file.Path&nbsp;artifactFile,
+                                       java.lang.String&nbsp;type,
+                                       java.lang.String...&nbsp;scopes)</pre>
+<div class="block">Adds the specified artifact to the publication.</div>
 </li>
 </ul>
-<a name="and-java.nio.file.Path-java.lang.String...-">
+<a name="addOptionalArtifact-java.nio.file.Path-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;and(java.nio.file.Path&nbsp;file,
-                            java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkIvyPublication</code></a> identical to this one but adding the specified
- artifact.</div>
+<h4>addOptionalArtifact</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;addOptionalArtifact(java.nio.file.Path&nbsp;file,
+                                               java.lang.String...&nbsp;scopes)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setMainArtifact-java.nio.file.Path-java.lang.String...-"><code>setMainArtifact(Path, String...)</code></a> (Path, String...)} but effective only if the specified file exists.</div>
 </li>
 </ul>
-<a name="andOptional-java.nio.file.Path-java.lang.String...-">
+<a name="addOptionalArtifactWithType-java.nio.file.Path-java.lang.String-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andOptional</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;andOptional(java.nio.file.Path&nbsp;file,
-                                    java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.nio.file.Path-java.lang.String...-"><code>and(Path, String...)</code></a> but effective only if the specified file exists.</div>
-</li>
-</ul>
-<a name="andOptionalWithType-java.nio.file.Path-java.lang.String-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>andOptionalWithType</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&nbsp;andOptionalWithType(java.nio.file.Path&nbsp;file,
-                                            java.lang.String&nbsp;type,
-                                            java.lang.String...&nbsp;scopes)</pre>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#and-java.nio.file.Path-java.lang.String-java.lang.String...-"><code>and(Path, String, String...)</code></a> but effective only if the specified file
+<h4>addOptionalArtifactWithType</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="type parameter in JkIvyPublication">T</a>&gt;&nbsp;addOptionalArtifactWithType(java.nio.file.Path&nbsp;file,
+                                                       java.lang.String&nbsp;type,
+                                                       java.lang.String...&nbsp;scopes)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html#setMainArtifact-java.nio.file.Path-java.lang.String...-"><code>setMainArtifact(Path, String...)</code></a> (Path, String, String...)} but effective only if the specified file
  exists.</div>
 </li>
 </ul>
-<a name="iterator--">
+<a name="getAllArtifacts--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getAllArtifacts</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;&nbsp;getAllArtifacts()</pre>
+</li>
+</ul>
+<a name="publish-dev.jeka.core.api.depmanagement.JkRepoSet-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>iterator</h4>
-<pre>public&nbsp;java.util.Iterator&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;&nbsp;iterator()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a>&gt;</code></dd>
-</dl>
+<h4>publish</h4>
+<pre>public&nbsp;void&nbsp;publish(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;repos)</pre>
 </li>
 </ul>
 </li>
@@ -428,13 +537,13 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
