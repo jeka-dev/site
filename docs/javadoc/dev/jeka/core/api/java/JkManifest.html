@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -267,27 +267,33 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="type parameter in JkManifest">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkManifest.html#setManifestFromClass-java.lang.Class-">setManifestFromClass</a></span>(java.lang.Class&lt;?&gt;&nbsp;clazz)</code>
+<div class="block">Set the values from the specified i,n the manifest belonging to the specified class jar.</div>
+</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="type parameter in JkManifest">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkManifest.html#setManifestFromClassRootDir-java.nio.file.Path-">setManifestFromClassRootDir</a></span>(java.nio.file.Path&nbsp;classDir)</code>
 <div class="block">Sets the underlying <code>Manifest</code> object from the file present at [specified class dir]/META-INF/MANIFEST.MF</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="type parameter in JkManifest">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkManifest.html#setManifestFromFile-java.nio.file.Path-">setManifestFromFile</a></span>(java.nio.file.Path&nbsp;file)</code>
 <div class="block">Sets the underlying <code>Manifest</code> object from the content of the specified file.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="type parameter in JkManifest">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkManifest.html#setManifestFromInputStream-java.io.InputStream-">setManifestFromInputStream</a></span>(java.io.InputStream&nbsp;inputStream)</code>
-<div class="block">Creates a <code>JkManifest</code> from the specified input getOutputStream.</div>
+<div class="block">Set the values from the specified inputStream source.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkManifest.html#writeTo-java.nio.file.Path-">writeTo</a></span>(java.nio.file.Path&nbsp;file)</code>&nbsp;</td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkManifest.html#writeToStandardLocation-java.nio.file.Path-">writeToStandardLocation</a></span>(java.nio.file.Path&nbsp;classDir)</code>
 <div class="block">Writes this manifest at the standard place (META-INF/MANIFEST.MF) of the
@@ -488,9 +494,19 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>setManifestFromInputStream</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="type parameter in JkManifest">T</a>&gt;&nbsp;setManifestFromInputStream(java.io.InputStream&nbsp;inputStream)</pre>
-<div class="block">Creates a <code>JkManifest</code> from the specified input getOutputStream. The
- specified getOutputStream is supposed to contains manifest information as present
+<div class="block">Set the values from the specified inputStream source.
+ The specified inputStream is supposed to contains manifest information as present
  in a manifest file.</div>
+</li>
+</ul>
+<a name="setManifestFromClass-java.lang.Class-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setManifestFromClass</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="type parameter in JkManifest">T</a>&gt;&nbsp;setManifestFromClass(java.lang.Class&lt;?&gt;&nbsp;clazz)</pre>
+<div class="block">Set the values from the specified i,n the manifest belonging to the specified class jar.</div>
 </li>
 </ul>
 <a name="addMainAttribute-java.util.jar.Attributes.Name-java.lang.String-">
