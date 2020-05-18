@@ -147,17 +147,13 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsAssert.html#isTrue-boolean-java.lang.String-">isTrue</a></span>(boolean&nbsp;condition,
-      java.lang.String&nbsp;message)</code>
-<div class="block">Throws an <code>IllegalArgumentException</code> if the specified condition is <code>false</code>.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsAssert.html#argument-boolean-java.lang.String-">argument</a></span>(boolean&nbsp;condition,
+        java.lang.String&nbsp;message)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsAssert.html#notNull-java.lang.Object-java.lang.String-">notNull</a></span>(java.lang.Object&nbsp;object,
-       java.lang.String&nbsp;message)</code>
-<div class="block">Throws an <code>IllegalArgumentException</code> if the specified object is <code>null</code>.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/utils/JkUtilsAssert.html#state-boolean-java.lang.String-">state</a></span>(boolean&nbsp;condition,
+     java.lang.String&nbsp;message)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -198,26 +194,24 @@ extends java.lang.Object</pre>
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="notNull-java.lang.Object-java.lang.String-">
+<a name="argument-boolean-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>notNull</h4>
-<pre>public static&nbsp;void&nbsp;notNull(java.lang.Object&nbsp;object,
-                           java.lang.String&nbsp;message)</pre>
-<div class="block">Throws an <code>IllegalArgumentException</code> if the specified object is <code>null</code>.</div>
+<h4>argument</h4>
+<pre>public static&nbsp;void&nbsp;argument(boolean&nbsp;condition,
+                            java.lang.String&nbsp;message)</pre>
 </li>
 </ul>
-<a name="isTrue-boolean-java.lang.String-">
+<a name="state-boolean-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>isTrue</h4>
-<pre>public static&nbsp;void&nbsp;isTrue(boolean&nbsp;condition,
-                          java.lang.String&nbsp;message)</pre>
-<div class="block">Throws an <code>IllegalArgumentException</code> if the specified condition is <code>false</code>.</div>
+<h4>state</h4>
+<pre>public static&nbsp;void&nbsp;state(boolean&nbsp;condition,
+                         java.lang.String&nbsp;message)</pre>
 </li>
 </ul>
 </li>

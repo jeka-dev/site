@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":10,"i11":10,"i12":9,"i13":9,"i14":9,"i15":9,"i16":9,"i17":10,"i18":10,"i19":10,"i20":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDepProblem.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -203,43 +203,36 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
 </td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code>java.nio.file.Path</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#getIdeProjectDir--">getIdeProjectDir</a></span>()</code>
+<div class="block">In the IDE, a dependency can be provided by a project exporting it.</div>
+</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#getModuleId--">getModuleId</a></span>()</code>
 <div class="block">Returns the getModuleId of this dependency.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#getVersion--">getVersion</a></span>()</code>
 <div class="block">Returns the version of the module this dependencies is constrained to.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#hasUnspecifedVersion--">hasUnspecifedVersion</a></span>()</code>
 <div class="block">Returns <code>true</code> if the version of the module for this dependency is not specified.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#isModuleDependencyDescription-java.lang.String-">isModuleDependencyDescription</a></span>(java.lang.String&nbsp;candidate)</code>
 <div class="block">Returns <code>true</code> if the specified candidate matches to a module description.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#isTransitive--">isTransitive</a></span>()</code>
-<div class="block">Returns <code>true</code> if this dependency should be resolved transitively (returning the dependencies
- of this dependency recursively).</div>
-</td>
-</tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#isTransitive-boolean-">isTransitive</a></span>(boolean&nbsp;transitive)</code>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a> identical to this one but with the specified 'transitive' property.</div>
-</td>
-</tr>
-<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#of-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkVersion-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
   <a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;version)</code>
@@ -247,7 +240,7 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
  <code>JkVersionrange</code>.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#of-dev.jeka.core.api.depmanagement.JkModuleId-java.lang.String-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
   java.lang.String&nbsp;versionRange)</code>
@@ -255,13 +248,13 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
  <code>JkVersionrange</code>.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#of-dev.jeka.core.api.depmanagement.JkVersionedModule-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModule)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a> to the specified versioned module.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#of-java.lang.String-">of</a></span>(java.lang.String&nbsp;description)</code>
 <div class="block">Description can be :
@@ -273,7 +266,7 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
  Version can be a '?' if it is unspecified.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#of-java.lang.String-java.lang.String-java.lang.String-">of</a></span>(java.lang.String&nbsp;group,
   java.lang.String&nbsp;name,
@@ -282,25 +275,44 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
  range.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#withClassifier-java.lang.String-">withClassifier</a></span>(java.lang.String&nbsp;classifier)</code>
 <div class="block">Returns a JkModuleDependency identical to this one but with the specified
  classifier.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#withExt-java.lang.String-">withExt</a></span>(java.lang.String&nbsp;extension)</code>
 <div class="block">Returns a JkModuleDependency identical to this one but with the specified
  artifact getExtension.</div>
 </td>
 </tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></span>(java.nio.file.Path&nbsp;path)</code>
+<div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
+</td>
+</tr>
 <tr id="i20" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#withTransitive--">withTransitive</a></span>()</code>
+<div class="block">Returns <code>true</code> if this dependency should be resolved transitively (returning the dependencies
+ of this dependency recursively).</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#withTransitive-boolean-">withTransitive</a></span>(boolean&nbsp;transitive)</code>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a> identical to this one but with the specified 'transitive' property.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html#withVersion-dev.jeka.core.api.depmanagement.JkVersion-">withVersion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;version)</code>
 <div class="block">Returns a JkModuleDependency identical to this one but with the specified
@@ -425,13 +437,13 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
 </dl>
 </li>
 </ul>
-<a name="isTransitive--">
+<a name="withTransitive--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isTransitive</h4>
-<pre>public&nbsp;boolean&nbsp;isTransitive()</pre>
+<h4>withTransitive</h4>
+<pre>public&nbsp;boolean&nbsp;withTransitive()</pre>
 <div class="block">Returns <code>true</code> if this dependency should be resolved transitively (returning the dependencies
  of this dependency recursively).</div>
 </li>
@@ -456,13 +468,13 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
 <div class="block">Returns the version of the module this dependencies is constrained to.</div>
 </li>
 </ul>
-<a name="isTransitive-boolean-">
+<a name="withTransitive-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isTransitive</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&nbsp;isTransitive(boolean&nbsp;transitive)</pre>
+<h4>withTransitive</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&nbsp;withTransitive(boolean&nbsp;transitive)</pre>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a> identical to this one but with the specified 'transitive' property.</div>
 </li>
 </ul>
@@ -577,13 +589,48 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
 <a name="toString--">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>toString</h4>
 <pre>public&nbsp;java.lang.String&nbsp;toString()</pre>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
 <dd><code>toString</code>&nbsp;in class&nbsp;<code>java.lang.Object</code></dd>
+</dl>
+</li>
+</ul>
+<a name="getIdeProjectDir--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getIdeProjectDir</h4>
+<pre>public&nbsp;java.nio.file.Path&nbsp;getIdeProjectDir()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--">JkDependency</a></code></span></div>
+<div class="block">In the IDE, a dependency can be provided by a project exporting it. When generating IDE metadata files
+ (.classpath, xxx.iml), its preferable to mention only the project exporting it rather then dependency
+ itself.
+ This method simply returns <code>null</code> when the dependencies is not coming from another project.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--">getIdeProjectDir</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></code></dd>
+</dl>
+</li>
+</ul>
+<a name="withIdeProjectDir-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>withIdeProjectDir</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&nbsp;withIdeProjectDir(java.nio.file.Path&nbsp;path)</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from interface:&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#withIdeProjectDir-java.nio.file.Path-">JkDependency</a></code></span></div>
+<div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
+<dl>
+<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
+<dd><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></code>&nbsp;in interface&nbsp;<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></code></dd>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--"><code>JkDependency.getIdeProjectDir()</code></a></dd>
 </dl>
 </li>
 </ul>
@@ -614,7 +661,7 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDepProblem.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

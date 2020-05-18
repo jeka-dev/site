@@ -17,7 +17,7 @@
 <div class="title">Jeka - Getting Started</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
+<div style="color: lightslategrey; font-size: large">Version : 0.9.0.M7</div>
 <br />
 <a href="#InstallJeka" class="menuItem1">Install Jeka</a><br />
 <a href="#ConfigureyourIDE" class="menuItem1">Configure your IDE</a><br />
@@ -561,9 +561,9 @@ import dev.jeka.core.api.file.JkPathTree;
 import dev.jeka.core.api.file.JkPathTreeSet;
 import dev.jeka.core.api.file.JkResourceProcessor;
 import dev.jeka.core.api.java.*;
-import dev.jeka.core.api.java.junit.JkJavaTestClasses;
-import dev.jeka.core.api.java.junit.JkUnit;
-import dev.jeka.core.api.java.junit.JkUnit.JunitReportDetail;
+import dev.jeka.core.api.java.testing.JkJavaTestClasses;
+import dev.jeka.core.api.java.testing.JkUnit;
+import dev.jeka.core.api.java.testing.JkUnit.JunitReportDetail;
 import dev.jeka.core.tool.JkCommandSet;
 import dev.jeka.core.tool.JkDefClasspath;
 
@@ -589,9 +589,9 @@ public class AntStyleBuild extends JkCommandSet {
 
     @Override
     protected void setup() {
-       JkResolveResult depResolution = JkDependencyResolver.of(JkRepo.ofMavenCentral()).resolve(JkDependencySet.of()
+       JkResolveResult depResolution = JkDependencyResolver.ofParent(JkRepo.ofMavenCentral()).resolve(JkDependencySet.of()
                .and(&quot;org.hibernate:hibernate-entitymanager:jar:5.4.2.Final&quot;)
-               .and(&quot;junit:junit:4.11&quot;, JkJavaDepScopes.TEST)
+               .and(&quot;junit:junit:4.11&quot;, JkScope.TEST)
        );
        classpath = JkClasspath.of(getBaseTree().andMatching(true,&quot;libs/**/*.jar&quot;).getFiles())
             .and(depResolution.getFiles());
@@ -605,7 +605,7 @@ public class AntStyleBuild extends JkCommandSet {
                 .addSources(src));
         Map&lt;String, String&gt; varReplacement = new HashMap&lt;&gt;();
         varReplacement.put(&quot;${server.ip}&quot;, &quot;123.211.11.0&quot;);
-        JkResourceProcessor.of(JkPathTreeSet.of(src)).andInterpolate(&quot;**/*.properties&quot;, varReplacement)
+        JkResourceProcessor.ofParent(JkPathTreeSet.of(src)).addInterpolator(&quot;**/*.properties&quot;, varReplacement)
                 .generateTo(classDir, Charset.forName(&quot;UTF-8&quot;));
         JkPathTree.of(src).andMatching(false, &quot;**/*.javaPlugin&quot;).copyTo(classDir);
     }
@@ -617,7 +617,7 @@ public class AntStyleBuild extends JkCommandSet {
     }
 
     public void javadoc() {
-        JkJavadocMaker.of(JkPathTreeSet.of(src), buildDir.resolve(&quot;javadoc&quot;)).process();
+        JkJavadocProcessor.of(JkPathTreeSet.of(src), buildDir.resolve(&quot;javadoc&quot;)).process();
     }
 
     public void run() {
@@ -715,16 +715,14 @@ This will generate a project skeleton with the following build class at <em>[PRO
 <p>Below is the content of the generated build class. Guava and Junit are present only fo demo purpose. You can remove it safely and add
 any dependency you need.</p>
 <pre><code class="language-Java">import dev.jeka.core.api.depmanagement.JkDependencySet;
-import dev.jeka.core.api.java.project.JkJavaProject;
+import dev.jeka.core.api.depmanagement.JkScope;
 import dev.jeka.core.tool.JkInit;
 import dev.jeka.core.tool.JkCommandSet;
 import dev.jeka.core.tool.JkPluginJava;
 
-import static dev.jeka.core.api.depmanagement.JkJavaDepScopes.*;
-
 class Build extends JkCommandSet {
 
-    final JkPluginJava javaPlugin = getPlugin(JkPluginJava.class);
+    final JkPluginJava java = getPlugin(JkPluginJava.class);
 
     /*
      * Configures plugins to be bound to this commandSet class. When this method is called, option
@@ -732,14 +730,11 @@ class Build extends JkCommandSet {
      */
     @Override
     protected void setup() {
-        JkJavaProject project = javaPlugin.getProject();
-        project.addDependencies(dependencies());
-    }
-
-    private JkDependencySet dependencies() {  // Example of dependencies.
-        return JkDependencySet.of()
-                .and(&quot;com.google.guava:guava:21.0&quot;)
-                .and(&quot;junit:junit:4.11&quot;, TEST);
+        java.getProject()
+            .getDependencyManagement()
+                .addDependencies(JkDependencySet.of()
+                    .and(&quot;com.google.guava:guava:21.0&quot;)
+                    .and(&quot;junit:junit:4.13&quot;, JkScope.TEST));
     }
 
     public static void main(String[] args) {
@@ -757,16 +752,13 @@ class Build extends JkCommandSet {
 </ol>
 <a name="Extrafunction"></a>
 <h2>Extra function</h2>
-<p>If you want to create javadoc, jar sources and  jar tests or checksums :
-just execute <code>jeka clean java#pack -java#pack.tests -java#pack.sources -java#pack.checksums=sha-256</code>.</p>
-<p>Explanation  '-' prefix means that you want to set an option value. For example <code>-java#pack.sources</code> means that
-<code>JkPluginJava.pack.sources</code> will be injected the 'true' value.</p>
+<p>If you want to create jar along javadoc and sources without testing :
+just execute <code>jeka clean java#pack -java#test</code>.</p>
+<p>Explanation '-' prefix means that you want to set an option value. For example <code>-java#pack.sources=false</code> means that
+<code>JkPluginJava.pack.sources</code> will be injected the <code>false</code> value.</p>
 <p>You can also set it by default in the build class constructor :</p>
 <pre><code class="language-Java">    protected Build() {
-        javaPlugin.pack.javadoc = true;
-        javaPlugin.pack.sources = true;
-        javaPlugin.pack.tests = true;
-        javaPlugin.pack.checksums = &quot;sha-256&quot;;
+        java.tests.skip = true;
     }
 </code></pre>
 <a name="Explorefunctionsandoptionsprovidedout-of-thebox"></a>

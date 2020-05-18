@@ -88,7 +88,7 @@
 <tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></td>
 <td class="colLast">
-<div class="block">Defines methods for enumerating artifacts files likely to be produced by an object.</div>
+<div class="block">Defines methods for enumerating artifacts files likely to be produced.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -98,37 +98,35 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></td>
-<td class="colLast">
-<div class="block">Marker interface for a dependency.</div>
-</td>
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.JkSupplier.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer.JkSupplier</a></td>
+<td class="colLast">&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></td>
+<td class="colLast">
+<div class="block">Interface standing for a dependency.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyNode.JkNodeInfo.html" title="interface in dev.jeka.core.api.depmanagement">JkDependencyNode.JkNodeInfo</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency</a></td>
 <td class="colLast">
 <div class="block">Dependencies that can directly provide files without passing by an external medium.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkInternalDepResolver.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalDepResolver</a></td>
 <td class="colLast">
 <div class="block">Not part of the public API.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkInternalPublisher.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalPublisher</a></td>
 <td class="colLast">
 <div class="block">Not part of the public API</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPublishFilter.html" title="interface in dev.jeka.core.api.depmanagement">JkPublishFilter</a></td>
-<td class="colLast">
-<div class="block">Defines filter to accept or not module to be published on a given <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a></div>
 </td>
 </tr>
 </tbody>
@@ -145,7 +143,7 @@
 <tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></td>
 <td class="colLast">
-<div class="block">Artifacts are files produced by projects in order to be published or reused by other projects.</div>
+<div class="block">Artifacts are files produced by projects in order to be published and reused by other projects.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -161,61 +159,65 @@
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">A structure to manage consistently dependencies and their resolution.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyNode.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode</a></td>
 <td class="colLast">
 <div class="block">A representation of a node in a dependency tree.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyNode.JkFileNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkFileNodeInfo</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode.JkModuleNodeInfo</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></td>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&lt;T&gt;</td>
 <td class="colLast">
 <div class="block">Class to resolve dependencies to files or dependency tree.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></td>
 <td class="colLast">
 <div class="block">A set of <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a> generally standing for the entire
  dependencies of a project/module.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a></td>
 <td class="colLast">
 <div class="block">Information about excluding artifacts or whole modules.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement">JkFileSystemDependency</a></td>
 <td class="colLast">
 <div class="block">A dependency on files located on file ofSystem.</div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></td>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;T&gt;</td>
 <td class="colLast">
 <div class="block">Information required to publish a module in an Ivy repository.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.JkPublicationArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication.JkPublicationArtifact</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkJavaDepScopes.html" title="class in dev.jeka.core.api.depmanagement">JkJavaDepScopes</a></td>
-<td class="colLast">
-<div class="block">Dependency scopes usually used in Java projects</div>
-</td>
-</tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a></td>
+<td class="colLast">&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenMetadata.html" title="class in dev.jeka.core.api.depmanagement">JkMavenMetadata</a></td>
 <td class="colLast">
 <div class="block">Object representation of the maven-metadata.xml file found in Maven
@@ -223,72 +225,66 @@
  given version.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenMetadata.Versioning.html" title="class in dev.jeka.core.api.depmanagement">JkMavenMetadata.Versioning</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenMetadata.Versioning.JkSnapshot.html" title="class in dev.jeka.core.api.depmanagement">JkMavenMetadata.Versioning.JkSnapshot</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></td>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;T&gt;</td>
 <td class="colLast">
 <div class="block">Publication specific information to include in POM file in order to be published of a Maven repository.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.JkClassifiedFileArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication.JkClassifiedFileArtifact</a></td>
-<td class="colLast">
-<div class="block">An artifact with a classifier for Maven repository.</div>
-</td>
-</tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a></td>
-<td class="colLast">
-<div class="block">These are extra information required to publish on Maven central.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo.JkDeveloperInfo</a></td>
-<td class="colLast">
-<div class="block">Information about a developer.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkLicenseInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo.JkLicenseInfo</a></td>
-<td class="colLast">
-<div class="block">Information about a license.</div>
-</td>
-</tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo.JkProjectInfo</a></td>
-<td class="colLast">
-<div class="block">Information about a project.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo.JkScmInfo</a></td>
-<td class="colLast">
-<div class="block">Information about source control ofSystem managing the project sources.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></td>
 <td class="colLast">
 <div class="block">A dependency on an external module.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDepProblem.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDepProblem</a></td>
 <td class="colLast">
 <div class="block">Information about problem when resolving dependencies</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a></td>
 <td class="colLast">
 <div class="block">Identifier for project.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">These are extra information required to publish on Maven central.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkDeveloperInfo</a></td>
+<td class="colLast">
+<div class="block">Information about a developer.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.JkLicenseInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkLicenseInfo</a></td>
+<td class="colLast">
+<div class="block">Information about a license.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkProjectInfo</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">Information about a project.</div>
+</td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkScmInfo</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">Information about source control ofSystem managing the project sources.</div>
 </td>
 </tr>
 <tr class="altColor">
@@ -302,100 +298,109 @@
 </td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkPublisher.html" title="class in dev.jeka.core.api.depmanagement">JkPublisher</a></td>
-<td class="colLast">
-<div class="block">A class to publish artifacts on repositories.</div>
-</td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></td>
 <td class="colLast">
 <div class="block">Hold configuration necessary to instantiate download or upload repository</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></td>
 <td class="colLast">
 <div class="block">Configuration specific to publishing.</div>
 </td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredential.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkRepoCredential</a></td>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredentials.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkRepoCredentials</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoIvyConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkRepoIvyConfig</a></td>
 <td class="colLast">
 <div class="block">Configuration specific to Ivy.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></td>
 <td class="colLast">
 <div class="block">A set of <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a></div>
 </td>
 </tr>
-<tr class="altColor">
-<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement">JkResolutionParameters</a></td>
+<tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement">JkResolutionParameters</a>&lt;T&gt;</td>
 <td class="colLast">
 <div class="block">Contains parameters likely to impact module resolution behavior.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolveResult.html" title="class in dev.jeka.core.api.depmanagement">JkResolveResult</a></td>
 <td class="colLast">
 <div class="block">Result of a module dependency resolution for a given scope.<br/>
  When resolving a module dependencies for a given scope, we expect to get
  
-   The list of publishLocalOnly file constituting the resolved dependencies (the jar
-        files for instance)
+   The list of files constituting the resolved dependencies (the jar files for instance)
    The <a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement"><code>JkVersionProvider</code></a> that specify which static version has been
         taken in account when a module dependency is declared using dynamic versions
         (as 1.0.+)
  </div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolveResult.JkErrorReport.html" title="class in dev.jeka.core.api.depmanagement">JkResolveResult.JkErrorReport</a></td>
 <td class="colLast">&nbsp;</td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></td>
 <td class="colLast">
 <div class="block">Defines a context where is defined dependencies of a given project.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a></td>
 <td class="colLast">
 <div class="block">A dependency along a scope information to specify for wich purpose it should be used.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a></td>
 <td class="colLast">
 <div class="block">A mapping to scopes to scopes acting when declaring dependencies.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.Partial.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping.Partial</a></td>
 <td class="colLast">
 <div class="block">Partial object to construct a scope mapping.</div>
 </td>
 </tr>
+<tr class="altColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">This <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkArtifactProducer</code></a> produces artifacts files at a standardized path
+ determined by a provided function (outputPath, artifactId) -> path.</div>
+</td>
+</tr>
 <tr class="rowColor">
+<td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a>&lt;T&gt;</td>
+<td class="colLast">
+<div class="block">This <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkArtifactProducer</code></a> produces artifacts files at the path
+ provided by the caller<p/>
+ To add artifacts to produce, caller has to provide the <code>Path</code> where is generated artifact along
+ the <code>Runnable</code> for generating it.</div>
+</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a></td>
 <td class="colLast">
 <div class="block">Used to specify a module version.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></td>
 <td class="colLast">
 <div class="block">Identifies a given module in a given version</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a></td>
 <td class="colLast">
 <div class="block">Association between getModuleIds and version.</div>

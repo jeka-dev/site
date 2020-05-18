@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -145,6 +145,10 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlSkipJeka">imlSkipJeka</a></span></code>&nbsp;</td>
 </tr>
 <tr class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlTestExtraModules">imlTestExtraModules</a></span></code>&nbsp;</td>
+</tr>
+<tr class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#useVarPath">useVarPath</a></span></code>&nbsp;</td>
 </tr>
@@ -183,26 +187,20 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#activate--">activate</a></span>()</code>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#all--">all</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#allIml--">allIml</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#iml--">iml</a></span>()</code>
 <div class="block">Generates Idea [my-module].iml file</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#modulesXml--">modulesXml</a></span>()</code>
 <div class="block">Generate modules.xml files</div>
@@ -214,7 +212,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dev.jeka.core.tool.<a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></h3>
-<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
+<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -267,10 +265,19 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <a name="imlSkipJeka">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>imlSkipJeka</h4>
 <pre>public&nbsp;boolean imlSkipJeka</pre>
+</li>
+</ul>
+<a name="imlTestExtraModules">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>imlTestExtraModules</h4>
+<pre>public&nbsp;java.lang.String imlTestExtraModules</pre>
 </li>
 </ul>
 </li>
@@ -330,25 +337,10 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <a name="all--">
 <!--   -->
 </a>
-<ul class="blockList">
+<ul class="blockListLast">
 <li class="blockList">
 <h4>all</h4>
 <pre>public&nbsp;void&nbsp;all()</pre>
-</li>
-</ul>
-<a name="activate--">
-<!--   -->
-</a>
-<ul class="blockListLast">
-<li class="blockList">
-<h4>activate</h4>
-<pre>protected&nbsp;void&nbsp;activate()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">JkPlugin</a></code></span></div>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
-<dl>
-<dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
-</dl>
 </li>
 </ul>
 </li>

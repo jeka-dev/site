@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":18,"i1":18,"i2":18,"i3":6,"i4":18,"i5":18};
+var methods = {"i0":18,"i1":6,"i2":18,"i3":18,"i4":18,"i5":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -103,12 +103,12 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">JkArtifactLocator</span></pre>
-<div class="block">Defines methods for enumerating artifacts files likely to be produced by an object.</div>
+<div class="block">Defines methods for enumerating artifacts files likely to be produced.</div>
 </li>
 </ul>
 </div>
@@ -128,39 +128,39 @@ var activeTableTab = "activeTableTab";
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code>default java.util.List&lt;java.nio.file.Path&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getAllArtifactPaths--">getAllArtifactPaths</a></span>()</code>
-<div class="block">Returns all artifact files likely to be produced by this artifact producer.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code>default java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;</code></td>
+<td class="colFirst"><code>default java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">getArtifactIds</a></span>()</code>
 <div class="block">Returns all the artifact ids likely to be produced by this artifact producer.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>default java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIdsWithClassifier-java.lang.String...-">getArtifactIdsWithClassifier</a></span>(java.lang.String...&nbsp;classifiers)</code>
-<div class="block">Returns the arifact file ids having the specified classifier.</div>
-</td>
-</tr>
-<tr id="i3" class="rowColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;jkArtifactId)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>
 <div class="block">Returns file ofSystem path where is supposed to be produced the specified artifact file id.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i2" class="altColor">
+<td class="colFirst"><code>default java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactExt--">getMainArtifactExt</a></span>()</code>
+<div class="block">Returns the extension used by the main artifact.</div>
+</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>default <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId</a></span>()</code>
 <div class="block">Returns the main artifact file id for this producer.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>default java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactPath--">getMainArtifactPath</a></span>()</code>
 <div class="block">Returns the main artifact path.</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>default java.util.List&lt;java.nio.file.Path&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMissingFiles--">getMissingFiles</a></span>()</code>
+<div class="block">Returns non existing files matching for artifacts.</div>
 </td>
 </tr>
 </table>
@@ -184,7 +184,7 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <h4>getArtifactPath</h4>
-<pre>java.nio.file.Path&nbsp;getArtifactPath(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;jkArtifactId)</pre>
+<pre>java.nio.file.Path&nbsp;getArtifactPath(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</pre>
 <div class="block">Returns file ofSystem path where is supposed to be produced the specified artifact file id. This method is supposed
  to only returns the file reference and not generate it.</div>
 </li>
@@ -200,13 +200,23 @@ var activeTableTab = "activeTableTab";
  classifier and 'jar" getExtension.</div>
 </li>
 </ul>
+<a name="getMainArtifactExt--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getMainArtifactExt</h4>
+<pre>default&nbsp;java.lang.String&nbsp;getMainArtifactExt()</pre>
+<div class="block">Returns the extension used by the main artifact.</div>
+</li>
+</ul>
 <a name="getArtifactIds--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>getArtifactIds</h4>
-<pre>default&nbsp;java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;getArtifactIds()</pre>
+<pre>default&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;getArtifactIds()</pre>
 <div class="block">Returns all the artifact ids likely to be produced by this artifact producer. By default it returns
  a single element list containing the main artifact file id</div>
 </li>
@@ -221,24 +231,14 @@ var activeTableTab = "activeTableTab";
 <div class="block">Returns the main artifact path.</div>
 </li>
 </ul>
-<a name="getAllArtifactPaths--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getAllArtifactPaths</h4>
-<pre>default&nbsp;java.util.List&lt;java.nio.file.Path&gt;&nbsp;getAllArtifactPaths()</pre>
-<div class="block">Returns all artifact files likely to be produced by this artifact producer.</div>
-</li>
-</ul>
-<a name="getArtifactIdsWithClassifier-java.lang.String...-">
+<a name="getMissingFiles--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getArtifactIdsWithClassifier</h4>
-<pre>default&nbsp;java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;getArtifactIdsWithClassifier(java.lang.String...&nbsp;classifiers)</pre>
-<div class="block">Returns the arifact file ids having the specified classifier.</div>
+<h4>getMissingFiles</h4>
+<pre>default&nbsp;java.util.List&lt;java.nio.file.Path&gt;&nbsp;getMissingFiles()</pre>
+<div class="block">Returns non existing files matching for artifacts.</div>
 </li>
 </ul>
 </li>

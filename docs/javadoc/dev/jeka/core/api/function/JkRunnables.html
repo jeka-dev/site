@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":9,"i2":9,"i3":10,"i4":10,"i5":10};
+var methods = {"i0":10,"i1":9,"i2":9,"i3":9,"i4":9,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,8 +47,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../../dev/jeka/core/api/function/JkConsumers.html" title="class in dev.jeka.core.api.function"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/function/JkUnaryOperator.html" title="interface in dev.jeka.core.api.function"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/function/JkRunnables.html" target="_top">Frames</a></li>
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,14 +91,14 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">dev.jeka.core.api.function</div>
-<h2 title="Class JkRunnables" class="title">Class JkRunnables</h2>
+<h2 title="Class JkRunnables" class="title">Class JkRunnables&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>dev.jeka.core.api.function.JkRunnables</li>
+<li>dev.jeka.core.api.function.JkRunnables&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -111,7 +111,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <hr>
 <br>
-<pre>public class <span class="typeNameLabel">JkRunnables</span>
+<pre>public class <span class="typeNameLabel">JkRunnables&lt;T&gt;</span>
 extends java.lang.Object
 implements java.lang.Runnable</pre>
 <div class="block">A mutable container for <code>Runnable</code>. From this object you can replace the underlying <code>Runnable</code> or
@@ -122,6 +122,27 @@ implements java.lang.Runnable</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#Z:Z__">__</a></span></code>
+<div class="block">For parent chaining</div>
+</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -135,35 +156,48 @@ implements java.lang.Runnable</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#chain-java.lang.Runnable-">chain</a></span>(java.lang.Runnable&nbsp;chainedRunnable)</code>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#append-java.lang.Runnable-">append</a></span>(java.lang.Runnable&nbsp;chainedRunnable)</code>
 <div class="block">Chains this underlying <code>Runnable</code> with the specified one.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#noOp--">noOp</a></span>()</code>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;java.lang.Void&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of--">of</a></span>()</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function"><code>JkRunnables</code></a> delegating to a no-op runnable.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;java.lang.Void&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of-java.lang.Runnable-">of</a></span>(java.lang.Runnable&nbsp;runnable)</code>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function"><code>JkRunnables</code></a> delegating to the single specified <code>Runnable</code>.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#prependChain-java.lang.Runnable-">prependChain</a></span>(java.lang.Runnable&nbsp;chainedRunnable)</code>
-<div class="block">Chains this specified <code>Runnable</code> with the underlying one.</div>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of-T-java.lang.Runnable-">of</a></span>(T&nbsp;parent,
+  java.lang.Runnable&nbsp;runnable)</code>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of-java.lang.Runnable-"><code>of(Runnable)</code></a> but providing a parent chaining.</div>
 </td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#ofParent-T-">ofParent</a></span>(T&nbsp;parent)</code>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of--"><code>of()</code></a> but providing parent chaining</div>
+</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#prepend-java.lang.Runnable-">prepend</a></span>(java.lang.Runnable&nbsp;chainedRunnable)</code>
+<div class="block">Chains this specified <code>Runnable</code> with the underlying one.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#run--">run</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a></code></td>
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#set-java.lang.Runnable-">set</a></span>(java.lang.Runnable&nbsp;runnable)</code>
 <div class="block">Set the specified <code>Runnable</code> as the unique underlying <code>Runnable</code> for this container.</div>
 </td>
@@ -184,6 +218,24 @@ implements java.lang.Runnable</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a> __</pre>
+<div class="block">For parent chaining</div>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
@@ -196,18 +248,43 @@ implements java.lang.Runnable</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;of(java.lang.Runnable&nbsp;runnable)</pre>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;java.lang.Void&gt;&nbsp;of(java.lang.Runnable&nbsp;runnable)</pre>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function"><code>JkRunnables</code></a> delegating to the single specified <code>Runnable</code>.</div>
 </li>
 </ul>
-<a name="noOp--">
+<a name="of-java.lang.Object-java.lang.Runnable-">
+<!--   -->
+</a><a name="of-T-java.lang.Runnable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>noOp</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;noOp()</pre>
+<h4>of</h4>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;T&gt;&nbsp;of(T&nbsp;parent,
+                                    java.lang.Runnable&nbsp;runnable)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of-java.lang.Runnable-"><code>of(Runnable)</code></a> but providing a parent chaining.</div>
+</li>
+</ul>
+<a name="of--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>of</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;java.lang.Void&gt;&nbsp;of()</pre>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function"><code>JkRunnables</code></a> delegating to a no-op runnable.</div>
+</li>
+</ul>
+<a name="ofParent-java.lang.Object-">
+<!--   -->
+</a><a name="ofParent-T-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ofParent</h4>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;T&gt;&nbsp;ofParent(T&nbsp;parent)</pre>
+<div class="block">Same as <a href="../../../../../dev/jeka/core/api/function/JkRunnables.html#of--"><code>of()</code></a> but providing parent chaining</div>
 </li>
 </ul>
 <a name="set-java.lang.Runnable-">
@@ -216,28 +293,28 @@ implements java.lang.Runnable</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>set</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;set(java.lang.Runnable&nbsp;runnable)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a>&gt;&nbsp;set(java.lang.Runnable&nbsp;runnable)</pre>
 <div class="block">Set the specified <code>Runnable</code> as the unique underlying <code>Runnable</code> for this container.</div>
 </li>
 </ul>
-<a name="chain-java.lang.Runnable-">
+<a name="append-java.lang.Runnable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>chain</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;chain(java.lang.Runnable&nbsp;chainedRunnable)</pre>
+<h4>append</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a>&gt;&nbsp;append(java.lang.Runnable&nbsp;chainedRunnable)</pre>
 <div class="block">Chains this underlying <code>Runnable</code> with the specified one. The specified runnable will
  be executed at the end.</div>
 </li>
 </ul>
-<a name="prependChain-java.lang.Runnable-">
+<a name="prepend-java.lang.Runnable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>prependChain</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&nbsp;prependChain(java.lang.Runnable&nbsp;chainedRunnable)</pre>
+<h4>prepend</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../dev/jeka/core/api/function/JkRunnables.html" title="type parameter in JkRunnables">T</a>&gt;&nbsp;prepend(java.lang.Runnable&nbsp;chainedRunnable)</pre>
 <div class="block">Chains this specified <code>Runnable</code> with the underlying one. The specified runnable will
  be executed first.</div>
 </li>
@@ -282,8 +359,8 @@ implements java.lang.Runnable</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li>Prev&nbsp;Class</li>
-<li>Next&nbsp;Class</li>
+<li><a href="../../../../../dev/jeka/core/api/function/JkConsumers.html" title="class in dev.jeka.core.api.function"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/function/JkUnaryOperator.html" title="interface in dev.jeka.core.api.function"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/function/JkRunnables.html" target="_top">Frames</a></li>
@@ -308,13 +385,13 @@ implements java.lang.Runnable</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

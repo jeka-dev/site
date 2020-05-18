@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/java/JkClasspath.html" target="_top">Frames</a></li>
@@ -169,14 +169,14 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;</pre>
 </td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>java.util.List&lt;java.nio.file.Path&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#entries--">entries</a></span>()</code>
-<div class="block">Returns each entries making this <code>classpath</code>.</div>
-</td>
-</tr>
-<tr id="i5" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;o)</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;java.nio.file.Path&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#getEntries--">getEntries</a></span>()</code>
+<div class="block">Returns each entries making this <code>classpath</code>.</div>
+</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
@@ -218,12 +218,6 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;</pre>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
-<td class="colFirst"><code>java.net.URL[]</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#toArrayOfUrl--">toArrayOfUrl</a></span>()</code>
-<div class="block">Returns this classpath as an array of URL.</div>
-</td>
-</tr>
-<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -303,13 +297,13 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;</pre>
  <code>System.getProperty("java.class.path")</code>.</div>
 </li>
 </ul>
-<a name="entries--">
+<a name="getEntries--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>entries</h4>
-<pre>public&nbsp;java.util.List&lt;java.nio.file.Path&gt;&nbsp;entries()</pre>
+<h4>getEntries</h4>
+<pre>public&nbsp;java.util.List&lt;java.nio.file.Path&gt;&nbsp;getEntries()</pre>
 <div class="block">Returns each entries making this <code>classpath</code>.</div>
 </li>
 </ul>
@@ -324,16 +318,6 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;</pre>
 <dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
 <dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;java.nio.file.Path&gt;</code></dd>
 </dl>
-</li>
-</ul>
-<a name="toArrayOfUrl--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>toArrayOfUrl</h4>
-<pre>public&nbsp;java.net.URL[]&nbsp;toArrayOfUrl()</pre>
-<div class="block">Returns this classpath as an array of URL.</div>
 </li>
 </ul>
 <a name="getEntryContainingClass-java.lang.String-">
@@ -469,7 +453,7 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/java/JkClassLoader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/java/JkInternalClasspathScanner.html" title="interface in dev.jeka.core.api.java"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/java/JkClasspath.html" target="_top">Frames</a></li>

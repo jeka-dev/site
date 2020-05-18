@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/java/JkJavadocProcessor.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -145,7 +145,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#andClasspath-dev.jeka.core.api.java.JkClasspath-">andClasspath</a></span>(<a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;classpath)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#andClasspath-java.lang.Iterable-">andClasspath</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;classpath)</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one but augmenting this
  classpath with the specified one.</div>
 </td>
@@ -179,9 +179,9 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a></code></td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#getClasspath--">getClasspath</a></span>()</code>
-<div class="block">Returns the classpth of this <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a>.</div>
+<div class="block">Returns the classpath of this <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a>.</div>
 </td>
 </tr>
 <tr id="i8" class="altColor">
@@ -227,6 +227,13 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#withPrintCommand-boolean-">withPrintCommand</a></span>(boolean&nbsp;printCommand)</code>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one specifying if the launch command should be printed
+ in the console</div>
+</td>
+</tr>
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html#withWorkingDir-java.nio.file.Path-">withWorkingDir</a></span>(java.nio.file.Path&nbsp;workingDir)</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one but using the specified
@@ -371,6 +378,17 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a name="withPrintCommand-boolean-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withPrintCommand</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;withPrintCommand(boolean&nbsp;printCommand)</pre>
+<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one specifying if the launch command should be printed
+ in the console</div>
+</li>
+</ul>
 <a name="withClasspath-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path...-">
 <!--   -->
 </a>
@@ -384,13 +402,13 @@ extends java.lang.Object</pre>
  classpath.</div>
 </li>
 </ul>
-<a name="andClasspath-dev.jeka.core.api.java.JkClasspath-">
+<a name="andClasspath-java.lang.Iterable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>andClasspath</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;andClasspath(<a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;classpath)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java">JkJavaProcess</a>&nbsp;andClasspath(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;classpath)</pre>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a> identical to this one but augmenting this
  classpath with the specified one.</div>
 </li>
@@ -422,8 +440,8 @@ extends java.lang.Object</pre>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>getClasspath</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/java/JkClasspath.html" title="class in dev.jeka.core.api.java">JkClasspath</a>&nbsp;getClasspath()</pre>
-<div class="block">Returns the classpth of this <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a>.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;getClasspath()</pre>
+<div class="block">Returns the classpath of this <a href="../../../../../dev/jeka/core/api/java/JkJavaProcess.html" title="class in dev.jeka.core.api.java"><code>JkJavaProcess</code></a>.</div>
 <dl>
 <dt><span class="returnLabel">Returns:</span></dt>
 </dl>
@@ -456,7 +474,7 @@ extends java.lang.Object</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/java/JkJavadocMaker.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/java/JkJavadocProcessor.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

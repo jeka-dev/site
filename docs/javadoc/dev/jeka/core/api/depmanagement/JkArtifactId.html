@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":9,"i7":10,"i8":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -109,18 +109,35 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public final class <span class="typeNameLabel">JkArtifactId</span>
 extends java.lang.Object</pre>
-<div class="block">Artifacts are files produced by projects in order to be published or reused by other projects.
- This class stands for an identifier for an artifact within a project.
- An artifact producer is likely to produce several artifact files (main jar, sources, javadoc, native jars, ...). <br/>
- To distinguish them, Jeka uses the notion of 'classifier' and 'extension'. <br/>
- Extension is simply the char sequence at the end of of file to determine its technical type (.exe, .jar, .zip, ...). <br/>
- Classifier is to mention the purpose of the file (main artifact, sources, javadoc, uberjar, native lib, ...).</div>
+<div class="block">Artifacts are files produced by projects in order to be published and reused by other projects. <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkArtifactId</code></a>
+ identifies artifacts within a project. <p>
+ The identifier is compound of a name and a file extension. The name maps with the Maven 'classifier' concept.<br/>
+ In a project, we distinguish the <i>main artifact</i> from the others : the main artifact name values to empty string.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#MAIN_ARTIFACT_NAME">MAIN_ARTIFACT_NAME</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -139,14 +156,14 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#getClassifier--">getClassifier</a></span>()</code>
-<div class="block">Returns the classifier of this object.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#getExtension--">getExtension</a></span>()</code>
+<div class="block">Returns the file getExtension of this object.</div>
 </td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#getExtension--">getExtension</a></span>()</code>
-<div class="block">Returns the file getExtension of this object.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#getName--">getName</a></span>()</code>
+<div class="block">Returns the classifier of this object.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
@@ -155,24 +172,26 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#isClassifier-java.lang.String...-">isClassifier</a></span>(java.lang.String...&nbsp;classifiers)</code>
-<div class="block">Returns <code>true</code> if any of the specified classifiers is equals to this classifier.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#isMainArtifact--">isMainArtifact</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#isExtension-java.lang.String...-">isExtension</a></span>(java.lang.String...&nbsp;extensions)</code>
-<div class="block">Returns <code>true</code> if any of the specified getExtension is equals to this getExtension.</div>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#of-java.lang.String-java.lang.String-">of</a></span>(java.lang.String&nbsp;name,
+  java.lang.String&nbsp;extension)</code>
+<div class="block">Creates an artifact id with the specified name and extension.</div>
 </td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#of-java.lang.String-java.lang.String-">of</a></span>(java.lang.String&nbsp;classifier,
-  java.lang.String&nbsp;extension)</code>
-<div class="block">Creates an artifact file id with the specified classifier and getExtension.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#ofMainArtifact-java.lang.String-">ofMainArtifact</a></span>(java.lang.String&nbsp;extension)</code>
+<div class="block">Shorthand for <code>of(MAIN_ARTIFACT_NAME, String)</code>.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#toFileName-java.lang.String-">toFileName</a></span>(java.lang.String&nbsp;namePart)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -192,6 +211,27 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="MAIN_ARTIFACT_NAME">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>MAIN_ARTIFACT_NAME</h4>
+<pre>public static final&nbsp;java.lang.String MAIN_ARTIFACT_NAME</pre>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../constant-values.html#dev.jeka.core.api.depmanagement.JkArtifactId.MAIN_ARTIFACT_NAME">Constant Field Values</a></dd>
+</dl>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
@@ -204,20 +244,39 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;of(java.lang.String&nbsp;classifier,
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;of(java.lang.String&nbsp;name,
                               java.lang.String&nbsp;extension)</pre>
-<div class="block">Creates an artifact file id with the specified classifier and getExtension. Both can be <code>null</code>. <br/>
- A <code>null</code> or empty classifier generally means the main artifact. <br/>
- A <code>getExtension</code> or empty getExtension generally means that the file has no getExtension.<br/></div>
+<div class="block">Creates an artifact id with the specified name and extension. <p>
+ The name cannot be null or be a string composed of spaces.
+ An empty string extension generally means that the file has no extension.<br/></div>
 </li>
 </ul>
-<a name="getClassifier--">
+<a name="ofMainArtifact-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getClassifier</h4>
-<pre>public&nbsp;java.lang.String&nbsp;getClassifier()</pre>
+<h4>ofMainArtifact</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;ofMainArtifact(java.lang.String&nbsp;extension)</pre>
+<div class="block">Shorthand for <code>of(MAIN_ARTIFACT_NAME, String)</code>.</div>
+</li>
+</ul>
+<a name="isMainArtifact--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isMainArtifact</h4>
+<pre>public&nbsp;boolean&nbsp;isMainArtifact()</pre>
+</li>
+</ul>
+<a name="getName--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getName</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getName()</pre>
 <div class="block">Returns the classifier of this object.</div>
 </li>
 </ul>
@@ -231,24 +290,13 @@ extends java.lang.Object</pre>
 <div class="block">Returns the file getExtension of this object.</div>
 </li>
 </ul>
-<a name="isClassifier-java.lang.String...-">
+<a name="toFileName-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>isClassifier</h4>
-<pre>public&nbsp;boolean&nbsp;isClassifier(java.lang.String...&nbsp;classifiers)</pre>
-<div class="block">Returns <code>true</code> if any of the specified classifiers is equals to this classifier.</div>
-</li>
-</ul>
-<a name="isExtension-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>isExtension</h4>
-<pre>public&nbsp;boolean&nbsp;isExtension(java.lang.String...&nbsp;extensions)</pre>
-<div class="block">Returns <code>true</code> if any of the specified getExtension is equals to this getExtension.</div>
+<h4>toFileName</h4>
+<pre>public&nbsp;java.lang.String&nbsp;toFileName(java.lang.String&nbsp;namePart)</pre>
 </li>
 </ul>
 <a name="equals-java.lang.Object-">
@@ -343,13 +391,13 @@ extends java.lang.Object</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

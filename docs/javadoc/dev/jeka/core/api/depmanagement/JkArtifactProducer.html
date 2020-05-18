@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":18,"i2":18,"i3":6,"i4":18,"i5":18,"i6":18,"i7":18,"i8":18};
+var methods = {"i0":18,"i1":18,"i2":6,"i3":18,"i4":18,"i5":18,"i6":18,"i7":18};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.JkSupplier.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkArtifactProducer.html" target="_top">Frames</a></li>
@@ -72,7 +72,7 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -103,7 +103,7 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../../dev/jeka/core/api/java/project/JkJavaProjectMaker.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectMaker</a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkSuppliedFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkSuppliedFileArtifactProducer</a></dd>
 </dl>
 <hr>
 <br>
@@ -116,6 +116,25 @@ extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocato
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Interface and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static interface&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.JkSupplier.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactProducer.JkSupplier</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -129,50 +148,44 @@ extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocato
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">fetchRuntimeDependencies</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;jkArtifactId)</code>
-<div class="block">Returns the runtime dependencies of the specified artifact file.</div>
-</td>
-</tr>
-<tr id="i1" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeAllArtifacts--">makeAllArtifacts</a></span>()</code>
 <div class="block">Produces all the artifact files for this producer.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeAllMissingArtifacts--">makeAllMissingArtifacts</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">makeArtifact</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;jkArtifactId)</code>
 <div class="block">Produces the specified artifact file.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifacts-java.lang.Iterable-">makeArtifacts</a></span>(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;artifactFileIds)</code>
 <div class="block">Produces all the artifact files for the specified artifact file ids.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifacts-dev.jeka.core.api.depmanagement.JkArtifactId...-">makeArtifacts</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>...&nbsp;artifactFileIds)</code>
 <div class="block">Produces all the artifact files for the specified artifact file ids.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeMainArtifact--">makeMainArtifact</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeMissingArtifacts-java.lang.Iterable-">makeMissingArtifacts</a></span>(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;artifactFileIds)</code>
 <div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-"><code>makeArtifact(JkArtifactId)</code></a></div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>default void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.html#makeMissingArtifacts-dev.jeka.core.api.depmanagement.JkArtifactId...-">makeMissingArtifacts</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>...&nbsp;artifactFileIds)</code>
 <div class="block">Produces specified artifact files.</div>
@@ -184,7 +197,7 @@ extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocato
 <!--   -->
 </a>
 <h3>Methods inherited from interface&nbsp;dev.jeka.core.api.depmanagement.<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></h3>
-<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getAllArtifactPaths--">getAllArtifactPaths</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">getArtifactIds</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIdsWithClassifier-java.lang.String...-">getArtifactIdsWithClassifier</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactPath--">getMainArtifactPath</a></code></li>
+<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactIds--">getArtifactIds</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getArtifactPath-dev.jeka.core.api.depmanagement.JkArtifactId-">getArtifactPath</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactExt--">getMainArtifactExt</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactId--">getMainArtifactId</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMainArtifactPath--">getMainArtifactPath</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html#getMissingFiles--">getMissingFiles</a></code></li>
 </ul>
 </li>
 </ul>
@@ -209,17 +222,6 @@ extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocato
 <pre>void&nbsp;makeArtifact(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;jkArtifactId)</pre>
 <div class="block">Produces the specified artifact file. This method is supposed to create it from scratch (should be working after
  a clean) but implementations can caches already processed phase result as compilation result or so.</div>
-</li>
-</ul>
-<a name="fetchRuntimeDependencies-dev.jeka.core.api.depmanagement.JkArtifactId-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>fetchRuntimeDependencies</h4>
-<pre><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;fetchRuntimeDependencies(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;jkArtifactId)</pre>
-<div class="block">Returns the runtime dependencies of the specified artifact file. This is useful to use the artifact file as
- a transitive dependency.</div>
 </li>
 </ul>
 <a name="makeArtifacts-java.lang.Iterable-">
@@ -318,7 +320,7 @@ extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocato
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.JkSupplier.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkArtifactProducer.html" target="_top">Frames</a></li>
@@ -342,7 +344,7 @@ extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocato
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

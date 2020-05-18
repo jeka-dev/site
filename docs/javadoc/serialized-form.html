@@ -147,10 +147,51 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkDeveloperInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkDeveloperInfo</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>__</h4>
+<pre>java.lang.Object __</pre>
+<div class="block">For parent chaining</div>
+</li>
+<li class="blockList">
+<h4>projectInfo</h4>
+<pre><a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkProjectInfo</a>&lt;<a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html" title="type parameter in JkPomMetadata.JkProjectInfo">T</a>&gt; projectInfo</pre>
+<div class="block">Info relative to project</div>
+</li>
+<li class="blockList">
+<h4>scm</h4>
+<pre><a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkScmInfo</a>&lt;<a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="type parameter in JkPomMetadata.JkScmInfo">T</a>&gt; scm</pre>
+<div class="block">Info relative to source control management</div>
+</li>
+<li class="blockList">
+<h4>developers</h4>
+<pre>java.util.List&lt;E&gt; developers</pre>
+<div class="block">Developer list involved in the project</div>
+</li>
+<li class="blockListLast">
+<h4>licenses</h4>
+<pre>java.util.List&lt;E&gt; licenses</pre>
+<div class="block">License list for the project, generaly there is a single license</div>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata.JkDeveloperInfo">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata.JkDeveloperInfo</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -183,10 +224,10 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkLicenseInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata.JkLicenseInfo">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkLicenseInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkLicenseInfo</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkLicenseInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata.JkLicenseInfo</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -209,10 +250,10 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkProjectInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata.JkScmInfo">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkProjectInfo</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata.JkScmInfo</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -222,82 +263,20 @@
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockList">
-<h4>name</h4>
-<pre>java.lang.String name</pre>
-<div class="block">Public name of the project.</div>
+<h4>__</h4>
+<pre>java.lang.Object __</pre>
 </li>
-<li class="blockList">
-<h4>description</h4>
-<pre>java.lang.String description</pre>
-<div class="block">Description for the project.</div>
-</li>
-<li class="blockListLast">
-<h4>url</h4>
-<pre>java.lang.String url</pre>
-<div class="block">Url site of the project.</div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkScmInfo">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkMavenPublicationInfo.JkScmInfo</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
 <li class="blockList">
 <h4>connection</h4>
 <pre>java.lang.String connection</pre>
-<div class="block">Read-only connection string to project sources</div>
 </li>
 <li class="blockList">
 <h4>developerConnection</h4>
 <pre>java.lang.String developerConnection</pre>
-<div class="block">Read-write connection string to project sources</div>
 </li>
 <li class="blockListLast">
 <h4>url</h4>
 <pre>java.lang.String url</pre>
-<div class="block">Publicly browsable repository url</div>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkRepo.JkPublishConfig">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkRepo.JkPublishConfig</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>filter</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkPublishFilter.html" title="interface in dev.jeka.core.api.depmanagement">JkPublishFilter</a> filter</pre>
-</li>
-<li class="blockList">
-<h4>signatureRequired</h4>
-<pre>boolean signatureRequired</pre>
-</li>
-<li class="blockList">
-<h4>uniqueSnapshot</h4>
-<pre>boolean uniqueSnapshot</pre>
-</li>
-<li class="blockListLast">
-<h4>checksumAlgos</h4>
-<pre>java.util.Set&lt;E&gt; checksumAlgos</pre>
 </li>
 </ul>
 </li>
@@ -330,136 +309,260 @@
 </ul>
 </li>
 <li class="blockList">
-<h2 title="Package">Package&nbsp;dev.jeka.core.api.java.junit</h2>
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.file</h2>
 <ul class="blockList">
-<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult">
+<li class="blockList"><a name="dev.jeka.core.api.file.JkPathSequence">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>-5353195584286473050L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>suiteName</h4>
-<pre>java.lang.String suiteName</pre>
-</li>
-<li class="blockList">
-<h4>testCaseResults</h4>
-<pre>java.util.List&lt;E&gt; testCaseResults</pre>
-</li>
-<li class="blockList">
-<h4>runCount</h4>
-<pre>int runCount</pre>
-</li>
-<li class="blockList">
-<h4>ignoreCount</h4>
-<pre>int ignoreCount</pre>
-</li>
-<li class="blockList">
-<h4>durationInMilis</h4>
-<pre>long durationInMilis</pre>
-</li>
-<li class="blockListLast">
-<h4>systemProperties</h4>
-<pre>java.util.Properties systemProperties</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkExceptionDescription">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkExceptionDescription</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>-8619868712236132763L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>className</h4>
-<pre>java.lang.String className</pre>
-</li>
-<li class="blockList">
-<h4>message</h4>
-<pre>java.lang.String message</pre>
-</li>
-<li class="blockList">
-<h4>stackTrace</h4>
-<pre>java.lang.StackTraceElement[] stackTrace</pre>
-</li>
-<li class="blockList">
-<h4>cause</h4>
-<pre><a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkExceptionDescription</a> cause</pre>
-</li>
-<li class="blockListLast">
-<h4>assertError</h4>
-<pre>boolean assertError</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkIgnoredCase">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkIgnoredCase.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkIgnoredCase</a> extends <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkTestCaseResult</a> implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">dev.jeka.core.api.file.JkPathSequence</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
 </dl>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseFailure">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseFailure.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseFailure</a> extends <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkTestCaseResult</a> implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>7089021299483181605L</dd>
-</dl>
 <ul class="blockList">
+<li class="blockList">
+<h3>Serialization Methods</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>readObject</h4>
+<pre>private&nbsp;void&nbsp;readObject(java.io.ObjectInputStream&nbsp;ois)
+                 throws java.io.IOException,
+                        java.lang.ClassNotFoundException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+<dd><code>java.lang.ClassNotFoundException</code></dd>
+</dl>
+</li>
+<li class="blockListLast">
+<h4>writeObject</h4>
+<pre>private&nbsp;void&nbsp;writeObject(java.io.ObjectOutputStream&nbsp;oos)
+                  throws java.io.IOException</pre>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.io.IOException</code></dd>
+</dl>
+</li>
+</ul>
+</li>
 <li class="blockList">
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockListLast">
-<h4>jkExceptionDescription</h4>
-<pre><a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkExceptionDescription.html" title="class in dev.jeka.core.api.java.junit">JkTestSuiteResult.JkExceptionDescription</a> jkExceptionDescription</pre>
+<h4>entries</h4>
+<pre>java.util.List&lt;E&gt; entries</pre>
 </li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseResult">
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.function</h2>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.java.testing</h2>
+<ul class="blockList">
+<li class="blockList"><a name="dev.jeka.core.api.java.testing.JkTestProcessor.JkEngineBehavior">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/java/junit/JkTestSuiteResult.JkTestCaseResult.html" title="class in dev.jeka.core.api.java.junit">dev.jeka.core.api.java.junit.JkTestSuiteResult.JkTestCaseResult</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/java/testing/JkTestProcessor.JkEngineBehavior.html" title="class in dev.jeka.core.api.java.testing">dev.jeka.core.api.java.testing.JkTestProcessor.JkEngineBehavior</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
-<dd>7089021299003181605L</dd>
+<dd>1L</dd>
 </dl>
 <ul class="blockList">
 <li class="blockList">
 <h3>Serialized Fields</h3>
 <ul class="blockList">
 <li class="blockList">
-<h4>className</h4>
-<pre>java.lang.String className</pre>
+<h4>legacyReportDir</h4>
+<pre>java.lang.String legacyReportDir</pre>
 </li>
 <li class="blockList">
-<h4>testName</h4>
-<pre>java.lang.String testName</pre>
+<h4>progressDisplayer</h4>
+<pre><a href="dev/jeka/core/api/java/testing/JkTestProcessor.JkProgressOutputStyle.html" title="enum in dev.jeka.core.api.java.testing">JkTestProcessor.JkProgressOutputStyle</a> progressDisplayer</pre>
 </li>
 <li class="blockListLast">
-<h4>durationInSecond</h4>
-<pre>float durationInSecond</pre>
+<h4>launcherConfigurer</h4>
+<pre><a href="dev/jeka/core/api/function/JkUnaryOperator.html" title="interface in dev.jeka.core.api.function">JkUnaryOperator</a>&lt;<a href="dev/jeka/core/api/function/JkUnaryOperator.html" title="type parameter in JkUnaryOperator">T</a>&gt; launcherConfigurer</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.testing.JkTestResult">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/testing/JkTestResult.html" title="class in dev.jeka.core.api.java.testing">dev.jeka.core.api.java.testing.JkTestResult</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>timeStarted</h4>
+<pre>long timeStarted</pre>
+</li>
+<li class="blockList">
+<h4>timeFinished</h4>
+<pre>long timeFinished</pre>
+</li>
+<li class="blockList">
+<h4>containerCount</h4>
+<pre><a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html" title="class in dev.jeka.core.api.java.testing">JkTestResult.JkCount</a> containerCount</pre>
+</li>
+<li class="blockList">
+<h4>testCount</h4>
+<pre><a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html" title="class in dev.jeka.core.api.java.testing">JkTestResult.JkCount</a> testCount</pre>
+</li>
+<li class="blockListLast">
+<h4>failures</h4>
+<pre>java.util.List&lt;E&gt; failures</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.testing.JkTestResult.JkCount">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/testing/JkTestResult.JkCount.html" title="class in dev.jeka.core.api.java.testing">dev.jeka.core.api.java.testing.JkTestResult.JkCount</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>found</h4>
+<pre>long found</pre>
+</li>
+<li class="blockList">
+<h4>started</h4>
+<pre>long started</pre>
+</li>
+<li class="blockList">
+<h4>skipped</h4>
+<pre>long skipped</pre>
+</li>
+<li class="blockList">
+<h4>aborted</h4>
+<pre>long aborted</pre>
+</li>
+<li class="blockList">
+<h4>succeded</h4>
+<pre>long succeded</pre>
+</li>
+<li class="blockListLast">
+<h4>failed</h4>
+<pre>long failed</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.testing.JkTestResult.JkFailure">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/testing/JkTestResult.JkFailure.html" title="class in dev.jeka.core.api.java.testing">dev.jeka.core.api.java.testing.JkTestResult.JkFailure</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>testId</h4>
+<pre><a href="dev/jeka/core/api/java/testing/JkTestResult.JkTestIdentifier.html" title="class in dev.jeka.core.api.java.testing">JkTestResult.JkTestIdentifier</a> testId</pre>
+</li>
+<li class="blockList">
+<h4>throwableMessage</h4>
+<pre>java.lang.String throwableMessage</pre>
+</li>
+<li class="blockListLast">
+<h4>tacktraces</h4>
+<pre>java.lang.StackTraceElement[] tacktraces</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.testing.JkTestResult.JkTestIdentifier">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/testing/JkTestResult.JkTestIdentifier.html" title="class in dev.jeka.core.api.java.testing">dev.jeka.core.api.java.testing.JkTestResult.JkTestIdentifier</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>type</h4>
+<pre><a href="dev/jeka/core/api/java/testing/JkTestResult.JkTestIdentifier.JkType.html" title="enum in dev.jeka.core.api.java.testing">JkTestResult.JkTestIdentifier.JkType</a> type</pre>
+</li>
+<li class="blockList">
+<h4>id</h4>
+<pre>java.lang.String id</pre>
+</li>
+<li class="blockList">
+<h4>displayName</h4>
+<pre>java.lang.String displayName</pre>
+</li>
+<li class="blockListLast">
+<h4>tags</h4>
+<pre>java.util.Set&lt;E&gt; tags</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.java.testing.JkTestSelection">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/java/testing/JkTestSelection.html" title="class in dev.jeka.core.api.java.testing">dev.jeka.core.api.java.testing.JkTestSelection</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>testClassRoots</h4>
+<pre><a href="dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a> testClassRoots</pre>
+</li>
+<li class="blockList">
+<h4>includePatterns</h4>
+<pre>java.util.Set&lt;E&gt; includePatterns</pre>
+</li>
+<li class="blockList">
+<h4>excludePatterns</h4>
+<pre>java.util.Set&lt;E&gt; excludePatterns</pre>
+</li>
+<li class="blockList">
+<h4>includeTags</h4>
+<pre>java.util.Set&lt;E&gt; includeTags</pre>
+</li>
+<li class="blockList">
+<h4>excludeTags</h4>
+<pre>java.util.Set&lt;E&gt; excludeTags</pre>
+</li>
+<li class="blockListLast">
+<h4>discoveryConfigurer</h4>
+<pre><a href="dev/jeka/core/api/function/JkUnaryOperator.html" title="interface in dev.jeka.core.api.function">JkUnaryOperator</a>&lt;<a href="dev/jeka/core/api/function/JkUnaryOperator.html" title="type parameter in JkUnaryOperator">T</a>&gt; discoveryConfigurer</pre>
 </li>
 </ul>
 </li>
@@ -470,19 +573,10 @@
 <li class="blockList">
 <h2 title="Package">Package&nbsp;dev.jeka.core.api.system</h2>
 <ul class="blockList">
-<li class="blockList"><a name="dev.jeka.core.api.system.JkException">
+<li class="blockList"><a name="dev.jeka.core.api.system.JkHierarchicalConsoleLogConsumer">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/system/JkException.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkException</a> extends java.lang.RuntimeException implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.system.JkHierarchicalConsoleLogHandler">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogHandler.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkHierarchicalConsoleLogHandler</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogConsumer.html" title="class in dev.jeka.core.api.system">dev.jeka.core.api.system.JkHierarchicalConsoleLogConsumer</a> extends java.lang.Object implements Serializable</h3>
 <ul class="blockList">
 <li class="blockList">
 <h3>Serialization Methods</h3>

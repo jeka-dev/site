@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenMetadata.Versioning.JkSnapshot.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.JkClassifiedFileArtifact.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkMavenPublication.html" target="_top">Frames</a></li>
@@ -72,14 +72,14 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -91,14 +91,14 @@ var activeTableTab = "activeTableTab";
 <!-- ======== START OF CLASS DATA ======== -->
 <div class="header">
 <div class="subTitle">dev.jeka.core.api.depmanagement</div>
-<h2 title="Class JkMavenPublication" class="title">Class JkMavenPublication</h2>
+<h2 title="Class JkMavenPublication" class="title">Class JkMavenPublication&lt;T&gt;</h2>
 </div>
 <div class="contentContainer">
 <ul class="inheritance">
 <li>java.lang.Object</li>
 <li>
 <ul class="inheritance">
-<li>dev.jeka.core.api.depmanagement.JkMavenPublication</li>
+<li>dev.jeka.core.api.depmanagement.JkMavenPublication&lt;T&gt;</li>
 </ul>
 </li>
 </ul>
@@ -107,7 +107,7 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <hr>
 <br>
-<pre>public final class <span class="typeNameLabel">JkMavenPublication</span>
+<pre>public final class <span class="typeNameLabel">JkMavenPublication&lt;T&gt;</span>
 extends java.lang.Object</pre>
 <div class="block">Publication specific information to include in POM file in order to be published of a Maven repository.
  These information contains : <ul>
@@ -120,23 +120,21 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
-<!-- ======== NESTED CLASS SUMMARY ======== -->
+<!-- =========== FIELD SUMMARY =========== -->
 <ul class="blockList">
-<li class="blockList"><a name="nested.class.summary">
+<li class="blockList"><a name="field.summary">
 <!--   -->
 </a>
-<h3>Nested Class Summary</h3>
-<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
-<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
-<th class="colLast" scope="col">Class and Description</th>
+<th class="colLast" scope="col">Field and Description</th>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.JkClassifiedFileArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication.JkClassifiedFileArtifact</a></span></code>
-<div class="block">An artifact with a classifier for Maven repository.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#Z:Z__">__</a></span></code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -154,82 +152,63 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#and-java.nio.file.Path-java.lang.String-">and</a></span>(java.nio.file.Path&nbsp;file,
-   java.lang.String&nbsp;classifier)</code>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkMavenPublication</code></a> identical to this one but adding a classified artifact.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getArtifactLocator--">getArtifactLocator</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#andOptional-java.nio.file.Path-java.lang.String-">andOptional</a></span>(java.nio.file.Path&nbsp;file,
-           java.lang.String&nbsp;classifier)</code>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#and-java.nio.file.Path-java.lang.String-"><code>and(Path, String)</code></a> but effective only if the specified file exists.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getDependencies--">getDependencies</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#andOptionalIf-boolean-java.nio.file.Path-java.lang.String-">andOptionalIf</a></span>(boolean&nbsp;conditional,
-             java.nio.file.Path&nbsp;file,
-             java.lang.String&nbsp;classifier)</code>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#andOptional-java.nio.file.Path-java.lang.String-"><code>andOptional(Path, String)</code></a>  but effective only if the specified condition is <code>true</code></div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getPomMetadata--">getPomMetadata</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.JkClassifiedFileArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication.JkClassifiedFileArtifact</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getClassifiedArtifacts--">getClassifiedArtifacts</a></span>()</code>
-<div class="block">Files constituting classified artifacts</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getVersionedModule--">getVersionedModule</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getExtraInfo--">getExtraInfo</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;java.lang.Void&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#of--">of</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;java.nio.file.Path&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#getMainArtifactFiles--">getMainArtifactFiles</a></span>()</code>
-<div class="block">Files constituting main artifact</div>
-</td>
+<td class="colFirst"><code>static &lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;T&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#of-T-">of</a></span>(T&nbsp;parent)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#of-dev.jeka.core.api.depmanagement.JkArtifactLocator-java.util.Set-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&nbsp;artifactLocator,
-  java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;excludedArtifacts)</code>
-<div class="block">Creates a Maven publication to publish all artifacts referenced in the specified artifact locator.</div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#publish-dev.jeka.core.api.depmanagement.JkRepoSet-java.util.function.UnaryOperator-">publish</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;repos,
+       java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>
+<div class="block">Publishes the specified publication on the Maven repositories of this publisher.</div>
 </td>
 </tr>
 <tr id="i7" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#of-java.nio.file.Path-">of</a></span>(java.nio.file.Path&nbsp;file)</code>
-<div class="block">Creates a Maven publication specifying the file to publish as main artifact.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#setArtifactLocator-dev.jeka.core.api.depmanagement.JkArtifactLocator-">setArtifactLocator</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&nbsp;artifactLocatorArg)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#toString--">toString</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#setArtifactLocator-java.util.function.Supplier-">setArtifactLocator</a></span>(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&gt;&nbsp;artifactLocator)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#with-dev.jeka.core.api.depmanagement.JkMavenPublicationInfo-">with</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;extraInfo)</code>
-<div class="block">Returns a new publication based on this one but with the specified
- publication extra infoString required to publish on Maven central repository.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#setDependencies-java.util.function.Function-">setDependencies</a></span>(java.util.function.Function&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#withChecksums-java.util.Set-">withChecksums</a></span>(java.util.Set&lt;java.lang.String&gt;&nbsp;checksumAlgos)</code>
-<div class="block">Returns a new publication based on this one but with the specified signer to sign published artifacts.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</code>&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#withChecksums-java.lang.String...-">withChecksums</a></span>(java.lang.String...&nbsp;algos)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">setVersionedModule</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModuleArg)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#withSigner-java.util.function.UnaryOperator-">withSigner</a></span>(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>
-<div class="block">Returns a new publication based on this one but with the specified signer to sign published artifacts.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#setVersionedModule-java.util.function.Supplier-">setVersionedModule</a></span>(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&gt;&nbsp;versionedModule)</code>&nbsp;</td>
+</tr>
+<tr id="i13" class="rowColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -247,139 +226,152 @@ extends java.lang.Object</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a> __</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="of-java.nio.file.Path-">
+<a name="of-java.lang.Object-">
+<!--   -->
+</a><a name="of-T-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;of(java.nio.file.Path&nbsp;file)</pre>
-<div class="block">Creates a Maven publication specifying the file to publish as main artifact.</div>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;T&gt;&nbsp;of(T&nbsp;parent)</pre>
 </li>
 </ul>
-<a name="of-dev.jeka.core.api.depmanagement.JkArtifactLocator-java.util.Set-">
+<a name="of--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;of(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&nbsp;artifactLocator,
-                                    java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&gt;&nbsp;excludedArtifacts)</pre>
-<div class="block">Creates a Maven publication to publish all artifacts referenced in the specified artifact locator.</div>
+<pre>public static&nbsp;&lt;T&gt;&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;java.lang.Void&gt;&nbsp;of()</pre>
 </li>
 </ul>
-<a name="and-java.nio.file.Path-java.lang.String-">
+<a name="getPomMetadata--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;and(java.nio.file.Path&nbsp;file,
-                              java.lang.String&nbsp;classifier)</pre>
-<div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement"><code>JkMavenPublication</code></a> identical to this one but adding a classified artifact.</div>
+<h4>getPomMetadata</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkPomMetadata.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&gt;&nbsp;getPomMetadata()</pre>
 </li>
 </ul>
-<a name="with-dev.jeka.core.api.depmanagement.JkMavenPublicationInfo-">
+<a name="setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>with</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;with(<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;extraInfo)</pre>
-<div class="block">Returns a new publication based on this one but with the specified
- publication extra infoString required to publish on Maven central repository.</div>
+<h4>setDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&nbsp;setDependencies(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</pre>
 </li>
 </ul>
-<a name="withSigner-java.util.function.UnaryOperator-">
+<a name="setDependencies-java.util.function.Function-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withSigner</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;withSigner(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
-<div class="block">Returns a new publication based on this one but with the specified signer to sign published artifacts.</div>
+<h4>setDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&nbsp;setDependencies(java.util.function.Function&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
 </li>
 </ul>
-<a name="withChecksums-java.util.Set-">
+<a name="getDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withChecksums</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;withChecksums(java.util.Set&lt;java.lang.String&gt;&nbsp;checksumAlgos)</pre>
-<div class="block">Returns a new publication based on this one but with the specified signer to sign published artifacts.</div>
+<h4>getDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getDependencies()</pre>
 </li>
 </ul>
-<a name="withChecksums-java.lang.String...-">
+<a name="getVersionedModule--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withChecksums</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;withChecksums(java.lang.String...&nbsp;algos)</pre>
+<h4>getVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;getVersionedModule()</pre>
+</li>
+</ul>
+<a name="setVersionedModule-java.util.function.Supplier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&nbsp;setVersionedModule(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&gt;&nbsp;versionedModule)</pre>
+</li>
+</ul>
+<a name="setVersionedModule-dev.jeka.core.api.depmanagement.JkVersionedModule-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setVersionedModule</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&nbsp;setVersionedModule(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;versionedModuleArg)</pre>
+</li>
+</ul>
+<a name="getArtifactLocator--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getArtifactLocator</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&nbsp;getArtifactLocator()</pre>
+</li>
+</ul>
+<a name="setArtifactLocator-java.util.function.Supplier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setArtifactLocator</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&nbsp;setArtifactLocator(java.util.function.Supplier&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&gt;&nbsp;artifactLocator)</pre>
+</li>
+</ul>
+<a name="setArtifactLocator-dev.jeka.core.api.depmanagement.JkArtifactLocator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setArtifactLocator</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="type parameter in JkMavenPublication">T</a>&gt;&nbsp;setArtifactLocator(<a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactLocator.html" title="interface in dev.jeka.core.api.depmanagement">JkArtifactLocator</a>&nbsp;artifactLocatorArg)</pre>
+</li>
+</ul>
+<a name="publish-dev.jeka.core.api.depmanagement.JkRepoSet-java.util.function.UnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>publish</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;publish(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;repos,
+                                  java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
+<div class="block">Publishes the specified publication on the Maven repositories of this publisher.</div>
 <dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#withChecksums-java.util.Set-"><code>withChecksums(Set)</code></a></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>signer</code> - can be null.</dd>
 </dl>
-</li>
-</ul>
-<a name="andOptional-java.nio.file.Path-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>andOptional</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;andOptional(java.nio.file.Path&nbsp;file,
-                                      java.lang.String&nbsp;classifier)</pre>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#and-java.nio.file.Path-java.lang.String-"><code>and(Path, String)</code></a> but effective only if the specified file exists.
- If not the case, this method returns this object.</div>
-</li>
-</ul>
-<a name="andOptionalIf-boolean-java.nio.file.Path-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>andOptionalIf</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&nbsp;andOptionalIf(boolean&nbsp;conditional,
-                                        java.nio.file.Path&nbsp;file,
-                                        java.lang.String&nbsp;classifier)</pre>
-<div class="block">Same as <a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html#andOptional-java.nio.file.Path-java.lang.String-"><code>andOptional(Path, String)</code></a>  but effective only if the specified condition is <code>true</code></div>
-</li>
-</ul>
-<a name="getMainArtifactFiles--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getMainArtifactFiles</h4>
-<pre>public&nbsp;java.util.List&lt;java.nio.file.Path&gt;&nbsp;getMainArtifactFiles()</pre>
-<div class="block">Files constituting main artifact</div>
-</li>
-</ul>
-<a name="getClassifiedArtifacts--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getClassifiedArtifacts</h4>
-<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.JkClassifiedFileArtifact.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication.JkClassifiedFileArtifact</a>&gt;&nbsp;getClassifiedArtifacts()</pre>
-<div class="block">Files constituting classified artifacts</div>
-</li>
-</ul>
-<a name="getExtraInfo--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getExtraInfo</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublicationInfo.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublicationInfo</a>&nbsp;getExtraInfo()</pre>
 </li>
 </ul>
 <a name="toString--">
@@ -423,7 +415,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenMetadata.Versioning.JkSnapshot.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.JkClassifiedFileArtifact.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkMavenPublication.html" target="_top">Frames</a></li>
@@ -447,14 +439,14 @@ extends java.lang.Object</pre>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

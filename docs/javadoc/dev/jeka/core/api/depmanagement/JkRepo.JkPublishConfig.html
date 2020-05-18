@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":10,"i8":10,"i9":10,"i10":10};
-var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredential.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredentials.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" target="_top">Frames</a></li>
@@ -73,13 +73,13 @@ var activeTableTab = "activeTableTab";
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>
@@ -106,29 +106,39 @@ var activeTableTab = "activeTableTab";
 <ul class="blockList">
 <li class="blockList">
 <dl>
-<dt>All Implemented Interfaces:</dt>
-<dd>java.io.Serializable</dd>
-</dl>
-<dl>
 <dt>Enclosing class:</dt>
 <dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public static class <span class="typeNameLabel">JkRepo.JkPublishConfig</span>
-extends java.lang.Object
-implements java.io.Serializable</pre>
+extends java.lang.Object</pre>
 <div class="block">Configuration specific to publishing.</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../serialized-form.html#dev.jeka.core.api.depmanagement.JkRepo.JkPublishConfig">Serialized Form</a></dd>
-</dl>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- =========== FIELD SUMMARY =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.summary">
+<!--   -->
+</a>
+<h3>Field Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Field Summary table, listing fields, and an explanation">
+<caption><span>Fields</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Field and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#Z:Z__">__</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -136,7 +146,7 @@ implements java.io.Serializable</pre>
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t1" class="tableTab"><span><a href="javascript:show(1);">Static Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t4" class="tableTab"><span><a href="javascript:show(8);">Concrete Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -146,8 +156,8 @@ implements java.io.Serializable</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#getChecksumAlgos--">getChecksumAlgos</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkPublishFilter.html" title="interface in dev.jeka.core.api.depmanagement">JkPublishFilter</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#getFilter--">getFilter</a></span>()</code>
+<td class="colFirst"><code>java.util.function.Predicate&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#getVersionFilter--">getVersionFilter</a></span>()</code>
 <div class="block">Returns the filter used for this <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a>.</div>
 </td>
 </tr>
@@ -160,36 +170,20 @@ implements java.io.Serializable</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#isUniqueSnapshot--">isUniqueSnapshot</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#of--">of</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setChecksumAlgos-java.lang.String...-">setChecksumAlgos</a></span>(java.lang.String...&nbsp;algos)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#ofReleaseOnly-boolean-">ofReleaseOnly</a></span>(boolean&nbsp;needSignature)</code>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a> for publishing non-snapshot version on the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a>.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setSignatureRequired-boolean-">setSignatureRequired</a></span>(boolean&nbsp;signatureRequired)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#ofSnapshotOnly-boolean-">ofSnapshotOnly</a></span>(boolean&nbsp;uniqueSnapshot)</code>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a> for publishing snapshot version on the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a>.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setUniqueSnapshot-boolean-">setUniqueSnapshot</a></span>(boolean&nbsp;uniqueSnapshot)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#withChecksumAlgos-java.lang.String...-">withChecksumAlgos</a></span>(java.lang.String...&nbsp;algos)</code>&nbsp;</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#withFilter-dev.jeka.core.api.depmanagement.JkPublishFilter-">withFilter</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkPublishFilter.html" title="interface in dev.jeka.core.api.depmanagement">JkPublishFilter</a>&nbsp;filter)</code>&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#withNeedSignature-boolean-">withNeedSignature</a></span>(boolean&nbsp;needSignature)</code>&nbsp;</td>
-</tr>
-<tr id="i10" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#withUniqueSnapshot-boolean-">withUniqueSnapshot</a></span>(boolean&nbsp;uniqueSnapshot)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setVersionFilter-java.util.function.Predicate-">setVersionFilter</a></span>(java.util.function.Predicate&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;&nbsp;versionFilter)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -207,50 +201,36 @@ implements java.io.Serializable</pre>
 <div class="details">
 <ul class="blockList">
 <li class="blockList">
+<!-- ============ FIELD DETAIL =========== -->
+<ul class="blockList">
+<li class="blockList"><a name="field.detail">
+<!--   -->
+</a>
+<h3>Field Detail</h3>
+<a name="Z:Z__">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>__</h4>
+<pre>public final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a> __</pre>
+</li>
+</ul>
+</li>
+</ul>
 <!-- ============ METHOD DETAIL ========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.detail">
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="of--">
+<a name="getVersionFilter--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;of()</pre>
-</li>
-</ul>
-<a name="ofSnapshotOnly-boolean-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofSnapshotOnly</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;ofSnapshotOnly(boolean&nbsp;uniqueSnapshot)</pre>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a> for publishing snapshot version on the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a>.
- Release versions are not publishable on this <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a></div>
-</li>
-</ul>
-<a name="ofReleaseOnly-boolean-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofReleaseOnly</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;ofReleaseOnly(boolean&nbsp;needSignature)</pre>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a> for publishing non-snapshot version on the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a>.
- Snapshot versions are not publishable on this <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a></div>
-</li>
-</ul>
-<a name="getFilter--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getFilter</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkPublishFilter.html" title="interface in dev.jeka.core.api.depmanagement">JkPublishFilter</a>&nbsp;getFilter()</pre>
+<h4>getVersionFilter</h4>
+<pre>public&nbsp;java.util.function.Predicate&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;&nbsp;getVersionFilter()</pre>
 <div class="block">Returns the filter used for this <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a>.
  Only modules accepted by this filter will pb published on this repo.</div>
 </li>
@@ -282,40 +262,40 @@ implements java.io.Serializable</pre>
 <pre>public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getChecksumAlgos()</pre>
 </li>
 </ul>
-<a name="withUniqueSnapshot-boolean-">
+<a name="setUniqueSnapshot-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withUniqueSnapshot</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;withUniqueSnapshot(boolean&nbsp;uniqueSnapshot)</pre>
+<h4>setUniqueSnapshot</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;setUniqueSnapshot(boolean&nbsp;uniqueSnapshot)</pre>
 </li>
 </ul>
-<a name="withNeedSignature-boolean-">
+<a name="setSignatureRequired-boolean-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withNeedSignature</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;withNeedSignature(boolean&nbsp;needSignature)</pre>
+<h4>setSignatureRequired</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;setSignatureRequired(boolean&nbsp;signatureRequired)</pre>
 </li>
 </ul>
-<a name="withFilter-dev.jeka.core.api.depmanagement.JkPublishFilter-">
+<a name="setVersionFilter-java.util.function.Predicate-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withFilter</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;withFilter(<a href="../../../../../dev/jeka/core/api/depmanagement/JkPublishFilter.html" title="interface in dev.jeka.core.api.depmanagement">JkPublishFilter</a>&nbsp;filter)</pre>
+<h4>setVersionFilter</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;setVersionFilter(java.util.function.Predicate&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;&nbsp;versionFilter)</pre>
 </li>
 </ul>
-<a name="withChecksumAlgos-java.lang.String...-">
+<a name="setChecksumAlgos-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>withChecksumAlgos</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;withChecksumAlgos(java.lang.String...&nbsp;algos)</pre>
+<h4>setChecksumAlgos</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;setChecksumAlgos(java.lang.String...&nbsp;algos)</pre>
 </li>
 </ul>
 </li>
@@ -346,7 +326,7 @@ implements java.io.Serializable</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredential.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredentials.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" target="_top">Frames</a></li>
@@ -371,13 +351,13 @@ implements java.io.Serializable</pre>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
 <li>Nested&nbsp;|&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.summary">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
 </ul>
 <ul class="subNavList">
 <li>Detail:&nbsp;</li>
-<li>Field&nbsp;|&nbsp;</li>
+<li><a href="#field.detail">Field</a>&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.detail">Method</a></li>
 </ul>

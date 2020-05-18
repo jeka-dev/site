@@ -291,9 +291,14 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setup</h4>
-<pre>protected&nbsp;void&nbsp;setup()</pre>
+<pre>protected&nbsp;void&nbsp;setup()
+              throws java.lang.Exception</pre>
 <div class="block">This method is invoked right after options has been injected into this instance. Here, You will typically
  configure plugins before they are activated.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code></dd>
+</dl>
 </li>
 </ul>
 <a name="setupAfterPluginActivations--">
@@ -302,9 +307,14 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>setupAfterPluginActivations</h4>
-<pre>protected&nbsp;void&nbsp;setupAfterPluginActivations()</pre>
+<pre>protected&nbsp;void&nbsp;setupAfterPluginActivations()
+                                    throws java.lang.Exception</pre>
 <div class="block">This method is called once all plugin has been activated. This method is intended to overwrite what plugin
  activation has setup.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code></dd>
+</dl>
 </li>
 </ul>
 <a name="getBaseTree--">
