@@ -1590,7 +1590,7 @@
 <div class="block">The <a href="dev/jeka/core/api/depmanagement/JkDependencyExclusions.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencyExclusions</code></a> instance provided by the <code>dependencyManagement</code>
  section of this POM.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#getDependencyManagement--">getDependencyManagement()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getDependencyManagement--">getDependencyManagement()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html#getDependencyResolver--">getDependencyResolver()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></dt>
 <dd>&nbsp;</dd>
@@ -2100,6 +2100,8 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestProcessor.JkEngineBehavior.html#getProgressDisplayer--">getProgressDisplayer()</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestProcessor.JkEngineBehavior.html" title="class in dev.jeka.core.api.java.testing">JkTestProcessor.JkEngineBehavior</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getProject--">getProject()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#getProject--">getProject()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#getProjectIde-dev.jeka.core.tool.JkCommandSet-">getProjectIde(JkCommandSet)</a></span> - Static method in class dev.jeka.core.tool.builtins.eclipse.<a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a></dt>
@@ -2295,7 +2297,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/testing/JkTestResult.JkFailure.html#getTestId--">getTestId()</a></span> - Method in class dev.jeka.core.api.java.testing.<a href="dev/jeka/core/api/java/testing/JkTestResult.JkFailure.html" title="class in dev.jeka.core.api.java.testing">JkTestResult.JkFailure</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProject.html#getTesting--">getTesting()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getTesting--">getTesting()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html#getTestLayout--">getTestLayout()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></dt>
 <dd>&nbsp;</dd>
@@ -3149,35 +3151,29 @@
 </dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProject</span></a> - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
 <dd>
-<div class="block">Container for a Java project with classic characteristic :
+<div class="block">A Java project consists in 3 parts : 
+    <a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectProduction</code></a> : responsible to compile, tests and make jars
+    <a href="dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectDocumentation</code></a> : responsible to creates javadoc, sources jar and others
+    <a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectPublication</code></a> : responsible to publish the artifacts on binary repositories (Maven or Ivy)
  
-     Contains Java source files to be compiled
-     All Java sources file (prod + test) are wrote against the same Java version and encoding
-     JkJavaProject may contain unit tests
-     It can depends on any accepted dependencies (Maven module, other project, files on fs, ...)
-     It produces a bin jar, a source jar and a javadoc jar
-     It can produce any other artifact files (fat-jar, test jar, doc, ...)
-     It can be identified as a Maven module (means it can provide a group, artifact id, version) in order to be published/consumed
-     It can be published on any Maven/Ivy repository, including Maven central
-     Part of the sources/resources may be generated
-     By default, passing test suite is required to produce bin artifacts.
- 
-
- It provides cache mechanism in order compile or unit test phases are executed once when generating
- several artifact files so be aware of clean it if you want to replay some tasks with different settings.</div>
+ Each of these parts are optional.</div>
 </dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProjectCompilation.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProjectCompilation</span></a>&lt;<a href="dev/jeka/core/api/java/project/JkJavaProjectCompilation.html" title="type parameter in JkJavaProjectCompilation">T</a>&gt; - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
 <dd>
 <div class="block">Handles project compilation step.</div>
 </dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProjectDocumentation</span></a> - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Responsible to create Javadoc and Source jar.</div>
+</dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProjectProduction</span></a> - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
 <dd>
-<div class="block">Tasks for packaging artifacts created by the holding project.</div>
+<div class="block">Responsible to produce jar files.</div>
 </dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProjectPublication</span></a> - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
-<dd>&nbsp;</dd>
+<dd>
+<div class="block">Responsible to publish artifacts on the repository.</div>
+</dd>
 <dt><a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project"><span class="typeNameLink">JkJavaProjectTesting</span></a> - Class in <a href="dev/jeka/core/api/java/project/package-summary.html">dev.jeka.core.api.java.project</a></dt>
 <dd>
 <div class="block">Handles project testing step.</div>
@@ -4338,6 +4334,8 @@
 <div class="block">Constructs a <a href="dev/jeka/core/api/tooling/intellij/JkImlGenerator.html" title="class in dev.jeka.core.api.tooling.intellij"><code>JkImlGenerator</code></a> to the project base directory</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/JkGitWrapper.html#of-java.nio.file.Path-">of(Path)</a></span> - Static method in class dev.jeka.core.api.tooling.<a href="dev/jeka/core/api/tooling/JkGitWrapper.html" title="class in dev.jeka.core.api.tooling">JkGitWrapper</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/JkGitWrapper.html#of-java.lang.String-">of(String)</a></span> - Static method in class dev.jeka.core.api.tooling.<a href="dev/jeka/core/api/tooling/JkGitWrapper.html" title="class in dev.jeka.core.api.tooling">JkGitWrapper</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/JkMvn.html#of-java.nio.file.Path-java.lang.String...-">of(Path, String...)</a></span> - Static method in class dev.jeka.core.api.tooling.<a href="dev/jeka/core/api/tooling/JkMvn.html" title="class in dev.jeka.core.api.tooling">JkMvn</a></dt>
 <dd>

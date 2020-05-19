@@ -502,9 +502,15 @@ artifacts. The API embrace the <em>parent-chaining</em> pattern.</p>
 <p>This is a pretty complete example taken from the Jeka build itself.</p>
 <pre><code>project
     .getProduction()
+        .getDependencyManagement()
+           .addDependencies(JkDependencySet.of()
+               .and(&quot;com.google.guava:guava:21.0&quot;)
+               .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+               .and(&quot;org.junit.jupiter:junit-jupiter-engine:5.1.0&quot;, TEST)
+               .and(&quot;org.junit.vintage:junit-vintage-engine:jar:5.6.0&quot;, TEST)).__
         .getManifest()
-                .addMainClass(&quot;dev.jeka.core.tool.Main&quot;).__
-            .getCompilation()
+            .addMainClass(&quot;dev.jeka.core.tool.Main&quot;).__
+        .getCompilation()
                 .getLayout()
                     .includeSourceDirsInResources().__
                 .addOptions(&quot;-Xlint:none&quot;,&quot;-g&quot;)
@@ -523,30 +529,30 @@ artifacts. The API embrace the <em>parent-chaining</em> pattern.</p>
             .getTestSelection()
                 .addIncludePatterns(JkTestSelection.STANDARD_INCLUDE_PATTERN)
                 .addIncludePatternsIf(runIT, JkTestSelection.IT_INCLUDE_PATTERN).__.__
-        .getDocumentation()
-            .getJavadocProcessor()
-                .setDisplayOutput(false)
-                .addOptions(&quot;-notimestamp&quot;).__.__
-        .getPublication()
-            .setModuleId(&quot;dev.jeka:jeka-core&quot;)
-            .setVersionSupplier(git::getJkVersionFromTags)
-            .setRepos(JkRepoSet.ofOssrhSnapshotAndRelease(ossrhUser, ossrhPwd))
-            .getArtifactProducer()
-                .putMainArtifact(this::doPackWithEmbedded)
-                .putArtifact(DISTRIB_FILE_ID, this::doDistrib)
-                .putArtifact(WRAPPER_ARTIFACT_ID, this::doWrapper).__
-            .getMavenPublication()
-                .getPomMetadata()
-                    .getProjectInfo()
-                        .setName(&quot;jeka&quot;)
-                        .setUrl(&quot;https://jeka.dev&quot;)
-                        .setDescription(&quot;Automate with plain Java code and nothing else.&quot;).__
-                    .getScm()
-                        .setUrl(&quot;https://github.com/jerkar/jeka.git&quot;).__
-                    .addApache2License()
-                    .addGithubDeveloper(&quot;djeang&quot;, &quot;djeangdev@yahoo.fr&quot;).__.__
-            .getPostActions()
-                .append(() -&gt; createGithubRelease());
+    .getDocumentation()
+        .getJavadocProcessor()
+            .setDisplayOutput(false)
+            .addOptions(&quot;-notimestamp&quot;).__.__
+    .getPublication()
+        .setModuleId(&quot;dev.jeka:jeka-core&quot;)
+        .setVersionSupplier(git::getJkVersionFromTags)
+        .setRepos(JkRepoSet.ofOssrhSnapshotAndRelease(ossrhUser, ossrhPwd))
+        .getArtifactProducer()
+            .putMainArtifact(this::doPackWithEmbedded)
+            .putArtifact(DISTRIB_FILE_ID, this::doDistrib)
+            .putArtifact(WRAPPER_ARTIFACT_ID, this::doWrapper).__
+        .getMavenPublication()
+            .getPomMetadata()
+                .getProjectInfo()
+                    .setName(&quot;jeka&quot;)
+                    .setUrl(&quot;https://jeka.dev&quot;)
+                    .setDescription(&quot;Automate with plain Java code and nothing else.&quot;).__
+                .getScm()
+                    .setUrl(&quot;https://github.com/jerkar/jeka.git&quot;).__
+                .addApache2License()
+                .addGithubDeveloper(&quot;djeang&quot;, &quot;djeangdev@yahoo.fr&quot;).__.__
+        .getPostActions()
+            .append(() -&gt; createGithubRelease());
 </code></pre>
 <p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
 deployed along the other ones.</p>
