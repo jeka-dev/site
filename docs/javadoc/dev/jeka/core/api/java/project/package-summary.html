@@ -110,22 +110,12 @@
 <tr class="altColor">
 <td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></td>
 <td class="colLast">
-<div class="block">Container for a Java project with classic characteristic :
+<div class="block">A Java project consists in 3 parts : 
+    <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectProduction</code></a> : responsible to compile, tests and make jars
+    <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectDocumentation</code></a> : responsible to creates javadoc, sources jar and others
+    <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectPublication</code></a> : responsible to publish the artifacts on binary repositories (Maven or Ivy)
  
-     Contains Java source files to be compiled
-     All Java sources file (prod + test) are wrote against the same Java version and encoding
-     JkJavaProject may contain unit tests
-     It can depends on any accepted dependencies (Maven module, other project, files on fs, ...)
-     It produces a bin jar, a source jar and a javadoc jar
-     It can produce any other artifact files (fat-jar, test jar, doc, ...)
-     It can be identified as a Maven module (means it can provide a group, artifact id, version) in order to be published/consumed
-     It can be published on any Maven/Ivy repository, including Maven central
-     Part of the sources/resources may be generated
-     By default, passing test suite is required to produce bin artifacts.
- 
-
- It provides cache mechanism in order compile or unit test phases are executed once when generating
- several artifact files so be aware of clean it if you want to replay some tasks with different settings.</div>
+ Each of these parts are optional.</div>
 </td>
 </tr>
 <tr class="rowColor">
@@ -136,17 +126,21 @@
 </tr>
 <tr class="altColor">
 <td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectDocumentation</a></td>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Responsible to create Javadoc and Source jar.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></td>
 <td class="colLast">
-<div class="block">Tasks for packaging artifacts created by the holding project.</div>
+<div class="block">Responsible to produce jar files.</div>
 </td>
 </tr>
 <tr class="altColor">
 <td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></td>
-<td class="colLast">&nbsp;</td>
+<td class="colLast">
+<div class="block">Responsible to publish artifacts on the repository.</div>
+</td>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></td>

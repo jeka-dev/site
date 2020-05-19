@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -109,7 +109,20 @@ var activeTableTab = "activeTableTab";
 <br>
 <pre>public class <span class="typeNameLabel">JkJavaProjectProduction</span>
 extends java.lang.Object</pre>
-<div class="block">Tasks for packaging artifacts created by the holding project.</div>
+<div class="block">Responsible to produce jar files. It involves compilation and unit testing.
+ Compilation and tests can be run independently without creating jars.
+ <p>
+ Java project production has common characteristic :
+ <ul>
+     <li>Contains Java source files to be compiled</li>
+     <li>All Java sources file (prod + test) are wrote against the same Java version and encoding</li>
+     <li>The project may contain unit tests</li>
+     <li>It can depends on any accepted dependencies (Maven module, other project, files on fs, ...)</li>
+     <li>It produces a bin jar, a source jar and a javadoc jar</li>
+     <li>It can produce any other artifact files (fat-jar, test jar, doc, ...)</li>
+     <li>Part of the sources/resources may be generated</li>
+     <li>By default, passing test suite is required to produce bin artifacts.</li>
+ </ul></div>
 </li>
 </ul>
 </div>
@@ -174,14 +187,26 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getCompilation--">getCompilation</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getDependencyManagement--">getDependencyManagement</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getExtraFilesToIncludeInJar--">getExtraFilesToIncludeInJar</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getManifest--">getManifest</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getProject--">getProject</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#getTesting--">getTesting</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html#setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">setExtraFilesToIncludeInFatJar</a></span>(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</code>
 <div class="block">File trees specified here will be added to the fat jar.</div>
@@ -236,6 +261,15 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&nbsp;apply(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;&nbsp;consumer)</pre>
 </li>
 </ul>
+<a name="getDependencyManagement--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getDependencyManagement</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;&nbsp;getDependencyManagement()</pre>
+</li>
+</ul>
 <a name="getCompilation--">
 <!--   -->
 </a>
@@ -245,6 +279,15 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectCompilation.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectCompilation</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;&nbsp;getCompilation()</pre>
 </li>
 </ul>
+<a name="getTesting--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getTesting</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a>&nbsp;getTesting()</pre>
+</li>
+</ul>
 <a name="getManifest--">
 <!--   -->
 </a>
@@ -252,6 +295,15 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getManifest</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&gt;&nbsp;getManifest()</pre>
+</li>
+</ul>
+<a name="getProject--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getProject</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;getProject()</pre>
 </li>
 </ul>
 <a name="createBinJar-java.nio.file.Path-">
