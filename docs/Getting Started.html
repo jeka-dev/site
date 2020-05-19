@@ -661,32 +661,24 @@ The <em>maker</em> holds the artifacts to produce and how to produce them.
 By default, the production of the main artifact implies unit testing.</p>
 <p>The following example shows how to build 2 projects, one depending on the other. If you are only interested of building
 a standalone project, you can concentrate on the Foo project.</p>
-<pre><code class="language-Java">        // --------------- Foo Project build -------------------------------------------------
+<pre><code class="language-Java">JkJavaProject coreProject = JkJavaProject.of()
+    .setBaseDir(Paths.get(&quot;../dev.jeka.core-samples&quot;))
+     .getProduction().getDependencyManagement()
+        .addDependencies(JkDependencySet.of()
+                .and(&quot;junit:junit:4.13&quot;, JkScope.TEST)).__.__;
 
-        JkVersionProvider versionProvider = JkVersionProvider.of()
-                .and(&quot;com.google.guava:guava&quot;, &quot;21.0&quot;)
-                .and(&quot;junit:junit&quot;, &quot;4.12&quot;);
-
-        JkJavaProject fooProject = JkJavaProject.ofMavenLayout(this.getBaseDir().resolve(&quot;foo&quot;));
-        fooProject.setDependencies(JkDependencySet.of()
-                .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
-                .and(&quot;com.google.guava:guava&quot;)
-                .withVersionProvider(versionProvider)
-        );
-        fooProject.getMaker().addJavadocArtifact();  // Generate Javadoc by default
-
-        // --------------- Bar Project build -------------------------------------------------
-
-        JkJavaProject barProject = JkJavaProject.ofMavenLayout(this.getBaseDir().resolve(&quot;bar&quot;));
-        fooProject.setDependencies(JkDependencySet.of()
-                .and(&quot;junit:junit&quot;, JkJavaDepScopes.TEST)
-                .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
-                .and(&quot;com.google.guava:guava&quot;)
-                .and(fooProject)  // Bar project depends of Foo
-                .withVersionProvider(versionProvider)
-        );
-        barProject.getMaker().defineMainArtifactAsFatJar(true); // Produced jar will embed dependencies
-        barProject.getMaker().clean().makeAllArtifacts();  // Creates Bar jar along Foo jar (if not already built)
+// A project depending on the first project + Guava
+JkJavaProject dependerProject = JkJavaProject.of()
+    .getProduction()
+    .getDependencyManagement()
+        .addDependencies(JkDependencySet.of()
+            .and(&quot;com.google.guava:guava:22.0&quot;)
+            .and(coreProject.toDependency())).__.__
+    .getPublication()
+        .setModuleId(&quot;mygroup:depender&quot;)
+        .setVersion(JkVersion.of(&quot;1.0-SNAPSHOT&quot;)).__;
+dependerProject.getPublication().getArtifactProducer().makeAllArtifacts();
+dependerProject.getPublication().publish();       
 </code></pre>
 <a name="BuildJavaprojectusingJekaJavaplugin."></a>
 <h2>Build Java project using Jeka Java plugin.</h2>
@@ -731,10 +723,11 @@ class Build extends JkCommandSet {
     @Override
     protected void setup() {
         java.getProject()
-            .getDependencyManagement()
-                .addDependencies(JkDependencySet.of()
-                    .and(&quot;com.google.guava:guava:21.0&quot;)
-                    .and(&quot;junit:junit:4.13&quot;, JkScope.TEST));
+            .getProduction()
+                .getDependencyManagement()
+                    .addDependencies(JkDependencySet.of()
+                        .and(&quot;com.google.guava:guava:21.0&quot;)
+                        .and(&quot;junit:junit:4.13&quot;, JkScope.TEST));
     }
 
     public static void main(String[] args) {
