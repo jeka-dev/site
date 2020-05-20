@@ -146,6 +146,16 @@ extends java.lang.Enum&lt;<a href="../../../../../dev/jeka/core/api/depmanagemen
 </td>
 </tr>
 <tr class="rowColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.JkConflictResolver.html#LATEST_COMPATIBLE">LATEST_COMPATIBLE</a></span></code>
+<div class="block">Select the latest version compatible with version constraints.</div>
+</td>
+</tr>
+<tr class="altColor">
+<td class="colOne"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.JkConflictResolver.html#LATEST_VERSION">LATEST_VERSION</a></span></code>
+<div class="block">Select the latest version in the resolved dependency tree.</div>
+</td>
+</tr>
+<tr class="rowColor">
 <td class="colOne"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.JkConflictResolver.html#STRICT">STRICT</a></span></code>
 <div class="block">Fail resolution if a there is a version conflict into the resolved tree.</div>
 </td>
@@ -221,12 +231,33 @@ the order they are declared.</div>
 <a name="STRICT">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>STRICT</h4>
 <pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.JkConflictResolver.html" title="enum in dev.jeka.core.api.depmanagement">JkResolutionParameters.JkConflictResolver</a> STRICT</pre>
 <div class="block">Fail resolution if a there is a version conflict into the resolved tree. User has to
  exclude unwanted version explicitly.</div>
+</li>
+</ul>
+<a name="LATEST_COMPATIBLE">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>LATEST_COMPATIBLE</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.JkConflictResolver.html" title="enum in dev.jeka.core.api.depmanagement">JkResolutionParameters.JkConflictResolver</a> LATEST_COMPATIBLE</pre>
+<div class="block">Select the latest version compatible with version constraints. It act as 'strict' if
+ no version are not expressed using constraints.</div>
+</li>
+</ul>
+<a name="LATEST_VERSION">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>LATEST_VERSION</h4>
+<pre>public static final&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.JkConflictResolver.html" title="enum in dev.jeka.core.api.depmanagement">JkResolutionParameters.JkConflictResolver</a> LATEST_VERSION</pre>
+<div class="block">Select the latest version in the resolved dependency tree.</div>
 </li>
 </ul>
 </li>
