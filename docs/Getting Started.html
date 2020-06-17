@@ -17,7 +17,7 @@
 <div class="title">Jeka - Getting Started</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : 0.9.10.M10</div>
+<div style="color: lightslategrey; font-size: large">Version : 0.9.0.M10</div>
 <br />
 <a href="#InstallJeka" class="menuItem1">Install Jeka</a><br />
 <a href="#ConfigureyourIDE" class="menuItem1">Configure your IDE</a><br />
@@ -663,13 +663,13 @@ By default, the production of the main artifact implies unit testing.</p>
 a standalone project, you can concentrate on the Foo project.</p>
 <pre><code class="language-Java">JkJavaProject coreProject = JkJavaProject.of()
     .setBaseDir(Paths.get(&quot;../dev.jeka.core-samples&quot;))
-     .getProduction().getDependencyManagement()
+     .getJarProduction().getDependencyManagement()
         .addDependencies(JkDependencySet.of()
                 .and(&quot;junit:junit:4.13&quot;, JkScope.TEST)).__.__;
 
 // A project depending on the first project + Guava
 JkJavaProject dependerProject = JkJavaProject.of()
-    .getProduction()
+    .getJarProduction()
     .getDependencyManagement()
         .addDependencies(JkDependencySet.of()
             .and(&quot;com.google.guava:guava:22.0&quot;)
@@ -723,7 +723,7 @@ class Build extends JkCommandSet {
     @Override
     protected void setup() {
         java.getProject()
-            .getProduction()
+            .getJarProduction()
                 .getDependencyManagement()
                     .addDependencies(JkDependencySet.of()
                         .and(&quot;com.google.guava:guava:21.0&quot;)
