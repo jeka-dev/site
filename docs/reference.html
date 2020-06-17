@@ -501,7 +501,7 @@ build instructions.</p>
 artifacts. The API embrace the <em>parent-chaining</em> pattern.</p>
 <p>This is a pretty complete example taken from the Jeka build itself.</p>
 <pre><code>project
-    .getProduction()
+    .getJarProduction()
         .getDependencyManagement()
            .addDependencies(JkDependencySet.of()
                .and(&quot;com.google.guava:guava:21.0&quot;)

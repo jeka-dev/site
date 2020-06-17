@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 extends java.lang.Object
 implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.JkSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaIdeSupport.JkSupplier</a></pre>
 <div class="block">A Java project consists in 3 parts : <ul>
-    <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectProduction</code></a> : responsible to compile, tests and make jars</li>
+    <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectJarProduction</code></a> : responsible to compile, tests and make jars</li>
     <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectDocumentation</code></a> : responsible to creates javadoc, sources jar and others</li>
     <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectPublication</code></a> : responsible to publish the artifacts on binary repositories (Maven or Ivy)</li>
  </ul>
@@ -178,18 +178,18 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getInfo--">getInfo</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectJarProduction</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getJarProduction--">getJarProduction</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getJavaIdeSupport--">getJavaIdeSupport</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getOutputDir--">getOutputDir</a></span>()</code>
 <div class="block">Returns path of the directory under which are produced build files</div>
 </td>
-</tr>
-<tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getProduction--">getProduction</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
@@ -316,13 +316,13 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <div class="block">Sets the output path dir relative to base dir.</div>
 </li>
 </ul>
-<a name="getProduction--">
+<a name="getJarProduction--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getProduction</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectProduction</a>&nbsp;getProduction()</pre>
+<h4>getJarProduction</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectJarProduction</a>&nbsp;getJarProduction()</pre>
 </li>
 </ul>
 <a name="getPublication--">
