@@ -1056,7 +1056,7 @@
 <div class="block">As <code>Path</code> implements  <code>Iterable<Path></code> it is not obvious if an <code>Iterable</code> of <code>Path</code> was
  intended to be a list of <code>Path</code> or a single <code>Path</code>.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#display--">display()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#display--">display()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsXml.html#documentFrom-java.io.File-">documentFrom(File)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsXml.html" title="class in dev.jeka.core.api.utils">JkUtilsXml</a></dt>
 <dd>
@@ -1341,7 +1341,7 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsPath.html#get-java.net.URL-">get(URL)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsPath.html" title="class in dev.jeka.core.api.utils">JkUtilsPath</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#get--">get()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#get--">get()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>
 <div class="block">Returns JkGpg from option settings</div>
 </dd>
@@ -2585,7 +2585,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkPlugin.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></dt>
 <dd>
@@ -2763,6 +2763,8 @@
 <dd>
 <div class="block">Returns true if this node stands for a module dependency.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/crypto/gpg/JkGpg.html#isPublicAndSecretRingExist--">isPublicAndSecretRingExist()</a></span> - Method in class dev.jeka.core.api.crypto.gpg.<a href="dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></dt>
+<dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkResolutionParameters.html#isRefreshed--">isRefreshed()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement">JkResolutionParameters</a></dt>
 <dd>
 <div class="block">Returns <code>true</code> if during the resolution phase, the dynamic
@@ -3304,6 +3306,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/git/JkPluginGit.html#JkPluginGit-dev.jeka.core.tool.JkCommandSet-">JkPluginGit(JkCommandSet)</a></span> - Constructor for class dev.jeka.core.tool.builtins.git.<a href="dev/jeka/core/tool/builtins/git/JkPluginGit.html" title="class in dev.jeka.core.tool.builtins.git">JkPluginGit</a></dt>
 <dd>&nbsp;</dd>
+<dt><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos"><span class="typeNameLink">JkPluginGpg</span></a> - Class in <a href="dev/jeka/core/tool/builtins/repos/package-summary.html">dev.jeka.core.tool.builtins.repos</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#JkPluginGpg-dev.jeka.core.tool.JkCommandSet-">JkPluginGpg(JkCommandSet)</a></span> - Constructor for class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
+<dd>&nbsp;</dd>
 <dt><a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij"><span class="typeNameLink">JkPluginIntellij</span></a> - Class in <a href="dev/jeka/core/tool/builtins/intellij/package-summary.html">dev.jeka.core.tool.builtins.intellij</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#JkPluginIntellij-dev.jeka.core.tool.JkCommandSet-">JkPluginIntellij(JkCommandSet)</a></span> - Constructor for class dev.jeka.core.tool.builtins.intellij.<a href="dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html" title="class in dev.jeka.core.tool.builtins.intellij">JkPluginIntellij</a></dt>
@@ -3326,10 +3332,6 @@
 <dd>
 <div class="block">Options about tests</div>
 </dd>
-<dt><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos"><span class="typeNameLink">JkPluginPgp</span></a> - Class in <a href="dev/jeka/core/tool/builtins/repos/package-summary.html">dev.jeka.core.tool.builtins.repos</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#JkPluginPgp-dev.jeka.core.tool.JkCommandSet-">JkPluginPgp(JkCommandSet)</a></span> - Constructor for class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
-<dd>&nbsp;</dd>
 <dt><a href="dev/jeka/core/tool/builtins/maven/JkPluginPom.html" title="class in dev.jeka.core.tool.builtins.maven"><span class="typeNameLink">JkPluginPom</span></a> - Class in <a href="dev/jeka/core/tool/builtins/maven/package-summary.html">dev.jeka.core.tool.builtins.maven</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/maven/JkPluginPom.html#JkPluginPom-dev.jeka.core.tool.JkCommandSet-">JkPluginPom(JkCommandSet)</a></span> - Constructor for class dev.jeka.core.tool.builtins.maven.<a href="dev/jeka/core/tool/builtins/maven/JkPluginPom.html" title="class in dev.jeka.core.tool.builtins.maven">JkPluginPom</a></dt>
@@ -3648,7 +3650,7 @@
 </a>
 <h2 class="title">K</h2>
 <dl>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#keyName">keyName</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#keyName">keyName</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="I:L">
@@ -4666,7 +4668,7 @@
 <div class="block">A dependency declared with this scope will be available at compile time but won't be part of the packaged
  product (similar to Maven scope 'provided').</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#publicRingPath">publicRingPath</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#publicRingPath">publicRingPath</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkIvyPublication.html#publish-dev.jeka.core.api.depmanagement.JkRepoSet-">publish(JkRepoSet)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a></dt>
 <dd>&nbsp;</dd>
@@ -4945,13 +4947,11 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html#searchVersions-dev.jeka.core.api.depmanagement.JkModuleId-">searchVersions(JkModuleId)</a></span> - Method in interface dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalDepResolver.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalDepResolver</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#secretKeyPassword">secretKeyPassword</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#secretKeyPassword">secretKeyPassword</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html#secretRingPath">secretRingPath</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginPgp.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginPgp</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#secretRingPath">secretRingPath</a></span> - Variable in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPopularModules.html#SELENIUM_JAVA">SELENIUM_JAVA</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement">JkPopularModules</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkVersion.html#SEMANTIC_COMARATOR">SEMANTIC_COMARATOR</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsIO.html#serialize-java.lang.Object-java.nio.file.Path-">serialize(Object, Path)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsIO.html" title="class in dev.jeka.core.api.utils">JkUtilsIO</a></dt>
 <dd>
@@ -5854,6 +5854,8 @@ the order they are declared.</div>
 <div class="block">Verifies the specified file against the specified signature.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/crypto/gpg/JkInternalGpgDoer.html#verify-java.nio.file.Path-java.nio.file.Path-java.nio.file.Path-">verify(Path, Path, Path)</a></span> - Method in interface dev.jeka.core.api.crypto.gpg.<a href="dev/jeka/core/api/crypto/gpg/JkInternalGpgDoer.html" title="interface in dev.jeka.core.api.crypto.gpg">JkInternalGpgDoer</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkVersion.html#VERSION_COMPARATOR">VERSION_COMPARATOR</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a></dt>
 <dd>&nbsp;</dd>
 </dl>
 <a name="I:W">
