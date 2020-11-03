@@ -812,6 +812,10 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html#createBinJar--">createBinJar()</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectJarProduction</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkUrlClassLoader.html#createChild-java.lang.Iterable-">createChild(Iterable&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></dt>
+<dd>
+<div class="block">Creates a <code>JkClassLoader</code>, child of this one and having the specified entries.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkInternalClassloader.html#createCrossClassloaderProxy-java.lang.Class-java.lang.String-java.lang.String-java.lang.Object...-">createCrossClassloaderProxy(Class&lt;T&gt;, String, String, Object...)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkInternalClassloader.html" title="class in dev.jeka.core.api.java">JkInternalClassloader</a></dt>
 <dd>
 <div class="block">Creates an instance of the specified class in this classloader and
@@ -1455,10 +1459,6 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.html#getChild-dev.jeka.core.api.depmanagement.JkModuleId-">getChild(JkModuleId)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode</a></dt>
 <dd>
 <div class="block">Returns the getChild node having the specified getModuleId.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkUrlClassLoader.html#getChild-java.lang.Iterable-">getChild(Iterable&lt;Path&gt;)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkUrlClassLoader.html" title="class in dev.jeka.core.api.java">JkUrlClassLoader</a></dt>
-<dd>
-<div class="block">Creates a <code>JkClassLoader</code>, child of this one and having the specified entries.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyNode.html#getChildModules--">getChildModules()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyNode.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyNode</a></dt>
 <dd>
@@ -4756,10 +4756,14 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#refreshDeps--">refreshDeps()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathSequence.html#relativizedTo-java.nio.file.Path-">relativizedTo(Path)</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathSequence.html#relativizeFromWorkingDir--">relativizeFromWorkingDir()</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></dt>
 <dd>
 <div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
  specified base directory.</div>
+</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsPath.html#relativizeFromWorkingDir-java.nio.file.Path-">relativizeFromWorkingDir(Path)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsPath.html" title="class in dev.jeka.core.api.utils">JkUtilsPath</a></dt>
+<dd>
+<div class="block">Returns the relative path to working dir of the specified path.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html#removeArtifact-dev.jeka.core.api.depmanagement.JkArtifactId-">removeArtifact(JkArtifactId)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a></dt>
 <dd>&nbsp;</dd>
@@ -5619,6 +5623,8 @@
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkVersionedModule.html#toString--">toString()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkVersionProvider.html#toString--">toString()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathFile.html#toString--">toString()</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathFile.html" title="class in dev.jeka.core.api.file">JkPathFile</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/file/JkPathMatcher.html#toString--">toString()</a></span> - Method in class dev.jeka.core.api.file.<a href="dev/jeka/core/api/file/JkPathMatcher.html" title="class in dev.jeka.core.api.file">JkPathMatcher</a></dt>
 <dd>&nbsp;</dd>
