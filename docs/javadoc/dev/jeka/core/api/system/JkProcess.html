@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":9,"i7":9,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -187,13 +187,20 @@ implements java.lang.Runnable</pre>
 </td>
 </tr>
 <tr id="i5" class="rowColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#isFailOnError--">isFailOnError</a></span>()</code>
+<div class="block">Returns <code>true</code> if this process must throw an execption if the underlying process returns
+ code different than 0.</div>
+</td>
+</tr>
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#minusParam-java.lang.String-">minusParam</a></span>(java.lang.String&nbsp;parameter)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but minus the
  specified parameter.</div>
 </td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#of-java.lang.String-java.lang.String...-">of</a></span>(java.lang.String&nbsp;command,
   java.lang.String...&nbsp;parameters)</code>
@@ -201,7 +208,7 @@ implements java.lang.Runnable</pre>
  parameters.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#ofJavaTool-java.lang.String-java.lang.String...-">ofJavaTool</a></span>(java.lang.String&nbsp;javaTool,
           java.lang.String...&nbsp;parameters)</code>
@@ -209,7 +216,7 @@ implements java.lang.Runnable</pre>
  parameters.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#ofWinOrUx-java.lang.String-java.lang.String-java.lang.String...-">ofWinOrUx</a></span>(java.lang.String&nbsp;windowsCommand,
          java.lang.String&nbsp;unixCommand,
@@ -218,32 +225,32 @@ implements java.lang.Runnable</pre>
  parameters.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#run--">run</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;java.lang.String&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#runAndReturnOutputAsLines--">runAndReturnOutputAsLines</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#runSync--">runSync</a></span>()</code>
 <div class="block">Starts this process and wait for the process has finished prior
  returning.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#runSyncIf-boolean-">runSyncIf</a></span>(boolean&nbsp;condition)</code>
 <div class="block">Same as <a href="../../../../../dev/jeka/core/api/system/JkProcess.html#runSync--"><code>runSync()</code></a> but only effective if the specified condition is <code>true</code>.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withFailOnError-boolean-">withFailOnError</a></span>(boolean&nbsp;fail)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but with the
@@ -251,26 +258,26 @@ implements java.lang.Runnable</pre>
  code.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withLogCommand-boolean-">withLogCommand</a></span>(boolean&nbsp;logCommand)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging command behavior.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i17" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withLogOutput-boolean-">withLogOutput</a></span>(boolean&nbsp;logOutput)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but with the specified logging output behavior.</div>
 </td>
 </tr>
-<tr id="i17" class="rowColor">
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withParams-java.lang.String...-">withParams</a></span>(java.lang.String...&nbsp;parameters)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but with the
  specified parameters in place of this parameters.</div>
 </td>
 </tr>
-<tr id="i18" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withParamsIf-boolean-java.lang.String...-">withParamsIf</a></span>(boolean&nbsp;condition,
             java.lang.String...&nbsp;parameters)</code>
@@ -278,14 +285,14 @@ implements java.lang.Runnable</pre>
  specified conditional is true.</div>
 </td>
 </tr>
-<tr id="i19" class="rowColor">
+<tr id="i20" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withWorkingDir-java.nio.file.Path-">withWorkingDir</a></span>(java.nio.file.Path&nbsp;workingDir)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but using the
  specified directory as the working directory.</div>
 </td>
 </tr>
-<tr id="i20" class="altColor">
+<tr id="i21" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/system/JkProcess.html" title="class in dev.jeka.core.api.system">JkProcess</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkProcess.html#withWorkingDir-java.lang.String-">withWorkingDir</a></span>(java.lang.String&nbsp;workingDir)</code>
 <div class="block">Returns a <code>JkProcess</code> identical to this one but using the
@@ -545,6 +552,17 @@ implements java.lang.Runnable</pre>
 <h4>getCommand</h4>
 <pre>public&nbsp;java.lang.String&nbsp;getCommand()</pre>
 <div class="block">Returns the command launched by this process.</div>
+</li>
+</ul>
+<a name="isFailOnError--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isFailOnError</h4>
+<pre>public&nbsp;boolean&nbsp;isFailOnError()</pre>
+<div class="block">Returns <code>true</code> if this process must throw an execption if the underlying process returns
+ code different than 0.</div>
 </li>
 </ul>
 <a name="toString--">

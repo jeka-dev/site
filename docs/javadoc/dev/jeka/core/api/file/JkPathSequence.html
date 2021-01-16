@@ -209,7 +209,7 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#relativizedTo-java.nio.file.Path-">relativizedTo</a></span>(java.nio.file.Path&nbsp;baseDir)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html#relativizeFromWorkingDir--">relativizeFromWorkingDir</a></span>()</code>
 <div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
  specified base directory.</div>
 </td>
@@ -422,13 +422,13 @@ implements java.lang.Iterable&lt;java.nio.file.Path&gt;, java.io.Serializable</p
  specified base directory.</div>
 </li>
 </ul>
-<a name="relativizedTo-java.nio.file.Path-">
+<a name="relativizeFromWorkingDir--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>relativizedTo</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;relativizedTo(java.nio.file.Path&nbsp;baseDir)</pre>
+<h4>relativizeFromWorkingDir</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/file/JkPathSequence.html" title="class in dev.jeka.core.api.file">JkPathSequence</a>&nbsp;relativizeFromWorkingDir()</pre>
 <div class="block">Returns an identical path sequence but replacing relative paths with absolute paths resolved from the
  specified base directory.</div>
 </li>

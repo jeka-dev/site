@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":9,"i1":9,"i2":10,"i3":10,"i4":9,"i5":10,"i6":9,"i7":9,"i8":9,"i9":9,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10};
+var methods = {"i0":9,"i1":9,"i2":10,"i3":10,"i4":9,"i5":10,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -164,6 +164,10 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i6" class="altColor">
+<td class="colFirst"><code>boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#isPublicAndSecretRingExist--">isPublicAndSecretRingExist</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#of-java.nio.file.Path-java.nio.file.Path-java.lang.String-">of</a></span>(java.nio.file.Path&nbsp;pubRing,
   java.nio.file.Path&nbsp;secRing,
@@ -171,31 +175,31 @@ extends java.lang.Object</pre>
 <div class="block">Creates a <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> with the specified public and secret ring.</div>
 </td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#ofDefaultGnuPg--">ofDefaultGnuPg</a></span>()</code>
 <div class="block">Creates a <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> with default GnuPgp file location.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#ofPublicRing-java.nio.file.Path-">ofPublicRing</a></span>(java.nio.file.Path&nbsp;pubRing)</code>
 <div class="block">Creates a JkGpg with the specified public key ring.</div>
 </td>
 </tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#ofSecretRing-java.nio.file.Path-java.lang.String-">ofSecretRing</a></span>(java.nio.file.Path&nbsp;secRing,
             java.lang.String&nbsp;password)</code>
 <div class="block">Creates a JkGpg with the specified secret key ring.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>java.nio.file.Path</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#sign-java.nio.file.Path-java.lang.String-">sign</a></span>(java.nio.file.Path&nbsp;fileToSign,
     java.lang.String&nbsp;keyname)</code>&nbsp;</td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#sign-java.nio.file.Path-java.lang.String-java.nio.file.Path-">sign</a></span>(java.nio.file.Path&nbsp;fileToSign,
     java.lang.String&nbsp;keyName,
@@ -203,27 +207,27 @@ extends java.lang.Object</pre>
 <div class="block">Signs the specified file and write the signature in the specified signature file.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#verify-java.nio.file.Path-java.nio.file.Path-">verify</a></span>(java.nio.file.Path&nbsp;fileToVerify,
       java.nio.file.Path&nbsp;signature)</code>
 <div class="block">Verifies the specified file against the specified signature.</div>
 </td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#withPublicRing-java.nio.file.Path-">withPublicRing</a></span>(java.nio.file.Path&nbsp;file)</code>
 <div class="block">Creates a identical <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> but with the specified public ring key file.</div>
 </td>
 </tr>
-<tr id="i14" class="altColor">
+<tr id="i15" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#withSecretRing-java.nio.file.Path-java.lang.String-">withSecretRing</a></span>(java.nio.file.Path&nbsp;file,
               java.lang.String&nbsp;password)</code>
 <div class="block">Creates a identical <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> but with the specified secret ring key file.</div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i16" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html#withSecretRingPassword-java.lang.String-">withSecretRingPassword</a></span>(java.lang.String&nbsp;pwd)</code>
 <div class="block">Creates a identical <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> but with the specified password for secret ring.</div>
@@ -261,6 +265,15 @@ extends java.lang.Object</pre>
                        java.nio.file.Path&nbsp;secRing,
                        java.lang.String&nbsp;password)</pre>
 <div class="block">Creates a <a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg"><code>JkGpg</code></a> with the specified public and secret ring.</div>
+</li>
+</ul>
+<a name="isPublicAndSecretRingExist--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>isPublicAndSecretRingExist</h4>
+<pre>public&nbsp;boolean&nbsp;isPublicAndSecretRingExist()</pre>
 </li>
 </ul>
 <a name="getDefaultPubring--">
