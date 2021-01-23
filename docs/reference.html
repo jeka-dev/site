@@ -99,8 +99,7 @@ The library can be used in any Java program and does not have any dependency.</p
 <p>The tool aims at executing Java <strong>source</strong> code from the command line. Its design eases reuse of build
 elements (logic, settings, doc, ...) across projects.</p>
 <p>Combined, it provides a full feature build tool with endless possibilities of extension.</p>
-<p>Although library and tool are bundled in the same jar, the library does not depend on the tool at all. It can be understood
-on its own.</p>
+<p>Although library and tool are bundled in the same jar, the library does not depend on the tool at all.</p>
 <p><strong>What is this document for ?</strong></p>
 <p>This document stands for reference guide. It provides:</p>
 <ul>
@@ -590,8 +589,8 @@ Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is 
 <p><strong>CommandSet Classes :</strong> Classes extending <code>JkCommandSet</code>. Their <em>commands</em> can be invoked from the command line and
 their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>commandSet class</em> though there can be many or
 none. CommandSet class can be a <em>def class</em> but can also be imported from a library or external project.</p>
-<p><strong>Commands :</strong> Java methods member of <em>commandSet classes</em> and invokable from Jeka command line.
-They must be instance method (not static), public, zero-args and returning void. Every method verifying these constraints is considered as a <em>command</em>.</p>
+<p><strong>Commands :</strong> Java methods from <em>commandSet classes</em> which are invokable from Jeka command line.
+They must be instance method (not static), public, zero-args and returning void. Every method verifying these constraints is a <em>command</em>.</p>
 <p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
 as command line arguments, stored in specific files or hard coded in <em>commandSet classes</em>.</p>
 <p><span class="menuItem0">In a Glance</span></p>

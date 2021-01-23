@@ -141,14 +141,18 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#forceJdkVersion">forceJdkVersion</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlJekaExtraModules">imlJekaExtraModules</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlSkipJeka">imlSkipJeka</a></span></code>&nbsp;</td>
 </tr>
-<tr class="rowColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#imlTestExtraModules">imlTestExtraModules</a></span></code>&nbsp;</td>
-</tr>
 <tr class="altColor">
+<td class="colFirst"><code>java.nio.file.Path</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#jekaHome">jekaHome</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/intellij/JkPluginIntellij.html#useVarPath">useVarPath</a></span></code>&nbsp;</td>
 </tr>
@@ -212,7 +216,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dev.jeka.core.tool.<a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></h3>
-<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
+<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegisterUrl--">getBreakingVersionRegisterUrl</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -271,13 +275,22 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <pre>public&nbsp;boolean imlSkipJeka</pre>
 </li>
 </ul>
-<a name="imlTestExtraModules">
+<a name="imlJekaExtraModules">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>imlJekaExtraModules</h4>
+<pre>public&nbsp;java.lang.String imlJekaExtraModules</pre>
+</li>
+</ul>
+<a name="jekaHome">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>imlTestExtraModules</h4>
-<pre>public&nbsp;java.lang.String imlTestExtraModules</pre>
+<h4>jekaHome</h4>
+<pre>public&nbsp;java.nio.file.Path jekaHome</pre>
 </li>
 </ul>
 </li>

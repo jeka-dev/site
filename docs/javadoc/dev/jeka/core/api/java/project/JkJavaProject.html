@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -115,7 +115,7 @@ var activeTableTab = "activeTableTab";
 extends java.lang.Object
 implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.JkSupplier.html" title="interface in dev.jeka.core.api.java.project">JkJavaIdeSupport.JkSupplier</a></pre>
 <div class="block">A Java project consists in 3 parts : <ul>
-    <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectJarProduction</code></a> : responsible to compile, tests and make jars</li>
+    <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectConstruction</code></a> : responsible to compile, tests and make jars</li>
     <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectDocumentation</code></a> : responsible to creates javadoc, sources jar and others</li>
     <li><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project"><code>JkJavaProjectPublication</code></a> : responsible to publish the artifacts on binary repositories (Maven or Ivy)</li>
  </ul>
@@ -151,16 +151,16 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getBaseDir--">getBaseDir</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getConstruction--">getConstruction</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectDocumentation.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectDocumentation</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getDocumentation--">getDocumentation</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getInfo--">getInfo</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectJarProduction</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#getJarProduction--">getJarProduction</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
@@ -191,14 +191,18 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 </td>
 </tr>
 <tr id="i11" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toDependency--">toDependency</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#simpleFacade--">simpleFacade</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toDependency-dev.jeka.core.api.depmanagement.JkArtifactId-">toDependency</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toDependency--">toDependency</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toDependency-dev.jeka.core.api.depmanagement.JkArtifactId-">toDependency</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a>&nbsp;artifactId)</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
@@ -242,6 +246,15 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;apply(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&gt;&nbsp;projectConsumer)</pre>
 </li>
 </ul>
+<a name="simpleFacade--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>simpleFacade</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;simpleFacade()</pre>
+</li>
+</ul>
 <a name="getBaseDir--">
 <!--   -->
 </a>
@@ -280,13 +293,13 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <div class="block">Sets the output path dir relative to base dir.</div>
 </li>
 </ul>
-<a name="getJarProduction--">
+<a name="getConstruction--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getJarProduction</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectJarProduction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectJarProduction</a>&nbsp;getJarProduction()</pre>
+<h4>getConstruction</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&nbsp;getConstruction()</pre>
 </li>
 </ul>
 <a name="getPublication--">
