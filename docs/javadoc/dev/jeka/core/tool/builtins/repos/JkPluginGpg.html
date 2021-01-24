@@ -183,20 +183,20 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#beforeSetup--">beforeSetup</a></span>()</code>
+<div class="block">Override this method to initialize the plugin.</div>
+</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/crypto/gpg/JkGpg.html" title="class in dev.jeka.core.api.crypto.gpg">JkGpg</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#get--">get</a></span>()</code>
 <div class="block">Returns JkGpg from option settings</div>
 </td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#info--">info</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#init--">init</a></span>()</code>
-<div class="block">This method is invoked right after plugin options has been injected</div>
-</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -204,7 +204,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dev.jeka.core.tool.<a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></h3>
-<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegistryUrl--">getBreakingVersionRegistryUrl</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
+<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--">afterSetup</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegistryUrl--">getBreakingVersionRegistryUrl</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -288,18 +288,20 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="init--">
+<a name="beforeSetup--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>init</h4>
-<pre>protected&nbsp;void&nbsp;init()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">JkPlugin</a></code></span></div>
-<div class="block">This method is invoked right after plugin options has been injected</div>
+<h4>beforeSetup</h4>
+<pre>protected&nbsp;void&nbsp;beforeSetup()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">JkPlugin</a></code></span></div>
+<div class="block">Override this method to initialize the plugin.
+ This method is invoked right after plugin option fields has been injected and prior
+ <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> is invoked.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">beforeSetup</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
 </dl>
 </li>
 </ul>

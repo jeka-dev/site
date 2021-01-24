@@ -157,35 +157,36 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a></span>()</code>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--">afterSetup</a></span>()</code>
+<div class="block">Override this method to perform some actions, once the plugin has been setup by
+ <a href="../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">beforeSetup</a></span>()</code>
+<div class="block">Override this method to initialize the plugin.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegistryUrl--">getBreakingVersionRegistryUrl</a></span>()</code>
 <div class="block">When publishing a plugin, authors can not guess which future version of Jeka will break compatibility.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>protected <a href="../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a></span>()</code>
 <div class="block">Returns a the lowest Jeka version which is compatible with this plugin.</div>
 </td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i5" class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a></span>()</code>
-<div class="block">This method is invoked right after plugin options has been injected</div>
-</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
@@ -243,14 +244,41 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;void&nbsp;help()</pre>
 </li>
 </ul>
-<a name="activate--">
+<a name="beforeSetup--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>activate</h4>
-<pre>protected&nbsp;void&nbsp;activate()</pre>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
+<h4>beforeSetup</h4>
+<pre>protected&nbsp;void&nbsp;beforeSetup()
+                    throws java.lang.Exception</pre>
+<div class="block">Override this method to initialize the plugin.
+ This method is invoked right after plugin option fields has been injected and prior
+ <a href="../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> is invoked.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code></dd>
+</dl>
+</li>
+</ul>
+<a name="afterSetup--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>afterSetup</h4>
+<pre>protected&nbsp;void&nbsp;afterSetup()
+                   throws java.lang.Exception</pre>
+<div class="block">Override this method to perform some actions, once the plugin has been setup by
+ <a href="../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.<p>
+ Typically, some plugins have to configure other ones (For instance, <i>java</i> plugin configures
+ <i>scaffold</i> plugin to instruct what to use as a template build class). Those kind of
+ configuration is better done here as the setup made in <a href="../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool"><code>JkCommandSet</code></a> is likely
+ to impact the result of the configuration.</div>
+<dl>
+<dt><span class="throwsLabel">Throws:</span></dt>
+<dd><code>java.lang.Exception</code></dd>
+</dl>
 </li>
 </ul>
 <a name="getLowestJekaCompatibleVersion--">
@@ -286,16 +314,6 @@ extends java.lang.Object</pre>
      1.2.1.RELEASE : 0.9.1.RELEASE
      1.3.0.RELEASE : 0.9.5.M1
  </code></pre></div>
-</li>
-</ul>
-<a name="init--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>init</h4>
-<pre>protected&nbsp;void&nbsp;init()</pre>
-<div class="block">This method is invoked right after plugin options has been injected</div>
 </li>
 </ul>
 <a name="name--">

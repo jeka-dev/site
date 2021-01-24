@@ -76,16 +76,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogConsumer.html#accept-dev.jeka.core.api.system.JkLog.JkLogEvent-">accept(JkLog.JkLogEvent)</a></span> - Method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkHierarchicalConsoleLogConsumer.html" title="class in dev.jeka.core.api.system">JkHierarchicalConsoleLogConsumer</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.eclipse.<a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.jacoco.<a href="dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html" title="class in dev.jeka.core.tool.builtins.jacoco">JkPluginJacoco</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkPlugin.html#activate--">activate()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></dt>
-<dd>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html#addAccessRule-dev.jeka.core.api.depmanagement.JkDependency-java.lang.String-java.lang.String-">addAccessRule(JkDependency, String, String)</a></span> - Method in class dev.jeka.core.api.tooling.eclipse.<a href="dev/jeka/core/api/tooling/eclipse/JkEclipseClasspathGenerator.html" title="class in dev.jeka.core.api.tooling.eclipse">JkEclipseClasspathGenerator</a></dt>
 <dd>
 <div class="block">For the specified dependency, specify a child accessrule tag to add to the mapping classpathentry tag.</div>
@@ -292,6 +282,17 @@
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkMavenMetadata.html#addVersion-java.lang.String-java.lang.String-">addVersion(String, String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkMavenMetadata.html" title="class in dev.jeka.core.api.depmanagement">JkMavenMetadata</a></dt>
 <dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#afterSetup--">afterSetup()</a></span> - Method in class dev.jeka.core.tool.builtins.eclipse.<a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html#afterSetup--">afterSetup()</a></span> - Method in class dev.jeka.core.tool.builtins.jacoco.<a href="dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html" title="class in dev.jeka.core.tool.builtins.jacoco">JkPluginJacoco</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#afterSetup--">afterSetup()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkPlugin.html#afterSetup--">afterSetup()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></dt>
+<dd>
+<div class="block">Override this method to perform some actions, once the plugin has been setup by
+ <a href="dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html#afterTest">afterTest</a></span> - Variable in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html#all--">all()</a></span> - Method in class dev.jeka.core.tool.builtins.eclipse.<a href="dev/jeka/core/tool/builtins/eclipse/JkPluginEclipse.html" title="class in dev.jeka.core.tool.builtins.eclipse">JkPluginEclipse</a></dt>
@@ -613,6 +614,16 @@
 </a>
 <h2 class="title">B</h2>
 <dl>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#beforeSetup--">beforeSetup()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#beforeSetup--">beforeSetup()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#beforeSetup--">beforeSetup()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
+<dd>&nbsp;</dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkPlugin.html#beforeSetup--">beforeSetup()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></dt>
+<dd>
+<div class="block">Override this method to initialize the plugin.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html#BINARIES">BINARIES</a></span> - Static variable in class dev.jeka.core.tool.builtins.sonar.<a href="dev/jeka/core/tool/builtins/sonar/JkSonar.html" title="class in dev.jeka.core.tool.builtins.sonar">JkSonar</a></dt>
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPopularModules.html#BOUNCY_CASTLE_PROVIDER">BOUNCY_CASTLE_PROVIDER</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement">JkPopularModules</a></dt>
@@ -2591,16 +2602,6 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkLog.JkEventLogConsumer.html#init--">init()</a></span> - Method in interface dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkLog.JkEventLogConsumer.html" title="interface in dev.jeka.core.api.system">JkLog.JkEventLogConsumer</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginJava.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginJava</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.java.<a href="dev/jeka/core/tool/builtins/java/JkPluginWar.html" title="class in dev.jeka.core.tool.builtins.java">JkPluginWar</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.builtins.repos.<a href="dev/jeka/core/tool/builtins/repos/JkPluginGpg.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginGpg</a></dt>
-<dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkPlugin.html#init--">init()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></dt>
-<dd>
-<div class="block">This method is invoked right after plugin options has been injected</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/utils/JkUtilsIO.html#inputStream-java.io.File-">inputStream(File)</a></span> - Static method in class dev.jeka.core.api.utils.<a href="dev/jeka/core/api/utils/JkUtilsIO.html" title="class in dev.jeka.core.api.utils">JkUtilsIO</a></dt>
 <dd>
 <div class="block">Same as <code>FileInputStream</code> constructor but throwing unchecked
@@ -4653,6 +4654,10 @@
 <div class="block">Fills <code>implementation title</code> and <code>implentation version </code> attributes of the
  specified manifest.</div>
 </dd>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommandSet.html#postSetup--">postSetup()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a></dt>
+<dd>
+<div class="block">This method is called once <a href="dev/jeka/core/tool/JkPlugin.html#afterSetup--"><code>JkPlugin.afterSetup()</code></a> method has been invoked on all plugins.</div>
+</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/function/JkConsumers.html#prepend-java.util.function.Consumer-">prepend(Consumer&lt;T&gt;)</a></span> - Method in class dev.jeka.core.api.function.<a href="dev/jeka/core/api/function/JkConsumers.html" title="class in dev.jeka.core.api.function">JkConsumers</a></dt>
 <dd>
 <div class="block">Chains this underlying <code>Consumer</code> with the specified one.</div>
@@ -5362,11 +5367,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommandSet.html#setup--">setup()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a></dt>
 <dd>
-<div class="block">This method is invoked right after options has been injected into this instance.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkCommandSet.html#setupAfterPluginActivations--">setupAfterPluginActivations()</a></span> - Method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a></dt>
-<dd>
-<div class="block">This method is called once all plugin has been activated.</div>
+<div class="block">Configure your build and plugins here.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html#setUrl-java.lang.String-">setUrl(String)</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkProjectInfo</a></dt>
 <dd>&nbsp;</dd>

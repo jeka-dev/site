@@ -222,39 +222,40 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#activate--">activate</a></span>()</code>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#afterSetup--">afterSetup</a></span>()</code>
+<div class="block">Override this method to perform some actions, once the plugin has been setup by
+ <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.</div>
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>protected void</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#beforeSetup--">beforeSetup</a></span>()</code>
+<div class="block">Override this method to initialize the plugin.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#compile--">compile</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getJavaIdeSupport--">getJavaIdeSupport</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getProject--">getProject</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/repos/JkPluginRepo.html" title="class in dev.jeka.core.tool.builtins.repos">JkPluginRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getRepoPlugin--">getRepoPlugin</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.html" title="class in dev.jeka.core.tool.builtins.scaffold">JkPluginScaffold</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#getScaffoldPlugin--">getScaffoldPlugin</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#info--">info</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/java/JkPluginJava.html#init--">init</a></span>()</code>
-<div class="block">This method is invoked right after plugin options has been injected</div>
-</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code>void</code></td>
@@ -378,33 +379,40 @@ implements <a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSu
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="init--">
+<a name="beforeSetup--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>init</h4>
-<pre>protected&nbsp;void&nbsp;init()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">JkPlugin</a></code></span></div>
-<div class="block">This method is invoked right after plugin options has been injected</div>
+<h4>beforeSetup</h4>
+<pre>protected&nbsp;void&nbsp;beforeSetup()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">JkPlugin</a></code></span></div>
+<div class="block">Override this method to initialize the plugin.
+ This method is invoked right after plugin option fields has been injected and prior
+ <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> is invoked.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#init--">init</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">beforeSetup</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
 </dl>
 </li>
 </ul>
-<a name="activate--">
+<a name="afterSetup--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>activate</h4>
-<pre>protected&nbsp;void&nbsp;activate()</pre>
-<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">JkPlugin</a></code></span></div>
-<div class="block">Override this method to modify the commands itself or its bound plugins.</div>
+<h4>afterSetup</h4>
+<pre>protected&nbsp;void&nbsp;afterSetup()</pre>
+<div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--">JkPlugin</a></code></span></div>
+<div class="block">Override this method to perform some actions, once the plugin has been setup by
+ <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.<p>
+ Typically, some plugins have to configure other ones (For instance, <i>java</i> plugin configures
+ <i>scaffold</i> plugin to instruct what to use as a template build class). Those kind of
+ configuration is better done here as the setup made in <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool"><code>JkCommandSet</code></a> is likely
+ to impact the result of the configuration.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
-<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#activate--">activate</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
+<dd><code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--">afterSetup</a></code>&nbsp;in class&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></code></dd>
 </dl>
 </li>
 </ul>

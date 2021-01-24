@@ -17,7 +17,7 @@
 <div class="title">Jeka - Reference Guide</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : 0.9.3.RELEASE</div>
+<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
 <br />
 <a href="#Introduction" class="menuItem1">Introduction</a><br />
 <a href="#Library" class="menuItem1">Library</a><br />
@@ -50,9 +50,11 @@
 <a href="#ToolPart" class="menuItem1">Tool Part</a><br />
 <a href="#JekaRuntime" class="menuItem2">Jeka Runtime</a><br />
 <a href="#JekafromCommandline" class="menuItem3">Jeka from Command line</a><br />
+<a href="#JekaMainClass" class="menuItem3">Jeka Main Class</a><br />
 <a href="#ParsetheCommandLine" class="menuItem4">Parse the Command Line</a><br />
 <a href="#PopulateSystemPropertiesfromConfigurationFilesandCommandline" class="menuItem4">Populate System Properties from Configuration Files and Command line</a><br />
-<a href="#Pre-process" class="menuItem4">Pre-process </a><br />
+<a href="#ConstructDEFCLASSPATH" class="menuItem4">Construct DEF CLASSPATH</a><br />
+<a href="#Repositories" class="menuItem5">Repositories</a><br />
 <a href="#CompileDefClasses" class="menuItem4">Compile Def Classes</a><br />
 <a href="#SelectCommandSetClass" class="menuItem4">Select CommandSet Class</a><br />
 <a href="#InstantiateCommandSetClass" class="menuItem4">Instantiate CommandSet Class</a><br />
@@ -79,10 +81,11 @@
 <a href="#DocumentOptions" class="menuItem4">Document Options</a><br />
 <a href="#Built-inOptions" class="menuItem4">Built-in Options</a><br />
 <a href="#Plugins" class="menuItem2">Plugins</a><br />
-<a href="#LoadPlugins" class="menuItem3">Load Plugins</a><br />
+<a href="#BindingPlugins" class="menuItem3">Binding Plugins</a><br />
 <a href="#ModifyJkCommandSetInstance" class="menuItem3">Modify JkCommandSet Instance</a><br />
 <a href="#ConfigurePluginsinJkCommandSetClass" class="menuItem3">Configure Plugins in JkCommandSet Class</a><br />
 <a href="#DocumentPlugins" class="menuItem3">Document Plugins</a><br />
+<a href="#Pluginversioncompatibility" class="menuItem3">Plugin version compatibility</a><br />
 <a href="#ImportExternalRuns" class="menuItem2">Import External Runs</a><br />
 <a href="#Principle" class="menuItem3">Principle</a><br />
 <a href="#DeclareRunImport" class="menuItem3">Declare Run Import</a><br />
@@ -656,34 +659,47 @@ For such, execute <code>jeka clean java#pack</code> (<a href="#Plugins">See Plug
 <h2>Jeka Runtime</h2>
 <p>This chapter describes how to use Jeka with command line and mostly what happens behind the cover when Jeka is run.</p>
 <p>Jeka is a pure Java application requiring JDK version 8 or higher (tested until 12). JDK is required and JRE is not sufficient as Jeka uses the JDK tools to compile <em>def classes</em>.</p>
-<p>Jeka commands can be launched from both command line and your IDE.</p>
+<p>Jeka commands can be launched both from command line and from your IDE as regular Java main method.</p>
 <a name="JekafromCommandline"></a>
 <h3>Jeka from Command line</h3>
-<p>To ease launching Java processes from command line, Jeka provides shell scripts ( <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/META-INF/bin/jeka.bat">jeka.bat</a> for Windows
-and <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/META-INF/bin/jeka">jeka</a> for Unix ). They are located at root
-of <em>[JEKA HOME]</em>. <em>[JEKA HOME]</em> is supposed to be in your PATH environment variable.</p>
+<p>To ease launching Java processes from command line, Jeka provides shell script <code>jeka.bat</code> and <code>jeka</code>.
+They are located at root of <em>JEKA HOME</em> which is supposed to be in your PATH environment variable.</p>
 <p>This script does the following :</p>
-<ol>
-<li>Find the <em>Java</em> executable path : Look first at <code>JEKA_JDK</code> environment variable then <code>JAVA_HOME</code>. If no such variables are  defined it takes the one lying in this JDK, otherwise it takes the one accessible in the <em>PATH</em> of your OS. <code>JEKA_JDK/bin/java</code> or <code>JAVA_HOME/bin/java</code> must resolve to the <em>Java</em> executable.</li>
-<li>Get java execution option : If an environment variable <code>JEKA_OPTS</code> exists then its value is passed to the <code>java</code> command line parameters.</li>
-<li>Get the classpath in the following order :
 <ul>
-<li>all jar and zip files found under <em>[WORKING DIR]/jeka/boot</em></li>
-<li>the <em>[JEKA_HOME]/dev.jeka.jeka-core.jar</em> file</li>
+<li>
+<p>Find the <em>java</em> executable by looking at, in order :</p>
+<ul>
+<li><code>JEKA_JDK</code> environment variable</li>
+<li><code>JAVA_HOME</code> environment variable</li>
+<li>The java executable accessible from <code>PATH</code> environment variable.</li>
+</ul>
+<p>The <code>java</code> executable must be one from a JDK and not a JRE, as Jeka needs <code>javac</code> to compile <em>DEF CLASSES</em>.</p>
+</li>
+<li>
+<p>Get java execution option : If an environment variable <code>JEKA_OPTS</code> exists then its value is passed to the <code>java</code> command line parameters.</p>
+</li>
+<li>
+<p>Get the classpath in the following order :</p>
+<ul>
+<li>all jar and zip files found under <em>WORKING_DIR/jeka/boot</em></li>
+<li>the <em>JEKA_HOME/dev.jeka.jeka-core.jar</em> file</li>
 </ul>
 </li>
-<li>Run the <em>java</em> process for launching <code>Main</code> class passing the command line argument as is. This class main method does the following :
-<ol>
-<li>Parse the command line.</li>
-<li>Populate system properties from configuration files and command line.</li>
-<li>Pre-process <em>def classes</em> . In this step, <em>def class</em> code is parsed to detect 3rd party and external project imports. Imports are added to the <em>def classpath</em>.</li>
-<li>Compile <em>def classes</em> using the classpath computed in previous step.</li>
-<li>Select the <em>command class</em> to be run.</li>
-<li>Instantiate selected <em>command class</em>, inject options and bind plugins on it.</li>
-<li>Invoke methods specified in command line arguments : methods are executed in the order they appear on the command line.</li>
-</ol>
+<li>
+<p>Run <em>java</em> class <code>dev.jeka.core.tool.Main</code> passing the command line argument as is.</p>
 </li>
-</ol>
+</ul>
+<a name="JekaMainClass"></a>
+<h3>Jeka Main Class</h3>
+<p>Jeka entry point is <code>dev.jeka.core.tool.Main#main</code> method.</p>
+<pre><code> 1. Parse the command line.
+ 2. Populate system properties from configuration files and command line.
+ 3. Construct DEF CLASSPATH by parsing DEF CLASSES source code.
+ 4. Compile DEF CLASSES using DEF CLASSPATH.
+ 5. Select the COMMAND CLASS to be run.
+ 6. Instantiate selected COMMAND CLASS, inject options and bind plugins on it.
+ 7. Invoke methods specified in command line arguments : methods are executed in the order they appear on the command line.
+</code></pre>
 <p>The following sub-sections detail about these steps.</p>
 <a name="ParsetheCommandLine"></a>
 <h4>Parse the Command Line</h4>
@@ -700,7 +716,7 @@ This is intended to modifiate behavior of <em>command class</em> by plugins dyna
 For example, `-repo.def.url=http://my.repo.milestone/' will inject 'http://my.repo.milestone/' in the 'repo.def.url' Jeka option.</p>
 </li>
 <li>
-<p><strong>In other cases :</strong> argument is considered as a run method name to be invoked on the <em>command class</em> instance.</p>
+<p><strong>In other cases :</strong> argument is considered as a command (method) to be invoked on the <em>command class</em> instance.</p>
 </li>
 </ul>
 <a name="PopulateSystemPropertiesfromConfigurationFilesandCommandline"></a>
@@ -719,9 +735,9 @@ For example, `-repo.def.url=http://my.repo.milestone/' will inject 'http://my.re
 <li>command line parsed above</li>
 </ul>
 <p>The last loaded options override the previous ones if there is some conflicts.</p>
-<a name="Pre-process"></a>
-<h4>Pre-process <em>Def Class</em> Code (Import 3rd party library into <em>Def Classpath</em>)</h4>
-<p>In order to compile <em>def classes</em>, Jeka has to compute <em>def Classpath</em> first. With Jeka you can specify run dependencies
+<a name="ConstructDEFCLASSPATH"></a>
+<h4>Construct DEF CLASSPATH</h4>
+<p>In order to compile <em>DEF CLASSES</em>, Jeka has to compute <em>DEF CLASSPATH</em> first. With Jeka you can specify dependencies
 directly inside the source code using <code>@JkDefClasspath</code> or <code>@JkDefImport</code> annotations as shown below.</p>
 <pre><code class="language-Java">@JkDefClasspath(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
 @JkDefClasspath(&quot;com.google.guava:guava:18.0&quot;)
@@ -735,12 +751,15 @@ public class HttpClientTaskRun extends JkCommandSet {
 </code></pre>
 <p>To achieve this, Jeka parses source code of <em>all</em> classes under <em>jeka/def</em> and add the detected imports to the <em>def Classpath</em>.
 Note that classes having a name starting by a '_' are skipped.</p>
-<p>When a dependency is expressed as a maven/ivy module, Jeka tries to resolve it using repository url defined by in order :</p>
+<a name="Repositories"></a>
+<h5>Repositories</h5>
+<p>When a dependency is expressed as a maven/ivy module, Jeka tries to resolve it against a binary repository.</p>
+<p>Jeka defines this url by looking at following options, in order :</p>
 <ul>
-<li>If option <code>repo.defName</code> is present and option <code>repo.${repo.defName}.url</code> is present as well, it takes the value of this property.</li>
-<li>If no url is defined as such, it takes the value of <code>repo.def.url</code> option.</li>
-<li>If this option is not set, then it takes the value of <code>repo.download.url</code> option.</li>
-<li>If the latest is not present as well, it falls back to Maven Central.</li>
+<li><code>repo.defName</code> and <code>repo.${repo.defName}.url</code> (example : repo.defName=build_repo, repo.build_repo.url=https://my.buid.repo/url )</li>
+<li><code>repo.def.url</code></li>
+<li><code>repo.download.url</code></li>
+<li>Maven Central.</li>
 </ul>
 <p>If a repository needs credentials, you need to supply it through Jeka options <code>repo.[repo name].username</code> and <code>repo.[repo name].password</code>.</p>
 <p>Note that you can define several urls for a <code>repo.[repo name].url</code> by separating then with coma (as <code>repo.def.url=http://my.repo1, http://my.repo2.snapshot</code>).</p>
@@ -773,18 +792,20 @@ This means that class <code>SomeCommands</code> will be selected prior <code>apa
 </ul>
 <a name="InstantiateCommandSetClass"></a>
 <h4>Instantiate CommandSet Class</h4>
-<p>The commands instantiation process is defined in <code>ork.jeka.tool.JkCommandSet#of</code> factory method. It consists in :</p>
+<p>The commandSet instantiation process is defined in <code>ork.jeka.tool.JkCommandSet#of</code> factory method. It consists in :</p>
 <ol>
 <li>Creating a new <em>command class</em> instance (Invoking default constructor).</li>
-<li>Injecting defined options in public instance fields.</li>
-<li>Invoking <code>JkCommandSet#setup</code> method on <em>command class</em>. This method might be overridden by users to configure run and plugins before they have been activated.</li>
-<li>Loading plugins defined in command line into the <em>command class</em> instance.</li>
-<li>Invoking <code>JkPlugin#activate</code> method on each loaded plugins. This method is defined by plugin authors.</li>
-<li>Invoking <code>JkCommandSet#setupAfterPluginActivations</code> on <em>command class</em>. This method might be overridden by users to configure <em>command class</em> instance once plugins have been activated.</li>
+<li>Injecting defined options in public instance fields of the command class and in the imported ones.</li>
+<li>Injecting fields options in the public instance fields of the bound plugins</li>
+<li>Initialising bound plugins (invoking <code>JkPlugin#beforeSetup</code> method)</li>
+<li>Invoking <code>JkCommandSet#setup</code> method on <em>COMMAND CLASS</em>. This method is supposed to be override to set specific settings.</li>
+<li>Invoking <code>JkPlugin#afterSetup</code> method on each bound plugins.</li>
+<li>Invoking <code>JkCommandSet#postSetup</code> on <em>command class</em>. This method might be override.</li>
+<li>The commandSet is ready.</li>
 </ol>
 <a name="InvokeMethodsSpecifiedinJekaCommandLinearguments"></a>
 <h4>Invoke Methods Specified in Jeka Command Line arguments</h4>
-<p>Once <em>commandSet class</em> instantiated, Jeka invokes instance methods mentioned in command line as <code>jeka myFistMethod mySecondMethod ...</code>.
+<p>Once commandSet is ready, Jeka invokes instance methods mentioned in command line as <code>jeka myFistMethod mySecondMethod ...</code>.
 Methods are invoked in order they appear in command line regardless if method is defined on the <em>command class</em> itself or in a plugin.</p>
 <p>In order a method to be considered as a <em>command</em> (invokable from Jeka command line), it must :</p>
 <ul>
@@ -1000,23 +1021,23 @@ convention :</p>
 </ul>
 <a name="Plugins"></a>
 <h2>Plugins</h2>
-<p>Jeka provides a pluggble architecture. In Jeka, a plugin is a class extending <code>JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
+<p>Jeka provides a pluggable architecture. In Jeka, a plugin is a class extending <code>JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
 The plugin name is inferred from Plugin class name.</p>
-<p>Each plugin instance is owned by a JkCommandSet object, and can access to it through <code>JkPlugin#owner</code> protected field.</p>
+<p>Each plugin instantiated plugin is bound to a JkCommandSet object.</p>
 <p>Plugins has 3 capabilities :</p>
 <ul>
 <li>Access to their owning JkCommandSet instance (so potentially modify it, load/modify other plugins).</li>
 <li>Expose <em>commands</em> and <em>options</em> to command line.</li>
 <li>Provide self documentation.</li>
 </ul>
-<p>Jeka is bundled with a bunch of plugins (java, scaffold, eclipse, intellij, ...) but one can add extra plugins just
+<p>Jeka is bundled with a bunch of plugins (java, scaffold, eclipse, intellij, ...), but one can add extra plugins just
 by adding a jar or directory containing the plugin class to the <em>def classpath</em>.</p>
 <p>To see all available plugins in the <em>def classpath</em>, just execute <code>jeka help</code>.
 See <a href="#CommandLineParsing">Command Line Parsing</a> and <a href="#RunClassPre-processing(Import3rdpartylibraryintoRunClasspath)">Run Class Pre-processing</a>
 to augment <em>def classpath</em> .</p>
-<a name="LoadPlugins"></a>
-<h3>Load Plugins</h3>
-<p>Plugins need not to be mentioned in <em>commandSet class</em> code in order to be bound to the JkCommandSet instance. Just the fact to
+<a name="BindingPlugins"></a>
+<h3>Binding Plugins</h3>
+<p>Plugins need not to be bound in <em>commandSet class</em> code in order to be bound to the JkCommandSet instance. Just the fact to
 mention a plugin in the command line loads it.</p>
 <p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkCommandSet instance.
 'java' plugin instance will modify 'scaffold' plugin instance in such it produces a commandSet class declaring 'java' plugin
@@ -1035,23 +1056,22 @@ to have a concrete view.</p>
 <a name="ModifyJkCommandSetInstance"></a>
 <h3>Modify JkCommandSet Instance</h3>
 <p>JkCommandSet instances are created using <code>JkCommandSet#of</code> factory method.
-This method invokes <code>JkPlugin#activate</code> method on all plugins loaded in the JkCommandSet instance.
-By default, <code>activate</code> method does nothing but plugin implementations can override it in order to let the plugin modify its JkCommandSet instance or one of its plugins.
-In fact, many plugins act just as modifier/enhancer of other plugins.</p>
-<p>For example, <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
+This method invokes <code>JkPlugin#beforeSetup</code> and <code>JkPlugin#afterSetup</code> methods on all plugins loaded in the JkCommandSet instance.
+<code>JkPlugin#afterSetup</code> is supposed to be used to modify other plugins that might be bound to the owning commandSet.</p>
+<p>For example, <a href="https://github.com/jerkar/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
 does not provide <em>commands</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
 It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>
-<p>Some other plugins does not modify their owning JkCommandSet instance, for example <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
-does not override <code>activate</code> method, therefore it has no side effect on its owning <code>JkCommandSet</code> instance. It only features extra <em>commands</em> and <em>options</em>.</p>
+<p>Some other plugins does not modify their owning commandSet instance. For instance, <a href="https://github.com/jerkar/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
+just exposes methods to scaffold new Jeka projects.</p>
 <a name="ConfigurePluginsinJkCommandSetClass"></a>
 <h3>Configure Plugins in JkCommandSet Class</h3>
 <p>There is three places where you can configure plugins :</p>
 <ul>
-<li>In <code>JkCommandSet</code> subclass constructors : at this point options has not yet been injected so it's the place to configure default option values.</li>
-<li>In <code>JkCommandSet#setup</code> subclass method : at this point, options has been injected but plugins has not been activated yet.
-It is the place to configure plugins and other instance member to take options in account before activation.</li>
-<li>In <code>JkCommandSet#setupAfterPluginActivations</code> subclass method : at this point plugins has been activated. If you wan't to override
-some values plugin activation may have set, override this method.</li>
+<li>In <code>JkCommandSet</code> constructor : at this point options has not yet been injected, so it's the place to configure default option values.</li>
+<li>In <code>JkCommandSet#setup</code> : at this point, options has been injected.
+This is the place to configure plugins and other instance members.</li>
+<li>In <code>JkCommandSet#postSetup</code> : at this point, plugins has done their configuration job. So it is the place
+to override plugin settings, if needed.</li>
 </ul>
 <p>Example of configuring a plugin in <em>commandSet class</em>.</p>
 <pre><code class="language-Java">
@@ -1068,8 +1088,26 @@ some values plugin activation may have set, override this method.</li>
 <h3>Document Plugins</h3>
 <p>Plugin authors can embed self-documentation using <code>@JkDoc</code> annotation on classes, command methods and option fields.</p>
 <p>Writers can also mention that the plugin has dependencies on other plugins using <code>@JkDocPluginDeps</code> annotation. This annotation
-has only a documentation purpose and does not has influence on plugin loading mechanism.</p>
+has only a documentation purpose and does not has impact on plugins loading mechanism.</p>
 <p>A good example is <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
+<a name="Pluginversioncompatibility"></a>
+<h3>Plugin version compatibility</h3>
+<p>As Jeka API is likely to evolve (less and less), plugins author can mention the Jeka lower version
+on which the plugin is compatible with using <code>JkPlugin#getLowestJekaCompatibleVersion</code> method.</p>
+<p>It is also possible to mention the highest version on Jeka, a plugin version is compatible with.
+As this information is unknown at the time of publishing the plugin, a mechanism based on a central registry
+keeps track this information.</p>
+<p>It consists of publishing a specific format flat file on a url.
+The file contains the versions that start breaking compatibility.
+Project repository might host this registry.</p>
+<p>A working example is available for  <a href="https://github.com/jerkar/springboot-plugin">spring-boot plugin</a>.
+The <code>breaking_versions.txt</code> is accessible at https://raw.githubusercontent.com/jerkar/springboot-plugin/master/breaking_versions.txt
+declared in <code>JkPluginSpringboot</code> as :</p>
+<pre><code class="language-Java">@Override
+protected String getBreakingVersionRegistryUrl() {
+    return &quot;https://raw.githubusercontent.com/jerkar/springboot-plugin/master/breaking_versions.txt&quot;;
+}
+</code></pre>
 <a name="ImportExternalRuns"></a>
 <h2>Import External Runs</h2>
 <p>There is many way to perform multi-project build. One of is to import runs from external projects.</p>

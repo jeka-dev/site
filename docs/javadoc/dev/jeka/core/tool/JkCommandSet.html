@@ -218,14 +218,14 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommandSet.html#setup--">setup</a></span>()</code>
-<div class="block">This method is invoked right after options has been injected into this instance.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommandSet.html#postSetup--">postSetup</a></span>()</code>
+<div class="block">This method is called once <a href="../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--"><code>JkPlugin.afterSetup()</code></a> method has been invoked on all plugins.</div>
 </td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code>protected void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommandSet.html#setupAfterPluginActivations--">setupAfterPluginActivations</a></span>()</code>
-<div class="block">This method is called once all plugin has been activated.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkCommandSet.html#setup--">setup</a></span>()</code>
+<div class="block">Configure your build and plugins here.</div>
 </td>
 </tr>
 <tr id="i13" class="rowColor">
@@ -293,24 +293,24 @@ extends java.lang.Object</pre>
 <h4>setup</h4>
 <pre>protected&nbsp;void&nbsp;setup()
               throws java.lang.Exception</pre>
-<div class="block">This method is invoked right after options has been injected into this instance. Here, You will typically
- configure plugins before they are activated.</div>
+<div class="block">Configure your build and plugins here.
+ At this point, option values has been injected and <a href="../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--"><code>JkPlugin.beforeSetup()</code></a> method invoked on all plugins.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code></dd>
 </dl>
 </li>
 </ul>
-<a name="setupAfterPluginActivations--">
+<a name="postSetup--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setupAfterPluginActivations</h4>
-<pre>protected&nbsp;void&nbsp;setupAfterPluginActivations()
-                                    throws java.lang.Exception</pre>
-<div class="block">This method is called once all plugin has been activated. This method is intended to overwrite what plugin
- activation has setup.</div>
+<h4>postSetup</h4>
+<pre>protected&nbsp;void&nbsp;postSetup()
+                  throws java.lang.Exception</pre>
+<div class="block">This method is called once <a href="../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--"><code>JkPlugin.afterSetup()</code></a> method has been invoked on all plugins.
+ It gives a chance to the command class to override some plugin settings.</div>
 <dl>
 <dt><span class="throwsLabel">Throws:</span></dt>
 <dd><code>java.lang.Exception</code></dd>
