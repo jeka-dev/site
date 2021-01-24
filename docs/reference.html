@@ -17,36 +17,9 @@
 <div class="title">Jeka - Reference Guide</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : 0.9.4.RC1</div>
+<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
 <br />
 <a href="#Introduction" class="menuItem1">Introduction</a><br />
-<a href="#Library" class="menuItem1">Library</a><br />
-<a href="#Files" class="menuItem2">Files</a><br />
-<a href="#ClassesfromJekaFileAPI" class="menuItem3">Classes from Jeka File API</a><br />
-<a href="#Examples" class="menuItem3">Examples</a><br />
-<a href="#System" class="menuItem2">System</a><br />
-<a href="#DependencyManagement" class="menuItem2">Dependency Management</a><br />
-<a href="#Concepts" class="menuItem3">Concepts</a><br />
-<a href="#Whatisadependency?" class="menuItem4">What is a dependency ?</a><br />
-<a href="#Whatisascope?" class="menuItem4">What is a scope ?</a><br />
-<a href="#Whatisascopeddependency?" class="menuItem4">What is a scoped dependency ?</a><br />
-<a href="#Defineasetofdependencies" class="menuItem3">Define a set of dependencies</a><br />
-<a href="#HHierarchyofDependencyTypes." class="menuItem3">HHierarchy of Dependency Types.</a><br />
-<a href="#DependenciesonModule" class="menuItem4">Dependencies on Module</a><br />
-<a href="#Dependenciesonlocalfiles" class="menuItem4">Dependencies on local files</a><br />
-<a href="#Dependenciesonfilesproducedbycomputation" class="menuItem4">Dependencies on files produced by computation</a><br />
-<a href="#ResolveDependencies" class="menuItem3">Resolve Dependencies</a><br />
-<a href="#Publication" class="menuItem3">Publication</a><br />
-<a href="#PublishtoaMavenrepository" class="menuItem4">Publish to a Maven repository</a><br />
-<a href="#PublishtoaIvyrepository" class="menuItem4">Publish to a Ivy repository</a><br />
-<a href="#JavaProjectBuilding" class="menuItem2">Java Project Building</a><br />
-<a href="#Junittests" class="menuItem3">Junit tests</a><br />
-<a href="#Projects" class="menuItem3">Projects</a><br />
-<a href="#ThirdPartyToolIntegration" class="menuItem2">Third Party Tool Integration</a><br />
-<a href="#Eclipse" class="menuItem3">Eclipse</a><br />
-<a href="#Intellij" class="menuItem3">Intellij</a><br />
-<a href="#Git" class="menuItem3">Git</a><br />
-<a href="#Maven" class="menuItem3">Maven</a><br />
 <a href="#ToolPart" class="menuItem1">Tool Part</a><br />
 <a href="#JekaRuntime" class="menuItem2">Jeka Runtime</a><br />
 <a href="#JekafromCommandline" class="menuItem3">Jeka from Command line</a><br />
@@ -92,7 +65,34 @@
 <a href="#OptionPropagation" class="menuItem3">Option Propagation</a><br />
 <a href="#Methodpropagation" class="menuItem3">Method propagation</a><br />
 <a href="#AccessImportedRunsProgrammatically" class="menuItem3">Access Imported Runs Programmatically</a><br />
-<a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><a name="Introduction"></a>
+<a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><br />
+<a href="#Library" class="menuItem1">Library</a><br />
+<a href="#Files" class="menuItem2">Files</a><br />
+<a href="#ClassesfromJekaFileAPI" class="menuItem3">Classes from Jeka File API</a><br />
+<a href="#Examples" class="menuItem3">Examples</a><br />
+<a href="#System" class="menuItem2">System</a><br />
+<a href="#DependencyManagement" class="menuItem2">Dependency Management</a><br />
+<a href="#Concepts" class="menuItem3">Concepts</a><br />
+<a href="#Whatisadependency?" class="menuItem4">What is a dependency ?</a><br />
+<a href="#Whatisascope?" class="menuItem4">What is a scope ?</a><br />
+<a href="#Whatisascopeddependency?" class="menuItem4">What is a scoped dependency ?</a><br />
+<a href="#Defineasetofdependencies" class="menuItem3">Define a set of dependencies</a><br />
+<a href="#HHierarchyofDependencyTypes." class="menuItem3">HHierarchy of Dependency Types.</a><br />
+<a href="#DependenciesonModule" class="menuItem4">Dependencies on Module</a><br />
+<a href="#Dependenciesonlocalfiles" class="menuItem4">Dependencies on local files</a><br />
+<a href="#Dependenciesonfilesproducedbycomputation" class="menuItem4">Dependencies on files produced by computation</a><br />
+<a href="#ResolveDependencies" class="menuItem3">Resolve Dependencies</a><br />
+<a href="#Publication" class="menuItem3">Publication</a><br />
+<a href="#PublishtoaMavenrepository" class="menuItem4">Publish to a Maven repository</a><br />
+<a href="#PublishtoaIvyrepository" class="menuItem4">Publish to a Ivy repository</a><br />
+<a href="#JavaProjectBuilding" class="menuItem2">Java Project Building</a><br />
+<a href="#Junittests" class="menuItem3">Junit tests</a><br />
+<a href="#Projects" class="menuItem3">Projects</a><br />
+<a href="#ThirdPartyToolIntegration" class="menuItem2">Third Party Tool Integration</a><br />
+<a href="#Eclipse" class="menuItem3">Eclipse</a><br />
+<a href="#Intellij" class="menuItem3">Intellij</a><br />
+<a href="#Git" class="menuItem3">Git</a><br />
+<a href="#Maven" class="menuItem3">Maven</a><a name="Introduction"></a>
 <h1>Introduction</h1>
 <p><strong>What is Jeka ?</strong></p>
 <p>Jeka is both a build library, and a thin automation tool.</p>
@@ -115,468 +115,6 @@ written with intelligibility in mind in order to navigate easily from the user c
 For Java developers, reading source code and putting break points troubleshoots faster than documentation/support most of the time.</p>
 <p>Jeka philosophy is to be transparent and easy to master. We hope that no user will ever feel the need to buy some
 trainings or books to master it.</p>
-<a name="Library"></a>
-<h1>Library</h1>
-<p>Jeka contains a library for all regular things you need to build/publish projects and especially Java projects.
-It can be embedded in your own tool and used in a simple <code>main</code> method.</p>
-<p>The Jeka-core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em>. Those are not visible/accessible to client code
-due to a specific classloading mechanism, preventing version clashing with client dependencies.</p>
-<p><span class="menuItem0">API Style</span></p>
-<p><em>Jeka</em> tries to stick with a consistent API design style.</p>
-<p><strong>Class and Interface Naming Convention</strong></p>
-<p>All Jeka public classes/interfaces start with <code>Jk</code>. The reason is for easing distinction, in IDE, between classes supposed be used
-in production or test and the ones used for building. It also helps to explore Jeka API.</p>
-<p><strong>Mutable Vs Immutable</strong></p>
-<p>As a rule of thumb <em>Jeka</em> favors immutable objects for shallow structures and
-<a href="https://github.com/djeang/parent-chaining/blob/master/readme.md">parent-chaining trees</a> for deeper ones.
-Both provide a fluent interface when possible.</p>
-<p><strong>Instantiation</strong></p>
-<p>All objects are instantiated using static factory methods. Every factory method names start with <code>of</code>.</p>
-<p><strong>Read Accessors</strong></p>
-<p>All accessor method names (methods returning a result without requiring IO, only computation) starts with <code>get</code>.</p>
-<p><strong>Withers/Anders for Immutable Objects</strong></p>
-<p>To create a subtly different object from another immutable one, <em>Jeka</em> provides :</p>
-<ul>
-<li>Methods starting with <code>with</code> when a property is to be replaced by another.</li>
-<li>Methods starting with <code>and</code> when a collection property is to be replaced by the same one plus an extra element.</li>
-<li>Methods starting with <code>minus</code> when a collection property is to be replaced by the same one minus a specified element.</li>
-</ul>
-<p><strong>Setters/Adders for Mutable Objects</strong></p>
-<p>To modify a mutable object, <em>Jeka</em> provides :</p>
-<ul>
-<li>Methods starting with <code>set</code> to replace a single property value by another.</li>
-<li>Methods starting with <code>add</code> to add a value to a collection property.
-Those methods return the object itself for chaining.</li>
-</ul>
-<p><strong>Translators</strong></p>
-<p>To translate an object to another representation (for example a <code>JkDependencySet</code> to a  list of <code>JkScopedDependency</code>)
-<em>Jeka</em> provides methods starting with <code>to</code>.</p>
-<p><span class="menuItem0">Domains Covered by the API</span></p>
-<p>The previous example demonstrates how the Java/project API can be used to build and publish Java projects. This API
-relies on other lower level ones provided by <em>Jeka</em>. In a glance these are the domains covered by the <em>Jeka</em> APIs :</p>
-<ul>
-<li><strong>Files :</strong> File trees, filters, zip, path sequence</li>
-<li><strong>System :</strong> Launching external process, Logging, Meta-info</li>
-<li><strong>Cryptography :</strong> PGP signer</li>
-<li><strong>Dependency management :</strong> Dependency management, publishing on repositories</li>
-<li><strong>Java :</strong> Compilation, javadoc, resource processor, manifest, packager, classloader, classpath, launching
-<ul>
-<li><strong>Testing :</strong> Launching tests and get reports</li>
-<li><strong>Project :</strong> Project structure to build</li>
-</ul>
-</li>
-<li><strong>Tooling :</strong> Eclipse integration, intellij integration, Maven interaction, Git</li>
-<li><strong>Support :</strong> Set of utility class with static methods to handle low-level concerns</li>
-</ul>
-<a name="Files"></a>
-<h2>Files</h2>
-<p>File manipulation is a central part for building software.
-Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concepts around, to provide a powerful fluent style API performing
-recurrent tasks with minimal effort.</p>
-<a name="ClassesfromJekaFileAPI"></a>
-<h3>Classes from Jeka File API</h3>
-<p>The following classes lie in <code>dev.jeka.core.api.file</code> package:</p>
-<ul>
-<li>
-<p><code>JkPathFile</code> A simple wrapper for files (not folders). It provides copying, interpolation, checksum, deletion and creation methods.</p>
-</li>
-<li>
-<p><code>JkPathSequence</code> An Immutable sequence of <code>java.nio.file.Path</code> providing methods for filtering or appending.</p>
-</li>
-<li>
-<p><code>JkPathMatcher</code> An immutable <code>java.nio.file.PathMatcher</code> based on <code>java.nio.file</code> glob pattern or regerxp.
-Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
-</li>
-<li>
-<p><code>JkPathTree</code> An Immutable root folder (or a zip file) along a <code>PathMatcher</code> providing operations to copy, navigate, zip or iterate.
-This is a central class in Jeka API.</p>
-</li>
-<li>
-<p><code>JkPathTreeSet</code> An Immutable set of <code>JkPathTree</code>. Helpful to define set of sources/resources and create jar/zip files.</p>
-</li>
-<li>
-<p><code>JkResourceProcessor</code> A mutable processor for copying a set of files, preserving the structure and
-replacing some text by other text. Typically, used for replacing token as <code>${server.ip}</code> by an actual value.</p>
-</li>
-</ul>
-<a name="Examples"></a>
-<h3>Examples</h3>
-<pre><code class="language-Java">// creates a file and writes the content of the specified url.
-JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
-
-// copies all non java source files to another directory preserving structure
-JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
-
-// One liner to zip an entire directory
-JkPathTree.of(&quot;build/classes&quot;).zipTo(Paths.get(&quot;mylib.jar&quot;));
-
-</code></pre>
-<a name="System"></a>
-<h2>System</h2>
-<p>The <code>dev.jeka.core.api.system</code> package provides system level functions :</p>
-<ul>
-<li>
-<p><code>JkInfo</code> Provides meta information as the running version of Jeka.</p>
-</li>
-<li>
-<p><code>JkLocator</code> Provides information about where is located repository cache or Jeka user home.</p>
-</li>
-<li>
-<p><code>JkLog</code> Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
-and <code>#endtask</code> methods.</p>
-</li>
-<li>
-<p><code>JkProcess</code> Launcher for external process.</p>
-</li>
-<li>
-<p><code>JkPrompt</code> One-liner to ask user input.</p>
-</li>
-</ul>
-<a name="DependencyManagement"></a>
-<h2>Dependency Management</h2>
-<a name="Concepts"></a>
-<h3>Concepts</h3>
-<a name="Whatisadependency?"></a>
-<h4>What is a dependency ?</h4>
-<p>For Jeka, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
-Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or many.</p>
-<p>A dependency is always an instance of <code>JkDependency</code>.</p>
-<p>Jeka distinguishes 3 types of dependency :</p>
-<ul>
-<li><strong>Arbitrary files</strong> located on the file system (represented by <code>JkFileSystemDependency</code> class). These files are assumed to be present on the file system when the build is running.</li>
-<li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
-<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven, Ivy or Gradle.</li>
-</ul>
-<p>For the last, Jeka is using <em>Ivy 2.5.0</em> under the hood.
-This library is embedded inside the Jeka jar and is executed in a dedicated classloader.
-So all happens as if there where no dependency at all.</p>
-<a name="Whatisascope?"></a>
-<h4>What is a scope ?</h4>
-<p>Projects may need dependencies to accomplish certain tasks and these dependencies may vary according the executed tasks.
-For example, to <em>compile</em> you may need <em>guava</em> library only but to <em>test</em> you'll need <em>junit</em> library too.
-To tag dependencies according their usage, Jeka uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
-<p>A scope can <em>inherit</em> from one or several scopes. This means that if a scope <em>Foo</em> inherits from scope <em>Bar</em> then a dependencies declared with scope <em>Bar</em> will be also considered as declared with scope <em>Foo</em>.
-For instance, in <code>JkJavaBuild</code>, scope <code>TEST</code> inherits from <code>RUNTIME</code> that inherits from <code>COMPILE</code> so every dependencies declared with scope <code>COMPILE</code> are considered to be declared with scope <code>RUNTIME</code> and <code>TEST</code> as well.</p>
-<p>By default, scopes are <em>transitive</em>. This has only a meaning for <em>module dependencies</em>.
-If we have 3 modules having the following dependency scheme : <code>A</code> -&gt; <code>B</code> -&gt; <code>C</code> and the <code>A</code>-&gt; <code>B</code> dependency is declared with a <em>non transitive scope</em>, then <code>A</code> won't depend from <code>C</code>.</p>
-<p><code>JkJavaDepScope</code> class pre-defines scopes used in Java projects.</p>
-<p><strong>Scope Mapping</strong> : Projects consuming artifacts coming from Ivy repository can also use <code>JkScopeMapping</code> which is more powerful.
-This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.0/ivyfile/configurations.html">Ivy configuration</a> concept.</p>
-<a name="Whatisascopeddependency?"></a>
-<h4>What is a scoped dependency ?</h4>
-<p>A <em>scoped dependency</em> (represented by <code>JkScopedDependency</code> class) is simply a dependency associated with zero, one or many scopes.</p>
-<a name="Defineasetofdependencies"></a>
-<h3>Define a set of dependencies</h3>
-<p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
-<p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides a fluent API for easier instantiation.</p>
-<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkScopes.*;
-...
-JkDependencySet deps = JkDependencySet.of()
-    .and(&quot;com.google.guava&quot;) 
-    .and(&quot;org.slf4j:slf4j-simple&quot;)
-    .and(&quot;com.orientechnologies:orientdb-client:2.0.8&quot;)
-    .and(&quot;junit:junit:4.11&quot;, TEST)
-    .and(&quot;org.mockito:mockito-all:1.9.5&quot;, TEST)
-    .andFile(&quot;../libs.myjar&quot;)
-    .withVersionProvider(myVersionProvider)
-    .withDefaultScopes(COMPILE);
-</code></pre>
-<p>Note that :</p>
-<ul>
-<li>
-<p>Module version and scopes can be omitted when declaring dependencies. Versions can be provided by a <code>JkVersionProvider</code>
-and scopes can be defaulted.</p>
-</li>
-<li>
-<p>Instances of <code>JkDependencySet</code> can be combined together in order to construct large dependencySet from smaller ones.</p>
-</li>
-<li>
-<p><code>JkDependencySet#ofTextDescription</code> provides a mean to instantiate a dependency set from a simple text as :</p>
-</li>
-</ul>
-<pre><code>- COMPILE RUNTIME
-org.springframework.boot:spring-boot-starter-thymeleaf
-org.springframework.boot:spring-boot-starter-data-jpa
-
-- RUNTIME
-com.h2database:h2
-org.liquibase:liquibase-core
-com.oracle:ojdbc6:12.1.0
-
-- TEST
-org.springframework.boot:spring-boot-starter-test
-org.seleniumhq.selenium:selenium-chrome-driver:3.4.0
-org.fluentlenium:fluentlenium-assertj:3.2.0
-org.fluentlenium:fluentlenium-junit:3.2.0
-
-- PROVIDED
-org.projectlombok:lombok:1.16.16
-</code></pre>
-<a name="HHierarchyofDependencyTypes."></a>
-<h3>HHierarchy of Dependency Types.</h3>
-<ul>
-<li><code>JkModuleDependency</code> : Dependency on Maven modules</li>
-<li><code>JkFileDependency</code> (Abstract): Dependency on files to be found on file system
-<ul>
-<li><code>JkComputedDependency</code> : Dependency on files produced by the execution of a <code>Runnable</code>.</li>
-<li><code>JkFileSystemDependency</code> : Dependency on files supposed to already exist on file system.</li>
-</ul>
-</li>
-</ul>
-<a name="DependenciesonModule"></a>
-<h4>Dependencies on Module</h4>
-<p>This is for declaring a dependency on module hosted in <em>Maven</em> or <em>Ivy</em> repository. Basically you instantiate a <code>JkModuleDepency</code> from it's group, name and version.</p>
-<pre><code class="language-Java">    JkDependencySet.of()
-        .and(JkPopularModule.GUAVA, &quot;18.0&quot;)
-        .and(&quot;com.orientechnologies:orientdb-client:[2.0.8, 2.1.0[&quot;)
-        .and(&quot;mygroup:mymodule:myclassifier:0.2-SNAPSHOT&quot;);
-</code></pre>
-<p>There is many way to indicate a module dependency, see Javadoc for browsing possibilities.</p>
-<p>Note that :</p>
-<ul>
-<li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jeka will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
-<li>As Jeka relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
-<li>Dependency files are downloaded in <em>[USER HOME]</em>/.jeka/cache/repo</li>
-</ul>
-<a name="Dependenciesonlocalfiles"></a>
-<h4>Dependencies on local files</h4>
-<p>You just have to mention the path of one or several files. If one of the files does not exist at resolution time (when the dependency is actually retrieved), build fails.</p>
-<pre><code class="language-Java">    JkDependencySet of()
-        .andFile(&quot;libs/my.jar&quot;)
-        .andFile(&quot;libs/my.testingtool.jar&quot;, TEST);
-    }
-		
-</code></pre>
-<a name="Dependenciesonfilesproducedbycomputation"></a>
-<h4>Dependencies on files produced by computation</h4>
-<p>It is typically used for <em>multi-modules</em> or <em>multi-techno</em> projects.</p>
-<p>The principle is that if the specified files are not found, then the computation is run in order to generate the missing files.
-If some files still missing after the computation has run, the build fails.</p>
-<p>This mechanism is quite simple yet powerful as it addresses following use cases :</p>
-<ul>
-<li>Dependencies on files produced by an artifact producer (<code>JkArtifactProducer</code>). A Jeka Java project is an artifact producer.</li>
-<li>Dependencies on files produced by external project built with any type of technology (Ant, Grunt, Maven, Gradle, SBT, Android SDK, Make, ...).</li>
-<li>Dependencies on files produced by any means.</li>
-</ul>
-<p>The generic way is to construct this kind of dependency using a <code>java.lang.Runnable</code>.</p>
-<p>The following snippet constructs a set of dependencies on two external projects : one is built with Maven, the other with
-<em>Jeka</em>.</p>
-<pre><code class="language-Java">Path mavenProject = Paths.get(&quot;../a-maven-project&quot;);
-JkProcess mavenBuild = JkProcess.of(&quot;mvn&quot;, &quot;clean&quot;, &quot;install&quot;).withWorkingDir(mavenProject);
-Path mavenProjectJar = mavenProject.resolve(&quot;target/maven-project.jar&quot;);
-JkJavaProject externalProject = JkJavaProject.ofSimple(Paths.get(&quot;../a-jeka-project&quot;)); 
-JkDependencySet deps = JkDependencySet.of()
-    .and(JkComputedDependency.of(mavenBuild, mavenProjectJar))
-    .and(externalProject);
-</code></pre>
-<a name="ResolveDependencies"></a>
-<h3>Resolve Dependencies</h3>
-<p>The <code>JkDependencyResolver</code> class is responsible JkDependencyResolver.of(JkRepo.ofMavenCentral());to resolve dependencies by returning <code>JkResolveResult</code> from a
-<code>JkdependencySet</code>.</p>
-<pre><code class="language-java">JkDependencySet deps =  JkDependencySet
-                            .of(&quot;org.apache.httpcomponents:httpclient:4.5.3&quot;)
-                            .andFile(&quot;libs/my.jar&quot;);
-
-// Module dependencies are fetched from Maven central repo
-JkDependencyResolver resolver = JkDependencyResolver.of(JkRepo.ofMavenCentral());  
-JkResolveResult result = resolver().resolve(deps);
-</code></pre>
-<p>From the result you can :</p>
-<ul>
-<li>Navigate in the resolved dependency tree as :</li>
-</ul>
-<pre><code class="language-java">JkDependencyNode slfjApiNodeDep = result.getDependencyTree().getFirst(JkModuleId.of(&quot;org.slf4j:slf4j-api&quot;));
-System.out.println(slfjApiNode.getModuleInfo().getResolvedVersion());
-</code></pre>
-<ul>
-<li>Get the direct list of artifact files</li>
-</ul>
-<pre><code class="language-java">JkPathSequence sequence = result.getFiles();  
-sequence.forEach(System.out::println); // print each files part of the dependency resolution
-</code></pre>
-<ul>
-<li>Resolve for a given scope</li>
-</ul>
-<p>The following snippets captures the resolved dependency files for COMPILE scope. Junit is excluded from this result.</p>
-<pre><code>JkDependencySet deps = JkDependencySet.of()
-    .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
-    .and(&quot;junit:junit:4.11&quot;, TEST);
-    
-Iterable&lt;Path&gt; files = JkDependencyResolver.of(JkRepo.ofMavenCentral()).resolve(COMPILE).getFiles();
-</code></pre>
-<a name="Publication"></a>
-<h3>Publication</h3>
-<p>Jeka is able to publish on both Maven and Ivy repository. This includes repositories as <a href="http://www.sonatype.org/nexus/">Sonatype Nexus</a> or <a href="http://www.jfrog.com/artifactory/">Jfrog Artifactory</a>.</p>
-<p>Maven and Ivy have different publication model, so Jeka proposes specific APIs according you want to publish on a Maven or Ivy repository.</p>
-<a name="PublishtoaMavenrepository"></a>
-<h4>Publish to a Maven repository</h4>
-<p>Jeka proposes a complete API to pubish on Maven repository. POM files will be generated by Jeka according
-provided elements.</p>
-<p>The following snippet demonstrate a pretty sophisticated publishing on Maven :</p>
-<pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6&quot;);
-    JkDependencySet deps = JkDependencySet.of()
-            .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
-            .and(&quot;junit:junit:4.11&quot;, TEST);
-    JkMavenPublication mavenPublication = JkMavenPublication.of(Paths.get(&quot;org.myorg.mylib.jar&quot;))
-
-            // the following are optional but required to publish on public repositories.
-            .and(Paths.get(&quot;org.myorg.mylib-sources.jar&quot;), &quot;sources&quot;)
-            .and(Paths.get(&quot;org.myorg.mylib-javadoc.jar&quot;), &quot;javadoc&quot;)
-            .withChecksums(&quot;sha-2&quot;, &quot;md5&quot;)
-            .withSigner(JkPgp.of(Paths.get(&quot;myPubring&quot;), Paths.get(&quot;mySecretRing&quot;), &quot;mypassword&quot;))
-            .with(JkMavenPublicationInfo.of(&quot;My sample project&quot;,
-                    &quot;A project to demonstrate publishing on Jeka&quot;,
-                    &quot;http://project.jeka.org&quot;)
-                    .andApache2License()
-                    .andDeveloper(&quot;djeang&quot;, &quot;myemail@gmail.com&quot;, &quot;jeka.org&quot;, &quot;http://project.jeka.org/&quot;));
-
-    // A complex case for repo (credential + signature + filtering) 
-    JkRepo repo = JkRepo.of(&quot;http://myserver/myrepo&quot;)
-            .withOptionalCredentials(&quot;myUserName&quot;, &quot;myPassword&quot;)
-            .with(JkRepo.JkPublishConfig.of()
-                        .withUniqueSnapshot(false)
-                        .withNeedSignature(true)
-                        .withFilter(mod -&gt; // only accept SNAPSHOT and MILESTONE
-                            mod.getVersion().isSnapshot() || mod.getVersion().getValue().endsWith(&quot;MILESTONE&quot;)
-                        ));
-    
-    // Actually publish the artifacts
-    JkPublisher publisher = JkPublisher.of(repo);
-    publisher.publishMaven(versionedModule, mavenPublication, deps);
-</code></pre>
-<p>Notice that Jeka allows to :</p>
-<ul>
-<li>Publish more than one artifact.</li>
-<li>Produce &amp; publish checksum files for each published artifact.</li>
-<li>Mention to use unique snapshot (<a href="http://stackoverflow.com/questions/1243574/how-to-stop-maven-artifactory-from-keeping-snapshots-with-timestamps">What is it ?</a>).</li>
-<li>Feed generated pom with data necessary to publish on <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html">central repository</a>.</li>
-<li>Sign published artifact with PGP</li>
-<li>Publish to multiple repository by creating the publisher using a <code>JkRepoSet</code> instead of a <code>JkRepo</code>.</li>
-</ul>
-<p>To sign with PGP, no need to have PGP installed on Jeka machine. Jeka uses <a href="https://www.bouncycastle.org/">Bouncy Castle</a> internally to sign artifacts.</p>
-<a name="PublishtoaIvyrepository"></a>
-<h4>Publish to a Ivy repository</h4>
-<p>Publishing on Ivy repo is pretty similar than on Maven though there is specific options to Ivy.</p>
-<pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6-SNAPSHOT&quot;);
-    JkDependencySet deps = JkDependencySet.of()
-            .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
-            .and(&quot;junit:junit:4.11&quot;, TEST);
-
-    JkIvyPublication publication = JkIvyPublication.of(Paths.get(&quot;org.myorg.mylib.jar&quot;), &quot;master&quot;)
-            .and(Paths.get(&quot;org.myorg.mylib-sources.jar&quot;));
-
-    JkRepo repo = JkRepo.ofIvy(Paths.get(&quot;ivyrepo&quot;));
-
-    JkPublisher publisher = JkPublisher.of(repo);
-    publisher.publishIvy(versionedModule, publication, deps, JkJavaDepScopes.DEFAULT_SCOPE_MAPPING,
-            Instant.now(), JkVersionProvider.of());
-</code></pre>
-<a name="JavaProjectBuilding"></a>
-<h2>Java Project Building</h2>
-<p><code>dev.jeka.core.api.java.testing</code> package hosts classes to handle Java builds.</p>
-<p><code>JkClassLoader</code> and <code>JkUrlClassloader</code> Wrap a <code>java.lang.ClassLoader</code> adding convenient methods and classpath scanning capability.</p>
-<p><code>JkClassPath</code> A sequence of file to be used as a <code>class path</code>.</p>
-<p><code>JkJarPacker</code> A simple utility tyo create Jar or fat Jar file from compiled classes.</p>
-<p><code>JkJavaCompiler</code> Wraps either a Java Compiler tool, nor a <em>javac</em> process.</p>
-<p><code>JkJavadocProcessor</code> A Java source processor producing standard Javadoc</p>
-<p><code>JkJavaProcess</code> A utility to launch Java process (from class dirs or jars)</p>
-<p><code>JkManifest</code> Stands for the manifest file to include in jar files.</p>
-<a name="Junittests"></a>
-<h3>Junit tests</h3>
-<p><code>dev.jeka.core.api.java.testing</code> package hosts three classes that let user launch test based
-on the Junit5 platform. This means that any test framework supported by Junit5 platform,
-is also supported by Jeka. Jeka also supports Junit4 out-of-the-box through the embedded
-<em>vintage</em> engine.</p>
-<p>Jeka testing API mostly hides <em>Junit Platform</em>. For most of the cases, you won't need to code
-against <em>Junit-Platform</em> API to launch tests with Jeka. Nevertheless, Jeka allows users to
-code against <em>Junit-Platform</em> for fine-tuning.</p>
-<p><code>JkTestProcessor</code> This is the entry point to launch tests. Tests are executed using the
-current classloader classpath + extra class path mentioned in <code>#launch</code> method arguments.</p>
-<p><code>JkTestResult</code> The result of a test launch : count for found, failure, skip, success ...</p>
-<p><code>JkTestSelection</code> A mean to determine which test to launch. It can be set using file or tag filter. It is
-also possible to code against <em>JUnit Platform</em></p>
-<a name="Projects"></a>
-<h3>Projects</h3>
-<p>Projects are file structures for hosting Java projects meaning source code, test codes, dependencies,
-build instructions.</p>
-<p>The principle is that each <code>JkJavaProject</code> holds everything needed to compile, test, pack and publish
-artifacts. The API embrace the <em>parent-chaining</em> pattern.</p>
-<p>This is a pretty complete example taken from the Jeka build itself.</p>
-<pre><code>project
-    .getJarProduction()
-        .getDependencyManagement()
-           .addDependencies(JkDependencySet.of()
-               .and(&quot;com.google.guava:guava:21.0&quot;)
-               .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
-               .and(&quot;org.junit.jupiter:junit-jupiter-engine:5.1.0&quot;, TEST)
-               .and(&quot;org.junit.vintage:junit-vintage-engine:jar:5.6.0&quot;, TEST)).__
-        .getManifest()
-            .addMainClass(&quot;dev.jeka.core.tool.Main&quot;).__
-        .getCompilation()
-                .getLayout()
-                    .includeSourceDirsInResources().__
-                .addOptions(&quot;-Xlint:none&quot;,&quot;-g&quot;)
-                .setJavaVersion(JkJavaVersion.V8)
-                .getCompiler()
-                    .setForkingWithJavac().__.__.__
-        .getTesting()
-            .getCompilation()
-                .getLayout()
-                    .includeSourceDirsInResources().__
-                .getCompiler()
-                    .setDefault().__.__
-            .getTestProcessor()
-                .getEngineBehavior()
-                    .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.ONE_LINE).__.__
-            .getTestSelection()
-                .addIncludePatterns(JkTestSelection.STANDARD_INCLUDE_PATTERN)
-                .addIncludePatternsIf(runIT, JkTestSelection.IT_INCLUDE_PATTERN).__.__
-    .getDocumentation()
-        .getJavadocProcessor()
-            .setDisplayOutput(false)
-            .addOptions(&quot;-notimestamp&quot;).__.__
-    .getPublication()
-        .setModuleId(&quot;dev.jeka:jeka-core&quot;)
-        .setVersionSupplier(git::getJkVersionFromTags)
-        .setRepos(JkRepoSet.ofOssrhSnapshotAndRelease(ossrhUser, ossrhPwd))
-        .getArtifactProducer()
-            .putMainArtifact(this::doPackWithEmbedded)
-            .putArtifact(DISTRIB_FILE_ID, this::doDistrib)
-            .putArtifact(WRAPPER_ARTIFACT_ID, this::doWrapper).__
-        .getMavenPublication()
-            .getPomMetadata()
-                .getProjectInfo()
-                    .setName(&quot;jeka&quot;)
-                    .setUrl(&quot;https://jeka.dev&quot;)
-                    .setDescription(&quot;Automate with plain Java code and nothing else.&quot;).__
-                .getScm()
-                    .setUrl(&quot;https://github.com/jerkar/jeka.git&quot;).__
-                .addApache2License()
-                .addGithubDeveloper(&quot;djeang&quot;, &quot;djeangdev@yahoo.fr&quot;).__.__
-        .getPostActions()
-            .append(() -&gt; createGithubRelease());
-</code></pre>
-<p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
-deployed along the other ones.</p>
-<p>JkJavaProject instances are highly configurable. You can tune your project structure/build without limits.</p>
-<a name="ThirdPartyToolIntegration"></a>
-<h2>Third Party Tool Integration</h2>
-<p>The <code>dev.jeka.core.api.tooling</code> package provides integration with tools developers generally deal with.</p>
-<a name="Eclipse"></a>
-<h3>Eclipse</h3>
-<p><code>JkEclipseClasspathGenerator</code> and <code>JkEclipseProjectGenerator</code> provides method to generate a proper .classpath and .project file respectively.</p>
-<p><code>JkEclipseClasspathApplier</code> reads information from a .classpath file.</p>
-<a name="Intellij"></a>
-<h3>Intellij</h3>
-<p><code>JkIntellijImlGenerator</code> generates proper .iml files.</p>
-<a name="Git"></a>
-<h3>Git</h3>
-<p><code>JkGitWrapper</code> wraps common Git commands in a lean API.</p>
-<a name="Maven"></a>
-<h3>Maven</h3>
-<p><code>JkMvn</code> wraps Maven command line in a lean API</p>
-<p><code>JkPom</code> reads POM/BOM to extract information like : declared dependencies, dependency management, repos,
-properties, version and artifactId.</p>
 <a name="ToolPart"></a>
 <h1>Tool Part</h1>
 <p><span class="menuItem0">Lexical</span></p>
@@ -1198,5 +736,467 @@ Type 'jeka [pluginName]#help' to get help on a perticular plugin (ex : 'jeka jav
 Type 'jeka help -Plugins' to get help on all available plugins in the classpath.
 
 </code></pre>
+<a name="Library"></a>
+<h1>Library</h1>
+<p>Jeka contains a library for all regular things you need to build/publish projects and especially Java projects.
+It can be embedded in your own tool and used in a simple <code>main</code> method.</p>
+<p>The Jeka-core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em>. Those are not visible/accessible to client code
+due to a specific classloading mechanism, preventing version clashing with client dependencies.</p>
+<p><span class="menuItem0">API Style</span></p>
+<p><em>Jeka</em> tries to stick with a consistent API design style.</p>
+<p><strong>Class and Interface Naming Convention</strong></p>
+<p>All Jeka public classes/interfaces start with <code>Jk</code>. The reason is for easing distinction, in IDE, between classes supposed be used
+in production or test and the ones used for building. It also helps to explore Jeka API.</p>
+<p><strong>Mutable Vs Immutable</strong></p>
+<p>As a rule of thumb <em>Jeka</em> favors immutable objects for shallow structures and
+<a href="https://github.com/djeang/parent-chaining/blob/master/readme.md">parent-chaining trees</a> for deeper ones.
+Both provide a fluent interface when possible.</p>
+<p><strong>Instantiation</strong></p>
+<p>All objects are instantiated using static factory methods. Every factory method names start with <code>of</code>.</p>
+<p><strong>Read Accessors</strong></p>
+<p>All accessor method names (methods returning a result without requiring IO, only computation) starts with <code>get</code>.</p>
+<p><strong>Withers/Anders for Immutable Objects</strong></p>
+<p>To create a subtly different object from another immutable one, <em>Jeka</em> provides :</p>
+<ul>
+<li>Methods starting with <code>with</code> when a property is to be replaced by another.</li>
+<li>Methods starting with <code>and</code> when a collection property is to be replaced by the same one plus an extra element.</li>
+<li>Methods starting with <code>minus</code> when a collection property is to be replaced by the same one minus a specified element.</li>
+</ul>
+<p><strong>Setters/Adders for Mutable Objects</strong></p>
+<p>To modify a mutable object, <em>Jeka</em> provides :</p>
+<ul>
+<li>Methods starting with <code>set</code> to replace a single property value by another.</li>
+<li>Methods starting with <code>add</code> to add a value to a collection property.
+Those methods return the object itself for chaining.</li>
+</ul>
+<p><strong>Translators</strong></p>
+<p>To translate an object to another representation (for example a <code>JkDependencySet</code> to a  list of <code>JkScopedDependency</code>)
+<em>Jeka</em> provides methods starting with <code>to</code>.</p>
+<p><span class="menuItem0">Domains Covered by the API</span></p>
+<p>The previous example demonstrates how the Java/project API can be used to build and publish Java projects. This API
+relies on other lower level ones provided by <em>Jeka</em>. In a glance these are the domains covered by the <em>Jeka</em> APIs :</p>
+<ul>
+<li><strong>Files :</strong> File trees, filters, zip, path sequence</li>
+<li><strong>System :</strong> Launching external process, Logging, Meta-info</li>
+<li><strong>Cryptography :</strong> PGP signer</li>
+<li><strong>Dependency management :</strong> Dependency management, publishing on repositories</li>
+<li><strong>Java :</strong> Compilation, javadoc, resource processor, manifest, packager, classloader, classpath, launching
+<ul>
+<li><strong>Testing :</strong> Launching tests and get reports</li>
+<li><strong>Project :</strong> Project structure to build</li>
+</ul>
+</li>
+<li><strong>Tooling :</strong> Eclipse integration, intellij integration, Maven interaction, Git</li>
+<li><strong>Support :</strong> Set of utility class with static methods to handle low-level concerns</li>
+</ul>
+<a name="Files"></a>
+<h2>Files</h2>
+<p>File manipulation is a central part for building software.
+Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concepts around, to provide a powerful fluent style API performing
+recurrent tasks with minimal effort.</p>
+<a name="ClassesfromJekaFileAPI"></a>
+<h3>Classes from Jeka File API</h3>
+<p>The following classes lie in <code>dev.jeka.core.api.file</code> package:</p>
+<ul>
+<li>
+<p><code>JkPathFile</code> A simple wrapper for files (not folders). It provides copying, interpolation, checksum, deletion and creation methods.</p>
+</li>
+<li>
+<p><code>JkPathSequence</code> An Immutable sequence of <code>java.nio.file.Path</code> providing methods for filtering or appending.</p>
+</li>
+<li>
+<p><code>JkPathMatcher</code> An immutable <code>java.nio.file.PathMatcher</code> based on <code>java.nio.file</code> glob pattern or regerxp.
+Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
+</li>
+<li>
+<p><code>JkPathTree</code> An Immutable root folder (or a zip file) along a <code>PathMatcher</code> providing operations to copy, navigate, zip or iterate.
+This is a central class in Jeka API.</p>
+</li>
+<li>
+<p><code>JkPathTreeSet</code> An Immutable set of <code>JkPathTree</code>. Helpful to define set of sources/resources and create jar/zip files.</p>
+</li>
+<li>
+<p><code>JkResourceProcessor</code> A mutable processor for copying a set of files, preserving the structure and
+replacing some text by other text. Typically, used for replacing token as <code>${server.ip}</code> by an actual value.</p>
+</li>
+</ul>
+<a name="Examples"></a>
+<h3>Examples</h3>
+<pre><code class="language-Java">// creates a file and writes the content of the specified url.
+JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
+
+// copies all non java source files to another directory preserving structure
+JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
+
+// One liner to zip an entire directory
+JkPathTree.of(&quot;build/classes&quot;).zipTo(Paths.get(&quot;mylib.jar&quot;));
+
+</code></pre>
+<a name="System"></a>
+<h2>System</h2>
+<p>The <code>dev.jeka.core.api.system</code> package provides system level functions :</p>
+<ul>
+<li>
+<p><code>JkInfo</code> Provides meta information as the running version of Jeka.</p>
+</li>
+<li>
+<p><code>JkLocator</code> Provides information about where is located repository cache or Jeka user home.</p>
+</li>
+<li>
+<p><code>JkLog</code> Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
+and <code>#endtask</code> methods.</p>
+</li>
+<li>
+<p><code>JkProcess</code> Launcher for external process.</p>
+</li>
+<li>
+<p><code>JkPrompt</code> One-liner to ask user input.</p>
+</li>
+</ul>
+<a name="DependencyManagement"></a>
+<h2>Dependency Management</h2>
+<a name="Concepts"></a>
+<h3>Concepts</h3>
+<a name="Whatisadependency?"></a>
+<h4>What is a dependency ?</h4>
+<p>For Jeka, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
+Generally a dependency is resolved to 1 file (or forlder) but it can be 0 or many.</p>
+<p>A dependency is always an instance of <code>JkDependency</code>.</p>
+<p>Jeka distinguishes 3 types of dependency :</p>
+<ul>
+<li><strong>Arbitrary files</strong> located on the file system (represented by <code>JkFileSystemDependency</code> class). These files are assumed to be present on the file system when the build is running.</li>
+<li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
+<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven, Ivy or Gradle.</li>
+</ul>
+<p>For the last, Jeka is using <em>Ivy 2.5.0</em> under the hood.
+This library is embedded inside the Jeka jar and is executed in a dedicated classloader.
+So all happens as if there where no dependency at all.</p>
+<a name="Whatisascope?"></a>
+<h4>What is a scope ?</h4>
+<p>Projects may need dependencies to accomplish certain tasks and these dependencies may vary according the executed tasks.
+For example, to <em>compile</em> you may need <em>guava</em> library only but to <em>test</em> you'll need <em>junit</em> library too.
+To tag dependencies according their usage, Jeka uses the notion of <em>scope</em> (represented by <code>JkScope</code> class). This notion is similar to the Maven scope.</p>
+<p>A scope can <em>inherit</em> from one or several scopes. This means that if a scope <em>Foo</em> inherits from scope <em>Bar</em> then a dependencies declared with scope <em>Bar</em> will be also considered as declared with scope <em>Foo</em>.
+For instance, in <code>JkJavaBuild</code>, scope <code>TEST</code> inherits from <code>RUNTIME</code> that inherits from <code>COMPILE</code> so every dependencies declared with scope <code>COMPILE</code> are considered to be declared with scope <code>RUNTIME</code> and <code>TEST</code> as well.</p>
+<p>By default, scopes are <em>transitive</em>. This has only a meaning for <em>module dependencies</em>.
+If we have 3 modules having the following dependency scheme : <code>A</code> -&gt; <code>B</code> -&gt; <code>C</code> and the <code>A</code>-&gt; <code>B</code> dependency is declared with a <em>non transitive scope</em>, then <code>A</code> won't depend from <code>C</code>.</p>
+<p><code>JkJavaDepScope</code> class pre-defines scopes used in Java projects.</p>
+<p><strong>Scope Mapping</strong> : Projects consuming artifacts coming from Ivy repository can also use <code>JkScopeMapping</code> which is more powerful.
+This notion maps strictly to the <a href="http://ant.apache.org/ivy/history/2.2.0/ivyfile/configurations.html">Ivy configuration</a> concept.</p>
+<a name="Whatisascopeddependency?"></a>
+<h4>What is a scoped dependency ?</h4>
+<p>A <em>scoped dependency</em> (represented by <code>JkScopedDependency</code> class) is simply a dependency associated with zero, one or many scopes.</p>
+<a name="Defineasetofdependencies"></a>
+<h3>Define a set of dependencies</h3>
+<p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
+<p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides a fluent API for easier instantiation.</p>
+<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkScopes.*;
+...
+JkDependencySet deps = JkDependencySet.of()
+    .and(&quot;com.google.guava&quot;) 
+    .and(&quot;org.slf4j:slf4j-simple&quot;)
+    .and(&quot;com.orientechnologies:orientdb-client:2.0.8&quot;)
+    .and(&quot;junit:junit:4.11&quot;, TEST)
+    .and(&quot;org.mockito:mockito-all:1.9.5&quot;, TEST)
+    .andFile(&quot;../libs.myjar&quot;)
+    .withVersionProvider(myVersionProvider)
+    .withDefaultScopes(COMPILE);
+</code></pre>
+<p>Note that :</p>
+<ul>
+<li>
+<p>Module version and scopes can be omitted when declaring dependencies. Versions can be provided by a <code>JkVersionProvider</code>
+and scopes can be defaulted.</p>
+</li>
+<li>
+<p>Instances of <code>JkDependencySet</code> can be combined together in order to construct large dependencySet from smaller ones.</p>
+</li>
+<li>
+<p><code>JkDependencySet#ofTextDescription</code> provides a mean to instantiate a dependency set from a simple text as :</p>
+</li>
+</ul>
+<pre><code>- COMPILE RUNTIME
+org.springframework.boot:spring-boot-starter-thymeleaf
+org.springframework.boot:spring-boot-starter-data-jpa
+
+- RUNTIME
+com.h2database:h2
+org.liquibase:liquibase-core
+com.oracle:ojdbc6:12.1.0
+
+- TEST
+org.springframework.boot:spring-boot-starter-test
+org.seleniumhq.selenium:selenium-chrome-driver:3.4.0
+org.fluentlenium:fluentlenium-assertj:3.2.0
+org.fluentlenium:fluentlenium-junit:3.2.0
+
+- PROVIDED
+org.projectlombok:lombok:1.16.16
+</code></pre>
+<a name="HHierarchyofDependencyTypes."></a>
+<h3>HHierarchy of Dependency Types.</h3>
+<ul>
+<li><code>JkModuleDependency</code> : Dependency on Maven modules</li>
+<li><code>JkFileDependency</code> (Abstract): Dependency on files to be found on file system
+<ul>
+<li><code>JkComputedDependency</code> : Dependency on files produced by the execution of a <code>Runnable</code>.</li>
+<li><code>JkFileSystemDependency</code> : Dependency on files supposed to already exist on file system.</li>
+</ul>
+</li>
+</ul>
+<a name="DependenciesonModule"></a>
+<h4>Dependencies on Module</h4>
+<p>This is for declaring a dependency on module hosted in <em>Maven</em> or <em>Ivy</em> repository. Basically you instantiate a <code>JkModuleDepency</code> from it's group, name and version.</p>
+<pre><code class="language-Java">    JkDependencySet.of()
+        .and(JkPopularModule.GUAVA, &quot;18.0&quot;)
+        .and(&quot;com.orientechnologies:orientdb-client:[2.0.8, 2.1.0[&quot;)
+        .and(&quot;mygroup:mymodule:myclassifier:0.2-SNAPSHOT&quot;);
+</code></pre>
+<p>There is many way to indicate a module dependency, see Javadoc for browsing possibilities.</p>
+<p>Note that :</p>
+<ul>
+<li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jeka will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
+<li>As Jeka relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
+<li>Dependency files are downloaded in <em>[USER HOME]</em>/.jeka/cache/repo</li>
+</ul>
+<a name="Dependenciesonlocalfiles"></a>
+<h4>Dependencies on local files</h4>
+<p>You just have to mention the path of one or several files. If one of the files does not exist at resolution time (when the dependency is actually retrieved), build fails.</p>
+<pre><code class="language-Java">    JkDependencySet of()
+        .andFile(&quot;libs/my.jar&quot;)
+        .andFile(&quot;libs/my.testingtool.jar&quot;, TEST);
+    }
+		
+</code></pre>
+<a name="Dependenciesonfilesproducedbycomputation"></a>
+<h4>Dependencies on files produced by computation</h4>
+<p>It is typically used for <em>multi-modules</em> or <em>multi-techno</em> projects.</p>
+<p>The principle is that if the specified files are not found, then the computation is run in order to generate the missing files.
+If some files still missing after the computation has run, the build fails.</p>
+<p>This mechanism is quite simple yet powerful as it addresses following use cases :</p>
+<ul>
+<li>Dependencies on files produced by an artifact producer (<code>JkArtifactProducer</code>). A Jeka Java project is an artifact producer.</li>
+<li>Dependencies on files produced by external project built with any type of technology (Ant, Grunt, Maven, Gradle, SBT, Android SDK, Make, ...).</li>
+<li>Dependencies on files produced by any means.</li>
+</ul>
+<p>The generic way is to construct this kind of dependency using a <code>java.lang.Runnable</code>.</p>
+<p>The following snippet constructs a set of dependencies on two external projects : one is built with Maven, the other with
+<em>Jeka</em>.</p>
+<pre><code class="language-Java">Path mavenProject = Paths.get(&quot;../a-maven-project&quot;);
+JkProcess mavenBuild = JkProcess.of(&quot;mvn&quot;, &quot;clean&quot;, &quot;install&quot;).withWorkingDir(mavenProject);
+Path mavenProjectJar = mavenProject.resolve(&quot;target/maven-project.jar&quot;);
+JkJavaProject externalProject = JkJavaProject.ofSimple(Paths.get(&quot;../a-jeka-project&quot;)); 
+JkDependencySet deps = JkDependencySet.of()
+    .and(JkComputedDependency.of(mavenBuild, mavenProjectJar))
+    .and(externalProject);
+</code></pre>
+<a name="ResolveDependencies"></a>
+<h3>Resolve Dependencies</h3>
+<p>The <code>JkDependencyResolver</code> class is responsible JkDependencyResolver.of(JkRepo.ofMavenCentral());to resolve dependencies by returning <code>JkResolveResult</code> from a
+<code>JkdependencySet</code>.</p>
+<pre><code class="language-java">JkDependencySet deps =  JkDependencySet
+                            .of(&quot;org.apache.httpcomponents:httpclient:4.5.3&quot;)
+                            .andFile(&quot;libs/my.jar&quot;);
+
+// Module dependencies are fetched from Maven central repo
+JkDependencyResolver resolver = JkDependencyResolver.of(JkRepo.ofMavenCentral());  
+JkResolveResult result = resolver().resolve(deps);
+</code></pre>
+<p>From the result you can :</p>
+<ul>
+<li>Navigate in the resolved dependency tree as :</li>
+</ul>
+<pre><code class="language-java">JkDependencyNode slfjApiNodeDep = result.getDependencyTree().getFirst(JkModuleId.of(&quot;org.slf4j:slf4j-api&quot;));
+System.out.println(slfjApiNode.getModuleInfo().getResolvedVersion());
+</code></pre>
+<ul>
+<li>Get the direct list of artifact files</li>
+</ul>
+<pre><code class="language-java">JkPathSequence sequence = result.getFiles();  
+sequence.forEach(System.out::println); // print each files part of the dependency resolution
+</code></pre>
+<ul>
+<li>Resolve for a given scope</li>
+</ul>
+<p>The following snippets captures the resolved dependency files for COMPILE scope. Junit is excluded from this result.</p>
+<pre><code>JkDependencySet deps = JkDependencySet.of()
+    .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
+    .and(&quot;junit:junit:4.11&quot;, TEST);
+    
+Iterable&lt;Path&gt; files = JkDependencyResolver.of(JkRepo.ofMavenCentral()).resolve(COMPILE).getFiles();
+</code></pre>
+<a name="Publication"></a>
+<h3>Publication</h3>
+<p>Jeka is able to publish on both Maven and Ivy repository. This includes repositories as <a href="http://www.sonatype.org/nexus/">Sonatype Nexus</a> or <a href="http://www.jfrog.com/artifactory/">Jfrog Artifactory</a>.</p>
+<p>Maven and Ivy have different publication model, so Jeka proposes specific APIs according you want to publish on a Maven or Ivy repository.</p>
+<a name="PublishtoaMavenrepository"></a>
+<h4>Publish to a Maven repository</h4>
+<p>Jeka proposes a complete API to pubish on Maven repository. POM files will be generated by Jeka according
+provided elements.</p>
+<p>The following snippet demonstrate a pretty sophisticated publishing on Maven :</p>
+<pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6&quot;);
+    JkDependencySet deps = JkDependencySet.of()
+            .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
+            .and(&quot;junit:junit:4.11&quot;, TEST);
+    JkMavenPublication mavenPublication = JkMavenPublication.of(Paths.get(&quot;org.myorg.mylib.jar&quot;))
+
+            // the following are optional but required to publish on public repositories.
+            .and(Paths.get(&quot;org.myorg.mylib-sources.jar&quot;), &quot;sources&quot;)
+            .and(Paths.get(&quot;org.myorg.mylib-javadoc.jar&quot;), &quot;javadoc&quot;)
+            .withChecksums(&quot;sha-2&quot;, &quot;md5&quot;)
+            .withSigner(JkPgp.of(Paths.get(&quot;myPubring&quot;), Paths.get(&quot;mySecretRing&quot;), &quot;mypassword&quot;))
+            .with(JkMavenPublicationInfo.of(&quot;My sample project&quot;,
+                    &quot;A project to demonstrate publishing on Jeka&quot;,
+                    &quot;http://project.jeka.org&quot;)
+                    .andApache2License()
+                    .andDeveloper(&quot;djeang&quot;, &quot;myemail@gmail.com&quot;, &quot;jeka.org&quot;, &quot;http://project.jeka.org/&quot;));
+
+    // A complex case for repo (credential + signature + filtering) 
+    JkRepo repo = JkRepo.of(&quot;http://myserver/myrepo&quot;)
+            .withOptionalCredentials(&quot;myUserName&quot;, &quot;myPassword&quot;)
+            .with(JkRepo.JkPublishConfig.of()
+                        .withUniqueSnapshot(false)
+                        .withNeedSignature(true)
+                        .withFilter(mod -&gt; // only accept SNAPSHOT and MILESTONE
+                            mod.getVersion().isSnapshot() || mod.getVersion().getValue().endsWith(&quot;MILESTONE&quot;)
+                        ));
+    
+    // Actually publish the artifacts
+    JkPublisher publisher = JkPublisher.of(repo);
+    publisher.publishMaven(versionedModule, mavenPublication, deps);
+</code></pre>
+<p>Notice that Jeka allows to :</p>
+<ul>
+<li>Publish more than one artifact.</li>
+<li>Produce &amp; publish checksum files for each published artifact.</li>
+<li>Mention to use unique snapshot (<a href="http://stackoverflow.com/questions/1243574/how-to-stop-maven-artifactory-from-keeping-snapshots-with-timestamps">What is it ?</a>).</li>
+<li>Feed generated pom with data necessary to publish on <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html">central repository</a>.</li>
+<li>Sign published artifact with PGP</li>
+<li>Publish to multiple repository by creating the publisher using a <code>JkRepoSet</code> instead of a <code>JkRepo</code>.</li>
+</ul>
+<p>To sign with PGP, no need to have PGP installed on Jeka machine. Jeka uses <a href="https://www.bouncycastle.org/">Bouncy Castle</a> internally to sign artifacts.</p>
+<a name="PublishtoaIvyrepository"></a>
+<h4>Publish to a Ivy repository</h4>
+<p>Publishing on Ivy repo is pretty similar than on Maven though there is specific options to Ivy.</p>
+<pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6-SNAPSHOT&quot;);
+    JkDependencySet deps = JkDependencySet.of()
+            .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
+            .and(&quot;junit:junit:4.11&quot;, TEST);
+
+    JkIvyPublication publication = JkIvyPublication.of(Paths.get(&quot;org.myorg.mylib.jar&quot;), &quot;master&quot;)
+            .and(Paths.get(&quot;org.myorg.mylib-sources.jar&quot;));
+
+    JkRepo repo = JkRepo.ofIvy(Paths.get(&quot;ivyrepo&quot;));
+
+    JkPublisher publisher = JkPublisher.of(repo);
+    publisher.publishIvy(versionedModule, publication, deps, JkJavaDepScopes.DEFAULT_SCOPE_MAPPING,
+            Instant.now(), JkVersionProvider.of());
+</code></pre>
+<a name="JavaProjectBuilding"></a>
+<h2>Java Project Building</h2>
+<p><code>dev.jeka.core.api.java.testing</code> package hosts classes to handle Java builds.</p>
+<p><code>JkClassLoader</code> and <code>JkUrlClassloader</code> Wrap a <code>java.lang.ClassLoader</code> adding convenient methods and classpath scanning capability.</p>
+<p><code>JkClassPath</code> A sequence of file to be used as a <code>class path</code>.</p>
+<p><code>JkJarPacker</code> A simple utility tyo create Jar or fat Jar file from compiled classes.</p>
+<p><code>JkJavaCompiler</code> Wraps either a Java Compiler tool, nor a <em>javac</em> process.</p>
+<p><code>JkJavadocProcessor</code> A Java source processor producing standard Javadoc</p>
+<p><code>JkJavaProcess</code> A utility to launch Java process (from class dirs or jars)</p>
+<p><code>JkManifest</code> Stands for the manifest file to include in jar files.</p>
+<a name="Junittests"></a>
+<h3>Junit tests</h3>
+<p><code>dev.jeka.core.api.java.testing</code> package hosts three classes that let user launch test based
+on the Junit5 platform. This means that any test framework supported by Junit5 platform,
+is also supported by Jeka. Jeka also supports Junit4 out-of-the-box through the embedded
+<em>vintage</em> engine.</p>
+<p>Jeka testing API mostly hides <em>Junit Platform</em>. For most of the cases, you won't need to code
+against <em>Junit-Platform</em> API to launch tests with Jeka. Nevertheless, Jeka allows users to
+code against <em>Junit-Platform</em> for fine-tuning.</p>
+<p><code>JkTestProcessor</code> This is the entry point to launch tests. Tests are executed using the
+current classloader classpath + extra class path mentioned in <code>#launch</code> method arguments.</p>
+<p><code>JkTestResult</code> The result of a test launch : count for found, failure, skip, success ...</p>
+<p><code>JkTestSelection</code> A mean to determine which test to launch. It can be set using file or tag filter. It is
+also possible to code against <em>JUnit Platform</em></p>
+<a name="Projects"></a>
+<h3>Projects</h3>
+<p>Projects are file structures for hosting Java projects meaning source code, test codes, dependencies,
+build instructions.</p>
+<p>The principle is that each <code>JkJavaProject</code> holds everything needed to compile, test, pack and publish
+artifacts. The API embrace the <em>parent-chaining</em> pattern.</p>
+<p>This is a pretty complete example taken from the Jeka build itself.</p>
+<pre><code>project
+    .getJarProduction()
+        .getDependencyManagement()
+           .addDependencies(JkDependencySet.of()
+               .and(&quot;com.google.guava:guava:21.0&quot;)
+               .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
+               .and(&quot;org.junit.jupiter:junit-jupiter-engine:5.1.0&quot;, TEST)
+               .and(&quot;org.junit.vintage:junit-vintage-engine:jar:5.6.0&quot;, TEST)).__
+        .getManifest()
+            .addMainClass(&quot;dev.jeka.core.tool.Main&quot;).__
+        .getCompilation()
+                .getLayout()
+                    .includeSourceDirsInResources().__
+                .addOptions(&quot;-Xlint:none&quot;,&quot;-g&quot;)
+                .setJavaVersion(JkJavaVersion.V8)
+                .getCompiler()
+                    .setForkingWithJavac().__.__.__
+        .getTesting()
+            .getCompilation()
+                .getLayout()
+                    .includeSourceDirsInResources().__
+                .getCompiler()
+                    .setDefault().__.__
+            .getTestProcessor()
+                .getEngineBehavior()
+                    .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.ONE_LINE).__.__
+            .getTestSelection()
+                .addIncludePatterns(JkTestSelection.STANDARD_INCLUDE_PATTERN)
+                .addIncludePatternsIf(runIT, JkTestSelection.IT_INCLUDE_PATTERN).__.__
+    .getDocumentation()
+        .getJavadocProcessor()
+            .setDisplayOutput(false)
+            .addOptions(&quot;-notimestamp&quot;).__.__
+    .getPublication()
+        .setModuleId(&quot;dev.jeka:jeka-core&quot;)
+        .setVersionSupplier(git::getJkVersionFromTags)
+        .setRepos(JkRepoSet.ofOssrhSnapshotAndRelease(ossrhUser, ossrhPwd))
+        .getArtifactProducer()
+            .putMainArtifact(this::doPackWithEmbedded)
+            .putArtifact(DISTRIB_FILE_ID, this::doDistrib)
+            .putArtifact(WRAPPER_ARTIFACT_ID, this::doWrapper).__
+        .getMavenPublication()
+            .getPomMetadata()
+                .getProjectInfo()
+                    .setName(&quot;jeka&quot;)
+                    .setUrl(&quot;https://jeka.dev&quot;)
+                    .setDescription(&quot;Automate with plain Java code and nothing else.&quot;).__
+                .getScm()
+                    .setUrl(&quot;https://github.com/jerkar/jeka.git&quot;).__
+                .addApache2License()
+                .addGithubDeveloper(&quot;djeang&quot;, &quot;djeangdev@yahoo.fr&quot;).__.__
+        .getPostActions()
+            .append(() -&gt; createGithubRelease());
+</code></pre>
+<p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
+deployed along the other ones.</p>
+<p>JkJavaProject instances are highly configurable. You can tune your project structure/build without limits.</p>
+<a name="ThirdPartyToolIntegration"></a>
+<h2>Third Party Tool Integration</h2>
+<p>The <code>dev.jeka.core.api.tooling</code> package provides integration with tools developers generally deal with.</p>
+<a name="Eclipse"></a>
+<h3>Eclipse</h3>
+<p><code>JkEclipseClasspathGenerator</code> and <code>JkEclipseProjectGenerator</code> provides method to generate a proper .classpath and .project file respectively.</p>
+<p><code>JkEclipseClasspathApplier</code> reads information from a .classpath file.</p>
+<a name="Intellij"></a>
+<h3>Intellij</h3>
+<p><code>JkIntellijImlGenerator</code> generates proper .iml files.</p>
+<a name="Git"></a>
+<h3>Git</h3>
+<p><code>JkGitWrapper</code> wraps common Git commands in a lean API.</p>
+<a name="Maven"></a>
+<h3>Maven</h3>
+<p><code>JkMvn</code> wraps Maven command line in a lean API</p>
+<p><code>JkPom</code> reads POM/BOM to extract information like : declared dependencies, dependency management, repos,
+properties, version and artifactId.</p>
 </body>
 </html>
