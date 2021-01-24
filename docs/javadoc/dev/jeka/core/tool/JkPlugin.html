@@ -163,7 +163,7 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code>protected java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegisterUrl--">getBreakingVersionRegisterUrl</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegistryUrl--">getBreakingVersionRegistryUrl</a></span>()</code>
 <div class="block">When publishing a plugin, authors can not guess which future version of Jeka will break compatibility.</div>
 </td>
 </tr>
@@ -264,22 +264,22 @@ extends java.lang.Object</pre>
  running Jeka version is lower then a warning log will be emitted.</div>
 </li>
 </ul>
-<a name="getBreakingVersionRegisterUrl--">
+<a name="getBreakingVersionRegistryUrl--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getBreakingVersionRegisterUrl</h4>
-<pre>protected&nbsp;java.lang.String&nbsp;getBreakingVersionRegisterUrl()</pre>
+<h4>getBreakingVersionRegistryUrl</h4>
+<pre>protected&nbsp;java.lang.String&nbsp;getBreakingVersionRegistryUrl()</pre>
 <div class="block">When publishing a plugin, authors can not guess which future version of Jeka will break compatibility.
- To keep track of breaking change, a register can be maintained and be accessible at the returned url.
+ To keep track of breaking change, a registry can be maintained to be accessible at the specified url.
  <p>
  The register is expected to be a simple flat file.
  Each row is structured as <code>pluginVersion : jekaVersion</code>.
  <p>
  The example below means that :<ul>
-     <li>Every plugin version equal or greater than 1.2.1.RELEASE is incompatible with any version of jeka equals or greater than 0.9.1.RELEASE</li>
-     <li>And every plugin version equal or greater than 1.3.0.RELEASE is incompatible with any version of jeka equals or greater than 0.9.5.M1</li>
+     <li>Every plugin version equal or lower than 1.2.1.RELEASE is incompatible with any version of jeka equals or greater than 0.9.1.RELEASE</li>
+     <li>Every plugin version equal or lower than 1.3.0.RELEASE is incompatible with any version of jeka equals or greater than 0.9.5.M1</li>
  </ul>
 
  <pre><code>
