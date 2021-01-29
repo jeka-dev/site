@@ -35,7 +35,7 @@ folder and mention where is located the project to build.</p>
 @Override
 protected void setup() {  // project to build lies in a sibling folder. 
       Path projectPath = this.baseDir().resolve(&quot;../myProject&quot;);   
-      java.getProject().setBaseDir(projectPath);
+      java.getProject().simpleFacade().setBaseDir(projectPath);
       ...
 </code></pre>
 <a name="MycommandSetclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?"></a>
@@ -62,8 +62,7 @@ jdk.9=/software/jdk9
 
 @JkDefClasspath(&quot;org.eclipse.jdt.core.compiler:ecj:4.6.1&quot;)
 public class Build extends JkCommandSet{
-    java.getProject()_
-        .getCompilation()
+    java.getProject().getConstruction().getCompilation()
              .getCompiler().setCompilerTool(new EclipseCompiler());
 }
 </code></pre>
