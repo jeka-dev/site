@@ -17,7 +17,7 @@
 <div class="title">Jeka - FAQ</div>
 <br/>
 <div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : HEAD-SNAPSHOT</div>
+<div style="color: lightslategrey; font-size: large">Version : 0.9.4.RC3</div>
 <br />
 <a href="#General" class="menuItem1">General</a><br />
 <a href="#Candefclassesbehostedinseparateprojectthanthecodetobuild?" class="menuItem3">Can def classes be hosted in separate project than the code to build ?</a><br />
@@ -41,7 +41,7 @@ protected void setup() {  // project to build lies in a sibling folder.
 <a name="MycommandSetclassdoesnotcompilesoIcan'tinvokeanyJekamethodas'help'or'scaffold#run'.WhatcanIdo?"></a>
 <h3>My commandSet class does not compile so I can't invoke any Jeka method as 'help' or 'scaffold#run'. What can I do ?</h3>
 <p>You can specify a built-in commandSet class to run. This way, compilation won't occur.
-For example <code>jeka -CommandClass=JkCommandSet</code> or <code>jeka -CC=JkCommandSet scaffold#run java#&quot;</code>.</p>
+For example <code>jeka -JKC</code> or <code>jeka -JKC scaffold#run java#&quot;</code>.</p>
 <a name="Compilation"></a>
 <h1>Compilation</h1>
 <a name="HowcanIchoosetheJDKusedtocompile?"></a>
@@ -49,9 +49,7 @@ For example <code>jeka -CommandClass=JkCommandSet</code> or <code>jeka -CC=JkCom
 <p>Jeka uses the JDK it is running on to compile production or test code.
 If code must be build on a another JDK version, you can specify JDK path for different version.
 Just mention it as option, for example in your <em>[JEKA HOME]/options.properties</em> file.</p>
-<pre><code>jdk.6=/software/jdk6
-jdk.7=/software/jdk7
-jdk.9=/software/jdk9
+<pre><code>jdk.9=/software/jdk9
 ...
 </code></pre>
 <p>This way, if one of your project source code is declared to be in a specific Java version, the relevant JDK version will be used automatically to compile it.</p>
@@ -61,7 +59,7 @@ jdk.9=/software/jdk9
 <pre><code class="language-java">import org.eclipse.jdt.internal.compiler.tool.EclipseCompiler;
 
 @JkDefClasspath(&quot;org.eclipse.jdt.core.compiler:ecj:4.6.1&quot;)
-public class Build extends JkCommandSet{
+public class Build extends JkClass{
     java.getProject().getConstruction().getCompilation()
              .getCompiler().setCompilerTool(new EclipseCompiler());
 }

@@ -158,9 +158,13 @@ implements java.io.Serializable</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.Type.html" title="enum in dev.jeka.core.api.system">JkLog.Type</a></span></code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.Style.html" title="enum in dev.jeka.core.api.system">JkLog.Style</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.Type.html" title="enum in dev.jeka.core.api.system">JkLog.Type</a></span></code>&nbsp;</td>
+</tr>
+<tr class="rowColor">
 <td class="colFirst"><code>static class&nbsp;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.Verbosity.html" title="enum in dev.jeka.core.api.system">JkLog.Verbosity</a></span></code>&nbsp;</td>
 </tr>
@@ -240,13 +244,13 @@ implements java.io.Serializable</pre>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code>static void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.html#setConsumer-dev.jeka.core.api.system.JkLog.JkEventLogConsumer-">setConsumer</a></span>(<a href="../../../../../dev/jeka/core/api/system/JkLog.JkEventLogConsumer.html" title="interface in dev.jeka.core.api.system">JkLog.JkEventLogConsumer</a>&nbsp;consumerArg)</code>
-<div class="block">By default events are not consumed, meaning nothing appends when <code>#info(String)</code>,
+<div class="block">By default events are not consumed, meaning nothing appends when <a href="../../../../../dev/jeka/core/api/system/JkLog.html#info-java.lang.String-java.lang.Object...-"><code>info(String, Object...)</code></a> (String)},
  <a href="../../../../../dev/jeka/core/api/system/JkLog.html#error-java.lang.String-"><code>error(String)</code></a>, <a href="../../../../../dev/jeka/core/api/system/JkLog.html#warn-java.lang.String-"><code>warn(String)</code></a> or <a href="../../../../../dev/jeka/core/api/system/JkLog.html#trace-java.lang.String-"><code>trace(String)</code></a> are invoked.</div>
 </td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code>static void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.html#setHierarchicalConsoleConsumer--">setHierarchicalConsoleConsumer</a></span>()</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/system/JkLog.html#setConsumer-dev.jeka.core.api.system.JkLog.Style-">setConsumer</a></span>(<a href="../../../../../dev/jeka/core/api/system/JkLog.Style.html" title="enum in dev.jeka.core.api.system">JkLog.Style</a>&nbsp;style)</code>
 <div class="block">This set the default consumer.</div>
 </td>
 </tr>
@@ -319,18 +323,18 @@ implements java.io.Serializable</pre>
 <li class="blockList">
 <h4>setConsumer</h4>
 <pre>public static&nbsp;void&nbsp;setConsumer(<a href="../../../../../dev/jeka/core/api/system/JkLog.JkEventLogConsumer.html" title="interface in dev.jeka.core.api.system">JkLog.JkEventLogConsumer</a>&nbsp;consumerArg)</pre>
-<div class="block">By default events are not consumed, meaning nothing appends when <code>#info(String)</code>,
+<div class="block">By default events are not consumed, meaning nothing appends when <a href="../../../../../dev/jeka/core/api/system/JkLog.html#info-java.lang.String-java.lang.Object...-"><code>info(String, Object...)</code></a> (String)},
  <a href="../../../../../dev/jeka/core/api/system/JkLog.html#error-java.lang.String-"><code>error(String)</code></a>, <a href="../../../../../dev/jeka/core/api/system/JkLog.html#warn-java.lang.String-"><code>warn(String)</code></a> or <a href="../../../../../dev/jeka/core/api/system/JkLog.html#trace-java.lang.String-"><code>trace(String)</code></a> are invoked.
- Thus users have to set explicitly a consumer using this method or <a href="../../../../../dev/jeka/core/api/system/JkLog.html#setHierarchicalConsoleConsumer--"><code>setHierarchicalConsoleConsumer()</code></a>.</div>
+ Thus users have to set explicitly a consumer using this method or <a href="../../../../../dev/jeka/core/api/system/JkLog.html#setConsumer-dev.jeka.core.api.system.JkLog.Style-"><code>setConsumer(Style)</code></a> ()}.</div>
 </li>
 </ul>
-<a name="setHierarchicalConsoleConsumer--">
+<a name="setConsumer-dev.jeka.core.api.system.JkLog.Style-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setHierarchicalConsoleConsumer</h4>
-<pre>public static&nbsp;void&nbsp;setHierarchicalConsoleConsumer()</pre>
+<h4>setConsumer</h4>
+<pre>public static&nbsp;void&nbsp;setConsumer(<a href="../../../../../dev/jeka/core/api/system/JkLog.Style.html" title="enum in dev.jeka.core.api.system">JkLog.Style</a>&nbsp;style)</pre>
 <div class="block">This set the default consumer. This consumer displays logs in the console in a hierarchical style.</div>
 </li>
 </ul>
