@@ -155,7 +155,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 </tr>
 <tr class="altColor">
 <td class="colFirst"><code>protected </code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html#JkPluginJacoco-dev.jeka.core.tool.JkCommandSet-">JkPluginJacoco</a></span>(<a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a>&nbsp;run)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html#JkPluginJacoco-dev.jeka.core.tool.JkClass-">JkPluginJacoco</a></span>(<a href="../../../../../../dev/jeka/core/tool/JkClass.html" title="class in dev.jeka.core.tool">JkClass</a>&nbsp;run)</code>&nbsp;</td>
 </tr>
 </table>
 </li>
@@ -176,7 +176,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <td class="colFirst"><code>protected void</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.html#afterSetup--">afterSetup</a></span>()</code>
 <div class="block">Override this method to perform some actions, once the plugin has been setup by
- <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.</div>
+ <a href="../../../../../../dev/jeka/core/tool/JkClass.html#setup--"><code>JkClass.setup()</code></a> method.</div>
 </td>
 </tr>
 </table>
@@ -185,7 +185,7 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Methods inherited from class&nbsp;dev.jeka.core.tool.<a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="class in dev.jeka.core.tool">JkPlugin</a></h3>
-<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">beforeSetup</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegistryUrl--">getBreakingVersionRegistryUrl</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getCommandSet--">getCommandSet</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
+<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#beforeSetup--">beforeSetup</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getBreakingVersionRegistryUrl--">getBreakingVersionRegistryUrl</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getJkClass--">getJkClass</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#getLowestJekaCompatibleVersion--">getLowestJekaCompatibleVersion</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#help--">help</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#name--">name</a>, <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#toString--">toString</a></code></li>
 </ul>
 <ul class="blockList">
 <li class="blockList"><a name="methods.inherited.from.class.java.lang.Object">
@@ -230,13 +230,13 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <!--   -->
 </a>
 <h3>Constructor Detail</h3>
-<a name="JkPluginJacoco-dev.jeka.core.tool.JkCommandSet-">
+<a name="JkPluginJacoco-dev.jeka.core.tool.JkClass-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>JkPluginJacoco</h4>
-<pre>protected&nbsp;JkPluginJacoco(<a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool">JkCommandSet</a>&nbsp;run)</pre>
+<pre>protected&nbsp;JkPluginJacoco(<a href="../../../../../../dev/jeka/core/tool/JkClass.html" title="class in dev.jeka.core.tool">JkClass</a>&nbsp;run)</pre>
 </li>
 </ul>
 </li>
@@ -256,10 +256,10 @@ extends <a href="../../../../../../dev/jeka/core/tool/JkPlugin.html" title="clas
 <pre>protected&nbsp;void&nbsp;afterSetup()</pre>
 <div class="block"><span class="descfrmTypeLabel">Description copied from class:&nbsp;<code><a href="../../../../../../dev/jeka/core/tool/JkPlugin.html#afterSetup--">JkPlugin</a></code></span></div>
 <div class="block">Override this method to perform some actions, once the plugin has been setup by
- <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html#setup--"><code>JkCommandSet.setup()</code></a> method.<p>
+ <a href="../../../../../../dev/jeka/core/tool/JkClass.html#setup--"><code>JkClass.setup()</code></a> method.<p>
  Typically, some plugins have to configure other ones (For instance, <i>java</i> plugin configures
  <i>scaffold</i> plugin to instruct what to use as a template build class). Those kind of
- configuration is better done here as the setup made in <a href="../../../../../../dev/jeka/core/tool/JkCommandSet.html" title="class in dev.jeka.core.tool"><code>JkCommandSet</code></a> is likely
+ configuration is better done here as the setup made in <a href="../../../../../../dev/jeka/core/tool/JkClass.html" title="class in dev.jeka.core.tool"><code>JkClass</code></a> is likely
  to impact the result of the configuration.</div>
 <dl>
 <dt><span class="overrideSpecifyLabel">Overrides:</span></dt>
