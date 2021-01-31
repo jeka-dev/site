@@ -595,7 +595,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#applyOnProject-java.util.function.Consumer-">applyOnProject(Consumer&lt;JkJavaProject&gt;)</a></span> - Method in class dev.jeka.core.api.java.project.<a href="dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScope.html#ARCHIVE_MASTER">ARCHIVE_MASTER</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html#ARCHIVE_MASTER">ARCHIVE_MASTER</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a></dt>
 <dd>
 <div class="block">Useful when using scope mapping.</div>
 </dd>
@@ -732,8 +732,7 @@
 <dd>&nbsp;</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScope.html#COMPILE">COMPILE</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></dt>
 <dd>
-<div class="block">A dependency resolution made with this scope will only fetch dependencies declared with <a href="dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>JkScope.COMPILE</code></a> scope and
- transitive dependencies declared with <a href="dev/jeka/core/api/depmanagement/JkScope.html#COMPILE"><code>JkScope.COMPILE</code></a> scope as well.</div>
+<div class="block">A scope meant to tag a dependency as necessary for compiling.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/java/JkJavaCompiler.html#compile-dev.jeka.core.api.java.JkJavaCompileSpec-">compile(JkJavaCompileSpec)</a></span> - Method in class dev.jeka.core.api.java.<a href="dev/jeka/core/api/java/JkJavaCompiler.html" title="class in dev.jeka.core.api.java">JkJavaCompiler</a></dt>
 <dd>
@@ -930,9 +929,9 @@
 <dd>
 <div class="block">The default method to be invoked when none is specified.</div>
 </dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScope.html#DEFAULT_SCOPE_MAPPING">DEFAULT_SCOPE_MAPPING</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></dt>
+<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html#DEFAULT_SCOPE_MAPPING">DEFAULT_SCOPE_MAPPING</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a></dt>
 <dd>
-<div class="block">Scope mapping used</div>
+<div class="block">Scope mapping used by default.</div>
 </dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/tool/JkRepoConfigOptionLoader.html#defRepository--">defRepository()</a></span> - Static method in class dev.jeka.core.tool.<a href="dev/jeka/core/tool/JkRepoConfigOptionLoader.html" title="class in dev.jeka.core.tool">JkRepoConfigOptionLoader</a></dt>
 <dd>
@@ -4988,14 +4987,6 @@
 <dl>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/system/JkLog.JkState.html#save--">save()</a></span> - Static method in class dev.jeka.core.api.system.<a href="dev/jeka/core/api/system/JkLog.JkState.html" title="class in dev.jeka.core.api.system">JkLog.JkState</a></dt>
 <dd>&nbsp;</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScope.html#SCOPES_FOR_COMPILATION">SCOPES_FOR_COMPILATION</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></dt>
-<dd>
-<div class="block">Scopes necessary for compiling production code.</div>
-</dd>
-<dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkScope.html#SCOPES_FOR_TEST">SCOPES_FOR_TEST</a></span> - Static variable in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a></dt>
-<dd>
-<div class="block">Scopes necessary for both compiling tests and run them.</div>
-</dd>
 <dt><span class="memberNameLink"><a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html#searchGroups--">searchGroups()</a></span> - Method in class dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></dt>
 <dd>
 <div class="block">Returns an alphabetical sorted list of groupId present in these repositories</div>
