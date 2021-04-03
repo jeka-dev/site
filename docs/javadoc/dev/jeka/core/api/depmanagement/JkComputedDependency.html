@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.JkSupplier.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Prev&nbsp;Class</li>
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -111,30 +111,45 @@ var activeTableTab = "activeTableTab";
 </dl>
 <dl>
 <dt>Direct Known Subclasses:</dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalProjectDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalProjectDependency</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">JkComputedDependency</span>
 extends java.lang.Object
 implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency</a></pre>
-<div class="block">Dependency on computed resource. More concretely, this is a file dependency on files that might not
+<div class="block">Dependency on computed resource. More concretely, this is a <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkFileDependency</code></a>on files that might not
  be present at the time of the build and that has to be generated. Instances of this class are
  responsible to generate the missing files. <p>
 
  Computed dependencies are instantiated by providing expected files and a <code>Runnable</code> that
- generates these files in case one of them misses. <p>
+ generates these files in case one of them is missng. <p>
 
- This is yet simple but quite powerful mechanism, cause the runnable can be anything as Maven or ANT build
+ This is yet simple but quite powerful mechanism, cause the runnable can be anything as a Maven or  a ANT build
  of another project, a Jeka build of another project, ... <p>
 
- This is the way for creating multi-projet (and multi-techno if desired) builds.</div>
+ This is the way to create multi-projects (and multi-techno) builds.</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<ul class="blockList">
+<li class="blockList"><a name="nested.classes.inherited.from.class.dev.jeka.core.api.depmanagement.JkFileDependency">
+<!--   -->
+</a>
+<h3>Nested classes/interfaces inherited from interface&nbsp;dev.jeka.core.api.depmanagement.<a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency</a></h3>
+<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.JkTransitivityDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency.JkTransitivityDependency</a></code></li>
+</ul>
+</li>
+</ul>
 <!-- =========== FIELD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="field.summary">
@@ -278,6 +293,13 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, finalize, getClass, notify, notifyAll, wait, wait, wait</code></li>
+</ul>
+<ul class="blockList">
+<li class="blockList"><a name="methods.inherited.from.class.dev.jeka.core.api.depmanagement.JkDependency">
+<!--   -->
+</a>
+<h3>Methods inherited from interface&nbsp;dev.jeka.core.api.depmanagement.<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></h3>
+<code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#matches-dev.jeka.core.api.depmanagement.JkDependency-">matches</a></code></li>
 </ul>
 </li>
 </ul>
@@ -523,7 +545,7 @@ implements <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDepende
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkArtifactProducer.JkSupplier.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li>Prev&nbsp;Class</li>
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

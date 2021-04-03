@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":9,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":9,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,7 +47,7 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkQualifiedDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
@@ -165,35 +165,29 @@ extends java.lang.Object</pre>
 </tr>
 <tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#JCENTERL_URL">JCENTERL_URL</a></span></code>
-<div class="block">URL of the JCenter ivy repository.</div>
-</td>
-</tr>
-<tr class="altColor">
-<td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_CENTRAL_URL">MAVEN_CENTRAL_URL</a></span></code>
 <div class="block">URL of the Maven central repository.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_DEPLOY_RELEASE">MAVEN_OSSRH_DEPLOY_RELEASE</a></span></code>
 <div class="block">URL of the OSSRH repository for deploying released artifacts.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_DOWNLOAD_AND_DEPLOY_SNAPSHOT">MAVEN_OSSRH_DOWNLOAD_AND_DEPLOY_SNAPSHOT</a></span></code>
 <div class="block">URL of the OSSRH repository for both deploying snapshot and download artifacts.</div>
 </td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_DOWNLOAD_RELEASE">MAVEN_OSSRH_DOWNLOAD_RELEASE</a></span></code>
 <div class="block">URL for the OSSRH repository for downloading released artifacts.</div>
 </td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><code>static java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_PUBLIC_DOWNLOAD_RELEASE_AND_SNAPSHOT">MAVEN_OSSRH_PUBLIC_DOWNLOAD_RELEASE_AND_SNAPSHOT</a></span></code>
 <div class="block">URL of the OSSRH repository for downloading both snapshot and released artifacts.</div>
@@ -215,79 +209,78 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#copy--">copy</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i1" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#equals-java.lang.Object-">equals</a></span>(java.lang.Object&nbsp;o)</code>&nbsp;</td>
 </tr>
-<tr id="i1" class="rowColor">
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoCredentials.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkRepoCredentials</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#getCredentials--">getCredentials</a></span>()</code>
 <div class="block">Returns the getRealm of this repository.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoIvyConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkRepoIvyConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#getIvyConfig--">getIvyConfig</a></span>()</code>
 <div class="block">Returns configuration specific to Ivy repository.</div>
 </td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#getPublishConfig--">getPublishConfig</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code>java.net.URL</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#getUrl--">getUrl</a></span>()</code>
 <div class="block">Returns the url of this repository.</div>
 </td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code>int</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#hashCode--">hashCode</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#isIvyRepo--">isIvyRepo</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i8" class="altColor">
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#of-java.nio.file.Path-">of</a></span>(java.nio.file.Path&nbsp;dir)</code>
+<div class="block">Creates a Maven repository having the specified file location.</div>
+</td>
+</tr>
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#of-java.lang.String-">of</a></span>(java.lang.String&nbsp;url)</code>
 <div class="block">Creates a repository having the specified url.</div>
 </td>
 </tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofIvy-java.nio.file.Path-">ofIvy</a></span>(java.nio.file.Path&nbsp;dir)</code>
-<div class="block">Creates a Ivy repository having the specified file location.</div>
-</td>
-</tr>
-<tr id="i9" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofLocal--">ofLocal</a></span>()</code>
 <div class="block">Creates a Maven repository for publishing locally under <code></code>[USER HOME]/.jeka/publish</code> folder.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofMaven-java.nio.file.Path-">ofMaven</a></span>(java.nio.file.Path&nbsp;dir)</code>
-<div class="block">Creates a Maven repository having the specified file location.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofLocalIvy--">ofLocalIvy</a></span>()</code>
+<div class="block">Creates a Ivy repository for publishing locally under <code></code>[USER HOME]/.jeka/publish</code> folder.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofMavenCentral--">ofMavenCentral</a></span>()</code>
 <div class="block">Creates the Maven central repository.</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofMavenJCenter--">ofMavenJCenter</a></span>()</code>
-<div class="block">Creates a JCenter repository.</div>
-</td>
-</tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofMavenOssrhDeployRelease-java.lang.String-java.lang.String-">ofMavenOssrhDeployRelease</a></span>(java.lang.String&nbsp;jiraId,
-                         java.lang.String&nbsp;jiraPassword)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html#ofMavenOssrhDeployRelease-java.lang.String-java.lang.String-java.util.function.UnaryOperator-">ofMavenOssrhDeployRelease</a></span>(java.lang.String&nbsp;jiraId,
+                         java.lang.String&nbsp;jiraPassword,
+                         java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>
 <div class="block">Creates an OSSRH repository for deploying released artifacts.</div>
 </td>
 </tr>
@@ -421,20 +414,6 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
-<a name="JCENTERL_URL">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>JCENTERL_URL</h4>
-<pre>public static final&nbsp;java.lang.String JCENTERL_URL</pre>
-<div class="block">URL of the JCenter ivy repository.</div>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../constant-values.html#dev.jeka.core.api.depmanagement.JkRepo.JCENTERL_URL">Constant Field Values</a></dd>
-</dl>
-</li>
-</ul>
 <a name="ivyRepo">
 <!--   -->
 </a>
@@ -464,24 +443,14 @@ extends java.lang.Object</pre>
  If specified url is "local" then it returns the local repository.</div>
 </li>
 </ul>
-<a name="ofMaven-java.nio.file.Path-">
+<a name="of-java.nio.file.Path-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ofMaven</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;ofMaven(java.nio.file.Path&nbsp;dir)</pre>
+<h4>of</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;of(java.nio.file.Path&nbsp;dir)</pre>
 <div class="block">Creates a Maven repository having the specified file location.</div>
-</li>
-</ul>
-<a name="ofIvy-java.nio.file.Path-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofIvy</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;ofIvy(java.nio.file.Path&nbsp;dir)</pre>
-<div class="block">Creates a Ivy repository having the specified file location.</div>
 </li>
 </ul>
 <a name="ofMavenCentral--">
@@ -505,14 +474,15 @@ extends java.lang.Object</pre>
 <div class="block">Creates an OSSRH repository for both deploying snapshot and download artifacts.</div>
 </li>
 </ul>
-<a name="ofMavenOssrhDeployRelease-java.lang.String-java.lang.String-">
+<a name="ofMavenOssrhDeployRelease-java.lang.String-java.lang.String-java.util.function.UnaryOperator-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>ofMavenOssrhDeployRelease</h4>
 <pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;ofMavenOssrhDeployRelease(java.lang.String&nbsp;jiraId,
-                                               java.lang.String&nbsp;jiraPassword)</pre>
+                                               java.lang.String&nbsp;jiraPassword,
+                                               java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
 <div class="block">Creates an OSSRH repository for deploying released artifacts.</div>
 </li>
 </ul>
@@ -526,16 +496,6 @@ extends java.lang.Object</pre>
 <div class="block">Creates a OSSRH repository for downloading both snapshot and released artifacts.</div>
 </li>
 </ul>
-<a name="ofMavenJCenter--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofMavenJCenter</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;ofMavenJCenter()</pre>
-<div class="block">Creates a JCenter repository.</div>
-</li>
-</ul>
 <a name="ofLocal--">
 <!--   -->
 </a>
@@ -544,6 +504,16 @@ extends java.lang.Object</pre>
 <h4>ofLocal</h4>
 <pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;ofLocal()</pre>
 <div class="block">Creates a Maven repository for publishing locally under <code></code>[USER HOME]/.jeka/publish</code> folder.</div>
+</li>
+</ul>
+<a name="ofLocalIvy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>ofLocalIvy</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;ofLocalIvy()</pre>
+<div class="block">Creates a Ivy repository for publishing locally under <code></code>[USER HOME]/.jeka/publish</code> folder.</div>
 </li>
 </ul>
 <a name="getUrl--">
@@ -656,6 +626,15 @@ extends java.lang.Object</pre>
 </dl>
 </li>
 </ul>
+<a name="copy--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>copy</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;copy()</pre>
+</li>
+</ul>
 <a name="hashCode--">
 <!--   -->
 </a>
@@ -709,7 +688,7 @@ extends java.lang.Object</pre>
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkPopularModules.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkQualifiedDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">

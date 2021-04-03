@@ -557,7 +557,7 @@ There's many option to handle it in Jeka :</p>
 <p>This approach is quite similar to what developers do when they use ANT. It consists in writing explicit tasks to compile, make resources,
 tests and produce jars using Jeka low-level API.</p>
 <pre><code class="language-Java">import dev.jeka.core.api.depmanagement.*;
-import dev.jeka.core.api.file.JkPathTree;
+import dev.jeka.core.api.depmanagement.resolution.JkDependencyResolver;import dev.jeka.core.api.depmanagement.resolution.JkResolveResult;import dev.jeka.core.api.depmanagement.publication.JkScope;import dev.jeka.core.api.file.JkPathTree;
 import dev.jeka.core.api.file.JkPathTreeSet;
 import dev.jeka.core.api.file.JkResourceProcessor;
 import dev.jeka.core.api.java.*;
@@ -707,7 +707,7 @@ This will generate a project skeleton with the following build class at <em>[PRO
 <p>Below is the content of the generated build class. Guava and Junit are present only fo demo purpose. You can remove it safely and add
 any dependency you need.</p>
 <pre><code class="language-Java">import dev.jeka.core.api.depmanagement.JkDependencySet;
-import dev.jeka.core.api.depmanagement.JkScope;
+import dev.jeka.core.api.depmanagement.publication.JkScope;
 import dev.jeka.core.tool.JkInit;
 import dev.jeka.core.tool.JkClass;
 import dev.jeka.core.tool.JkPluginJava;

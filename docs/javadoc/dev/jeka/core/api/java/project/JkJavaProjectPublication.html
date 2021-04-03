@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -138,11 +138,11 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/artifact/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#JAVADOC_ARTIFACT_ID">JAVADOC_ARTIFACT_ID</a></span></code>&nbsp;</td>
 </tr>
 <tr class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></code></td>
+<td class="colFirst"><code>static <a href="../../../../../../dev/jeka/core/api/depmanagement/artifact/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkArtifactId</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#SOURCES_ARTIFACT_ID">SOURCES_ARTIFACT_ID</a></span></code>&nbsp;</td>
 </tr>
 </table>
@@ -162,85 +162,35 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#addRepos-dev.jeka.core.api.depmanagement.JkRepo...-">addRepos</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>...&nbsp;repos)</code>&nbsp;</td>
-</tr>
-<tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#apply-java.util.function.Consumer-">apply</a></span>(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;consumer)</code>&nbsp;</td>
 </tr>
-<tr id="i2" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
+<tr id="i1" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/artifact/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkStandardFileArtifactProducer</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getArtifactProducer--">getArtifactProducer</a></span>()</code>&nbsp;</td>
 </tr>
+<tr id="i2" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/publication/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement.publication">JkIvyPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getIvy--">getIvy</a></span>()</code>&nbsp;</td>
+</tr>
 <tr id="i3" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getIvyPublication--">getIvyPublication</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/publication/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement.publication">JkMavenPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getMaven--">getMaven</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getMavenPublication--">getMavenPublication</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getModuleId--">getModuleId</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getModuleId--">getModuleId</a></span>()</code>
-<div class="block">Returns the module id (group and name) for this project.</div>
-</td>
-</tr>
-<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getPostActions--">getPostActions</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getPublishRepos--">getPublishRepos</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i8" class="altColor">
-<td class="colFirst"><code>java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getSigner--">getSigner</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a></code></td>
+<tr id="i6" class="altColor">
+<td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getVersion--">getVersion</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i7" class="rowColor">
 <td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#publish--">publish</a></span>()</code>
-<div class="block">Publishes all defined artifacts.</div>
-</td>
-</tr>
-<tr id="i11" class="rowColor">
-<td class="colFirst"><code>void</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#publishLocal--">publishLocal</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i12" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setModuleId-dev.jeka.core.api.depmanagement.JkModuleId-">setModuleId</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>&nbsp;</td>
-</tr>
-<tr id="i13" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setModuleId-java.lang.String-">setModuleId</a></span>(java.lang.String&nbsp;groupAndName)</code>&nbsp;</td>
-</tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">setRepos</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;publishRepos)</code>&nbsp;</td>
-</tr>
-<tr id="i15" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setSigner-java.util.function.UnaryOperator-">setSigner</a></span>(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>&nbsp;</td>
-</tr>
-<tr id="i16" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersion-dev.jeka.core.api.depmanagement.JkVersion-">setVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;version)</code>&nbsp;</td>
-</tr>
-<tr id="i17" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersion-java.lang.String-">setVersion</a></span>(java.lang.String&nbsp;version)</code>&nbsp;</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersionSupplier-java.util.function.Supplier-">setVersionSupplier</a></span>(java.util.function.Supplier&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;&nbsp;versionSupplier)</code>
-<div class="block">Set the version supplier used to compute this project version.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#publish--">publish</a></span>()</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -270,7 +220,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>SOURCES_ARTIFACT_ID</h4>
-<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a> SOURCES_ARTIFACT_ID</pre>
+<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/artifact/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkArtifactId</a> SOURCES_ARTIFACT_ID</pre>
 </li>
 </ul>
 <a name="JAVADOC_ARTIFACT_ID">
@@ -279,7 +229,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>JAVADOC_ARTIFACT_ID</h4>
-<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a> JAVADOC_ARTIFACT_ID</pre>
+<pre>public static final&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/artifact/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkArtifactId</a> JAVADOC_ARTIFACT_ID</pre>
 </li>
 </ul>
 <a name="Z:Z__">
@@ -309,118 +259,6 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;apply(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;consumer)</pre>
 </li>
 </ul>
-<a name="getModuleId--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getModuleId</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;getModuleId()</pre>
-<div class="block">Returns the module id (group and name) for this project. This information is used for naming produced artifact files,
- publishing. It is also consumed by tools as SonarQube.
- If no moduleId has been explicitly set, this methods a module id inferred from the project base directory name.</div>
-</li>
-</ul>
-<a name="setModuleId-dev.jeka.core.api.depmanagement.JkModuleId-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setModuleId</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setModuleId(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getModuleId--"><code>getModuleId()</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="setModuleId-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setModuleId</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setModuleId(java.lang.String&nbsp;groupAndName)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#getModuleId--"><code>getModuleId()</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="setVersionSupplier-java.util.function.Supplier-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setVersionSupplier</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setVersionSupplier(java.util.function.Supplier&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;&nbsp;versionSupplier)</pre>
-<div class="block">Set the version supplier used to compute this project version. For example, it can be : <ul>
-     <li>A hardcoded supplier as : <code>() -> 1.0.0</code><</li>
-     <li>A dynamic supplier based on VCS versioning as : <code>() -> JkGitWrapper.of(baseDir).getVersionFromTags</code></li>
-     <li>Any code retrieving version from env var, property files, ....</li>
- </ul>
- This version information is used for publishing project artifacts on binary repository, but also may be used by
- tools as Sonarqube to identify projects.<p>
- The default value is <a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html#UNSPECIFIED"><code>JkVersion.UNSPECIFIED</code></a></div>
-</li>
-</ul>
-<a name="setVersion-dev.jeka.core.api.depmanagement.JkVersion-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setVersion(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;version)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersionSupplier-java.util.function.Supplier-"><code>setVersionSupplier(Supplier)</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="setVersion-java.lang.String-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>setVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setVersion(java.lang.String&nbsp;version)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersionSupplier-java.util.function.Supplier-"><code>setVersionSupplier(Supplier)</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="getVersion--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;getVersion()</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html#setVersionSupplier-java.util.function.Supplier-"><code>setVersionSupplier(Supplier)</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="getSigner--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getSigner</h4>
-<pre>public&nbsp;java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;getSigner()</pre>
-</li>
-</ul>
-<a name="getPublishRepos--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getPublishRepos</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;getPublishRepos()</pre>
-</li>
-</ul>
 <a name="getPostActions--">
 <!--   -->
 </a>
@@ -430,49 +268,31 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/function/JkRunnables.html" title="class in dev.jeka.core.api.function">JkRunnables</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getPostActions()</pre>
 </li>
 </ul>
-<a name="setRepos-dev.jeka.core.api.depmanagement.JkRepoSet-">
+<a name="getMaven--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setRepos</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setRepos(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;publishRepos)</pre>
+<h4>getMaven</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/publication/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement.publication">JkMavenPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getMaven()</pre>
 </li>
 </ul>
-<a name="addRepos-dev.jeka.core.api.depmanagement.JkRepo...-">
+<a name="getIvy--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addRepos</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;addRepos(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>...&nbsp;repos)</pre>
+<h4>getIvy</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/publication/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement.publication">JkIvyPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getIvy()</pre>
 </li>
 </ul>
-<a name="setSigner-java.util.function.UnaryOperator-">
+<a name="getArtifactProducer--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setSigner</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&nbsp;setSigner(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
-</li>
-</ul>
-<a name="getMavenPublication--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getMavenPublication</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkMavenPublication.html" title="class in dev.jeka.core.api.depmanagement">JkMavenPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getMavenPublication()</pre>
-</li>
-</ul>
-<a name="getIvyPublication--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getIvyPublication</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkIvyPublication.html" title="class in dev.jeka.core.api.depmanagement">JkIvyPublication</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getIvyPublication()</pre>
+<h4>getArtifactProducer</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/artifact/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkStandardFileArtifactProducer</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getArtifactProducer()</pre>
 </li>
 </ul>
 <a name="publish--">
@@ -482,25 +302,24 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>publish</h4>
 <pre>public&nbsp;void&nbsp;publish()</pre>
-<div class="block">Publishes all defined artifacts.</div>
 </li>
 </ul>
-<a name="publishLocal--">
+<a name="getModuleId--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>publishLocal</h4>
-<pre>public&nbsp;void&nbsp;publishLocal()</pre>
+<h4>getModuleId</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;getModuleId()</pre>
 </li>
 </ul>
-<a name="getArtifactProducer--">
+<a name="getVersion--">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>getArtifactProducer</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkStandardFileArtifactProducer.html" title="class in dev.jeka.core.api.depmanagement">JkStandardFileArtifactProducer</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectPublication.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectPublication</a>&gt;&nbsp;getArtifactProducer()</pre>
+<h4>getVersion</h4>
+<pre>public&nbsp;java.lang.String&nbsp;getVersion()</pre>
 </li>
 </ul>
 </li>

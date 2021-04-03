@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":9,"i5":9,"i6":9,"i7":9,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkVersionedModule.html" target="_top">Frames</a></li>
@@ -72,7 +72,7 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -116,6 +116,25 @@ extends java.lang.Object</pre>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -183,16 +202,21 @@ extends java.lang.Object</pre>
 </td>
 </tr>
 <tr id="i9" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html#resolveConflict-dev.jeka.core.api.depmanagement.JkVersion-dev.jeka.core.api.depmanagement.JkVersionedModule.ConflictStrategy-">resolveConflict</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;other,
+               <a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a>&nbsp;strategy)</code>&nbsp;</td>
+</tr>
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html#withVersion-dev.jeka.core.api.depmanagement.JkVersion-">withVersion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;version)</code>
 <div class="block">Returns a <a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement"><code>JkVersionedModule</code></a> identical to this one but with the specified version.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html#withVersion-java.lang.String-">withVersion</a></span>(java.lang.String&nbsp;version)</code>&nbsp;</td>
 </tr>
@@ -346,12 +370,22 @@ extends java.lang.Object</pre>
 <a name="populateManifest-dev.jeka.core.api.java.JkManifest-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>populateManifest</h4>
 <pre>public&nbsp;void&nbsp;populateManifest(<a href="../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&nbsp;manifest)</pre>
 <div class="block">Fills <code>implementation title</code> and <code>implentation version </code> attributes of the
  specified manifest.</div>
+</li>
+</ul>
+<a name="resolveConflict-dev.jeka.core.api.depmanagement.JkVersion-dev.jeka.core.api.depmanagement.JkVersionedModule.ConflictStrategy-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>resolveConflict</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.html" title="class in dev.jeka.core.api.depmanagement">JkVersionedModule</a>&nbsp;resolveConflict(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;other,
+                                         <a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a>&nbsp;strategy)</pre>
 </li>
 </ul>
 </li>
@@ -382,7 +416,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkVersionedModule.html" target="_top">Frames</a></li>
@@ -406,7 +440,7 @@ extends java.lang.Object</pre>
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

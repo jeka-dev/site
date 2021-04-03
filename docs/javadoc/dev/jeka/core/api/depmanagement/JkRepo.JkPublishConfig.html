@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -156,32 +156,40 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#getChecksumAlgos--">getChecksumAlgos</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#getSigner--">getSigner</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code>java.util.function.Predicate&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#getVersionFilter--">getVersionFilter</a></span>()</code>
 <div class="block">Returns the filter used for this <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo.JkPublishConfig</code></a>.</div>
 </td>
 </tr>
-<tr id="i2" class="altColor">
+<tr id="i3" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#isSignatureRequired--">isSignatureRequired</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i3" class="rowColor">
+<tr id="i4" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#isUniqueSnapshot--">isUniqueSnapshot</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i4" class="altColor">
+<tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setChecksumAlgos-java.lang.String...-">setChecksumAlgos</a></span>(java.lang.String...&nbsp;algos)</code>&nbsp;</td>
 </tr>
-<tr id="i5" class="rowColor">
+<tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setSignatureRequired-boolean-">setSignatureRequired</a></span>(boolean&nbsp;signatureRequired)</code>&nbsp;</td>
 </tr>
-<tr id="i6" class="altColor">
+<tr id="i7" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setSigner-java.util.function.UnaryOperator-">setSigner</a></span>(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>&nbsp;</td>
+</tr>
+<tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setUniqueSnapshot-boolean-">setUniqueSnapshot</a></span>(boolean&nbsp;uniqueSnapshot)</code>&nbsp;</td>
 </tr>
-<tr id="i7" class="rowColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html#setVersionFilter-java.util.function.Predicate-">setVersionFilter</a></span>(java.util.function.Predicate&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&gt;&nbsp;versionFilter)</code>&nbsp;</td>
 </tr>
@@ -262,6 +270,15 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;java.util.Set&lt;java.lang.String&gt;&nbsp;getChecksumAlgos()</pre>
 </li>
 </ul>
+<a name="getSigner--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getSigner</h4>
+<pre>public&nbsp;java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;getSigner()</pre>
+</li>
+</ul>
 <a name="setUniqueSnapshot-boolean-">
 <!--   -->
 </a>
@@ -292,10 +309,19 @@ extends java.lang.Object</pre>
 <a name="setChecksumAlgos-java.lang.String...-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setChecksumAlgos</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;setChecksumAlgos(java.lang.String...&nbsp;algos)</pre>
+</li>
+</ul>
+<a name="setSigner-java.util.function.UnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>setSigner</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkPublishConfig.html" title="class in dev.jeka.core.api.depmanagement">JkRepo.JkPublishConfig</a>&nbsp;setSigner(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
 </li>
 </ul>
 </li>

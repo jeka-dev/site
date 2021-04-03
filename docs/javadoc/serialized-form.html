@@ -73,84 +73,12 @@
 <div class="serializedFormContainer">
 <ul class="blockList">
 <li class="blockList">
-<h2 title="Package">Package&nbsp;dev.jeka.core.api.depmanagement</h2>
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.depmanagement.publication</h2>
 <ul class="blockList">
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkDependencyNode.JkFileNodeInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.publication.JkPomMetadata">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkFileNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkDependencyNode.JkFileNodeInfo</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>files</h4>
-<pre>java.util.List&lt;E&gt; files</pre>
-</li>
-<li class="blockList">
-<h4>scopes</h4>
-<pre>java.util.Set&lt;E&gt; scopes</pre>
-</li>
-<li class="blockListLast">
-<h4>computationOrigin</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a> computationOrigin</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkDependencyNode.JkModuleNodeInfo">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkDependencyNode.JkModuleNodeInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkDependencyNode.JkModuleNodeInfo</a> extends java.lang.Object implements Serializable</h3>
-<dl class="nameValue">
-<dt>serialVersionUID:</dt>
-<dd>1L</dd>
-</dl>
-<ul class="blockList">
-<li class="blockList">
-<h3>Serialized Fields</h3>
-<ul class="blockList">
-<li class="blockList">
-<h4>moduleId</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a> moduleId</pre>
-</li>
-<li class="blockList">
-<h4>declaredVersion</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a> declaredVersion</pre>
-</li>
-<li class="blockList">
-<h4>declaredScopes</h4>
-<pre>java.util.Set&lt;E&gt; declaredScopes</pre>
-</li>
-<li class="blockList">
-<h4>rootScopes</h4>
-<pre>java.util.Set&lt;E&gt; rootScopes</pre>
-</li>
-<li class="blockList">
-<h4>resolvedVersion</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a> resolvedVersion</pre>
-</li>
-<li class="blockList">
-<h4>artifacts</h4>
-<pre>java.util.List&lt;E&gt; artifacts</pre>
-</li>
-<li class="blockListLast">
-<h4>treeRoot</h4>
-<pre>boolean treeRoot</pre>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata">
-<!--   -->
-</a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.html" title="class in dev.jeka.core.api.depmanagement.publication">dev.jeka.core.api.depmanagement.publication.JkPomMetadata</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -166,12 +94,12 @@
 </li>
 <li class="blockList">
 <h4>projectInfo</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkProjectInfo</a>&lt;<a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkProjectInfo.html" title="type parameter in JkPomMetadata.JkProjectInfo">T</a>&gt; projectInfo</pre>
+<pre><a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkProjectInfo.html" title="class in dev.jeka.core.api.depmanagement.publication">JkPomMetadata.JkProjectInfo</a>&lt;<a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkProjectInfo.html" title="type parameter in JkPomMetadata.JkProjectInfo">T</a>&gt; projectInfo</pre>
 <div class="block">Info relative to project</div>
 </li>
 <li class="blockList">
 <h4>scm</h4>
-<pre><a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">JkPomMetadata.JkScmInfo</a>&lt;<a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="type parameter in JkPomMetadata.JkScmInfo">T</a>&gt; scm</pre>
+<pre><a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement.publication">JkPomMetadata.JkScmInfo</a>&lt;<a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkScmInfo.html" title="type parameter in JkPomMetadata.JkScmInfo">T</a>&gt; scm</pre>
 <div class="block">Info relative to source control management</div>
 </li>
 <li class="blockList">
@@ -188,10 +116,10 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata.JkDeveloperInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.publication.JkPomMetadata.JkDeveloperInfo">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata.JkDeveloperInfo</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkDeveloperInfo.html" title="class in dev.jeka.core.api.depmanagement.publication">dev.jeka.core.api.depmanagement.publication.JkPomMetadata.JkDeveloperInfo</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -224,10 +152,10 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata.JkLicenseInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.publication.JkPomMetadata.JkLicenseInfo">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkLicenseInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata.JkLicenseInfo</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkLicenseInfo.html" title="class in dev.jeka.core.api.depmanagement.publication">dev.jeka.core.api.depmanagement.publication.JkPomMetadata.JkLicenseInfo</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -250,10 +178,10 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkPomMetadata.JkScmInfo">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.publication.JkPomMetadata.JkScmInfo">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkPomMetadata.JkScmInfo</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/publication/JkPomMetadata.JkScmInfo.html" title="class in dev.jeka.core.api.depmanagement.publication">dev.jeka.core.api.depmanagement.publication.JkPomMetadata.JkScmInfo</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>
@@ -282,10 +210,87 @@
 </li>
 </ul>
 </li>
-<li class="blockList"><a name="dev.jeka.core.api.depmanagement.JkResolveResult.JkErrorReport">
+</ul>
+</li>
+<li class="blockList">
+<h2 title="Package">Package&nbsp;dev.jeka.core.api.depmanagement.resolution</h2>
+<ul class="blockList">
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.resolution.JkResolvedDependencyNode.JkFileNodeInfo">
 <!--   -->
 </a>
-<h3>Class <a href="dev/jeka/core/api/depmanagement/JkResolveResult.JkErrorReport.html" title="class in dev.jeka.core.api.depmanagement">dev.jeka.core.api.depmanagement.JkResolveResult.JkErrorReport</a> extends java.lang.Object implements Serializable</h3>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/resolution/JkResolvedDependencyNode.JkFileNodeInfo.html" title="class in dev.jeka.core.api.depmanagement.resolution">dev.jeka.core.api.depmanagement.resolution.JkResolvedDependencyNode.JkFileNodeInfo</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>files</h4>
+<pre>java.util.List&lt;E&gt; files</pre>
+</li>
+<li class="blockList">
+<h4>configurations</h4>
+<pre>java.util.Set&lt;E&gt; configurations</pre>
+</li>
+<li class="blockListLast">
+<h4>computationOrigin</h4>
+<pre><a href="dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a> computationOrigin</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.resolution.JkResolvedDependencyNode.JkModuleNodeInfo">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/resolution/JkResolvedDependencyNode.JkModuleNodeInfo.html" title="class in dev.jeka.core.api.depmanagement.resolution">dev.jeka.core.api.depmanagement.resolution.JkResolvedDependencyNode.JkModuleNodeInfo</a> extends java.lang.Object implements Serializable</h3>
+<dl class="nameValue">
+<dt>serialVersionUID:</dt>
+<dd>1L</dd>
+</dl>
+<ul class="blockList">
+<li class="blockList">
+<h3>Serialized Fields</h3>
+<ul class="blockList">
+<li class="blockList">
+<h4>moduleId</h4>
+<pre><a href="dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a> moduleId</pre>
+</li>
+<li class="blockList">
+<h4>declaredVersion</h4>
+<pre><a href="dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a> declaredVersion</pre>
+</li>
+<li class="blockList">
+<h4>declaredConfigurations</h4>
+<pre>java.util.Set&lt;E&gt; declaredConfigurations</pre>
+</li>
+<li class="blockList">
+<h4>rootConfigurations</h4>
+<pre>java.util.Set&lt;E&gt; rootConfigurations</pre>
+</li>
+<li class="blockList">
+<h4>resolvedVersion</h4>
+<pre><a href="dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a> resolvedVersion</pre>
+</li>
+<li class="blockList">
+<h4>artifacts</h4>
+<pre>java.util.List&lt;E&gt; artifacts</pre>
+</li>
+<li class="blockListLast">
+<h4>treeRoot</h4>
+<pre>boolean treeRoot</pre>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="blockList"><a name="dev.jeka.core.api.depmanagement.resolution.JkResolveResult.JkErrorReport">
+<!--   -->
+</a>
+<h3>Class <a href="dev/jeka/core/api/depmanagement/resolution/JkResolveResult.JkErrorReport.html" title="class in dev.jeka.core.api.depmanagement.resolution">dev.jeka.core.api.depmanagement.resolution.JkResolveResult.JkErrorReport</a> extends java.lang.Object implements Serializable</h3>
 <dl class="nameValue">
 <dt>serialVersionUID:</dt>
 <dd>1L</dd>

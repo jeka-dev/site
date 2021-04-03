@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":9,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -148,11 +148,11 @@ extends java.lang.Object</pre>
 <th class="colLast" scope="col">Method and Description</th>
 </tr>
 <tr id="i0" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html" title="class in dev.jeka.core.api.depmanagement">JkQualifiedDependencies</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#getDependencies--">getDependencies</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a></code></td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/resolution/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement.resolution">JkDependencyResolver</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#getDependencyResolver--">getDependencyResolver</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
@@ -173,21 +173,34 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-">setDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;compile,
+               <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;runtime,
+               <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;test)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencyResolver-">setDependencyResolver</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;dependencyResolver)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkVersionedModule.ConflictStrategy-">setDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;compile,
+               <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;runtime,
+               <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;test,
+               <a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a>&nbsp;conflictStrategy)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setProdLayout-dev.jeka.core.api.java.project.JkCompileLayout-">setProdLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a>&nbsp;prodLayout)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencies-dev.jeka.core.api.depmanagement.JkQualifiedDependencies-">setDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html" title="class in dev.jeka.core.api.depmanagement">JkQualifiedDependencies</a>&nbsp;dependencies)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setSourceVersion-dev.jeka.core.api.java.JkJavaVersion-">setSourceVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;sourceVersion)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setDependencyResolver-dev.jeka.core.api.depmanagement.resolution.JkDependencyResolver-">setDependencyResolver</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/resolution/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement.resolution">JkDependencyResolver</a>&nbsp;dependencyResolver)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setProdLayout-dev.jeka.core.api.java.project.JkCompileLayout-">setProdLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a>&nbsp;prodLayout)</code>&nbsp;</td>
+</tr>
+<tr id="i11" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setSourceVersion-dev.jeka.core.api.java.JkJavaVersion-">setSourceVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;sourceVersion)</code>&nbsp;</td>
+</tr>
+<tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html#setTestLayout-dev.jeka.core.api.java.project.JkCompileLayout-">setTestLayout</a></span>(<a href="../../../../../../dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a>&nbsp;testLayout)</code>&nbsp;</td>
 </tr>
@@ -246,7 +259,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getDependencies()</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html" title="class in dev.jeka.core.api.depmanagement">JkQualifiedDependencies</a>&nbsp;getDependencies()</pre>
 </li>
 </ul>
 <a name="getSourceVersion--">
@@ -264,7 +277,7 @@ extends java.lang.Object</pre>
 <ul class="blockList">
 <li class="blockList">
 <h4>getDependencyResolver</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;getDependencyResolver()</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/resolution/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement.resolution">JkDependencyResolver</a>&nbsp;getDependencyResolver()</pre>
 </li>
 </ul>
 <a name="setProdLayout-dev.jeka.core.api.java.project.JkCompileLayout-">
@@ -285,13 +298,36 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setTestLayout(<a href="../../../../../../dev/jeka/core/api/java/project/JkCompileLayout.html" title="class in dev.jeka.core.api.java.project">JkCompileLayout</a>&nbsp;testLayout)</pre>
 </li>
 </ul>
-<a name="setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">
+<a name="setDependencies-dev.jeka.core.api.depmanagement.JkQualifiedDependencies-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>setDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html" title="class in dev.jeka.core.api.depmanagement">JkQualifiedDependencies</a>&nbsp;dependencies)</pre>
+</li>
+</ul>
+<a name="setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkVersionedModule.ConflictStrategy-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;compile,
+                                        <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;runtime,
+                                        <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;test,
+                                        <a href="../../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a>&nbsp;conflictStrategy)</pre>
+</li>
+</ul>
+<a name="setDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-dev.jeka.core.api.depmanagement.JkDependencySet-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;compile,
+                                        <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;runtime,
+                                        <a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;test)</pre>
 </li>
 </ul>
 <a name="setSourceVersion-dev.jeka.core.api.java.JkJavaVersion-">
@@ -303,13 +339,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setSourceVersion(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;sourceVersion)</pre>
 </li>
 </ul>
-<a name="setDependencyResolver-dev.jeka.core.api.depmanagement.JkDependencyResolver-">
+<a name="setDependencyResolver-dev.jeka.core.api.depmanagement.resolution.JkDependencyResolver-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
 <h4>setDependencyResolver</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setDependencyResolver(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyResolver</a>&nbsp;dependencyResolver)</pre>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaIdeSupport.html" title="class in dev.jeka.core.api.java.project">JkJavaIdeSupport</a>&nbsp;setDependencyResolver(<a href="../../../../../../dev/jeka/core/api/depmanagement/resolution/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement.resolution">JkDependencyResolver</a>&nbsp;dependencyResolver)</pre>
 </li>
 </ul>
 </li>

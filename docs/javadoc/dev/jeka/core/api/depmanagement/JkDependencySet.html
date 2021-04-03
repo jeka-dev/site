@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":9,"i36":9,"i37":9,"i38":9,"i39":9,"i40":9,"i41":9,"i42":10,"i43":10,"i44":10,"i45":10,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10,"i55":10,"i56":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10,"i20":10,"i21":10,"i22":10,"i23":10,"i24":10,"i25":10,"i26":10,"i27":10,"i28":10,"i29":10,"i30":10,"i31":10,"i32":10,"i33":10,"i34":10,"i35":10,"i36":10,"i37":10,"i38":10,"i39":10,"i40":10,"i41":9,"i42":9,"i43":9,"i44":9,"i45":9,"i46":10,"i47":10,"i48":10,"i49":10,"i50":10,"i51":10,"i52":10,"i53":10,"i54":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -47,8 +47,8 @@ var activeTableTab = "activeTableTab";
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkDependencySet.html" target="_top">Frames</a></li>
@@ -72,7 +72,7 @@ var activeTableTab = "activeTableTab";
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>
@@ -105,23 +105,37 @@ var activeTableTab = "activeTableTab";
 <div class="description">
 <ul class="blockList">
 <li class="blockList">
-<dl>
-<dt>All Implemented Interfaces:</dt>
-<dd>java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;</dd>
-</dl>
 <hr>
 <br>
 <pre>public class <span class="typeNameLabel">JkDependencySet</span>
-extends java.lang.Object
-implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;</pre>
-<div class="block">A set of <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a> generally standing for the entire
- dependencies of a project/module.</div>
+extends java.lang.Object</pre>
+<div class="block">A set of <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a> generally standing for a given purpose (compile, test, runtime) in a project build. <p>
+ <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencySet</code></a> also holds a <a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement"><code>JkVersionProvider</code></a> and a set of JkDepe</div>
 </li>
 </ul>
 </div>
 <div class="summary">
 <ul class="blockList">
 <li class="blockList">
+<!-- ======== NESTED CLASS SUMMARY ======== -->
+<ul class="blockList">
+<li class="blockList"><a name="nested.class.summary">
+<!--   -->
+</a>
+<h3>Nested Class Summary</h3>
+<table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Nested Class Summary table, listing nested classes, and an explanation">
+<caption><span>Nested Classes</span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th class="colLast" scope="col">Class and Description</th>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><code>static class&nbsp;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a></span></code>&nbsp;</td>
+</tr>
+</table>
+</li>
+</ul>
 <!-- ========== METHOD SUMMARY =========== -->
 <ul class="blockList">
 <li class="blockList"><a name="method.summary">
@@ -136,154 +150,154 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-java.lang.Iterable-">and</a></span>(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;others)</code>
-<div class="block">Returns a clone of this object plus the specified
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a>s.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependency...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>...&nbsp;others)</code>&nbsp;</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependency-dev.jeka.core.api.depmanagement.JkScope...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-dev.jeka.core.api.depmanagement.JkDependency...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+   <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>...&nbsp;others)</code>&nbsp;</td>
 </tr>
 <tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkLocalLibDependency-dev.jeka.core.api.depmanagement.JkScope...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a>&nbsp;dependency,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-dev.jeka.core.api.depmanagement.JkDependencySet-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+   <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;other)</code>
+<div class="block">Returns a clone of this object plus the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a>s, at the
+ specified place and condition.</div>
 </td>
 </tr>
 <tr id="i3" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkModuleDependency-dev.jeka.core.api.depmanagement.JkScopeMapping-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&nbsp;dependency,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</code>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-dev.jeka.core.api.depmanagement.JkModuleId-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+   <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>&nbsp;</td>
 </tr>
 <tr id="i4" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkScope...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.util.List-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+   java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;others)</code>&nbsp;</td>
 </tr>
 <tr id="i5" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkModuleId-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
-   java.lang.String&nbsp;version,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.String-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+   java.lang.String&nbsp;moduleDescriptor)</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkModuleId-java.lang.String-dev.jeka.core.api.depmanagement.JkScopeMapping-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
-   java.lang.String&nbsp;version,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.String-dev.jeka.core.api.depmanagement.JkTransitivity-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+   java.lang.String&nbsp;moduleDescriptor,
+   <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;transitivity)</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkScopedDependency...-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>...&nbsp;others)</code>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkDependencySet-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">and</a></span>(java.lang.String&nbsp;moduleDescription,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-dev.jeka.core.api.depmanagement.JkModuleId-">and</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-java.lang.String-dev.jeka.core.api.depmanagement.JkScopeMapping-">and</a></span>(java.lang.String&nbsp;moduleDescription,
-   <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-java.util.List-">and</a></span>(java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;others)</code>
+<div class="block">Returns a clone of this object plus the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a>s at the tail of
+ this one.</div>
+</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFile-java.nio.file.Path-dev.jeka.core.api.depmanagement.JkScope...-">andFile</a></span>(java.nio.file.Path&nbsp;file,
-       <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
-<div class="block">If specified path is relative, JkDependencyResolver will resolve it upon its base dir.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-java.lang.String-">and</a></span>(java.lang.String&nbsp;moduleDescriptor)</code>&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFile-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">andFile</a></span>(java.lang.String&nbsp;path,
-       <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#and-java.lang.String-dev.jeka.core.api.depmanagement.JkTransitivity-">and</a></span>(java.lang.String&nbsp;moduleDescriptor,
+   <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;transitivity)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFiles-java.lang.Iterable-dev.jeka.core.api.depmanagement.JkScope...-">andFiles</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
-        <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFiles-java.lang.Iterable-">andFiles</a></span>(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andIf-boolean-java.lang.Iterable-">andIf</a></span>(boolean&nbsp;condition,
-     java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;others)</code>
-<div class="block">Returns a clone of this object plus the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a>s.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFiles-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.Iterable-">andFiles</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+        java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andScopelessDependencies-java.lang.Iterable-">andScopelessDependencies</a></span>(java.lang.Iterable&lt;? extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFiles-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.String...-">andFiles</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+        java.lang.String...&nbsp;paths)</code>&nbsp;</td>
 </tr>
 <tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andFiles-java.lang.String...-">andFiles</a></span>(java.lang.String...&nbsp;paths)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andGlobalExclusion-dev.jeka.core.api.depmanagement.JkDependencyExclusion-">andGlobalExclusion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>&nbsp;exclusion)</code>&nbsp;</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andGlobalExclusion-java.lang.String-">andGlobalExclusion</a></span>(java.lang.String&nbsp;groupAndName)</code>&nbsp;</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#andVersionProvider-dev.jeka.core.api.depmanagement.JkVersionProvider-">andVersionProvider</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a>&nbsp;versionProvider)</code>
 <div class="block">Returns a clone of this object but using specified version provider to override
  versions of transitive dependencies.</div>
 </td>
 </tr>
-<tr id="i16" class="altColor">
+<tr id="i19" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#assertNoUnspecifiedVersion--">assertNoUnspecifiedVersion</a></span>()</code>
-<div class="block">Throws a <code>IllegalStateException</code> if one of the module
- dependencies has an unspecified projectVersion.</div>
-</td>
-</tr>
-<tr id="i17" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#get-dev.jeka.core.api.depmanagement.JkModuleId-">get</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>
-<div class="block">Returns the <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a> declared for the specified
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
-</td>
-</tr>
-<tr id="i18" class="altColor">
-<td class="colFirst"><code>java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getDeclaredScopes--">getDeclaredScopes</a></span>()</code>
-<div class="block">Returns the set of scopes involved in these dependencies.</div>
-</td>
-</tr>
-<tr id="i19" class="rowColor">
-<td class="colFirst"><code>java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getDependenciesDeclaredWith-dev.jeka.core.api.depmanagement.JkScope-">getDependenciesDeclaredWith</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&nbsp;scope)</code>
-<div class="block">Returns the set of <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a> involved for the specified
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScope</code></a>.</div>
+<div class="block">Throws a <code>IllegalStateException</code> if one of the module dependencies has an unspecified version.</div>
 </td>
 </tr>
 <tr id="i20" class="altColor">
-<td class="colFirst"><code>java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&gt;</code></td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#get-java.lang.String-">get</a></span>(java.lang.String&nbsp;moduleId)</code>
+<div class="block">Returns the <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a> declared for the specified
+ <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
+</td>
+</tr>
+<tr id="i21" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getEntries--">getEntries</a></span>()</code>
+<div class="block">Returns the unmodifiable list list of scoped dependencies for this object.</div>
+</td>
+</tr>
+<tr id="i22" class="altColor">
+<td class="colFirst"><code>java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getGlobalExclusions--">getGlobalExclusions</a></span>()</code>
 <div class="block">Returns the dependencies to be excluded to the transitive chain when using this dependency.</div>
 </td>
 </tr>
-<tr id="i21" class="rowColor">
+<tr id="i23" class="rowColor">
 <td class="colFirst"><code>java.util.Set&lt;java.nio.file.Path&gt;</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getIdePathDirs--">getIdePathDirs</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i22" class="altColor">
-<td class="colFirst"><code>java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getInvolvedScopes--">getInvolvedScopes</a></span>()</code>
-<div class="block">Returns all scopes that are involved in these dependencies.</div>
+<tr id="i24" class="altColor">
+<td class="colFirst"><code>&lt;T extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;<br>T</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getMatching-T-">getMatching</a></span>(T&nbsp;dependency)</code>&nbsp;</td>
+</tr>
+<tr id="i25" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getModuleDependencies--">getModuleDependencies</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i26" class="altColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getVersionedDependencies--">getVersionedDependencies</a></span>()</code>
+<div class="block">Returns all dependencies, adding <code>versionProvider</code> versions to module dependencies
+ that does not specify one.</div>
 </td>
 </tr>
-<tr id="i23" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getVersion-dev.jeka.core.api.depmanagement.JkModuleId-">getVersion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>&nbsp;</td>
+<tr id="i27" class="rowColor">
+<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getVersionedModuleDependencies--">getVersionedModuleDependencies</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i24" class="altColor">
+<tr id="i28" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#getVersionProvider--">getVersionProvider</a></span>()</code>
 <div class="block">Returns overridden versions for transitive dependencies and direct dependencies with no version specified on.</div>
 </td>
 </tr>
-<tr id="i25" class="rowColor">
+<tr id="i29" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#hasDynamicAndResolvableVersions--">hasDynamicAndResolvableVersions</a></span>()</code>
 <div class="block">Returns <code>true</code> if this object contains dependency on external
@@ -291,194 +305,123 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
  versions are dynamic but not resolvable).</div>
 </td>
 </tr>
-<tr id="i26" class="altColor">
+<tr id="i30" class="altColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#hasDynamicVersions--">hasDynamicVersions</a></span>()</code>
 <div class="block">Returns <code>true</code> if this object contains dependency on external
  module whose rely on dynamic version.</div>
 </td>
 </tr>
-<tr id="i27" class="rowColor">
+<tr id="i31" class="rowColor">
 <td class="colFirst"><code>boolean</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#hasModules--">hasModules</a></span>()</code>
 <div class="block">Returns <code>true</code> if this object contains dependencies whose are
  <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a>.</div>
 </td>
 </tr>
-<tr id="i28" class="altColor">
-<td class="colFirst"><code>java.util.Iterator&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#iterator--">iterator</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i29" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-dev.jeka.core.api.depmanagement.JkModuleId-">minus</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;jkModuleId)</code>
-<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
-</td>
-</tr>
-<tr id="i30" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-java.lang.String-">minus</a></span>(java.lang.String&nbsp;moduleId)</code>
-<div class="block">Same as #minus(JkModuleId) but using a string as <code>my.group:my.name</code> to specify the moduleId.</div>
-</td>
-</tr>
-<tr id="i31" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minusDuplicates--">minusDuplicates</a></span>()</code>
-<div class="block">Returns a JkDependencySet similar to this one but removing duplicates on module dependencies.</div>
-</td>
-</tr>
 <tr id="i32" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minusFiles-java.util.function.Predicate-">minusFiles</a></span>(java.util.function.Predicate&lt;java.nio.file.Path&gt;&nbsp;pathPredicate)</code>
-<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySetMerge.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySetMerge</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#merge-dev.jeka.core.api.depmanagement.JkDependencySet-">merge</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;other)</code>&nbsp;</td>
 </tr>
 <tr id="i33" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minusLastIf-boolean-">minusLastIf</a></span>(boolean&nbsp;condition)</code>
-<div class="block">Returns a clone of this dependencySet but removing the last element if the specified condition is met.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#mergeLocalProjectExportedDependencies--">mergeLocalProjectExportedDependencies</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i34" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minusModuleDependenciesWithIdeProjectDir--">minusModuleDependenciesWithIdeProjectDir</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-dev.jeka.core.api.depmanagement.JkDependency-">minus</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency)</code>&nbsp;</td>
 </tr>
 <tr id="i35" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of--">of</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-dev.jeka.core.api.depmanagement.JkModuleId-">minus</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</code>&nbsp;</td>
 </tr>
 <tr id="i36" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of-java.lang.Iterable-">of</a></span>(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;scopedDependencies)</code>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencySet</code></a> to the specified scoped dependencies.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-java.util.List-">minus</a></span>(java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</code>&nbsp;</td>
 </tr>
 <tr id="i37" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">of</a></span>(java.lang.String&nbsp;dependencyDesc,
-  <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minus-java.lang.String-">minus</a></span>(java.lang.String&nbsp;moduleId)</code>&nbsp;</td>
 </tr>
 <tr id="i38" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#ofLocal-java.nio.file.Path-">ofLocal</a></span>(java.nio.file.Path&nbsp;baseDir)</code>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencySet</code></a> based on jars located under the specified directory.</div>
-</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#minusModuleDependenciesHavingIdeProjectDir--">minusModuleDependenciesHavingIdeProjectDir</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i39" class="rowColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#ofTextDescription-java.nio.file.Path-">ofTextDescription</a></span>(java.nio.file.Path&nbsp;path)</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#normalised--">normalised</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i40" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#ofTextDescription-java.lang.String-">ofTextDescription</a></span>(java.lang.String&nbsp;description)</code>
-<div class="block">Creates a dependencySet from a flat file formatted as :
- 
- - COMPILE RUNTIME
- org.springframework.boot:spring-boot-starter-thymeleaf
- org.springframework.boot:spring-boot-starter-data-jpa
-
- - RUNTIME
- com.h2database:h2
- org.liquibase:liquibase-core
- com.oracle:ojdbc6:12.1.0
-
- - TEST
- org.springframework.boot:spring-boot-starter-test
- org.seleniumhq.selenium:selenium-chrome-driver:3.4.0
- org.fluentlenium:fluentlenium-assertj:3.2.0
- org.fluentlenium:fluentlenium-junit:3.2.0
-
- - PROVIDED
- org.projectlombok:lombok:1.16.16
- </div>
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#normalised-dev.jeka.core.api.depmanagement.JkVersionedModule.ConflictStrategy-">normalised</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a>&nbsp;conflictStrategy)</code>
+<div class="block">Removes duplicates and select a version according the specified strategy in
+ case of duplicate with distinct versions.</div>
 </td>
 </tr>
 <tr id="i41" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#ofTextDescription-java.net.URL-">ofTextDescription</a></span>(java.net.URL&nbsp;url)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of--">of</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i42" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#replaceScope-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkScope...-">replaceScope</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;jkModuleId,
-            <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
-<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>.</div>
-</td>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of-dev.jeka.core.api.depmanagement.JkDependency-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency)</code>&nbsp;</td>
 </tr>
 <tr id="i43" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#replaceScope-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">replaceScope</a></span>(java.lang.String&nbsp;moduleId,
-            <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>&nbsp;</td>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of-java.util.List-">of</a></span>(java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</code>
+<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencySet</code></a> to the specified scoped dependencies.</div>
+</td>
 </tr>
 <tr id="i44" class="altColor">
-<td class="colFirst"><code>java.lang.String</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#toJavaCode-int-">toJavaCode</a></span>(int&nbsp;indentCount)</code>
+<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#of-java.lang.String-">of</a></span>(java.lang.String&nbsp;dependencyDesc)</code>&nbsp;</td>
+</tr>
+<tr id="i45" class="rowColor">
+<td class="colFirst"><code>static java.lang.String</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#toJavaCode-int-java.util.List-">toJavaCode</a></span>(int&nbsp;indentCount,
+          java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</code>
 <div class="block">Returns the java codes that declare these dependencies.</div>
 </td>
 </tr>
-<tr id="i45" class="rowColor">
-<td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#toList--">toList</a></span>()</code>
-<div class="block">Returns the unmodifiable list list of scoped dependencies for this object.</div>
-</td>
-</tr>
 <tr id="i46" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#toResolvedModuleVersions--">toResolvedModuleVersions</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i47" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#toString--">toString</a></span>()</code>&nbsp;</td>
 </tr>
+<tr id="i47" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withGlobalExclusion-java.util.Set-">withGlobalExclusion</a></span>(java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>&gt;&nbsp;excludes)</code>&nbsp;</td>
+</tr>
 <tr id="i48" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withDefaultScope-dev.jeka.core.api.depmanagement.JkScopeMapping-">withDefaultScope</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</code>
-<div class="block">Returns a clone of this dependencies but replacing the unscoped
- dependencies with the specified scope mapping.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withGlobalTransitivityReplacement-dev.jeka.core.api.depmanagement.JkTransitivity-dev.jeka.core.api.depmanagement.JkTransitivity-">withGlobalTransitivityReplacement</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;formerTransitivity,
+                                 <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;newTransitivity)</code>&nbsp;</td>
 </tr>
 <tr id="i49" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withDefaultScopes-dev.jeka.core.api.depmanagement.JkScope...-">withDefaultScopes</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</code>
-<div class="block">Returns a clone of this dependencies but replacing the unscoped
- dependencies with the specified ones.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></span>(java.nio.file.Path&nbsp;ideProjectDir)</code>&nbsp;</td>
 </tr>
 <tr id="i50" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withGlobalExclusion-dev.jeka.core.api.depmanagement.JkDepExclude-">withGlobalExclusion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclude)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withLocalExclusion-dev.jeka.core.api.depmanagement.JkDependencyExclusion...-">withLocalExclusion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>...&nbsp;exclusions)</code>
+<div class="block">Returns a clone of this dependencySet but adding dependency exclusion on the the last element.</div>
+</td>
 </tr>
 <tr id="i51" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></span>(java.nio.file.Path&nbsp;ideProjectDir)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withLocalExclusions-java.lang.String...-">withLocalExclusions</a></span>(java.lang.String...&nbsp;groupAndNames)</code>&nbsp;</td>
 </tr>
 <tr id="i52" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withLocalExclusion-dev.jeka.core.api.depmanagement.JkDepExclude-">withLocalExclusion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclusion)</code>
-<div class="block">Returns a clone of this dependencySet but adding dependency exclusion on the the last element.</div>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withModuleDependenciesOnly--">withModuleDependenciesOnly</a></span>()</code>
+<div class="block">Returns all dependencies declared as <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a>.</div>
 </td>
 </tr>
 <tr id="i53" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withLocalExclusion-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkDepExclude-">withLocalExclusion</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;fromModule,
-                  <a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclude)</code>
-<div class="block">Returns a set a dependency set identical to this one but excluding the specified exclude
- from the transitive dependencies of the specified module.</div>
-</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withTransitivity-java.lang.String-dev.jeka.core.api.depmanagement.JkTransitivity-">withTransitivity</a></span>(java.lang.String&nbsp;moduleId,
+                <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;newTransitivity)</code>&nbsp;</td>
 </tr>
 <tr id="i54" class="altColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withLocalExclusions-java.lang.String...-">withLocalExclusions</a></span>(java.lang.String...&nbsp;groupAndNames)</code>&nbsp;</td>
-</tr>
-<tr id="i55" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withModulesOnly--">withModulesOnly</a></span>()</code>
-<div class="block">Returns all dependencies declared as <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a>.</div>
-</td>
-</tr>
-<tr id="i56" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#withVersionProvider-dev.jeka.core.api.depmanagement.JkVersionProvider-">withVersionProvider</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionProvider.html" title="class in dev.jeka.core.api.depmanagement">JkVersionProvider</a>&nbsp;versionProvider)</code>
 <div class="block">Returns a clone of this object but using specified version provider to override
@@ -492,13 +435,6 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 </a>
 <h3>Methods inherited from class&nbsp;java.lang.Object</h3>
 <code>clone, equals, finalize, getClass, hashCode, notify, notifyAll, wait, wait, wait</code></li>
-</ul>
-<ul class="blockList">
-<li class="blockList"><a name="methods.inherited.from.class.java.lang.Iterable">
-<!--   -->
-</a>
-<h3>Methods inherited from interface&nbsp;java.lang.Iterable</h3>
-<code>forEach, spliterator</code></li>
 </ul>
 </li>
 </ul>
@@ -514,14 +450,13 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <!--   -->
 </a>
 <h3>Method Detail</h3>
-<a name="of-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="of-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;of(java.lang.String&nbsp;dependencyDesc,
-                                 <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;of(java.lang.String&nbsp;dependencyDesc)</pre>
 </li>
 </ul>
 <a name="of--">
@@ -533,203 +468,209 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;of()</pre>
 </li>
 </ul>
-<a name="of-java.lang.Iterable-">
+<a name="of-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>of</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;of(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;scopedDependencies)</pre>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;of(java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</pre>
 <div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencySet</code></a> to the specified scoped dependencies.</div>
 </li>
 </ul>
-<a name="ofLocal-java.nio.file.Path-">
+<a name="of-dev.jeka.core.api.depmanagement.JkDependency-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ofLocal</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;ofLocal(java.nio.file.Path&nbsp;baseDir)</pre>
-<div class="block">Creates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkDependencySet</code></a> based on jars located under the specified directory. Jars are
- supposed to lie in a directory structure standing for the different scopes they are intended.
- So jars needed for compilation are supposed to be in <code>baseDir/compile</code>, jar needed for
- test are supposed to be in <code>baseDir/test</code> and so on.</div>
+<h4>of</h4>
+<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;of(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency)</pre>
 </li>
 </ul>
-<a name="toList--">
+<a name="getEntries--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>toList</h4>
-<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;toList()</pre>
+<h4>getEntries</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;getEntries()</pre>
 <div class="block">Returns the unmodifiable list list of scoped dependencies for this object.</div>
 </li>
 </ul>
-<a name="getVersion-dev.jeka.core.api.depmanagement.JkModuleId-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getVersion</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersion.html" title="class in dev.jeka.core.api.depmanagement">JkVersion</a>&nbsp;getVersion(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
-</li>
-</ul>
-<a name="and-java.lang.Iterable-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-dev.jeka.core.api.depmanagement.JkDependencySet-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;others)</pre>
-<div class="block">Returns a clone of this object plus the specified
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a>s.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;other)</pre>
+<div class="block">Returns a clone of this object plus the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a>s, at the
+ specified place and condition.</div>
 </li>
 </ul>
-<a name="andIf-boolean-java.lang.Iterable-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>andIf</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andIf(boolean&nbsp;condition,
-                             java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;others)</pre>
-<div class="block">Returns a clone of this object plus the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a>s.</div>
-</li>
-</ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkScopedDependency...-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>...&nbsp;others)</pre>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                           java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;others)</pre>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkDependency-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="and-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;others)</pre>
+<div class="block">Returns a clone of this object plus the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a>s at the tail of
+ this one.</div>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkLocalLibDependency-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a>&nbsp;dependency,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;other)</pre>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkModuleDependency-dev.jeka.core.api.depmanagement.JkScopeMapping-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-dev.jeka.core.api.depmanagement.JkDependency...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&nbsp;dependency,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</pre>
-<div class="block">Returns a clone of this object plus the specified scoped dependencies.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>...&nbsp;others)</pre>
 </li>
 </ul>
-<a name="and-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependency...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(java.lang.String&nbsp;moduleDescription,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>...&nbsp;others)</pre>
 </li>
 </ul>
-<a name="and-java.lang.String-dev.jeka.core.api.depmanagement.JkScopeMapping-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(java.lang.String&nbsp;moduleDescription,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                           java.lang.String&nbsp;moduleDescriptor)</pre>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkModuleId-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-dev.jeka.core.api.depmanagement.JkModuleId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
-                           java.lang.String&nbsp;version,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="and-dev.jeka.core.api.depmanagement.JkModuleId-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
 </li>
 </ul>
-<a name="and-dev.jeka.core.api.depmanagement.JkModuleId-java.lang.String-dev.jeka.core.api.depmanagement.JkScopeMapping-">
+<a name="and-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>and</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId,
-                           java.lang.String&nbsp;version,
-                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(java.lang.String&nbsp;moduleDescriptor)</pre>
 </li>
 </ul>
-<a name="andFiles-java.lang.Iterable-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="and-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.String-dev.jeka.core.api.depmanagement.JkTransitivity-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>and</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                           java.lang.String&nbsp;moduleDescriptor,
+                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;transitivity)</pre>
+</li>
+</ul>
+<a name="and-java.lang.String-dev.jeka.core.api.depmanagement.JkTransitivity-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>and</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;and(java.lang.String&nbsp;moduleDescriptor,
+                           <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;transitivity)</pre>
+</li>
+</ul>
+<a name="andFiles-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.Iterable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>andFiles</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFiles(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;files,
-                                <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFiles(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                                java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</pre>
 </li>
 </ul>
-<a name="andFile-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="andFiles-java.lang.Iterable-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andFile</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFile(java.lang.String&nbsp;path,
-                               <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
+<h4>andFiles</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFiles(java.lang.Iterable&lt;java.nio.file.Path&gt;&nbsp;paths)</pre>
 </li>
 </ul>
-<a name="andFile-java.nio.file.Path-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="andFiles-dev.jeka.core.api.depmanagement.JkDependencySet.Hint-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andFile</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFile(java.nio.file.Path&nbsp;file,
-                               <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
-<div class="block">If specified path is relative, JkDependencyResolver will resolve it upon its base dir.</div>
+<h4>andFiles</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFiles(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet.Hint</a>&nbsp;hint,
+                                java.lang.String...&nbsp;paths)</pre>
 </li>
 </ul>
-<a name="andScopelessDependencies-java.lang.Iterable-">
+<a name="andFiles-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>andScopelessDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andScopelessDependencies(java.lang.Iterable&lt;? extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</pre>
+<h4>andFiles</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andFiles(java.lang.String...&nbsp;paths)</pre>
+</li>
+</ul>
+<a name="minus-java.util.List-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>minus</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minus(java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</pre>
+</li>
+</ul>
+<a name="minus-dev.jeka.core.api.depmanagement.JkDependency-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>minus</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minus(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;dependency)</pre>
 </li>
 </ul>
 <a name="minus-dev.jeka.core.api.depmanagement.JkModuleId-">
@@ -738,9 +679,7 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <ul class="blockList">
 <li class="blockList">
 <h4>minus</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minus(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;jkModuleId)</pre>
-<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>. This is used to exclude a given module to all scope.</div>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minus(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
 </li>
 </ul>
 <a name="minus-java.lang.String-">
@@ -750,99 +689,35 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <li class="blockList">
 <h4>minus</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minus(java.lang.String&nbsp;moduleId)</pre>
-<div class="block">Same as #minus(JkModuleId) but using a string as <code>my.group:my.name</code> to specify the moduleId.</div>
 </li>
 </ul>
-<a name="minusFiles-java.util.function.Predicate-">
+<a name="withGlobalTransitivityReplacement-dev.jeka.core.api.depmanagement.JkTransitivity-dev.jeka.core.api.depmanagement.JkTransitivity-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>minusFiles</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minusFiles(java.util.function.Predicate&lt;java.nio.file.Path&gt;&nbsp;pathPredicate)</pre>
-<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>. This is used to exclude a given module to all scope.</div>
+<h4>withGlobalTransitivityReplacement</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withGlobalTransitivityReplacement(<a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;formerTransitivity,
+                                                         <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;newTransitivity)</pre>
 </li>
 </ul>
-<a name="replaceScope-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="withTransitivity-java.lang.String-dev.jeka.core.api.depmanagement.JkTransitivity-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>replaceScope</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;replaceScope(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;jkModuleId,
-                                    <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
-<div class="block">Returns a dependency set identical to this one minus the dependencies on the given
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>. This is used to exclude a given module to all scope.</div>
+<h4>withTransitivity</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withTransitivity(java.lang.String&nbsp;moduleId,
+                                        <a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement">JkTransitivity</a>&nbsp;newTransitivity)</pre>
 </li>
 </ul>
-<a name="replaceScope-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-">
+<a name="mergeLocalProjectExportedDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>replaceScope</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;replaceScope(java.lang.String&nbsp;moduleId,
-                                    <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#replaceScope-java.lang.String-dev.jeka.core.api.depmanagement.JkScope...-"><code>replaceScope(String, JkScope...)</code></a></dd>
-</dl>
-</li>
-</ul>
-<a name="minusLastIf-boolean-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>minusLastIf</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minusLastIf(boolean&nbsp;condition)</pre>
-<div class="block">Returns a clone of this dependencySet but removing the last element if the specified condition is met.</div>
-</li>
-</ul>
-<a name="withLocalExclusion-dev.jeka.core.api.depmanagement.JkDepExclude-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withLocalExclusion</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withLocalExclusion(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclusion)</pre>
-<div class="block">Returns a clone of this dependencySet but adding dependency exclusion on the the last element.</div>
-</li>
-</ul>
-<a name="withLocalExclusions-java.lang.String...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withLocalExclusions</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withLocalExclusions(java.lang.String...&nbsp;groupAndNames)</pre>
-<dl>
-<dt><span class="paramLabel">Parameters:</span></dt>
-<dd><code>groupAndNames</code> - moduleIds to exclude (e.g. "a.group:a.name", "another.group:another.name", ...).</dd>
-</dl>
-</li>
-</ul>
-<a name="withDefaultScopes-dev.jeka.core.api.depmanagement.JkScope...-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withDefaultScopes</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withDefaultScopes(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>...&nbsp;scopes)</pre>
-<div class="block">Returns a clone of this dependencies but replacing the unscoped
- dependencies with the specified ones.</div>
-</li>
-</ul>
-<a name="withDefaultScope-dev.jeka.core.api.depmanagement.JkScopeMapping-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withDefaultScope</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withDefaultScope(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a>&nbsp;scopeMapping)</pre>
-<div class="block">Returns a clone of this dependencies but replacing the unscoped
- dependencies with the specified scope mapping.</div>
+<h4>mergeLocalProjectExportedDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;mergeLocalProjectExportedDependencies()</pre>
 </li>
 </ul>
 <a name="withVersionProvider-dev.jeka.core.api.depmanagement.JkVersionProvider-">
@@ -880,29 +755,6 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
  <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a>.</div>
 </li>
 </ul>
-<a name="iterator--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>iterator</h4>
-<pre>public&nbsp;java.util.Iterator&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;&nbsp;iterator()</pre>
-<dl>
-<dt><span class="overrideSpecifyLabel">Specified by:</span></dt>
-<dd><code>iterator</code>&nbsp;in interface&nbsp;<code>java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&gt;</code></dd>
-</dl>
-</li>
-</ul>
-<a name="getGlobalExclusions--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getGlobalExclusions</h4>
-<pre>public&nbsp;java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&gt;&nbsp;getGlobalExclusions()</pre>
-<div class="block">Returns the dependencies to be excluded to the transitive chain when using this dependency.</div>
-</li>
-</ul>
 <a name="getVersionProvider--">
 <!--   -->
 </a>
@@ -929,49 +781,36 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 </dl>
 </li>
 </ul>
-<a name="getDependenciesDeclaredWith-dev.jeka.core.api.depmanagement.JkScope-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getDependenciesDeclaredWith</h4>
-<pre>public&nbsp;java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;getDependenciesDeclaredWith(<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&nbsp;scope)</pre>
-<div class="block">Returns the set of <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a> involved for the specified
- <a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScope</code></a>.</div>
-</li>
-</ul>
-<a name="get-dev.jeka.core.api.depmanagement.JkModuleId-">
+<a name="get-java.lang.String-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkScopedDependency</a>&nbsp;get(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;moduleId)</pre>
-<div class="block">Returns the <a href="../../../../../dev/jeka/core/api/depmanagement/JkScopedDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkScopedDependency</code></a> declared for the specified
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&nbsp;get(java.lang.String&nbsp;moduleId)</pre>
+<div class="block">Returns the <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement"><code>JkDependency</code></a> declared for the specified
  <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleId</code></a>. Returns <code>null</code> if no dependency on this
  module exists in this object.</div>
 </li>
 </ul>
-<a name="getDeclaredScopes--">
+<a name="getMatching-dev.jeka.core.api.depmanagement.JkDependency-">
+<!--   -->
+</a><a name="getMatching-T-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getDeclaredScopes</h4>
-<pre>public&nbsp;java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&gt;&nbsp;getDeclaredScopes()</pre>
-<div class="block">Returns the set of scopes involved in these dependencies.</div>
+<h4>getMatching</h4>
+<pre>public&nbsp;&lt;T extends <a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;T&nbsp;getMatching(T&nbsp;dependency)</pre>
 </li>
 </ul>
-<a name="getInvolvedScopes--">
+<a name="getModuleDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getInvolvedScopes</h4>
-<pre>public&nbsp;java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkScope.html" title="class in dev.jeka.core.api.depmanagement">JkScope</a>&gt;&nbsp;getInvolvedScopes()</pre>
-<div class="block">Returns all scopes that are involved in these dependencies. That means if one of these scoped
- dependencies is declared with scope 'FOO' and scope 'BAR' extends scope 'FOO', then 'FOO' andPrepending 'BAR' is
- part of involved scopes.</div>
+<h4>getModuleDependencies</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&gt;&nbsp;getModuleDependencies()</pre>
 </li>
 </ul>
 <a name="hasDynamicVersions--">
@@ -1001,15 +840,6 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
  versions are replaced by fixed resolved ones.</div>
 </li>
 </ul>
-<a name="withGlobalExclusion-dev.jeka.core.api.depmanagement.JkDepExclude-">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>withGlobalExclusion</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withGlobalExclusion(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclude)</pre>
-</li>
-</ul>
 <a name="withIdeProjectDir-java.nio.file.Path-">
 <!--   -->
 </a>
@@ -1019,13 +849,22 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withIdeProjectDir(java.nio.file.Path&nbsp;ideProjectDir)</pre>
 </li>
 </ul>
-<a name="minusModuleDependenciesWithIdeProjectDir--">
+<a name="minusModuleDependenciesHavingIdeProjectDir--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>minusModuleDependenciesWithIdeProjectDir</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minusModuleDependenciesWithIdeProjectDir()</pre>
+<h4>minusModuleDependenciesHavingIdeProjectDir</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minusModuleDependenciesHavingIdeProjectDir()</pre>
+</li>
+</ul>
+<a name="merge-dev.jeka.core.api.depmanagement.JkDependencySet-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>merge</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySetMerge.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySetMerge</a>&nbsp;merge(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;other)</pre>
 </li>
 </ul>
 <a name="getIdePathDirs--">
@@ -1037,29 +876,24 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <pre>public&nbsp;java.util.Set&lt;java.nio.file.Path&gt;&nbsp;getIdePathDirs()</pre>
 </li>
 </ul>
-<a name="withLocalExclusion-dev.jeka.core.api.depmanagement.JkModuleId-dev.jeka.core.api.depmanagement.JkDepExclude-">
+<a name="normalised-dev.jeka.core.api.depmanagement.JkVersionedModule.ConflictStrategy-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withLocalExclusion</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withLocalExclusion(<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleId.html" title="class in dev.jeka.core.api.depmanagement">JkModuleId</a>&nbsp;fromModule,
-                                          <a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement">JkDepExclude</a>&nbsp;exclude)</pre>
-<div class="block">Returns a set a dependency set identical to this one but excluding the specified exclude
- from the transitive dependencies of the specified module.</div>
+<h4>normalised</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;normalised(<a href="../../../../../dev/jeka/core/api/depmanagement/JkVersionedModule.ConflictStrategy.html" title="enum in dev.jeka.core.api.depmanagement">JkVersionedModule.ConflictStrategy</a>&nbsp;conflictStrategy)</pre>
+<div class="block">Removes duplicates and select a version according the specified strategy in
+ case of duplicate with distinct versions.</div>
 </li>
 </ul>
-<a name="minusDuplicates--">
+<a name="normalised--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>minusDuplicates</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;minusDuplicates()</pre>
-<div class="block">Returns a JkDependencySet similar to this one but removing duplicates on module dependencies. Such duplicates
- occurres when two module dependencies have been declared with the same JkModuleId. The removed dependency is
- the one with the lower or unspecified version.
- It has been introduced to satisfy https://github.com/jerkar/jeka/issues/135</div>
+<h4>normalised</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;normalised()</pre>
 </li>
 </ul>
 <a name="assertNoUnspecifiedVersion--">
@@ -1069,92 +903,108 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <li class="blockList">
 <h4>assertNoUnspecifiedVersion</h4>
 <pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;assertNoUnspecifiedVersion()</pre>
-<div class="block">Throws a <code>IllegalStateException</code> if one of the module
- dependencies has an unspecified projectVersion.</div>
+<div class="block">Throws a <code>IllegalStateException</code> if one of the module dependencies has an unspecified version.</div>
 </li>
 </ul>
-<a name="toResolvedModuleVersions--">
+<a name="getVersionedDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>toResolvedModuleVersions</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;toResolvedModuleVersions()</pre>
+<h4>getVersionedDependencies</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;getVersionedDependencies()</pre>
+<div class="block">Returns all dependencies, adding <code>versionProvider</code> versions to module dependencies
+ that does not specify one.</div>
 </li>
 </ul>
-<a name="toJavaCode-int-">
+<a name="getVersionedModuleDependencies--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>toJavaCode</h4>
-<pre>public&nbsp;java.lang.String&nbsp;toJavaCode(int&nbsp;indentCount)</pre>
-<div class="block">Returns the java codes that declare these dependencies.</div>
+<h4>getVersionedModuleDependencies</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a>&gt;&nbsp;getVersionedModuleDependencies()</pre>
 </li>
 </ul>
-<a name="withModulesOnly--">
+<a name="withModuleDependenciesOnly--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>withModulesOnly</h4>
-<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withModulesOnly()</pre>
+<h4>withModuleDependenciesOnly</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withModuleDependenciesOnly()</pre>
 <div class="block">Returns all dependencies declared as <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement"><code>JkModuleDependency</code></a>.</div>
 </li>
 </ul>
-<a name="ofTextDescription-java.nio.file.Path-">
+<a name="withLocalExclusion-dev.jeka.core.api.depmanagement.JkDependencyExclusion...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ofTextDescription</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;ofTextDescription(java.nio.file.Path&nbsp;path)</pre>
-<dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#ofTextDescription-java.lang.String-"><code>ofTextDescription(String)</code></a></dd>
-</dl>
+<h4>withLocalExclusion</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withLocalExclusion(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>...&nbsp;exclusions)</pre>
+<div class="block">Returns a clone of this dependencySet but adding dependency exclusion on the the last element.</div>
 </li>
 </ul>
-<a name="ofTextDescription-java.net.URL-">
+<a name="withLocalExclusions-java.lang.String...-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>ofTextDescription</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;ofTextDescription(java.net.URL&nbsp;url)</pre>
+<h4>withLocalExclusions</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withLocalExclusions(java.lang.String...&nbsp;groupAndNames)</pre>
 <dl>
-<dt><span class="seeLabel">See Also:</span></dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html#ofTextDescription-java.lang.String-"><code>ofTextDescription(String)</code></a></dd>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>groupAndNames</code> - moduleIds to exclude (e.g. "a.group:a.name", "another.group:another.name", ...).</dd>
 </dl>
 </li>
 </ul>
-<a name="ofTextDescription-java.lang.String-">
+<a name="getGlobalExclusions--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>getGlobalExclusions</h4>
+<pre>public&nbsp;java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>&gt;&nbsp;getGlobalExclusions()</pre>
+<div class="block">Returns the dependencies to be excluded to the transitive chain when using this dependency.</div>
+</li>
+</ul>
+<a name="andGlobalExclusion-dev.jeka.core.api.depmanagement.JkDependencyExclusion-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>andGlobalExclusion</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andGlobalExclusion(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>&nbsp;exclusion)</pre>
+</li>
+</ul>
+<a name="andGlobalExclusion-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>andGlobalExclusion</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;andGlobalExclusion(java.lang.String&nbsp;groupAndName)</pre>
+</li>
+</ul>
+<a name="withGlobalExclusion-java.util.Set-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>withGlobalExclusion</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;withGlobalExclusion(java.util.Set&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyExclusion</a>&gt;&nbsp;excludes)</pre>
+</li>
+</ul>
+<a name="toJavaCode-int-java.util.List-">
 <!--   -->
 </a>
 <ul class="blockListLast">
 <li class="blockList">
-<h4>ofTextDescription</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;ofTextDescription(java.lang.String&nbsp;description)</pre>
-<div class="block">Creates a dependencySet from a flat file formatted as :
- <pre>
- - COMPILE RUNTIME
- org.springframework.boot:spring-boot-starter-thymeleaf
- org.springframework.boot:spring-boot-starter-data-jpa
-
- - RUNTIME
- com.h2database:h2
- org.liquibase:liquibase-core
- com.oracle:ojdbc6:12.1.0
-
- - TEST
- org.springframework.boot:spring-boot-starter-test
- org.seleniumhq.selenium:selenium-chrome-driver:3.4.0
- org.fluentlenium:fluentlenium-assertj:3.2.0
- org.fluentlenium:fluentlenium-junit:3.2.0
-
- - PROVIDED
- org.projectlombok:lombok:1.16.16
- </pre></div>
+<h4>toJavaCode</h4>
+<pre>public static&nbsp;java.lang.String&nbsp;toJavaCode(int&nbsp;indentCount,
+                                          java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&gt;&nbsp;dependencies)</pre>
+<div class="block">Returns the java codes that declare these dependencies.</div>
 </li>
 </ul>
 </li>
@@ -1184,8 +1034,8 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 </div>
 <div class="subNav">
 <ul class="navList">
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDepExclude.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.Hint.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkDependencySet.html" target="_top">Frames</a></li>
@@ -1209,7 +1059,7 @@ implements java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depma
 <div>
 <ul class="subNavList">
 <li>Summary:&nbsp;</li>
-<li>Nested&nbsp;|&nbsp;</li>
+<li><a href="#nested.class.summary">Nested</a>&nbsp;|&nbsp;</li>
 <li>Field&nbsp;|&nbsp;</li>
 <li>Constr&nbsp;|&nbsp;</li>
 <li><a href="#method.summary">Method</a></li>

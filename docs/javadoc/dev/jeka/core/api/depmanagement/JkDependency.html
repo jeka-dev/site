@@ -17,8 +17,8 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":6,"i1":6};
-var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"]};
+var methods = {"i0":6,"i1":18,"i2":6};
+var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],4:["t3","Abstract Methods"],16:["t5","Default Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
 var tableTab = "tableTab";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusions.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkDependency.html" target="_top">Frames</a></li>
@@ -99,23 +99,22 @@ var activeTableTab = "activeTableTab";
 <li class="blockList">
 <dl>
 <dt>All Known Subinterfaces:</dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency</a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileDependency.JkTransitivityDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkFileDependency.JkTransitivityDependency</a></dd>
 </dl>
 <dl>
 <dt>All Known Implementing Classes:</dt>
-<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement">JkFileSystemDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalLibDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalLibDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></dd>
+<dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement">JkComputedDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkFileSystemDependency.html" title="class in dev.jeka.core.api.depmanagement">JkFileSystemDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkLocalProjectDependency.html" title="class in dev.jeka.core.api.depmanagement">JkLocalProjectDependency</a>, <a href="../../../../../dev/jeka/core/api/depmanagement/JkModuleDependency.html" title="class in dev.jeka.core.api.depmanagement">JkModuleDependency</a></dd>
 </dl>
 <hr>
 <br>
 <pre>public interface <span class="typeNameLabel">JkDependency</span></pre>
 <div class="block">Interface standing for a dependency. It can be a either :
  <ul>
- <li>An external module as <code>org.hibernate:hibernate-core:3.0.+</code></li>
+ <li>An external module as <code>org.hibernate:hibernate-core:3.0.1</code></li>
  <li>A project inside a multi-project build</li>
  <li>Some files on the file system</li>
- </ul>
- Each dependency is associated with a scope mapping to determine precisely in
- which scenario the dependency is necessary.</div>
+ <li>A process that produces 0 or n files</li>
+ </ul></div>
 </li>
 </ul>
 </div>
@@ -129,7 +128,7 @@ var activeTableTab = "activeTableTab";
 </a>
 <h3>Method Summary</h3>
 <table class="memberSummary" border="0" cellpadding="3" cellspacing="0" summary="Method Summary table, listing methods, and an explanation">
-<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
+<caption><span id="t0" class="activeTableTab"><span>All Methods</span><span class="tabEnd">&nbsp;</span></span><span id="t2" class="tableTab"><span><a href="javascript:show(2);">Instance Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t3" class="tableTab"><span><a href="javascript:show(4);">Abstract Methods</a></span><span class="tabEnd">&nbsp;</span></span><span id="t5" class="tableTab"><span><a href="javascript:show(16);">Default Methods</a></span><span class="tabEnd">&nbsp;</span></span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th class="colLast" scope="col">Method and Description</th>
@@ -141,6 +140,12 @@ var activeTableTab = "activeTableTab";
 </td>
 </tr>
 <tr id="i1" class="rowColor">
+<td class="colFirst"><code>default boolean</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#matches-dev.jeka.core.api.depmanagement.JkDependency-">matches</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;other)</code>
+<div class="block">Returns <code>true</code> if the specified dependency matches with this one.</div>
+</td>
+</tr>
+<tr id="i2" class="altColor">
 <td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#withIdeProjectDir-java.nio.file.Path-">withIdeProjectDir</a></span>(java.nio.file.Path&nbsp;path)</code>
 <div class="block">Returns a dependency identical to this one but with the specified project base dir.</div>
@@ -177,7 +182,7 @@ var activeTableTab = "activeTableTab";
 <a name="withIdeProjectDir-java.nio.file.Path-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>withIdeProjectDir</h4>
 <pre><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;withIdeProjectDir(java.nio.file.Path&nbsp;path)</pre>
@@ -186,6 +191,19 @@ var activeTableTab = "activeTableTab";
 <dt><span class="seeLabel">See Also:</span></dt>
 <dd><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html#getIdeProjectDir--"><code>getIdeProjectDir()</code></a></dd>
 </dl>
+</li>
+</ul>
+<a name="matches-dev.jeka.core.api.depmanagement.JkDependency-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>matches</h4>
+<pre>default&nbsp;boolean&nbsp;matches(<a href="../../../../../dev/jeka/core/api/depmanagement/JkDependency.html" title="interface in dev.jeka.core.api.depmanagement">JkDependency</a>&nbsp;other)</pre>
+<div class="block">Returns <code>true</code> if the specified dependency matches with this one. <p>
+ Matching means that two matching dependencies can not be declared in a same dependency set
+ as it will be considered as a duplicate or result in a conflict. <p>
+ For example "com.google:guava:21.0" is matching with "com.google:guava:23.0" even if they are not equals.</div>
 </li>
 </ul>
 </li>
@@ -216,7 +234,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkComputedDependency.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusions.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkDependencyExclusion.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkDependency.html" target="_top">Frames</a></li>

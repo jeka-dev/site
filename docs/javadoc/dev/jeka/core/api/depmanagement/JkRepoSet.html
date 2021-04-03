@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":9,"i10":9,"i11":9,"i12":9,"i13":9,"i14":9,"i15":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":9,"i9":9,"i10":9,"i11":9,"i12":9,"i13":10,"i14":10};
 var tabs = {65535:["t0","All Methods"],1:["t1","Static Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -48,7 +48,7 @@ var activeTableTab = "activeTableTab";
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoIvyConfig.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkRepoSet.html" target="_top">Frames</a></li>
@@ -171,51 +171,46 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code>java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#getRepoList--">getRepoList</a></span>()</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#getRepos--">getRepos</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
-<td class="colFirst"><code>boolean</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#hasIvyRepo--">hasIvyRepo</a></span>()</code>&nbsp;</td>
-</tr>
-<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#of-java.lang.Iterable-">of</a></span>(java.lang.Iterable&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&gt;&nbsp;configs)</code>
 <div class="block">Creates a repository set from the specified configurations.</div>
 </td>
 </tr>
-<tr id="i10" class="altColor">
+<tr id="i9" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#of-dev.jeka.core.api.depmanagement.JkRepo-dev.jeka.core.api.depmanagement.JkRepo...-">of</a></span>(<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&nbsp;repo,
   <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>...&nbsp;others)</code>
 <div class="block">Creates a repository set from the specified configurations.</div>
 </td>
 </tr>
-<tr id="i11" class="rowColor">
+<tr id="i10" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#of-java.lang.String...-">of</a></span>(java.lang.String...&nbsp;urls)</code>
 <div class="block">Crates a <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepoSet</code></a> from the specified <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement"><code>JkRepo</code></a>s</div>
 </td>
 </tr>
-<tr id="i12" class="altColor">
+<tr id="i11" class="rowColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#ofLocal--">ofLocal</a></span>()</code>&nbsp;</td>
 </tr>
-<tr id="i13" class="rowColor">
+<tr id="i12" class="altColor">
 <td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#ofOssrhSnapshotAndRelease--">ofOssrhSnapshotAndRelease</a></span>()</code>
-<div class="block">Creates a JkRepoSet for downloading from <a href="http://central.sonatype.org/">OSSRH</a></div>
-</td>
-</tr>
-<tr id="i14" class="altColor">
-<td class="colFirst"><code>static <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#ofOssrhSnapshotAndRelease-java.lang.String-java.lang.String-">ofOssrhSnapshotAndRelease</a></span>(java.lang.String&nbsp;userName,
-                         java.lang.String&nbsp;password)</code>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#ofOssrhSnapshotAndRelease-java.lang.String-java.lang.String-java.util.function.UnaryOperator-">ofOssrhSnapshotAndRelease</a></span>(java.lang.String&nbsp;userName,
+                         java.lang.String&nbsp;password,
+                         java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>
 <div class="block">Creates a JkRepoSet for publishing on <a href="http://central.sonatype.org/">OSSRH</a></div>
 </td>
 </tr>
-<tr id="i15" class="rowColor">
+<tr id="i13" class="rowColor">
 <td class="colFirst"><code>java.lang.String</code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#toString--">toString</a></span>()</code>&nbsp;</td>
+</tr>
+<tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#withDefaultSigner-java.util.function.UnaryOperator-">withDefaultSigner</a></span>(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -299,25 +294,16 @@ extends java.lang.Object</pre>
 <pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;ofLocal()</pre>
 </li>
 </ul>
-<a name="ofOssrhSnapshotAndRelease-java.lang.String-java.lang.String-">
+<a name="ofOssrhSnapshotAndRelease-java.lang.String-java.lang.String-java.util.function.UnaryOperator-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
 <h4>ofOssrhSnapshotAndRelease</h4>
 <pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;ofOssrhSnapshotAndRelease(java.lang.String&nbsp;userName,
-                                                  java.lang.String&nbsp;password)</pre>
+                                                  java.lang.String&nbsp;password,
+                                                  java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
 <div class="block">Creates a JkRepoSet for publishing on <a href="http://central.sonatype.org/">OSSRH</a></div>
-</li>
-</ul>
-<a name="ofOssrhSnapshotAndRelease--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>ofOssrhSnapshotAndRelease</h4>
-<pre>public static&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;ofOssrhSnapshotAndRelease()</pre>
-<div class="block">Creates a JkRepoSet for downloading from <a href="http://central.sonatype.org/">OSSRH</a></div>
 </li>
 </ul>
 <a name="getRepoConfigHavingUrl-java.lang.String-">
@@ -331,22 +317,13 @@ extends java.lang.Object</pre>
  Returns <code>null</code> if no such repository found.</div>
 </li>
 </ul>
-<a name="getRepoList--">
+<a name="getRepos--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getRepoList</h4>
-<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&gt;&nbsp;getRepoList()</pre>
-</li>
-</ul>
-<a name="hasIvyRepo--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>hasIvyRepo</h4>
-<pre>public&nbsp;boolean&nbsp;hasIvyRepo()</pre>
+<h4>getRepos</h4>
+<pre>public&nbsp;java.util.List&lt;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.html" title="class in dev.jeka.core.api.depmanagement">JkRepo</a>&gt;&nbsp;getRepos()</pre>
 </li>
 </ul>
 <a name="contains-java.net.URL-">
@@ -395,11 +372,20 @@ extends java.lang.Object</pre>
 <a name="get-java.lang.String-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>get</h4>
 <pre>public&nbsp;java.nio.file.Path&nbsp;get(java.lang.String&nbsp;moduleGroupVersion)</pre>
 <div class="block">Short hand for <a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html#get-dev.jeka.core.api.depmanagement.JkModuleDependency-"><code>get(JkModuleDependency)</code></a></div>
+</li>
+</ul>
+<a name="withDefaultSigner-java.util.function.UnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>withDefaultSigner</h4>
+<pre>public&nbsp;<a href="../../../../../dev/jeka/core/api/depmanagement/JkRepoSet.html" title="class in dev.jeka.core.api.depmanagement">JkRepoSet</a>&nbsp;withDefaultSigner(java.util.function.UnaryOperator&lt;java.nio.file.Path&gt;&nbsp;signer)</pre>
 </li>
 </ul>
 </li>
@@ -430,7 +416,7 @@ extends java.lang.Object</pre>
 <div class="subNav">
 <ul class="navList">
 <li><a href="../../../../../dev/jeka/core/api/depmanagement/JkRepo.JkRepoIvyConfig.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Prev&nbsp;Class</span></a></li>
-<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkResolutionParameters.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
+<li><a href="../../../../../dev/jeka/core/api/depmanagement/JkTransitivity.html" title="class in dev.jeka.core.api.depmanagement"><span class="typeNameLink">Next&nbsp;Class</span></a></li>
 </ul>
 <ul class="navList">
 <li><a href="../../../../../index.html?dev/jeka/core/api/depmanagement/JkRepoSet.html" target="_top">Frames</a></li>

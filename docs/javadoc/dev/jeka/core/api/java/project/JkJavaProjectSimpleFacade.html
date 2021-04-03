@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10,"i13":10,"i14":10,"i15":10,"i16":10,"i17":10,"i18":10,"i19":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -130,7 +130,9 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i0" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#addDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">addDependencies</a></span>(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#addTestDependencies-java.util.function.Function-">addTestDependencies</a></span>(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>
+<div class="block">Add specified dependencies at head of preset dependencies.</div>
+</td>
 </tr>
 <tr id="i1" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
@@ -164,37 +166,62 @@ extends java.lang.Object</pre>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setBaseDir-java.lang.String-">setBaseDir</a></span>(java.lang.String&nbsp;path)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setBaseDir-java.nio.file.Path-">setBaseDir</a></span>(java.nio.file.Path&nbsp;path)</code>&nbsp;</td>
 </tr>
 <tr id="i8" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setJavaSourceEncoding-java.lang.String-">setJavaSourceEncoding</a></span>(java.lang.String&nbsp;sourceEncoding)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setBaseDir-java.lang.String-">setBaseDir</a></span>(java.lang.String&nbsp;path)</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setJavaVersion-dev.jeka.core.api.java.JkJavaVersion-">setJavaVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;version)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setCompileDependencies-java.util.function.Function-">setCompileDependencies</a></span>(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedDependencies-java.util.function.Function-">setPublishedDependencies</a></span>(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;dependencyModifier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setJavaSourceEncoding-java.lang.String-">setJavaSourceEncoding</a></span>(java.lang.String&nbsp;sourceEncoding)</code>&nbsp;</td>
 </tr>
 <tr id="i11" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedModuleId-java.lang.String-">setPublishedModuleId</a></span>(java.lang.String&nbsp;moduleId)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setJavaVersion-dev.jeka.core.api.java.JkJavaVersion-">setJavaVersion</a></span>(<a href="../../../../../../dev/jeka/core/api/java/JkJavaVersion.html" title="class in dev.jeka.core.api.java">JkJavaVersion</a>&nbsp;version)</code>&nbsp;</td>
 </tr>
 <tr id="i12" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedVersion-java.lang.String-">setPublishedVersion</a></span>(java.lang.String&nbsp;version)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedDependencies-java.util.function.Function-">setPublishedDependencies</a></span>(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;dependencyModifier)</code>&nbsp;</td>
 </tr>
 <tr id="i13" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedVersion-java.util.function.Supplier-">setPublishedVersion</a></span>(java.util.function.Supplier&lt;java.lang.String&gt;&nbsp;versionSupplier)</code>&nbsp;</td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedMavenModuleId-java.lang.String-">setPublishedMavenModuleId</a></span>(java.lang.String&nbsp;moduleId)</code>&nbsp;</td>
 </tr>
 <tr id="i14" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedMavenVersion-java.lang.String-">setPublishedMavenVersion</a></span>(java.lang.String&nbsp;version)</code>&nbsp;</td>
+</tr>
+<tr id="i15" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedMavenVersion-java.util.function.Supplier-">setPublishedMavenVersion</a></span>(java.util.function.Supplier&lt;java.lang.String&gt;&nbsp;versionSupplier)</code>&nbsp;</td>
+</tr>
+<tr id="i16" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setPublishedMavenVersionFromGit--">setPublishedMavenVersionFromGit</a></span>()</code>
+<div class="block">The published version will be computed according the git repository.</div>
+</td>
+</tr>
+<tr id="i17" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setRuntimeDependencies-java.util.function.UnaryOperator-">setRuntimeDependencies</a></span>(java.util.function.UnaryOperator&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>
+<div class="block">Specify the dependencies to add or remove from the production compilation dependencies to
+ get the runtime dependencies.</div>
+</td>
+</tr>
+<tr id="i18" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setSimpleLayout--">setSimpleLayout</a></span>()</code>
 <div class="block">Sets product Java source files and resources in "src".</div>
 </td>
+</tr>
+<tr id="i19" class="rowColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html#setTestDependencies-java.util.function.Function-">setTestDependencies</a></span>(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>&nbsp;</td>
 </tr>
 </table>
 <ul class="blockList">
@@ -254,6 +281,15 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setBaseDir(java.lang.String&nbsp;path)</pre>
 </li>
 </ul>
+<a name="setBaseDir-java.nio.file.Path-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setBaseDir</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setBaseDir(java.nio.file.Path&nbsp;path)</pre>
+</li>
+</ul>
 <a name="setJavaSourceEncoding-java.lang.String-">
 <!--   -->
 </a>
@@ -274,40 +310,88 @@ extends java.lang.Object</pre>
  Sets test Java source files and resources in "test".</div>
 </li>
 </ul>
-<a name="addDependencies-dev.jeka.core.api.depmanagement.JkDependencySet-">
+<a name="setCompileDependencies-java.util.function.Function-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>addDependencies</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;addDependencies(<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;dependencies)</pre>
+<h4>setCompileDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setCompileDependencies(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
 </li>
 </ul>
-<a name="setPublishedVersion-java.util.function.Supplier-">
+<a name="setTestDependencies-java.util.function.Function-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setPublishedVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedVersion(java.util.function.Supplier&lt;java.lang.String&gt;&nbsp;versionSupplier)</pre>
+<h4>setTestDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setTestDependencies(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
 </li>
 </ul>
-<a name="setPublishedVersion-java.lang.String-">
+<a name="addTestDependencies-java.util.function.Function-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setPublishedVersion</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedVersion(java.lang.String&nbsp;version)</pre>
+<h4>addTestDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;addTestDependencies(java.util.function.Function&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>,<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
+<div class="block">Add specified dependencies at head of preset dependencies.</div>
 </li>
 </ul>
-<a name="setPublishedModuleId-java.lang.String-">
+<a name="setRuntimeDependencies-java.util.function.UnaryOperator-">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>setPublishedModuleId</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedModuleId(java.lang.String&nbsp;moduleId)</pre>
+<h4>setRuntimeDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setRuntimeDependencies(java.util.function.UnaryOperator&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
+<div class="block">Specify the dependencies to add or remove from the production compilation dependencies to
+ get the runtime dependencies.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>modifier</code> - An function that define the runtime dependencies from the compilation ones.</dd>
+</dl>
+</li>
+</ul>
+<a name="setPublishedMavenVersion-java.util.function.Supplier-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPublishedMavenVersion</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedMavenVersion(java.util.function.Supplier&lt;java.lang.String&gt;&nbsp;versionSupplier)</pre>
+</li>
+</ul>
+<a name="setPublishedMavenVersion-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPublishedMavenVersion</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedMavenVersion(java.lang.String&nbsp;version)</pre>
+</li>
+</ul>
+<a name="setPublishedMavenVersionFromGit--">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPublishedMavenVersionFromGit</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedMavenVersionFromGit()</pre>
+<div class="block">The published version will be computed according the git repository.</div>
+<dl>
+<dt><span class="seeLabel">See Also:</span></dt>
+<dd><a href="../../../../../../dev/jeka/core/api/tooling/JkGitWrapper.html#getVersionFromTags--"><code>JkGitWrapper.getVersionFromTags()</code></a></dd>
+</dl>
+</li>
+</ul>
+<a name="setPublishedMavenModuleId-java.lang.String-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setPublishedMavenModuleId</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectSimpleFacade.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectSimpleFacade</a>&nbsp;setPublishedMavenModuleId(java.lang.String&nbsp;moduleId)</pre>
 <dl>
 <dt><span class="paramLabel">Parameters:</span></dt>
 <dd><code>moduleId</code> - group + artifactId to use when publishing on a binary repository.

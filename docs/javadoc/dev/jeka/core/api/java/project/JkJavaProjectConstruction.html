@@ -17,7 +17,7 @@
     catch(err) {
     }
 //-->
-var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10};
+var methods = {"i0":10,"i1":10,"i2":10,"i3":10,"i4":10,"i5":10,"i6":10,"i7":10,"i8":10,"i9":10,"i10":10,"i11":10,"i12":10};
 var tabs = {65535:["t0","All Methods"],2:["t2","Instance Methods"],8:["t4","Concrete Methods"]};
 var altColor = "altColor";
 var rowColor = "rowColor";
@@ -186,8 +186,8 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#getCompilation--">getCompilation</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i6" class="altColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&gt;</code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#getDependencyManagement--">getDependencyManagement</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/resolution/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement.resolution">JkDependencyResolver</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&gt;</code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#getDependencyResolver--">getDependencyResolver</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i7" class="rowColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a></code></td>
@@ -198,8 +198,8 @@ extends java.lang.Object</pre>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#getManifest--">getManifest</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i9" class="rowColor">
-<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a></code></td>
-<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#getProject--">getProject</a></span>()</code>&nbsp;</td>
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#getRuntimeDependencies--">getRuntimeDependencies</a></span>()</code>&nbsp;</td>
 </tr>
 <tr id="i10" class="altColor">
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectTesting.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectTesting</a></code></td>
@@ -209,6 +209,13 @@ extends java.lang.Object</pre>
 <td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a></code></td>
 <td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">setExtraFilesToIncludeInFatJar</a></span>(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</code>
 <div class="block">File trees specified here will be added to the fat jar.</div>
+</td>
+</tr>
+<tr id="i12" class="altColor">
+<td class="colFirst"><code><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a></code></td>
+<td class="colLast"><code><span class="memberNameLink"><a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html#setRuntimeDependencies-java.util.function.UnaryOperator-">setRuntimeDependencies</a></span>(java.util.function.UnaryOperator&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</code>
+<div class="block">Specify the dependencies to add or remove from the production compilation dependencies to
+ get the runtime dependencies.</div>
 </td>
 </tr>
 </table>
@@ -260,13 +267,13 @@ extends java.lang.Object</pre>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&nbsp;apply(java.util.function.Consumer&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&gt;&nbsp;consumer)</pre>
 </li>
 </ul>
-<a name="getDependencyManagement--">
+<a name="getDependencyResolver--">
 <!--   -->
 </a>
 <ul class="blockList">
 <li class="blockList">
-<h4>getDependencyManagement</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencyManagement.html" title="class in dev.jeka.core.api.depmanagement">JkDependencyManagement</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&gt;&nbsp;getDependencyManagement()</pre>
+<h4>getDependencyResolver</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/resolution/JkDependencyResolver.html" title="class in dev.jeka.core.api.depmanagement.resolution">JkDependencyResolver</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&gt;&nbsp;getDependencyResolver()</pre>
 </li>
 </ul>
 <a name="getCompilation--">
@@ -294,15 +301,6 @@ extends java.lang.Object</pre>
 <li class="blockList">
 <h4>getManifest</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/JkManifest.html" title="class in dev.jeka.core.api.java">JkManifest</a>&lt;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&gt;&nbsp;getManifest()</pre>
-</li>
-</ul>
-<a name="getProject--">
-<!--   -->
-</a>
-<ul class="blockList">
-<li class="blockList">
-<h4>getProject</h4>
-<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProject.html" title="class in dev.jeka.core.api.java.project">JkJavaProject</a>&nbsp;getProject()</pre>
 </li>
 </ul>
 <a name="createBinJar-java.nio.file.Path-">
@@ -353,11 +351,35 @@ extends java.lang.Object</pre>
 <a name="setExtraFilesToIncludeInFatJar-dev.jeka.core.api.file.JkPathTreeSet-">
 <!--   -->
 </a>
-<ul class="blockListLast">
+<ul class="blockList">
 <li class="blockList">
 <h4>setExtraFilesToIncludeInFatJar</h4>
 <pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&nbsp;setExtraFilesToIncludeInFatJar(<a href="../../../../../../dev/jeka/core/api/file/JkPathTreeSet.html" title="class in dev.jeka.core.api.file">JkPathTreeSet</a>&nbsp;extraFilesToIncludeInFatJar)</pre>
 <div class="block">File trees specified here will be added to the fat jar.</div>
+</li>
+</ul>
+<a name="setRuntimeDependencies-java.util.function.UnaryOperator-">
+<!--   -->
+</a>
+<ul class="blockList">
+<li class="blockList">
+<h4>setRuntimeDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/java/project/JkJavaProjectConstruction.html" title="class in dev.jeka.core.api.java.project">JkJavaProjectConstruction</a>&nbsp;setRuntimeDependencies(java.util.function.UnaryOperator&lt;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&gt;&nbsp;modifier)</pre>
+<div class="block">Specify the dependencies to add or remove from the production compilation dependencies to
+ get the runtime dependencies.</div>
+<dl>
+<dt><span class="paramLabel">Parameters:</span></dt>
+<dd><code>modifier</code> - An function that define the runtime dependencies from the compilation ones.</dd>
+</dl>
+</li>
+</ul>
+<a name="getRuntimeDependencies--">
+<!--   -->
+</a>
+<ul class="blockListLast">
+<li class="blockList">
+<h4>getRuntimeDependencies</h4>
+<pre>public&nbsp;<a href="../../../../../../dev/jeka/core/api/depmanagement/JkDependencySet.html" title="class in dev.jeka.core.api.depmanagement">JkDependencySet</a>&nbsp;getRuntimeDependencies()</pre>
 </li>
 </ul>
 </li>

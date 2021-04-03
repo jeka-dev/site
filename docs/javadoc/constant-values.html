@@ -81,7 +81,7 @@
 <ul class="blockList">
 <li class="blockList">
 <table class="constantsSummary" border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
-<caption><span>dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement">JkArtifactId</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html" title="class in dev.jeka.core.api.depmanagement">JkQualifiedDependencies</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th scope="col">Constant Field</th>
@@ -89,30 +89,60 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkArtifactId.MAIN_ARTIFACT_NAME">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.COMPILE_SCOPE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
-<td><code><a href="dev/jeka/core/api/depmanagement/JkArtifactId.html#MAIN_ARTIFACT_NAME">MAIN_ARTIFACT_NAME</a></code></td>
-<td class="colLast"><code>""</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#COMPILE_SCOPE">COMPILE_SCOPE</a></code></td>
+<td class="colLast"><code>"compile"</code></td>
 </tr>
-</tbody>
-</table>
-</li>
-<li class="blockList">
-<table class="constantsSummary" border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
-<caption><span>dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkInternalPublisher.html" title="interface in dev.jeka.core.api.depmanagement">JkInternalPublisher</a></span><span class="tabEnd">&nbsp;</span></caption>
-<tr>
-<th class="colFirst" scope="col">Modifier and Type</th>
-<th scope="col">Constant Field</th>
-<th class="colLast" scope="col">Value</th>
+<tr class="rowColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.COMPILE_TARGET_CONF">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#COMPILE_TARGET_CONF">COMPILE_TARGET_CONF</a></code></td>
+<td class="colLast"><code>"compile(default)"</code></td>
 </tr>
-<tbody>
 <tr class="altColor">
-<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkInternalPublisher.FACTORY_CLASS_NAME">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.MASTER_TARGET_CONF">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
-<td><code><a href="dev/jeka/core/api/depmanagement/JkInternalPublisher.html#FACTORY_CLASS_NAME">FACTORY_CLASS_NAME</a></code></td>
-<td class="colLast"><code>"dev.jeka.core.api.depmanagement.embedded.ivy.IvyInternalPublisherFactory"</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#MASTER_TARGET_CONF">MASTER_TARGET_CONF</a></code></td>
+<td class="colLast"><code>"archives(master)"</code></td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.PROVIDED_SCOPE">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#PROVIDED_SCOPE">PROVIDED_SCOPE</a></code></td>
+<td class="colLast"><code>"provided"</code></td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.RUNTIME_SCOPE">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#RUNTIME_SCOPE">RUNTIME_SCOPE</a></code></td>
+<td class="colLast"><code>"runtime"</code></td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.RUNTIME_TARGET_CONF">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#RUNTIME_TARGET_CONF">RUNTIME_TARGET_CONF</a></code></td>
+<td class="colLast"><code>"runtime(default)"</code></td>
+</tr>
+<tr class="altColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.TEST_SCOPE">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#TEST_SCOPE">TEST_SCOPE</a></code></td>
+<td class="colLast"><code>"test"</code></td>
+</tr>
+<tr class="rowColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkQualifiedDependencies.TEST_TARGET_CONF">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/JkQualifiedDependencies.html#TEST_TARGET_CONF">TEST_TARGET_CONF</a></code></td>
+<td class="colLast"><code>"test(default)"</code></td>
 </tr>
 </tbody>
 </table>
@@ -127,41 +157,34 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkRepo.JCENTERL_URL">
-<!--   -->
-</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
-<td><code><a href="dev/jeka/core/api/depmanagement/JkRepo.html#JCENTERL_URL">JCENTERL_URL</a></code></td>
-<td class="colLast"><code>"https://jcenter.bintray.com"</code></td>
-</tr>
-<tr class="rowColor">
 <td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkRepo.MAVEN_CENTRAL_URL">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
 <td><code><a href="dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_CENTRAL_URL">MAVEN_CENTRAL_URL</a></code></td>
 <td class="colLast"><code>"https://repo.maven.apache.org/maven2"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkRepo.MAVEN_OSSRH_DEPLOY_RELEASE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
 <td><code><a href="dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_DEPLOY_RELEASE">MAVEN_OSSRH_DEPLOY_RELEASE</a></code></td>
 <td class="colLast"><code>"https://oss.sonatype.org/service/local/staging/deploy/maven2/"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkRepo.MAVEN_OSSRH_DOWNLOAD_AND_DEPLOY_SNAPSHOT">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
 <td><code><a href="dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_DOWNLOAD_AND_DEPLOY_SNAPSHOT">MAVEN_OSSRH_DOWNLOAD_AND_DEPLOY_SNAPSHOT</a></code></td>
 <td class="colLast"><code>"https://oss.sonatype.org/content/repositories/snapshots/"</code></td>
 </tr>
-<tr class="altColor">
+<tr class="rowColor">
 <td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkRepo.MAVEN_OSSRH_DOWNLOAD_RELEASE">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
 <td><code><a href="dev/jeka/core/api/depmanagement/JkRepo.html#MAVEN_OSSRH_DOWNLOAD_RELEASE">MAVEN_OSSRH_DOWNLOAD_RELEASE</a></code></td>
 <td class="colLast"><code>"https://oss.sonatype.org/content/repositories/releases/"</code></td>
 </tr>
-<tr class="rowColor">
+<tr class="altColor">
 <td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkRepo.MAVEN_OSSRH_PUBLIC_DOWNLOAD_RELEASE_AND_SNAPSHOT">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
@@ -197,9 +220,11 @@
 </tbody>
 </table>
 </li>
+</ul>
+<ul class="blockList">
 <li class="blockList">
 <table class="constantsSummary" border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
-<caption><span>dev.jeka.core.api.depmanagement.<a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html" title="class in dev.jeka.core.api.depmanagement">JkScopeMapping</a></span><span class="tabEnd">&nbsp;</span></caption>
+<caption><span>dev.jeka.core.api.depmanagement.artifact.<a href="dev/jeka/core/api/depmanagement/artifact/JkArtifactId.html" title="class in dev.jeka.core.api.depmanagement.artifact">JkArtifactId</a></span><span class="tabEnd">&nbsp;</span></caption>
 <tr>
 <th class="colFirst" scope="col">Modifier and Type</th>
 <th scope="col">Constant Field</th>
@@ -207,11 +232,32 @@
 </tr>
 <tbody>
 <tr class="altColor">
-<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.JkScopeMapping.ARCHIVE_MASTER">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.artifact.JkArtifactId.MAIN_ARTIFACT_NAME">
 <!--   -->
 </a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
-<td><code><a href="dev/jeka/core/api/depmanagement/JkScopeMapping.html#ARCHIVE_MASTER">ARCHIVE_MASTER</a></code></td>
-<td class="colLast"><code>"archives(master)"</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/artifact/JkArtifactId.html#MAIN_ARTIFACT_NAME">MAIN_ARTIFACT_NAME</a></code></td>
+<td class="colLast"><code>""</code></td>
+</tr>
+</tbody>
+</table>
+</li>
+</ul>
+<ul class="blockList">
+<li class="blockList">
+<table class="constantsSummary" border="0" cellpadding="3" cellspacing="0" summary="Constant Field Values table, listing constant fields, and values">
+<caption><span>dev.jeka.core.api.depmanagement.publication.<a href="dev/jeka/core/api/depmanagement/publication/JkInternalPublisher.html" title="interface in dev.jeka.core.api.depmanagement.publication">JkInternalPublisher</a></span><span class="tabEnd">&nbsp;</span></caption>
+<tr>
+<th class="colFirst" scope="col">Modifier and Type</th>
+<th scope="col">Constant Field</th>
+<th class="colLast" scope="col">Value</th>
+</tr>
+<tbody>
+<tr class="altColor">
+<td class="colFirst"><a name="dev.jeka.core.api.depmanagement.publication.JkInternalPublisher.FACTORY_CLASS_NAME">
+<!--   -->
+</a><code>public&nbsp;static&nbsp;final&nbsp;java.lang.String</code></td>
+<td><code><a href="dev/jeka/core/api/depmanagement/publication/JkInternalPublisher.html#FACTORY_CLASS_NAME">FACTORY_CLASS_NAME</a></code></td>
+<td class="colLast"><code>"dev.jeka.core.api.depmanagement.embedded.ivy.IvyInternalPublisherFactory"</code></td>
 </tr>
 </tbody>
 </table>

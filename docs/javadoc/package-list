@@ -2,7 +2,10 @@ dev.jeka.core.api
 dev.jeka.core.api.crypto.gpg
 dev.jeka.core.api.crypto.gpg.embedded.bc
 dev.jeka.core.api.depmanagement
+dev.jeka.core.api.depmanagement.artifact
 dev.jeka.core.api.depmanagement.embedded.ivy
+dev.jeka.core.api.depmanagement.publication
+dev.jeka.core.api.depmanagement.resolution
 dev.jeka.core.api.file
 dev.jeka.core.api.function
 dev.jeka.core.api.java
