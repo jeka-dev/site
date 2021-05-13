@@ -1,2 +1,2 @@
 # jeka-dev-site
-Jeka landing page
+Jeka landing page : https://jeka.dev/
