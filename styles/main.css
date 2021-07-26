@@ -15,7 +15,15 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 }
 
 .bg-gradient {
-  background: linear-gradient(330deg, rgba(62, 123, 141, 0.73) 10%, #244571 90%);
+  background: linear-gradient(330deg, rgba(0, 164, 206, 0.73) 5%, #244571 95%);
+}
+
+.bg-image {
+  background-image: url("../images/img_2.jpeg");
+}
+
+.subTitleColor {
+  color: whitesmoke;
 }
 
 /* Header Section */
