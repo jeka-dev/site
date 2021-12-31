@@ -1,1327 +1,0 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8" />
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="style/menuItem.css" />
-
-    <!-- highlight.js -->
-    <script src="style/highlight.pack.js"></script>
-    <script>hljs.initHighlightingOnLoad();</script>
-    <link rel="stylesheet" href="style/highlight-idea.css">
-
-    <title>Jeka - Reference Guide</title>
-</head>
-
-<body>
-<div class="title">Jeka - Reference Guide</div>
-<br/>
-<div style="color: lightslategrey; font-size: large">Author : Jérôme Angibaud</div>
-<div style="color: lightslategrey; font-size: large">Version : master-SNAPSHOT</div>
-<br />
-<a href="#ToolPart" class="menuItem1">Tool Part</a><br />
-<a href="#JekaRuntime" class="menuItem2">Jeka Runtime</a><br />
-<a href="#JekafromCommandline" class="menuItem3">Jeka from Command line</a><br />
-<a href="#JekaMainClass" class="menuItem3">Jeka Main Class</a><br />
-<a href="#ParsetheCommandLine" class="menuItem4">Parse the Command Line</a><br />
-<a href="#PopulateSystemPropertiesfromConfigurationFilesandCommandline" class="menuItem4">Populate System Properties from Configuration Files and Command line</a><br />
-<a href="#ConstructDEFCLASSPATH" class="menuItem4">Construct DEF CLASSPATH</a><br />
-<a href="#Repositories" class="menuItem5">Repositories</a><br />
-<a href="#CompileDefClasses" class="menuItem4">Compile Def Classes</a><br />
-<a href="#SelectCommandSetClass" class="menuItem4">Select CommandSet Class</a><br />
-<a href="#InstantiateCommandSetClass" class="menuItem4">Instantiate CommandSet Class</a><br />
-<a href="#InvokeMethodsSpecifiedinJekaCommandLinearguments" class="menuItem4">Invoke Methods Specified in Jeka Command Line arguments</a><br />
-<a href="#ErrorHandling" class="menuItem4">Error Handling</a><br />
-<a href="#JekafromIDE" class="menuItem3">Jeka from IDE</a><br />
-<a href="#IDEClasspathSetting" class="menuItem4">IDE Classpath Setting</a><br />
-<a href="#LaunchfromIDE" class="menuItem4">Launch from IDE</a><br />
-<a href="#Wrappermode" class="menuItem3">Wrapper mode</a><br />
-<a href="#WrapperModeinMulti-Project" class="menuItem4">Wrapper Mode in Multi-Project</a><br />
-<a href="#EmbeddedMode" class="menuItem3">Embedded Mode</a><br />
-<a href="#DefaultPathSettings" class="menuItem3">Default Path Settings</a><br />
-<a href="#SpecifyJekaUserHome" class="menuItem4">Specify Jeka User Home</a><br />
-<a href="#SpecifytheLocalRepositoryCache" class="menuItem4">Specify the Local Repository Cache</a><br />
-<a href="#SeeEffectivePaths" class="menuItem4">See Effective Paths</a><br />
-<a href="#CommandSetParameters" class="menuItem2">CommandSet Parameters</a><br />
-<a href="#EnvironmentVariables" class="menuItem3">Environment Variables</a><br />
-<a href="#SystemProperties" class="menuItem3">System Properties</a><br />
-<a href="#JekaOptions" class="menuItem3">Jeka Options</a><br />
-<a href="#InjectOptions" class="menuItem4">Inject Options</a><br />
-<a href="#RetrieveOptionsasStringValues" class="menuItem4">Retrieve Options as String Values</a><br />
-<a href="#RetrieveOptionsinCommandSetClassFields" class="menuItem4">Retrieve Options in CommandSet Class Fields</a><br />
-<a href="#Compositeoptions" class="menuItem4">Composite options</a><br />
-<a href="#DocumentOptions" class="menuItem4">Document Options</a><br />
-<a href="#Built-inOptions" class="menuItem4">Built-in Options</a><br />
-<a href="#Plugins" class="menuItem2">Plugins</a><br />
-<a href="#BindingPlugins" class="menuItem3">Binding Plugins</a><br />
-<a href="#ModifyJkCommandSetInstance" class="menuItem3">Modify JkCommandSet Instance</a><br />
-<a href="#ConfigurePluginsinJkCommandSetClass" class="menuItem3">Configure Plugins in JkCommandSet Class</a><br />
-<a href="#DocumentPlugins" class="menuItem3">Document Plugins</a><br />
-<a href="#Pluginversioncompatibility" class="menuItem3">Plugin version compatibility</a><br />
-<a href="#ImportExternalRuns" class="menuItem2">Import External Runs</a><br />
-<a href="#Principle" class="menuItem3">Principle</a><br />
-<a href="#DeclareRunImport" class="menuItem3">Declare Run Import</a><br />
-<a href="#OptionPropagation" class="menuItem3">Option Propagation</a><br />
-<a href="#Methodpropagation" class="menuItem3">Method propagation</a><br />
-<a href="#AccessImportedRunsProgrammatically" class="menuItem3">Access Imported Runs Programmatically</a><br />
-<a href="#SelfDocumentation" class="menuItem2">Self Documentation</a><br />
-<a href="#Library" class="menuItem1">Library</a><br />
-<a href="#Files" class="menuItem2">Files</a><br />
-<a href="#ClassesfromJekaFileAPI" class="menuItem3">Classes from Jeka File API</a><br />
-<a href="#Examples" class="menuItem3">Examples</a><br />
-<a href="#System" class="menuItem2">System</a><br />
-<a href="#DependencyManagement" class="menuItem2">Dependency Management</a><br />
-<a href="#Concepts" class="menuItem3">Concepts</a><br />
-<a href="#Dependency" class="menuItem4">Dependency</a><br />
-<a href="#DependencySet" class="menuItem3">Dependency Set</a><br />
-<a href="#Transitivity" class="menuItem4">Transitivity</a><br />
-<a href="#Defineasetofdependencies" class="menuItem3">Define a set of dependencies</a><br />
-<a href="#DependenciesonModule" class="menuItem4">Dependencies on Module</a><br />
-<a href="#Dependenciesonlocalfiles" class="menuItem4">Dependencies on local files</a><br />
-<a href="#Dependenciesonfilesproducedbycomputation" class="menuItem4">Dependencies on files produced by computation</a><br />
-<a href="#ResolveDependencies" class="menuItem3">Resolve Dependencies</a><br />
-<a href="#Publication" class="menuItem3">Publication</a><br />
-<a href="#PublishtoaMavenrepository" class="menuItem4">Publish to a Maven repository</a><br />
-<a href="#PublishtoaIvyrepository" class="menuItem4">Publish to a Ivy repository</a><br />
-<a href="#JavaProjectBuilding" class="menuItem2">Java Project Building</a><br />
-<a href="#Junittests" class="menuItem3">Junit tests</a><br />
-<a href="#Projects" class="menuItem3">Projects</a><br />
-<a href="#ThirdPartyToolIntegration" class="menuItem2">Third Party Tool Integration</a><br />
-<a href="#Eclipse" class="menuItem3">Eclipse</a><br />
-<a href="#Intellij" class="menuItem3">Intellij</a><br />
-<a href="#Git" class="menuItem3">Git</a><br />
-<a href="#Maven" class="menuItem3">Maven</a>
-<p>���Bud1����������������������������������������������������������������������e�slg1Scomp���������������������������������������������������������������������������������������������������������������������������������������������������������������������������i�m�a�g�e�slg1Scomp������������i�m�a�g�e�smoDDblob����������A����i�m�a�g�e�smodDblob����������A����i�m�a�g�e�sph1Scomp������������i�m�a�g�e�svSrnlong������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������ ������@���������������������������������������� ������@������������������������������������������ ������@������������������������������������������ ������@�����������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������E���������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������DSDB����������������������������� ���`��������������������������������������������� ������@������������������������������������������ ������@������������������������������������������ ������@��������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������������# Introduction</p>
-<p><strong>What is Jeka ?</strong></p>
-<p>Jeka is both a build library, and a thin automation tool.</p>
-<p>The build library helps for dealing with file sets, compilation, dependency management, testing, publishing,
-launching external processes, crypto signatures... in a glance, all regular things you need to build/publish projects and especially Java projects.
-The library can be used in any Java program and does not have any dependency.</p>
-<p>The tool aims at executing Java <strong>source</strong> code from the command line. Its design eases reuse of build
-elements (logic, settings, doc, ...) across projects.</p>
-<p>Combined, it provides a full feature build tool with endless possibilities of extension.</p>
-<p>Although library and tool are bundled in the same jar, the library does not depend on the tool at all.</p>
-<p><strong>What is this document for ?</strong></p>
-<p>This document stands for reference guide. It provides:</p>
-<ul>
-<li>An overview of the build library API.</li>
-<li>Details about Jeka tool behaviour.</li>
-</ul>
-<p>If you are looking for how exactly Jeka behaves, or you want to get a pretty exhaustive list of Jeka features, you are in the right place.</p>
-<p>If you are looking for further details about API, please consult Javadoc or source code. Jeka source code has been
-written with intelligibility in mind in order to navigate easily from the user code to the Jeka engine room.
-For Java developers, reading source code and putting break points troubleshoots faster than documentation/support most of the time.</p>
-<p>Jeka philosophy is to be transparent and easy to master. We hope that no user will ever feel the need to buy some
-trainings or books to master it.</p>
-<a name="ToolPart"></a>
-<h1>Tool Part</h1>
-<p><span class="menuItem0">Lexical</span></p>
-<p>The following concepts are used all over the tool section :</p>
-<p><strong>[PROJECT DIR]</strong> : Refers to the root folder of the project to build (or to run Jeka methods on). This is where you would put pom.xml or build.xml files.</p>
-<p><strong>[JEKA HOME]</strong> : Refers to the folder where Jeka is installed. You should find <em>jeka.bat</em> and <em>jeka</em> shell scripts at the root of this folder.</p>
-<p><strong>[JEKA USER HOME]</strong> : Refers to the folder where Jeka stores caches, binary repository and global user configuration. By default it is located at [USER DIR]/.jeka.</p>
-<p><strong>Def Classes :</strong> Java source files located under <em>[PROJECT DIR]/jeka/def</em>. They are compiled on the flight by Jeka when invoked from the command line.</p>
-<p><strong>Def Classpath :</strong> Classpath on which depends <em>def classes</em> to get compiled and <em>Jeka classes</em> to be executed.
-By default, it consists in <em>Jeka</em> core classes. it can be augmented with any third party lib or def Classpath coming
-from another project.
-Once <em>def classes</em> sources have been compiled, <em>def Classpath</em> is augmented with their <em>.class</em> counterpart.</p>
-<p><strong>Jeka Classes :</strong> Classes extending <code>JkClass</code>. Their <em>commands</em> can be invoked from the command line and
-their pubic fields set from the command line as well. Generally <em>def classes</em> contains one <em>Jeka class</em> though there can be many or
-none. CommandSet class can be a <em>def class</em> but can also be imported from a library or external project.</p>
-<p><strong>Jeka Methods :</strong> Java methods from <em>Jeka classes</em> which are invokable from Jeka command line.
-They must be instance method (not static), public, zero-args and returning void. Every method verifying these constraints is a <em>command</em>.</p>
-<p><strong>Options :</strong> This is a set of key-value used to inject parameters. Options can be mentioned
-as command line arguments, stored in specific files or hard coded in <em>Jeka classes</em>.</p>
-<p><span class="menuItem0">In a Glance</span></p>
-<p>The Jeka tool consists in an engine able to run Java/Kotlin source code or compiled code from the command line.</p>
-<p>Generally this code is intended to build Java projects but it can be used for any purpose.</p>
-<p>In practice, your project has a structure respecting the following layout :</p>
-<pre><code>[Project Dir]
-   |
-   + jeka
-      + boot             &lt;-------- Put extra jars here to augment def Classpath.
-      + def
-         + MyCommands.java   &lt;----- Class extending JkClass
-         + MyUtility.java    &lt;---- Utility class consumed by MyCommands
-         + OtherUtility.kt   &lt;---- Kotlin code is also accepted
-      + output              &lt;---- Build artifacts are generated here
-   + src
-      + main
-          + java
-          + resources
-   + ...
-</code></pre>
-<p>A <em>command class</em> may look like :</p>
-<pre><code class="language-Java">import dev.jeka.core.tool.JkClass;import dev.jeka.core.tool.JkDefClasspath;import org.apache.commons.httpclient.HttpClient;
-import org.apache.commons.httpclient.methods.GetMethod;
-import dev.jeka.core.tool.JkDoc;
-import com.google.common.base.MoreObjects;
-
-@JkDefClasspath(&quot;commons-httpclient:commons-httpclient:3.1&quot;)  // Imports 3rd party library to be used by def classes
-@JkDefClasspath(&quot;com.google.guava:guava:21.0&quot;)
-public class MyCommands extends JkClass {    // The command class
-    
-    public String myParam1 = &quot;myDefault&quot;;    // Overridable by injecting options in command line
-
-    @JkDoc(&quot;Performs some tasks using http client&quot;)    // Only for self documentation purpose
-    public void myMethod1() {                   // Run method (callable from command line)
-        HttpClient client = new HttpClient();
-        GetMethod getMethod = new GetMethod(&quot;http://my.url/&quot; + myParam1);
-        ....
-    }
-    
-    public void myMethod2() {   // An other run method 
-        MyUtility.soSomething();
-        ...
-    }
-
-}
-</code></pre>
-<p>From <strong>[Project Dir]</strong>,  you can invoke any command method defined on <code>MyCommands</code> class from the command line.</p>
-<p>For example, executing <code>jeka myMethod1 myMethod2 -myParam1=foo</code> does the following :</p>
-<ol>
-<li>compile sources located in <em>jeka/def</em> directory,</li>
-<li>instantiate a <code>MyCommands</code> instance,</li>
-<li>inject <em>&quot;foo&quot;</em> in the <code>myParam1</code> field,</li>
-<li>invoke <code>myMethod1()</code>,</li>
-<li>invoke <code>myMethod2()</code>.</li>
-</ol>
-<p>If no <em>command class</em> are present in <em>def classes</em>, Jeka picks <code>JkClass</code>. In despite this class
-does not provide any particular methods, you can still perform full Java builds by invoking built-in 'java' plugin.
-For such, execute <code>jeka clean java#pack</code> (<a href="#Plugins">See Plugins</a>).</p>
-<p>Executing <code>jeka</code> or <code>jeka help</code> on command line displays all run methods and options for the current <em>command class</em>.</p>
-<p>The following chapters detail about how the mechanism works and what you can do with.</p>
-<a name="JekaRuntime"></a>
-<h2>Jeka Runtime</h2>
-<p>This chapter describes how to use Jeka with command line and mostly what happens behind the cover when Jeka is run.</p>
-<p>Jeka is a pure Java application requiring JDK version 8 or higher (tested until 12). JDK is required and JRE is not sufficient as Jeka uses the JDK tools to compile <em>def classes</em>.</p>
-<p>Jeka classes can be launched both from command line and from your IDE as regular Java main method.</p>
-<a name="JekafromCommandline"></a>
-<h3>Jeka from Command line</h3>
-<p>To ease launching Java processes from command line, Jeka provides shell script <code>jeka.bat</code> and <code>jeka</code>.
-They are located at root of <em>JEKA HOME</em> which is supposed to be in your PATH environment variable.</p>
-<p>This script does the following :</p>
-<ul>
-<li>
-<p>Find the <em>java</em> executable by looking at, in order :</p>
-<ul>
-<li><code>JEKA_JDK</code> environment variable</li>
-<li><code>JAVA_HOME</code> environment variable</li>
-<li>The java executable accessible from <code>PATH</code> environment variable.</li>
-</ul>
-<p>The <code>java</code> executable must be one from a JDK and not a JRE, as Jeka needs <code>javac</code> to compile <em>DEF CLASSES</em>.</p>
-</li>
-<li>
-<p>Get java execution option : If an environment variable <code>JEKA_OPTS</code> exists then its value is passed to the <code>java</code> command line parameters.</p>
-</li>
-<li>
-<p>Get the classpath in the following order :</p>
-<ul>
-<li>all jar and zip files found under <em>WORKING_DIR/jeka/boot</em></li>
-<li>the <em>JEKA_HOME/dev.jeka.jeka-core.jar</em> file</li>
-</ul>
-</li>
-<li>
-<p>Run <em>java</em> class <code>dev.jeka.core.tool.Main</code> passing the command line argument as is.</p>
-</li>
-</ul>
-<a name="JekaMainClass"></a>
-<h3>Jeka Main Class</h3>
-<p>Jeka entry point is <code>dev.jeka.core.tool.Main#main</code> method.</p>
-<pre><code> 1. Parse the command line.
- 2. Populate system properties from configuration files and command line.
- 3. Construct DEF CLASSPATH by parsing DEF CLASSES source code.
- 4. Compile DEF CLASSES using DEF CLASSPATH.
- 5. Select the Jeka class to be run.
- 6. Instantiate selected Jeka class, inject options and bind plugins on it.
- 7. Invoke methods specified in command line arguments : methods are executed in the order they appear on the command line.
-</code></pre>
-<p>The following sub-sections detail about these steps.</p>
-<a name="ParsetheCommandLine"></a>
-<h4>Parse the Command Line</h4>
-<p>Jeka parses the command line and processes each arguments according the following pattern :</p>
-<ul>
-<li>
-<p><strong>Argument starts with <code>@</code> :</strong> This is a library import clause : the text just next to, is added to the <em>def Classpath</em>.
-For example <code>jeka myMethod @dev.jeka:an-extra-plugin:3.3</code> augments the <em>def Classpath</em> with the <em>an-extra-Plugin</em> jar.
-This is similar to annotate a <em>def class</em> with <code>@JkDefClasspath(&quot;dev.jeka:an-extra-plugin:3.3&quot;)</code>.
-This is intended to modifiate behavior of <em>Jeka class</em> by plugins dynamically.</p>
-</li>
-<li>
-<p><strong>Argument starts with <code>-</code> :</strong> This is an option declaration. The content following is is expected to be formatted as <em>optionName=optionValue</em>.
-For example, `-repo.def.url=http://my.repo.milestone/' will inject 'http://my.repo.milestone/' in the 'repo.def.url' Jeka option.</p>
-</li>
-<li>
-<p><strong>In other cases :</strong> argument is considered as a Jeka (method) to be invoked on the <em>Jeka class</em> instance.</p>
-</li>
-</ul>
-<a name="PopulateSystemPropertiesfromConfigurationFilesandCommandline"></a>
-<h4>Populate System Properties from Configuration Files and Command line</h4>
-<p>Jeka loads system properties in order from :</p>
-<ul>
-<li><em>[JEKA HOME]</em>/system.properties</li>
-<li><em>[JEKA USER HOME]</em>/system.properties</li>
-<li>command line parsed above</li>
-</ul>
-<p>The last loaded properties override the previous ones if there is some conflicts.</p>
-<p>Jeka follows a similar process to load options. It loads in order :</p>
-<ul>
-<li><em>[JEKA HOME]</em>/options.properties</li>
-<li><em>[JEKA USER HOME]</em>/options.properties</li>
-<li>command line parsed above</li>
-</ul>
-<p>The last loaded options override the previous ones if there is some conflicts.</p>
-<a name="ConstructDEFCLASSPATH"></a>
-<h4>Construct DEF CLASSPATH</h4>
-<p>In order to compile <em>DEF CLASSES</em>, Jeka has to compute <em>DEF CLASSPATH</em> first. With Jeka you can specify dependencies
-directly inside the source code using <code>@JkDefClasspath</code> or <code>@JkDefImport</code> annotations as shown below.</p>
-<pre><code class="language-Java">@JkDefClasspath(&quot;commons-httpclient:commons-httpclient:3.1&quot;)
-@JkDefClasspath(&quot;com.google.guava:guava:18.0&quot;)
-@JkDefClasspath(&quot;../local/library/bin&quot;)
-public class HttpClientTaskRun extends JkCommandSet {
-
-    @JkDefImport(&quot;../another/project/using/jeka&quot;)
-    private OtherCommandSet otherCommandSet;  // CommandSet class from another project
-    
-    ...
-</code></pre>
-<p>To achieve this, Jeka parses source code of <em>all</em> classes under <em>jeka/def</em> and add the detected imports to the <em>def Classpath</em>.
-Note that classes having a name starting by a '_' are skipped.</p>
-<a name="Repositories"></a>
-<h5>Repositories</h5>
-<p>When a dependency is expressed as a maven/ivy module, Jeka tries to resolve it against a binary repository.</p>
-<p>Jeka defines this url by looking at following options, in order :</p>
-<ul>
-<li><code>repo.defName</code> and <code>repo.${repo.defName}.url</code> (example : repo.defName=build_repo, repo.build_repo.url=https://my.buid.repo/url )</li>
-<li><code>repo.def.url</code></li>
-<li><code>repo.download.url</code></li>
-<li>Maven Central.</li>
-</ul>
-<p>If a repository needs credentials, you need to supply it through Jeka options <code>repo.[repo name].username</code> and <code>repo.[repo name].password</code>.</p>
-<p>Note that you can define several urls for a <code>repo.[repo name].url</code> by separating then with coma (as <code>repo.def.url=http://my.repo1, http://my.repo2.snapshot</code>).</p>
-<p>As with other repo, if the download repository is an Ivy repo, you must prefix url with <code>ivy:</code> so for example you'll get <code>repo.def.url=ivy:file://my.ivy/repo</code>.</p>
-<a name="CompileDefClasses"></a>
-<h4>Compile Def Classes</h4>
-<p>Jeka compiles def class source files prior to execute it. Def class source files are expected to be in <em>[PROJECT DIR]/jeka/def</em>.
-Classes having a name starting by a '_' are skipped.
-If this directory does not exist or does not contains java sources, the compilation is skipped.
-Compilation occurs upon the following classpath :</p>
-<ul>
-<li>Java libraries located in <em>[PROJECT DIR]/jeka/boot</em>.</li>
-<li>dev.jeka.jeka-core.jar library</li>
-<li>Classpath defined in Jeka classes as explained above.</li>
-</ul>
-<p>It outputs class files in <em>[PROJECT DIR]/jeka/.work/def-classes</em> directory.</p>
-<p>Jeka uses the compiler provided by the running JDK.</p>
-<a name="SelectCommandSetClass"></a>
-<h4>Select CommandSet Class</h4>
-<p>Once compiled, Jeka augments the <em>def Classpath</em> with classes compiled in previous step.
-Then it selects one <em>Jeka class</em> from <em>def classpath</em> and instantiate it.</p>
-<p>The selection logic is :</p>
-<ul>
-<li>If <code>-CommandClass</code> option (shorthand <code>-CC</code>) is specified, then Jeka selects a class having the same name or same
-short name among <em>Jeka classes</em> present in <em>def classpath</em>.</li>
-<li>If this option is not set, Jeka looks for a <em>Jeka class</em> into <em>[PROJECT DIR]/jeka/output/def-classes</em> .
-It looks in alphabetic order first then sub-package (deep first).
-This means that class <code>SomeCommands</code> will be selected prior <code>apackage.SomeCommands</code>, and <code>aa.bb.SomeCommands</code> will be selected prior <code>ab.OtherCommands</code>.</li>
-<li>If no such class found, Jeka selects the built-in <code>JkCommandSet</code> class.</li>
-</ul>
-<a name="InstantiateCommandSetClass"></a>
-<h4>Instantiate CommandSet Class</h4>
-<p>The Jeka class instantiation process is defined in <code>ork.jeka.tool.JkCommandSet#of</code> factory method. It consists in :</p>
-<ol>
-<li>Creating a new <em>Jeka class</em> instance (Invoking default constructor).</li>
-<li>Injecting defined options in public instance fields of the Jeka class and in the imported ones.</li>
-<li>Injecting fields options in the public instance fields of the bound plugins</li>
-<li>Initialising bound plugins (invoking <code>JkPlugin#beforeSetup</code> method)</li>
-<li>Invoking <code>JkCommandSet#setup</code> method on <em>COMMAND CLASS</em>. This method is supposed to be override to set specific settings.</li>
-<li>Invoking <code>JkPlugin#afterSetup</code> method on each bound plugins.</li>
-<li>Invoking <code>JkCommandSet#postSetup</code> on <em>Jeka class</em>. This method might be override.</li>
-<li>The Jeka class instance is ready.</li>
-</ol>
-<a name="InvokeMethodsSpecifiedinJekaCommandLinearguments"></a>
-<h4>Invoke Methods Specified in Jeka Command Line arguments</h4>
-<p>Once Jeka class instance is ready, Jeka invokes instance methods mentioned in command line as <code>jeka myFistMethod mySecondMethod ...</code>.
-Jeka invokes methods, in same order they appear in command line regardless if method is defined on the <em>Jeka class</em> itself or in a plugin.</p>
-<p>In order a method to be considered as a <em>Jeka method</em> (invokable from Jeka command line), it must :</p>
-<ul>
-<li>Be public</li>
-<li>Be instance method (no static method)</li>
-<li>Accept no arguments</li>
-<li>Return void</li>
-</ul>
-<p>If Jeka command line specifies no method, then Jeka invokes <code>help</code>.</p>
-<a name="ErrorHandling"></a>
-<h4>Error Handling</h4>
-<p>If an exception is thrown during the execution, Jeka displays full stack trace on the console except if
-this is a <code>JkException</code>. In this case, Jeka displays only the message.</p>
-<a name="JekafromIDE"></a>
-<h3>Jeka from IDE</h3>
-<a name="IDEClasspathSetting"></a>
-<h4>IDE Classpath Setting</h4>
-<p>In order your IDE compiles and launches your <em>def classes</em>, you must ensure that project/module classpath contains :</p>
-<ul>
-<li><code>dev.jeka.jeka-core.jar</code> (found in Jeka distrib)</li>
-<li>libs and folders mentioned in <code>@JkDefClasspath</code> annotations of your <em>def classes</em>.</li>
-<li>project/modules mentioned in <code>@JkDefImport</code> annotations of your <em>def Jeka classes</em>.</li>
-</ul>
-<p>Plugin methods <code>eclipse#files</code> and <code>intellij#iml</code> achieve this for you.</p>
-<a name="LaunchfromIDE"></a>
-<h4>Launch from IDE</h4>
-<p>If launched from the IDE, <em>def classes</em> are already compiled and the classpath already set by the IDE.
-This leads in a simpler and faster process.</p>
-<p>To launch Jeka from your IDE, you can go two ways :</p>
-<p>One is to create a main method in one of your <em>def classes</em> as below and invoke it.</p>
-<pre><code class="language-Java">public static void main(String[] args) {
-    JkInit.instanceOf(MyCommands.class, args).doSomething();
-} 
-</code></pre>
-<p>The <code>JkInit#instanceOf</code> method loads options from args and instantiates <em>Jeka classes</em>. Then user can
-configure it using hard coding prior launching any method programmatically.</p>
-<p>The other way is to launch <code>Main</code> method from your IDE with same arguments as you would do with command line.</p>
-<a name="Wrappermode"></a>
-<h3>Wrapper mode</h3>
-<p>Jeka offers a wrapper mechanism similar to let execution independent of the Jeka version installed in host machine.
-This is the recommended way to use Jeka.</p>
-<p>Wrapper consists in :</p>
-<ul>
-<li>A very small jar (about 5k) located within your project in <em>[PROJECT ROOT]/jeka/wrapper/</em>.</li>
-<li>A property file <em>jeka.proparties</em> located in <em>[PROJECT ROOT]/jeka/wrapper/</em> mentionning the Jeka version yo use.</li>
-<li>Two scripts <em>jekaw.bat</em> and <em>jekaw</em> installed in <em>[PROJECT ROOT]</em> to invoke in place of <em>jeka</em>.</li>
-</ul>
-<p>When executed in place of <em>jeka</em>, <em>jekaw</em> invoke the wrapper jar. This jar downloads the specified version of Jeka
-and pass the arguments to Jeka main class.</p>
-<p>To start a project with a Jeka wrapper, just execute <em>jeka scaffold#wrap</em> at the root of the project. It will add
-the mentioned files above to your project. Then just invoke <em>jekaw</em> or <em>./jekaw</em> in place of <em>jeka</em>.</p>
-<a name="WrapperModeinMulti-Project"></a>
-<h4>Wrapper Mode in Multi-Project</h4>
-<p>If you are using multi-project structure, you don't have to scaffold wrapper on each. Just scaffold Jeka at a single
-place in your multi-project structure (for example in the root dir or in the 'master' project) and invoke it always
-from the sub project you want to build.</p>
-<p>For example execute <code>../jekaw clean java#pack</code> if the sub-project you want to build is
-located in a sub-directory of the root dir.</p>
-<a name="EmbeddedMode"></a>
-<h3>Embedded Mode</h3>
-<p>Embedded mode is the most aggressive strategy to not depend on the host machine. It consists in embedding Jeka tool itself within
-the project.</p>
-<p>When launched from command line, <em><strong>[JEKA_HOME]/dev.jeka.jeka-core.jar</strong></em> comes after <em><strong>[WORKING_DIR]/jeka/boot/*</strong></em> in <em>def classpath</em>.
-This means that if a version of Jeka (dev.jeka.jeka-core.jar) is in this directory, the run will be processed with
-this instance of Jeka instead of the one located in in <em>[JEKA HOME]</em>.</p>
-<p>This is called the <strong>Embedded</strong> mode. The Jeka tool is embded within your project so the run does not depend
-of the presence and version of Jeka installed in the host machine.</p>
-<p>__Enable embedded mode : __</p>
-<p>To enable embedded mode :</p>
-<ol>
-<li>Copy <em>[JEKA_HOME]/dev.jeka.jeka-core.jar</em> into <em>[PROJECT_DIR]/jeka/boot/*</em> directory.</li>
-<li>Copy <em>[JEKA_HOME]/jeka.bat</em> and <em>[JEKA_HOME]/jeka</em> at the root of [PROJECT_DIR] (optional).</li>
-</ol>
-<p>Jeka is provided with a <em>scaffold</em> plugin that do it for you : just execute <code>jeka scaffold#run -scaffold#embed</code>.</p>
-<p><strong>Run in embedded mode : </strong></p>
-<p>You can go two ways :</p>
-<ul>
-<li>execute <code>jeka myFunction ...</code> as you would do in regular mode. This works only if you have copied jeka/jeka.bat shell scripts into <em>[PROJECT DIR]</em></li>
-<li>or execute <code>java -cp jeka/boot/* Main myFunction ...</code> from <em>[PROJECT_DIR]</em> .</li>
-</ul>
-<a name="DefaultPathSettings"></a>
-<h3>Default Path Settings</h3>
-<a name="SpecifyJekaUserHome"></a>
-<h4>Specify Jeka User Home</h4>
-<p>Jeka uses user directory to store user-specific configuration and cache files, in this document we refer to this directory using [Jeka User Home].
-By default this directory is located at <em>[User Home]/.jeka</em> (<em>[User Home]</em> being the path given by <code>System.getProperty(&quot;user.home&quot;);</code>.
-You can override this setting by defining the <code>JEKA_USER_HOME</code> environment variable.</p>
-<a name="SpecifytheLocalRepositoryCache"></a>
-<h4>Specify the Local Repository Cache</h4>
-<p>Jeka uses <a href="http://ant.apache.org/ivy/">Apache Ivy</a> under the hood to handle module dependencies. Ivy downloads and stores locally artifacts consumed by projects.
-By default the location is <em>[JEKA USER HOME]/cache/repo</em> but you can redefine it by defining the <code>JEKA_REPO</code> environment variable.
-You can get this location programmatically using <code>JkLocator.getJekaRepositoryCache()</code> method.</p>
-<a name="SeeEffectivePaths"></a>
-<h4>See Effective Paths</h4>
-<p>The Jeka displays the effective path at the very start of the process if launched with <code>-LogHeaders=true</code> option :</p>
-<p>For example, <code>jeka help -LogHeaders</code> will output :</p>
-<pre><code>
- _______     _
-(_______)   | |
-     _ _____| |  _ _____
- _  | | ___ | |_/ |____ |
-| |_| | ____|  _ (/ ___ |
- \___/|_____)_| \_)_____|
-
-                           The 100% Java build tool.
-
-Working Directory : C:\Users\me\IdeaProjects\playground\jeka-sample
-Java Home : C:\Program Files (x86)\Java\jdk1.8.0_121\jre
-Java Version : 1.8.0_121, Oracle Corporation
-Jeka Version : Xxxxx
-Jeka Home : C:\Users\me\IdeaProjects\jeka\dev.jeka.core\jeka\output\distrib
-Jeka User Home : C:\Users\me\.jeka
-Jeka Repository Cache : C:\Users\me\.jeka\cache\repo
-
-...
-</code></pre>
-<a name="CommandSetParameters"></a>
-<h2>CommandSet Parameters</h2>
-<p>Jeka classes are parameterizable. One can retrieve values defined at runtime by reading :</p>
-<ul>
-<li>environment variables</li>
-<li>system properties</li>
-<li>Jeka options</li>
-</ul>
-<a name="EnvironmentVariables"></a>
-<h3>Environment Variables</h3>
-<p>You can fetch environment variables using the standard <code>System#getenv</code> method or by annotating a public instance field
-with <code>@JkEnv</code>. <em>JkOption</em> mechanism takes precedence on environment variable injection.</p>
-<a name="SystemProperties"></a>
-<h3>System Properties</h3>
-<p>As for environment variables, one can read system properties using the standard <code>System#getProperty</code> method.</p>
-<p>Jeka proposes 3 ways of injecting system properties. They are considered in following order :</p>
-<ul>
-<li>Properties mentioned in Jeka command line as <code>Jeka doDefault -DmyProperty=myValue</code>.</li>
-<li>Properties mentioned in <em>[Jeka User Home]/system.properties</em> file.</li>
-<li>Properties mentioned in <em>[Jeka Home]/system.properties</em> file.
-Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/system.properties</em> file will not be taken in account but <em>[project dir]/jeka/boot/system.properties</em>.</li>
-</ul>
-<p>In every case, defined system properties are injected after the creation of the java process (via <code>System#setProperty</code> method).</p>
-<a name="JekaOptions"></a>
-<h3>Jeka Options</h3>
-<p>Jeka options are similar to system properties as it stands for a set of key/value.</p>
-<p>Options are globally available in all Jeka classes but can be retrieve in a static typed way (injected in <em>Jeka class</em> fields)
-or as set of key/string value.</p>
-<a name="InjectOptions"></a>
-<h4>Inject Options</h4>
-<p>Jeka proposes 3 ways to inject options. They are considered in following order :</p>
-<ul>
-<li>Options mentioned in Jeka command line as <code>Jeka doDefault -myOption=myValue</code>.</li>
-<li>Options mentioned in <em>[Jeka User Home]/options.properties</em> file.</li>
-<li>Options mentioned in <em>[Jeka Home]/options.properties</em> file.
-Note that if you are running Jeka in embedded mode, the <em>[Jeka Home]/options.properties</em> file will not be taken in account but <em>[project dir]/jeka/boot/options.properties</em>.</li>
-</ul>
-<p>Note for boolean options, when no value is specified, <code>true</code> will be used as default.</p>
-<a name="RetrieveOptionsasStringValues"></a>
-<h4>Retrieve Options as String Values</h4>
-<p>You can retrieve string values using the <code>JkOptions</code> API providing convenient static methods as <code>JkOptions#get</code>, <code>JkOptions#getAll</code> or <code>JkOptions#getAllStartingWith(String prefix)</code>.</p>
-<p>This way you only get the string literal value for the option and you have to parse it if the intended type was a boolean or a number.</p>
-<a name="RetrieveOptionsinCommandSetClassFields"></a>
-<h4>Retrieve Options in CommandSet Class Fields</h4>
-<p>You can retrieve options just by declaring fields in <em>Jeka classes</em>.
-All public non-final instance fields of the invoked <em>Jeka class</em>, are likely to be injected as an option. Note that
-it can be private, but a public setter must be present.</p>
-<p>For example, if you declare a field like :</p>
-<pre><code>class MyRun extends JkCommandSet {
-   public int size = 10;
-   ...
-}
-</code></pre>
-<p>Then you can override the value by mentioning in command line <code>jeka doSomething -size=5</code>.</p>
-<p>Note that the injected string value will be automatically converted to the target type.</p>
-<p>Handled types are : <em>String</em>, <em>all primitive types (and their wrappers)</em>, <em>enum</em>, <em>File</em> and <em>composite object</em>.
-If the value is not parsable to the target type, commands fails.</p>
-<p>To get a precise idea on how types are converted see <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/OptionInjector.java">this code</a>.</p>
-<a name="Compositeoptions"></a>
-<h4>Composite options</h4>
-<p>Composite options are a way to structure your options. Say that you want to configure some server access with url, userName and passwsord.
-You can group all these information into a single object as :</p>
-<pre><code class="language-Java">public class Server {
-    public String url;
-    public String userName;
-    public String password;
-    // ...
-}
-</code></pre>
-<p>Declare a new field of type <code>Server</code> in your Jeka class :</p>
-<pre><code class="language-Java">class MyRun extends JkCommandSet {
-   public Server deployServer = new Server();
-   ...
-}
-</code></pre>
-<p>Then you can inject the server object using following options :</p>
-<pre><code>deployServer.url=http:/myServer:8090/to
-deployServer.username=myUsername
-deployServer.password=myPassword
-</code></pre>
-<a name="DocumentOptions"></a>
-<h4>Document Options</h4>
-<p>If you want your option been displayed when invoking <code>jeka help</code> you need to annotate it with <code>@JkDoc</code>.</p>
-<p>For example :</p>
-<pre><code>@JkDoc(&quot;Make the test run in a forked process&quot;)
-public boolean forkTests = false;
-</code></pre>
-<a name="Built-inOptions"></a>
-<h4>Built-in Options</h4>
-<p>Jeka defines some built-in options that are used by the engine itself. Unlike regular options, they respect an UpperCamelCase naming
-convention :</p>
-<ul>
-<li>-LogVerbose (shorthand -LV) : if true, logs will display 'trace' level logs.</li>
-<li>-LogHeaders (shorthand -LH) : if true, meta-information about the run creation itself and method execution will be logged.</li>
-<li>-LogMaxLength (shorthand -LML) : Console will do a carriage return automatically after N characters are outputted in a single line (ex : -LML=120).</li>
-<li>-CommandClass (shorthand -CC) : Force to use the specified class as the <em>Jeka class</em> to instantiate. It can be the short name of the class (without package prefix).</li>
-</ul>
-<a name="Plugins"></a>
-<h2>Plugins</h2>
-<p>Jeka provides a pluggable architecture. In Jeka, a plugin is a class extending <code>JkPlugin</code> and named as <em>JkPlugin[PluginName]</em>.
-The plugin name is inferred from Plugin class name.</p>
-<p>Each plugin instantiated plugin is bound to a JkCommandSet object.</p>
-<p>Plugins has 3 capabilities :</p>
-<ul>
-<li>Access to their owning JkCommandSet instance (so potentially modify it, load/modify other plugins).</li>
-<li>Expose <em>Jeka methods</em> and <em>options</em> to command line.</li>
-<li>Provide self documentation.</li>
-</ul>
-<p>Jeka is bundled with a bunch of plugins (java, scaffold, eclipse, intellij, ...), but one can add extra plugins just
-by adding a jar or directory containing the plugin class to the <em>def classpath</em>.</p>
-<p>To see all available plugins in the <em>def classpath</em>, just execute <code>jeka help</code>.
-See <a href="#CommandLineParsing">Command Line Parsing</a> and <a href="#RunClassPre-processing(Import3rdpartylibraryintoRunClasspath)">Run Class Pre-processing</a>
-to augment <em>def classpath</em> .</p>
-<a name="BindingPlugins"></a>
-<h3>Binding Plugins</h3>
-<p>Plugins need not to be bound in <em>Jeka class</em> code in order to be bound to the JkCommandSet instance. Just the fact to
-mention a plugin in the command line loads it.</p>
-<p>For example <code>jeka scaffold#run java#</code> will load 'java' and 'scaffold' plugins into a JkCommandSet instance.
-'java' plugin instance will modify 'scaffold' plugin instance in such it produces a Jeka class declaring 'java' plugin
-when 'scaffold#run' is executed. It also creates Java project layout folders. See <code>activate</code> method in <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/tool/builtins/java/JkPluginJava.java">JkPluginJava Code</a>
-to have a concrete view.</p>
-<p>You can also force a plugin to be loaded in your <em>Jeka class</em> code as below. That way, you don't need to mention <code>java#</code> in command line.</p>
-<pre><code class="language-Java">public class MyBuild extends JkCommandSet {
-    
-    MyBuild() {
-        getPlugin(JkPluginJava.class);  // Loads 'java' plugins in MyBuild instances, a second call on 'plugins().get(JkPluginJava.class)' would return the same JkPluginJava instance.
-        getPlugin(&quot;intellij&quot;);   // You can also load plugins by mentioning their name but it's slower cause it involves classpath scanning
-    }
-    
-}
-</code></pre>
-<a name="ModifyJkCommandSetInstance"></a>
-<h3>Modify JkCommandSet Instance</h3>
-<p>JkCommandSet instances are created using <code>JkCommandSet#of</code> factory method.
-This method invokes <code>JkPlugin#beforeSetup</code> and <code>JkPlugin#afterSetup</code> methods on all plugins loaded in the JkCommandSet instance.
-<code>JkPlugin#afterSetup</code> is supposed to be used to modify other plugins that might be bound to the owning Jeka class.</p>
-<p>For example, <a href="https://github.com/jerkar/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/core/tool/builtins/jacoco/JkPluginJacoco.java">Jacoco Plugin</a>
-does not provide <em>Jeka method</em> but configures 'java' plugin in such unit tests are forked on a JVM with Jacoco agent on.
-It also provides a utility class <code>JKocoJunitEnhancer</code> that supplies lower level features to launch Jacoco programmatically.</p>
-<p>Some other plugins does not modify their owning Jeka class instance. For instance, <a href="https://github.com/jerkar/jeka/blob/master/dev.jeka.core/src/main/java/dev/jeka/core/tool/builtins/scaffold/JkPluginScaffold.java">Scaffold Plugin</a>
-just exposes methods to scaffold new Jeka projects.</p>
-<a name="ConfigurePluginsinJkCommandSetClass"></a>
-<h3>Configure Plugins in JkCommandSet Class</h3>
-<p>There is three places where you can configure plugins :</p>
-<ul>
-<li>In <code>JkCommandSet</code> constructor : at this point options has not yet been injected, so it's the place to configure default option values.</li>
-<li>In <code>JkCommandSet#setup</code> : at this point, options has been injected.
-This is the place to configure plugins and other instance members.</li>
-<li>In <code>JkCommandSet#postSetup</code> : at this point, plugins has done their configuration job. So it is the place
-to override plugin settings, if needed.</li>
-</ul>
-<p>Example of configuring a plugin in <em>Jeka class</em>.</p>
-<pre><code class="language-Java">
-    JkPluginSonar sonarPlugin = getPlugin(JkPluginSonar.class);  // Load sonar plugin 
-    
-    ...
-    public MyBuild() {
-		sonarPlugin.prop(JkSonar.BRANCH, &quot;myBranch&quot;);  // define a default for sonar.branch property
-        ...
-    }
-</code></pre>
-<p><a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/jeka/def/org/jeka/CoreBuild.java">Jeka own build class</a> makes a good example.</p>
-<a name="DocumentPlugins"></a>
-<h3>Document Plugins</h3>
-<p>Plugin authors can embed self-documentation using <code>@JkDoc</code> annotation on classes, Jeka methods and option fields.</p>
-<p>Writers can also mention that the plugin has dependencies on other plugins using <code>@JkDocPluginDeps</code> annotation. This annotation
-has only a documentation purpose and does not has impact on plugins loading mechanism.</p>
-<p>A good example is <a href="https://github.com/jeka/jeka/blob/master/dev.jeka.core/src/main/java/org/jeka/tool/builtins/java/JkPluginJava.java"><em>Java Plugin</em></a></p>
-<a name="Pluginversioncompatibility"></a>
-<h3>Plugin version compatibility</h3>
-<p>As Jeka API is likely to evolve (less and less), plugins author can mention the Jeka lower version
-on which the plugin is compatible with using <code>JkPlugin#getLowestJekaCompatibleVersion</code> method.</p>
-<p>It is also possible to mention the highest version on Jeka, a plugin version is compatible with.
-As this information is unknown at the time of publishing the plugin, a mechanism based on a central registry
-keeps track this information.</p>
-<p>It consists of publishing a specific format flat file on a url.
-The file contains the versions that start breaking compatibility.
-Project repository might host this registry.</p>
-<p>A working example is available for  <a href="https://github.com/jerkar/springboot-plugin">spring-boot plugin</a>.
-The <code>breaking_versions.txt</code> is accessible at https://raw.githubusercontent.com/jerkar/springboot-plugin/master/breaking_versions.txt
-declared in <code>JkPluginSpringboot</code> as :</p>
-<pre><code class="language-Java">@Override
-protected String getBreakingVersionRegistryUrl() {
-    return &quot;https://raw.githubusercontent.com/jerkar/springboot-plugin/master/breaking_versions.txt&quot;;
-}
-</code></pre>
-<a name="ImportExternalRuns"></a>
-<h2>Import External Runs</h2>
-<p>There is many way to perform multi-project build. One of is to import runs from external projects.</p>
-<a name="Principle"></a>
-<h3>Principle</h3>
-<p>A <em>Jeka class</em> instance can import <em>Jeka class</em> instances from other projects.</p>
-<p>The current <em>def classpath</em> is augmented with the <em>def classpath</em> of imported projects.</p>
-<p>Imported runs are not aware they are imported. In fact any run can be imported. The relation is uni-directional.</p>
-<a name="DeclareRunImport"></a>
-<h3>Declare Run Import</h3>
-<p>To import a <em>Jeka class</em> from an external project, use the <code>@JkDefImport</code> annotation as shown below :</p>
-<pre><code class="language-Java">public class MyCommands extends JkCommandSet {
-    
-    @JkDefImport(&quot;../otherProject&quot;)   
-    private BarCommands importedCommands;  
-
-    public void doSomesthing() {
-       importedCommands.doBar();   // use the command class defined in ../otherProject
-       ...
-</code></pre>
-<p><em>CommandSet classes</em> are imported transitively, this means that, in above example, if <code>BarCommands</code> imports an other project, this
-last will be also imported.</p>
-<a name="OptionPropagation"></a>
-<h3>Option Propagation</h3>
-<p>Options mentioned in command line are propagated to the imported Jekas.</p>
-<p>So for example you execute <code>jeka java#pack -java#tests.fork</code>, test will be forked for the main run and all imported ones.</p>
-<a name="Methodpropagation"></a>
-<h3>Method propagation</h3>
-<p>Methods mentioned in the command line are not automatically propagated to imported runs. Executing <code>jeka clean</code> will
-only clean the current run project.</p>
-<p>To propagate method call to every imported Jeka classes, method name should be prefixed with a '*'. Executing <code>jeka clean*</code> will
-invoke 'clean' method on the current <em>Jeka class</em> along along all imported Jeka classes.</p>
-<a name="AccessImportedRunsProgrammatically"></a>
-<h3>Access Imported Runs Programmatically</h3>
-<p>You can access to the list of imported Jeka classes within using <code>JkCommandSet#getImportedCommandSets</code> methods as show below :</p>
-<pre><code class="language-Java">public class MyRun extends JkCommandSet {
-
-    ...
-
-    public void doForAll() {
-        this.clean();
-        this.getImportedCommandSets().getAll().forEach(JkRun::clean);
-        this.getImportedCommandSets().getAllOf(JkJavaProjectBuild.class).forEach(build -&gt; build.java().pack());
-    }
-</code></pre>
-<a name="SelfDocumentation"></a>
-<h2>Self Documentation</h2>
-<p><em>CommandSet classes</em> and plugins can provide self documentation.</p>
-<p>When properly auto-documented, users can display documentation by executing <code>jeka help</code>.</p>
-<p>The displayed documentation consist in :</p>
-<ul>
-<li>The Jeka Built-in option</li>
-<li>A general description of the Jeka class (its purpose). This information is provided by using <code>@JkDoc</code> annotation at class level.</li>
-<li>A description of each <em>command</em>. The description is provided by using <code>@JkDoc</code>.</li>
-<li>A description of accept options, with its type and default value. The description is provided by using <code>@JkDoc</code> annotation on public fields.</li>
-<li>The plugins available in the classpath.</li>
-</ul>
-<p>If <em>Jeka class</em> or plugin declares a public instance field without <code>@JkDoc</code> annotation, then it will be displayed in help screen but mentioning that there is no description available.</p>
-<p>If <em>Jeka class</em> or plugin declares a <em>command</em> without <code>@JkDoc</code>, it will be also displayed in help screen but mentioning that there is no description available.</p>
-<p>This is the display screen for the Jeka project Jeka class :</p>
-<pre><code>Usage: jeka [methodA...] [pluginName#methodB...] [-optionName=value...] [-pluginName#optionName=value...] [-DsystemPropName=value...]
-Execute the specified methods defined in Jeka class or plugins using the specified options and system properties.
-When no method specified, 'doDefault' method is invoked.
-Ex: jeka clean java#pack -java#pack.sources=true -LogVerbose -other=xxx -DmyProp=Xxxx
-
-Built-in options (these options are not specific to a plugin or a build class) :
-  -LogVerbose (shorthand -LV) : if true, logs will display 'trace' level logs.
-  -LogHeaders (shorthand -LH) : if true, meta-information about the build creation itself and method execution will be logged.
-  -LogMaxLength (shorthand -LML) : Console will do a carriage return automatically after N characters are outputted in a single line (ex : -LML=120).
-  -CommandClass (shorthand -CC) : Force to use the specified class as the Jeka class to be invoked. It can be the short name of the class (without package prefix).
-
-Available methods and options :
-
-From class CoreBuild :
-  Methods :
-    doDefault : Conventional method standing for the default operations to perform.
-  Options :
-    -testSamples (boolean, default : false) : If true, executes black-box tests on sample projects prior ending the distrib.
-
-From class JkCommandSet :
-  Methods :
-    clean : Cleans the output directory.
-    help : Displays all available methods defined in this build.
-
-Available plugins in classpath : eclipse, eclipsePath, intellij, jacoco, java, pgp, pom, repo, scaffold, sonar.
-
-Type 'jeka [pluginName]#help' to get help on a perticular plugin (ex : 'jeka java#help').
-Type 'jeka help -Plugins' to get help on all available plugins in the classpath.
-
-</code></pre>
-<a name="Library"></a>
-<h1>Library</h1>
-<p>Jeka contains a library for all regular things you need to build/publish projects and especially Java projects.
-It can be embedded in your own tool and used in a simple <code>main</code> method.</p>
-<p>The Jeka-core jar embeds third party jars as <em>Ivy</em> or <em>BouncyCastle</em>. Those are not visible/accessible to client code
-due to a specific classloading mechanism, preventing version clashing with client dependencies.</p>
-<p><span class="menuItem0">API Style</span></p>
-<p><em>Jeka</em> tries to stick with a consistent API design style.</p>
-<p><strong>Class and Interface Naming Convention</strong></p>
-<p>All Jeka public classes/interfaces start with <code>Jk</code>. The reason is for easing distinction, in IDE, between classes supposed be used
-in production or test and the ones used for building. It also helps to explore Jeka API.</p>
-<p><strong>Mutable Vs Immutable</strong></p>
-<p>As a rule of thumb <em>Jeka</em> favors immutable objects for shallow structures and
-<a href="https://github.com/djeang/parent-chaining/blob/master/readme.md">parent-chaining trees</a> for deeper ones.
-Both provide a fluent interface when possible.</p>
-<p><strong>Instantiation</strong></p>
-<p>All objects are instantiated using static factory methods. Every factory method names start with <code>of</code>.</p>
-<p><strong>Read Accessors</strong></p>
-<p>All accessor method names (methods returning a result without requiring IO, only computation) starts with <code>get</code>.</p>
-<p><strong>Withers/Anders for Immutable Objects</strong></p>
-<p>To create a subtly different object from another immutable one, <em>Jeka</em> provides :</p>
-<ul>
-<li>Methods starting with <code>with</code> when a property is to be replaced by another.</li>
-<li>Methods starting with <code>and</code> when a collection property is to be replaced by the same one plus an extra element.</li>
-<li>Methods starting with <code>minus</code> when a collection property is to be replaced by the same one minus a specified element.</li>
-</ul>
-<p><strong>Setters/Adders for Mutable Objects</strong></p>
-<p>To modify a mutable object, <em>Jeka</em> provides :</p>
-<ul>
-<li>Methods starting with <code>set</code> to replace a single property value by another.</li>
-<li>Methods starting with <code>add</code> to add a value to a collection property.
-Those methods return the object itself for chaining.</li>
-</ul>
-<p><strong>Translators</strong></p>
-<p>To translate an object to another representation (for example a <code>JkDependencySet</code> to a  list of <code>JkScopedDependency</code>)
-<em>Jeka</em> provides methods starting with <code>to</code>.</p>
-<p><span class="menuItem0">Domains Covered by the API</span></p>
-<p>The previous example demonstrates how the Java/project API can be used to build and publish Java projects. This API
-relies on other lower level ones provided by <em>Jeka</em>. In a glance these are the domains covered by the <em>Jeka</em> APIs :</p>
-<ul>
-<li><strong>Files :</strong> File trees, filters, zip, path sequence</li>
-<li><strong>System :</strong> Launching external process, Logging, Meta-info</li>
-<li><strong>Cryptography :</strong> PGP signer</li>
-<li><strong>Dependency management :</strong> Dependency management, publishing on repositories</li>
-<li><strong>Java :</strong> Compilation, javadoc, resource processor, manifest, packager, classloader, classpath, launching
-<ul>
-<li><strong>Testing :</strong> Launching tests and get reports</li>
-<li><strong>Project :</strong> Project structure to build</li>
-</ul>
-</li>
-<li><strong>Tooling :</strong> Eclipse integration, intellij integration, Maven interaction, Git</li>
-<li><strong>Support :</strong> Set of utility class with static methods to handle low-level concerns</li>
-</ul>
-<a name="Files"></a>
-<h2>Files</h2>
-<p>File manipulation is a central part for building software.
-Jeka embraces JDK7 <em>java.nio.file</em> API by adding some concepts around, to provide a powerful fluent style API performing
-recurrent tasks with minimal effort.</p>
-<a name="ClassesfromJekaFileAPI"></a>
-<h3>Classes from Jeka File API</h3>
-<p>The following classes lie in <code>dev.jeka.core.api.file</code> package:</p>
-<ul>
-<li>
-<p><code>JkPathFile</code> A simple wrapper for files (not folders). It provides copying, interpolation, checksum, deletion and creation methods.</p>
-</li>
-<li>
-<p><code>JkPathSequence</code> An Immutable sequence of <code>java.nio.file.Path</code> providing methods for filtering or appending.</p>
-</li>
-<li>
-<p><code>JkPathMatcher</code> An immutable <code>java.nio.file.PathMatcher</code> based on <code>java.nio.file</code> glob pattern or regerxp.
-Used by <code>JkPathTree</code> to filter in/out files according name patterns.</p>
-</li>
-<li>
-<p><code>JkPathTree</code> An Immutable root folder (or a zip file) along a <code>PathMatcher</code> providing operations to copy, navigate, zip or iterate.
-This is a central class in Jeka API.</p>
-</li>
-<li>
-<p><code>JkPathTreeSet</code> An Immutable set of <code>JkPathTree</code>. Helpful to define set of sources/resources and create jar/zip files.</p>
-</li>
-<li>
-<p><code>JkResourceProcessor</code> A mutable processor for copying a set of files, preserving the structure and
-replacing some text by other text. Typically, used for replacing token as <code>${server.ip}</code> by an actual value.</p>
-</li>
-</ul>
-<a name="Examples"></a>
-<h3>Examples</h3>
-<pre><code class="language-Java">// creates a file and writes the content of the specified url.
-JkPathFile.of(&quot;config/my-config.xml&quot;).createIfNotExist().replaceContentBy(&quot;http://myserver/conf/central.xml&quot;);
-
-// copies all non java source files to another directory preserving structure
-JkPathTree.of(&quot;src&quot;).andMatching(false, &quot;**/*.java&quot;).copyTo(&quot;build/classes&quot;);
-
-// One liner to zip an entire directory
-JkPathTree.of(&quot;build/classes&quot;).zipTo(Paths.get(&quot;mylib.jar&quot;));
-
-</code></pre>
-<a name="System"></a>
-<h2>System</h2>
-<p>The <code>dev.jeka.core.api.system</code> package provides system level functions :</p>
-<ul>
-<li>
-<p><code>JkInfo</code> Provides meta information as the running version of Jeka.</p>
-</li>
-<li>
-<p><code>JkLocator</code> Provides information about where is located repository cache or Jeka user home.</p>
-</li>
-<li>
-<p><code>JkLog</code> Provides API to log Jeka event. It supports hierarchical logs through <code>#startTask</code>
-and <code>#endtask</code> methods.</p>
-</li>
-<li>
-<p><code>JkProcess</code> Launcher for external process.</p>
-</li>
-<li>
-<p><code>JkPrompt</code> One-liner to ask user input.</p>
-</li>
-</ul>
-<a name="DependencyManagement"></a>
-<h2>Dependency Management</h2>
-<a name="Concepts"></a>
-<h3>Concepts</h3>
-<a name="Dependency"></a>
-<h4>Dependency</h4>
-<p>For Jeka, a <em>dependency</em> is something that can be resolved to a set of files by a <code>JkDependencyResolver</code>.
-Generally a dependency resolves to 1 file (or folder) but it can be 0 or many.</p>
-<p>A dependency is always an instance of <code>JkDependency</code>.</p>
-<p>Jeka distinguishes mainly 3 types of dependency :</p>
-<ul>
-<li><strong>Arbitrary files</strong> located on the file system (represented by <code>JkFileSystemDependency</code> class). These files are assumed to be present on the file system when the build is running.</li>
-<li><strong>Files produced by a computation</strong> (represented by <code>JkComputedDependency</code> class). These files may be present on file system or not. If they are not present, the computation is run in order to produce the missing files. Generally the computation stands for the build of an external project.</li>
-<li><strong>Reference to module</strong> (represented by <code>JkModuleDependency</code>) hosted in a binary repository (Ivy or Maven for instance) : Jeka can consume and resolve transitively any artifact located in a repository as you would do with Maven, Ivy or Gradle.</li>
-</ul>
-<p>For the last, Jeka is using <em>Ivy 2.5.0</em> under the hood.
-Jeka jar embeds Ivy and executes it in a dedicated classloader to be hidden for client code.</p>
-<p><img src="images/JkDependency.png" alt="image" /></p>
-<a name="DependencySet"></a>
-<h3>Dependency Set</h3>
-<p>A dependency set (<code>JkDependencySet</code>) is an ordered bunch of dependencies used for a given purpose (compilation,
-war packaging, testing, ...). It can contain any kind of <code>JkDependency</code>.</p>
-<p>The set also defines :</p>
-<ul>
-<li>a version provider to define which version of a module we should use in case it is not explicitly mentioned.</li>
-<li>a set of transitive dependency exclusion rules.</li>
-</ul>
-<p>It is designed as an immutable object where we can apply set theory operations for adding, removing,
-merging with other dependencies and dependency set.</p>
-<p>Each dependency set stands for a resolution unit, that says, a dependency set is the unique argument to
-pass to the dependency resolver.</p>
-<a name="Transitivity"></a>
-<h4>Transitivity</h4>
-<p>Mainstream build tools use a single concept ('scope' or 'configuration') to determine both :</p>
-<ol>
-<li>which part of the build needs the dependency</li>
-<li>which transitive dependencies to fetch along the dependency.</li>
-<li>if the dependency must be published as transitive dependency, and with which transitivity level.</li>
-</ol>
-<p>This confusion leads in dependency management systems that are bloated, difficult to reason about and not quite flexible.
-Gradle comes with a proliferation of 'configurations' to cover most use case combinations,
-while Maven narrows 'scopes' to a fewer less but with limitations and not-so-clear transitivity/publish rules.</p>
-<p>In the opposite, Jeka distinguishes clearly the three purposes :</p>
-<ol>
-<li>Jeka uses distinct dependency set instances for each part of the build (compile, runtime, test,...). Each can be
-defined relatively to another one using set theory operations.</li>
-<li>For each dependency, we can decide its transitivity, that is, the transitive dependencies fetched along the dependency.</li>
-<li>For publishing, we can optionally redefine a specific dependency set, exposing exactly what we want.</li>
-</ol>
-<p>Jeka, defines by default 3 levels of transitivity :</p>
-<ul>
-<li>NONE : Not transitive</li>
-<li>COMPILE : Only transitive dependencies declared with scope 'compile' in the dependency published pom.</li>
-<li>RUNTIME : All dependencies declared in the dependency published pom.</li>
-</ul>
-<p>Reminder : on Maven repositories, published poms can declare only two scopes for transitive dependencies : 'compile'
-and 'runtime'.</p>
-<p>For Ivy repositories, it is possible to declare a specific transitivity that maps to a slave 'configuration'.</p>
-<p>The below example shows a JkJavaProject declaration using explicit transitivity.</p>
-<pre><code class="language-Java">JkJavaProject.of().simpleFacade()
-    .setCompileDependencies(deps -&gt; deps
-            .and(&quot;com.google.guava:guava:23.0&quot;, JkTransitivity.NONE)
-            .and(&quot;javax.servlet:javax.servlet-api:4.0.1&quot;))
-    .setRuntimeDependencies(deps -&gt; deps
-            .and(&quot;org.postgresql:postgresql:42.2.19&quot;)
-            .withTransitivity(&quot;com.google.guava:guava&quot;, JkTransitivity.RUNTIME)
-            .minus(&quot;javax.servlet:javax.servlet-api&quot;))
-    .setTestDependencies(deps -&gt; deps
-            .and(Hint.first(), &quot;org.mockito:mockito-core:2.10.0&quot;)
-    )
-</code></pre>
-<p>It results in :</p>
-<pre><code>Declared Compile Dependencies : 2 elements.
-  com.google.guava:guava:23.0 transitivity:NONE
-  javax.servlet:javax.servlet-api:4.0.1
-Declared Runtime Dependencies : 2 elements.
-  com.google.guava:guava:23.0 transitivity:RUNTIME
-  org.postgresql:postgresql:42.2.19
-Declared Test Dependencies : 4 elements.
-  org.mockito:mockito-core:2.10.0
-  com.google.guava:guava:23.0 transitivity:RUNTIME
-  org.postgresql:postgresql:42.2.19
-  javax.servlet:javax.servlet-api:4.0.1
-</code></pre>
-<p>The dependencies without any transitivity specified on, will take default transitivity for
-their purpose, namely COMPILE for compile dependencies, and RUNTIME for runtime and test dependencies.</p>
-<p>The API allows to redefine the transitivity declared in a upper dependency set.</p>
-<p>Note that transitivity can only apply to <code>JkModuleDependency</code> (like <i>com.google.guava:guava:23.0</i>)
-and <code>JkLocalProjectDependency</code>.</p>
-<a name="Defineasetofdependencies"></a>
-<h3>Define a set of dependencies</h3>
-<p>To define a set of dependencies (typically the dependencies of the project to build), you basically define a set of <em>scoped dependencies</em>.</p>
-<p>The set of scoped dependencies concept is represented by <code>JkDependencySet</code> class. This class provides a fluent API for easier instantiation.</p>
-<pre><code class="language-Java">import static dev.jeka.core.api.depmanagement.JkScopes.*;
-...
-JkDependencySet deps = JkDependencySet.of()
-    .and(&quot;com.google.guava&quot;) 
-    .and(&quot;org.slf4j:slf4j-simple&quot;)
-    .and(&quot;com.orientechnologies:orientdb-client:2.0.8&quot;)
-    .andFile(&quot;../libs.myjar&quot;)
-    .withVersionProvider(myVersionProvider);
-</code></pre>
-<p>Note that :</p>
-<ul>
-<li>
-<p>Module version and scopes can be omitted when declaring dependencies. Versions can be provided by a <code>JkVersionProvider</code>
-and scopes can be defaulted.</p>
-</li>
-<li>
-<p>Instances of <code>JkDependencySet</code> can be combined together in order to construct large dependencySet from smaller ones.</p>
-</li>
-<li>
-<p><code>JkDependencySet#ofTextDescription</code> provides a mean to instantiate a dependency set from a simple text as :</p>
-</li>
-</ul>
-<pre><code>- COMPILE+RUNTIME
-org.springframework.boot:spring-boot-starter-thymeleaf
-org.springframework.boot:spring-boot-starter-data-jpa
-
-- RUNTIME
-com.h2database:h2
-org.liquibase:liquibase-core
-com.oracle:ojdbc6:12.1.0
-
-- TEST
-org.springframework.boot:spring-boot-starter-test
-org.seleniumhq.selenium:selenium-chrome-driver:3.4.0
-org.fluentlenium:fluentlenium-assertj:3.2.0
-org.fluentlenium:fluentlenium-junit:3.2.0
-
-- COMPILE
-org.projectlombok:lombok:1.16.16
-</code></pre>
-<a name="DependenciesonModule"></a>
-<h4>Dependencies on Module</h4>
-<p>This is for declaring a dependency on module hosted in <em>Maven</em> or <em>Ivy</em> repository. Basically you instantiate a <code>JkModuleDepency</code> from it's group, name and version.</p>
-<pre><code class="language-Java">    JkDependencySet.of()
-        .and(JkPopularModule.GUAVA, &quot;18.0&quot;)
-        .and(&quot;com.orientechnologies:orientdb-client:[2.0.8, 2.1.0[&quot;)
-        .and(&quot;mygroup:mymodule:myclassifier:0.2-SNAPSHOT&quot;);
-</code></pre>
-<p>There is many way to indicate a module dependency, see Javadoc for browsing possibilities.</p>
-<p>Note that :</p>
-<ul>
-<li>A version ending by <code>-SNAPSHOT</code> has a special meaning : Jeka will consider it <em>&quot;changing&quot;</em>. This means that it won't cache it locally and will download the latest version from repository.</li>
-<li>As Jeka relies on Ivy under the hood, it accepts dynamic versions as mentioned <a href="http://ant.apache.org/ivy/history/latest-milestone/ivyfile/dependency.html">here</a>.</li>
-<li>Dependency files are downloaded in <em>[USER HOME]</em>/.jeka/cache/repo</li>
-</ul>
-<a name="Dependenciesonlocalfiles"></a>
-<h4>Dependencies on local files</h4>
-<p>You just have to mention the path of one or several files. If one of the files does not exist at resolution time (when the dependency is actually retrieved), build fails.</p>
-<pre><code class="language-Java">    JkDependencySet of()
-        .andFile(&quot;libs/my.jar&quot;)
-        .andFile(&quot;libs/my.testingtool.jar&quot;, TEST);
-    }
-		
-</code></pre>
-<a name="Dependenciesonfilesproducedbycomputation"></a>
-<h4>Dependencies on files produced by computation</h4>
-<p>It is typically used for <em>multi-modules</em> or <em>multi-techno</em> projects.</p>
-<p>The principle is that if the specified files are not found, then the computation is run in order to generate the missing files.
-If some files still missing after the computation has run, the build fails.</p>
-<p>This mechanism is quite simple yet powerful as it addresses following use cases :</p>
-<ul>
-<li>Dependencies on files produced by an artifact producer (<code>JkArtifactProducer</code>). A Jeka Java project is an artifact producer.</li>
-<li>Dependencies on files produced by external project built with any type of technology (Ant, Grunt, Maven, Gradle, SBT, Android SDK, Make, ...).</li>
-<li>Dependencies on files produced by any means.</li>
-</ul>
-<p>The generic way is to construct this kind of dependency using a <code>java.lang.Runnable</code>.</p>
-<p>The following snippet constructs a set of dependencies on two external projects : one is built with Maven, the other with
-<em>Jeka</em>.</p>
-<pre><code class="language-Java">Path mavenProject = Paths.get(&quot;../a-maven-project&quot;);
-JkProcess mavenBuild = JkProcess.of(&quot;mvn&quot;, &quot;clean&quot;, &quot;install&quot;).withWorkingDir(mavenProject);
-Path mavenProjectJar = mavenProject.resolve(&quot;target/maven-project.jar&quot;);
-JkJavaProject externalProject = JkJavaProject.ofSimple(Paths.get(&quot;../a-jeka-project&quot;)); 
-JkDependencySet deps = JkDependencySet.of()
-    .and(JkComputedDependency.of(mavenBuild, mavenProjectJar))
-    .and(externalProject);
-</code></pre>
-<a name="ResolveDependencies"></a>
-<h3>Resolve Dependencies</h3>
-<p>The <code>JkDependencyResolver</code> class is responsible JkDependencyResolver.of(JkRepo.ofMavenCentral());to resolve dependencies by returning <code>JkResolveResult</code> from a
-<code>JkdependencySet</code>.</p>
-<pre><code class="language-java">JkDependencySet deps =  JkDependencySet
-                            .of(&quot;org.apache.httpcomponents:httpclient:4.5.3&quot;)
-                            .andFile(&quot;libs/my.jar&quot;);
-
-// Module dependencies are fetched from Maven central repo
-JkDependencyResolver resolver = JkDependencyResolver.of(JkRepo.ofMavenCentral());  
-JkResolveResult result = resolver().resolve(deps);
-</code></pre>
-<p>From the result you can :</p>
-<ul>
-<li>Navigate in the resolved dependency tree as :</li>
-</ul>
-<pre><code class="language-java">JkDependencyNode slfjApiNodeDep = result.getDependencyTree().getFirst(JkModuleId.of(&quot;org.slf4j:slf4j-api&quot;));
-System.out.println(slfjApiNode.getModuleInfo().getResolvedVersion());
-</code></pre>
-<ul>
-<li>Get the direct list of artifact files</li>
-</ul>
-<pre><code class="language-java">JkPathSequence sequence = result.getFiles();  
-sequence.forEach(System.out::println); // print each files part of the dependency resolution
-</code></pre>
-<ul>
-<li>Resolve for a given scope</li>
-</ul>
-<p>The following snippets captures the resolved dependency files for COMPILE scope. Junit is excluded from this result.</p>
-<pre><code>JkDependencySet deps = JkDependencySet.of()
-    .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
-    .and(&quot;junit:junit:4.11&quot;, TEST);
-    
-Iterable&lt;Path&gt; files = JkDependencyResolver.of(JkRepo.ofMavenCentral()).resolve(COMPILE).getFiles();
-</code></pre>
-<a name="Publication"></a>
-<h3>Publication</h3>
-<p>Jeka is able to publish on both Maven and Ivy repository. This includes repositories as <a href="http://www.sonatype.org/nexus/">Sonatype Nexus</a> or <a href="http://www.jfrog.com/artifactory/">Jfrog Artifactory</a>.</p>
-<p>Maven and Ivy have different publication model, so Jeka proposes specific APIs according you want to publish on a Maven or Ivy repository.</p>
-<a name="PublishtoaMavenrepository"></a>
-<h4>Publish to a Maven repository</h4>
-<p>Jeka proposes a complete API to pubish on Maven repository. POM files will be generated by Jeka according
-provided elements.</p>
-<p>The following snippet demonstrate a pretty sophisticated publishing on Maven :</p>
-<pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6&quot;);
-    JkDependencySet deps = JkDependencySet.of()
-            .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
-            .and(&quot;junit:junit:4.11&quot;, TEST);
-    JkMavenPublication mavenPublication = JkMavenPublication.of(Paths.get(&quot;org.myorg.mylib.jar&quot;))
-
-            // the following are optional but required to publish on public repositories.
-            .and(Paths.get(&quot;org.myorg.mylib-sources.jar&quot;), &quot;sources&quot;)
-            .and(Paths.get(&quot;org.myorg.mylib-javadoc.jar&quot;), &quot;javadoc&quot;)
-            .withChecksums(&quot;sha-2&quot;, &quot;md5&quot;)
-            .withSigner(JkPgp.of(Paths.get(&quot;myPubring&quot;), Paths.get(&quot;mySecretRing&quot;), &quot;mypassword&quot;))
-            .with(JkMavenPublicationInfo.of(&quot;My sample project&quot;,
-                    &quot;A project to demonstrate publishing on Jeka&quot;,
-                    &quot;http://project.jeka.org&quot;)
-                    .andApache2License()
-                    .andDeveloper(&quot;djeang&quot;, &quot;myemail@gmail.com&quot;, &quot;jeka.org&quot;, &quot;http://project.jeka.org/&quot;));
-
-    // A complex case for repo (credential + signature + filtering) 
-    JkRepo repo = JkRepo.of(&quot;http://myserver/myrepo&quot;)
-            .withOptionalCredentials(&quot;myUserName&quot;, &quot;myPassword&quot;)
-            .with(JkRepo.JkPublishConfig.of()
-                        .withUniqueSnapshot(false)
-                        .withNeedSignature(true)
-                        .withFilter(mod -&gt; // only accept SNAPSHOT and MILESTONE
-                            mod.getVersion().isSnapshot() || mod.getVersion().getValue().endsWith(&quot;MILESTONE&quot;)
-                        ));
-    
-    // Actually publish the artifacts
-    JkPublisher publisher = JkPublisher.of(repo);
-    publisher.publishMaven(versionedModule, mavenPublication, deps);
-</code></pre>
-<p>Notice that Jeka allows to :</p>
-<ul>
-<li>Publish more than one artifact.</li>
-<li>Produce &amp; publish checksum files for each published artifact.</li>
-<li>Mention to use unique snapshot (<a href="http://stackoverflow.com/questions/1243574/how-to-stop-maven-artifactory-from-keeping-snapshots-with-timestamps">What is it ?</a>).</li>
-<li>Feed generated pom with data necessary to publish on <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html">central repository</a>.</li>
-<li>Sign published artifact with PGP</li>
-<li>Publish to multiple repository by creating the publisher using a <code>JkRepoSet</code> instead of a <code>JkRepo</code>.</li>
-</ul>
-<p>To sign with PGP, no need to have PGP installed on Jeka machine. Jeka uses <a href="https://www.bouncycastle.org/">Bouncy Castle</a> internally to sign artifacts.</p>
-<a name="PublishtoaIvyrepository"></a>
-<h4>Publish to a Ivy repository</h4>
-<p>Publishing on Ivy repo is pretty similar than on Maven though there is specific options to Ivy.</p>
-<pre><code class="language-java">    JkVersionedModule versionedModule = JkVersionedModule.of(&quot;org.myorg:mylib:1.2.6-SNAPSHOT&quot;);
-    JkDependencySet deps = JkDependencySet.of()
-            .and(&quot;org.slf4j:slf4j-simple&quot;, COMPILE_AND_RUNTIME)
-            .and(&quot;junit:junit:4.11&quot;, TEST);
-
-    JkIvyPublication publication = JkIvyPublication.of(Paths.get(&quot;org.myorg.mylib.jar&quot;), &quot;master&quot;)
-            .and(Paths.get(&quot;org.myorg.mylib-sources.jar&quot;));
-
-    JkRepo repo = JkRepo.ofIvy(Paths.get(&quot;ivyrepo&quot;));
-
-    JkPublisher publisher = JkPublisher.of(repo);
-    publisher.publishIvy(versionedModule, publication, deps, JkJavaDepScopes.DEFAULT_SCOPE_MAPPING,
-            Instant.now(), JkVersionProvider.of());
-</code></pre>
-<a name="JavaProjectBuilding"></a>
-<h2>Java Project Building</h2>
-<p><code>dev.jeka.core.api.java.testing</code> package hosts classes to handle Java builds.</p>
-<p><code>JkClassLoader</code> and <code>JkUrlClassloader</code> Wrap a <code>java.lang.ClassLoader</code> adding convenient methods and classpath scanning capability.</p>
-<p><code>JkClassPath</code> A sequence of file to be used as a <code>class path</code>.</p>
-<p><code>JkJarPacker</code> A simple utility tyo create Jar or fat Jar file from compiled classes.</p>
-<p><code>JkJavaCompiler</code> Wraps either a Java Compiler tool, nor a <em>javac</em> process.</p>
-<p><code>JkJavadocProcessor</code> A Java source processor producing standard Javadoc</p>
-<p><code>JkJavaProcess</code> A utility to launch Java process (from class dirs or jars)</p>
-<p><code>JkManifest</code> Stands for the manifest file to include in jar files.</p>
-<a name="Junittests"></a>
-<h3>Junit tests</h3>
-<p><code>dev.jeka.core.api.java.testing</code> package hosts three classes that let user launch test based
-on the Junit5 platform. This means that any test framework supported by Junit5 platform,
-is also supported by Jeka. Jeka also supports Junit4 out-of-the-box through the embedded
-<em>vintage</em> engine.</p>
-<p>Jeka testing API mostly hides <em>Junit Platform</em>. For most of the cases, you won't need to code
-against <em>Junit-Platform</em> API to launch tests with Jeka. Nevertheless, Jeka allows users to
-code against <em>Junit-Platform</em> for fine-tuning.</p>
-<p><code>JkTestProcessor</code> This is the entry point to launch tests. Tests are executed using the
-current classloader classpath + extra class path mentioned in <code>#launch</code> method arguments.</p>
-<p><code>JkTestResult</code> The result of a test launch : count for found, failure, skip, success ...</p>
-<p><code>JkTestSelection</code> A mean to determine which test to launch. It can be set using file or tag filter. It is
-also possible to code against <em>JUnit Platform</em></p>
-<a name="Projects"></a>
-<h3>Projects</h3>
-<p>Projects are file structures for hosting Java projects meaning source code, test codes, dependencies,
-build instructions.</p>
-<p>The principle is that each <code>JkJavaProject</code> holds everything needed to compile, test, pack and publish
-artifacts. The API embrace the <em>parent-chaining</em> pattern.</p>
-<p>This is a pretty complete example taken from the Jeka build itself.</p>
-<pre><code>project
-    .getJarProduction()
-        .getDependencyManagement()
-           .addDependencies(JkDependencySet.of()
-               .and(&quot;com.google.guava:guava:21.0&quot;)
-               .and(&quot;com.sun.jersey:jersey-server:1.19.4&quot;)
-               .and(&quot;org.junit.jupiter:junit-jupiter-engine:5.1.0&quot;, TEST)
-               .and(&quot;org.junit.vintage:junit-vintage-engine:jar:5.6.0&quot;, TEST)).__
-        .getManifest()
-            .addMainClass(&quot;dev.jeka.core.tool.Main&quot;).__
-        .getCompilation()
-                .getLayout()
-                    .includeSourceDirsInResources().__
-                .addOptions(&quot;-Xlint:none&quot;,&quot;-g&quot;)
-                .setJavaVersion(JkJavaVersion.V8)
-                .getCompiler()
-                    .setForkingWithJavac().__.__.__
-        .getTesting()
-            .getCompilation()
-                .getLayout()
-                    .includeSourceDirsInResources().__
-                .getCompiler()
-                    .setDefault().__.__
-            .getTestProcessor()
-                .getEngineBehavior()
-                    .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.ONE_LINE).__.__
-            .getTestSelection()
-                .addIncludePatterns(JkTestSelection.STANDARD_INCLUDE_PATTERN)
-                .addIncludePatternsIf(runIT, JkTestSelection.IT_INCLUDE_PATTERN).__.__
-    .getDocumentation()
-        .getJavadocProcessor()
-            .setDisplayOutput(false)
-            .addOptions(&quot;-notimestamp&quot;).__.__
-    .getPublication()
-        .setModuleId(&quot;dev.jeka:jeka-core&quot;)
-        .setVersionSupplier(git::getJkVersionFromTags)
-        .setRepos(JkRepoSet.ofOssrhSnapshotAndRelease(ossrhUser, ossrhPwd))
-        .getArtifactProducer()
-            .putMainArtifact(this::doPackWithEmbedded)
-            .putArtifact(DISTRIB_FILE_ID, this::doDistrib)
-            .putArtifact(WRAPPER_ARTIFACT_ID, this::doWrapper).__
-        .getMavenPublication()
-            .getPomMetadata()
-                .getProjectInfo()
-                    .setName(&quot;jeka&quot;)
-                    .setUrl(&quot;https://jeka.dev&quot;)
-                    .setDescription(&quot;Automate with plain Java code and nothing else.&quot;).__
-                .getScm()
-                    .setUrl(&quot;https://github.com/jerkar/jeka.git&quot;).__
-                .addApache2License()
-                .addGithubDeveloper(&quot;djeang&quot;, &quot;djeangdev@yahoo.fr&quot;).__.__
-        .getPostActions()
-            .append(() -&gt; createGithubRelease());
-</code></pre>
-<p>You can define your onw specific artifact (distrib, binary specific,...). When defined, this artifact will be built and
-deployed along the other ones.</p>
-<p>JkJavaProject instances are highly configurable. You can tune your project structure/build without limits.</p>
-<a name="ThirdPartyToolIntegration"></a>
-<h2>Third Party Tool Integration</h2>
-<p>The <code>dev.jeka.core.api.tooling</code> package provides integration with tools developers generally deal with.</p>
-<a name="Eclipse"></a>
-<h3>Eclipse</h3>
-<p><code>JkEclipseClasspathGenerator</code> and <code>JkEclipseProjectGenerator</code> provides method to generate a proper .classpath and .project file respectively.</p>
-<p><code>JkEclipseClasspathApplier</code> reads information from a .classpath file.</p>
-<a name="Intellij"></a>
-<h3>Intellij</h3>
-<p><code>JkIntellijImlGenerator</code> generates proper .iml files.</p>
-<a name="Git"></a>
-<h3>Git</h3>
-<p><code>JkGitWrapper</code> wraps common Git commands in a lean API.</p>
-<a name="Maven"></a>
-<h3>Maven</h3>
-<p><code>JkMvn</code> wraps Maven command line in a lean API</p>
-<p><code>JkPom</code> reads POM/BOM to extract information like : declared dependencies, dependency management, repos,
-properties, version and artifactId.</p>
-<p>�PNG
-
-���
-IHDR��(��l�����<em>����IDATx^���Tա&gt;�P�S�8Kp���F
-q���FqFM��s�h�'�'���LN1hbr�QD�������{���.X�,��UT5uq��sy��U�ˮ�v?���?����h�������������
-�x����!O����4��	�����P&lt;�����'����B����@C(�����h�����
-�x����!O����4��	�����P&lt;�����'����B����@C(�����h�����
-�x����!O����4��	�����P&lt;�����'����B����@C(�����h�����
-�x����!O����4��	�����P&lt;�����'����B����@C(�����h�����
-�x����!O����4��	�����P&lt;�����'����B��-�h�����\�'�h��7�@�d�����R&lt;@��o�{�����1�'�h�'�h1œH#�x�v�x�S&lt;�4&quot;�'�h�'�h1œH#�x�v�x�S&lt;�4&quot;�'�h�'�h1œH#�x�v�x�S&lt;�4&quot;�'�h�'�h1œH#�x�v�x�S&lt;�4&quot;�'�h�'�h1œH#�x�v�x�S&lt;�4&quot;�'�h�'�h1œH#�x�v�x�S&lt;�4&quot;�'�h�'�h1œH#�x�v�x���xZ�jʼ��M[���/�{��������p0ܔ���x�v�x���xZ�b��E�����2	°��&quot;�TO��O��bO߬�&gt;u�Ci�T</em>ap�K:O�e���߮<em>���};7�x��Y=�x���1�B�[���-|�[;5�'�h�'�h�J��/WNz����]<em>�p�p�t������U��&gt;z�x�����'ۧ��f�}��L���;�p��O����5�P��������uEzk�F���@��-����˕�^�=�</em>I�c�wOUO���ϻ�)��t���1t聋���ޥ#�x�ZE��-V�x�f���u</em>N�{;��݌食y��LN?��X�ԥx8p�8퓏�|Օgo���q�3~���.���<em>�'�h���SU��T</em>a�t�L����W��|j��O-����;����0��]R����C��lR�J��o=�ޫ�x�ZE��-V�xZ�bB�&quot;Ֆ��������ɇK�MG6'5O��x��N
-3������)䕗���{ϕ�TݟM����
-;r��~�{�y'�sK��r�a�#�~��5�g���W&gt;|��{}�!�]{��o��k��ʷ_�os��~6��c��K�����ys�##.8���	�䞻����勧F?�0��]{�9'���}��&lt;����w������g�����6��x��O���F���@��-V�x��辴B<em>����$SH�</em>���	��3�_���n�;!�����tdsRm��ق�w�a�p���{g�}Y��i�����wb榧�޶�6?��;���&gt;�g����5���o�(3~�wȭHj���k�ό�u��o:x$�m�Y�����,mi�����w@fp׺��h���7�xa�)&lt;��&lt;�I��~&lt;o��D�(���(����JOKWMI�������&lt;1VN����	ӏ�����z���k��	���tdsRU���o�u��q��_]|S��)$����������ׯo�iȐ}s�ig
-?n���VZA�(�?���w@߾}
-p��κ��S�Ë���W溡���w�=���s�A��t�W_u��;������2�g�o
-~q�a�y�ؿ���f��F?�U+f�����v�ɹ����G��g�e_M+^��ô]�~�<code>�����_�w�}*KE���@��-V�x�����&lt;J��k� �%�׎�?��H�i�tdsRU���/��O&lt;qhnQ��VĻd��SN&gt;&quot;���� �\4�����~uT���{E�y�1��[��!C���_y�����9'�Y=�0���3����t��罸�[���яg����'����˾��0��#��À��zT&lt;�ڟ�{W��e�&gt;rC���Q&lt;@;P&lt;@��*��-~8-��T^&lt;� ӏ3��O3g��W��ˎ_.������)^�3hЀL�5��'���O����X��F���o&gt;�;���3�k���9�����O�����#s�Нw\�g��F?����n|���6���&gt;}��&lt;��GR||��ކ ;�p0&lt;�=�\{��[l�t�����x�v�x�+U&lt;���B*/�ʼ�Ә�?O���M:C}Sa�t��=��9��g�)�K穪xZ�մx��s�o��b����I�}|��8����e�������C���ϙ�t���Z�|f�$Ӧ�a��S�O����Z;�����.S�&lt;��������5s���������iS����y�1�&lt;e�x�v�x�+U&lt;��}GZ���x �%�����fJ��Pߔ/���r� �?9䐃���n��t��*��%_N�w�}�c�94�x�N��)3�[l޸�?��b����)����3�s�]�O��e�Ѓ#�T���x�� ��#�Mx0_&amp;�'�h�'�h�v(����Li�{�7勧����\�ͬt����G�on1TF�ELO�⩌ ��-zj.��ؘ�Sf|�,�j�V[���s�]�����g�_���N��U��(���(����JO��Q��5S��^�M��_��C���'���$=e��x��b����p���&lt;��*��L����=5O z&lt;eƗ�%�==�6i��Ϗ�3�����MG��� �ځ� �Z�T���7/NZ3�I�U��p��X7|򷗋�g��i��׷�n�uo_=sƘt�R���o��/8�����O�/���t����8</code>���5�焇Ե���&lt;��s���K���7��_x���я'd��v�����O�&amp;������?������Q&lt;@;P&lt;@��<em>��}=.-��T^&lt;�	ӏ�&amp;��Ҥ��!C���^���CV�|;s�)'ѵ�ʦoW�.&gt;��V��1?���e�3�</em>JƿpO����]U8�ݚ�񇼎8bHf|������G��
-����/bF^��u:5ϟ&gt;�REO���#�8(3��g��OMx&lt;�wx8&gt;J��gjȐ}ó?|����b�k#�q��v�u����t��x�v�x�+U&lt;-]5%-��s�s���X&lt;�?���c�&amp;L?J��fJ�ޫ�\8��V�y�e����~:^.4x���]��)䜳���\x���ܢd������2�I�����Vާ�f�1���sB^o:0f�-��/������ߴ��W^�|Р8�;s~�mq߭�{�a����⩧�g�5���&gt;rC��o�(/�t�&gt;1zpT-/9������X��gCo�+��c
-��
-�z�X&lt;͙�t�~}�����b�3�&lt;����k�1w�q��[��l'���3w�-��.yk��w�wy����o�E�O�:f�-!��u�e��Q��쳎����#7ě��v�G��p�ćo�������'��h:׺_�w�ݿ�����~��N��ڪ�g�6~�ʋ���<em>�a�mG?q�G��Ϙ&gt;��~^&lt;�)��x���uշo��=���z���\o�y��uW���޸�T1߮���N��9ð/MN�l0�'�h�'�h�2����
-������s��Li�{Ֆ'�9���N=<em>�[&lt;��5�&gt;}67��v���(/C���:��S3�|�f�1���W^yvf|����r�a�gGwu�u��u���g�ʷ��g��&amp;]��Q#�2�S�O�}�^�ޤEy�����\�qذaG��V������X��)d����ڄIҙK%��Ҥ��9ӧ�&gt;���m��6���鱷e�5)�c��+�B�y^�{�uL{�^ӧ�f�6�#�=wG:C̚�sF=p͎;nW|ǃ�{�XĄ����_&gt;�ġ�-���x��r�描?-z��ɫ�w�_$��{��3�8�oߵ����p���g�bn��Wg�7��L~����?�����x���?9~��J/��D���@��-V�x�f��W��J����&amp;Ign�,_6��9�Ν���K����$_t�9sƘw�&gt;[��2W�}�j��YO��Wґi</em>����fV�dV�Hb�xB��z���{��.y+�5��gğ��a�m3o0_yO��O��b勧�/WNz����Q�$����R����3��~
-��Oo�0�'�h�'�h�
-O=뺧�{
-w�:54��%�Le���~=<em>�Q&lt;@;P&lt;@�UR&lt;��������)n�����Q&lt;5&quot;�/�طo��������V������X�����K��0q�}i�T�0���a'���뮇�x���Io���E���2}����ʣx�v�x���x�Y�jʼ��M[���/�{��������p0ܔ���x�v�x���x�
-F���@��-�xiDO��O��b�'�FD���@��-�xiDO��O��b�'�FD���@��-�xiDO��O��b�'�FD���@��-�xiDO��O��b�'�FD���@��-�xiDO��O��b�'�FD���@��-�xiDO��O��b���ˀ�R&lt;@;P&lt;@�)��O��O��b��c��_o�@s)���Ų�(���z��K���߲�]���~�=J��|�
-�x����Yg���9٣�+��� �'��Ζ��͞�,�E4����h��Pgg�:�뉮��
-�/��qO�@=��gb��&quot;�����J���S����
-�/���O�@�</em>&gt;�&quot;�����M���M��Ѵ9���h�'��&gt;��gb\DӞ&lt;<em>�@(����Ƚ|&amp;�E4m���4��	���R��ĸ���x����P&lt;�uP��Ѵ����'�<code>c��|&amp;�E4����4�� ��X�|&amp;�E4m���4�� ��(�\&gt;�&quot;�v����I��l� /��qM�y���fR&lt;�����Ѵ�� �h2��P��.��qM y���&amp;S&lt;�5���Ѵ�� �h&gt;��P�.��qMKx����S&lt;������4�� �h ��P��/��qM�y����P&lt;�Uۘ�gb\D�L�/��UO�@�6���4�� �h��P�������?er�'wt=����TH�$;/����ZE����c�=��DW�o�ڒ� �h��P������4�� ��?EF����D��ԟ&quot;�w�|� �x��O�ѻx���Q&lt;�����]&lt;_�@�(����Sd�.�/��AO�@�)2z��� �'������ �h��P������4�� ��?EF����D��ԟ&quot;�w�|� �x��O�ѻx���Q&lt;�����]&lt;_�@�(����Sd�.�/��AO�@�)2z��� �'������ �h��P������4�� ��?EF����D��ԟ&quot;�w�|� �x��O�ѻx���Q&lt;�����]&lt;_�@�(����Sd�.�/��AO�@�)2z��� �' ߂/߁��Ԗ������E[W&lt;�g-}*E��p�}�Л)��|���&amp;DDdc�⩗��K�ĺ�aO@��M�����+z W�J;ĕ��I��{��}��M���#)��|N���fr�БO@&gt;'�@39���H�' ��?����{�t$������L�=�:�� ����h&amp;��I��s��4�s���x�9���ɹ@GR&lt;��������#)��|N���fr�БO@&gt;'�@39���H�' ��?����{�t$������L�=�:�� ����h&amp;��I��s��4�s���x�9���ɹ@GR&lt;��������#)��|N���fr�БO@&gt;'�@39���H�' ��?����{�t$������L�=�:�� ����h&amp;��I��s��4�s���x�9���ɹ@GR&lt;��������#)��|N���fr�БO@&gt;'�@39���H�' ��?����{�t$������L�=�:�� ����h&amp;��I��s��4�s���x�9���ɹ@GR&lt;��������#)��|N���fr�БO@&gt;'�@39���H�' ��?����{�t$������L�=�:�� ����h&amp;��I��s��4�s���x�9���ɹ@GR&lt;��������#)��|N���fr�БO@&gt;'�@39���H�' ��?����{�t$������L�=�:�� ����h&amp;��I��s��4�s���x�9���i������� ��f�' �� �&amp;XPBv��z'��O�@d�����z�N�' �� �&amp;��^����BO�IO@&gt;��M�x�4�'�$�' �� �&amp;P&lt;�H�t��O�@(�D$�� :�� ȧx� O&quot;�F��D��S&lt;��'I�x�N�x�)��hœ��Q&lt;A'Q&lt;�O�4��ID�(���(��|�'��@�$&quot;iO�IO@&gt;��M�x�4�'�$�' �� �&amp;P&lt;�H�t��O�@(�D$�� :�� ȧx� O&quot;�F��D��S&lt;��'I�x�N�x�)��h��������zܴ�O�⾗��  �M�x�uQ&lt;A'Q&lt;�O�4AU���&amp;.�o�緕I����j���3�}�ª�қD�t��O�@TX&lt;}�z����5S����.�&lt;�5�g��d2������㥲�Y˗M/��+�N�3��G�ڪWW�v�m�������ݚ���x����dɗ���l��9ş��J�l ���/���N�� :�� ȧx� *)��\9����v�|�]����*��Wi������wx8���l�Γ�SO=*;��~q��b~s�i�a7�tQ���_+����x4�������w�}��?����~�f�</code>���������Ho��(���(��|�'��<code>��ӗ+'��}{�+U�p�6*�~���wյx2d��^1^շo�0��-f����9��������1t聋���ޥ#�xz;��O�@�/��Y=��k�����?s7c��g��=��O;: u)���v�?=wnޜ�Hz�B�|9e֌�˗�|�֬�[!w�qY|��(��-~Z�|�櫮&lt;{���_�*�KGF��v�' �� �&amp;(_&lt;U��N�&amp;Ig���_|��Χ^�Ԃk_��˞k�s�~�%�h�K�T���3f�-�7�x:�����?�T�j�[O���(���N��S&lt;�e���+&amp;�-Rm)�{�&gt;Y&gt;~����|���tdsRC�4��G/��Ԑ1�o)��xZ�zv�$���6��UOa��n�pذ#��劉:���N;�ܷ��-�B^y��������^�������O���_}�+.��ཎ&gt;���=���7��5Ͽz��/�����9�g?x�1��xÈ2����GF\p���=w]1���O�~&lt;a����sN2d����3�y�ק�pۭ�������N�ڄ�sf?�ޚ�t��O�@�)�&amp;.�/�� 9��#3I��J�/d¢�����e�[�NH�C��&gt;�5ٜT[&lt;�o�w�a�p���{g�}Y��Ӫ���͘����ũ�xzz�m�l���_됃�����r�T�����^�w������n�����w�!�&quot;�m��=?3~�]w|��q���l��f�#��߲P���S�O88h���]�~��y�G�t����M� Ob���y뽤�D��D��S&lt;���������Qq~�̈�G�+�����tLq�G�yn�Mc�\�����5k愿�]pm:�9��x�׷s�:��8����.����i�ʷ��暈�d��i�U&lt;��޸~�־ay׺�5��ŧ�5���_[���&quot;�㍥���x�_����&lt;�6��}���wРW�/:5|����n�����gϾ}�tо7�x��W����;��??d����3�ě�����0���N���v�3�S�Ϫ���x�n����sO ������&gt;���i�� &gt;�s��k�o�|����K�.�Oe�(���(��|�'���T�4��qiy�f��:&amp;L?J�S �3d���v��椪���_�x��LqPm�Ia�zO��|Dvם�~�h�� ��������O���y�1��[��!C���_y�����9'�Y=�0���3���</code>:���^�vۭ��L����3�k��N�E�=���#�8(��~��k^�]�
-�=��
-���G��D��S&lt;����i�Nˣ4�Oa���Č����c�(��㗋&amp;g�E@�&gt;����f���ܥ8u/���5�
-�d��z2�=�SZ�O��&gt;����(&gt;&gt;��Gs��&lt;����q��'</em>||�]���+�
-�40S&lt;5��5��u��d޶��wǅU���)&gt;��8ϰaG�Ƕ�k���b�͗.�Z&lt;�|O�IO@&gt;��MP�x</em>�O�T^&lt;�y��1�(�2o1��t�����)|��;w����L~,��pJ)������Ӳ���1瞛}c��g�76:��㋏WU&lt;�&lt;����e�������C���ϙ�t���Z�|f�$Ӧ�a��S�O����Z;�����.S�&lt;����ހ��5s���������iS����y�1�&lt;e�x�N�x�)��h�R��+�w��Q�ʋ�0a�Qb��xJk�4��M��i�-7����C9x�8��.J'��O�ԯ_߻�&lt;7K���ޫ��OK�����N�sh&amp;�
-�L�RU�T����b������T�EOa�+.���[��xʌ/���
-/�x����#�Mx0_&amp;�'�$�' ��	�&amp;h��8i͔&amp;�W}S�x���˕��J'��O��7U�OeTX���-�ʨ|�2�SΟ[��&lt;��1����2Y�մ����瞻��۹+�ό�to���/��T�Q&lt;A'Q&lt;�O�4A�⩙?jW��fJ�ޫ�)<em>&lt;���w��C�[�7�0&quot;���]���t��#r�ܳ(�K��#N�[�e�2���ϟ[��&lt;5��</em>&gt;����8ۤ�??����k�&gt;7Y&gt;�'�$�' ��	�&amp;(U&lt;5��ŋ��Li�{�77?&quot;~����^.&gt;�y����_�n���ֽ���c�yڪx�j��8��NMo�M����7�T�r�<code>��p�ޙ�kV� �Ү�ߖ����ǟ[�,]����������{0O�~&lt;!{�{W��| 5Yxv�?6����OG��� :�� ȧx� JO���Gi*/��GI��Li�{Ր�C ����CV�|;s�)'ѵ�ʦoW�.&gt;��V��%?�k��Ҵ�i� ��Jo��n���CXG1$�57����/�?���]U8X���l��o���G�1#���:���O��'�TڑG��ܳ�㋋�&amp;&lt;��;&lt; %�[��+mȐ}ëw��c3Sń�v��n���;�?��� F��D��S&lt;���������Qqny��ם������tLq�GI��Li�{Ր G��ۿ�ˊ�ϙ�t��f�������S�9g���a��M+�ޘ�p���d��)��Y�n�}�l�����^}�9!/����xnQ�</code>�k�w���j�?3����^��x���o���+/z&gt;hP���9?������=��q|q�����3�s��G�����7]����B=8��/�t��O�@�<em>�z6�6O�r</em>N:��
-�੧��Ӝ�O���7|[����y����]3g���˶�z�e/��'��Kn�t�[��S���/�_|S��ӟ_5�k
-9�ġq��Q8���:�Bu���������_ߓN���W�����n����F������~�%��o�O~s��ԋE�O�:f�-!��u�e��Q���}��Q��]�~Q�=w�nއ/�~��/:5�j��ݟM���+/z��x|������?c��N�Exx�x�xj��	 ��UxZ������F�����k5&gt;�����{�2S�|�j�N;m�þ\49��(���(��|�'���L�pń�B�-a�t�ܤ5S��^����o�ߜ�N;��t|n��֔'���,ܴ��-�~�p���)�/�{�L��S����[3��c͎��+�&lt;;3g�J}�!<em>-��_�������?;���;/����=�W���&gt;{�7�:���)��xB�ӷޤEy�����\�qذaG��V�t��O�@�)�B�.~(m��M�$��TҚ)Mz��3}�����fkk�h��]�{[�]�b�;�����)�ڑ�Ż_����UM�t�߿t=X���qwz��m�]�~�ƯY=g����v�c&gt;hи��H'�{��Z�&gt;}68p�a��;���c&gt;�����N�2)��I/7�a���Ӣ矟��x��ERϺ�?�c��]{)\�
-׏X�|f,G�uf|�O��7&lt;x<code>�K���4qo���'��/�X�ņ�(���(��|�'���|�����vߕvI�'�=L���VY�l�;s��;癯�NKo��|����cޝ�lm?���T2� �oW͞=�|�J:2M%�ל��� /� ILCO�7_�x��q����%o��f�b����;�m� �+�� :�� ȧx� �O!_���R��i�TI����9Ez��I�¯�����F��D��S&lt;�,�z�uO5\��u�2Q&lt;5(�gB�ܷ��0�'�$�' �� �&amp;��x�Y�3wU��S��?a'����|�ľ}��O��~60���(���(��|�'��������EWL��辴f*NP�ﰓM9���]���/ܓ�$5��7�g5d���魕G��D��S&lt;�UO1KWM����i����}/w�������&quot;��x�N�x�)��h��'��(���(��|�'��@�$&quot;iO�IO@&gt;��M�x�4�'�$�' �� �&amp;P&lt;�H�t��O�@(�D$�� :�� ȧx� O&quot;�F��D��S&lt;��'I�x�N�x�)��hœ��Q&lt;A'Q&lt;�O�4��ID�(���(��|�'��@�$&quot;iO�IO@&gt;��M�x�4�'�$�' �� �&amp;P&lt;�H�t��O�@�o//(�x�N�x�)��h��R&lt;A'Q&lt;�O�4A�� �]/��I��S&lt;��o4�#�^���� ȧx��X��˾�߯�G�Ty=�F��S&lt;@s�=��s�&gt;'{�M���aO@&gt;��4���]�����ȅ��z�:�� ȧx�&amp;8{��a� q� ����t&quot;��O���/o�E��\�z�:�� ȧx�F+\��&quot;����P�' �� ��������t*��O�� ����E.�8��S)��|�'�h����l����x�)���qr/o�q��&amp;���</code>�' ��	����-1.r��x=��M��S&lt;@����%�E.����)��|�'�h��ĸ�e����t&lt;��O������[b\䲉�z�:��	ȧx������l
-��M��	ȧx������t&lt;�<code>S�x�)����*��%�E.����D(��|�'����.o�q�K�z�6�' �� ����[b\�ҩ��M�� ȧx�:����t$�</code>ӡx�)���^j��%�E.���ؤ(��|�'����/o�q�K��z�6)�' ��	��bc.o�q�K'�z�65�' ��	��b#/o�q�K��z�65�' ��	�����߿�����F&amp;L��������(��|�'���6��	ȧx��<code>#)��|�'�h��^6���� l����x�)���9��z�:�� ����ÞK1���(��|Nz��9��z�:�� ����ÞK1���(��|Nz��9��z�:�� ����ÞK1���(��|Nz��9��z�:�� ����ÞK1���(��|Nz��9��z�:�� ����ÞK1���(��|Nz��9��z�:�� ����c��� 7�7{�$���(��|�'���6�� ȧx��</code>#)��|�'���6��	ȧx���&gt;�z�:��	ȧx���R���0�' ���h{.ż��x�9����R���0�' ���h{.ż��x�9����R���0�' ����%�&amp;��)�=YƧi�����dϥ�u�<code>�U��WN�_&gt;���� (�1�@����)^ՍO���ŷ�)+��HoMc|�4s&lt;��'�����8z�j���4�_|+�����4ƗO3���xJyL�����Q&lt;�O���l$��O����FR&lt;�O��K|��-�*�aȥx�)��z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��ź �Z�aȥx��8z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��ź �Z�aȥx��8z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��e���E;�7{�Ma�\�' �� �����x�)�����H�' �� �����x�)��z�-�Z�aȥx�)��z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��ź �Z�aȥx��8z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��ź �Z�aȥx��8z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��e���E;�7{�Ma�\�' �� �����x�)�����H�' �� �����x�)��z�-�Z�aȥx�)��z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��ź �Z�aȥx��8z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��|6N��ź �Z�aȥx��8z�6@kY�!�� �g��]����e�\�' ���w�n��ur)��| �� ����hK�m�ֲC.�S�-�-e��f�&gt;�N�]�%�8��Lv=m�S�e�X��Cv�n��������Y����d��fQ&lt;�Y|:{������IZ���D��b]�]i�x�3��H����}AD:/�U�ޕ֮ۊ�:����[Z���D��b]�]i�x�3��H����}AD:/�U�ޕ֮ۊ�:����[Z���D��b]�]i�x�3��H����}AD:/�U�ޕ֮ۊ�:����[Z���D��b]�]i�x�3��H����}AD:/�U�ޕ֮ۊ�:����[Z���D��b]�]i�x�3��H����}AD:/�U�ޕ֮ۊ�:����[Z���D��b]�]i�x�3��H����}AD:/�U�ޕ֮ۊ�:����[Z���D������wk�Y�����}�o���ի�DD6��v�V&lt;�Y��PDD���n��鼴���7�N��g��O?{7&amp;&quot;��������l���tՔy_�����_��r�!���</code>�)/&quot;&quot;U��m
-���&gt;���?</em>^�����^������&quot;&quot;MN{��������Z������c]�M&gt;�]�OuVj#���&amp;.�o�緕I����M-�|=cއ/�Z1+��.���Ik7ڪ������E_���ee�a�}ED��6\W����7��i�&gt;^��u�iq�'Ҷi�x��܍0�7��O]�PZ3�J���nY�z���J&amp;3�_���=��5���	���v@&amp;���V[�����n�������L�g�5sӛrS��զ���}��$�
-��ț��Y������کi�F[ᾰl���~;T<em>ap�K:O��q�B&amp;<em>-�:sƘ�g�]��&amp;q�p�D�w�,�R�u5��秳�n��wk����]̄��=]?Kź��Y˗M/��+�N�S�|/|�L~���</em>{(��-�ݟM�&gt;m��YO-]25����ODs��R�n�X��O�Tg�F��˕�^�+m��'�%�1���r�a�w����^,|�q���?����&lt;i���G���\v��}; ��������7]�(Γ��G�~�����T5
-�j�%�g�=
-�!�}��N8������3�&amp;'����{�&quot;��S�ڍ��}a�ʿ&gt;ٽ$�.�|�]����</em>��
-y����t��i��W��'�1i�:Y<em>��
-�jL��Og�������Ns���¯�ųL����zTv������{Ŕ?�[0���i~0��:/���v��ߴ�N�������C�থ��v�X�c��ͧx��t#��˕�^�=�</em>I�c�wOUm����ϻ<em>���훝.O�O^?��o1sƘt@q52~6�̮tc�j�R��5&lt;�J�����С.�brz������6�/�or�^�~�SI���{���17�0&quot;;����t|g�A�d��Z7��1�&gt;?��v[Wg��v�y��&lt;���.#���v_W7X&lt;
-�oz����{M+�.qJ�c�Ǩ�I�7'M^�Kźc�n&gt;�S��aq�Y=��k�����?s7c��g��=��O;:~ao�F8��{���݅w�aqλﺢ�x�CtR�|9e֌�˗m�ٯmc�|��R���=�
-&amp;n��_�O&gt;~�UW���v[ǏuƯ�ޥ#c�m���²��p�Sq����gC�/�̝�L߾}�]��b��o�$,���]��zT�~�;�-���+�:
-Z'K�Ժa]�)����ۺ:���N�uzl��&gt;�$]9�gS^Wc��[�<code>��I���*���ޚճ�c+��;.����������񏷹��3^����)'7��7��Ѽ�齚�&amp;�ۥbݎ�n7���ҍ�8U��S��Iҙ3���_���?��ڗ�����Zx�d�f ~ao�FX�k�&gt;7����_Jo���&amp;[�i���.&gt;��٤¿�L���^�m���z_�R ��3gґ�B��:����/���x��;/O��i�:Y*�� �jL��Og���շ���O���տ�=���c��:�����.JW���d��X&lt;U&gt;��}K|��-���|x�v�ǋ��|�E����]�ޫ i�]*���v�)��,�x�WLH[��R���}�|���#3�p���椆�0�@_tjHؓ�[{*+�&gt;��8ɼ_X����'n&gt;�׿4h��S����+K�3����_}�!������9'&lt;5����,��� ��a�0Ջ����oN���{̡7�0�̻$N����|�C��k�A�8�������#׬�&amp;aoH?��</code>vd�3WW5�m��6�t�oO���MxuT�o�VZ���&gt;��xB&gt;[�z:�k��?�܍6䕗�.�</em>ҩ£
-Otx$����p���;i�[r߆��z�㯾�@8���^G}�uמ�E����������GF\p��I�Y��B���я'��C׆/�!C�=����&lt;�G�x}���5&lt;���ڍ�̾�����Ԗ򿏩S�����Sv����s��),��T�%^c��vtxц���3Oߞ~�8��{��˦L~,|Qz<code>�r�ߘ�p�k������Wo����w]����2�?������)OV�NR��uL��u���'�яǺ���w&gt;]����ҏ�����^����F�����es��4��j������SU�T��ёG� [@��y}�o�&gt;!ዥp�毋 ���nװOY������YOu�n��L\t_Z!r��Gf��)$L��_ȄEw�����}�f�����緦#��j7����v����9��w%������c�JV����E�Y�֬�S������g�O��-���}����J���;��޸���Z����Q��[L|����V�ʎ['l���!�����D�g���+ώ��-$�5�s�����[���&gt;���ǃ�Օ�v�x���~xɕ�h19&gt;�37==���w�?���ʼ ��V���;�n ��_��g�?�m��f�#��߲pb�n��~&lt;�</code>89��Zw�w�����i�F[f_(��\��W'�s��\r���8�wל׽7Nz�ԛ�������}!���!��=뾴}&gt;)}���_�������_�9��v�k�����:
-k��[��eN���R�:v�pSء2�gL�����V�N�T�u�S�a]�<em>��i�㱮�ɬ��������/z���ԺZm�T��^q</em>/���:6��xk�&amp;Sij����|���v���uۺ�|��:+�.]5%폊��gF�?��X9�?���c�&amp;L?J�so
-;��5�_��f͜�ױ�MG6'Um�a5?�ȃ���:�-���i��{��y�A��b���&lt;���S���v�o�������)��yXkr��<code>�}��۷�A�����:',�q���/��磟�9�־�.�� G���^�ǃa��|ϳz��ốB~����܍&lt;|� # ��#|n�g���vU���s�ֳ�:&gt;sS�g���Y��x�&gt;5�_��_�������N�/�x�̞Zj� ��}�z���+^*��7�6���~_�����Ix� 4��ߝ^</code>��u/���m��_o�|+�Ե�Є��L&quot;l��f6�F?�pb�[w��'�{bX
-__��ǲ������Ok7�R���&gt;L�ω���Ͼ���}Q�����	�%�S��X!s̡������~�e��g?x�E��&lt;����	'��xp&lt;��Z������k'���~9������v�jׁ���j�ɞ꿮�]7���??�~&lt;���Q�ZWG�s����ݺZH�u��⩪��TX&lt;U�uT�;�����7p�U
-_U��7zݮy���b�SY��x6�u[�Tg�6�y_�Kˣ4�֩�0a�Qb�Zpm����īӑ�IU�n�4&gt;�ġ�/��TU&lt;�&lt;u[���9�l����<code>�&gt;�-]�V&lt;v���Ƕ�n���� ��Z&lt;����I2%}\h�s�9��xK��R8��̱����Q&lt;��#7?�����aϤ���F^�ϐop��MZ׺Vn������E��f~��R��/�֕���޻�N82��j7�SN&gt;&quot;/~��/M.�������=|[�(��!lZ��+/�_���}�����+&lt;�l��~&lt;��&amp;���s4����w%�h���|Z�і�f������Q �u����Bg^w㍓޺��O��{?��ĩ�LK�&amp;L?JL�� �O��6�������o�oL|�0�pB�匯�qī���t�k8#,�#=կUOũp�����uú�S�����c]M�u�k���j��L*?߫�x���(,�[l��&lt;�k�Y����x�NS��E���X�kާ�����S&lt;�Y��p����(M��S�0�(1c{�F8sƘ���ˎ�+&lt;�������?&lt;sS�} K�t�=d钩��/��7~�����%&lt;��C-�K��'_||�/��3&quot;,R_/��fu�'{�S�F^�Ɩ���r���.&gt;~�чt���&gt;_81�W!��� 8M�Æ ;�p0&lt;�{��_0�9G��\�F��bР����*s�k���� ��o~�83�k�����n��$�{�=2�BR�%2���я'^��~2W����x�\�x�}~˧�m�}����79!#_zm�wG7�~�����?���rK%L�~��N��-�\����]3���=O�f&lt;��ׯo�k|M�K�k��]&gt;���?�_�:���گ�j� �jL��O��u5}T�ծ�^W�7��%��9s��T~�Wa�T��Qȋ��׉D�֢ٳ�J'������F��5�S�m�v�)���FX� � ��x*�6Oc����-�|�� 7��e��;w���L~,��8UO������M�%7�7.�=���dƇ�$��^p������]P���J��-� οp��qA&lt;�ԣ �&quot;���l�w)��/�����x�jX� �״�O���y�1��Um�˾��{�+�ψ?(~�����a��C8�S��|��}��X&gt;3N�9{�)���_ύ~&lt;!�'^ý2��]�Ny�ݹ?��DO��o��v�-�/�z���� ���vzS��y;�N��*�V~3+.bÇ����%P�uO�7߼_�k��)��˜Ч_��@O���j���]7z���I��я�Ǻj]]?�ZW WX����Mq*?߫�x���(�9�r�~���vt����.j&gt;�oĺ]�&gt;eݶn7���Jm��tߑ�Gi*/��G�)��t�K��Pߔ���r󰂇���o�(�$�����]�J��u��&quot;�R�Su!�&gt;�V�c�94,��SL�G�+&lt;��xދq|f��4��x�k���&gt;��0f��љN=7�o�lli*���~���ǿ��{k:�8��S�����G��� /��6����R�WO�F�$�����L����=�����͟�z+����3�s�G�O��eR��[&gt;��hK� �w��3�)_�AJ�Y~� �%�S�����2_=y_��=�O��ip�T��u��O��S��7�ϝ���S~���Y��sױj??�~&lt;eƗ�u5��|6�u5O�������sS�'�*?߫�x���83g����_ޠ�k�{�d�|������F���ݧ����=���ˤ��g��v�V&lt;�Y�����Sq�m/Mz����F�ѿ��+���N��FO�����ڪ�%Q� w��&amp;䞻W���b��_�Q�F^�Ɩ����y��+� �u�q�w�{'ů���Nx��d�������ŧl�=w �+�όoԵ�N�~ʺ�R�WOٍ�� 7���mΟ�z�y�-ccO��eR��[&gt;��hK� ���E�M�S��⤻@��^�M���S�u�گ�2���u����o��˨p����|�q��u���O�O��eb]Mo*�Mp]��S��TI*?߫�x*#�u�&amp;��^�����*����CU�uQ��|#����S���&gt;���[�ˌ/�j_�e��u[�Tg�6�f��]q�m/Mz����Fد_ߡC �?��xÈt�L�^&lt;-�br��o�&gt;'����cn w� ��Tx�]j��������g�q���6�82�~�m��~3_H�y%[�J�_�lz��P�m��.��Ùgfn%M%��T�� ��v�ć�wg�sxy�#K=_=e7ڃt��#r�ܳ�p�2��ϟ�z�y�m��)3�|*~˧�m�}�����&lt;eVzS�����⤻@��^�M���S�u�گ�2���u����oߠu�'��Y��sױj??�~&lt;eƗ�u��l��j{O����6Nuܱ���V�uQ��|#����Sqp����v���S��TZ�n+���FX���|�|H�%���x*����I��4���%�&lt;&gt;���^O�3� 翾�v[w��~��sAL݋��_�/&gt;��27}��ś*&lt;�.�ФY���?=��A��6�R�#�򍼒�-M��{�]�N_1��VY�����p��*a۸����?6����OG�z���Aa����O�/���t����÷���kVωo�U�c�5ϟ&gt;�����%�����Oˌ/��y��я'$�����S&gt;�?���ڍ�ԾP�Mp�yaB�錑׏�gv������|��%�̛�'�Ҥ��o�/����/��7u6i��׊���%o���� _�ſֺ���u�����x�������1�S�_�ծ=���jO�O�uպ�~굮�U�T��ѿ��V���� +$| ���k��H�1_��7bݮy�J��vO�OϦ�n+���F8��q�0z��_��AHn�Ty�&amp;L?J�t�K�ޫ� z</code>�B
-g�a���-e�~}�S3&amp;��ܰ%�Fq�^&lt;�s�����/ܓ��?�o�����BS<em>^�_v�魅T��W����p�7���O&lt;~ӰS�&gt;�;�m��M���T���k/�m��v�u���!C�M���~��3?���]U8�ݚ���#����67q�m��Q�'������������5ϟ&gt;�R��x�G��ܳ��_�Mx&lt;�2�Gɼ�B�JOYX=��{����-��n����R����ϖ�y���{��~w�u~�ޏ?}h�Ww}���_xuإW�}ӭ�����~�_�]�tH�ޫ�4a_8�����]m�9���x5�Φ��^���w�H_���#�+�����u ��c����{�8����+sSL%�d
-_�U�=���jOS�u5}T�Ս_W�V&lt;~��̿_V�uT8���wg���wU�Mo��诋
-��7bݮy�J��vOSϦ�n+���F�tՔ�E�S�=��܅#�;)O��i�T�0a�QҤ�^��^5���į�;︬�xX[c�=x���]ҍ0䜳���\x����Խxz���ం_�ͬ�o���;w�������}ܱ��?���5q�嗝���8�o�����#7���J��U2�w'�8t��.�^��tX�
-����Ο����czJ&lt;_��B�̿������٧�f���׫�:'�����cF�R|��K~������_��-�����ߙ�l�<code>�PK���x�yF&lt;�yZo��x���&gt;���ڍ�Ծ�Ū�orb�7Eg����=R�K}��/��%M� �I�UC��/��7�ś�}f�K� _ww��:��]y����t&gt;=��7��و���ׁ�]1&lt;s�#��O?��x���S��B*\'����v��]���4��XW�Ge]��u�i�S��2�J��ZHU_G���y�y�u�Q&lt;~��'��&lt; ;�̇��ۻ0)����K���F4�Q$�5��o��&gt;�-�O&lt;�@@E���r�}D��FXvYw��X��Q����U�7xp���l�fz�g{v�g�����,=�=�==�]���Q ���|&amp;���S�۴����S�R�%C^{�[u2jO���]l� x��D=��ݨn���v۞s��}��$͖�UmB��q��H�ay�Ƚ��C-2�����D^x�2�i5�.������ߜ5��y��&quot;����X S؆�������}��n{mF9=�|����6��e}~P9��|rK5�,�'߸�2qBo5箻�|�խ�̣G��d��o�@f��h;��=O]�p�u�.��yPBy��y[^�}�6��D^ͫ�&lt;[�m�5��W��F�v��]��C��t��S����_P��1��s�W����e���&amp;���s��}���79����vk$�:r�����(����s��G6@}��aÆ7��P^Ϳ��G� 5�]^��S��R ���'�'Z��B�ۑ&lt;T���v���p۩�]qʥ��ٶ�e]�}�d{N��7&quot;I��yA�n5�I�[;^&amp;������r��(��1�;�uj=�8�ңzԺi�KG�Ӿ�/� �M=�{�]�}*����� ��~{UW%O�� ���nЮ��Lo�U ��:��a Oi_��+~I�r��rr�:�M:����g�IM�g�_�x����O�����'�]�ꋘ�/�^��d��N�&lt;E�M�]�(&lt;E,Չp��)�����q/Loמ��p�</code>�)��&gt;�ٱ�J/Ҹ�7��ӏ��Oz&quot;����g5_Wٸ�.�+t&quot;/&lt;I.���-���
-z��@$����HwB��L��c3:�������3�]�d�z?BR������|ן����t�Ej�V���U�'B��|ooSey���j&gt;��u׵I��#����쏡��WG����[U�����j�5�2��8�3�=y��Z�G�٨y}���m����3�Nz�U��O�,<code>�^*���y�/�^n�z c��\ޙ�ՐK@����}�v@r�EIN=5�_5��=�N�v2��:l�A����?�ޞ�U �Uk���j��S]����rCt�w�����6:Iمo��/�^�{y���y*)��D�'���6���%=U���vN�kO#J�ڇQ�ا=;�Rig����~� #�6�Փ�n_���|UN8���d'�Ė15�O��o�����T�h�/��o�g��{v�(��t���;���on����Y����G&lt;$S'��ӳ:�k��t�_.�?c��w����K���+[�h�����\��� qE��ڏ�}�A��]4L�W�Ė�K�W�Y�=[�v����:�U�&lt;�N}m�v�!-�.�N&lt;r������[ꋒ]w����c�O�x+/q��ǩ�5&quot;��Y��u�s&quot;��#�ң���Dȱ4tH-_����OvO�I� :�KK��N��J�5��}�c/�v�����.4���r��)�^I��Rv��aE�-[l��Q]��{Y�W]����\Їj�-�(�����&quot;��g��=F����׉�����Id~{���B��M�v��37� ^x���^��Dr��Ű����G����~۟�$e������ƍu�|_����&amp;�v;���6�ٞ� O�O�ުӰIS�yPՏҫ= *ʯEs!��N���� ����u&lt;�U�g� =i.�ݱg�{/3��~Çu{e�ㅳ_�?�Z#�SU��&lt;���,/��O��k5��![2~�o�zΞ�N�����Ec��pKT2�=��+B�h�2�����F&quot;y}�{��� �TTM�Q\f�y�G���kv*�p^��P�U��({{�lҫ��JO�~4�ԥ�W4T�w�=r5l?Z��z_��n�M���� ���������$hW��j�&amp;��h^�K2��)}�좰�z����f:A��v;x�ݦ�1�D�-&lt; �4��|س�w�Wx�߮��c�����\��~�ޒj�-�c&quot;y}�{��� ��UN������,(���$Y �@�af(����]��D� ��J$�gv�m OKz&quot;�kO��t [uT܉�!v�r19٭+�-�h3�H^��h���-������ezGN�v ڰ?3�U�Ю�m&quot;y_�� %��3��6����:��ᓦ��:�(���'���Qߛ{�����s8�f&quot;Q���=Ѧ:/����$2���ɷ�D�g&amp;B���ռMT� B���Du|f�ݦ�1�����Sf��L� �w��#$�RR����(1�������N����k?D�NT�ovO�&gt;�;o,���]�*2C��Z&quot;�ځh���DhW��v5�����ng&quot;Q��m�)&lt;E��DhԞf͙&quot;˗ ���Ϩ҇���?��.�� ����B!�����y!iJ��:~��K�{��v+.���_�(��BH=�v�B����&quot;V�PמTՉBH���m��B�]hW !$^�n�M�)bAN��fO��D!���h��!$^�]%��x%��6���q&quot;$�ג�-�BH�v�B����&quot;Ɖ�B\KvO��!��UB�W��nSx�'BBq-�=�r^ ��^hW !$^�n�M�)b� !ĵd�D�y��{�]%��x%��6���q&quot;$�ג�-�BH�v�B����&quot;Ɖ�B\KvO��!��UB�W��nSx�'BBq-�=�r^ ��^hW !$^�n�M�)b� !ĵd�D�y��{�]%��x%��6���q&quot;$�ג�-�BH�v�B����&quot;Ɖ�B\KvO��!��UB�W��nSx��z9��8#�'Z� �r�*��Kv�m O�D������C� ���v��S��� �p��^�s;� W��]}1���ٞ� O3_X�����������l�ꋹ��</code>����PxB�T|R!1��$�O�S ��gǊO̩���YE�	��fl�9�'9��w�9���|vl3֜
-���U�3�T4��@ '��}&lt;3�	@UT|��5iНAO���)�3mƶ)�^ a�r�&gt;����ڴ��5)�Π'���
-O�5&lt;Du��3�g=H��
-Oz��N���8��C�<code>� z�6=܉AO���5���!z���SI�g=H�w�� �����;(&lt;!6��!* zBL%=�� �p'=��GPxB&lt;��CT�8�9�� {�� �����#(&lt;!�Qa�b��xf��P�wRa���p�'�@��!* zB��z&lt;3� @@��;�0� �����b�gx� ��#�� z��p'=�������Qa��&quot;��̠'���� '���u��Z���0� ��xf��Z�:�I�AO�� �(&lt;�iA���0� � u&lt;3� �� ÝT�������px� ���P�3����8�I�AO�� �(&lt;�]����0� .K�xf����wRa����&quot; OpW��!* z���8�� �PÝT������vx� ��঴�g=0�� '���-��4���0� J�xf��CÝT������\���=�5u&lt;��@Ko�� ����@VPx���� '8���3���hiwRa�������� Qa����̠'���6�I�AO����Qx�s�8&lt;D�AOpD$�3���l��p'=��zF� �Y�jŇ_蓻f�%�������\/� ����b�*�u�:w�5�����k?�#+1� ���I�?��v����k&gt;���3��t�6�����k&gt;����=�?tԑK8�D����p�'�u��g�Q����D� �CG���@T(&lt;��QxB��QG.�x O���A�?tԑK8�D����p�'�u��g�Q����D� �CG���@T(&lt;��QxB��QG.�x O���A�?tԑK8�D����p�'�Ϝs��.���1�� *�����(&lt;��� O���A����r�'��� O��������p�'���A.�x O���A�?| r �3��Px���������\�� *�����(&lt;!~�#�p&lt;� �'��� O�:��%���B� ��8��⇎:r �3��Px���������\�� *�����(&lt;!~�#�p&lt;� �'��� O�:��%���B� ��8��⇎:r �3��Px���������\b�sV̑��G�a~��e~ ��Qx�������fuԁ���g5�?����'��� O�5~� � ��v��۩��@|u�����C� �� Px������� (&lt;��Qx��������(&lt;!~�[�' ���=A.����D� ����0�H� r �'��� O�:���B{�\B� ��8��⇎&quot;��О �Px�������� *�'�%�����(&lt;!~�(� � r �'��� O�:���B{�\B� ��8��⇎&quot;��О �Px�������� *�'�%�����(&lt;!~�(� � r �'��� O�:���B{�\B� ��8��⇎&quot;��О �Px��������b���_���������p�'���\@� ��8����@.����D� �� Px�������,��B{�\B� ��8���o��� O���A�?tD�������p�'�E�Q�=A.����D� �CG@ThO�K(&lt;��QxB��Q�� O���A�?tD�������p�'�E�Q�=A.����D� �CG@ThO�K(&lt;��QxB��Q�� O���A�?tD�������p�'�E�Q�=A.����D� �3g��%ʿ��� r �'��� O��������p�'���\@� ��8����@.����D� ��=Y�D�������p�'��B *�'�%�����(&lt;!~�(� � r �'��� O�:���B{�\B� ��8��⇎&quot;��О �Px�������� *�'�%�����(&lt;!~�(� � r �'��� O�:���B{�\B� ��8��⇎&quot;��О �Px�������� *�'�%�����(&lt;!~�(� � r �'��� O�:���B{�\B� ��8���gΊ9�K��� $��9sVt�6W�5���Ȟ��  K���U�v��</code>���� 5
-O������n����������Sb�$B��ī�@;I!�%^���@��G�W��v�B\K��#�����!$���$!���x�G��p�'BH%^�IBq-�:����
-O��&lt;J�:����Z�u���!y�xuh'	!ĵ��&lt;��(&lt;B�(��0�NB�k��y��Px&quot;��Q��a��$������.��Dɣī�@;I!�%^���@��G�W��v�B\K��#�����!$���$!���x�G��p�'BH%^�IBq-�:����GO˫'�)��ʴ�/��6�oS���3BH�W����$�R���y���XxZ�h��)�^�Sޚ;ٞ�B�&amp;^�v�BHV����.p��TZ&gt;��	[U�$����C%K^��́�ŽKJ��K���L���UB��xuR��&gt;��$���&amp;^���\�V�iѢ�/YU�!c��,����</em>���������!��īÐ��Li�i'I�����~ўN�S��y��8TxZ^=��������ݧT�_ZRQ5;Jp-�U�.Ic�eK'&amp;��4˫�ٞ_�G��^���O-Od?$��a/=��]���=ܞ9�TWM����
-�S��+��W��n'�F=i���0Uh'����~���N��Rǚ&gt;��~��</p>
-<p>4hpC����3A�#<em>�G��@��OIRu�0����v��'=��
-+��
-N��S���_����������{=v&amp;MxJ�g�ħ�]y�Yj��~w��<code>��}����t��h�̙���x/�e�3�����6ֿ�^{�t�O��Ϳ��c����ī�</code>��v���F�n	������nT��J/�Q��^;yء�6((�c�_{�a=������V�����-�7�f�������#�� �
-Ocj��Λ����?j��?���8���r��T�:T���w����vm���e
-jz�����[�lypi�0{��L�_�8&amp;^��4������m<code>��s;�ȿ��o�����4}���������M��\|ѩ� ���ܠ6c�x����#�� � OCǙc�Tթ���~�fٽ&amp;��(.s��$cF����F�&lt;�XuW����ԤIc=�}����tg O�U��w׹���� �;Ta�: ͚�v{��:^]�]v�I=��g��^$'S��+��W��n'��&amp;.��N��m;��s�)�vR�䤠���=���� 5�Q-~�U��K�g�l5e�ӯ�|�~�&gt;���y����¡�Ӹ��8�iȸi����&gt;a�mv頉�eb�7�ٽ&amp;��/-�/���p��⻟(��9��5���,����+�\]:T��o�&amp;��Ꮹ�W]y������8\x2&quot;�&quot;�B�Uب��p�wb�ܡ�/أG���ʽD�z�&quot;��0��7���*��N&amp;�\x2��T��_�z_c�[oV� H3h/�o Ux�&lt;�y���P�iiդ� '�5w����T��ᢊ~�f�jԀ)��L�����f-������Z��}��3it���q٥�K���ӕWn��ӥ��J��%y�=~��۟s�q) Oeo���?�yƱ�������S{?y�O��塏�&lt;���c�+���KuzO�kd ��*c �^�6~������;T*r���KZ�:ZzV����Sz=����;M�a�&lt;7��z����^*��e6��zv�X]5~�s\su������_XR��=�믪7��}�� yɎ?���|��݅��^*��������?�$9�K,G�#�d�Z�Iu�̝�仮^��zԿ��M�: v;�#���⥗&lt;l'��¶��s����H�}�1�5o����F|��m�U�9u��� O���r�ZÐ��zs��i�V�+~I��g���-��:�(i!���ד���Q��� {���J���T�;���xʳx����p�&lt;b���� 5� O:�7��|sހ)W��,,�q���n��+�:�O��݅��e��T7��U���&lt;��AM�購z�w���߿�f�Y? ۡ�K��vk$m��6�&amp;��ԅ'���~�mw�e'�25��L��@���$+&lt; |�s�ƻ��Z��I/�:v��A��9w�a{}�m\������S����7�O�ܡ�&lt;����w�����C-�'c�T�Ғaj� .8���?�� ������ݒ^ڦ�~��7i�x�&gt;��C�^��=2Q��ūY�=_���;��F�C���#/�zt挭�2&gt;�W�!x;� �7I��DZ����d��&lt;Q�-i�_v�9k������w:��T��3���&gt;x��8zd5Q YJ������G��3cz?s�-��Zcf�P�R&quot;�����g�3Y��&amp;��#�� 0� O%K^��EՔ����z��I?��%�u�Q��Ϣ�ta�AUU������ ��^s��s�OBu��-�x�ч����VOׅ�a/?�괣����\{Mk�Az眓���7���۫�&lt;�٥��:������I'��;��1������m��ϓ+l��m��Wjb=���s�m�9�W�Λ\������B�����T�Z�3��=Gz� � �h���kϽ������s�~��{�[���i��g�r�\R�K ]5����1��+�۳d�X��O�g���?�d9�e_�)�Ǯ�?J�&lt;��e�5�e��g&gt;�I�R�J�: a�I����N�j'� Oa��P�y�fP�zh�w8��#ڵ=��#�痾�=�C%</code>;���t��z���v�u�I�,�����șg�iּ+	�ޘ��l�7�CjIOaۥP�_</em>�{��c[-ǒw��6q�&lt;b���� 5�
-O��iw�$]
-K��p���ι�[���o�[2񾙳o2�f�({Y��,<em>O�i/=(��){��I�՝w\�f&gt;���2o�������rI'���IZxjs�j���/��dsf�����Ґ����3���ZO�9c��Im=�N;us}�<code>��y{ްCi��??��w�����/�ߥ��eo�ݮ�{{wuY��睤?�#��Ӎ�t��+����vj��EV���K�VM7&gt;�r��Ǩ�/&lt;��;]x��������H��D��S�v2�q^U9N�h�]9ur=}~���K:�%��L��yA���Pt�I�~�v=}���o��L����������;Ӧ&gt;��LZx �.������O*jq�#��nO��7��#������ӳ��v�Hró/l�M�|k����t��܆&lt;Ud�����m��1������W��J�;���|�����Ep��S�f�/��mڤ�j�����BW�*d�&amp;��������ˡ�r�z.&lt;�?��h���Xꎓ1�&gt;l�!��� 4��%�tyE�Ο�����g��j��=n�N�zez{�m}B��?3&gt;}#�m���C�s�w���j=�Z�'ʶ�����v�m[^6�;���a���I;�_x �N�:��x.����&gt;����Z�c�n1R �N�vx�=��6���z�~�v]:�c�����I'a�ꚫ7�-غ4v���/&lt;�m�B�o2Tx ���GTRmO��7��#������S�����:b���|n_���:T�+�{ �&amp;</code>�J.�����5p&gt;���o�)��+�_�ޓHVx�\4V]��n}������Բ�{U,^���˃qU��\�g�Io���7�X�p����ڜ��Ð���f̿�&lt;���p��MR��^Ї}�2�=��Yʘ_-2b�c�'nu�j���TH���p���n[VP3�^�O��a���I;�Yx
-�N&amp;��2uJ�~�:<em>A��Ėv8�WF�#U� Qs���:�$��?v|
-Oi�Ki��L����T�</em>����o&gt;�G��p�s��Ǌ��Y��ˮ���g�Z#+��E���|��d�^C���Pm���]x��C�f���R{%F��!�~�1g�q�\�%����������ڶ�n�G</em>�ך&gt;��v���������#�/d+��0D�~��Y��Ϝ1@��{������������+ՔK.i���0�A{~�ī�@;i'�v2����&gt;J${_'�:��
-m��By�I�[ހ<em>��C</em>&lt;��x��k�h���7����Qs�Ռ��ڵ=_�?�����Sx��]�5�(&lt;E�����p�I�m�ח���&quot;n������ǧC��}�c/m�;T�vؾr�X{%F��H�|��M�v|_����p�I/�þ^����}R1Ԏ;� K�ϯ�-��x�+�8�'���y;��0�Nډ��L�Wx��C� O%��ӾM��9Be�ħ�O ���줱�)&lt;������h��G���g��O�n����G��@���?B�q�X�!��|����d�^<em>��w��٦a˖K�-	�-7_l�$oO����.N����ӻ���ZU��7����Ϻ�?�z��+���3�����p�&gt;w��۵=ߞ�?��0�Nډ��L8Vx</em>-ָ�.5��9�?�z�/�G�P���SGRx���Tq��T�v��d������3��'m�}^_�#�� �
-O�n�ۮ�<code>�P�}�M]�4g�o�?:Ϛk/��s�\o��{�h#�b�2h��z��.)���.��TP�Eye���J����F����ƖTWMP�@����j��/;Ø_ߋ!i��M��uǦ.����?n�����ꂵ��e���.&lt;UOL{��[�����N&quot;���۟�=������^���t�F^�֭7���i}�9���H��D��S�v2�88�~����;�x�r�Å�4����S�R���M O�G�ߞD��o~�G��p�s��T_��ܲsn�(}�3�m{��/�7󭮅�;M{�m�A����M�ۺ�N&gt;��k½��Ov��H˖�ӑG���r�����m�i��;Y���&amp;���}�6�_$���$Q_{w�Q�3f�|�o��;]�N?��C���~�N5��A:��?�DYʘ���w���&gt;��xHE����߻����j�������{��u��z=1����k|���_�q�����~{�S]��z��a{N&lt;��(�b|;��rdʻþ?���w j���I���a0��0�Nf��L�,&lt;%·����{�V�DZ!c���z�z(U�)H;��p�)~���)&lt;��.����Ա��y$Q/ۓ�뛇���\�\�dɫv�HE:Q��|����\�h�T_.+��Ŏ�}�c/�F.��4uu�]Wy��5��3�A53�;T��ڜ��s�%����(&lt;ɥaA�w?�����O���;��CZ����D��&lt;�����F��k~��헇&gt;�~�Ǫ����W�t���&lt;�f����_Y���a��&quot;lo������I���wz� �9�_P߁%���_&lt;��/��W^q�����u_� ���W��G�Kj�����ޱåjz�&gt;�:�&quot;�C{�Z��d���D��S�v2�q.m��ؾ��ޙ+�M�&gt;� �Nf��v���)&lt;%·K���7=�wL�������LoOگo�G��p�s��D�ۗ&lt;T���v���p۩�]qʥ��ٶ�e]�}�d{N��7.I�c�J���٦�\�l�ݶ�s|�g:��t�v�i�E���$�P����k�=�&quot;���Qx�k���ި�Nr&amp;[8�G�(�=�������;��zh���5�k3���������o&lt;Q</code>]��MM߽�2��IO��K�F��o�ꪭF.��+~i�m�)����SNn�@�]h����d��T���?t��r���۩�ƮP��6m&quot;��ګ�&lt;[��6�n��i������5��~��=y٥���;�C�ܡu_����W��G6@ݣD^��_8zTO9��T���;�N�c�Je����d6��&quot;�$^����	O�����ňw�U�v2�q.��Z�.��$o�7g
-��{�.��W#M
-���N�v2Ӆ���ǎ�)l�j�{3qBo��]w����[�)k���y���^���,&lt;��x��5J/�*{�Icw���K�����U��cϟ�C%9���Z�ƍw�����F�IO��%��[�Hg�y��Yk�r�~�;H_t�����aß��ݘٛ;��H�p�}��y�WO&lt;���|II��X����{�av�(��y��8�7����:���@�zez{$��m�R�T7�R��Ƌ�l�Zm?$��0�N&amp;U�v2�)&lt;�(/�]U�v2�8���$�d�
-=���<code>��N�v2Ӆ�D��cd�����l���R&quot;���F0s룂�G�#��  O���%v�(ld%��S��&gt;ٱ�J;�G�&lt;����S����6�Փ�n7��r��$�PI�RX-�������$�۳{Gu�E�j-[��o��e#�9�8�N�����.^�����ҹ�1����BP}m�&quot;����ON�~o���[.F5�|�</code>��[��U�&lt;�λ��������]�
-����g��f��lu�QIgNc��Z^�Y�&lt;���+�w�ug{�F�W�o_��9k�Z��������H����A5��c&lt;t����������ۏI�:��j'�O��0
-Oa��D��r��[;^�Ǐ�=��.O'�q4��ԛZ��z(&lt;����wIn<code>�*U�vI%���f��w�qe�MU�O�p�%�y8�p1�k���������i=���&gt;R���{�Nea��I��8����Q��YI���e�^��W���G�HOI6��Y���ʼ����y\�/W���uOI�˲���Jo�|� �~�/�K��?���{)���N�WF�G�h�����L�����O�� Ǩ�n�52n,&lt;��0�N&amp;��N&amp;���U�g�0zd�Y��~�=C,v�$jj=4�G����=�7aۥ���~d�9�O��7�#���������z��G���R�Ȃ���NB�!�&gt;2@���I�\��~4</code>��a��$����q����~��|ps��&gt;=��(�0�G2�&lt;&lt;����wO�O����{�,Bo�d1t2�Y<em>�er�ī�@;Ir5�z;{�򗻕�lϜ��&lt;����y��8]xJ�|�$�}Ldf�?9Br;t2���!
-�Lv�6�
-�xuh'I��Q�=��.���Ғ�|+��&lt;����y���^xRyc�L��W��7!�K�g:=�Ѝ���k?D�NI�˲W%Ɨ��M�:��$W�D���;��cF��^��p{�|�L$?�#��� �'��%��_������%�݊�%��W&amp;�C���b$^�IBq-�:�����8�!���W��v�B\K��#�����!$��H�d{���IDAT�$!���x�G��p�'BH%^�IBq-�:����
-O��&lt;J�:����Z�u���!y�xuh'	!ĵ��&lt;��(&lt;B�(��0�NB�k��y��Px&quot;��Q��a��$������.��Dɣī�@;I!�%^���@��G�W��v�B\K��#�����!$���$!���x�G��p�'BH%^�IBq-�:����
-O��&lt;J�:����Z�u��Y.&lt;]��(^�I�pM��#������&lt;��$��&amp;^���\A��_���;��ފ+&gt;���u�֙�z��6��?�=r�����7��5��H-����o�m��k������[�s@}1�#W��
-�p��^���&quot;+&lt;����X�����O$������駟��e˖��&gt;o�&lt;�</em><em><em>d�ŋ�d�zMe�W$�q�F�g�EEEUUUz)�~������]��,X�����S�</em>++���Dn�����|��[��������T��~P�����te�ƍ�~���_�f��(ȳ�Z������S�
-6$ݘ��9e
-�K��ֱ�$O'O�z��Z�7C&quot;/&lt;ܓ�ׯ��z�ʕ�|��l&gt;�����b%S�'QTTd�֭[�l�2��2o޼?�P�#�ڪ���K�]�Vͼp�B�tYJ��}�������/^�X�|�ܹ|��wE�H</em>++e{�.]��������!�z�w�}�h�&quot;=�l���v��~�e�/UXs�,�9��2]��N�T��j)���!%��A
-OzS��S�=�~��w�yG�s���_�|����� &gt;2Ux���oU�<code>ɒ%z��ի���KJJd]�Z�p���,_�\�[\\���'����Ν���W_���������j kj+�r�\���^DQ%�E�yk&quot;��|=zNQZZZVV��V��$�SUU�]���;��9e#�D�'�l�����ls�� �l���dO �'����C��˜�����Ә ������H� OK�,Qu��52h�ܹ���7n|���s~��g�_��^p�ҥj���/��w�}��3�f����������jV�f�g����R���HY��_~�f�]� �����A��a Oʲe˾��+ٞ�?�\�_��ի՜k׮UÂ䩽k��T%��˗{�{_6��S�=){^����պ����{������Kd�����~���o������ �:Byy��T�LW�a,j���&quot;U�Q������� 6x?���{��\�&gt;��/?�5�_�^-k|�Kz���m ���+W�9��j���F���q�M��^�!B� �o)�ɳ٫V��m��C���VVV����LƔ�{r���j�+V������ �&quot;+&lt;���˿��=���;o�C����Cjܐ&amp;SQQ���/ k&gt;Ȧ�̟?_M����Rk׮��Y����7z���5È�&lt;�f�DRVVf��(�z��� ��Fi��ɘ.���(yR;�p�Weeeamc�6^6�k*��&lt;�6S��I!�oaM�룏&gt;ڰa��!�����S��俋/���O7n��e��E��M��C}�����?T�U�w�y��f��A�&gt;��&gt;���I.��&amp;Z����Ra��(��Ӧ-�WOٸe���j����Z���~Z2��˪״������WD��٘|O yv��l�+� �������� O���k֬���������OZ�o1����?�_u+(U(Y�r�����tuol���\�?���?�9i�'�z�'��F�d�n=�h�g��#&amp;������^A���O�����W_y���{�������b'�qsq[�O����M˖-SE�y�橥�ͼ�t�f����Z���&quot;{�6�h�_��W��@��'�+��Az��l� � }o+�d�H O����~���&gt;�H���w�,�����pM���Ț�dwD2��$�/_^XS�QK鲈�^II���p�B��&gt;�@����ڊ]4т�Gmdᖏ�yEUx҃�좒.{��պ�Z��FRx �' �[����ꫯ̇����@L�_�IߡI}��K,����-�&gt;��s5���mժU���P�Cv��fM������2���O&gt;Qw[x�}h �������}��w����O�C���P벑���I�^������ ���i�@���&quot;]Fٸq���:���9׭[�&amp;� ����������C�P�D&quot;��/[�LװdU_~�����.�x\Ϛ5k�w)��?�X��r�Ju+t%lᩰf ��*�U�V���͟?��ę�ﮨ���^�.I�iS�=)��̩FmذA/��_�������@��k�i�����=�CEE�*��\�o1SU*QUU坮?�e?�u�d=��zMYY��9���m ��i2/Yv�ҥ�� Oj�Ta���ɓ��e�\��\��.r�&lt;�ׯ7��lT���{��/�Te��˪� Y�]q�����qAᩴ��0Y(�u��UWW�ʂ�5�X�®/�D5��읮o����;]��|�����ܹse�d�w6U&quot;����N� ����G��߫��j�ڵ�U�̩��y��&gt;��s���իW�so�?�f��V�˪״���9/{�S6ۓ�|��7�W��&lt;��n�/������Ί�𔆍7~��7�V���I9��7y��J���_gÆ �c�ȳ|��wz�����_�Zvѷj {��Mu[6=A��ڵke{V�^m �����q���&quot;�F� .��, ��������Z�r��d��VuY����� OqUUUU���൪˲������Qx���7���;�D&quot;�!KuY����� 8 O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������� O������Ȉ�P�s�% ������IEND�B</code>�</p>
-</body>
-</html>

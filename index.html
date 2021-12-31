@@ -32,31 +32,40 @@
         <nav class="navbar navbar-expand-md navbar-transparent">
           <div class="container">
             <img class="img-fluid pr-3 aa-logo-img" src="images/logo.svg" alt="logo"  height="120" width="120">
-            <a class="navbar-brand px-0 py-0" href="#">Jeka</a>
+            <div>
+              <a class="navbar-brand px-500 py-0" href="#">Jeka</a>
+            </div>
+
             <div class="collapse navbar-collapse">
               <ul class="navbar-nav ml-auto">
-                <li class="nav-item"><a class="btn btn-outline-neutral btn-round" href="https://github.com/jerkar/jerkar">Github</a></li>
-                <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+                <li class="nav-item"><a class="nav-link" href="https://github.com/jerkar/jerkar" target="_blank">Github</a></li>
                 <li class="nav-item"><a class="nav-link" href="#pricing">Learn</a></li>
-                <li class="nav-item"><a class="nav-link" href="#download">Download Now</a></li>
+                <li class="nav-item"><a class="nav-link" href="#download">Download</a></li>
+                <li class="nav-item"><a class="nav-link" href="#download">Contact</a></li>
               </ul>
             </div>
           </div>
         </nav>
-        <div class="container aa-header-content text-left text-white">
+        <div class="container aa-header-content text-center text-white" style="padding-top: 20px">
           <div class="row">
-            <div class="col-md-6 col-sm-12">
-              <h1 class="text-white mb-4">Jeka</h1>
-              <h4 style="color: #FFD600">Automate with plain Java code and nothing else.</h4>
-              <ul class="py-4 list-unstyled">
-                <li class="py-2"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Use Java code to build projects and automate tasks</li>
-                <li class="py-2"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Model, refactor, reuse automation assets and logic across projects</li>
-                <li class="py-2"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Fast learning curve while incredibly powerful</li>
-              </ul><a class="mt-4 btn btn-outline-neutral btn-round" href="#features">Start Exploring</a>
+            <div class="col-md-12 col-sm-12">
+              <img src="images/all_gears-colors-fad.svg" width="256"/>
+              <br/>
+              <!-- <h1 class="text-white mb-4">Jeka</h1>  -->
+              <h2>Build, automate and deliver with usual code</h2>
+              <br/>
+              <h4 class="subTitleColor">Create builds and automation tasks by just writing <bold>Java or Kotlin</bold> classes</h4>
+              <h4 class="subTitleColor">Run and debug builds in IDE - Execute in command line</h4>
+              <h4 class="subTitleColor">Master complexity and reuse across projects</h4>
+
+              <h4 class="subTitleColor">Keep your build system agile</h4>
+              <br/><br/>
+              <a class="btn btn-outline-neutral btn-round" href="https://jerkar.github.io/jeka/tutorials/gui-getting-started/#getting-started-with-jeka" target="_blank">
+                Get started in 5 mn
+              </a>
             </div>
-            <div class="col-md-6 col-sm-12 text-right">
-                <img class="img-fluid" src="images/all_gears.svg" alt="Image">
-            </div>
+
+
           </div>
         </div>
       </div>
@@ -70,14 +79,21 @@
         <div class="icon icon-danger"><i class="fa fa-tags" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Full featured product</div>
-          <p class="text-muted">Jeka bundles an automation engine core with features around for dealing with Java compile/tests/packaging, dependency management, Maven pom/bom/repo, Intellij/Eclipse, Git ... </p>
+          <p class="text-muted">Complete build tool ala Ant, Maven or Gradle with support for compile/test/package, dependency management, Maven pom/bom/repo, Intellij/Eclipse, Git ... </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-cog" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">100% Java based</div>
-          <p class="text-muted">No need for XML or fragile scripting. Use IDE full force to code, run and debug your automation tasks written in Java. </p>
+          <p class="text-muted">No need for XML, fragile scripting or DSL. Use simply IDE full force to code, run and debug your automation tasks written in Java. </p>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="icon icon-danger"><i class="fa fa-cubes" aria-hidden="true"></i></div>
+        <div class="description">
+          <div class="h4">Designed for extension</div>
+          <p class="text-muted">Jeka is designed on a plugin architecture. Extending Jeka can be done trough plugins or just by adding methods in build classes.</p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
@@ -87,13 +103,7 @@
           <p class="text-muted">Fast learning curve, transparency and simple concepts make Jeka easy to discover and troubleshoot with.</p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-cubes" aria-hidden="true"></i></div>
-        <div class="description">
-          <div class="h4">Designed for extension</div>
-          <p class="text-muted">Jeka is designed on a plugin architecture. Writing plugins for Jeka is much easier and less verbose than with other similar tools.</p>
-        </div>
-      </div>
+
       <div class="col-lg-4 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-book" aria-hidden="true"></i></div>
         <div class="description">
@@ -111,58 +121,57 @@
     </div>
   </div>
 </div>
+        <!--
 <div class="container">
-  <hr/>
+<hr/>
 </div>
-<div class="aa-product-features section">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 col-sm-12 d-none d-md-block">
-        <br/><br/><br/>
-        <img class="img-fluid" src="images/automation2.svg" alt="Image" width="250" height="250"/></div>
-      <div class="col-md-7 col-sm-12">
-        <h2 class="title mb-2">Why A Java Native Build Tool ?</h2>
-        <p class="pt-2">Jeka is a full featured Java build tool ala Gradle, Ant/Ivy or Maven but it is using plain Java to describe builds/tasks.
-          This leads in a simpler and more powerful tool.</p>
-        <ul class="py-1 list-unstyled">
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Execute and debug Java code indifferently from command line or IDE</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Code directly against the Java build model instead of an intermediate XML/script/DSL</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Use seamlessly any 3rd party Java library inside your builds</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Use Power of Java language to design build templates and reusable automation components</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Get build classes as clean and maintainable as your production code</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Discover and troubleshot by navigating directly from your build code to the Jeka model/engine</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Document your builds and plugins by simply using @annotations inside your code</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Use a single language to develop, build, deliver applications and provision cloud infrastructure</li>
-        </ul>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-7 col-sm-12">
-        <h2 class="title mb-2">Rich Features Out-Of-The-Box</h2>
-        <p class="pt-5 pb-1">Jeka comes natively with rich features for building and publishing all sort of Java projects .</p>
-        <ul class="py-1 list-unstyled">
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Powerful dependency management fully compliant with Maven and Ivy</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Multi-project support</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Multi-level configuration to fit in enterprise environment</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Toolbox for file and I/O manipulation, logging, PGP signing, external tool launcher, ...</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Toolbox for Java compilation, resources processing, test execution/reporting, jar/war packaging</li>
-          <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Integrated with intelliJ and Eclipse</li>
-          <li class="p1-2"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Jeka can also be used as a regular Java library with zero dependency</li>
-        </ul></div>
-      <div class="col-md-2 col-sm-12 d-none d-md-block"></div>
-      <div class="col-md-3 col-sm-12 d-none d-md-block">
-        <br/><br/><br/><br/>
-        <img class="img-fluid" src="images/automation.svg" alt="Image" width="250" height="250"/></div>
-      </div>
-    </div>
-  </div>
+
+<div class="aa-product-features section bg-gradient">
+<div class="container">
+ <div class="row">
+   <div class="col-md-5 col-sm-12 d-none d-md-block">
+     <br/><br/><br/>
+     <img class="img-fluid" src="images/automation2.svg" alt="Image" width="250" height="250"/></div>
+   <div class="col-md-7 col-sm-12 text-white">
+     <h2 class="title mb-2 text-white">Why A Java Native Build Tool ?</h2>
+     <ul class="py-1 list-unstyled list-large">
+       <li class="py-2" style="color: #FFD600"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Simpler approach : Java code builds Java code.</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Lighter : Just a thin wrapper around your build classes.</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Stronger : Leverage your IDE full force. Refactor, run, debug.</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Easier Reuse : Reuse automation asset as you do for regular code.</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Maintainability : Concise Java API. Master complex builds.</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Easier to Master : Discover it as a library. Get rid of intermediate XML-DSL.</li>
+     </ul>
+   </div>
+ </div>
+ <div class="row">
+   <div class="col-md-7 col-sm-12 text-white">
+     <h2 class="title mb-2 text-white">Out-Of-The-Box</h2>
+     <ul class="py-1 list-unstyled list-large">
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Fully compliant with Maven and Ivy Repositories</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Multi-project support</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> File and I/O manipulation, logging, PGP signing, external tool launcher</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Java compilation, jar/war/fat-jar packaging, Full JUnit5 support</li>
+       <li class="py-1" style="color: #FFD600"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Available plugins for SonarQube, Jacoco, Git, Springboot and more</li>
+       <li class="py-1"><i class="fa fa-check-circle pr-4" aria-hidden="true"></i> Integrated with intelliJ and Eclipse</li>
+     </ul></div>
+   <div class="col-md-2 col-sm-12 d-none d-md-block"></div>
+   <div class="col-md-3 col-sm-12 d-none d-md-block">
+     <br/><br/><br/><br/>
+     <img class="img-fluid" src="images/automation.svg" alt="Image" width="250" height="250"/></div>
+   </div>
+ </div>
 </div>
+</div>
+-->
 <div class="aa-screenshots section">
   <div class="container text-center">
-    <h2 class="title pb-3">How does it look like ?</h2>
-    <p class="pb-5">This is how Jeka takes place in your IDE. Every Jeka related files are located under <i>jeka</i> directory</p>
+    <h2 class="title pb-3">See in action</h2>
+    <p class="pb-5">This is a screenshot of Jeka in action using IntelliJ plugin.</p>
     <div class="row">
       <div class="col-md-12 mb-5" height="700">
+        <img class="img-fluid" src="images/img_1.png" alt="screeshot"/>
+        <!--
         <div class="page-carousel">
           <div class="carousel slide" id="aa-carousel-indicators" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" role="listbox">
@@ -190,6 +199,7 @@
             </div>
           </div>
         </div>
+        -->
       </div>
     </div>
   </div>
@@ -197,44 +207,50 @@
 <div class="aa-price-package section" id="pricing">
   <div class="container">
     <div class="text-center">
-      <h2 class="title">Start - Learn - Get Involved </h2>
-      <p class="pb-5">Move to the following places to get started.</p>
+      <h2 class="title">Learning</h2>
+      <p class="pb-5">Move to the following places depending your needs.</p>
     </div>
     <div class="row">
+      <div class="col-lg-2 col-md-é"></div>
+
       <div class="col-lg-4 col-md-6">
         <div class="card aa-price text-center">
           <div class="card-body">
             <div class="h5 mt-0">Start Here</div>
-            <div class="aa-price-section bg-gradient text-white">Tutorial</small></div>
+            <div class="aa-price-section bg-gradient text-white">Tutorials</small></div>
             <ul class="list-unstyled text-muted">
-              <li class="pt-3">Setup environment</li>
-              <li>Write commands</li>
-              <li>Write plugins</li>
-              <li>Build Java projects</li>
+              <li class="pt-3"><a class="hyperlink-card" target="_blank" href="https://jerkar.github.io/jeka/tutorials/gui-getting-started/#getting-started-with-jeka">Get Started in 10 mn</a></li>
+              <li class="pt-3"><a class="hyperlink-card" target="_blank" href="https://jerkar.github.io/jeka/tutorials/gui-reuse-elements/">Reuse Build Logic</a></li>
+              <li class="pt-3">&nbsp;</li>
             </ul>
           </div>
+          <!--
           <div class="card-footer">
             <a class="btn btn-outline-default btn-round" href="docs/Getting%20Started.html">Go</a>
           </div>
+          -->
         </div>
       </div>
       <div class="col-lg-4 col-md-6">
         <div class="card text-center aa-price">
           <div class="card-body">
-            <div class="h5 mt-0">Deep Knowledge</div>
-            <div class="aa-price-section bg-gradient text-white">Reference Guide</div>
+            <div class="h5 mt-0">Deeper Knowledge</div>
+            <div class="aa-price-section bg-gradient text-white">References</div>
             <ul class="list-unstyled text-muted">
-              <li class="pt-3">Jeka internal behavior</li>
-              <li>API discovering</li>
-              <li>Detailed tool mechanisms</li>
-              <li>&nbsp;</li>
+              <li class="pt-3"><a class="hyperlink-card" target="_blank" href="https://jerkar.github.io/jeka">Reference Guide</a></li>
+              <li class="pt-3"><a class="hyperlink-card" target="_blank" href="https://github.com/jerkar/working-examples">Working Examples</a></li>
+              <li class="pt-3"><a class="hyperlink-card" target="_blank" href="https://jerkar.github.io/jeka/faq">Frequented Asked Questions</a></li>
             </ul>
           </div>
+          <!--
           <div class="card-footer">
             <a class="btn btn-outline-default btn-round" href="docs/reference.html">Go</a>
           </div>
+          -->
         </div>
       </div>
+      <div class="col-lg-2 col-md-2"></div>
+      <!--
       <div class="col-lg-4 col-md-6">
         <div class="card aa-price text-center">
           <div class="card-body">
@@ -251,7 +267,9 @@
             <a class="btn btn-outline-default btn-round" href="https://github.com/jerkar/jeka">Go</a>
           </div>
         </div>
+
       </div>
+      -->
     </div>
   </div>
 </div>
@@ -311,7 +329,7 @@
 -->
 <div class="aa-download-section section bg-gradient" id="download">         
   <div class="container">
-    <div class="h2 text-center text-title text-white pb-5">Download Jeka Now </div>
+    <div class="h2 text-center text-title text-white pb-5">Download Jeka</div>
     <div class="row">
       <div class="col-md-4 col-sm-12"><a class="aa-windows" href="https://oss.sonatype.org/content/repositories/snapshots/dev/jeka/jeka-core/">
           <div class="card">
@@ -346,7 +364,7 @@
   </div>
 </div></div>
     </div>
-    <footer class="footer-black aa-footer">
+    <footer class="footer-black aa-footer" id="contact">
       <div class="container py-5">
         <div class="row text-center">
           <div class="col-md-12">
