@@ -15,7 +15,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 }
 
 .bg-gradient {
-  background: linear-gradient(330deg, rgba(0, 164, 206, 0.73) 5%, #244571 95%);
+  background: linear-gradient(330deg, rgba(38, 70, 83, 0.6) 5%, rgb(38, 70, 83) 95%);
 }
 
 .bg-image {
