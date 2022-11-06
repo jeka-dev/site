@@ -19,7 +19,7 @@
     <meta name="image" property="og:image" content="images/logos/knight-1color-dark.svg">
     <title>Jeka : Pure Java Build Tool</title>
     <meta name="description" content="Automate Your Builds With Pure Java."/>
-    <link rel="icon" href="images/logos/knight-5colors-B.svg">
+    <link rel="icon" href="images/archives/draft-sharp-knight/knight-5colors-B.svg">
     <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -34,7 +34,7 @@
           <div class="container">
             <img class="img-fluid pr-3 aa-logo-img" src="images/logos/knight-4colors-A.svg" alt="logo"  height="80" width="80">
             <div>
-              <a class="navbar-brand px-500 py-0" href="https://github.com/jerkar/jerkar">Jeka</a>
+              <a class="navbar-brand px-500 py-0" href="https://github.com/jeka-dev/jeka">Jeka</a>
             </div>
 
             <div class="collapse navbar-collapse">
@@ -53,12 +53,12 @@
               <img src="images/all_gears-colors-fad.svg" width="256"/>
               <br/>
               <!-- <h1 class="text-white mb-4">Jeka</h1>  -->
-              <h2>Build JVM-based Software with Vanilla Code</h2>
+              <h2>The Pure Java Build Tool</h2>
               <br/>
-              <h4 class="subTitleColor">Build Projects and Pipelines by writing just regular Java/Kotlin code.</h4>
-              <h4 class="subTitleColor">Run or Debug in IDE. Execute Code as Command-Line</h4>
-              <h4 class="subTitleColor">Master Complexity by Reusing Build Code</h4>
-              <h4 class="subTitleColor">Enjoy Lightweight and Flexibility</h4>
+              <h4 class="subTitleColor">Implement pipelines and build projects with sweet Java/Kotlin code</h4>
+              <h4 class="subTitleColor">Run and debug in IDE - Execute from command line</h4>
+              <h4 class="subTitleColor">Master complexity - Reuse build code</h4>
+              <h4 class="subTitleColor">Lightweight - Flexible - Concise</h4>
               <br/><br/>
               <a class="btn btn-outline-neutral btn-round" href="https://jeka-dev.github.io/jeka/tutorials/gui-getting-started/#getting-started-with-jeka" target="_blank">
                 Get started in 5 mn
@@ -79,7 +79,7 @@
         <div class="icon icon-danger"><i class="fa fa-tags" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Rich Features</div>
-          <p class="text-muted">Complete build tool ala Ant, Maven or Gradle with support for compile/test/package, dependency management, Maven pom/bom/repo, Intellij/Eclipse, Git ... </p>
+          <p class="text-muted">Complete build tool ala Ant, Maven or Gradle with support for compile/test/package, dependency management, Maven pom/bom/repo, Intellij/Eclipse, Git, NodeJs ... </p>
         </div>
       </div>
       <div class="col-lg-4 col-md-6 col-sm-12">
@@ -171,25 +171,37 @@
     <p class="pb-5">Screenshot of Jeka in action using IntelliJ plugin</p>
     <div class="row">
       <div class="col-md-12 mb-5" height="800">
-        <img src="images/screenshot.png" alt="screeshot"/>
         <!--
+        <img src="images/archives/screenshot/screenshot.png" alt="screeshot"/>
+        -->
+
         <div class="page-carousel">
           <div class="carousel slide" id="aa-carousel-indicators" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" role="listbox">
               <div class="carousel-item active">
-                  <img class="img-fluid" src="images/capture4.png" alt="First slide"/>
-                <p><br/><small>Build classes are regular classes located in a specific folder. All their public methods can be directly invoked both from IDE and command line</small></p>
+                  <img class="img-fluid" src="images/screenshots/pipeline-code.png" alt="First slide"/>
+                <p><br/>Here project is built using Maven, but more specific stuff is achieved with Jeka.
+                  <br/>Methods can be executed from the <b>IDE</b> or from the <b>command line</b> with <code>jeka build</code> or <code>jeka makeImage</code>
+                </p>
                   <div class="carousel-caption d-none d-md-block"> </div>
               </div>
               <div class="carousel-item">
-                <img class="img-fluid" src="images/capture1.png" alt="Second slide"/>
-                <p><br/><small>One can launch methods from both IDE and command line as : <code>jekaw cleanPack deploy -host=my.server -springboot#springbootVersion=2.2.4.RELEASE</code> </small></p>
+                <img class="img-fluid" src="images/screenshots/springboot-code.png" alt="Second slide"/>
+                <p><br/>This is a typical build class for building springboot projects</code>.
+                  <br/><code>@JkInjectClasspath</code> fetches any library and increment the Jeka classpath.
+                  <br/>Execute <code>jeka prooject#pack</code> to create bootable jar.
+                </p>
                 <div class="carousel-caption d-none d-md-block"> </div>
               </div>
               <div class="carousel-item">
-                <img class="img-fluid" src="images/capture3.png" alt="Third slide"/>
+                <img class="img-fluid" src="images/screenshots/properties.png" alt="Third slide"/>
                 <div class="carousel-caption d-none d-md-block"> </div>
-                <p><br/>Console output for a Springboot project build.</p>
+                <p><br/>If your project is not too specific, you can build projects and more without any code. <br>Just edit <code>local.properties</code> file</p>
+              </div>
+              <div class="carousel-item">
+                <img class="img-fluid" src="images/screenshots/dependencies.png" alt="Fourth slide"/>
+                <div class="carousel-caption d-none d-md-block"> </div>
+                <p><br/>Dependencies can be declared in a convenient flat file format</p>
               </div>
             </div>
             <div class="controls-top">
@@ -200,7 +212,7 @@
             </div>
           </div>
         </div>
-        -->
+
       </div>
     </div>
   </div>
