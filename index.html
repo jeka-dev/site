@@ -56,8 +56,8 @@
               <h2>The Thin Build Tool for JVM</h2>
               <br/>
               <h4 class="subTitleColor">Build Projects and Script Anything using Plain Java/Kotlin Code</h4>
-              <h4 class="subTitleColor">Run and debug in IDE - Execute from command line</h4>
-              <h4 class="subTitleColor">Master complexity - Reuse build logic</h4>
+              <h4 class="subTitleColor">Run and Debug in IDE - Execute from Command Line</h4>
+              <h4 class="subTitleColor">Master Complexity - Reuse Build Logic</h4>
               <h4 class="subTitleColor">Lightweight - Flexible - Concise</h4>
               <br/><br/>
               <a class="btn btn-outline-neutral btn-round" href="https://jeka-dev.github.io/jeka/tutorials/gui-getting-started/#getting-started-with-jeka" target="_blank">
@@ -86,7 +86,7 @@
         <div class="icon icon-danger"><i class="fa fa-cog" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Just Basic Java</div>
-          <p class="text-muted">No need for XML, fragile scripting or DSL. Use simply IDE full force to code, run and debug your automation tasks written in Java or Kotlin.<br/>Build roughly standard projects without any code. </p>
+          <p class="text-muted">No need for XML, fragile scripting or DSL. Use simply IDE full force to code, run and debug your automation tasks written in Java or Kotlin. </p>
 
         </div>
       </div>
@@ -102,7 +102,9 @@
         <div class="description">
           <div class="h4">User Friendly</div>
           <p class="text-muted">Lightweight, speed, transparency and simple concepts make JeKa pleasant to use,
-            easy to discover and troubleshoot.</p>
+            easy to discover and troubleshoot.
+            <br/>Highly rely on conventions to keep configuration as minimal as possible.
+          </p>
         </div>
       </div>
 
@@ -172,34 +174,27 @@
     <p class="pb-5">Screenshot of JeKa in action using IntelliJ plugin</p>
     <div class="row">
       <div class="col-md-12 mb-5" height="800">
-        <!--
-        <img src="images/archives/screenshot/screenshot.png" alt="screeshot"/>
-        -->
-
         <div class="page-carousel">
           <div class="carousel slide" id="aa-carousel-indicators" data-ride="carousel" data-interval="false">
             <div class="carousel-inner" role="listbox">
-
               <div class="carousel-item active">
-                <img class="img-fluid" src="images/screenshots/springboot-code.png" alt="First slide"/>
-                <p><br/>This is a typical build class for building springboot projects</code>.
-                  <br/>Execute <code>jeka project#pack</code> to create bootable jar.
+                <img class="img-fluid" src="images/screenshots/complete-view.png" alt="First slide"/>
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+                <p><br/>That's all we need to build a Springboot application with Sonarqube and test coverage analysis.
                 </p>
-                <div class="carousel-caption d-none d-md-block"> </div>
               </div>
               <div class="carousel-item">
-                <img class="img-fluid" src="images/screenshots/complete-view.png" alt="Second slide"/>
-                <div class="carousel-caption d-none d-md-block"> </div>
-                <p><br/>For broadly standard projects, no build code is required, only a minimal set of properties ... if needed.
-                   <br/>Execute <code>jeka :build_quality</code> to build a Springboot application with Sonarqube and test coverage analysis.
+                <img class="img-fluid" src="images/screenshots/springboot-code.png" alt="Second slide"/>
+                <div class="carousel-caption d-none d-md-block"></div>
+                <p><br/>This is a typical build class for building springboot projects using code for configuration</code>.
                 </p>
               </div>
               <div class="carousel-item">
                 <img class="img-fluid" src="images/screenshots/dependencies.png" alt="Third slide"/>
                 <div class="carousel-caption d-none d-md-block"> </div>
-                <p><br/><code>project-dependencies.txt</code> can declare dependencies in a concise flat format</p>
+                <p><br/><code>project-dependencies.txt</code> can declare dependencies in a concise flat format instead as code</p>
               </div>
-
             <div class="carousel-item">
               <img class="img-fluid" src="images/screenshots/pipeline-code.png" alt="Four slide"/>
               <p><br/>Here project is built using Maven, but more specific stuff is achieved with Jeka.
