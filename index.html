@@ -185,7 +185,7 @@
                 <p><br/>That's all we need to build a Springboot application with Sonarqube including Jacoco test coverage analysis.
                   <br/>These properties also tell to use non-standard layout : sources and tests are located at the root of the project, and
                   resources are co-located with sources.
-                  <br/>They also define 2 command shortcuts (<i>build </i> and <i>build_quality</i>) to be respectively invoked from command line by <code>jeka :buid</code> and <code>jeka :build_quality</code>
+                  <br/>They also define 2 command shortcuts (<i>build </i> and <i>build_quality</i>) to be respectively invoked from command line by <code>jeka :build</code> and <code>jeka :build_quality</code>
                   <br/>The IDE provides suggestions and auto-completion to deal with properties friendly.
                 </p>
               </div>
@@ -204,12 +204,14 @@
                 <p>
                   <br/>The configuration can be completed with code to get more control.
                   <br/>It is possible to configure everything in code and define no <i>local.properties</i> file.
+                  <br/>Execute <code>jeka project#pack prod=true</code>to build the project for production use.
                   <br/>IDE provides suggestions and auto-completion for method argument dealing with dependencies.
                 </p>
               </div>
             <div class="carousel-item">
               <img class="img-fluid" src="images/screenshots/pipeline-code.png" alt="Four slide"/>
               <p><br/>Here, project is built using Maven, but more specific stuff is achieved with Jeka.
+                <br/><code>@JkInjectClasspath("com.fasterxml.jackson.core:jackson-core:2.14.0")</code>lets to use <i>Jackson</i> library directly in <code>Pipeline</code> class.
                 <br/>Methods can be run/debugged from the <b>IDE</b> or directly executed from the <b>command line</b> with <code>./jekaw build</code> or <code>./jekaw makeImage</code>.
               </p>
               <div class="carousel-caption d-none d-md-block"> </div>
