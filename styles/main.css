@@ -16,12 +16,13 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 
 
 .bg-gradient {
-  /* background: linear-gradient(330deg, rgba(38, 70, 83, 0.6) 5%, rgb(38, 70, 83) 95%); */
-
   background-image: url('../images/background/draft-2.svg');
   /* background by SVGBackgrounds.com */
+}
 
-  /* background-repeat: round; */
+.bg-gradient-foot {
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
