@@ -15,9 +15,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="JeKa Team">
-    <meta name="keywords" content="build,java,kotlin,tool,automation,maven,ant,gradle,buildr,sbt,make,compiler,tester,jacoco,pure java build tool,java build tool,build tool,100% java build tool">
+    <meta name="keywords" content="build,java, devOps,IaC,infrastructure as code,helm,kotlin,tool,automation,maven,ant,gradle,buildr,sbt,make,compiler,tester,jacoco,pure java build tool,java build tool,build tool,100% java build tool">
     <meta name="image" property="og:image" content="images/logos/knight-1color-dark.svg">
-    <title>JeKa : The Thin Build Tool for JVM</title>
+    <title>JeKa : The DevOps Backbone for JVM</title>
     <meta name="description" content="Automate Builds With Sweet Java Code."/>
     <link rel="icon" href="images/archives/draft-sharp-knight/knight-5colors-B.svg">
     <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700" rel="stylesheet">
@@ -55,7 +55,7 @@
               <img src="images/logos/knight-4colors-A.svg" width="160"/>
               <br/>
               <!-- <h1 class="text-white mb-4">Jeka</h1>  -->
-              <h2>The Thin Build Tool for JVM</h2>
+              <h2>The DevOps Backbone for JVM</h2>
               <br/>
               <h4 class="subTitleColor">Simplify Development-Build-Delivery cycle by using a Single Language for all</h4>
               <h4 class="subTitleColor">Implement Builds and DevOps tasks in Plain Java/Kotlin - Run it in CI/CD</h4>
@@ -74,46 +74,56 @@
 <div class="container">
   <div class="aa-product-details section" id="features">
     <div class="row">
-      <div class="col-lg-4 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-tags" aria-hidden="true"></i></div>
-        <div class="description">
-          <div class="h4">Rich Features</div>
-          <p class="text-muted">Complete build tool ala Ant, Maven or Gradle with support for compile/test/package, dependency management, Maven pom/bom/repo, Intellij/Eclipse, Git, NodeJs ... </p>
-        </div>
-      </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-cog" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Just Plain Java or Kotlin </div>
-          <p class="text-muted">No need for XML, fragile scripting or DSL. Automate everything using plain Java or Kotlin classes. Run/debug simply in IDE. For common projects, not a single line of code is required.</p>
+          <p class="text-muted">No need for XML, fragile scripting, or DSLs.
+            <br/>JeKa allows you to automate your entire workflow, from development to delivery, including build and pipeline using
+            plain Java or Kotlin classes that can be easily run and debugged in an IDE..  </p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="icon icon-danger"><i class="fa fa-tags" aria-hidden="true"></i></div>
+        <div class="description">
+          <div class="h4">Rich Features</div>
+          <p class="text-muted">In addition to its scripting capabilities and utilities, JeKa also features a complete build tool
+            with support for compile/test/package, dependency management, Maven POM/BOM/repositories, IntelliJ/Eclipse, `
+            Git, Node.js, and more.
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-cubes" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Designed for Extension</div>
-          <p class="text-muted">JeKa is designed on a plugin architecture. Extending JeKa can be done trough plugins or just by adding methods in build classes.</p>
+          <p class="text-muted">JeKa is built on a simple yet powerful plugin architecture, but it doesn't require
+            writing specific plugins to integrate third-party technologies.
+            <br/>JeKa can seamlessly integrate with any tool
+            that provides Java libraries or a command-line interface (CLI).
+          </p>
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-smile-o" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">User Friendly</div>
-          <p class="text-muted">Lightness, straightforwardness, transparency and simple concepts make JeKa pleasant to use,
-            easy to discover and troubleshoot.
-            <br/>Jeka highly rely on conventions to keep configuration as minimal as possible.
+          <p class="text-muted">JeKa's design emphasizes simplicity, ease of use, and transparency. Its lightweight and
+            straightforward approach, along with its simple concepts, make it easy to discover and troubleshoot.
+            <br/>Additionally, JeKa heavily relies on conventions to minimize the need for configuration.
           </p>
         </div>
       </div>
 
-      <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-book" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Documentation</div>
-          <p class="text-muted">Tutorial, reference guide and examples are available and maintained in sync with JeKa evolution. Also JeKa provides rich command line help based on class introspection.</p>
+          <p class="text-muted">
+            Tutorials, reference guides, and examples are available and kept in sync with JeKa's evolution.
+            JeKa also provides rich command-line help based on class introspection, making it easy to discover and use its features
         </div>
       </div>
-      <div class="col-lg-4 col-md-6 col-sm-12">
+      <div class="col-lg-6 col-md-6 col-sm-12">
         <div class="icon icon-danger"><i class="fa fa-balance-scale" aria-hidden="true"></i></div>
         <div class="description">
           <div class="h4">Open Source</div>
@@ -179,18 +189,19 @@
                 <div class="carousel-caption d-none d-md-block">
                 </div>
                 <p><br/>That's all we need to build a Springboot application with Sonarqube including Jacoco test coverage analysis.
-                  <br/>These properties also tell to use non-standard layout : sources and tests are located at the root of the project, and
+                  <br/>These properties also specify a non-standard layout : <i>sources</i> and <i>tests</i> are located at the root of the project, and
                   resources are co-located with sources.
-                  <br/>They also define 2 command shortcuts (<i>build </i> and <i>build_quality</i>) to be respectively invoked from command line by <code>jeka :build</code> and <code>jeka :build_quality</code>
-                  <br/>The IDE provides suggestions and auto-completion to deal with properties friendly.
+                  <br/>They also define 2 command shortcuts (<i>build</i> and <i>build_quality</i>) that can be invoked
+                  from the command line using <code>jeka :build</code> and <code>jeka :build_quality</code> respectively.
+                  <br/>Additionally, the IDE provides suggestions and auto-completion to make working with properties more user-friendly.
                 </p>
               </div>
               <div class="carousel-item">
                 <img class="img-fluid" src="images/screenshots/dependencies.png" alt="Third slide"/>
                 <div class="carousel-caption d-none d-md-block"> </div>
                 <p>
-                  <br/><i>project-dependencies.txt</i> can declare dependencies in a concise flat format.
-                  <br/>Here <i>lombok</i> is present in <i>compile</i> dependencies but removed from the <i>runtime</i>.
+                  <br/><i>project-dependencies.txt</i> file can declare dependencies in a concise flat format.
+                  <br/>Here, <i>lombok</i> is present in <i>compile</i> dependencies but removed from the <i>runtime</i>.
                   <br/>The IDE provides suggestions and auto-completion to find dependency coordinates and versions.
                 </p>
               </div>
@@ -201,13 +212,13 @@
                   <br/>The configuration can be completed with code to get more control.
                   <br/>It is possible to configure everything in code and define no <i>local.properties</i> file.
                   <br/>Execute <code>jeka project#pack prod=true</code>to build the project for production use.
-                  <br/>IDE provides suggestions and auto-completion for method arguments dealing with dependencies.
+                  <br/>The IDE provides suggestions and auto-completion for method arguments dealing with dependencies.
                 </p>
               </div>
             <div class="carousel-item">
               <img class="img-fluid" src="images/screenshots/pipeline-code.png" alt="Four slide"/>
               <p><br/>Here, project is built using Maven, but more specific stuff is achieved with Jeka.
-                <br/><code>@JkInjectClasspath("com.fasterxml.jackson.core:jackson-core:2.14.0")</code>lets to use <i>Jackson</i> library directly in <code>Pipeline</code> class.
+                <br/><code>@JkInjectClasspath("com.fasterxml...")</code>allows you to use <i>Jackson</i> library directly in <code>Pipeline</code> class.
                 <br/>Methods can be run/debugged from the <b>IDE</b> or directly executed from the <b>command line</b> with <code>./jekaw build</code> or <code>./jekaw makeImage</code>.
               </p>
               <div class="carousel-caption d-none d-md-block"> </div>
