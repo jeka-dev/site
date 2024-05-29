@@ -1,4 +1,5 @@
 #!/bin/bash
+
 #
 # Copyright 2014-2024  the original author or authors.
 #
@@ -15,1057 +16,203 @@
 #  limitations under the License.
 #
 
-#
-# Script for launching JeKa tool.
-#
-# Authors: Jerome Angibaud, Patrick Santana
-#
-# Rules for selecting a JDK :
-# - if JEKA_JDK_HOME env var is specified, select it
-# - if a jeka.java.version property is specified
-#     - if a jeka.jdk.[version] property is specified, select the specified path.
-#     - else, look in cache or download the proper JDK
-# - else
-#   - if JAVA_HOME env var is specified, select it
-#   - else, look in cache and download default version (temurin 21)
-#
-# Rules for reading a property (said "my.prop") :
-# - if a command line argument contains "-Dmy.prop=xxx", returns 'xxx'
-# - if an OS environment variable 'my.prop' exists, returns this value
-# - if property is defined in $BASE_DIR/jeka.properties, returns this value
-# - look recursively in $BASE_DIR/../jeka.properties. Stop at first folder ancestor not having a jeka.properties file
-# - look in JEKA_USER_HOME/global.properties
-#
-
 set -e
-#####################
-# Global vars
-#####################
 
-declare CMD_LINE_ARGS=("$@")
-declare -a INTERPOLATED_ARGS
+# Script for installing and upgrading JeKa
+# Authors: Jerome Angibaud
 
-declare JEKA_VERSION_PROP_NAME="jeka.java.version"
-declare JEKA_JAR_NAME="dev.jeka.jeka-core.jar"
-
-declare JEKA_USER_HOME
-declare GLOBAL_PROP_FILE
-declare BASE_DIR  # To find BASE_DIR/jeka/local.properties, BASE_DIR/jeka/def, ...
-declare CURRENT_SCRIPT_DIR
-declare -i PROGRAM_OPTION_INDEX
-CURRENT_SCRIPT_DIR="$( cd "$(dirname "$0")" ; pwd -P )"
-
-# Global variables are preferred over passing all arguments
-# in method call, cause they are too many.
-declare DEFAULT_JAVA_VERSION="21"
-declare JDK_DOWNLOAD_DISTRIB="temurin"
-declare JDK_DOWNLOAD_LIBC_TYPE="glibc"  # default for linux, overridden for other os
-declare JDK_DOWNLOAD_FILE_TYPE="tar.gz" # overridden for *WIN os
-declare JDK_DOWNLOAD_OS
-declare JDK_DOWNLOAD_ARCH
-
-declare IS_VERBOSE # we should not log anything when on the green path, except if '-lsu' arg is present
-declare IS_QUIET # we should log only error msg
-
-declare LOG_DEBUG # DEBUG
-declare DRY_RUN  # Debugging purpose
-declare DEFAULT_BASE_DIR="."
+# curl -s https://raw.githubusercontent.com/jeka-dev/jeka/0.11.x/dev.jeka.core/src/main/shell/jeka-install | $(echo $0) -s - setup
 
 
-#######################################
-# Prints passed arguments on the stderr
-# Globals:
-#   none
-# Arguments:
-#   $*
-#######################################
-msg() {
-echo "$*" 1>&2
-}
-
-#######################################
-# Gets the sub-string part ending before '#' of a specified string. ('Hello#World' should returns 'Hello')
-# Globals:
-#   none
-# Arguments:
-#   $1 : the string to extract substring from
-# Outputs:
-#   Write extracted sub-string to stdout
-#######################################
-substring_before_hash() {
-# Extract the substring before '#' using cut
-result=$(echo "$1" | cut -d'#' -f1)
-
-    # Echo the resulting substring
-    echo "$result"
-}
-
-#######################################
-# Gets the sub-string part starting after '#' of a specified string. ('Hello#World' should returns 'World')
-# Globals:
-#   none
-# Arguments:
-#   $1 : the string to extract substring from
-# Outputs:
-#   Write extracted sub-string to stdout
-#######################################
-substring_after_hash() {
-# Extract the substring after '#' using parameter expansion
-result=${1#*#}
-
-    # If the input string did not have a '#', return empty. Otherwise, return the result
-    if [ "$result" == "$1" ]; then
-        echo ""
-    else
-        echo "$result"
-    fi
-}
-
-array_contains() {
-local search=$1; shift
-local array=("$@")
-
-    for element in "${array[@]}"; do
-        if [[ $element == $search ]]; then
-            echo "true"
-            return 0 # Element found, return success
-        fi
-    done
-    echo "false"
-}
+declare MAVEN_REPO="https://repo1.maven.org/maven2"
+declare MANUAL_NOTICE="https://jeka-dev.github.io/jeka/reference-guide/installation"
 
 
-#######################################
-# Gets the value of a property, declared as '-Dprop.name=prop.value' in an array.
-# Globals:
-#   CMD_LINE_ARGS (read)
-# Arguments:
-#   $1 : the property name
-# Outputs:
-#   Write property value to stdout
-#######################################
-get_system_prop_from_args() {
-local prop_name=$1
-local prefix="-D$prop_name="
-for arg in "${CMD_LINE_ARGS[@]}"
-do
-if [[ "$arg" == "$prefix"* ]] ; then
-echo "${arg#$prefix}"
-fi
-done
-}
-
-#######################################
-# Download specified zip/tgz file and unpack it to the specified dir
-# Globals:
-#   none
-# Arguments:
-#   $1 : url to download file
-#   $2 : the target directory path to unzip/unpack content
-#   $3 : optional file type to unpack ('zip' or 'tar.gz'). Default is 'zip'.
-#######################################
 download_and_unpack() {
-local url=$1
-local dir=$2
-local file_type=$3  # 'zip' or 'tar.gz'
-local temp_file
-temp_file=$(mktemp)
-rm "$temp_file"
+  local url=$1
+  local dir=$2
+  local file_type=$3  # 'zip' or 'tar.gz'
+  local temp_file
+  temp_file=$(mktemp)
+  rm "$temp_file"
 
-## download
-if [ -x "$(command -v curl)" ]; then
-local silent_flag="s"
-if [ "$IS_VERBOSE" != "" ]; then
-silent_flag=""
-fi
-curl -"$silent_flag"Lf --fail --show-error -o "$temp_file" "$url"
-if [ $? -ne 0 ]; then
-msg "Curl request failed $url"
-msg "Returned code: $?"
-exit 1
-fi
-elif [ -x "$(command -v wget)" ]; then
-wget -q -O "$temp_file" "$url"
+  ## download
+  if [ -x "$(command -v curl)" ]; then
+    curl -sLf --fail --show-error -o "$temp_file" "$url"
+  elif [ -x "$(command -v wget)" ]; then
+    wget -q -O "$temp_file" "$url"
+  else
+    echo "Error: curl or wget not found, please make sure one of them is installed" 1>&2
+    exit 1
+  fi
+
+  ## unpack
+  if [ "$file_type" == "tar.gz" ]; then
+      mkdir -p "$dir"
+      gzip -cd "$temp_file" | tar xf - -C "$dir"
+  else
+    unzip -q -o -j "$temp_file" -d "$dir" -x '__MACOSX/*'
+  fi
+  rm "$temp_file"
+}
+
+check_prerequisites() {
+  if ! command -v git > /dev/null 2>&1; then
+      echo "Git is not installed. Please install it prior installing Jeka"
+      exit 1
+  fi
+  if ! command -v curl > /dev/null 2>&1; then
+      echo "Curl is not installed. Please install it prior installing Jeka"
+      exit 1
+  fi
+  if ! command -v unzip  > /dev/null 2>&1; then
+      echo "Unzip is not installed. Please install it prior installing Jeka"
+      exit 1
+  fi
+}
+
+compute_LAST_VERSION() {
+  local group_id="dev.jeka"
+  local artifact_id="jeka-core"
+  local url
+  url="http://search.maven.org/solrsearch/select?q=g:$group_id+AND+a:$artifact_id&rows=1&wt=json"
+  LAST_VERSION=$(curl -sL "$url" | sed -n 's|.*"latestVersion":"\([^"]*\)".*|\1|p')
+}
+
+compute_LAST_RELEASE() {
+    response=$(curl -s "https://api.github.com/repos/jeka-dev/jeka/tags")
+
+    # Extract and print the name of the last release without '-' character
+    latest_release=$(echo "$response" | jq -r '.[].name' | grep -v -- '-' | head -n 1)
+    LAST_RELEASE=$latest_release
+}
+
+get_download_url() {
+  local version="$1"
+  echo "$MAVEN_REPO/dev/jeka/jeka-core/$version/jeka-core-$version-distrib.zip"
+}
+
+compute_SHELL_CONFIG_FILE() {
+  local shell_bin
+  local current_shell="$SHELL"
+  if [ "$current_shell" == "" ]; then
+    current_shell="$0"
+  fi
+  if [[ $current_shell == *"bash"* ]]; then
+      shell_bin="bash"
+  elif [[ $current_shell == *"zsh"* ]]; then
+      shell_bin="zsh"
+  fi
+  if [ "$shell_bin" == "zsh" ]; then
+    SHELL_CONFIG_FILE="$HOME/.zshrc"
+  elif [ -f "$HOME/.bashrc" ]; then
+       SHELL_CONFIG_FILE="$HOME/.bashrc"
+  elif [ -f "$HOME/.bash_profile" ]; then
+      SHELL_CONFIG_FILE="$HOME/.bash_profile"
+  elif [ -f "$HOME/.profile" ]; then
+      SHELL_CONFIG_FILE="$HOME/.profile"
+  fi
+}
+
+## install in the current directory
+## This method is intended to install JeKa from scratch
+setup() {
+
+  check_prerequisites
+
+  compute_SHELL_CONFIG_FILE
+
+  # First check if Jeka is not already installed
+  local current_jeka_path
+  current_jeka_path=$(which jeka || echo "not found")
+  if [ "$current_jeka_path" != "not found" ]; then
+    echo "Your system seems to already have JeKa installed at : $current_jeka_path"
+    echo "If it is a an old version of jeka (<0.11), you can rename it (i.e. jekal) and re-run this script."
+    echo
+    echo "If it is an recent version, you can update it by executing 'jeka-install' or 'jeka-install <version>'."
+    echo "You can see latest versions here : https://central.sonatype.com/artifact/dev.jeka/jeka-core/versions"
+    echo ""
+    echo "For manual install/fixing, check your $SHELL_CONFIG_FILE file"
+    echo "and visit manual installation guide et ; $MANUAL_NOTICE"
+    echo ""
+    exit 1
+  fi
+
+  # Check if we can determine shell configuration file for augmenting PATH
+  if [ "$SHELL_CONFIG_FILE" == "" ]; then
+    echo "Your shell config can't be determined, please $MANUAL_NOTICE" 2>&1
+    exit 1
+  fi
+
+  # Proceed install
+  compute_LAST_VERSION
+  if [ "$SPECIFIC_JEKA_DIST_URL" != "" ]; then  ## $SPECIFIC_JEKA_DIST_URL may be overridden
+    url="$SPECIFIC_JEKA_DIST_URL"
+  else
+    local url
+    url="$(get_download_url "$LAST_VERSION")"
+  fi
+
+  # Downloading and unpack
+  local install_dir="$HOME/.jeka"
+  mkdir -p $install_dir
+  touch "$HOME/.jeka/global.properties"
+  echo "Installing Jeka Version $LAST_VERSION in $install_dir ..."
+  download_and_unpack "$url" "$install_dir" "zip"
+  chmod +x "$install_dir/jeka"
+  chmod +x "$install_dir/jeka-install"
+
+  # Adapt shell script
+  compute_SHELL_CONFIG_FILE
+  echo "Append JEKA_HOME to PATH in $SHELL_CONFIG_FILE"
+  local jeka_path
+  echo "" >> "$SHELL_CONFIG_FILE"
+  echo "# Setting Jeka HOME" >> "$SHELL_CONFIG_FILE"
+  echo "export PATH=\$PATH:$install_dir" >> "$SHELL_CONFIG_FILE"
+
+  echo "Checking install with 'jeka --version'. This requires JDK download. It may take a while ..."
+  export PATH=$PATH:$install_dir
+  jeka --version
+  echo "Jeka is properly installed."
+  echo "Later on, you can upgrade to a different JeKa version by running either 'jeka-install' or 'jeka-install <version>'."
+}
+
+update() {
+  local version="$1"
+  if [ "$version" == "" ]; then
+    compute_LAST_VERSION
+    version="$LAST_VERSION"
+    #compute_LAST_RELEASE
+    #version="$LAST_RELEASE"
+  fi
+  echo "Updating Jeka to version $version ? [y/n]"
+  read -r user_input
+  if [ "$user_input" != "y" ]; then
+    exit 1
+  fi
+  echo "Updating to Jeka version $version ..."
+  local url
+  url="$(get_download_url "$version" || "")"
+  local jeka_path
+  jeka_path=$(which jeka || echo "")
+  if [ "$jeka_path" == "" ]; then
+    echo "Can't find either 'jeka' executable nor \$JEKA_HOME environment variable."
+    echo "Are you sure JeKa is properly installed on your system ?"
+    exit 1
+  fi
+  download_and_unpack "$url" "$jeka_path" "zip"
+  echo "Jeka updated to version $version"
+}
+
+# ------------------------------- Script start here ----------------------
+
+if [ "$1" == "setup" ]; then  ## hidden functionality used only for installing from scratch
+  setup
 else
-msg "Error: curl or wget not found, please make sure one of them is installed"
-exit 1
+  echo "Update installed Jeka Version. Usage 'jeka-install <version>'."
+  echo "If version is not specified, last version is used."
+  echo "Too see latest available versions, visit https://central.sonatype.com/artifact/dev.jeka/jeka-core/versions"
+  echo ""
+  update "$1"
 fi
 
-## unpack
-mkdir -p "$dir"
-if [ "$file_type" == "tar.gz" ]; then
-gzip -cd "$temp_file" | tar xf - -C "$dir"
-else
-unzip -qq -o "$temp_file" -d "$dir"
-fi
-rm "$temp_file"
-}
-
-#######################################
-# Computes if we should print something on console when downloading files
-# Globals:
-#   CMD_LINE_ARGS (read)
-#   IS_VERBOSE (write)
-# Arguments:
-#   None
-#######################################
-compute_VERBOSE_QUIET() {
-for arg in "${CMD_LINE_ARGS[@]}"
-do
-if [ "$arg" == "--verbose" ] || [ "$arg" == "-v" ] || [ "$arg" == "-d" ] || [ "$arg" == "--debug" ]; then
-IS_VERBOSE="true"
-elif [ "$arg" == "--quiet" ] || [ "$arg" == "-q" ]; then
-IS_QUIET="true"
-fi
-done
-}
-
-#######################################
-# Prints passed arguments on the standard stream, only if LOG_DEBUG is non-empty
-# Globals:
-#   LOG_DEBUG (read)
-# Arguments:
-#   $*
-#######################################
-debug() {
-if [ -n "$LOG_DEBUG" ] || [ -n "$IS_VERBOSE" ]; then
-echo "$*" 1>&2
-fi
-}
-
-#######################################
-# Prints passed arguments on the standard stream, only if IS_QUIET is empty
-# Globals:
-#   IS_QUIET (read)
-# Arguments:
-#   $*
-#######################################
-info() {
-if [ -z "$IS_QUIET" ]; then
-echo "$*" 1>&2
-fi
-}
-
-#######################################
-# Gets the Jeka directory for the user. This is where are located global.properties and cache dirs.
-# Globals:
-#   JEKA_USER_HOME (read)
-# Arguments:
-#   none
-# Outputs:
-#   Write location to stdout
-#######################################
-get_jeka_user_home() {
-if [ -z "$JEKA_USER_HOME" ]; then
-echo "$HOME/.jeka"
-else
-echo "$JEKA_USER_HOME"
-fi
-}
-
-#######################################
-# Gets the effective cache dir for Jeka user
-# Globals:
-#   JEKA_CACHE_DIR (read)
-#   JEKA_USER_HOME (read)
-# Arguments:
-#   none
-# Outputs:
-#   Write location to stdout
-#######################################
-get_cache_dir() {
-if [ -z "$JEKA_CACHE_DIR" ]; then
-echo "$JEKA_USER_HOME/cache"
-else
-echo "$JEKA_CACHE_DIR"
-fi
-}
-
-#######################################
-# Gets the dir for caching projects cloned from git
-# Globals:
-#   JEKA_CACHE_DIR (read)
-#   JEKA_USER_HOME (read)
-# Arguments:
-#   none
-# Outputs:
-#   Write location to stdout
-#######################################
-get_git_cache_dir() {
-echo "$(get_cache_dir)/git"
-}
-
-
-
-#######################################
-# Gets the value of a property declared within a property file
-# Globals:
-#   none
-# Arguments:
-#   $1 : the path of the property file
-#   $2 : the property name
-# Outputs:
-#   Write property value to stdout
-#######################################
-get_prop_value_from_file() {
-local file=$1
-local key=$2
-if [ ! -f "$file" ]; then
-return
-fi
-local value
-value=$(grep "^${key}=" "${file}")
-local -i key_length
-key_length=${#key}
-((key_length++))
-echo "${value:key_length}"
-}
-
-#######################################
-# Gets the translation of a property name (as my.prop) to an env var name (as MY_PROP)
-# Globals:
-#   none
-# Arguments:
-#   $1 : the property name
-# Outputs:
-#   Write env var name to stdout
-#######################################
-get_env_var_name() {
-local prop_name="$1"
-local result=${prop_name^}
-result=${result//./_}
-result=${result//-/_}
-echo "$result"
-}
-
-#######################################
-# Resolves and returns the value of a property by looking in command line args, env var and jeka.properties files
-# Globals:
-#   CMD_LINE_ARGS (read)
-# Arguments:
-#   $1 : the base directory from where looking for jeka.properties file
-#   $2 : the property name
-# Outputs:
-#   Write env var name to stdout
-#######################################
-get_prop_value_from_base_dir() {
-local base_dir=$1
-local prop_name=$2
-
-# First look in command line args
-local cmd_args_value
-cmd_args_value="$(get_system_prop_from_args "$prop_name")"
-if [ "$cmd_args_value" != "" ]; then
-echo "$cmd_args_value"
-return 0
-fi
-
-# Then look in env variables
-local env_value
-env_value=$(printenv "$prop_name")
-if [ "$env_value" != "" ]; then
-echo "$env_value"
-return 0
-fi
-
-local value
-value=$(get_prop_value_from_file "$base_dir/jeka.properties" "$prop_name")
-if [ -z "$value" ]; then
-local parent_dir="$base_dir/.."
-local parent_jeka_props="$parent_dir/jeka.properties"
-if [ -f "$parent_jeka_props" ]; then
-get_prop_value_from_base_dir "$parent_dir" "$prop_name"
-else
-get_prop_value_from_file "$GLOBAL_PROP_FILE" "$prop_name"
-fi
-return 0
-fi
-echo "$value"
-}
-
-#######################################
-# Returns the JAVA version to use according properties
-# Globals:
-#   CMD_LINE_ARGS (read)
-#   JEKA_VERSION_PROP_NAME (read)
-# Arguments:
-#   $1 : the base directory from where looking for jeka.properties file
-# Outputs:
-#   Write JAVA version to stdout
-#######################################
-get_java_version_from_props() {
-local base_dir="$1"
-local version
-version=$(get_prop_value_from_base_dir "$base_dir" "$JEKA_VERSION_PROP_NAME")
-local trimmed_version
-trimmed_version="${version// /}"  # remove spaces
-echo "$trimmed_version"
-}
-
-#######################################
-# Returns the JAVA version to use according properties
-# Globals:
-#   INTERPOLATED_ARGS (write)
-# Arguments:
-#   $@ : an array representing the original args
-# Outputs:
-#   result in INTERPOLATED_ARGS global args
-#######################################
-compute_INTERPOLATED_ARGS() {
-INTERPOLATED_ARGS=()
-for arg in "$@"; do
-if [[ $arg == ::* ]]; then   # if arg starts with '::'
-local token=${arg:2}
-local prop_name="jeka.cmd.$token"
-local value
-value=$(get_prop_value_from_base_dir "$DEFAULT_BASE_DIR" "$prop_name")
-if [ "$value" != "" ]; then
-
-        # Value may content 0 or many elements
-        # shellcheck disable=SC2206
-        local substitute=($value)
-        INTERPOLATED_ARGS+=("${substitute[@]}")
-      else
-        INTERPOLATED_ARGS+=("$arg")
-      fi
-    else
-      INTERPOLATED_ARGS+=("$arg")
-    fi
-done
-}
-
-#######################################
-# Find the index of the remote option in an an array
-# Globals:
-#   INTERPOLATED_ARGS (write)
-# Arguments:
-#   $@ : an array representing the original args
-# Outputs:
-#   result in INTERPOLATED_ARGS global args
-#######################################
-find_remote_arg_index() {
-index=0
-for arg in "$@"; do
-is_remote_arg "$arg"
-if [ "$result" == "true" ]; then
-echo "$index"
-return 0;
-fi
-((index++))
-done
-echo "-1";
-}
-
-#######################################
-# Determines if the passed argument is a remote option (as -r)
-# Arguments:
-#   $1 : a string representing one argument
-# Outputs:
-#   result in 'result' global args
-#######################################
-is_remote_arg() {
-local arg="$1"
-if [[ "$arg" != -* ]]; then
-result="false"
-return 0
-fi
-local option=${arg:1}
-
-# check if option contains letter 'r' and optionally 'u' or 'p'
-if [[ "$option" == *r* ]] && [[ $option =~ ^(r?u?p?|r?u?p?)$ ]] && [[ ${#option} -le 3 ]]; then
-result="true"
-else
-result="false"
-fi
-}
-
-# call `get_jdk_home_from_props base_dir JAVA_VERSION`
-get_jdk_home_from_props() {
-local base_dir=$1
-local jdk_version=$2
-local prop_name="jeka.jdk.$jdk_version"
-get_prop_value_from_base_dir "$base_dir" "$prop_name"
-}
-
-is_git_url() {
-if [[ $1 =~ ^(https://|ssh://|git://|git@).* ]]; then
-echo "true"
-else
-echo "false"
-fi
-}
-
-#######################################
-# Returns the dir caching the specified git repo url
-# Arguments:
-#   $1 : a string representing the git repo url
-# Outputs:
-#   The dir location
-#######################################
-get_folder_name_from_git_url() {
-local url=$1
-local trimmed_url=$url
-local protocols=("https://" "ssh://" "git://" "git@")
-for protocol in "${protocols[@]}"; do
-trimmed_url="${trimmed_url#$protocol}"
-done
-local folder_name="${trimmed_url//\//_}"  # replace '/' by '_'
-echo "$folder_name"
-}
-
-assert_dir_exits() {
-if [ ! -d "$1" ]; then
-msg "Directory $1 does not exist"
-exit 1
-fi
-}
-
-#######################################
-# Computes the base directory according the value of '-r' option.
-# If the -r refers to a git repo url, then returns the dir where the repo is cloned.
-# Global Vars:
-#   BASE_DIR (write)
-# Arguments:
-#   $1 : a string representing a git repo url or a directory path
-#   $2 : true/false for updating the cloned repo
-# Outputs:
-#   result in BASE_DIR global args
-#######################################
-compute_base_dir_from_resolved_remote_arg() {
-
-local remote_path="$1"  # file-system path or git url
-local should_clean="$2"
-local is_git_remote
-is_git_remote=$(is_git_url "$remote_path")
-
-# the remote reference a file-system path
-if [ "false" == "$is_git_remote" ]; then
-
-    if [[ "$remote_path" == /* ]]; then    # absolute path
-      result="$remote_path"
-      assert_dir_exits "$result"
-    else  # relative path
-      result="$(pwd)/$remote_arg"
-      assert_dir_exits "$result"
-      result=$(cd "$result" && pwd)  # normalize pass
-    fi
-    BASE_DIR="$result"
-    return 0
-fi
-
-## Remote reference a git repo
-local git_url
-git_url=$(substring_before_hash "$remote_path")
-local git_tag
-git_tag=$(substring_after_hash "$remote_path")
-local branch_args=""
-if [ "$git_tag" != "" ]; then
-branch_args="--branch $git_tag"
-fi
-local cache_dir_name
-cache_dir_name=$(get_folder_name_from_git_url "$remote_path")
-result=$(get_git_cache_dir)/"$cache_dir_name"
-if [ "$should_clean" == "true" ]; then
-rm -rf "$result"
-fi
-if [ ! -d "$result" ]; then
-local quiet_flag="--quiet"
-if [ "$IS_VERBOSE" != "" ]; then
-quiet_flag=""
-fi
-info "Cloning $git_url into $result  ..."
-# $quiet_flag and $branch_args are not doubled-quoted on purpose (they may contains 0 or 2 args)
-# shellcheck disable=SC2086
-git clone $quiet_flag -c advice.detachedHead=false --depth 1 $branch_args "$git_url" "$result"
-else
-debug "Cache directory $result already exists. Won't clone or update."
-fi
-BASE_DIR=$result
-}
-
-#######################################
-# Computes the base directory according presence or not of -r option
-# Arguments:
-#   $@ : array representing the interpolated command line
-# Outputs:
-#   result in BASE_DIR global args
-#######################################
-compute_BASE_DIR() {
-local -a array=( "$@" )
-local result
-local index
-index=$(find_remote_arg_index "${array[@]}")
-if [ "$index" == "-1" ]; then
-BASE_DIR=$(pwd)
-return 0
-fi
-local option=${array[(($index))]}
-local next_index=$((index + 1))
-local remote_arg=${array[$next_index]}
-local need_update="false"
-
-# check if cmdline contains -u or --update options, prior the -parameters
-local -a prior_program_option_array
-if [[ $PROGRAM_OPTION_INDEX == -1 ]]; then
-prior_program_option_array=("${INTERPOLATED_ARGS[@]}")
-else
-prior_program_option_array=("${INTERPOLATED_ARGS[@]:0:PROGRAM_OPTION_INDEX}")
-fi
-local contains_u
-contains_u=$(array_contains "-u" "${prior_program_option_array[@]}")
-local contains_update
-contains_update=$(array_contains "--update" "${prior_program_option_array[@]}")
-
-if [[ "$option" == *u* ]] || [[ $contains_u == "true" ]] || [[ $contains_update == "true" ]]; then
-need_update="true"
-fi
-compute_base_dir_from_resolved_remote_arg "$remote_arg" "$need_update"
-}
-
-#######################################
-# Computes the location of JeKa distribution directory according the JeKa version
-# used for the current BASE DIR. This may implies to dowload the distribution.
-# Global Vars:
-#   JEKA_DIST_DIR (write)
-# Arguments:
-#   $1 : the base directory
-# Outputs:
-#   result in JEKA_DIST_DIR global args
-#######################################
-compute_JEKA_DIST_DIR() {
-if [ "$JEKA_DIST_DIR" != "" ]; then
-return 0
-fi
-
-local base_dir=$1
-local explicit_distrib_dir
-explicit_distrib_dir=$(get_prop_value_from_base_dir "$base_dir" "jeka.distrib.location")
-if [ -n "$explicit_distrib_dir" ]; then
-JEKA_DIST_DIR="$explicit_distrib_dir"
-else
-local jeka_version=
-jeka_version=$(get_prop_value_from_base_dir "$base_dir" "jeka.version")
-if [ -z "$jeka_version" ]; then
-JEKA_DIST_DIR="$CURRENT_SCRIPT_DIR"  # if no version and distrib location specified, use the current script dir
-else
-local distrib_cache_dir
-distrib_cache_dir=$(get_cache_dir)/distributions/$jeka_version
-if [ -d "$distrib_cache_dir" ]; then
-JEKA_DIST_DIR="$distrib_cache_dir"
-
-      else
-        # select download repo
-        local jeka_repo
-        if [[ "$jeka_version" == *"-SNAPSHOT" ]]; then
-          jeka_repo="https://oss.sonatype.org/content/repositories/snapshots"
-        else
-          jeka_repo="https://repo.maven.apache.org/maven2"
-        fi
-        local distrib_repo
-        distrib_repo=$(get_prop_value_from_base_dir "$base_dir" "jeka.distrib.repo")
-        [ -n "$distrib_repo" ] && jeka_repo=$distrib_repo
-
-        local url=$jeka_repo/dev/jeka/jeka-core/$jeka_version/jeka-core-$jeka_version-distrib.zip
-        info "Download Jeka distrib from $url in $distrib_cache_dir"
-        download_and_unpack "$url" "$distrib_cache_dir"
-        JEKA_DIST_DIR=$distrib_cache_dir
-      fi
-    fi
-fi
-}
-
-## Execute Jeka. Call `exec_jeka $base_dir`.
-## Returns value in JEKA_CLASSPATH
-compute_JEKA_CLASSPATH() {
-if [ "$JEKA_CLASSPATH" != "" ]; then
-return 0
-fi
-local dist_dir=$1
-local bin_dir="$dist_dir"
-
-# If no distrib dir is specified (no jeka.version specified), we look first
-# for jeka-core.jar presence in the same dir of the current script
-if [ -z "$dist_dir" ]; then  ## No jeka.version is specified, should find the local one
-if [ -f "$CURRENT_SCRIPT_DIR/$JEKA_JAR_NAME" ]; then
-bin_dir="$CURRENT_SCRIPT_DIR"
-fi
-if [ -z "$dist_dir" ]; then
-msg "No JeKa distribution found from script location $CURRENT_SCRIPT_DIR."
-msg "You probably forgot to mention a 'jeka.version' or 'jeka.distrib.location' property in jeka.properties file."
-exit 1
-fi
-fi
-
-local boot_dir_args
-
-## Reference to remote found
-if [ "$REMOTE_BASE_DIR" != "" ]; then
-if [ -d "$REMOTE_BASE_DIR/jeka-boot" ]; then
-boot_dir_args="$REMOTE_BASE_DIR/jeka-boot/*:"
-fi
-
-## No remote script, launch on current dir
-else
-if [ -d "./jeka-boot" ]; then
-boot_dir_args="./jeka-boot/*:"
-fi
-fi
-local jar_file="$dist_dir/bin/$JEKA_JAR_NAME"
-if [ ! -f "$jar_file" ]; then
-jar_file="$dist_dir/$JEKA_JAR_NAME"
-fi
-if [ ! -f "$jar_file" ]; then
-msg "Cannot find JeKa jar file $jar_file."
-msg "Are you sure the JeKa distribution you use is properly packaged ?"
-exit 1
-fi
-JEKA_CLASSPATH="$boot_dir_args$jar_file"
-}
-
-# call `get_or_download_jdk $JAVA_VERSION`. The result is set to DOWNLOAD_JDK_DIR var.
-get_or_download_jdk() {
-local JAVA_VERSION="$1"
-local specified_distrib
-specified_distrib=$(get_prop_value_from_base_dir "$BASE_DIR" "jeka.java.distrib")
-if [ -n "$specified_distrib" ]; then
-JDK_DOWNLOAD_DISTRIB="$specified_distrib"
-fi
-local jdk_cache_dir
-jdk_cache_dir="$(get_cache_dir)/jdks/$JDK_DOWNLOAD_DISTRIB-$JAVA_VERSION"
-if [ ! -d "$jdk_cache_dir" ]; then
-if [ -z "$JDK_DOWNLOAD_OS" ]; then
-msg "Unable to download JDK, unsupported Operating System: $(uname -s)"
-msg "You may workaround this problem by specifying a 'jeka.jdk.$JAVA_VERSION' env var or property in ~/jeka/global.properties file."
-exit 1
-fi
-if [ -z "$JDK_DOWNLOAD_ARCH" ]; then
-msg "Unable to download JDK, unsupported Architecture: $(uname -m)"
-msg "You may workaround this problem by specifying a 'jeka.jdk.$JAVA_VERSION' env var or property in ~/jeka/global.properties file."
-exit 1
-fi
-local download_url="https://api.foojay.io/disco/v3.0/directuris?distro=$JDK_DOWNLOAD_DISTRIB&javafx_bundled=false&libc_type=$JDK_DOWNLOAD_LIBC_TYPE&archive_type=$JDK_DOWNLOAD_FILE_TYPE&operating_system=$JDK_DOWNLOAD_OS&package_type=jdk&version=$JAVA_VERSION&architecture=$JDK_DOWNLOAD_ARCH&latest=available"
-info "Downloading JDK $JDK_DOWNLOAD_DISTRIB $JAVA_VERSION to $jdk_cache_dir. It may take a while..."
-download_and_unpack "$download_url" "$jdk_cache_dir" "$JDK_DOWNLOAD_FILE_TYPE"
-if [ "tar.gz" == "$JDK_DOWNLOAD_FILE_TYPE" ]; then
-pushd "$jdk_cache_dir" > /dev/null 2>&1
-local nested_dir
-nested_dir=$(find "." -mindepth 1 -maxdepth 1 -type d | head -n 1 | cut -c 3-)
-popd > /dev/null 2>&1
-temp_dir=$(mktemp -d)
-if [ "$JDK_DOWNLOAD_OS" = "mac" ]; then
-nested_dir+="/Contents/Home"
-fi
-mv "$jdk_cache_dir"/"$nested_dir"/* "$temp_dir"
-mv "$temp_dir"/* "$jdk_cache_dir"
-fi
-fi
-DOWNLOAD_JDK_DIR=$jdk_cache_dir
-}
-
-#######################################
-# Computes Java command according version, distrib, os and arch, implying optional
-# JDK download
-# Arguments:
-# Global vars:
-#    JDK_DOWNLOAD_OS
-#    JDK_DOWNLOAD_LIBC_TYPE
-#    JDK_DOWNLOAD_ARCH
-#    JAVA_VERSION
-#    JAVA_HOME
-#    DEFAULT_JAVA_VERSION (read)
-#    JEKA_JDK_HOME
-#    IS_VERBOSE (read)
-#    BASE_DIR (read)
-#    JAVA_CMD
-# Outputs:
-#   result in BASE_DIR global args
-#######################################
-compute_JAVA_CMD() {
-if [ "$JAVA_CMD" != "" ]; then
-return 0;
-fi
-
-# OS specific support.  $var _must_ be set to either true or false.
-case "$(uname -s)" in
-Linux*)
-JDK_DOWNLOAD_OS="linux"
-if [ -f /etc/alpine-release ]; then
-JDK_DOWNLOAD_OS=alpine-linux
-fi
-;;
-Darwin*)
-JDK_DOWNLOAD_OS="mac"
-JDK_DOWNLOAD_LIBC_TYPE="libc"; # necessary to download proper JDK
-;;
-esac
-
-case "$(uname -m)" in
-i?86)
-JDK_DOWNLOAD_ARCH="x32";;
-x86_64|amd64)
-JDK_DOWNLOAD_ARCH="x64";;
-aarch64)
-JDK_DOWNLOAD_ARCH="aarch64";;
-armv7l)
-JDK_DOWNLOAD_ARCH="arm";;
-ppc64le)
-JDK_DOWNLOAD_ARCH="ppc64le";;
-s390x)
-JDK_DOWNLOAD_ARCH="s390x";;
-arm64)
-JDK_DOWNLOAD_ARCH="arm64"
-;;
-*)
-JDK_DOWNLOAD_ARCH=""
-;;
-esac
-
-# Determines JAVA_HOME
-JAVA_VERSION=$(get_java_version_from_props "$BASE_DIR")
-
-if [ -n "$JEKA_JDK_HOME" ]; then # We can enforce usage of a specific JDK by setting JEKA_JDK_HOME env var
-JAVA_HOME="$JEKA_JDK_HOME"
-
-elif [ -n "$JAVA_VERSION" ] || [ -z "$JAVA_HOME" ]; then # if a Java version is specified in then use one of the JeKa managed JDK
-if [ -z "$JAVA_VERSION" ]; then
-JAVA_VERSION=$"$DEFAULT_JAVA_VERSION"
-if [ -n "$IS_VERBOSE" ]; then
-info "No JAVA_HOME defined and no jeka.java.version defined. Use Java $DEFAULT_JAVA_VERSION."
-fi
-fi
-jdkPath=$(get_jdk_home_from_props "$BASE_DIR" "$JAVA_VERSION")
-debug "JDK HOME $JAVA_VERSION from env or props : $jdkPath "
-if [ -z "$jdkPath" ]; then
-get_or_download_jdk "$JAVA_VERSION"
-JAVA_HOME="$DOWNLOAD_JDK_DIR"
-fi
-fi
-
-# Determines JAVA_CMD to use according JAVA_HOME
-if [ -z "$JAVA_CMD" ] ; then
-if [ -n "$JAVA_HOME"  ] ; then
-if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
-# IBM's JDK on AIX uses strange locations for the executables
-JAVA_CMD="$JAVA_HOME/jre/sh/java"
-else
-JAVA_CMD="$JAVA_HOME/bin/java"
-fi
-else
-JAVA_CMD="$(which java)"
-fi
-fi
-
-if [ ! -x "$JAVA_CMD" ] ; then
-msg "Error: JAVA_HOME is not defined correctly (valued to $JAVA_HOME )."
-msg "  We cannot execute $JAVA_CMD" >&2
-msg "  You can specify which JDK to use by setting JEKA_JDK environment variable."
-exit 1
-fi
-
-}
-
-#######################################
-# Execute java program if requested.
-# Program execution is requested when '-p' is present in cmd line args.
-# The args following '-p' are to be passed to program args.
-# First, Jeka try to find an executable bin or jar, in 'jeka-output'
-# If there is none, jeka launches build and retry.
-#
-# Global Vars:
-#   BASE_DIR      (read)
-#   JEKA_DIST_DIR (write)
-#   RETRY_AFTER_BUILD (read/write)
-#   INTERPOLATED_ARGS (read)
-#   PROGRAM_OPTION_INDEX (read)
-# Outputs:
-#   None. Exit anyway if program launch has been requested
-#######################################
-execute_program_if_requested() {
-if [[ $PROGRAM_OPTION_INDEX == -1 ]]; then
-return 0
-fi
-local -i from_arg_index
-from_arg_index=$((PROGRAM_OPTION_INDEX+1))
-local program_args=("${INTERPOLATED_ARGS[@]:$from_arg_index}")
-execute_and_exit_native_if_present "${program_args[@]}"
-execute_and_exit_java_if_present "${program_args[@]}"
-
-if [[ "$RETRY_AFTER_BUILD" == "true" ]]; then
-msg "Cannot find a native or jar executable in $BASE_DIR/jeka-output"
-exit 1
-fi
-
-## If we are here, this means that no native or jar has been found -> build
-debug "Launch a build to generate executable"
-compute_JAVA_CMD
-compute_JEKA_DIST_DIR "$BASE_DIR"
-compute_JEKA_CLASSPATH "$JEKA_DIST_DIR"
-local -a heading_args=("${INTERPOLATED_ARGS[@]::$PROGRAM_OPTION_INDEX}")
-
-local build_cmd
-build_cmd=$(get_prop_value_from_base_dir "$BASE_DIR" "jeka.program.build")
-if [[ -z "$build_cmd" ]]; then
-if [ -d "$BASE_DIR/src" ]; then
-build_cmd="project: pack -Djeka.skip.tests=true --stderr"
-else
-build_cmd="base: pack -Djeka.skip.tests=true --stderr"
-fi
-fi
-
-# shellcheck disable=SC2206
-local -a build_args=($build_cmd)
-# shellcheck disable=SC2145
-info "Launch build with command : ${heading_args[@]} ${build_args[@]}"
-"$JAVA_CMD" "${JEKA_OPTS[@]}" "-Djeka.current.basedir=$BASE_DIR" -cp "$JEKA_CLASSPATH" "dev.jeka.core.tool.Main" "${heading_args[@]}" "${build_args[@]}"
-RETRY_AFTER_BUILD="true"
-execute_program_if_requested
-
-}
-
-#######################################
-# Gets the index of '-p' or '--program' in the given array
-# Returns -1, if no such element found
-# Globals:
-#   none
-# Arguments:
-#   $1 : the arrays where we are searching element in
-#   $2 : the array providing elements to search
-# Outputs:
-#   Write to stdout
-#######################################
-compute_PROGRAM_OPTION_INDEX() {
-local -i index=0
-local -a items=("$@")
-for item in "${items[@]}"; do
-if [ "$item" == "-p" ] || [ "$item" == "--program" ]; then
-PROGRAM_OPTION_INDEX="$index"
-return 0
-fi
-((index += 1))
-
-done
-PROGRAM_OPTION_INDEX=-1
-}
-
-######################################
-# Execute and exit native program if present
-#
-# Global Vars:
-#   BASE_DIR      (read)
-# Arguments:
-#   $1 : args array to pass to native program
-# Outputs:
-#   None. Exit anyway if program found
-#######################################
-execute_and_exit_native_if_present() {
-local exe_file;
-for file in "$BASE_DIR"/jeka-output/*; do
-if [ -f "$file" ] && [ -x "$file" ] && [[ "$file" != *".jar" ]]; then
-exe_file="$file"
-break
-fi
-done
-if [ "$exe_file" == "" ]; then
-debug "No native exe file found in $BASE_DIR/jeka-output/*"
-return 0
-fi
-exec "$exe_file" "$@"
-exit $?
-}
-
-######################################
-# Execute and exit java program if present
-#
-# Global Vars:
-#   BASE_DIR      (read)
-# Arguments:
-#   $1 : args array to pass to native program
-# Outputs:
-#   None. Exit anyway if program found
-#######################################
-execute_and_exit_java_if_present() {
-local jar_file;
-for file in "$BASE_DIR"/jeka-output/*; do
-if [ -f "$file" ] && [[ "$file" == *".jar" ]]; then
-jar_file="$file"
-break
-fi
-done
-if [ "$jar_file" == "" ]; then
-debug "No Jar file found in $BASE_DIR/jeka-output/*"
-return 0
-fi
-compute_JAVA_CMD
-local -a sysProp_params
-filter_in_sysProp "$@"
-sysProp_params=("${returned[@]}")
-local -a regular_params
-filter_out_sysProp "$@"
-regular_params=("${returned[@]}")
-exec "$JAVA_CMD" "${sysProp_params[@]}" -jar "$jar_file" "${regular_params[@]}"
-exit $?
-}
-
-######################################
-# Filter array keeping only items that match '-Dxxx=yyy' (sys prop)
-#
-# Global Vars:
-#   returned     (write)
-# Arguments:
-#   $@ : arrays to filter
-# Outputs:
-#   The filtered array is written to in the 'returned' global var
-#######################################
-filter_in_sysProp() {
-local arr=("$@")
-returned=()
-for i in "${arr[@]}"; do
-if [[ $i == -D* ]] && [[ $i == *"="* ]]; then
-returned+=("$i")
-fi
-done
-}
-
-######################################
-# Filter array removing items that match '-Dxxx=yyy' (sys prop)
-#
-# Global Vars:
-#   returned     (write)
-# Arguments:
-#   $@ : arrays to filter
-# Outputs:
-#   The filtered array is written to in the 'returned' global var
-#######################################
-filter_out_sysProp() {
-local arr=("$@")
-returned=()
-for i in "${arr[@]}"; do
-if [[ $i != -D* ]] || [[ $i != *"="* ]]; then
-returned+=("$i")
-fi
-done
-}
-
-##############################################################
-# Script starts here
-##############################################################
-
-compute_VERBOSE_QUIET
-JEKA_USER_HOME=$(get_jeka_user_home)
-GLOBAL_PROP_FILE="$JEKA_USER_HOME/global.properties"
-
-compute_INTERPOLATED_ARGS "${CMD_LINE_ARGS[@]}"
-compute_PROGRAM_OPTION_INDEX "${INTERPOLATED_ARGS[@]}"
-compute_BASE_DIR "${INTERPOLATED_ARGS[@]}"
-
-execute_program_if_requested
-
-compute_JAVA_CMD
-
-## When debugging we don't want to execute Jeka
-if [ -z "$DRY_RUN" ]; then
-compute_JEKA_DIST_DIR "$BASE_DIR"
-compute_JEKA_CLASSPATH "$JEKA_DIST_DIR"
-
-exec "$JAVA_CMD" "${JEKA_OPTS[@]}" "-Djeka.current.basedir=$BASE_DIR" -cp "$JEKA_CLASSPATH" "dev.jeka.core.tool.Main" "$@"
-fi
