@@ -19,7 +19,7 @@
     <meta name="image" property="og:image" content="images/logos/knight-1color-dark.svg">
     <title>JeKa : The Build Tool Kit for Java</title>
     <meta name="description" content="Build Projects and Automate any Tasks Using Plain Java or Kotlin"/>
-    <link rel="icon" href="images/archives/draft-sharp-knight/knight-5colors-B.svg">
+    <link rel="icon" href="images/logos/knight-1color-dark.svg">
     <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,14 +57,18 @@
         <div class="container aa-header-content text-center text-white" style="padding-top: 20px">
           <div class="row">
             <div class="col-md-12 col-sm-12">
-              <img src="images/logos/knight-4colors-A.svg" width="160"/>
+              <img src="images/logos/knight-red-to-pink.svg" width="160"/>
               <br/>
               <!-- <h1 class="text-white mb-4">Jeka</h1>  -->
-              <h2>The Build Tool Kit for Java</h2>
+              <h2>Build and Run Java Code from Everywhere</h2>
               <br/>
-              <h4 class="subTitleColor">Build Projects and Automate any Tasks Using Plain Java or Kotlin</h4>
-              <h4 class="subTitleColor">Share Build Logic and Delivery Processes across Projects</h4>
-              <h4 class="subTitleColor">Run and Debug in IDE - Execute Anywhere</h4>
+              <h4 class="subTitleColor">Run Java Applications directly from Source Code hosted Locally or in a Git Repository</h4>
+              <h4 class="subTitleColor">Create portable builds and pipelines using properties or Java scripting</h4>
+              <h4 class="subTitleColor">Share build and CI/CD logic across projects</h4>
+              <h4 class="subTitleColor">Get rid of switching between JDKs</h4>
+              <!--
+              <h4 class="subTitleColor">Code and Debug in IDE - Execute directly Anywhere</h4>
+              -->
               <br/><br/>
               <a class="btn btn-outline-neutral btn-round" href="https://jeka-dev.github.io/jeka/tutorials/gui-getting-started/#getting-started-with-jeka" target="_blank">
                 Get started in 5 min
@@ -80,54 +84,53 @@
   <div class="aa-product-details section" id="features">
     <div class="row">
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-cog" aria-hidden="true"></i></div>
+        <div class="icon icon-danger"><i class="fa fa-play-circle-o" aria-hidden="true"></i></div>
         <div class="description">
-          <div class="h4">Just Plain Java or Kotlin </div>
-          <p class="text-muted">No need for XML, fragile scripting, or DSLs.
-            <br/>JeKa allows to build projects and implement pipelines, just using
-            plain Java or Kotlin classes that can be easily run and debugged in an IDE. </p>
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-tags" aria-hidden="true"></i></div>
-        <div class="description">
-          <div class="h4">Rich Features</div>
-          <p class="text-muted">In addition to its scripting capabilities and utilities, JeKa features a complete build tool
-            with support for dependency management, IntelliJ, Eclipse,
-            Git, Spring-Boot, NodeJs, Sonarqube, Jacoco, OpenApi, Docker/Kubernetes and more.
-        </div>
-      </div>
-      <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-cubes" aria-hidden="true"></i></div>
-        <div class="description">
-          <div class="h4">Designed for Extension</div>
-          <p class="text-muted">JeKa is built on a simple yet powerful plugin architecture, allowing plugins to extend each other.
-            <br/>Nevertheless, it doesn't require writing specific plugins to integrate third-party technologies, as it
-            can seamlessly integrate with any tool providing a Java library or a command-line interface.
+          <div class="h4">Execute Java or Kotlin sources</div>
+          <p class="text-muted">
+            Whether it is a command-line app, a full-fledged web app, a Swing application, or a single file script,
+            JeKa can run it efficiently from source code without worrying about installing the proper JDK.
+            <br/>To run from local sources, you don't even need to have JeKa installed.
           </p>
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-smile-o" aria-hidden="true"></i></div>
+        <div class="icon icon-danger"><i class="fa fa-cog" aria-hidden="true"></i></div>
         <div class="description">
-          <div class="h4">User Friendly</div>
+          <div class="h4">Powerful Build Tool</div>
+          <p class="text-muted">JeKa is primarily a powerful build tool for Java and Kotlin projects,
+            using concise property declarations or Java/Kotlin scripting. <br/>It supports Java/Kotlin compilation, testing,
+            dependency management, process handling, IntelliJ, Eclipse, Git, Maven, Docker, and more out-of-the-box.
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="icon icon-danger"><i class="fa fa-plug" aria-hidden="true"></i></div>
+        <div class="description">
+          <div class="h4">Designed for Extension</div>
+          <p class="text-muted">JeKa is built on a simple yet powerful plugin architecture, allowing plugins to extend
+            each other using a minimal set of concepts. It currently includes extensions for Spring Boot, Node.js,
+            SonarQube, JaCoCo, Nexus repositories, Protobuf, OpenAPI, and more.
+          </p>
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <div class="icon icon-danger"><i class="fa fa-cube" aria-hidden="true"></i></div>
+        <div class="description">
+          <div class="h4">Container Ready</div>
           <p class="text-muted">
-            JeKa prioritizes simplicity by utilizing basic idioms instead of enforcing frameworks or using complex concepts.
-            <br/>Its transparent design ensures that executed code is straightforward to navigate and debug.
-            <br/>Additionally, JeKa heavily relies on conventions to minimize the need for manual configuration
+            JeKa offers a way to effortlessly create Docker images of your applications, requiring minimal effort,
+            or none at all, if additional customization is needed.
+            <br/> We are currently making additional efforts to integrate Kubernetes and Native image technologies.
           </p>
         </div>
       </div>
 
       <div class="col-lg-6 col-md-6 col-sm-12">
-        <div class="icon icon-danger"><i class="fa fa-book" aria-hidden="true"></i></div>
+        <div class="icon icon-danger"><i class="fa fa-leaf" aria-hidden="true"></i></div>
         <div class="description">
-          <div class="h4">Documentation</div>
+          <div class="h4">Lightweight</div>
           <p class="text-muted">
-            JeKa offers resources like tutorials, reference guides, and examples that are kept up-to-date
-            with its evolution.
-            <br/>Additionally, it has a command-line help feature that utilizes class introspection,
-            making it easy for users to document their code with minimal effort.
+            JeKa weighs less than 2MB and can run applications without extra JVM launch time.
         </div>
       </div>
       <div class="col-lg-6 col-md-6 col-sm-12">
@@ -186,22 +189,11 @@
         -->
 <div class="aa-screenshots section">
   <div class="container text-center">
-    <h2 class="title pb-3">See in Action</h2>
-    <div class="row">
-      <div class="col-lg-6 col-md-12 col-sm-12 mb-5">
-              <iframe src="https://www.youtube.com/embed/hUFvbmFggUY?si=ogamIIU_YYir4vH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen showinfo=0></iframe>
-              <p>
-                Write Scripts in Java, Execute Sources from Command Line
-              </p>
-      </div>
-      <div class="col-lg-6 col-md-12 sm-12 mb-5">
-                <iframe src="https://www.youtube.com/embed/rUmhMhYRdr0?si=CYPAu21LdY-40xCy" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                <p>
-                  Build Programmatically Projects involving Spring-Boot, Jacoco, Sonarqube, and friends
-                </p>
-      </div>
-    </div>
+    <h2>See in Action</h2>
+    <script src="https://asciinema.org/a/KDyclR3VREVw6JS4St2XLFpwg.js" data-start-at="2" data-autoplay=0 id="asciicast-KDyclR3VREVw6JS4St2XLFpwg" async="true"></script>
+    Visit examples <a href="https://github.com/jeka-dev/jeka#examples">here</a>
   </div>
+
 </div>
 
 <!--
