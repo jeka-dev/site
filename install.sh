@@ -21,10 +21,11 @@ set -e
 # Script for installing and upgrading JeKa
 # Authors: Jerome Angibaud
 
-# curl -s https://raw.githubusercontent.com/jeka-dev/jeka/0.11.x/dev.jeka.core/src/main/shell/jeka-install | $(echo $0) -s - setup
+# curl -s https://raw.githubusercontent.com/jeka-dev/jeka/0.11.x/dev.jeka.core/src/main/shell/jeka-install | $(echo $0) -s - install
 
-
-declare MAVEN_REPO="https://repo1.maven.org/maven2"
+# TODO get back to regular repo when released
+declare MAVEN_REPO="https://oss.sonatype.org/content/repositories/snapshots"
+# declare MAVEN_REPO="https://repo1.maven.org/maven2"
 declare MANUAL_NOTICE="https://jeka-dev.github.io/jeka/reference-guide/installation"
 
 
@@ -57,10 +58,6 @@ download_and_unpack() {
 }
 
 check_prerequisites() {
-  if ! command -v git > /dev/null 2>&1; then
-      echo "Git is not installed. Please install it prior installing Jeka"
-      exit 1
-  fi
   if ! command -v curl > /dev/null 2>&1; then
       echo "Curl is not installed. Please install it prior installing Jeka"
       exit 1
@@ -77,6 +74,9 @@ compute_LAST_VERSION() {
   local url
   url="http://search.maven.org/solrsearch/select?q=g:$group_id+AND+a:$artifact_id&rows=1&wt=json"
   LAST_VERSION=$(curl -sL "$url" | sed -n 's|.*"latestVersion":"\([^"]*\)".*|\1|p')
+
+  # TODO remove
+  LAST_VERSION=0.11.x-SNAPSHOT
 }
 
 compute_LAST_RELEASE() {
@@ -116,7 +116,7 @@ compute_SHELL_CONFIG_FILE() {
 
 ## install in the current directory
 ## This method is intended to install JeKa from scratch
-setup() {
+install() {
 
   check_prerequisites
 
@@ -127,7 +127,7 @@ setup() {
   current_jeka_path=$(which jeka || echo "not found")
   if [ "$current_jeka_path" != "not found" ]; then
     echo "Your system seems to already have JeKa installed at : $current_jeka_path"
-    echo "If it is a an old version of jeka (<0.11), you can rename it (i.e. jekal) and re-run this script."
+    echo "If it is a an old version of jeka (<0.11), you can rename it (i.e. jeka-legacy) and re-run this script."
     echo
     echo "If it is an recent version, you can update it by executing 'jeka-install' or 'jeka-install <version>'."
     echo "You can see latest versions here : https://central.sonatype.com/artifact/dev.jeka/jeka-core/versions"
@@ -154,7 +154,7 @@ setup() {
   fi
 
   # Downloading and unpack
-  local install_dir="$HOME/.jeka"
+  local install_dir="$HOME/.jeka/bin"
   mkdir -p $install_dir
   touch "$HOME/.jeka/global.properties"
   echo "Installing Jeka Version $LAST_VERSION in $install_dir ..."
@@ -169,12 +169,17 @@ setup() {
   echo "" >> "$SHELL_CONFIG_FILE"
   echo "# Setting Jeka HOME" >> "$SHELL_CONFIG_FILE"
   echo "export PATH=\$PATH:$install_dir" >> "$SHELL_CONFIG_FILE"
-
-  echo "Checking install with 'jeka --version'. This requires JDK download. It may take a while ..."
   export PATH=$PATH:$install_dir
-  jeka --version
-  echo "Jeka is properly installed."
-  echo "Later on, you can upgrade to a different JeKa version by running either 'jeka-install' or 'jeka-install <version>'."
+
+  if [ "$CHECK" == "true" ]; then
+    echo "Checking install with 'jeka --version'. This requires JDK download."
+    jeka --version
+    echo "Jeka is properly installed."
+    echo "Later on, you can upgrade to a different JeKa version by running either 'jeka-install' or 'jeka-install <version>'."
+  else
+    echo "Jeka is installed. You can check by executing 'jeka --version'."
+  fi
+  echo "Please, start a new Shell to ensure the changes are applied."
 }
 
 update() {
@@ -206,8 +211,11 @@ update() {
 
 # ------------------------------- Script start here ----------------------
 
-if [ "$1" == "setup" ]; then  ## hidden functionality used only for installing from scratch
-  setup
+if [ "$1" == "install" ]; then  ## hidden functionality used only for installing from scratch
+  if [ "$2" == "check" ] || [ "$3" == "check" ]; then
+    CHECK="true"
+  fi
+  install
 else
   echo "Update installed Jeka Version. Usage 'jeka-install <version>'."
   echo "If version is not specified, last version is used."
