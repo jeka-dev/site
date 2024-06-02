@@ -109,6 +109,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 }
 
 .aa-screenshots {
+  padding-top: 20px;
   background-color: #F5FAFD;
 }
 
@@ -307,3 +308,4 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   color: #192023;
 }
 
+.

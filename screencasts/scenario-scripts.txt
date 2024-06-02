@@ -1,0 +1,52 @@
+# Let's create some scripts with Java code and run them directly from command line
+mkdir demo-script
+cd demo-script
+jeka base: scaffold
+
+-- empty jeka.properties
+
+# Let's see what we can do from the generated template
+jeka --doc
+jeka hello
+jeka hello name=JeKa
+
+# Now, make it more fancy by using 3rd party libraries
+# We can use both JBang like or @JkInjectClasspath notation
+mc -e jeka-src/Script.java
+
+import com.github.lalyos.jfiglet.FigletFont;
+
+//DEPS com.github.lalyos:jfiglet:0.0.9
+
+throws Exception
+FigletFont.convertOneLine(
+
+- quit mc
+jeka hello name=ascii-art
+
+# Ok. Now, let's add a new script method
+mc -e jeka-src/Script.java
+
+import dev.jeka.core.api.file.JkPathTree;
+
+    @JkDoc("Compute the MD5 checksum recursively on the working dir.")
+    public void dirChecksum() {
+        System.out.println("MD5 checksum for this dir : " + JkPathTree.of(".").checksum("md5"));
+    }
+
+-- quit mc
+ jeka --doc
+ jeka dirChecksum
+
+ ## Thank you for watching
+ ## You can add as many script and utility classes you need in a single project
+ ## Visit documentation at : https://jeka-dev.github.io/jeka/
+
+ Ctrl+D
+
+Recorded with asciinema
+Start Recording : asciinema rec demo-script.cast
+Stop recording  : ctrl + D
+play Recording  : asciinema play demo-script.cast
+share Recording : asciinema upload demo-script.cast
+Embbed Recording: <script src="https://asciinema.org/a/RDCVisQobsHPwM72Q7czxsIDa.js" id="asciicast-RDCVisQobsHPwM72Q7czxsIDa" async="true"></script>
