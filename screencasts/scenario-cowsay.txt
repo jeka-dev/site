@@ -1,33 +1,43 @@
 
 # Let's run a Java command-line application directly from its project source repo: https://github.com/jeka-dev/demo-cowsay
 # This application is a Java port of 'cowsay' and is built with JeKa, which facilitates auto-run.
-# We decide to run the version tagged as 0.0.3
-jeka -r "https://github.com/jeka-dev/demo-cowsay#0.0.3" -p Hello JeKa
-# The second run is much quicker, as the binaries are cached
-jeka -r https://github.com/jeka-dev/demo-cowsay#0.0.3 -p Hello JeKa
+# We decide to run the version tagged as 0.0.4
+jeka -r "https://github.com/jeka-dev/demo-cowsay#0.0.4" -p Hello JeKa
+# The second run is much faster, as the binaries are cached
+time jeka -r https://github.com/jeka-dev/demo-cowsay#0.0.4 -p Hello JeKa
 
-# Let's create a shorthand in ~/.jeka/global.properties to ease usage
-echo "jeka.cmd.cowsay=-r https://github.com/jeka-dev/demo-cowsay#0.0.3 -p" >> ~/.jeka/global.properties
+# Indeed it took 0.3s to run, but we can make it much faster by generating a native executable
+jeka -r https://github.com/jeka-dev/demo-cowsay#0.0.4 native: build
+# Ok. Let's run it again
+time jeka -r https://github.com/jeka-dev/demo-cowsay#0.0.4 -p Hello JeKa
+# Now the application runs in 0.01s
+
+
+# Well. Let's create a shorthand in ~/.jeka/global.properties to ease usage
+# For this, we create a 'cowsay' shorthand by setting a 'jeka.cmd.cowsay' property in ~/.jeka/global.properties
+echo "jeka.cmd.cowsay=-r https://github.com/jeka-dev/demo-cowsay#0.0.4 -p" >> ~/.jeka/global.properties
 fortune | jeka ::cowsay -f kitty
 
-# Let JeKa produce a default Docker image for this application
-jeka -r "https://github.com/jeka-dev/demo-cowsay#0.0.3" docker:build
-# Run this image
-docker run -it --rm -e PROGRAM_ARGS="Hello Docker" github.com_jeka-dev_demo-cowsay:0.0.3
+# Right. Now, let JeKa produce a default Docker image for this application
+jeka -r "https://github.com/jeka-dev/demo-cowsay#0.0.4" docker:build
+# By default, The generated image runs the generated jar, not the native executable file.
+# Let's run it
+docker run --rm github.com_jeka-dev_demo-cowsay:0.0.4 "Hi Docker"
 
-# Only a few lines were needed by JeKa to build and make this project runnable.
+# Only a very few lines of configuration were needed by JeKa to build, runify, nativize and dockerize the project
 # The jeka.properties file, where the Java version and build instructions are mentioned
-cat ~/.jeka/cache/git/github.com_jeka-dev_demo-cowsay#0.0.3/jeka.properties
-# The dependencies.txt file containing library dependencies
-cat ~/.jeka/cache/git/github.com_jeka-dev_demo-cowsay#0.0.3/dependencies.txt
+cat ~/.jeka/cache/git/github.com_jeka-dev_demo-cowsay#0.0.4/jeka.properties
+# and the dependencies.txt file containing library dependencies
+cat ~/.jeka/cache/git/github.com_jeka-dev_demo-cowsay#0.0.4/dependencies.txt
 
 # This is the basis of JeKa's capabilities for running Java applications from remote sources
+# Here, we have only demonstrated the default functionalities but options are endless thanks to properties and Java scripting.
 # JeKa works with any type of applications (Swing, Web-app, etc.) on Windows, Linux, macOS, and containers
 # See other examples at https://github.com/jeka-dev/jeka#examples
 
 
 ------ clean dirs
-rm -f ~/cowsay.cast && : > ~/.jeka/global.properties && rm -rf ~/.jeka/cache/jdks/graalvm-21 && rm -rf ~/.jeka/cache/git/github.com_jeka-dev_demo-cowsay#0.0.3 && clear
+rm -f ~/cowsay.cast && : > ~/.jeka/global.properties && rm -rf ~/.jeka/cache/jdks/graalvm-21 && rm -rf ~/.jeka/cache/git/github.com_jeka-dev_demo-cowsay#0.0.4 && clear
 
 Recorded with asciinema
 Start Recording : asciinema rec cowsay.cast
