@@ -23,7 +23,6 @@ set -e
 
 # curl -s https://raw.githubusercontent.com/jeka-dev/jeka/0.11.x/dev.jeka.core/src/main/shell/jeka-update | $(echo $0) -s - install
 
-# TODO get back to regular repo when released
 # declare MAVEN_REPO="https://oss.sonatype.org/content/repositories/snapshots"
 declare MAVEN_REPO="https://repo1.maven.org/maven2"
 declare MANUAL_NOTICE="https://jeka-dev.github.io/jeka/reference-guide/installation"
