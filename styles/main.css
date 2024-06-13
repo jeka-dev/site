@@ -16,7 +16,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 
 
 .bg-gradient {
-  background-image: url('../images/background/draft-2.svg');
+  background-image: url('../images/background/purple-waves.svg');
   /* background by SVGBackgrounds.com */
 }
 
@@ -109,6 +109,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 }
 
 .aa-screenshots {
+  padding-top: 20px;
   background-color: #F5FAFD;
 }
 
@@ -259,6 +260,10 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   color: #0078d7;
 }
 
+.icon-danger {
+  color: #d64072;
+}
+
 .aa-download-section .aa-download-icon {
   padding-left: 40px;
 }
@@ -303,3 +308,4 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   color: #192023;
 }
 
+.
