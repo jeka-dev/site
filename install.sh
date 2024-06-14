@@ -150,14 +150,13 @@ install() {
   fi
 
   # Downloading and unpack
-  set -x
   local install_dir="$HOME/.jeka/bin"
   mkdir -p $install_dir
   touch "$HOME/.jeka/global.properties"
   echo "Installing Jeka Version $LAST_VERSION in $install_dir ..."
   download_and_unpack "$url" "$install_dir" "zip"
   chmod +x "$install_dir/jeka"
-  chmod +x "$install_dir/jeka-install"
+  chmod +x "$install_dir/jeka-update"
 
   # Adapt shell script
   compute_SHELL_CONFIG_FILE
