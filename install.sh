@@ -150,6 +150,7 @@ install() {
   fi
 
   # Downloading and unpack
+  set -x
   local install_dir="$HOME/.jeka/bin"
   mkdir -p $install_dir
   touch "$HOME/.jeka/global.properties"
