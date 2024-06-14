@@ -73,9 +73,6 @@ compute_LAST_VERSION() {
   local url
   url="http://search.maven.org/solrsearch/select?q=g:$group_id+AND+a:$artifact_id&rows=1&wt=json"
   LAST_VERSION=$(curl -sL "$url" | sed -n 's|.*"latestVersion":"\([^"]*\)".*|\1|p')
-
-  # TODO remove
-  LAST_VERSION=0.11.x-SNAPSHOT
 }
 
 compute_LAST_RELEASE() {
