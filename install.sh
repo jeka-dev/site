@@ -125,7 +125,7 @@ install() {
     echo "Your system seems to already have JeKa installed at : $current_jeka_path"
     echo "If it is a an old version of jeka (<0.11), you can rename it (i.e. jeka-legacy) and re-run this script."
     echo
-    echo "If it is an recent version, you can update it by executing 'jeka-install' or 'jeka-install <version>'."
+    echo "If it is an recent version, you can update it by executing 'jeka-update' or 'jeka-update <version>'."
     echo "You can see latest versions here : https://central.sonatype.com/artifact/dev.jeka/jeka-core/versions"
     echo ""
     echo "For manual install/fixing, check your $SHELL_CONFIG_FILE file"
@@ -171,7 +171,7 @@ install() {
     echo "Checking install with 'jeka --version'. This requires JDK download."
     jeka --version
     echo "Jeka is properly installed."
-    echo "Later on, you can upgrade to a different JeKa version by running either 'jeka-install' or 'jeka-install <version>'."
+    echo "Later on, you can upgrade to a different JeKa version by running either 'jeka-update' or 'jeka-update <version>'."
   else
     echo "Jeka is installed. You can check by executing 'jeka --version'."
   fi
