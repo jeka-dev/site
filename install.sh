@@ -68,11 +68,11 @@ check_prerequisites() {
 }
 
 compute_LAST_VERSION() {
-  local group_id="dev.jeka"
-  local artifact_id="jeka-core"
   local url
-  url="http://search.maven.org/solrsearch/select?q=g:$group_id+AND+a:$artifact_id&rows=1&wt=json"
-  LAST_VERSION=$(curl -sL "$url" | sed -n 's|.*"latestVersion":"\([^"]*\)".*|\1|p')
+  #url="http://search.maven.org/solrsearch/select?q=g:$group_id+AND+a:$artifact_id&rows=1&wt=json"
+  #LAST_VERSION=$(curl -sL "$url" | sed -n 's|.*"latestVersion":"\([^"]*\)".*|\1|p')
+  url="https://repo1.maven.org/maven2/dev/jeka/jeka-core/maven-metadata.xml"
+  LAST_VERSION=$(curl -sL "$url" | awk -F'[<>]' '/<latest>/ {print $3}')
 }
 
 compute_LAST_RELEASE() {
