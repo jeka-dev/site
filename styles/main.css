@@ -16,7 +16,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 
 
 .bg-gradient {
-  background-image: url('../images/background/purple-waves.svg');
+  background-image: url('../images/background/parabolic.svg');
   /* background by SVGBackgrounds.com */
 }
 
@@ -24,8 +24,6 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   background-repeat: no-repeat;
   background-size: cover;
 }
-
-
 
 .subTitleColor {
   color: whitesmoke;
@@ -306,6 +304,11 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
 /* Styles added by Jerome */
 .hyperlink-card {
   color: #192023;
+}
+
+/* Styles added by Jerome */
+.text-muted-header {
+  color: rgba(245, 245, 245, 0.53);
 }
 
 .
