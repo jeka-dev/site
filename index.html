@@ -269,7 +269,6 @@ protected void init() {
     JkJacoco.ofVersion("0.8.11")
             .configureAndApplyTo(project);
     project.compilation.addJavaCompilerOptions("-Xlint:-options");
-    project.testing.compilation.addJavaCompilerOptions("-Xlint:-options");
     project.testing.testProcessor.engineBehavior
             .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.BAR);
 }
