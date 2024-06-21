@@ -15,6 +15,11 @@
         gtag('config', 'UA-103449580-2');
     </script>
 
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -32,7 +37,7 @@
     <link href="styles/main.css" rel="stylesheet">
 
     <!-- hightlighting.js -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
 
 </head>
 <body id="top">
@@ -223,13 +228,61 @@
             </div>
 
             <div>
-                <h4>Configure builds with minimal ceremonies</h4>
+                <h4>Configure Build using Properties only</h4>
                 <pre>
-                      <code class="language-properties">
-                          kjklj=hjhj
-                          jkjkkjkj.kjk=zz
+                      <code class="language-properties" style="font-size: medium; text-align: left">
+jeka.version=0.11.0-beta.0
+jeka.java.version=21
+
+# Import plugins from Maven central. Versions are inferred from JeKa version.
+jeka.inject.classpath=\
+  dev.jeka:springboot-plugin \
+  dev.jeka:jacoco-plugin \
+  dev.jeka:sonarqube-plugin
+
+jeka.cmd.packQuality=project: pack sonarqube: run
+
+# activate springboot KBean
+@springboot=
+
+# activate Jacoco KBean
+@jacoco=
+@jacoco.jacocoVersion=0.8.12
+
+# configure sonarqube KBean
+@sonarqube.scannerVersion=5.0.1.3006
+sonar.host.url=http://localhost:9000
                       </code>
-                    </pre>
+                </pre>
+            </div>
+            <div>
+                <h4>Or using Java Code</h4>
+                <pre>
+                      <code class="language-java" style="font-size: medium; text-align: left">
+final JkProject project = load(ProjectKBean.class).project;
+
+@Override
+protected void init() {
+    JkSpringbootProject.of(project)
+            .includeParentBom("3.2.0")
+            .configure();
+    JkJacoco.ofVersion("0.8.11")
+            .configureAndApplyTo(project);
+    project.compilation.addJavaCompilerOptions("-Xlint:-options");
+    project.testing.compilation.addJavaCompilerOptions("-Xlint:-options");
+    project.testing.testProcessor.engineBehavior
+            .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.BAR);
+}
+
+@JkDoc("Launch sonarQube analysis.")
+public void sonarqube() {
+    JkSonarqube.ofVersion("5.0.1.3006")
+            .setProperties(getRunbase().getProperties())
+            .configureFor(project)
+            .run();
+}
+                      </code>
+                </pre>
             </div>
 
         </div>
@@ -367,10 +420,7 @@
     </div>
 </footer>
 
-<!-- highlight.js -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"></script>
-<script>hljs.highlightAll();</script>
+
 
 <script src="js/jquery-3.2.1.min.js"></script>
 <script src="js/jquery-ui-1.12.1.custom.min.js"></script>
