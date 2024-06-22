@@ -228,7 +228,7 @@
             </div>
 
             <div>
-                <h4>Configure Build using Properties only</h4>
+                <h4>Build Projects using Properties only</h4>
                 <pre>
                       <code class="language-properties" style="font-size: medium; text-align: left">
 jeka.version=0.11.0-beta.0
@@ -240,12 +240,13 @@ jeka.inject.classpath=\
   dev.jeka:jacoco-plugin \
   dev.jeka:sonarqube-plugin
 
+# Create a shorthand for triggering a build including a Sonarqube analysis.
 jeka.cmd.packQuality=project: pack sonarqube: run
 
-# activate springboot KBean
+# initialize springboot KBean
 @springboot=
 
-# activate Jacoco KBean
+# initialize and configure Jacoco KBean
 @jacoco=
 @jacoco.jacocoVersion=0.8.12
 
@@ -263,14 +264,14 @@ final JkProject project = load(ProjectKBean.class).project;
 
 @Override
 protected void init() {
+    project.compilation.addJavaCompilerOptions("-Xlint:-options");
+    project.testing.testProcessor.engineBehavior
+            .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.BAR);
     JkSpringbootProject.of(project)
             .includeParentBom("3.2.0")
             .configure();
     JkJacoco.ofVersion("0.8.11")
             .configureAndApplyTo(project);
-    project.compilation.addJavaCompilerOptions("-Xlint:-options");
-    project.testing.testProcessor.engineBehavior
-            .setProgressDisplayer(JkTestProcessor.JkProgressOutputStyle.BAR);
 }
 
 @JkDoc("Launch sonarQube analysis.")
