@@ -111,14 +111,12 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   background-color: #F5FAFD;
 }
 
-/* Modified */
+
+/* carousel
 .aa-screenshots .carousel-inner .carousel-item img {
     height: max-content;
     width:  max-content;
 }
-
-
-/* End of modified */
 
 @media (max-width: 992px) {
   .aa-screenshots .carousel-inner .carousel-item img {
@@ -138,6 +136,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
     height: 400px;
   }
 }
+ */
 
 .aa-price-package .card {
   box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 10px -1px;
@@ -301,14 +300,20 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6,
   font-size: large;
 }
 
-/* Styles added by Jerome */
+/* Styles added by Jerome =================================================== */
+
+
 .hyperlink-card {
   color: #192023;
 }
 
-/* Styles added by Jerome */
 .text-muted-header {
   color: rgba(245, 245, 245, 0.53);
 }
 
-.
+.code-legend {
+  text-align: left;
+  margin-top: -25px;
+  font-style: oblique;
+}
+
