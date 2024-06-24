@@ -254,22 +254,22 @@ jeka.cmd.packQuality=project: pack sonarqube: run
 # configure sonarqube KBean
 @sonarqube.scannerVersion=5.0.1.3006
 sonar.host.url=http://localhost:9000</code>
-                </pre>
+                        </pre>
                         <div class="code-legend">
-                            This is enough to build a Spring-Boot project, including test coverage and Sonarqube
-                            analysis.
+                            This is enough to build a Spring-Boot project, including test coverage and Sonarqube analysis.<br/>
                             Java dependencies can be declared in a specific file or using Java code.
                         </div>
                     </div>
+
                     <div>
                         <h4>Or using Java Code</h4>
                         <pre style="margin-bottom: 0">
-                            <code class="language-java" style="font-size: small; text-align: left">@JkInjectClasspath("dev.jeka:springboot-plugin")
+                                <code class="language-java" style="font-size: small; text-align: left">@JkInjectClasspath("dev.jeka:springboot-plugin")
 @JkInjectClasspath("dev.jeka:jacoco-plugin")
 @JkInjectClasspath("dev.jeka:sonarqube-plugin")
 class Build extends KBean {
 
-    final JkProject project = load(ProjectKBean.class).project;
+    final JkProject project = JkProject.of().setBaseDir(getBaseDir());
 
     public boolean runIT = true;  // Allow to disable Integration Tests at exec time
 
@@ -280,6 +280,11 @@ class Build extends KBean {
         project.compilation.addJavaCompilerOptions("-Xlint:-options");
         project.testing.testSelection.addIncludePatternsIf(runIT, ".*IT");
 
+        // Dependencies can also be declared programmatically
+        project.flatFacade.compileDependencies
+            .add("com.google.guava:guava:30.0-jre")
+            .add("org.ehcache:ehcache:3.9.6");
+
         // Tell the project to create bootable springboot jar instead of regular one
         JkSpringbootProject.of(project).configure();
 
@@ -288,18 +293,20 @@ class Build extends KBean {
     }
 
     @JkDoc("Run Sonarqube analysis.")
-    public void sonarqube() {
+    public void packQuality() {
+        project.pack();  // compile, test and make jar
         JkSonarqube.ofVersion("5.0.1.3006").configureFor(project).run();
     }
 }</code>
                         </pre>
-                        <div class="code-legend">
-                            This does programmatically, roughly the same as with the above example.
-                            Code can be used in combination with properties declaration, or not, to customize
-                            build logic and add extra tasks.
-                        </div>
+                    <div class="code-legend">
+                        This does programmatically, roughly the same as with the above example.
+                        Code can be used in combination with properties declaration, or not, to customize
+                        build logic and add extra tasks.
                     </div>
                 </div>
+            </div>
+
             </div>
         </div>
     </div>
