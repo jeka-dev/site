@@ -125,10 +125,6 @@ class ZipExtractor {
     Expand-Archive -Path $zipFile -DestinationPath $tempDir -Force
     $subDirs = Get-ChildItem -Path $tempDir -Directory
     $root = $tempDir + "\" + $subDirs[0]
-    if (Test-Path -Path $this.dir) {
-      Remove-Item -Path $this.dir -Recurse -Force
-    }
-    New-Item -Path $this.dir -ItemType Directory
     Move-Item -Path $root -Destination $this.dir -Force
     Remove-Item -Path $zipFile
     Remove-Item -Path $tempDir -Recurse
@@ -186,6 +182,9 @@ function install() {
   $mavenRepo = "https://repo1.maven.org/maven2"
   $url = $mavenRepo + "/dev/jeka/jeka-core/" + $version + "/jeka-core-" + $version + "-distrib.zip"
   $jekaHome = Get-JekaUserHome
+  if (!(Test-Path -Path $jekaHome)) {
+    New-Item -Path $jekaHome -ItemType Directory
+  }
   $installDir = "$jekaHome\bin"
   MessageInfo "Installing Jeka version $version in $installDir"
   $extractor = [ZipExtractor]::new($url, $installDir)
