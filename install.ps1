@@ -202,18 +202,19 @@ function Main {
   if ($cmdLineArgs.GetIndexOfFirstOf("install") -ne -1) {
     $version = Get-LastVersion
     install($version)
+    MessageInfo "JeKa $version is  installed."
 
     if ($cmdLineArgs.GetIndexOfFirstOf("check") -ne -1) {
-      MessageInfo "Checking install with '$(Get-JekaUserHome)\bin\jeka --version'. This requires JDK download."
+      MessageInfo "Now, let's checking installation using '$(Get-JekaUserHome)\bin\jeka --version'. This requires JDK download."
       cmd.exe /c "$(Get-JekaUserHome)\bin\jeka --version"
       if ($LASTEXITCODE -ne 0) {
         exit 1
       }
     }
     MessageInfo "" # needed as jeka --version does not inclue carriage return
-    MessageInfo "JeKa $version is properly installed."
-    MessageInfo "Later on, you can upgrade to a different JeKa version by running either 'jeka-update' or 'jeka-update <version>'."
-    MessageInfo "Please, start a new Shell to ensure the changes are applied."
+
+    MessageInfo "Later on, upgrade JeKa version by running 'jeka-update' or 'jeka-update <version>'."
+    MessageInfo "Please, start a new Shell to ensure the changes are applied.."
 
   } else {
     $version
