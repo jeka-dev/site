@@ -127,9 +127,8 @@ class ZipExtractor {
     $root = $tempDir + "\" + $subDirs[0]
     if (Test-Path -Path $this.dir) {
       Remove-Item -Path $this.dir -Recurse -Force
-    } else {
-      New-Item -Path $this.dir -ItemType Directory
     }
+    New-Item -Path $this.dir -ItemType Directory
     Move-Item -Path $root -Destination $this.dir -Force
     Remove-Item -Path $zipFile
     Remove-Item -Path $tempDir -Recurse
