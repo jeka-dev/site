@@ -204,6 +204,7 @@ function Main {
       MessageInfo "Checking install with 'jeka --version'. This requires JDK download."
       jeka --version
     }
+    MessageInfo "" # needed as jeka --version does not inclue carriage return
     MessageInfo "JeKa $version is properly installed."
     MessageInfo "Later on, you can upgrade to a different JeKa version by running either 'jeka-update' or 'jeka-update <version>'."
 
