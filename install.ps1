@@ -205,6 +205,7 @@ function Main {
     MessageInfo "JeKa $version is  installed."
 
     if ($cmdLineArgs.GetIndexOfFirstOf("check") -ne -1) {
+      MessageInfo ""
       MessageInfo "Now, let's checking installation using '$(Get-JekaUserHome)\bin\jeka --version'. This requires JDK download."
       cmd.exe /c "$(Get-JekaUserHome)\bin\jeka --version"
       if ($LASTEXITCODE -ne 0) {
