@@ -202,6 +202,9 @@ function Main {
   if ($cmdLineArgs.GetIndexOfFirstOf("install") -ne -1) {
     $version = Get-LastVersion
     install($version)
+    $env:Path = [System.Environment]::GetEnvironmentVariable("Path", "User")
+    [System.Environment]::GetEnvironmentVariable("Path", "User")
+
     if ($cmdLineArgs.GetIndexOfFirstOf("check") -ne -1) {
       MessageInfo "Checking install with 'jeka --version'. This requires JDK download."
       jeka --version
