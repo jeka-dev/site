@@ -211,6 +211,8 @@ function Main {
       if ($LASTEXITCODE -ne 0) {
         exit 1
       }
+      MessageInfo ""
+      MessageInfo "Everything seems fine."
     }
     MessageInfo "" # needed as jeka --version does not inclue carriage return
 
