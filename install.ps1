@@ -183,7 +183,7 @@ function install() {
   $url = $mavenRepo + "/dev/jeka/jeka-core/" + $version + "/jeka-core-" + $version + "-distrib.zip"
   $jekaHome = Get-JekaUserHome
   if (!(Test-Path -Path $jekaHome)) {
-    [System.IO.Directory]::CreateDirectory($jekaHome)
+    $null = [System.IO.Directory]::CreateDirectory($jekaHome)
   }
   $installDir = "$jekaHome\bin"
   MessageInfo "Installing Jeka version $version in $installDir"
