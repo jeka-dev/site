@@ -23,6 +23,8 @@
 # The passed arguments are interpolated then passed to JeKA engine.
 #
 
+$ErrorActionPreference = "Stop"
+
 function MessageInfo {
   param([string]$msg)
   if ($global:QuietFlag -ne $true) {
