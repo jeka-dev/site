@@ -187,7 +187,7 @@ function install() {
   $jekaHome = Get-JekaUserHome
   $installDir = "$jekaHome\bin"
   MessageInfo "Installing Jeka version $version in $installDir"
-  $extractor = [ZipExtractor]::new($url, $jekaHome)
+  $extractor = [ZipExtractor]::new($url, $installDir)
   $extractor.ExtractRootContent()
   Add-Path "$installDir"
 }
