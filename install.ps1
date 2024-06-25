@@ -205,7 +205,7 @@ function Main {
 
     if ($cmdLineArgs.GetIndexOfFirstOf("check") -ne -1) {
       MessageInfo "Checking install with 'jeka --version'. This requires JDK download."
-      $jekaCmd = "$(Get-JekaUserHome)\bin\jeka"
+      $jekaCmd = "$(Get-JekaUserHome)\bin\jeka.bat"
       $jekaCmd "--version"
     }
     MessageInfo "" # needed as jeka --version does not inclue carriage return
