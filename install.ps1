@@ -217,8 +217,8 @@ function Main {
     }
     MessageInfo "" # needed as jeka --version does not inclue carriage return
 
-    MessageInfo "Later on, update JeKa version by running 'jeka-update' or 'jeka-update <version>'."
-    MessageInfo "Please, start a new Shell to ensure the changes are applied.."
+    MessageInfo "Later, update JeKa by running 'jeka-update' or 'jeka-update <version>."
+    MessageInfo "Please start a new shell to run jeka."
 
   } else {
     $version
