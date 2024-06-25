@@ -184,10 +184,10 @@ function install() {
 
   $mavenRepo = "https://repo1.maven.org/maven2"
   $url = $mavenRepo + "/dev/jeka/jeka-core/" + $version + "/jeka-core-" + $version + "-distrib.zip"
-  $installDir = Get-JekaUserHome
-  $installDir = "$installDir\bin"
+  $jekaHome = Get-JekaUserHome
+  $installDir = "$jekaHome\bin"
   MessageInfo "Installing Jeka version $version in $installDir"
-  $extractor = [ZipExtractor]::new($url, $installDir)
+  $extractor = [ZipExtractor]::new($url, $jekaHome)
   $extractor.ExtractRootContent()
   Add-Path "$installDir"
 }
