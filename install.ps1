@@ -201,6 +201,7 @@ function Main {
   $cmdLineArgs = [CmdLineArgs]::new($arguments)
   if ($cmdLineArgs.GetIndexOfFirstOf("install") -ne -1) {
     $version = Get-LastVersion
+    MessageInfo ""
     install($version)
     MessageInfo "JeKa $version is installed."
 
