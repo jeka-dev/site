@@ -36,9 +36,8 @@
     <link href="css/paper-kit.css?v=2.1.0" rel="stylesheet">
     <link href="styles/main.css" rel="stylesheet">
 
-    <!-- hightlighting.js -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css"
-          rel="stylesheet">
+    <!-- theme for hightlighting.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
 
 </head>
 <body id="top">
@@ -93,10 +92,10 @@
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="h4 subTitleColor">Streamline Builds</div>
+                    <div class="h4 subTitleColor">Simplify Builds and Automation</div>
                     <p class="text-muted-header">
                         Build simple to sophisticated projects with minimalist configuration or plain Java code.
-                        Run builds seamlessly from IDE debuggers to cloud CI/CD engines.
+                        Run builds and pipelines seamlessly from IDE debuggers to cloud CI/CD engines.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -109,7 +108,8 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="h4 subTitleColor">Combine with Existing Tools</div>
                     <p class="text-muted-header">
-                        JeKa can integrate with traditional build tools to provide scripting and full portability.
+                        JeKa can integrate with traditional build tools as <i>Maven</i> or <i>Gradle</i> to provide Java scripting
+                        capabilities and execution full portability.
                     </p>
                 </div>
 
@@ -237,36 +237,44 @@
                     <div>
                         <h4>Build Projects simply using Properties</h4>
                         <pre style="margin-bottom: 0">
-                            <code class="language-properties" style="text-align: left; font-size: small">jeka.version=0.11.0-beta.0
+                            <code class="language-properties" style="text-align: left; font-size: small; background: black">jeka.version=0.11.0-beta.0
 jeka.java.version=21
 
 # Import plugins from Maven central. Versions are inferred from JeKa version.
 jeka.inject.classpath=dev.jeka:springboot-plugin  dev.jeka:jacoco-plugin  dev.jeka:sonarqube-plugin
 
-# Create a shorthand for triggering a build including a Sonarqube analysis.
-jeka.cmd.packQuality=project: pack sonarqube: run
-
-# initialize springboot KBean
+# Initialize springboot KBean, for making bootable jar
 @springboot=
 
-# initialize and configure Jacoco KBean
+# Initialize Jacoco and configure Sonarqube KBeans for test coverage and static analysis
 @jacoco=
-@jacoco.jacocoVersion=0.8.12
-
-# configure sonarqube KBean
 @sonarqube.scannerVersion=5.0.1.3006
 sonar.host.url=http://localhost:9000</code>
                         </pre>
                         <div class="code-legend">
-                            This is enough to build a Spring-Boot project, including test coverage and Sonarqube analysis.<br/>
-                            Java dependencies can be declared in a specific file or using Java code.
+                            Execute <code>jeka project: pack sonarqube: run</code> to create a Spring Boot JAR, perform test coverage, and run SonarQube analysis.<br/>
+                            Java dependencies can be declared in a specific <i>dependencies.txt</i> file as below, or using Java code.
                         </div>
+                        <pre style="margin-bottom: 0">
+                            <code style="text-align: left; font-size: small; background: black">== COMPILE ==
+org.springframework.boot:spring-boot-dependencies::pom:3.2.4
+org.springframework.boot:spring-boot-starter-web
+org.springframework.boot:spring-boot-starter-actuator
+
+== RUNTIME ==
+com.h2database:h2
+
+== TEST ==
+org.springframework.boot:spring-boot-starter-test
+com.codeborne:selenide:7.2.3
+                            </code>
+                        </pre>
                     </div>
 
                     <div>
-                        <h4>Or using Java Code</h4>
+                        <h4>Build Projects using Java Code</h4>
                         <pre style="margin-bottom: 0">
-                                <code class="language-java" style="font-size: small; text-align: left">@JkInjectClasspath("dev.jeka:springboot-plugin")
+                                <code class="language-java" style="font-size: small; text-align: left; background: black">@JkInjectClasspath("dev.jeka:springboot-plugin")
 @JkInjectClasspath("dev.jeka:jacoco-plugin")
 @JkInjectClasspath("dev.jeka:sonarqube-plugin")
 class Build extends KBean {
@@ -302,9 +310,9 @@ class Build extends KBean {
 }</code>
                         </pre>
                     <div class="code-legend">
-                        This does programmatically, roughly the same as with the above example.
-                        Code can be used in combination with properties declaration, or not, to customize
-                        build logic and add extra tasks.
+                        This does programmatically, roughly the same as with the above example.<br/>
+                        Execute<code>jeka packQuality</code>to build and run SonarQube analysis.<br/>
+                        Code can be used in combination with properties to customize builds.
                     </div>
                 </div>
             </div>
