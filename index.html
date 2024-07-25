@@ -252,7 +252,7 @@ jeka.inject.classpath=dev.jeka:springboot-plugin  dev.jeka:jacoco-plugin  dev.je
 sonar.host.url=http://localhost:9000</code>
                         </pre>
                         <div class="code-legend">
-                            Execute <code>jeka project: pack sonarqube: run</code> to create a Spring Boot JAR, perform test coverage, and run SonarQube analysis.<br/>
+                            Execute<code>jeka project: pack sonarqube: run</code>to create a Spring Boot JAR, perform test coverage, and run SonarQube analysis.<br/>
                             Java dependencies can be declared in a specific <i>dependencies.txt</i> file as below, or using Java code.
                         </div>
                         <pre style="margin-bottom: 0">
@@ -310,8 +310,7 @@ class Build extends KBean {
 }</code>
                         </pre>
                     <div class="code-legend">
-                        This does programmatically, roughly the same as with the above example.<br/>
-                        Execute<code>jeka packQuality</code>to build and run SonarQube analysis.<br/>
+                        Execute<code>jeka packQuality</code>to build and run SonarQube analysis. It does roughly the same than the previous example.<br/>
                         Code can be used in combination with properties to customize builds.
                     </div>
                 </div>
