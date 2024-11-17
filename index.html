@@ -75,8 +75,7 @@
                 <div class="col-md-12 col-sm-12">
                     <img src="images/logos/plain-logo.svg" width="160"/>
                     <br/>
-                    <h2>Easy Java</h2>
-                    <h2>Run Sources and Build Simply Anywhere</h2>
+                    <h2>Next-Gen Build Tool for Java & Co</h2>
                 </div>
             </div>
         </div>
@@ -84,32 +83,46 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="h4 subTitleColor">Run Java Source Code</div>
+                    <div class="h4 subTitleColor">Zero-Configuration Builds</div>
                     <p class="text-muted-header">
-                        Write Java code and execute it instantly from anywhere.
-                        JeKa efficiently runs simple scripts or full-fledged applications from local sources or Git repositories,
-                        handling JDK installation, building, native compilation and caching. No JDK required.
+                        Start your project with zero configuration. Manage dependencies, compile, test,
+                        package JARs, create native and Docker images—all without setup. Configure later, if needed.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="h4 subTitleColor">Simplify Builds and Automation</div>
+                    <div class="h4 subTitleColor">Purely Java-Based</div>
                     <p class="text-muted-header">
-                        Build simple to sophisticated projects with minimalist configuration or plain Java code.
-                        Run builds and pipelines seamlessly from IDE debuggers to cloud CI/CD engines.
+                        Customize your builds with simple properties or plain Java code—no XML or external DSLs required.
+                        Just Java, providing better organization, easy sharing, fast learning, and seamless debugging."
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="h4 subTitleColor">Share Build Logic</div>
+                    <div class="h4 subTitleColor">Fully Portable Builds</div>
                     <p class="text-muted-header">
-                        Centralize build logic and DevOps tasks for effortless reuse across projects, making
-                        builds and deliveries as simple as possible.
+                        Jeka fetches all required tooling—JDK, JeKa itself, GraalVM, Node.js, ...—making builds runnable on bare machines.
+                        Easily switch between Java and tool versions, or wrap Maven and Gradle builds for complete portability.
                     </p>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
-                    <div class="h4 subTitleColor">Combine with Existing Tools</div>
+                    <div class="h4 subTitleColor">Instant Application Publishing</div>
                     <p class="text-muted-header">
-                        JeKa can integrate with traditional build tools as <i>Maven</i> or <i>Gradle</i> to provide Java scripting
-                        capabilities and execution full portability.
+                        Push your code to a Git repository, and voilà—users can run it immediately.
+                        Thanks to its great portability, Jeka can build applications on the client side the first time they run,
+                        eliminating the need for binary hosting and deployment.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Simplified Plugin Development</div>
+                    <p class="text-muted-header">
+                        Jeka provides a straightforward plugin mechanism, enabling custom extensions to be implemented
+                        with minimal effort, requiring significantly less work compared to traditional build tools.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Reusable Build Logic</div>
+                    <p class="text-muted-header">
+                        Encapsulate the complexity of build and CI/CD pipelines within a component and easily reuse
+                        it across your organization, enabling the most complex builds to be configured with dumb simple setups. Ideal for microservices.
                     </p>
                 </div>
             </div>
@@ -119,7 +132,7 @@
         <div class="container aa-header-content text-center text-white" style="padding-top: 20px">
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <a class="btn btn-outline-neutral btn-round" href="https://github.com/jeka-dev/jeka#examples"
+                    <a class="btn btn-outline-neutral btn-round" href="https://jeka-dev.github.io/jeka/examples/"
                        target="_blank">
                         Examples
                     </a>
@@ -143,13 +156,11 @@
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i></div>
                     <div class="description">
-                        <div class="h4">Execute Java or Kotlin sources</div>
+                        <div class="h4">Execute Java or Kotlin Sources</div>
                         <p class="text-muted">
-                            Whether it is a command-line app, a full-fledged web app, a Swing application, or a
-                            single file script,
-                            JeKa can run it efficiently from source code without worrying about building or
-                            installing JDK.
-                            <br/>Jeka can run applications on machine where no JDK is installed.
+                            Jeka efficiently run Java or Kotlin applications directly from source code,
+                            without requiring a pre-installed JDK/JRE. Compilation happens on-the-fly and is cached
+                            for faster subsequent runs.
                         </p>
                     </div>
                 </div>
@@ -157,23 +168,18 @@
                     <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-cog"></i></div>
                     <div class="description">
                         <div class="h4">Powerful Build Tool</div>
-                        <p class="text-muted">JeKa is primarily a powerful build tool for Java and Kotlin projects,
-                            using concise property declarations or Java/Kotlin scripting. <br/>It supports
-                            Java/Kotlin compilation, testing,
-                            dependency management, process handling, GraalVM, IntelliJ, Eclipse, Git, Maven, Docker, and more
-                            out-of-the-box.
-                            <br/>Jeka can run builds on machine where neither JeKa nor JDK is installed.
+                        <p class="text-muted">
+                            Jeka offers out-of-the-box build functionalities like Java/Kotlin compilation,
+                            dependency management, JUnit, uber/shaded JARs, Git, native images, Docker, and more.
+                        </p>
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
                     <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-plug"></i></div>
                     <div class="description">
                         <div class="h4">Designed for Extension</div>
-                        <p class="text-muted">JeKa is built on a simple yet powerful plugin architecture, allowing
-                            components to interact with
-                            each other using a minimal set of concepts. It currently includes extensions for Spring
-                            Boot, Node.js,
-                            SonarQube, JaCoCo, Nexus repositories, Protobuf, OpenAPI, and more.
+                        <p class="text-muted">
+                            Jeka’s simple yet powerful plugin architecture enables component interaction with minimal concepts. Extensions include Spring Boot, Node.js, SonarQube, JaCoCo, Nexus, Protobuf, OpenAPI, and more.
                         </p>
                     </div>
                 </div>
@@ -182,11 +188,7 @@
                     <div class="description">
                         <div class="h4">Container Ready</div>
                         <p class="text-muted">
-                            JeKa offers a way to effortlessly create Docker images of your applications, requiring
-                            minimal effort,
-                            or none at all, if additional customization is needed.
-                            <br/> We are currently making additional efforts to integrate Kubernetes and Native
-                            image technologies.
+                            Jeka makes creating Docker images effortless, with minimal or no configuration required. Kubernetes integration is also in progress.
                         </p>
                     </div>
                 </div>
@@ -196,10 +198,8 @@
                     <div class="description">
                         <div class="h4">Fast and Lightweight</div>
                         <p class="text-muted">
-                            JeKa weighs less than 2MB and has zero-dependencies, making it lighting-fast to install,
-                            or friendly to
-                            use as a library.<br/>
-                            Moreover, JeKa runs applications efficiently, avoiding extra JVM launch time.
+                            Jeka is delivered as a single JAR under 2MB with zero dependencies,
+                            making it quick to install and friendly as a library. It efficiently runs applications, avoiding extra JVM launch time.
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12">
@@ -220,7 +220,7 @@
             <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleSlidesOnly">
                 <div class="carousel-inner">
                     <div>
-                        <h4>Execute application from its project <a href="https://github.com/jeka-dev/demo-cowsay">Git
+                        <h4>Run an Application Directly from its remote <a href="https://github.com/jeka-dev/demo-cowsay">Git
                             repository</a></h4>
                         <script async="true"
                                 id="asciicast-CxvamfPUaCNV7aq3Ll9XBxmza" src="https://asciinema.org/a/CxvamfPUaCNV7aq3Ll9XBxmza.js"></script>
@@ -231,6 +231,12 @@
                                 data-start-at="1"
                                 id="asciicast-RDCVisQobsHPwM72Q7czxsIDa" src="https://asciinema.org/a/RDCVisQobsHPwM72Q7czxsIDa.js"></script>
                     </div>
+                    <div>
+                        <h4>Many commands can coexist in a single class</h4>
+                        <br/>
+                        <img src="images/screenshots/img.png" height="600"/>
+                    </div>
+
 
                     <!--
                     <div>
