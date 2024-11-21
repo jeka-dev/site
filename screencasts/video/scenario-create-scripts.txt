@@ -5,6 +5,10 @@
 # Let's execute it on terminal
 - Terminal: jeka hello -> "Hello World"
 - Terminal: jeka hello name=Jeka
+# Configure the name permanently
+- jeka.properties -> @script.name=Maria
+- terminal : jeka hello -> "Hi Maria"
+
 
 # Let's modify the source code
 - java editor: change "Hello" by "Hi"
@@ -15,9 +19,7 @@
 - Run directly
 - Add breackpoint + debug method -> highlight value of 'greetings"'
 
-# Configure the name permanently
-- jeka.properties -> @script.name=Maria
-- terminal : jeka hello -> "Hi Maria"
+------------------------------------
 
 # Let's add a dependencies
 - add @JkInjectClasspath with lalyos and crt+space and "sync iml"
@@ -26,6 +28,8 @@
 # There can have many methods declared on a single KBean class.
 # Let's list them
 - Terminal: jeka : --doc (list method and field available for the default KBean)
+
+-------------------------------------------------------------------------------
 
 # Let's complexify the script structure
 - create utils.Utils class add public static method asciiartize()
@@ -51,13 +55,29 @@
 - ide -> jeka.properties -> add @script2=
 
 # Explore existing KBean from the cli
-jeka admin: --doc
-jeka project: --doc
+jeka base: --doc, jeka base: depTree
+jeka base: --doc
 
 # Explore from IDE
 - open tool
 - Execute and show source from local bean
-- Execute base: depTree
+- Execute base: depTree, debug
+
+
+---------------------------------------
+$summary
+_______________________________________
+
+Run 'hello', cli params, props params, doc, hi, run/debug
+
+complexify: add deps lalyos, guave, add Utils.echo(), create echo script method, doc, exec
+
+Script2: add jversion(), jeka doc, jeka script2: doc, call help
+change java version 23, jeka --inpect, jeka script2: version, run ide
+
+Remote: share github, execute --doc, hello
+
+Conclusion: We saw Kbean script ==========> Next: true Java/Native apps
 
 
 
