@@ -1,0 +1,157 @@
+# Let's create some basic scripts using JeKa
+- Open intelliJ -> Create new base script
+
+# A hello script is already generated
+# Let's execute it on terminal
+- Terminal: jeka hello -> "Hello World"
+- Terminal: jeka hello name=Jeka
+# Configure the name permanently
+- jeka.properties -> @script.name=Maria
+- terminal : jeka hello -> "Hi Maria"
+
+
+# Let's modify the source code
+- java editor: change "Hello" by "Hi"
+- Terminal: jeka hello -> "Hi World"
+# Change has been taken into account immediately
+
+# We can also launch or debug it directly from IDE
+- Run directly
+- Add breackpoint + debug method -> highlight value of 'greetings"'
+
+------------------------------------
+
+# Let's add a dependencies
+- add @JkInjectClasspath with lalyos and crt+space and "sync iml"
+- add public method asciiart() using FigletFont class to create ascci hello world
+- Terminal: jeka asciiart
+# There can have many methods declared on a single KBean class.
+# Let's list them
+- Terminal: jeka : --doc (list method and field available for the default KBean)
+
+-------------------------------------------------------------------------------
+
+# Let's complexify the script structure
+- create utils.Utils class add public static method asciiartize()
+- Refactor Script + run
+# There is no constraint about structure and class count
+
+# Let's Add a second script
+- add guava dependency
+- Create Script2 with method 'help' that repeat 3 time "Help ! "
+- terminal: jeka --doc ->
+# Two Scripts co-exist but the default one remains Script in respect to the alphabetic order
+# We need to specify where 'help' method is coming from as it is not contained in the default KBean.
+- terminal: jeka script2: help
+
+# Let's make KBeans interact
+- create init() method in script2 that change the value of "name" to "My Friends"
+- terminal: jeka asciiart -> Hello World
+# The script2 has not been initied cause it is not the initBean (which is the first found in jeka-src)
+- terminal: jeka --inspect  -> outline dafoult kbean and init
+# We need to do it explicitly
+- terminal: jeka script: asciiartize script2: -> hello my friends
+# We can set the properties to initilize script2 at each tile
+- ide -> jeka.properties -> add @script2=
+
+# Explore existing KBean from the cli
+jeka base: --doc, jeka base: depTree
+jeka base: --doc
+
+# Explore from IDE
+- open tool
+- Execute and show source from local bean
+- Execute base: depTree, debug
+
+
+---------------------------------------
+$summary
+_______________________________________
+
+Run 'hello', cli params, props params, doc, hi, run/debug
+
+complexify: add deps lalyos, guave, add Utils.echo(), create echo script method, doc, exec
+
+Script2: add jversion(), jeka doc, jeka script2: doc, call help
+change java version 23, jeka --inpect, jeka script2: version, run ide
+
+Remote: share github, execute --doc, hello
+
+Conclusion: We saw Kbean script ==========> Next: true Java/Native apps
+
+
+--------------------------------
+Voiceover tetxt-to-speach
+--------------------------------
+Andreew actor multilingue
+
+First, let’s create a new project. Keep in mind that you can also use Jeka scripts alongside any existing project.
+
+The IDE scaffold a skeleton project with a ready to use script. Let's use it !
+
+
+------------------------------
+Snippets
+------------------------------
+@JkDep("org.junit.jupiter:junit-jupiter:5.11.3")
+class PowerTextTest {
+
+    @Test
+    void test() {
+        Assertions.assertEquals("o o o ", new PowerText("o").repeat(3));
+    }
+
+
+}
+
+jeka base: test
+
+
+
+public record PowerText(String text) {
+
+    public String asciiart() {
+        try {
+            return FigletFont.convertOneLine(text);
+        } catch (IOException e) {
+            throw new UncheckedIOException(e);
+        }
+    }
+
+    public String repeat(int count) {
+        return Strings.repeat(text + " ", count);
+    }
+
+}
+
+public int count = 3;
+
+public void echo() {
+        PowerText text = new PowerText(name);
+        System.out.println(text.asciiart());
+        System.out.println(text.repeat(count));
+}
+
+
+@JkDoc("Print Info on the current JDK")
+public void jdk() {
+    System.out.printf("You're running on JDK %s %s%n", System.getProperty("java.version"),
+        System.getProperty("java.vendor"));
+}
+
+
+cd ~
+jeka --remote https://github.com/djeang/demo-script.git hi
+git tag -a 0.1 -m "first release" && git push origin 0.1
+---change hi() method -> Hiiiiiii !!!!!!!   -----> push
+
+jeka --remote --update https://github.com/djeang/demo-script.git hi
+
+jeka --remote https://github.com/djeang/demo-script.git#0.1 hi
+
+----open file "global.properties"
+jeka.cmd.demo=--remote https://github.com/djeang/demo-script.git#0.1
+----
+jeka ::demo hi name=Bob
+
+" title="Demo-jeka-scripts" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

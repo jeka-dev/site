@@ -1,0 +1,80 @@
+https://demo.codeartbd.com/jeka/
+
+# Title section (Front page)
+
+## Image-Logo
+The product is not designed to work on smartphone (it's a development tool).
+=> replace smartphone image with Just the simple logo + name (JeKa)
+
+## Menu
+Replace menu FAQ, with "Exemples" (We don't need FAQ section)
+Remove "download" Button
+
+## Title
+"JAVA & CO" should not be full capitalized.
+
+## Links
+Remove "Find Some Examples" (it will appear in menubar)
+Replace "Get Help To Install" by "Install"
+
+## Misc
+Replace, scrolling "Hello Jeka!!!" by "Java Kotlin Git Docker GraalVM Spring-Boot Node.js OpenAPI Jacoco SonarQube Protobuf Maven Nexus "
+
+
+# Insert extra "Moto" section before 'card sections'
+
+In the era of modern Java and microservices, who wants to deal with XML, external-DSL ans heavyweight tool ?
+
+
+
+# Card section
+
+ OK, just remove hurray Get Jeka Examples and enjoy!" at bottom
+
+
+
+ # Active follower section
+
+ I like it, but I have no active user base, installation, or wathever to glorify.
+ We can comment it (may i will add it later)
+ Or may you can sugggest replacing by something else ?
+
+
+
+# Why JeKa ?  section
+
+OK
+
+
+## See in action
+
+## Insert video
+I should be able to insert Video from youtube as this one : https://studio.youtube.com/video/hUFvbmFggUY/edit
+There will be 2 or 3 like this one that i will integrate later.
+
+## Running Scripts console
+Use only one script per row. For now, they appears too small.
+
+
+
+# Remove "get started" section
+
+# Insert 3rd Party Support by displaying icons og supported technos
+
+ - https://images.app.goo.gl/m12wpiuPr7JMwe267
+ - https://images.app.goo.gl/3dPmNdPXMdNQSyxQ6
+ - https://images.app.goo.gl/PjoixVZc7CiqUN3S6
+ - https://images.app.goo.gl/RZCqYTqtfVJXsJSE6
+ - https://images.app.goo.gl/EwLfPLtq8JRVnSmQ6
+ - https://images.app.goo.gl/AG6f2sAogSX713Ge6
+ - https://images.app.goo.gl/ZLgueDbb9TZgUBwb8
+
+# Contact section
+
+## Simplify
+- No news letter
+- No Phone contact
+
+## sub need-help? column
+Replace phone numer by github link: https://github.com/jeka-dev/jeka/issues
+

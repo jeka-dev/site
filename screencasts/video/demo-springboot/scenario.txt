@@ -1,0 +1,14 @@
+# Let's create a springboot app project
+-> IDE -> jeka template spring application
+-> show jeka.properties
+-> show dependencies.txt
+-> show code
+-> Run test in jeka tools windows -> jeka project: test
+
+# Don't like mAven mlayout ?. change it
+
+# Explore possiboilities prior going to customization
+-> Create native executable
+-> Create Docker JVM image
+-> Create Docker Native image
+-> Create optimized native image
