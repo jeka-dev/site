@@ -4,11 +4,12 @@
 <head>
     <title>JeKa : Easy Java - Run Sources and Build Simply Anywhere</title>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="author" content="JeKa Team">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
     <meta name="description" content="Build Projects and Automate any Tasks Using Plain Java or Kotlin">
-    <meta name="keywords" content="build,java,devOps,IaC,infrastructure as code,helm,kotlin,tool,automation,maven,ant,gradle,buildr,sbt,make,compiler,tester,jacoco,pure java build tool,java build tool,build tool,100% java build tool">
+    <meta name="keywords"
+          content="build,java,devOps,IaC,infrastructure as code,helm,kotlin,tool,automation,maven,ant,gradle,buildr,sbt,make,compiler,tester,jacoco,pure java build tool,java build tool,build tool,100% java build tool">
     <meta content="img/plain-logo.svg" name="image" property="og:image">
     <link rel="shortcut icon" href="img/plain-logo.svg">
     <link rel="apple-touch-icon" href="img/plain-logo.svg">
@@ -18,842 +19,992 @@
     <link rel="preconnect" href="https://fonts.googleapis.com/" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
 
-    <link rel="stylesheet" href="css/vendors.min.css" />
-    <link rel="stylesheet" href="css/icon.min.css" />
-    <link rel="stylesheet" href="css/style.min.css" />
-    <link rel="stylesheet" href="css/responsive.min.css" />
+    <link rel="stylesheet" href="css/vendors.min.css"/>
+    <link rel="stylesheet" href="css/icon.min.css"/>
+    <link rel="stylesheet" href="css/style.min.css"/>
+    <link rel="stylesheet" href="css/responsive.min.css"/>
 </head>
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
 
-    <div class="cursor-page-inner">
-        <div class="circle-cursor circle-cursor-inner"></div>
-        <div class="circle-cursor circle-cursor-outer"></div>
-    </div>
-
-
-    <header>
-        <nav class="navbar navbar-expand-lg header-light bg-transparent header-reverse glass-effect" data-header-hover="light">
-            <div class="container">
-                <div class="col-auto me-auto">
-                    <a class="navbar-brand" href="demo-application.html">
-<img src="img/demo-application-logo-white.png" data-at2x="img/demo-application-logo-white.png" alt class="default-logo">
-<img src="img/demo-application-logo-black.png" data-at2x="img/demo-application-logo-black.png" alt class="alt-logo">
-<img src="img/demo-application-logo-black.png" data-at2x="img/demo-application-logo-black.png" alt class="mobile-logo">
-</a>
-                </div>
-                <div class="col-auto menu-order position-static">
-                    <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
-<span class="navbar-toggler-line"></span>
-<span class="navbar-toggler-line"></span>
-<span class="navbar-toggler-line"></span>
-<span class="navbar-toggler-line"></span>
-</button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item"><a href="https://github.com/jeka-dev/jeka" target="_blank" class="nav-link">Github</a></li>
-                            <li class="nav-item"><a href="https://jeka-dev.github.io/jeka" target="_blank" class="nav-link">Documentation</a></li>
-							<li class="nav-item"><a href="#example" class="nav-link">Examples</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <!--<div class="col-auto col-auto xs-ps-0">
-                    <div class="header-icon">
-                        <div class="header-button">
-                            <a href="#download" class="btn btn-small btn-rounded with-rounded btn-box-shadow btn-dark-gray text-uppercase-inherit">Install Jeka <span class="bg-licorice-blue text-white"><i class="feather icon-feather-arrow-right"></i></span></a>
-                        </div>
-                    </div>
-                </div>-->
-            </div>
-        </nav>
-
-    </header>
-
-
-    <section class="p-0 cover-background full-screen ipad-top-space-margin md-h-auto position-relative md-pb-70px" style="background-image: url('img/demo-application-home-banner.jpg')">
-        <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true" data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 12,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 2000}},&quot;color&quot;: {&quot;value&quot;: [&quot;#8f76f5&quot;, &quot;#a65cef&quot;, &quot;#c74ad2&quot;, &quot;#e754a4&quot;, &quot;#ff6472&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.3,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 1,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 8,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;line_linked&quot;:{&quot;enable&quot;:false,&quot;distance&quot;:0,&quot;color&quot;:&quot;#ffffff&quot;,&quot;opacity&quot;:0.4,&quot;width&quot;:1},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:1,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"></div>
-        <div class="container h-100 position-relative z-index-9">
-            <div class="row align-items-center h-100 justify-content-center">
-                
-                <div class="col-xl-8 ps-3 md-ps-15px col-lg-9 col-md-10 position-relative text-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-					<img src="img/icon.PNG" class="w-25 my-4" alt>
-                    <div class="fs-60 xl-fs-50 lh-60 mb-3 text-dark-gray ls-minus-3px">
-                        <span class="fw-900 fw-bold">JeKa</span><br>
-                        <span class="fs-40 d-inline-block">Next-Gen Build Tool for Java & Co.</span>
-                    </div>
-                    <span class="fs-19 lh-32">Deliver classic and cloud-native Java applications with unparalleled ease.</span>
-					
-					<p class="mt-4">
-						<a href="https://jeka-dev.github.io/jeka/installation" class="btn btn-lg text-light btn-gradient-light-pink-light-purple btn-box-shadow btn-rounded left-icon mt-3 px-4 py-3" target="_blank"> <i class="bi bi-cloud-arrow-down"></i> INSTALL </a>
-					</p>
-					
-                </div>
-            </div>
-        </div>
-
-       <!-- <div class="marquees-text fw-800 fs-250 md-fs-200 ls-minus-10px text-dark-gray text-nowrap position-absolute bottom-130px opacity-1 text-center">Java Kotlin Git Docker GraalVM Spring-Boot Node.js OpenAPI Jacoco SonarQube Protobuf Maven Nexus</div>-->
-
-    </section>
-
-
-
-
-
-    <section class="pt-0">
-        <div class="container">
-		
-	<div class="row align-items-center justify-content-center text-center mb-2">
-
-        <!--
-    <div class="col-lg-10 col-md-8 position-relative  page-title-extra-large appear anime-child anime-complete">
-        <h3 class="fw-600 text-dark-gray ls-minus-2px mb-5">In the era of modern Java and microservices, Who wants to deal with XML, external-DSL ans heavyweight tool?</h3>
-    </div>
-    -->
-
-
+<div class="cursor-page-inner">
+    <div class="circle-cursor circle-cursor-inner"></div>
+    <div class="circle-cursor circle-cursor-outer"></div>
 </div>
 
 
-            <div class="row row-cols-1 row-cols-md-2  justify-content-center sm-mb-12" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-
-                <div class="col icon-with-text-style-04 transition-inner-all mb-3">
-                    <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-						<div class="row">
-							<div class="col-3 col-lg-2 feature-box-icon">
-								<h6><i class="bi bi-archive fa-2x text-brand"></i></h6>
-							</div>
-							<div class=" col-9 col-lg-10 feature-box-content">
-								<span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Zero-Configuration Builds</span>
-								<p class="w-90 xl-w-100 lh-sm">Start with zero configuration. Manage dependencies, compile, test, create JARs, native exec and Docker images—all without setup. Configure later, if needed. </p>
-							</div>
-						</div>
+<header>
+    <nav class="navbar navbar-expand-lg header-light bg-transparent header-reverse glass-effect"
+         data-header-hover="light">
+        <div class="container">
+            <div class="col-auto me-auto">
+                <a class="navbar-brand" href="demo-application.html">
+                    <img src="img/demo-application-logo-white.png" data-at2x="img/demo-application-logo-white.png" alt
+                         class="default-logo">
+                    <img src="img/demo-application-logo-black.png" data-at2x="img/demo-application-logo-black.png" alt
+                         class="alt-logo">
+                    <img src="img/demo-application-logo-black.png" data-at2x="img/demo-application-logo-black.png" alt
+                         class="mobile-logo">
+                </a>
+            </div>
+            <div class="col-auto menu-order position-static">
+                <button class="navbar-toggler float-start" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                    <span class="navbar-toggler-line"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="https://github.com/jeka-dev/jeka" target="_blank"
+                                                class="nav-link">Github</a></li>
+                        <li class="nav-item"><a href="https://jeka-dev.github.io/jeka" target="_blank" class="nav-link">Documentation</a>
+                        </li>
+                        <li class="nav-item"><a href="#example" class="nav-link">Examples</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!--<div class="col-auto col-auto xs-ps-0">
+                <div class="header-icon">
+                    <div class="header-button">
+                        <a href="#download" class="btn btn-small btn-rounded with-rounded btn-box-shadow btn-dark-gray text-uppercase-inherit">Install Jeka <span class="bg-licorice-blue text-white"><i class="feather icon-feather-arrow-right"></i></span></a>
                     </div>
                 </div>
+            </div>-->
+        </div>
+    </nav>
+
+</header>
 
 
-               <div class="col icon-with-text-style-04 transition-inner-all mb-3">
-                    <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-						<div class="row">
-							<div class="col-3 col-lg-2 feature-box-icon">
-								<h6><i class="bi bi-cup-hot fa-2x text-brand"></i></h6>
-							</div>
-							<div class=" col-9 col-lg-10 feature-box-content">
-								<span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Purely Java-Based</span>
-								<p class="w-90 xl-w-100 lh-sm">Customize with simple properties or plain Java code. Handle advanced scenarios using intuitive mechanisms without unnecessary complexity.</p>
-							</div>
-						</div>
-                    </div>
+<section class="p-0 cover-background full-screen ipad-top-space-margin md-h-auto position-relative md-pb-70px"
+         style="background-image: url('img/demo-application-home-banner.jpg')">
+    <div id="particles-style-01" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true"
+         data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 12,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 2000}},&quot;color&quot;: {&quot;value&quot;: [&quot;#8f76f5&quot;, &quot;#a65cef&quot;, &quot;#c74ad2&quot;, &quot;#e754a4&quot;, &quot;#ff6472&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.3,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 1,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 8,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;line_linked&quot;:{&quot;enable&quot;:false,&quot;distance&quot;:0,&quot;color&quot;:&quot;#ffffff&quot;,&quot;opacity&quot;:0.4,&quot;width&quot;:1},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:1,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"></div>
+    <div class="container h-100 position-relative z-index-9">
+        <div class="row align-items-center h-100 justify-content-center">
+
+            <div class="col-xl-8 ps-3 md-ps-15px col-lg-9 col-md-10 position-relative text-center"
+                 data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <img src="img/icon.PNG" class="w-25 my-4" alt>
+                <div class="fs-60 xl-fs-50 lh-60 mb-3 text-dark-gray ls-minus-3px">
+                    <span class="fw-900 fw-bold">JeKa</span><br>
+                    <span class="fs-40 d-inline-block">Next-Gen Build Tool for Java & Co.</span>
                 </div>
-				
-				
-				 <div class="col icon-with-text-style-04 transition-inner-all mb-3">
-                    <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-						<div class="row">
-							<div class="col-3 col-lg-2 feature-box-icon">
-								<h6><i class="bi bi-usb-drive fa-2x text-brand"></i></h6>
-							</div>
-							<div class=" col-9 col-lg-10 feature-box-content">
-								<span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Fully Portable Builds</span>
-								<p class="w-90 xl-w-100 lh-sm">Jeka fetches all required tooling—JDK, JeKa itself, GraalVM, Node.js, ...—making builds reproducible and runnable on bare machines, without needing Java. </p>
-							</div>
-						</div>
-                    </div>
-                </div>
+                <span class="fs-19 lh-32">Deliver classic and cloud-native Java applications with unparalleled ease.</span>
 
-                <div class="col icon-with-text-style-04 transition-inner-all mb-3">
-                    <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                        <div class="row">
-                            <div class="col-3 col-lg-2 feature-box-icon">
-                                <h6><i class="bi bi-clipboard-check fa-2x text-brand"></i></h6>
-                            </div>
-                            <div class=" col-9 col-lg-10 feature-box-content">
-                                <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Lean and Simple at the Core</span>
-                                <p class="w-90 xl-w-100 lh-sm">Jeka offers a remarkably lean component model, making it easy to write extensions, implement CI/CD pipelines, and share build logic.</p>
-                            </div>
+                <p class="mt-4">
+                    <a href="https://jeka-dev.github.io/jeka/installation"
+                       class="btn btn-lg text-light btn-gradient-light-pink-light-purple btn-box-shadow btn-rounded left-icon mt-3 px-4 py-3"
+                       target="_blank"> <i class="bi bi-cloud-arrow-down"></i> INSTALL </a>
+                </p>
+
+            </div>
+        </div>
+    </div>
+
+    <!--
+     <div class="marquees-text fw-800 fs-250 md-fs-200 ls-minus-10px text-dark-gray text-nowrap position-absolute bottom-130px opacity-1 text-center">Java Kotlin Git Docker GraalVM Spring-Boot Node.js OpenAPI Jacoco SonarQube Protobuf Maven Nexus</div>
+    -->
+
+</section>
+
+
+<section class="pt-0">
+    <div class="container">
+
+
+        <div class="row row-cols-1 row-cols-md-2  justify-content-center sm-mb-12"
+             data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="row">
+                        <div class="col-3 col-lg-2 feature-box-icon">
+                            <h6><i class="bi bi-archive fa-2x text-brand"></i></h6>
+                        </div>
+                        <div class=" col-9 col-lg-10 feature-box-content">
+                            <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Zero-Configuration Builds</span>
+                            <p class="w-90 xl-w-100 lh-sm">Start with zero configuration. Manage dependencies, compile,
+                                test, create JARs, native exec and Docker images—all without setup. Configure later, if
+                                needed. </p>
                         </div>
                     </div>
                 </div>
-				
-				<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-                    <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-						<div class="row">
-							<div class="col-3 col-lg-2 feature-box-icon">
-								<h6><i class="bi bi-rocket-takeoff fa-2x text-brand"></i></h6>
-							</div>
-							<div class=" col-9 col-lg-10 feature-box-content">
-								<span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Instant Application Publishing</span>
-								<p class="w-90 xl-w-100 lh-sm">Push your code to a Git repository, and users can run it instantly. Jeka enables client-side builds on first run, removing the need for binary hosting and deployment.</p>
-							</div>
-						</div>
-                    </div>
-                </div>
-				
-
-				
-				<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-                    <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-						<div class="row">
-							<div class="col-3 col-lg-2 feature-box-icon">
-								<h6><i class="bi bi-cloud-arrow-up fa-2x text-brand"></i></h6>
-							</div>
-							<div class=" col-9 col-lg-10 feature-box-content">
-								<span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Cloud Native</span>
-								<p class="w-90 xl-w-100 lh-sm">Jeka takes Java containerization to new standard of simplicity, enabling zero-config creation of optimized Docker images for JVM and native apps.</p>
-							</div>
-						</div>
-                    </div>
-                </div>
-				
-
             </div>
 
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="row">
+                        <div class="col-3 col-lg-2 feature-box-icon">
+                            <h6><i class="bi bi-cup-hot fa-2x text-brand"></i></h6>
+                        </div>
+                        <div class=" col-9 col-lg-10 feature-box-content">
+                            <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Purely Java-Based</span>
+                            <p class="w-90 xl-w-100 lh-sm">Customize with simple properties or plain Java code. Handle
+                                advanced scenarios using intuitive mechanisms without unnecessary complexity.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="row">
+                        <div class="col-3 col-lg-2 feature-box-icon">
+                            <h6><i class="bi bi-usb-drive fa-2x text-brand"></i></h6>
+                        </div>
+                        <div class=" col-9 col-lg-10 feature-box-content">
+                            <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Fully Portable Builds</span>
+                            <p class="w-90 xl-w-100 lh-sm">Jeka fetches all required tooling—JDK, JeKa itself, GraalVM,
+                                Node.js, ...—making builds reproducible and runnable on bare machines, without needing
+                                Java. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="row">
+                        <div class="col-3 col-lg-2 feature-box-icon">
+                            <h6><i class="bi bi-clipboard-check fa-2x text-brand"></i></h6>
+                        </div>
+                        <div class=" col-9 col-lg-10 feature-box-content">
+                            <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Lean and Simple at the Core</span>
+                            <p class="w-90 xl-w-100 lh-sm">Jeka offers a remarkably lean component model, making it easy
+                                to write extensions, implement CI/CD pipelines, and share build logic.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="row">
+                        <div class="col-3 col-lg-2 feature-box-icon">
+                            <h6><i class="bi bi-rocket-takeoff fa-2x text-brand"></i></h6>
+                        </div>
+                        <div class=" col-9 col-lg-10 feature-box-content">
+                            <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Instant Application Publishing</span>
+                            <p class="w-90 xl-w-100 lh-sm">Push your code to a Git repository, and users can run it
+                                instantly. Jeka enables client-side builds on first run, removing the need for binary
+                                hosting and deployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-start justify-content-start h-100 border-radius-6px p-5 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="row">
+                        <div class="col-3 col-lg-2 feature-box-icon">
+                            <h6><i class="bi bi-cloud-arrow-up fa-2x text-brand"></i></h6>
+                        </div>
+                        <div class=" col-9 col-lg-10 feature-box-content">
+                            <span class="d-inline-block alt-font text-dark-gray fs-20 fw-600 mb-5px">Cloud Native</span>
+                            <p class="w-90 xl-w-100 lh-sm">Jeka takes Java containerization to new standard of
+                                simplicity, enabling zero-config creation of optimized Docker images for JVM and native
+                                apps.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </section>
-	
-	
-	
+    </div>
+</section>
+
+<section class="bg-dark">
+    <figure>
+        <blockquote class="blockquote text-white fw-800 text-center">
+            <i>"Can Java still claim simplicity while requiring XML or external languages for building?"</i>
+            <!-- <i>"How can next-gen developers find Java friendly if it requires XML or external languages for building?"</i> -->
+            <!-- Wouldn't Java be more friendly if it avoided XML or external languages for building? -->
+        </blockquote>
+    </figure>
+</section>
 
 
 <section id="about">
     <div class="container">
-		<div class="row align-items-center justify-content-center">
-    <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large appear anime-child anime-complete">
-        <h3 class="fw-600 text-dark-gray ls-minus-2px mb-10">Why JeKa?</h3>
-    </div>
-</div>
-		
-		<div class="row row-cols-1 row-cols-lg-3 justify-content-center appear anime-child anime-complete" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
 
-    <div class="col icon-with-text-style-04 transition-inner-all mb-3">
-        <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-            <div class="feature-box-icon mb-5">
-				<div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0" style="margin: 0 auto;">						<i class="bi bi-play-circle fs-50 text-light"></i></div>
-            </div>
-            <div class="feature-box-content last-paragraph-no-margin">
-                <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Execute Java or Kotlin Sources</span>
-                <p>Jeka efficiently run Java or Kotlin applications directly from source code, without requiring a pre-installed JDK/JRE. Compilation happens on-the-fly and is cached for faster subsequent runs. </p>
+        <!--
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large appear anime-child anime-complete">
+                <h3 class="fw-600 text-dark-gray ls-minus-2px mb-10">Why JeKa?</h3>
             </div>
         </div>
-    </div>
+        -->
 
-	<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-        <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-            <div class="feature-box-icon mb-5">
-				<div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0" style="margin: 0 auto;">						<i class="bi bi-gear fs-50 text-light"></i></div>
-            </div>
-			
-            <div class="feature-box-content last-paragraph-no-margin">
-                <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Powerful Build Tool</span>
-                <p>Jeka offers out-of-the-box build functionalities like Java/Kotlin compilation, dependency management, JUnit, uber/shaded JARs, Git, native images, Docker, and more.  </p>
-            </div>
-        </div>
-    </div>
-	
-	<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-        <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-            <div class="feature-box-icon mb-5">
-				<div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0" style="margin: 0 auto;">						<i class="bi bi-puzzle fs-50 text-light"></i></div>
-            </div>
-			
-            <div class="feature-box-content last-paragraph-no-margin">
-                <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Designed for Extension</span>
-                <p>Jeka’s simple yet powerful plugin architecture enables component interaction with minimal concepts. Extensions include Spring Boot, Node.js, SonarQube, JaCoCo, Nexus, Protobuf, OpenAPI, and more.</p>
-            </div>
-        </div>
-    </div>
-	
-	<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-        <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-            <div class="feature-box-icon mb-5">
-				<div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0" style="margin: 0 auto;">						<i class="bi bi-box fs-50 text-light"></i></div>
-            </div>
-            <div class="feature-box-content last-paragraph-no-margin">
-                <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Container Ready</span>
-                <p>Jeka makes creating Docker images effortless, with minimal or no configuration required. Kubernetes integration is also in progress. </p>
-            </div>
-        </div>
-    </div>
-	
-	<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-        <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-            <div class="feature-box-icon mb-5">
-				<div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0" style="margin: 0 auto;">						<i class="bi bi-lightning fs-50 text-light"></i></div>
-            </div>
-			
-            <div class="feature-box-content last-paragraph-no-margin">
-                <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Fast and Lightweight</span>
-                <p>Jeka is delivered as a single JAR under 2MB with zero dependencies, making it quick to install and friendly as a library. It efficiently runs applications, avoiding extra JVM launch time. </p>
-            </div>
-        </div>
-    </div>
-	
-	<div class="col icon-with-text-style-04 transition-inner-all mb-3">
-        <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-            
-			<div class="feature-box-icon mb-5">
-				<div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0" style="margin: 0 auto;">						<i class="bi bi-folder2-open fs-50 text-light"></i></div>
-            </div>
-            <div class="feature-box-content last-paragraph-no-margin">
-                <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Open Source</span>
-                <p>JeKa is licensed under Apache 2.0 License. </p>
-            </div>
-        </div>
-    </div>
 
-</div>
+        <div class="row row-cols-1 row-cols-lg-3 justify-content-center appear anime-child anime-complete"
+             data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [0, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateX&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="feature-box-icon mb-5">
+                        <div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0"
+                             style="margin: 0 auto;"><i class="bi bi-play-circle fs-50 text-light"></i></div>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Run Java Sources Anywhere</span>
+                        <p>Jeka efficiently runs Java or Kotlin directly from source code without needing a pre-installed JDK.
+                            Runtime downloading and compilation occur on-the-fly and are cached for faster subsequent runs.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+
+                    <div class="feature-box-icon mb-5">
+                        <div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0"
+                             style="margin: 0 auto;"><i class="bi bi-card-text fs-50 text-light"></i></div>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Config with Properties or Java</span>
+                        <p>Configure standard needs with a simple properties file, and switch to Java for more specific requirements.
+                            Properties integrate seamlessly with Jeka's Java component model for effective configuration.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="feature-box-icon mb-5">
+                        <div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0"
+                             style="margin: 0 auto;"><i class="bi bi-lightning fs-50 text-light"></i></div>
+                    </div>
+
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Lightweight and Fast</span>
+                        <p>Jeka consists of a single zero-dependency JAR, weighing less than 2MB, that upgrades in a flash.
+                            It runs applications efficiently, eliminating unnecessary JVM startup time.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="feature-box-icon mb-5">
+                        <div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0"
+                             style="margin: 0 auto;"><i class="bi bi-gear fs-50 text-light"></i></div>
+                    </div>
+
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Powerful Build Tool</span>
+                        <p>Jeka offers a wide range of out-of-the-box functionalities, including Java/Kotlin compilation,
+                            dependency management, unit testing, uber/shaded JARs, Git, native compilation, Docker, and more.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="feature-box-icon mb-5">
+                        <div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0"
+                             style="margin: 0 auto;"><i class="bi bi-puzzle fs-50 text-light"></i></div>
+                    </div>
+
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Growing Ecosystem</span>
+                        <p>Jeka’s lean model makes writing extensions straightforward. Plugins already exist for Spring Boot, Node.js,
+                            SonarQube, JaCoCo, Nexus, Protobuf, OpenAPI, and more. We’re waiting for your contribution.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col icon-with-text-style-04 transition-inner-all mb-3">
+                <div class="feature-box bg-white text-center h-100 justify-content-start border-radius-6px p-12 lg-p-10 box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                    <div class="feature-box-icon mb-5">
+                        <div class="feature-box-icon feature-box-icon-rounded w-100px h-100px rounded-circle bg-gradient-light-pink-light-purple text-center d-flex align-items-center justify-content-center flex-shrink-0"
+                             style="margin: 0 auto;"><i class="bi bi-calendar-week fs-50 text-light"></i></div>
+                    </div>
+                    <div class="feature-box-content last-paragraph-no-margin">
+                        <span class="d-inline-block text-dark-gray fw-700 fs-18 mb-5px">Enterprise Ready</span>
+                        <p>
+                            Integration with common enterprise tools, and the ability to define builds/pipelines
+                            centrally make Jeka a strong choice for boosting your Java and DevOps teams' productivity,
+                            especially in a microservices context.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+        </div>
 
 
     </div>
 </section>
 
 
-    <section class="position-relative half-section pt-0">
-        <div class="container-fluid">
-		
-		<div class="row align-items-center justify-content-center">
-    <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large appear anime-child anime-complete">
-        <h3 class="fw-600 text-dark-gray ls-minus-2px">See in Action</h3>
-    </div>
-</div>
+<section class="position-relative half-section pt-0">
+    <div class="container-fluid">
 
-
-            <div class="row">
-                <div class="p-0 overlap-section position-absolute right-0px text-end w-auto xs-w-200px z-index-minus-1" data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
-                    <img src="img/demo-application-home-bg-right.png" alt>
-                </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-lg-6 col-md-8 position-relative text-center page-title-extra-large appear anime-child anime-complete">
+                <h3 class="fw-600 text-dark-gray ls-minus-2px">See in Action</h3>
             </div>
         </div>
-        <div class="position-absolute left-0px bottom-minus-100px w-auto xs-w-180px z-index-minus-1" data-bottom-top="transform: translateY(-100px)" data-top-bottom="transform: translateY(100px)">
-            <img src="img/demo-application-home-bg-left.png" alt>
-        </div>
-        <div class="container">
-		
-		<div class="row align-items-center justify-content-center text-center">
 
-			<div class="col-md-12 cover-background p-4 border-radius-10px mb-5" style="background-image: url(img/demo-application-home-banner_dark.jpg)">
-					<h6 class="mb-1 text-light fs-28 fw-500">Write Robust Scripts in Java</h6>
-                    <iframe width="100%" height="700" src="https://www.youtube-nocookie.com/embed/2gYSOcn-x9s?controls=1&vq=hd1080" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-					
-                </div>
-				
-				<div class="col-md-12 cover-background p-4 border-radius-10px mb-5" style="background-image: url(img/demo-application-home-banner_dark.jpg)">
-					<h6 class="mb-0 text-light fs-28 fw-500">Run an Application Directly from its Remote <a href="https://github.com/jeka-dev/demo-cowsay">Git repository</a></h6>
-                    <script async="true" id="asciicast-CxvamfPUaCNV7aq3Ll9XBxmza" src="https://asciinema.org/a/CxvamfPUaCNV7aq3Ll9XBxmza.js"></script>
-					
-                </div>
-				
-				<div class="col-md-12 cover-background p-4 border-radius-10px mb-5" style="background-image: url(img/demo-application-home-banner_dark.jpg)">
-					<h6 class="mb-0 text-light fs-28 fw-500">Embed Java Scripting within your Projects</h6>
-                    <script async="true" data-autoplay=0 data-start-at="1" id="asciicast-RDCVisQobsHPwM72Q7czxsIDa" src="https://asciinema.org/a/RDCVisQobsHPwM72Q7czxsIDa.js"></script>
-					
-                </div>
-				
-				
+
+        <div class="row">
+            <div class="p-0 overlap-section position-absolute right-0px text-end w-auto xs-w-200px z-index-minus-1"
+                 data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
+                <img src="img/demo-application-home-bg-right.png" alt>
             </div>
-			
-			
-
-			
-			<div class="row mb-5">
-				<div class="col-lg-7 position-relative md-mb-20px" data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#ffffff&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
-                    <figure>
-                        <div class="atropos" data-atropos>
-                            <div class="atropos-scale">
-                                <div class="atropos-rotate">
-                                    <div class="atropos-inner">
-                                        <img data-atropos-offset="5" src="img/script-with-2-commands.png" class="rounded-4">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-                <div class="col-lg-5 col-md-8 col-sm-10 text-center text-lg-start">
-                    <h3 class="fw-600 text-dark-gray lh-1 mt-4 ls-minus-1px" data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">Many Commands can Coexist in a Single Class</h3>
-                    
-					<p>Jeka 0.11 introduces significant changes and new features. The API has undergone substantial changes for increased consistency. Major improvements have been made to the command-line interface.</p>
-                </div>
-			</div>
-			
-			<div class="row">
-			
-			
-				<div class="col-lg-7 position-relative md-mb-20px order-lg-2" data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#ffffff&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
-                    <figure>
-                        <div class="atropos" data-atropos>
-                            <div class="atropos-scale">
-                                <div class="atropos-rotate">
-                                    <div class="atropos-inner">
-                                        <img data-atropos-offset="5" src="img/properties.png" class="rounded-4">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </figure>
-                </div>
-				
-				<div class="col-lg-5 col-md-8 col-sm-10 text-center text-lg-start">
-                    <h3 class="fw-600 text-dark-gray lh-1 ls-minus-1px mt-4" data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">Concise Configuration with Properties</h3>
-                    
-					<p>The project folder structures have been refined. JDK management has been automated, eliminating the need for users to install and switch between different Java versions. A new feature allows for applications to be run directly from sources hosted in remote Git directories.</p>
-                </div>
-                
-			</div>
-			
-			
-			
-			<div class="row align-items-center mt-8 sm-mt-40px appear anime-complete" id="example" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }"
-    style="">
-    <div class="col-12">
-        <div class="bg-solitude-blue p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
-            <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-5"><img src="img/faq.png" alt="" data-no-retina=""></div>
-            <h3 class="alt-font fw-600 text-dark-gray ls-minus-1px">Examples</h3>
-            <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
-
-                <div class="accordion-item active-accordion">
-                    <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01" aria-expanded="true" data-bs-parent="#accordion-style-02" aria-label="accordion">
-                            <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                <i class="feather icon-feather-minus fs-20"></i><span class="fw-600">Zero-Configuration Build</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="accordion-style-02-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-style-02">
-                        <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
-                            <p class="w-90 sm-w-95 xs-w-100">
-								<a href="https://github.com/jeka-dev/demo-zero-conf" target="_blank"><i class="fa fa-check-circle"></i> <code>Build and Run a Java Application Without Any Configuration</code></a><br>
-								<a href="https://github.com/jeka-dev/demo-base-application" target="_blank"><i class="fa fa-check-circle"></i> <code>Build and Run a Java Application Without Project Structure</code></a><br>
-							</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="accordion-item">
-                    <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02" aria-expanded="false" data-bs-parent="#accordion-style-02" aria-label="accordion">
-                            <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                <i class="feather icon-feather-plus fs-20"></i><span class="fw-600">Run Java Applications directly from their Source Repository</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="accordion-style-02-02" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
-                        <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
-                            <p class="w-90 sm-w-95 xs-w-100">
-								<a href="https://github.com/jeka-dev/demo-cowsay" target="_blank"><i class="fa fa-check-circle"></i> <code>Execute the 'cow says' cmd-line program directly from its Github repo</code></a><br>
-								<a href="https://github.com/djeang/Calculator-jeka" target="_blank"><i class="fa fa-check-circle"></i> <code>Execute a calculator GUI app directly from its Github repo</code></a><br>
-							</p>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="accordion-item">
-                    <div class="accordion-header border-bottom border-color-transparent">
-                        <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03" aria-expanded="false" data-bs-parent="#accordion-style-02" aria-label="accordion">
-                            <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                                <i class="feather icon-feather-plus fs-20"></i><span class="fw-600">Build and Create Pipelines</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div id="accordion-style-02-03" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
-                        <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
-                            <p class="w-90 sm-w-95 xs-w-100">
-								<a href="https://github.com/djeang/vincer-dom" target="_blank"><i class="fa fa-check-circle"></i> <code>Publish a Java Library on Maven Central</code></a><br>
-								<a href="https://github.com/jeka-dev/demo-springboot-simple" target="_blank"><i class="fa fa-check-circle"></i> <code>Configure Spring-Boot application Build using properties only</code></a><br>
-								<a href="https://github.com/jeka-dev/demo-springboot-simple/tree/code-config" target="_blank"><i class="fa fa-check-circle"></i> <code>Configure Spring-Boot application Build using Java code</code></a><br>
-								<a href="https://github.com/jeka-dev/demo-project-springboot-angular" target="_blank"><i class="fa fa-check-circle"></i> <code>Springboot-Agular application, including Sonarqube analysis and Docker E2E testing</code></a><br>
-							</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-			
-			<a href="https://jeka-dev.github.io/jeka/examples/" class="btn text-light btn-gradient-light-pink-light-purple btn-box-shadow btn-rounded left-icon mt-3"> See More <i class="bi bi-arrow-right"></i></a>
-			
-			
         </div>
     </div>
-</div>
-			
-        </div>
-    </section>
+    <div class="position-absolute left-0px bottom-minus-100px w-auto xs-w-180px z-index-minus-1"
+         data-bottom-top="transform: translateY(-100px)" data-top-bottom="transform: translateY(100px)">
+        <img src="img/demo-application-home-bg-left.png" alt>
+    </div>
+    <div class="container">
 
+        <div class="row align-items-center justify-content-center text-center">
 
+            <div class="col-md-12 cover-background p-4 border-radius-10px mb-5"
+                 style="background-image: url(img/demo-application-home-banner_dark.jpg)">
+                <h6 class="mb-1 text-light fs-28 fw-500">Write Robust Scripts in Java</h6>
+                <iframe width="100%" height="700"
+                        src="https://www.youtube-nocookie.com/embed/2gYSOcn-x9s?controls=1&vq=hd1080"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-
-    <section style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
-        <div class="container">
-
-            <h3 class="text-center text-light fw-600">OG Supported Technos</h3>
-
-            <!--<div class="row row-cols-2 row-cols-md-4 text-center justify-content-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateX&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-
-                        <div class="col last-paragraph-no-margin sm-mb-40px">
-                            <img src="img/counter_icon1.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                            <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="6350"></h3>
-                            <span class="d-block lh-22">Active Users</span>
-                        </div>
-
-
-                        <div class="col last-paragraph-no-margin sm-mb-40px">
-                            <img src="img/counter_icon2.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                            <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="5298"></h3>
-                            <span class="d-block lh-22">Total Installation</span>
-                        </div>
-
-
-                        <div class="col last-paragraph-no-margin">
-                            <img src="img/counter_icon3.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                            <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="5864"></h3>
-                            <span class="d-block lh-22">User Reviews</span>
-                        </div>
-
-
-                        <div class="col last-paragraph-no-margin">
-                            <img src="img/counter_icon4.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                            <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="7450"></h3>
-                            <span class="d-block lh-22">Social Engagements</span>
-                        </div>
-
-
-                    </div>-->
-
-            <div class="row position-relative clients-style-08 mt-25px" data-anime="{ &quot;translateX&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;:100, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <div class="col swiper text-center feather-shadow" data-slider-options="{ &quot;slidesPerView&quot;: 2, &quot;spaceBetween&quot;:0, &quot;speed&quot;: 3000, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.slider-four-slide-pagination-2&quot;, &quot;clickable&quot;: false }, &quot;allowTouchMove&quot;: false, &quot;autoplay&quot;: { &quot;delay&quot;:0, &quot;disableOnInteraction&quot;: false, &quot;pauseOnMouseEnter&quot;: false}, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-four-slide-next-2&quot;, &quot;prevEl&quot;: &quot;.slider-four-slide-prev-2&quot; }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;1200&quot;: { &quot;slidesPerView&quot;: 5 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 3 }, &quot;576&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
-                    <div class="swiper-wrapper marquee-slide">
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://spring.io/projects/spring-boot#overview" target="_blank"><img src="img/3rdParty/spring-boot-logo-300x158.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://www.docker.com/" target="_blank"><img src="img/3rdParty/docker.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://www.graalvm.org/" target="_blank"><img src="img/3rdParty/graal.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://nodejs.org/en" target="_blank"><img src="img/3rdParty/node.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://openai.com/" target="_blank"><img src="img/3rdParty/open.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://www.sonarsource.com/products/sonarqube/" target="_blank"><img src="img/3rdParty/sonar.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-                        <div class="swiper-slide p-1">
-                            <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
-                                <div class="py-4">
-                                    <a href="https://protobuf.dev/" target="_blank"><img src="img/3rdParty/protobuf.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
             </div>
 
-
-        </div>
-    </section>
-   
-  
-
-
-    <section class="position-relative p-0 z-index-1" id="download">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="p-0 overlap-section position-absolute right-0px text-end w-auto" data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
-                    <img src="img/demo-application-home-bg-right.png" class="w-80" alt>
-                </div>
+            <div class="col-md-12 cover-background p-4 border-radius-10px mb-5"
+                 style="background-image: url(img/demo-application-home-banner_dark.jpg)">
+                <h6 class="mb-0 text-light fs-28 fw-500">Run an Application Directly from its Remote <a
+                        href="https://github.com/jeka-dev/demo-cowsay">Git repository</a></h6>
+                <script async="true" id="asciicast-CxvamfPUaCNV7aq3Ll9XBxmza"
+                        src="https://asciinema.org/a/CxvamfPUaCNV7aq3Ll9XBxmza.js"></script>
             </div>
+
+            <!--
+            <div class="col-md-12 cover-background p-4 border-radius-10px mb-5"
+                 style="background-image: url(img/demo-application-home-banner_dark.jpg)">
+                <h6 class="mb-0 text-light fs-28 fw-500">Embed Java Scripting within your Projects</h6>
+                <script async="true" data-autoplay=0 data-start-at="1" id="asciicast-RDCVisQobsHPwM72Q7czxsIDa"
+                        src="https://asciinema.org/a/RDCVisQobsHPwM72Q7czxsIDa.js"></script>
+
+            </div>
+            -->
+
         </div>
-    </section>
 
-
-    <section class="overflow-hidden position-relative bg-gradient-very-light-gray py-0 lg-pt-8 lg-pb-10">
-        <div id="particles-style-02" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true" data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 18,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 2000}},&quot;color&quot;: {&quot;value&quot;: [&quot;#8f76f5&quot;, &quot;#a65cef&quot;, &quot;#c74ad2&quot;, &quot;#e754a4&quot;, &quot;#ff6472&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.3,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 1,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 8,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;line_linked&quot;:{&quot;enable&quot;:false,&quot;distance&quot;:0,&quot;color&quot;:&quot;#ffffff&quot;,&quot;opacity&quot;:0.4,&quot;width&quot;:1},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:1,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"></div>
-        <div class="container">
-		<div class="row align-items-center justify-content-center">
-                <div class="col-xl-5 col-lg-7 col-md-8 position-relative text-center text-xl-start lg-mb-15px" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <h3 class="alt-font fw-600 ls-minus-1px text-dark-gray mb-20px mx-auto">Testimonials</h3>
-                    <div class="d-block mb-30px fs-18 ls-minus-05px">
-                        Hear what peoples saying about JeKa.
-                    </div>
-                    <div class="justify-content-center justify-content-xl-start d-none d-xl-flex">
-                        <div class="slider-one-slide-prev-1 text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></div>
-                        <div class="slider-one-slide-next-1 text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></div>
-                    </div>
-                </div>
-                <div class="col-xl-7 col-lg-10 overflow-hidden" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="outside-box-right-15 xl-outside-box-right-20 sm-outside-box-right-0">
-                        <div class="swiper slider-one-slide slider-shadow-right sm-slider-shadow-none overflow-visible ps-25px sm-p-0" data-slider-options="{ &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.slider-one-slide-pagination&quot;, &quot;clickable&quot;: true, &quot;dynamicBullets&quot;: false }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-one-slide-next-1&quot;, &quot;prevEl&quot;: &quot;.slider-one-slide-prev-1&quot; }, &quot;autoplay&quot;: { &quot;delay&quot;: 3000, &quot;disableOnInteraction&quot;: false }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;992&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;320&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
-                            <div class="swiper-wrapper pt-30px pb-30px">
-
-                                <div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Sarah T.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-                                            
-                                        </div>
-										
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
+        <!--
+        <div class="row mb-5">
+            <div class="col-lg-7 position-relative md-mb-20px"
+                 data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#ffffff&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
+                <figure>
+                    <div class="atropos" data-atropos>
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <img data-atropos-offset="5" src="img/script-with-2-commands.png" class="rounded-4">
                                 </div>
-								
-								
-								<div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Emily M.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-                                            
-                                        </div>
-										
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-								
-								
-								<div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Michael T.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-                                            
-                                        </div>
-										
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-								
-								
-								<div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Linda S.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-                                            
-                                        </div>
-										
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-								
-								
-								<div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">John V.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-                                            
-                                        </div>
-										
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-
-
-								
-                                
-								
-								
-
-
                             </div>
                         </div>
                     </div>
-					
-					<div class="justify-content-center justify-content-xl-start d-xl-none d-flex">
-                        <div class="slider-one-slide-prev-1 text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></div>
-                        <div class="slider-one-slide-next-1 text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></div>
+                </figure>
+            </div>
+            <div class="col-lg-5 col-md-8 col-sm-10 text-center text-lg-start">
+                <h3 class="fw-600 text-dark-gray lh-1 mt-4 ls-minus-1px"
+                    data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    Many Commands can Coexist in a Single Class</h3>
+
+                <p>Jeka 0.11 introduces significant changes and new features. The API has undergone substantial changes
+                    for increased consistency. Major improvements have been made to the command-line interface.</p>
+            </div>
+        </div>
+        -->
+
+        <!--
+        <div class="row">
+            <div class="col-lg-7 position-relative md-mb-20px order-lg-2"
+                 data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#ffffff&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
+                <figure>
+                    <div class="atropos" data-atropos>
+                        <div class="atropos-scale">
+                            <div class="atropos-rotate">
+                                <div class="atropos-inner">
+                                    <img data-atropos-offset="5" src="img/properties.png" class="rounded-4">
+                                </div>
+                            </div>
+                        </div>
                     </div>
-					
+                </figure>
+            </div>
+
+            <div class="col-lg-5 col-md-8 col-sm-10 text-center text-lg-start">
+                <h3 class="fw-600 text-dark-gray lh-1 ls-minus-1px mt-4"
+                    data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                    Concise Configuration with Properties</h3>
+
+                <p>The project folder structures have been refined. JDK management has been automated, eliminating the
+                    need for users to install and switch between different Java versions. A new feature allows for
+                    applications to be run directly from sources hosted in remote Git directories.</p>
+            </div>
+
+        </div>
+        -->
+
+
+        <!-- Exemples section
+        <div class="row align-items-center mt-8 sm-mt-40px appear anime-complete" id="example"
+             data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }"
+             style="">
+            <div class="col-12">
+                <div class="bg-solitude-blue p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
+                    <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-5">
+                        <img src="img/faq.png" alt="" data-no-retina=""></div>
+                    <h3 class="alt-font fw-600 text-dark-gray ls-minus-1px">Examples</h3>
+                    <div class="accordion accordion-style-02" id="accordion-style-02"
+                         data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
+
+                        <div class="accordion-item active-accordion">
+                            <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01"
+                                   aria-expanded="true" data-bs-parent="#accordion-style-02" aria-label="accordion">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
+                                        <i class="feather icon-feather-minus fs-20"></i><span class="fw-600">Zero-Configuration Build</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-style-02-01" class="accordion-collapse collapse show"
+                                 data-bs-parent="#accordion-style-02">
+                                <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
+                                    <p class="w-90 sm-w-95 xs-w-100">
+                                        <a href="https://github.com/jeka-dev/demo-zero-conf" target="_blank"><i
+                                                class="fa fa-check-circle"></i> <code>Build and Run a Java Application
+                                            Without Any Configuration</code></a><br>
+                                        <a href="https://github.com/jeka-dev/demo-base-application" target="_blank"><i
+                                                class="fa fa-check-circle"></i> <code>Build and Run a Java Application
+                                            Without Project Structure</code></a><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="accordion-item">
+                            <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02"
+                                   aria-expanded="false" data-bs-parent="#accordion-style-02" aria-label="accordion">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
+                                        <i class="feather icon-feather-plus fs-20"></i><span class="fw-600">Run Java Applications directly from their Source Repository</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-style-02-02" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordion-style-02">
+                                <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
+                                    <p class="w-90 sm-w-95 xs-w-100">
+                                        <a href="https://github.com/jeka-dev/demo-cowsay" target="_blank"><i
+                                                class="fa fa-check-circle"></i> <code>Execute the 'cow says' cmd-line
+                                            program directly from its Github repo</code></a><br>
+                                        <a href="https://github.com/djeang/Calculator-jeka" target="_blank"><i
+                                                class="fa fa-check-circle"></i> <code>Execute a calculator GUI app
+                                            directly from its Github repo</code></a><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="accordion-item">
+                            <div class="accordion-header border-bottom border-color-transparent">
+                                <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03"
+                                   aria-expanded="false" data-bs-parent="#accordion-style-02" aria-label="accordion">
+                                    <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
+                                        <i class="feather icon-feather-plus fs-20"></i><span class="fw-600">Build and Create Pipelines</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div id="accordion-style-02-03" class="accordion-collapse collapse"
+                                 data-bs-parent="#accordion-style-02">
+                                <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
+                                    <p class="w-90 sm-w-95 xs-w-100">
+                                        <a href="https://github.com/djeang/vincer-dom" target="_blank"><i
+                                                class="fa fa-check-circle"></i> <code>Publish a Java Library on Maven
+                                            Central</code></a><br>
+                                        <a href="https://github.com/jeka-dev/demo-springboot-simple" target="_blank"><i
+                                                class="fa fa-check-circle"></i> <code>Configure Spring-Boot application
+                                            Build using properties only</code></a><br>
+                                        <a href="https://github.com/jeka-dev/demo-springboot-simple/tree/code-config"
+                                           target="_blank"><i class="fa fa-check-circle"></i> <code>Configure
+                                            Spring-Boot application Build using Java code</code></a><br>
+                                        <a href="https://github.com/jeka-dev/demo-project-springboot-angular"
+                                           target="_blank"><i class="fa fa-check-circle"></i> <code>Springboot-Agular
+                                            application, including Sonarqube analysis and Docker E2E
+                                            testing</code></a><br>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <a href="https://jeka-dev.github.io/jeka/examples/"
+                       class="btn text-light btn-gradient-light-pink-light-purple btn-box-shadow btn-rounded left-icon mt-3">
+                        See More <i class="bi bi-arrow-right"></i></a>
                 </div>
             </div>
         </div>
-    </section>
+        -->
+
+    </div>
+</section>
+
+<!--
+<section style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
+-->
+<section>
+    <div class="container">
+
+        <!--
+        <h3 class="text-center text-light fw-600">Supported Technos</h3>
+        -->
 
 
-    <footer class="footer-dark p-0 position-relative bg-oxford-blue" id="contact">
-        <div class="pt-40px pb-40px bg-gradient-light-pink-light-purple">
-            <div class="container position-relative">
-                <div class="row align-items-center justify-content-center">
-                    <div class="col-lg-8 col-md-10 icon-with-text-style-08 md-mb-20px">
-                        <div class="feature-box feature-box-left-icon-middle overflow-hidden">
-                            <div class="feature-box-icon feature-box-icon-rounded w-90px h-90px rounded-circle border border-2 border-color-transparent-white-light me-30px">
-                                <img src="img/demo-application-home-icon.png" class="w-40px h-40px" alt>
-                            </div>
-                            <div class="feature-box-content last-paragraph-no-margin">
-                                <h5 class="d-inline-block fw-600 text-white mb-0">Still Need Help?</h5>
-                                <p class="text-light">If you not found the solution you are looking for then ask on the community discussion.</p>
+        <!--<div class="row row-cols-2 row-cols-md-4 text-center justify-content-center" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateX&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+
+                    <div class="col last-paragraph-no-margin sm-mb-40px">
+                        <img src="img/counter_icon1.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
+                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="6350"></h3>
+                        <span class="d-block lh-22">Active Users</span>
+                    </div>
+
+
+                    <div class="col last-paragraph-no-margin sm-mb-40px">
+                        <img src="img/counter_icon2.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
+                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="5298"></h3>
+                        <span class="d-block lh-22">Total Installation</span>
+                    </div>
+
+
+                    <div class="col last-paragraph-no-margin">
+                        <img src="img/counter_icon3.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
+                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="5864"></h3>
+                        <span class="d-block lh-22">User Reviews</span>
+                    </div>
+
+
+                    <div class="col last-paragraph-no-margin">
+                        <img src="img/counter_icon4.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
+                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="7450"></h3>
+                        <span class="d-block lh-22">Social Engagements</span>
+                    </div>
+                </div>-->
+
+
+
+        <div class="row position-relative clients-style-08 mt-25px"
+             data-anime="{ &quot;translateX&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;:100, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+
+
+            <div class="col swiper text-center feather-shadow"
+                 data-slider-options="{ &quot;slidesPerView&quot;: 2, &quot;spaceBetween&quot;:0, &quot;speed&quot;: 3000, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.slider-four-slide-pagination-2&quot;, &quot;clickable&quot;: false }, &quot;allowTouchMove&quot;: false, &quot;autoplay&quot;: { &quot;delay&quot;:0, &quot;disableOnInteraction&quot;: false, &quot;pauseOnMouseEnter&quot;: false}, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-four-slide-next-2&quot;, &quot;prevEl&quot;: &quot;.slider-four-slide-prev-2&quot; }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;1200&quot;: { &quot;slidesPerView&quot;: 5 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 3 }, &quot;576&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
+
+
+                <div class="swiper-wrapper marquee-slide">
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://spring.io/projects/spring-boot#overview" target="_blank"><img
+                                        src="img/3rdParty/spring-boot-logo-300x158.png" class="h-70px md-h-40px" alt=""
+                                        data-no-retina=""></a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 text-center text-lg-end">
-                        <a href="https://github.com/orgs/jeka-dev/discussions"><img src="img/discussion.png" alt></a>
+
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://www.docker.com/" target="_blank"><img src="img/3rdParty/docker.png"
+                                                                                       class="h-70px md-h-40px" alt=""
+                                                                                       data-no-retina=""></a>
+                            </div>
+                        </div>
                     </div>
+
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://www.graalvm.org/" target="_blank"><img src="img/3rdParty/graal.png"
+                                                                                        class="h-70px md-h-40px" alt=""
+                                                                                        data-no-retina=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://nodejs.org/en" target="_blank"><img src="img/3rdParty/node.png"
+                                                                                     class="h-70px md-h-40px" alt=""
+                                                                                     data-no-retina=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://openai.com/" target="_blank"><img src="img/3rdParty/open.png"
+                                                                                   class="h-70px md-h-40px" alt=""
+                                                                                   data-no-retina=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://www.sonarsource.com/products/sonarqube/" target="_blank"><img
+                                        src="img/3rdParty/sonar.png" class="h-70px md-h-40px" alt="" data-no-retina=""></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="swiper-slide p-1">
+                        <div class="bg-white h-100 border-radius-6px text-center box-shadow-quadruple-large box-shadow-quadruple-large-hover">
+                            <div class="py-4">
+                                <a href="https://protobuf.dev/" target="_blank"><img src="img/3rdParty/protobuf.png"
+                                                                                     class="h-70px md-h-40px" alt=""
+                                                                                     data-no-retina=""></a>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row justify-content-center pt-6 sm-pt-40px">
 
-                <div class="col-lg-3 col-md-4 col-sm-6 md-mb-30px text-center text-sm-start">
-                    <a href="#" class="footer-logo mb-15px d-inline-block">
-						<img src="img/Icon_app.png" data-at2x="img/Icon_app.png" alt> <span class="text-light fs-28 ms-1 fw-600">Jeka.dev</span>
-					</a>
-                    <p class="lh-sm">Start your project with zero configuration. Manage dependencies, compile, test, package JARs.</p>
-                    
-					<div class="elements-social social-icon-style-02 mt-15px">
-						<ul class="small-icon light">
-							<li><a class="dribbble" href="mailto:support@jeka.dev"><i class="bi bi-envelope"></i></a></li>
-							<li><a class="dribbble" href="https://github.com/jeka-dev/jeka" target="_blank"><i class="bi bi-github"></i></a></li>
-							<li><a class="dribbble" href="https://twitter.com/JekaBuildTool" target="_blank"><i class="bi bi-twitter-x"></i></a></li>
-							<li><a class="instagram" href="https://projects.ow2.org/view/jeka" target="_blank"><img src="img/OW2_Logo_Evolution_FullColors_Marged_RGB-01.svg" style="width:63px;"></a></li>
-						</ul>
-					</div>
+
+    </div>
+</section>
+
+
+<section class="position-relative p-0 z-index-1" id="download">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="p-0 overlap-section position-absolute right-0px text-end w-auto"
+                 data-bottom-top="transform: translateY(-150px)" data-top-bottom="transform: translateY(150px)">
+                <img src="img/demo-application-home-bg-right.png" class="w-80" alt>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonial Section
+<section class="overflow-hidden position-relative bg-gradient-very-light-gray py-0 lg-pt-8 lg-pb-10">
+    <div id="particles-style-02" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true"
+         data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 18,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 2000}},&quot;color&quot;: {&quot;value&quot;: [&quot;#8f76f5&quot;, &quot;#a65cef&quot;, &quot;#c74ad2&quot;, &quot;#e754a4&quot;, &quot;#ff6472&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.3,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 1,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 8,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;line_linked&quot;:{&quot;enable&quot;:false,&quot;distance&quot;:0,&quot;color&quot;:&quot;#ffffff&quot;,&quot;opacity&quot;:0.4,&quot;width&quot;:1},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:1,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"></div>
+    <div class="container">
+        <div class="row align-items-center justify-content-center">
+            <div class="col-xl-5 col-lg-7 col-md-8 position-relative text-center text-xl-start lg-mb-15px"
+                 data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <h3 class="alt-font fw-600 ls-minus-1px text-dark-gray mb-20px mx-auto">Testimonials</h3>
+                <div class="d-block mb-30px fs-18 ls-minus-05px">
+                    Hear what peoples saying about JeKa.
+                </div>
+                <div class="justify-content-center justify-content-xl-start d-none d-xl-flex">
+                    <div class="slider-one-slide-prev-1 text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray"
+                         tabindex="0" role="button" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="slider-one-slide-next-1 text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray"
+                         tabindex="0" role="button" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-7 col-lg-10 overflow-hidden"
+                 data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
+                <div class="outside-box-right-15 xl-outside-box-right-20 sm-outside-box-right-0">
+                    <div class="swiper slider-one-slide slider-shadow-right sm-slider-shadow-none overflow-visible ps-25px sm-p-0"
+                         data-slider-options="{ &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.slider-one-slide-pagination&quot;, &quot;clickable&quot;: true, &quot;dynamicBullets&quot;: false }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-one-slide-next-1&quot;, &quot;prevEl&quot;: &quot;.slider-one-slide-prev-1&quot; }, &quot;autoplay&quot;: { &quot;delay&quot;: 3000, &quot;disableOnInteraction&quot;: false }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;992&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;320&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
+                        <div class="swiper-wrapper pt-30px pb-30px">
+
+                            <div class="swiper-slide review-style-06">
+                                <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
+                                    <div class="mb-20px d-flex align-items-center">
+                                        <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
+                                        <div class="d-inline-block align-middle last-paragraph-no-margin">
+                                            <div class="alt-font text-dark-gray fw-600 fs-18">Sarah T.</div>
+                                            <p class="lh-24 d-block">USA</p>
+                                        </div>
+
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. </p>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide review-style-06">
+                                <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
+                                    <div class="mb-20px d-flex align-items-center">
+                                        <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
+                                        <div class="d-inline-block align-middle last-paragraph-no-margin">
+                                            <div class="alt-font text-dark-gray fw-600 fs-18">Emily M.</div>
+                                            <p class="lh-24 d-block">USA</p>
+                                        </div>
+
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. </p>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide review-style-06">
+                                <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
+                                    <div class="mb-20px d-flex align-items-center">
+                                        <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
+                                        <div class="d-inline-block align-middle last-paragraph-no-margin">
+                                            <div class="alt-font text-dark-gray fw-600 fs-18">Michael T.</div>
+                                            <p class="lh-24 d-block">USA</p>
+                                        </div>
+
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. </p>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide review-style-06">
+                                <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
+                                    <div class="mb-20px d-flex align-items-center">
+                                        <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
+                                        <div class="d-inline-block align-middle last-paragraph-no-margin">
+                                            <div class="alt-font text-dark-gray fw-600 fs-18">Linda S.</div>
+                                            <p class="lh-24 d-block">USA</p>
+                                        </div>
+
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. </p>
+                                </div>
+                            </div>
+
+
+                            <div class="swiper-slide review-style-06">
+                                <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
+                                    <div class="mb-20px d-flex align-items-center">
+                                        <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
+                                        <div class="d-inline-block align-middle last-paragraph-no-margin">
+                                            <div class="alt-font text-dark-gray fw-600 fs-18">John V.</div>
+                                            <p class="lh-24 d-block">USA</p>
+                                        </div>
+
+                                    </div>
+
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                                        incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
+                                        nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                                        consequat. </p>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
                 </div>
 
+                <div class="justify-content-center justify-content-xl-start d-xl-none d-flex">
+                    <div class="slider-one-slide-prev-1 text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray"
+                         tabindex="0" role="button" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="slider-one-slide-next-1 text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray"
+                         tabindex="0" role="button" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
 
-                <div class="col-5 col-lg-2 col-md-3 col-sm-5 offset-sm-1 md-mb-30px">
-                    <span class="d-block text-white fw-600 mb-10px">Links</span>
-                    <ul>
-                        <li><a href="https://github.com/jeka-dev/jeka">Github</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="https://jeka-dev.github.io/jeka">Documentation</a></li>
-                        <li><a href="#example">Examples</a></li>
-                        <li><a href="#contact">Contact</a></li>
+            </div>
+        </div>
+    </div>
+</section>
+-->
+
+
+<footer class="footer-dark p-0 position-relative bg-oxford-blue" id="contact">
+    <div class="pt-40px pb-40px bg-gradient-light-pink-light-purple">
+        <div class="container position-relative">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-lg-8 col-md-10 icon-with-text-style-08 md-mb-20px">
+                    <div class="feature-box feature-box-left-icon-middle overflow-hidden">
+                        <div class="feature-box-icon feature-box-icon-rounded w-90px h-90px rounded-circle border border-2 border-color-transparent-white-light me-30px">
+                            <img src="img/demo-application-home-icon.png" class="w-40px h-40px" alt>
+                        </div>
+                        <div class="feature-box-content last-paragraph-no-margin">
+                            <h5 class="d-inline-block fw-600 text-white mb-0">Still Need Help?</h5>
+                            <p class="text-light">If you not found the solution you are looking for then ask on the
+                                community discussion.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 text-center text-lg-end">
+                    <a href="https://github.com/orgs/jeka-dev/discussions"><img src="img/discussion.png" alt/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row justify-content-center pt-6 sm-pt-40px">
+
+            <div class="col-lg-3 col-md-4 col-sm-6 md-mb-30px text-center text-sm-start">
+                <a href="#" class="footer-logo mb-15px d-inline-block">
+                    <img src="img/Icon_app.png" data-at2x="img/Icon_app.png" alt> <span
+                        class="text-light fs-28 ms-1 fw-600">Jeka.dev</span>
+                </a>
+
+                    <img alt="Maven Central"
+                         src="https://img.shields.io/maven-central/v/dev.jeka/jeka-core.svg?label=Latest+Version&color=34D058">
+
+
+                <div class="elements-social social-icon-style-02 mt-15px">
+                    <ul class="small-icon light">
+                        <li><a class="dribbble" href="mailto:support@jeka.dev"><i class="bi bi-envelope"></i></a></li>
+                        <li><a class="dribbble" href="https://github.com/jeka-dev/jeka" target="_blank"><i
+                                class="bi bi-github"></i></a></li>
+                        <li><a class="dribbble" href="https://twitter.com/JekaBuildTool" target="_blank"><i
+                                class="bi bi-twitter-x"></i></a></li>
+                        <li><a class="instagram" href="https://projects.ow2.org/view/jeka" target="_blank"><img
+                                src="img/OW2_Logo_Evolution_FullColors_Marged_RGB-01.svg" style="width:63px;"></a></li>
                     </ul>
                 </div>
-
-
-                <div class="col-7 col-lg-3 col-md-4 col-sm-5 offset-md-0 offset-sm-1 order-5 order-md-3 xs-mb-30px">
-                    <span class="d-block text-white fw-600 mb-10px">Need help?</span>
-                    <span class="d-block"> Check Our</span>
-                    <a href="https://github.com/jeka-dev/jeka/issues" class="text-white fw-600 mb-15px d-inline-block"><i class="fab fa-github"></i> Github Issues</a>
-                    <span class="d-block">Say hello to</span>
-                    <a href="https://github.com/orgs/jeka-dev/discussions" class="text-white fw-600 d-inline-block"><i class="fa fa-comments"></i> Github Discusion</a>
-                </div>
-
-
-                <div class="col-lg-3 col-md-10 col-sm-6 text-md-center text-lg-start order-last order-sm-4">
-                    <span class="d-block text-white fw-600 mb-10px">Keep in touch with us</span>
-                    <p class="mb-20px lh-30 w-90 xl-w-100">Subscribe our newsletter to get the latest news and updates.</p>
-                    <div class="d-inline-block w-100 newsletter-style-02 position-relative mb-15px">
-                        <form action="#" method="post" class="position-relative w-100">
-                            <input class="input-small fs-14 bg-transparent border-color-transparent-white-light w-100 form-control required" type="email" name="email" placeholder="Enter your email">
-                            <input type="hidden" name="redirect" value>
-                            <button class="btn submit" aria-label="submit"><i class="icon feather icon-feather-mail icon-small text-medium-gray"></i></button>
-                            <div class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none"></div>
-                        </form>
-                    </div>
-                    <div class="d-flex align-items-center justify-content-lg-start justify-content-md-center">
-                        <i class="line-icon-Handshake align-middle icon-medium me-10px"></i>
-                        <span class="fs-14">Protecting your privacy</span>
-                    </div>
-                </div>
-
             </div>
-            <div class="row justify-content-center align-items-center pt-3">
-                <div class="col-12">
-                    <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
+
+
+            <div class="col-5 col-lg-2 col-md-3 col-sm-5 offset-sm-1 md-mb-30px">
+                <span class="d-block text-white fw-600 mb-10px">Links</span>
+                <ul>
+                    <li><a href="https://github.com/jeka-dev/jeka">Github</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="https://jeka-dev.github.io/jeka">Documentation</a></li>
+                    <li><a href="https://jeka-dev.github.io/jeka/examples/">Examples</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+
+
+            <div class="col-7 col-lg-3 col-md-4 col-sm-5 offset-md-0 offset-sm-1 order-5 order-md-3 xs-mb-30px">
+                <span class="d-block text-white fw-600 mb-10px">Need help?</span>
+                <!--
+                <span class="d-block"> Check Our</span>
+                -->
+                <a href="https://github.com/jeka-dev/jeka/issues" class="text-white fw-600 mb-15px d-inline-block"><i
+                        class="fab fa-github"></i> Github Issues</a>
+                <!--
+                <span class="d-block">Say hello to</span>
+                -->
+                <a href="https://github.com/orgs/jeka-dev/discussions" class="text-white fw-600 d-inline-block"><i
+                        class="fa fa-comments"></i> Github Discussion</a>
+            </div>
+
+
+            <div class="col-lg-3 col-md-10 col-sm-6 text-md-center text-lg-start order-last order-sm-4">
+                <span class="d-block text-white fw-600 mb-10px">Keep in touch with us</span>
+                <a href="https://github.com/jeka-dev/jeka/blob/master/CONTRIBUTING.md"><img src="img/mascot.png" width="120" alt></a>
+                <!--
+                <p class="mb-20px lh-30 w-90 xl-w-100">Subscribe our newsletter to get the latest news and updates.</p>
+                <div class="d-inline-block w-100 newsletter-style-02 position-relative mb-15px">
+                    <form action="#" method="post" class="position-relative w-100">
+                        <input class="input-small fs-14 bg-transparent border-color-transparent-white-light w-100 form-control required"
+                               type="email" name="email" placeholder="Enter your email">
+                        <input type="hidden" name="redirect" value>
+                        <button class="btn submit" aria-label="submit"><i
+                                class="icon feather icon-feather-mail icon-small text-medium-gray"></i></button>
+                        <div class="form-results border-radius-4px pt-5px pb-5px ps-15px pe-15px fs-14 lh-22 mt-10px w-100 text-center position-absolute d-none"></div>
+                    </form>
                 </div>
-                <div class="col-xl-8 col-lg-9 pt-30px pb-30px fs-14 lh-26 last-paragraph-no-margin text-center order-2 order-sm-1">
-                    <p>Copyright © <b>JeKa</b>. All rights reserved.<br><small>Icons made by <a href="https://getbootstrap.com"><b>Bootstrap</b></a> from <a href="https://icons.getbootstrap.com"><b>icons.getbootstrap.com</b></a></small></p>
+                <div class="d-flex align-items-center justify-content-lg-start justify-content-md-center">
+                    <i class="line-icon-Handshake align-middle icon-medium me-10px"></i>
+                    <span class="fs-14">Protecting your privacy</span>
                 </div>
+                -->
+            </div>
+
+        </div>
+        <div class="row justify-content-center align-items-center pt-3">
+            <div class="col-12">
+                <div class="divider-style-03 divider-style-03-01 border-color-transparent-white-light"></div>
+            </div>
+            <div class="col-xl-8 col-lg-9 pt-30px pb-30px fs-14 lh-26 last-paragraph-no-margin text-center order-2 order-sm-1">
+                <p>Copyright © <b>JeKa</b>. All rights reserved.<br><small>Icons made by <a
+                        href="https://getbootstrap.com"><b>Bootstrap</b></a> from <a
+                        href="https://icons.getbootstrap.com"><b>icons.getbootstrap.com</b></a></small></p>
             </div>
         </div>
-    </footer>
-
-
-    <div class="scroll-progress d-none d-xxl-block">
-        <a href="#" class="scroll-top" aria-label="scroll"><span class="scroll-text">Scroll</span><span class="scroll-line"><span class="scroll-point"></span></span></a>
     </div>
+</footer>
 
-    <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/vendors.min.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>
-	
-	<!--Smooth Scroll Code-->
-	<script>
-	
-	jQuery(document).ready(function() {
-    
-        jQuery('#to-id').click(function(event) {
+
+<div class="scroll-progress d-none d-xxl-block">
+    <a href="#" class="scroll-top" aria-label="scroll"><span class="scroll-text">Scroll</span><span class="scroll-line"><span
+            class="scroll-point"></span></span></a>
+</div>
+
+<script type="text/javascript" src="js/jquery.js"></script>
+<script type="text/javascript" src="js/vendors.min.js"></script>
+<script type="text/javascript" src="js/main.js"></script>
+
+<!--Smooth Scroll Code-->
+<script>
+
+    jQuery(document).ready(function () {
+
+        jQuery('#to-id').click(function (event) {
             event.preventDefault();
-            $('html, body').animate({scrollTop:$('#Benefits').position().top}, 2000);
+            $('html, body').animate({scrollTop: $('#Benefits').position().top}, 2000);
             return false;
         })
     });
-	
-	(function($) {
-	
-	"use strict";
-	document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
 
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
+    (function ($) {
+
+        "use strict";
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
         });
-    });
-});
 
-})(window.jQuery);
-	
-	</script>
-	
-	
+    })(window.jQuery);
+
+</script>
+
+
 </body>
 
 

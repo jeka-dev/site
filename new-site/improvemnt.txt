@@ -1,0 +1,13 @@
+- Add "JekA" just at bottom of the logo. Text width must match with logo base.
+
+- Reduce height of <bloquote section "Can Java still....."
+  Add a bg image like as in <section style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
+
+- Make Youtube embedded video render well in small device
+
+- In supported techno, add and feet image from 3rdPrarty: git, kotlin, maven, nexus.
+
+- Change the palette of demo-application-home-banner_dark.jpg, it does not look consistent with the other parts.
+  I prefer colorq in demo-application-home-bg-right.png
+
+- Still need help section: links are not working.
