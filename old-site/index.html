@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-103449580-2"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-103449580-2');
+    </script>
+
+    <!-- highlight.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/properties.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="JeKa Team" name="author">
+    <meta content="build,java,devOps,IaC,infrastructure as code,helm,kotlin,tool,automation,maven,ant,gradle,buildr,sbt,make,compiler,tester,jacoco,pure java build tool,java build tool,build tool,100% java build tool"
+          name="keywords">
+    <meta content="images/logos/plain-logo.svg" name="image" property="og:image">
+    <title>JeKa : Easy Java - Run Sources and Build Simply Anywhere</title>
+    <meta content="Build Projects and Automate any Tasks Using Plain Java or Kotlin" name="description"/>
+    <link href="images/logos/plain-logo.svg" rel="icon">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:600|Roboto:400,700" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/paper-kit.css?v=2.1.0" rel="stylesheet">
+    <link href="styles/main.css" rel="stylesheet">
+
+    <!-- theme for hightlighting.js -->
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/atom-one-dark.min.css">
+
+</head>
+<body id="top">
+<header>
+    <div class="aa-header bg-gradient">
+        <nav class="navbar navbar-expand-md navbar-transparent">
+            <div class="container">
+                <!--
+                <img class="img-fluid pr-3 aa-logo-img" src="images/logos/knight-1color-white.svg" alt="logo"  height="50" width="50">
+                -->
+                <div>
+                    <a class="navbar-brand px-500 py-0" href="https://github.com/jeka-dev/jeka">JeKa</a>
+                </div>
+
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/jeka-dev/jeka"
+                                                target="_blank">Github</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://jeka-dev.github.io/jeka" target="_blank">Documentation</a>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#download">Get Started</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#download">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="d-block d-xs-block d-sm-block d-md-block d-lg-none">
+                    <ul class="navbar-nav ml-auto" style="margin: 1px">
+                        <li class="nav-item"><a class="nav-link" href="https://github.com/jeka-dev/jeka"
+                                                target="_blank"><img height="64px" src="images/github.svg"></a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container aa-header-content text-center text-white" style="padding-top: 20px">
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <img src="images/logos/plain-logo.svg" width="160"/>
+                    <br/>
+                    <h2>Next-Gen Build Tool for Java & Co</h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Zero-Configuration Builds</div>
+                    <p class="text-muted-header">
+                        Start your project with zero configuration. Manage dependencies, compile, test,
+                        package JARs, create native and Docker images—all without setup. Configure later, if needed.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Purely Java-Based</div>
+                    <p class="text-muted-header">
+                        Customize your builds with simple properties or plain Java code—no XML or external DSLs required.
+                        Just Java, providing better organization, easy sharing, fast learning, and seamless debugging."
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Fully Portable Builds</div>
+                    <p class="text-muted-header">
+                        Jeka fetches all required tooling—JDK, JeKa itself, GraalVM, Node.js, ...—making builds runnable on bare machines.
+                        Easily switch between Java and tool versions, or wrap Maven and Gradle builds for complete portability.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Instant Application Publishing</div>
+                    <p class="text-muted-header">
+                        Push your code to a Git repository, and voilà—users can run it immediately.
+                        Thanks to its great portability, Jeka can build applications on the client side the first time they run,
+                        eliminating the need for binary hosting and deployment.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Simplified Plugin Development</div>
+                    <p class="text-muted-header">
+                        Jeka provides a straightforward plugin mechanism, enabling custom extensions to be implemented
+                        with minimal effort, requiring significantly less work compared to traditional build tools.
+                    </p>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="h4 subTitleColor">Reusable Build Logic</div>
+                    <p class="text-muted-header">
+                        Encapsulate the complexity of build and CI/CD pipelines within a component and easily reuse
+                        it across your organization, enabling the most complex builds to be configured with dumb simple setups. Ideal for microservices.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <br/><br/>
+        <div class="container aa-header-content text-center text-white" style="padding-top: 20px">
+            <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12">
+                    <a class="btn btn-outline-neutral btn-round" href="https://jeka-dev.github.io/jeka/examples/"
+                       target="_blank">
+                        Examples
+                    </a>
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a class="btn btn-outline-neutral btn-round" href="https://jeka-dev.github.io/jeka/installation"
+                       target="_blank">
+                        &nbsp;Install&nbsp;
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</header>
+<div class="page-content">
+
+    <!-- ====================== 6 points ============================= -->
+    <div class="container">
+        <div class="aa-product-details section" id="features">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-play-circle-o"></i></div>
+                    <div class="description">
+                        <div class="h4">Execute Java or Kotlin Sources</div>
+                        <p class="text-muted">
+                            Jeka efficiently run Java or Kotlin applications directly from source code,
+                            without requiring a pre-installed JDK/JRE. Compilation happens on-the-fly and is cached
+                            for faster subsequent runs.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-cog"></i></div>
+                    <div class="description">
+                        <div class="h4">Powerful Build Tool</div>
+                        <p class="text-muted">
+                            Jeka offers out-of-the-box build functionalities like Java/Kotlin compilation,
+                            dependency management, JUnit, uber/shaded JARs, Git, native images, Docker, and more.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-plug"></i></div>
+                    <div class="description">
+                        <div class="h4">Designed for Extension</div>
+                        <p class="text-muted">
+                            Jeka’s simple yet powerful plugin architecture enables component interaction with minimal concepts. Extensions include Spring Boot, Node.js, SonarQube, JaCoCo, Nexus, Protobuf, OpenAPI, and more.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-cube"></i></div>
+                    <div class="description">
+                        <div class="h4">Container Ready</div>
+                        <p class="text-muted">
+                            Jeka makes creating Docker images effortless, with minimal or no configuration required. Kubernetes integration is also in progress.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-bolt"></i></div>
+                    <div class="description">
+                        <div class="h4">Fast and Lightweight</div>
+                        <p class="text-muted">
+                            Jeka is delivered as a single JAR under 2MB with zero dependencies,
+                            making it quick to install and friendly as a library. It efficiently runs applications, avoiding extra JVM launch time.
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="icon icon-danger"><i aria-hidden="true" class="fa fa-balance-scale"></i></div>
+                    <div class="description">
+                        <div class="h4">Open Source</div>
+                        <p class="text-muted">JeKa is licensed under Apache 2.0 License.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== see in action ============================= -->
+    <div class="aa-screenshots section">
+        <div class="container text-center">
+            <h2>See in Action</h2>
+            <div class="carousel slide" data-bs-ride="carousel" id="carouselExampleSlidesOnly">
+                <div class="carousel-inner">
+                    <div>
+                        <h4>Run an Application Directly from its Remote <a href="https://github.com/jeka-dev/demo-cowsay">Git
+                            repository</a></h4>
+                        <script async="true"
+                                id="asciicast-CxvamfPUaCNV7aq3Ll9XBxmza" src="https://asciinema.org/a/CxvamfPUaCNV7aq3Ll9XBxmza.js"></script>
+                    </div>
+                    <div>
+                        <h4>Embed Java Scripting within your Projects</h4>
+                        <script async="true" data-autoplay=0
+                                data-start-at="1"
+                                id="asciicast-RDCVisQobsHPwM72Q7czxsIDa" src="https://asciinema.org/a/RDCVisQobsHPwM72Q7czxsIDa.js"></script>
+                    </div>
+                    <div>
+                        <h4>Many Commands can Coexist in a Single Class</h4>
+                        <br/>
+                        <img src="images/screenshots/script-with-2-commands.png" height="600"/>
+                    </div>
+                    <div>
+                        <h4>Concise Configuration with Properties</h4>
+                        <br/>
+                        <img src="images/screenshots/properties.png" height="600"/>
+                    </div>
+
+
+                    <!--
+                    <div>
+                        <h4>Build Projects simply using Properties</h4>
+                        <pre style="margin-bottom: 0">
+                            <code class="language-properties" style="text-align: left; font-size: small; background: black">jeka.version=0.11.0-beta.0
+jeka.java.version=21
+
+# Import plugins from Maven central. Versions are inferred from JeKa version.
+jeka.inject.classpath=dev.jeka:springboot-plugin  dev.jeka:jacoco-plugin  dev.jeka:sonarqube-plugin
+
+# Initialize springboot KBean, for making bootable jar
+@springboot=
+
+# Initialize Jacoco and configure Sonarqube KBeans for test coverage and static analysis
+@jacoco=
+@sonarqube.scannerVersion=5.0.1.3006
+sonar.host.url=http://localhost:9000</code>
+                        </pre>
+                        <div class="code-legend">
+                            Execute<code>jeka project: pack sonarqube: run</code>to create a Spring Boot JAR, perform test coverage, and run SonarQube analysis.<br/>
+                            Java dependencies can be declared in a specific <i>dependencies.txt</i> file as below, or using Java code.
+                        </div>
+                        <pre style="margin-bottom: 0">
+                            <code style="text-align: left; font-size: small; background: black">== COMPILE ==
+org.springframework.boot:spring-boot-dependencies::pom:3.2.4
+org.springframework.boot:spring-boot-starter-web
+org.springframework.boot:spring-boot-starter-actuator
+
+== RUNTIME ==
+com.h2database:h2
+
+== TEST ==
+org.springframework.boot:spring-boot-starter-test
+com.codeborne:selenide:7.2.3
+                            </code>
+                        </pre>
+                    </div>
+
+                    <div>
+                        <h4>Build Projects using Java Code</h4>
+                        <pre style="margin-bottom: 0">
+                                <code class="language-java" style="font-size: small; text-align: left; background: black">@JkInjectClasspath("dev.jeka:springboot-plugin")
+@JkInjectClasspath("dev.jeka:jacoco-plugin")
+@JkInjectClasspath("dev.jeka:sonarqube-plugin")
+class Build extends KBean {
+
+    final JkProject project = JkProject.of().setBaseDir(getBaseDir());
+
+    public boolean runIT = true;  // Allow to disable Integration Tests at exec time
+
+    @Override
+    protected void init() {
+
+        // Configure some basic build behavior
+        project.compilation.addJavaCompilerOptions("-Xlint:-options");
+        project.testing.testSelection.addIncludePatternsIf(runIT, ".*IT");
+
+        // Dependencies can also be declared programmatically
+        project.flatFacade.compileDependencies
+            .add("com.google.guava:guava:30.0-jre")
+            .add("org.ehcache:ehcache:3.9.6");
+
+        // Tell the project to create bootable springboot jar instead of regular one
+        JkSpringbootProject.of(project).configure();
+
+        // Configure the project to run jacoco when running unit tests
+        JkJacoco.ofVersion("0.8.11").configureAndApplyTo(project);
+    }
+
+    @JkDoc("Run Sonarqube analysis.")
+    public void packQuality() {
+        project.pack();  // compile, test and make jar
+        JkSonarqube.ofVersion("5.0.1.3006").configureFor(project).run();
+    }
+}</code>
+                        </pre>
+                    <div class="code-legend">
+                        Execute<code>jeka packQuality</code>to build and run SonarQube analysis. It does roughly the same than the previous example.<br/>
+                        Code can be used in combination with properties to customize builds.
+                    </div>
+                </div>
+                -->
+
+            </div>
+
+            </div>
+        </div>
+    </div>
+
+
+    <!--
+<div class="container">
+<hr/>
+</div>
+
+<div class="aa-testimonials-section section">
+<div class="container">
+<div class="text-center">
+  <h2 class="title mt-0">What our customers are saying</h2>
+  <p>Real user testimonials are great way to attract new customers and increase their trust into using your app.<br/>Replace the testimonials below with the ones for your own app.</p>
+</div>
+<div class="aa-testimonials">
+  <div class="row">
+    <div class="col-md-4 mb-3">
+      <div class="aa-testimonials-body">
+        <p>Awesome App is awesome and I can't imagine working on my projects without it. It has saved me countless hours of time and has increased my productivity.</p>
+        <div class="row pt-3">
+          <div class="col-lg-5 col-md-12"><img class="img-fluid" src="https://s3.amazonaws.com/uifaces/faces/twitter/mlane/128.jpg" alt="Face 1"/></div>
+          <div class="col-lg-7 col-md-12 pt-3">
+            <div class="h5">Patrick Harry</div>
+            <p class="text-muted">Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="aa-testimonials-body">
+        <p>Awesome App is awesome and I can't imagine working on my projects without it. It has saved me countless hours of time and has increased my productivity.</p>
+        <div class="row pt-3">
+          <div class="col-lg-5 col-md-12"><img class="img-fluid" src="https://s3.amazonaws.com/uifaces/faces/twitter/jsa/128.jpg" alt="Face 2"/></div>
+          <div class="col-lg-7 col-md-12 pt-3">
+            <div class="h5">Andrew Riley</div>
+            <p class="text-muted">Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 mb-3">
+      <div class="aa-testimonials-body">
+        <p>Awesome App is awesome and I can't imagine working on my projects without it. It has saved me countless hours of time and has increased my productivity.</p>
+        <div class="row pt-3">
+          <div class="col-lg-5 col-md-12"><img class="img-fluid" src="https://s3.amazonaws.com/uifaces/faces/twitter/chadengle/128.jpg" alt="Face 3"/></div>
+          <div class="col-lg-7 col-md-12 pt-3">
+            <div class="h5">Ralph Jordan</div>
+            <p class="text-muted">Web Developer</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+-->
+
+    <!-- ========================== Get Started ======================== -->
+    <div class="aa-download-section section bg-gradient bg-gradient-foot" id="download">
+
+        <div class="container">
+            <div class="h2 text-center text-title text-white pb-5">Get Started</div>
+            <div class="row">
+                <div class="col-md-4 col-sm-12"><a class="aa-android"
+                                                   href="https://jeka-dev.github.io/jeka/installation">
+                    <div class="card">
+                        <div class="row pb-3">
+                            <div class="col-lg-3 col-md-12 aa-download-icon"><i aria-hidden="true"
+                                                                                class="pt-4 fa fa-indent fa-4x"></i></div>
+                            <div class="col-lg-9 col-md-12 aa-download-icon-detail">
+                                <div class="h4 pb-1">Install JeKa Tool</div>
+                                <p class="text-muted"><img alt="Maven Central"
+                                                           src="https://img.shields.io/maven-central/v/dev.jeka/jeka-core.svg?label=">
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+                <div class="col-md-4 col-sm-12"><a class="aa-android"
+                                                   href="https://plugins.jetbrains.com/plugin/24505-jeka">
+                    <div class="card">
+                        <div class="row pb-3">
+                            <div class="col-lg-3 col-md-12 aa-download-icon"><i aria-hidden="true"
+                                                                                class="pt-4 fa fa-laptop fa-4x"></i></div>
+                            <div class="col-lg-9 col-md-12 aa-download-icon-detail">
+                                <div class="h4 pb-1">IntelliJ Plugin</div>
+                                <p class="text-muted">Visual Plugin for Idea IntelliJ</p>
+                            </div>
+                        </div>
+                    </div>
+                </a></div>
+                <div class="col-md-4 col-sm-12">
+                    <a class="aa-android" href="https://jeka-dev.github.io/jeka/tutorials/getting-started/">
+                        <div class="card">
+                            <div class="row pb-3">
+                                <div class="col-lg-3 col-md-12 aa-download-icon"><i
+                                        aria-hidden="true"
+                                        class="pt-4 fa fa-graduation-cap fa-4x"></i></div>
+                                <div class="col-lg-9 col-md-12 aa-download-icon-detail">
+                                    <div class="h4 pb-1">&nbsp;Getting Started</div>
+                                    <p class="text-muted">&nbsp;Tutorial for Starting with JeKa</p>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- ============================ contacts ===================== -->
+<footer class="footer-black aa-footer" id="contact">
+    <div class="container py-5">
+        <div class="row text-center">
+            <div class="col-md-12">
+                <a class="btn btn-link btn-neutral" href="mailto:support@jeka.dev">
+                    <i aria-hidden="true" class="fa fa-envelope fa-2x"></i></a>
+                <a class="btn btn-link btn-neutral" href="https://twitter.com/JekaBuildTool">
+                    <i aria-hidden="true" class="fa fa-twitter fa-2x"></i></a>
+                <a class="btn btn-link btn-neutral" href="https://github.com/jeka-dev/jeka">
+                    <i aria-hidden="true" class="fa fa-github fa-2x"></i></a>
+                <a class="btn btn-link btn-neutral" href="https://projects.ow2.org/view/jeka">
+                    <img alt="Image" height="60" src="images/ow2.svg" width="60"></a>
+            </div>
+            <div class="col-md-12">
+                <p class="mt-3">Copyright &copy; JeKa. All rights reserved.</p>
+                <div>Icons made by <a href="https://creativemarket.com/Becris" title="Becris">Becris</a> from <a
+                        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="js/jquery-3.2.1.min.js"></script>
+<script src="js/jquery-ui-1.12.1.custom.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/paper-kit.js?v=2.1.0"></script>
+<script src="scripts/main.js"></script>
+
+</body>
+</html>
