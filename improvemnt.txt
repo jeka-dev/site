@@ -11,5 +11,7 @@
 - Change the palette of demo-application-home-banner_dark.jpg, it does not look consistent with the other parts.
   I prefer colorq in demo-application-home-bg-right.png
 
+- Time to time, links are not activated when hover "still need help" and "contribute"  avatar images.
+
 
 
