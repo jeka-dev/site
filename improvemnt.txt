@@ -7,6 +7,7 @@
 - Make Youtube embedded video render well in small device
 
 - In supported techno, add and feet image from 3rdPrarty: git, kotlin, maven, nexus (images have been added in /img)
+  Add a tittle "Supported Techomogies" at upper-left of the section
 
 - Change the palette of demo-application-home-banner_dark.jpg, it does not look consistent with the other parts.
   I prefer colorq in demo-application-home-bg-right.png
