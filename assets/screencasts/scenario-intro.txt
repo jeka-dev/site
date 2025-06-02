@@ -1,0 +1,56 @@
+rm -rf *
+jeka-demo ➤ asciinema rec
+export
+
+# Create a Spring-Boot application from scratch
+jeka project: scaffold springboot: -cp=dev.jeka:springboot-plugin
+tree
+
+# Super concise configuration
+bat jeka.properties
+
+## Dedicated file for dependency management
+bat dependencies.txt
+
+jeka build
+jeka runJar
+
+# Create Docker image with zero config
+jeka docker: build
+docker run --rm -p 8080:8080 jeka-demo:latest
+
+
+# Same for native image
+jeka docker: buildNative
+docker run --rm -p 8080:8080 native-jeka-demo:latest
+
+
+# Configure with simple properties
+mc -e jeka.properties
+@docker.jvmBaseImage=eclipse-temurin:21.0.1_12-jre-jammy
+@docker.jvmAgents.0.coordinate=io.opentelemetry.javaagent:opentelemetry-javaagent:1.32.0
+@docker.jvmAgents.0.optionLine=-Dotel.traces.exporter=otlp,-Dotel.metrics.exporter=otlp
+
+
+# Create custom task with simple Java method
+mc -e jeka-src/Custom.java
+public void publishDockerhub() {
+    String tag = "jekadev/simple-sprinboot-demo:latest";
+    String imageName = load(dev.jeka.core.tool.builtins.tooling.docker.DockerKBean.class).resolveNativeImageName();
+    dev.jeka.core.api.tooling.docker.JkDocker.of()
+        .execCmd("image", "tag", imageName, tag)
+        .loginDockerHub("jekadev", System.getenv("DOCKERHUB_PWD"))
+        .execCmd("push", "-q", tag)
+        .execCmd("logout");
+}
+# Run directly from the command line
+jeka custom: publishDockerhub
+docker run jekadev/simple-sprinboot-demo:latest
+# Started in <30ms
+# Enjoy!!
+<script src="https://asciinema.org/a/DiXuINT0tgnJ24UZgmQnqA5ks.js" id="asciicast-DiXuINT0tgnJ24UZgmQnqA5ks" async="true"></script>
+
+
+
+
+

@@ -29,6 +29,10 @@
       "url": "http://localhost:8080/index.html",
       "name": "Spring Native Demo Application",
       "createdAt": "2025-01-06T12:52:45Z"
+    },
+    {
+      "url": "https://plugins.jetbrains.com/plugin/14458-gbrowser",
+      "createdAt": "2025-06-02T23:45:35Z"
     }
   ]
 }]]></component>
