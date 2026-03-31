@@ -23,6 +23,88 @@
     <link rel="stylesheet" href="css/icon.min.css"/>
     <link rel="stylesheet" href="css/style.min.css"/>
     <link rel="stylesheet" href="css/responsive.min.css"/>
+    <style>
+        .snippet-carousel-card {
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+            overflow: hidden;
+            height: 100%;
+        }
+
+        .snippet-carousel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 20px;
+            border-bottom: 1px solid #ececec;
+        }
+
+        .snippet-carousel-badge {
+            display: inline-block;
+            font-size: 12px;
+            line-height: 1;
+            padding: 6px 10px;
+            border-radius: 999px;
+            background: #f2f3ff;
+            color: #4133b7;
+            font-weight: 600;
+        }
+
+        .snippet-carousel-body {
+            background: #141a24;
+            color: #e6ecf2;
+            padding: 16px 20px;
+            margin: 0;
+            min-height: 200px;
+            font-size: 13px;
+            line-height: 1.5;
+            overflow-x: auto;
+        }
+
+        .snippet-carousel-body code {
+            white-space: pre;
+            font-family: "Courier New", Courier, monospace;
+        }
+
+        .snippet-token-key {
+            color: #8bd5ff;
+        }
+
+        .snippet-token-value {
+            color: #ffd580;
+        }
+
+        .snippet-token-type {
+            color: #ff9ecb;
+        }
+
+        .snippet-token-method {
+            color: #7ef0c2;
+        }
+
+        .snippet-token-string {
+            color: #f9f06b;
+        }
+
+        .snippet-token-annotation {
+            color: #c4a3ff;
+        }
+
+        .snippet-carousel-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .snippet-carousel-pagination.swiper-pagination {
+            position: relative;
+            inset: auto;
+            width: auto;
+        }
+    </style>
 </head>
 
 <body data-mobile-nav-style="classic" class="custom-cursor">
@@ -235,6 +317,96 @@
         </div>
 
 
+    </div>
+</section>
+
+
+<section class="bg-very-light-gray pt-5 pb-5">
+    <div class="container">
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <h4 class="fw-600 text-dark-gray ls-minus-1px mb-1">Code Snippet Carousel</h4>
+                <p class="mb-0">Swipe through sample snippets in `.properties` and Java with a legend on each card.</p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <div class="swiper"
+                     data-slider-options="{ &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 20, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.snippet-carousel-pagination&quot;, &quot;clickable&quot;: true }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.snippet-carousel-next&quot;, &quot;prevEl&quot;: &quot;.snippet-carousel-prev&quot; }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;992&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;320&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <article class="snippet-carousel-card">
+                                <div class="snippet-carousel-header">
+                                    <span class="alt-font fw-600 text-dark-gray">Basic Build Setup</span>
+                                    <span class="snippet-carousel-badge">Legend: .properties</span>
+                                </div>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-key">jeka.java.version</span>=<span class="snippet-token-value">21</span>
+<span class="snippet-token-key">jeka.java.testFramework</span>=<span class="snippet-token-value">junit-jupiter</span>
+<span class="snippet-token-key">jeka.pack.jarType</span>=<span class="snippet-token-value">FAT</span>
+<span class="snippet-token-key">jeka.docker.baseImage</span>=<span class="snippet-token-value">eclipse-temurin:21-jre</span></code></pre>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="snippet-carousel-card">
+                                <div class="snippet-carousel-header">
+                                    <span class="alt-font fw-600 text-dark-gray">Programmatic Build Config</span>
+                                    <span class="snippet-carousel-badge">Legend: Java</span>
+                                </div>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-type">class</span> Build extends KBean {
+    @Override
+    protected void <span class="snippet-token-method">init</span>() {
+        project.flatFacade
+                .<span class="snippet-token-method">setJvmTargetVersion</span>(<span class="snippet-token-string">"21"</span>)
+                .<span class="snippet-token-method">setModuleId</span>(<span class="snippet-token-string">"dev.demo:app"</span>)
+                .<span class="snippet-token-method">setVersion</span>(<span class="snippet-token-string">"1.0.0"</span>);
+    }
+}</code></pre>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="snippet-carousel-card">
+                                <div class="snippet-carousel-header">
+                                    <span class="alt-font fw-600 text-dark-gray">Native Packaging</span>
+                                    <span class="snippet-carousel-badge">Legend: .properties</span>
+                                </div>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-key">jeka.native.enabled</span>=<span class="snippet-token-value">true</span>
+<span class="snippet-token-key">jeka.native.mainClass</span>=<span class="snippet-token-value">dev.demo.Main</span>
+<span class="snippet-token-key">jeka.native.graalVersion</span>=<span class="snippet-token-value">23.1.2</span>
+<span class="snippet-token-key">jeka.native.staticLinking</span>=<span class="snippet-token-value">false</span></code></pre>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="snippet-carousel-card">
+                                <div class="snippet-carousel-header">
+                                    <span class="alt-font fw-600 text-dark-gray">Custom Task</span>
+                                    <span class="snippet-carousel-badge">Legend: Java</span>
+                                </div>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDoc</span>(<span class="snippet-token-string">"Runs lint then tests"</span>)
+public void qualityGate() {
+    <span class="snippet-token-method">run</span>(<span class="snippet-token-string">"checkstyle"</span>);
+    <span class="snippet-token-method">run</span>(<span class="snippet-token-string">"test"</span>);
+    <span class="snippet-token-method">run</span>(<span class="snippet-token-string">"jacoco"</span>);
+}</code></pre>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="snippet-carousel-controls">
+                    <div class="snippet-carousel-prev text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray position-relative top-0 start-0 mt-0">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </div>
+                    <div class="swiper-pagination snippet-carousel-pagination position-relative mt-0"></div>
+                    <div class="snippet-carousel-next text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray position-relative top-0 start-0 mt-0">
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
