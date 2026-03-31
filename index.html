@@ -30,6 +30,23 @@
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
             height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .snippet-carousel-swiper .swiper-wrapper {
+            align-items: stretch;
+        }
+
+        .snippet-carousel-swiper .swiper-slide {
+            display: flex;
+            height: auto;
+            min-width: 0;
+        }
+
+        .snippet-carousel-swiper .swiper-slide > .snippet-carousel-card {
+            width: 100%;
+            min-width: 0;
         }
 
         .snippet-carousel-header {
@@ -60,6 +77,8 @@
             font-size: 13px;
             line-height: 1.5;
             overflow-x: auto;
+            flex: 1;
+            max-width: 100%;
         }
 
         .snippet-carousel-body code {
@@ -320,19 +339,22 @@
     </div>
 </section>
 
+<!--
+<section style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
+    <div class="container">
 
+        <h6 class="text-center text-light fw-600">
+            <i class="bi bi-chat-left bi-chat-square-quote fa-2x text-brand"></i>
+            <i>Drop XML and DSLs: use only Java and properties</i>
+        </h6>
+    </div>
+</section>
+-->
 <section class="bg-very-light-gray pt-5 pb-5">
     <div class="container">
-        <div class="row mb-4">
-            <div class="col-12 text-center">
-                <h4 class="fw-600 text-dark-gray ls-minus-1px mb-1">Code Snippet Carousel</h4>
-                <p class="mb-0">Swipe through sample snippets in `.properties` and Java with a legend on each card.</p>
-            </div>
-        </div>
-
         <div class="row">
             <div class="col-12">
-                <div class="swiper"
+                <div class="swiper snippet-carousel-swiper"
                      data-slider-options="{ &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 20, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.snippet-carousel-pagination&quot;, &quot;clickable&quot;: true }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.snippet-carousel-next&quot;, &quot;prevEl&quot;: &quot;.snippet-carousel-prev&quot; }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;992&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;320&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -411,50 +433,7 @@ public void qualityGate() {
 </section>
 
 
-<section style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
-    <div class="container">
 
-        <h6 class="text-center text-light fw-600"><i
-                class="bi bi-chat-left bi-chat-square-quote fa-2x text-brand"></i><br><br>
-            <i>Why on earth should we use XML or external languages for Java builds?!</i>
-        </h6>
-        <!--
-	<p class="text-center lead"><i class="bi bi-chat-right-quote"></i> Anonymous Thinker</p>
-	-->
-
-        <!--<div class="row row-cols-2 row-cols-md-4 text-center justify-content-center mt-5" data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateX&quot;: [-50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 1200, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 150, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-
-                    <div class="col last-paragraph-no-margin sm-mb-40px">
-                        <img src="img/counter_icon1.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="6350"></h3>
-                        <span class="d-block lh-22">Active Users</span>
-                    </div>
-
-
-                    <div class="col last-paragraph-no-margin sm-mb-40px">
-                        <img src="img/counter_icon2.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="5298"></h3>
-                        <span class="d-block lh-22">Total Installations</span>
-                    </div>
-
-
-                    <div class="col last-paragraph-no-margin">
-                        <img src="img/counter_icon3.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="5864"></h3>
-                        <span class="d-block lh-22">User Reviews</span>
-                    </div>
-
-
-                    <div class="col last-paragraph-no-margin">
-                        <img src="img/counter_icon4.png" class="h-65px md-h-55px mb-25px mx-auto d-block" alt>
-                        <h3 class="vertical-counter d-inline-flex alt-font text-light fw-800 mb-0 ls-minus-3px md-ls-minus-2px" data-to="7450"></h3>
-                        <span class="d-block lh-22">Contributions</span>
-                    </div>
-
-
-                </div>-->
-    </div>
-</section>
 
 
 <section id="about">
