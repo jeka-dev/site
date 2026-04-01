@@ -52,7 +52,12 @@
         .snippet-carousel-header {
             display: block;
             padding: 16px 20px;
-            border-bottom: 1px solid var(--extra-medium-gray);
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            box-shadow:
+                inset 2px 0 0 #dd469b,
+                inset -2px 0 0 #dd469b,
+                inset 0 2px 0 #dd469b;
         }
 
         .snippet-carousel-title {
@@ -519,7 +524,7 @@ org.projectlombok:lombok</code></pre>
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
                                     <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Custom Tasks</span>
-                                    <span class="snippet-carousel-legend">Write tasks using pure Java methods. <br/>Invoke from command-line as <code>jeka task: deployFtp</code> </span>
+                                    <span class="snippet-carousel-legend">Write tasks using pure Java methods. <br/>Invoke directly from command-line <code>jeka task: deployFtp</code> without compiling.</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDep</span>(<span class="snippet-token-string">"commons-net:commons-net:3.11.1"</span>)
 <span class="snippet-token-type">class</span> Task <span class="snippet-token-type">extends</span> KBean {
