@@ -211,13 +211,6 @@
                     </ul>
                 </div>
             </div>
-            <!--<div class="col-auto col-auto xs-ps-0">
-                <div class="header-icon">
-                    <div class="header-button">
-                        <a href="#download" class="btn btn-small btn-rounded with-rounded btn-box-shadow btn-dark-gray text-uppercase-inherit">Install Jeka <span class="bg-licorice-blue text-white"><i class="feather icon-feather-arrow-right"></i></span></a>
-                    </div>
-                </div>
-            </div>-->
         </div>
     </nav>
 
@@ -231,13 +224,46 @@
     <div class="container h-100 position-relative z-index-9">
         <div class="row align-items-center h-100 justify-content-center">
 
+
             <div class="col-xl-8 ps-3 md-ps-15px col-lg-9 col-md-10 position-relative text-center"
                  data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                <!--<img src="img/icon.PNG" class="w-25 my-4" alt>-->
+                <!--<img src="img/icon.PNG" class="w-25 my-4" alt/>-->
+
+
+                <div class="row g-3 mb-3">
+                    <div class="col-12 col-md-6">
+                        <div class="swiper-slide text-start h-100">
+                            <article class="snippet-carousel-card">
+                                <pre class="snippet-carousel-body">
+<code><span class="snippet-token-key">jeka.version</span>=<span class="snippet-token-value">0.11.64</span>
+<span class="snippet-token-key">jeka.java.version</span>=<span class="snippet-token-value">25</span>
+
+<span class="snippet-token-key">@project.gitVersioning.enable</span>=<span class="snippet-token-value">true</span>
+
+<span class="snippet-token-key">@native.includeAllResources</span>=<span class="snippet-token-value">true</span></code></pre>
+                            </article>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <div class="swiper-slide text-start h-100">
+                            <article class="snippet-carousel-card">
+                                <pre class="snippet-carousel-body">
+<code><code><span class="snippet-token-section">[compile]</span>
+com.google.guava:guava:<span class="snippet-token-version">33.5.0-jre</span>
+info.picocli:picocli:<span class="snippet-token-version">4.7.0</span>
+
+<span class="snippet-token-section">[test]</span>
+org.junit:junit-bom:<span class="snippet-token-version">6.0.3@pom</span>
+org.junit.jupiter:junit-jupiter</code></code></pre>
+                            </article>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="fs-45 xl-fs-40 lh-30 mb-3 text-dark-gray ls-minus-2px mt-3">
                     <span class="fw-500">Modern Build Tool for Java & Co.</span>
                 </div>
-                <span class="fs-20 xl-fs-16">Build and deliver Java applications with unparalleled ease.</span>
+                <span class="fs-20 xl-fs-16">Build and deliver Java applications more easily.</span>
 
 
                 <div class="col-md-8 offset-md-2 mt-4">
@@ -464,6 +490,7 @@ org.projectlombok:lombok</code></pre>
                                     <span class="snippet-carousel-legend">Customize builds or create plugins using pure Java and an object-oriented model. <br/>Help your configuration code with 3rd-party librarries.</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDep</span>(<span class="snippet-token-string">"com.google.guava:guava:33.5.0-jre"</span>)
+<span class="snippet-token-annotation">@JkDep</span>(<span class="snippet-token-string">"com.google.code.gson:gson:2.13.2"</span>)
 <span class="snippet-token-type">class</span> Custom <span class="snippet-token-type">extends</span> KBean {
     
     <span class="snippet-token-annotation">@JkPostInit</span>
@@ -682,9 +709,9 @@ org.projectlombok:lombok</code></pre>
 
 
 
-            <div class="col-12 col-md-6 cover-background p-4 border-radius-2px mb-5 see-action-card"
-                 style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
-                <h6 class="mb-1 text-light fs-28 fw-500">Write Robust Scripts in Java</h6>
+            <div class="col-12 col-md-6 p-4 border-radius-2px mb-5 see-action-card"
+                 style="background: transparent;">
+                <h6 class="mb-1 fs-28 fw-500">Write Robust Scripts in Java</h6>
                 <iframe class="youtube-iframe"
                         src="https://www.youtube-nocookie.com/embed/r-PUX6amBrw?controls=1&amp;vq=hd1080"
                         title="YouTube video player" frameborder="0"
@@ -693,9 +720,9 @@ org.projectlombok:lombok</code></pre>
 
             </div>
 
-            <div class="col-12 col-md-6 cover-background p-4 border-radius-2px mb-5 see-action-card"
-                 style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
-                <h6 class="mb-1 text-light fs-28 fw-500">Build Cloud-Native Spring-Boot Applications</h6>
+            <div class="col-12 col-md-6 p-4 border-radius-2px mb-5 see-action-card"
+                 style="background: transparent;">
+                <h6 class="mb-1 fs-28 fw-500">Build Cloud-Native Spring-Boot Applications</h6>
                 <iframe class="youtube-iframe"
                         src="https://www.youtube-nocookie.com/embed/yfmaAwAjJ2w?controls=1&amp;vq=hd1080"
                         title="YouTube video player" frameborder="0"
@@ -704,22 +731,22 @@ org.projectlombok:lombok</code></pre>
 
             </div>
 
-            <div class="col-12 col-md-6 cover-background p-4 border-radius-10px mb-5 see-action-card"
-                 style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
-                <h6 class="mb-1 text-light fs-28 fw-500">Discover JeKa in Terminal</h6>
-                <script data-loop="true" data-autoplay="1" src="https://asciinema.org/a/6hW6WraVVM1QEVXQYwtP1rpE6.js"
-                        id="asciicast-6hW6WraVVM1QEVXQYwtP1rpE6" async="true"></script>
+            <div class="col-12 col-md-6 p-4 border-radius-2px mb-5 see-action-card"
+                 style="background: transparent;">
+                <h6 class="mb-0 fs-28 fw-500">Discover JeKa in Terminal</h6>
+                <script async="true"  id="asciicast-6hW6WraVVM1QEVXQYwtP1rpE6"
+                        src="https://asciinema.org/a/6hW6WraVVM1QEVXQYwtP1rpE6.js"></script>
             </div>
 
-            <div class="col-12 col-md-6 cover-background p-4 border-radius-10px mb-5 see-action-card"
-                 style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
-                <h6 class="mb-0 text-light fs-28 fw-500">Run an Application Directly from its Remote <a
-                        href="https://github.com/jeka-dev/demo-cowsay">Git repository</a></h6>
+            <div class="col-12 col-md-6 p-4 border-radius-2px mb-5 see-action-card"
+                 style="background: transparent;">
+                <h6 class="mb-0 fs-28 fw-500">Run Applications Directly from Remote <a
+                        href="https://github.com/jeka-dev/demo-cowsay">Git repo</a></h6>
                 <script async="true" id="asciicast-CxvamfPUaCNV7aq3Ll9XBxmza"
                         src="https://asciinema.org/a/CxvamfPUaCNV7aq3Ll9XBxmza.js"></script>
 
             </div>
-
+        </div>
     </div>
 </section>
 
@@ -874,28 +901,7 @@ org.projectlombok:lombok</code></pre>
 
 
 <footer class="footer-dark p-0 position-relative bg-oxford-blue" id="contact">
-    <!--
-    <div class="pt-40px pb-40px bg-gradient-light-pink-light-purple">
-        <div class="container position-relative">
-            <div class="row align-items-center justify-content-center">
-                <div class="col-lg-8 col-md-10 icon-with-text-style-08 md-mb-20px">
-                    <div class="feature-box feature-box-left-icon-middle overflow-hidden">
-                        <div class="feature-box-icon feature-box-icon-rounded w-90px h-90px rounded-circle border border-2 border-color-transparent-white-light me-30px">
-                            <img src="img/demo-application-home-icon.png" class="w-40px h-40px" alt>
-                        </div>
-                        <div class="feature-box-content last-paragraph-no-margin">
-                            <h5 class="d-inline-block fw-600 text-white mb-0">Still Need Help?</h5>
-                            <p class="text-light">If you not found the solution you are looking for then ask on the community discussion.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center text-lg-end z-index-9">
-                    <a href="https://github.com/orgs/jeka-dev/discussions"><img src="img/discussion.png" alt></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    -->
+
     <div class="container">
         <div class="row justify-content-center pt-6 sm-pt-40px">
 
@@ -907,7 +913,6 @@ org.projectlombok:lombok</code></pre>
                 <br><img alt="Maven Central"
                          src="https://img.shields.io/maven-central/v/dev.jeka/jeka-core.svg?label=Latest+Version&amp;color=34D058"
                          data-no-retina="">
-                <!--<p class="lh-sm">Start your project with zero configuration. Manage dependencies, compile, test, package JARs.</p>-->
 
                 <div class="elements-social social-icon-style-02 mt-15px">
                     <ul class="small-icon light">
