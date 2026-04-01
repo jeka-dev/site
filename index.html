@@ -136,6 +136,38 @@
             inset: auto;
             width: auto;
         }
+
+        .see-action-card {
+            padding: 1rem !important;
+            margin-bottom: 1.25rem !important;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .see-action-card h6 {
+            font-size: 1.3rem !important;
+            line-height: 1.25;
+        }
+
+        .see-action-card .youtube-iframe,
+        .see-action-card iframe {
+            height: 260px;
+        }
+
+        @media (max-width: 767.98px) {
+            .see-action-card .youtube-iframe,
+            .see-action-card iframe {
+                height: 220px;
+            }
+        }
+
+        @media (min-width: 992px) {
+            .see-action-card .youtube-iframe,
+            .see-action-card iframe {
+                height: 300px;
+            }
+        }
     </style>
 </head>
 
@@ -202,8 +234,6 @@
             <div class="col-xl-8 ps-3 md-ps-15px col-lg-9 col-md-10 position-relative text-center"
                  data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                 <!--<img src="img/icon.PNG" class="w-25 my-4" alt>-->
-                <script data-loop="true" data-autoplay="1" src="https://asciinema.org/a/6hW6WraVVM1QEVXQYwtP1rpE6.js"
-                        id="asciicast-6hW6WraVVM1QEVXQYwtP1rpE6" async="true"></script>
                 <div class="fs-45 xl-fs-40 lh-30 mb-3 text-dark-gray ls-minus-2px mt-3">
                     <span class="fw-500">Modern Build Tool for Java & Co.</span>
                 </div>
@@ -648,9 +678,11 @@ org.projectlombok:lombok</code></pre>
     </div>
     <div class="container">
 
-        <div class="row align-items-center justify-content-center text-center">
+        <div class="row align-items-stretch justify-content-center text-center">
 
-            <div class="col-md-12 cover-background p-4 border-radius-10px mb-5"
+
+
+            <div class="col-12 col-md-6 cover-background p-4 border-radius-2px mb-5 see-action-card"
                  style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
                 <h6 class="mb-1 text-light fs-28 fw-500">Write Robust Scripts in Java</h6>
                 <iframe class="youtube-iframe"
@@ -661,7 +693,7 @@ org.projectlombok:lombok</code></pre>
 
             </div>
 
-            <div class="col-md-12 cover-background p-4 border-radius-10px mb-5"
+            <div class="col-12 col-md-6 cover-background p-4 border-radius-2px mb-5 see-action-card"
                  style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
                 <h6 class="mb-1 text-light fs-28 fw-500">Build Cloud-Native Spring-Boot Applications</h6>
                 <iframe class="youtube-iframe"
@@ -672,7 +704,14 @@ org.projectlombok:lombok</code></pre>
 
             </div>
 
-            <div class="col-md-12 cover-background p-4 border-radius-10px mb-5"
+            <div class="col-12 col-md-6 cover-background p-4 border-radius-10px mb-5 see-action-card"
+                 style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
+                <h6 class="mb-1 text-light fs-28 fw-500">Discover JeKa in Terminal</h6>
+                <script data-loop="true" data-autoplay="1" src="https://asciinema.org/a/6hW6WraVVM1QEVXQYwtP1rpE6.js"
+                        id="asciicast-6hW6WraVVM1QEVXQYwtP1rpE6" async="true"></script>
+            </div>
+
+            <div class="col-12 col-md-6 cover-background p-4 border-radius-10px mb-5 see-action-card"
                  style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
                 <h6 class="mb-0 text-light fs-28 fw-500">Run an Application Directly from its Remote <a
                         href="https://github.com/jeka-dev/demo-cowsay">Git repository</a></h6>
@@ -680,139 +719,6 @@ org.projectlombok:lombok</code></pre>
                         src="https://asciinema.org/a/CxvamfPUaCNV7aq3Ll9XBxmza.js"></script>
 
             </div>
-
-            <!--<div class="col-md-12 cover-background p-4 border-radius-10px mb-5" style="background-image: linear-gradient(to right top, #801c7e, #5e2574, #402766, #262453, #151e3d, #0b1c35, #061a2c, #061722, #041b24, #031e24, #042123, #082422);">
-                <h6 class="mb-0 text-light fs-28 fw-500">Embed Java Scripting within your Projects</h6>
-                <script async="true" data-autoplay=0 ata-start-at="1" id="asciicast-RDCVisQobsHPwM72Q7czxsIDa" src="https://asciinema.org/a/RDCVisQobsHPwM72Q7czxsIDa.js"></script>
-
-            </div>-->
-
-
-        </div>
-
-
-        <!--<div class="row mb-5">
-            <div class="col-lg-7 position-relative md-mb-20px" data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#ffffff&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
-                <figure>
-                    <div class="atropos" data-atropos>
-                        <div class="atropos-scale">
-                            <div class="atropos-rotate">
-                                <div class="atropos-inner">
-                                    <img data-atropos-offset="5" src="img/script-with-2-commands.png" class="rounded-4">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-            <div class="col-lg-5 col-md-8 col-sm-10 text-center text-lg-start">
-                <h3 class="fw-600 text-dark-gray lh-1 mt-4 ls-minus-1px" data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">Many Commands can Coexist in a Single Class</h3>
-
-                <p>Jeka 0.11 introduces significant changes and new features. The API has undergone substantial changes for increased consistency. Major improvements have been made to the command-line interface.</p>
-            </div>
-        </div>
-
-        <div class="row">
-
-
-            <div class="col-lg-7 position-relative md-mb-20px order-lg-2" data-anime="{ &quot;effect&quot;: &quot;slide&quot;, &quot;color&quot;: &quot;#ffffff&quot;, &quot;direction&quot;:&quot;lr&quot;, &quot;easing&quot;: &quot;easeOutQuad&quot;, &quot;delay&quot;:50}">
-                <figure>
-                    <div class="atropos" data-atropos>
-                        <div class="atropos-scale">
-                            <div class="atropos-rotate">
-                                <div class="atropos-inner">
-                                    <img data-atropos-offset="5" src="img/properties.png" class="rounded-4">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </figure>
-            </div>
-
-            <div class="col-lg-5 col-md-8 col-sm-10 text-center text-lg-start">
-                <h3 class="fw-600 text-dark-gray lh-1 ls-minus-1px mt-4" data-anime="{ &quot;translateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">Concise Configuration with Properties</h3>
-
-                <p>The project folder structures have been refined. JDK management has been automated, eliminating the need for users to install and switch between different Java versions. A new feature allows for applications to be run directly from sources hosted in remote Git directories.</p>
-            </div>
-
-        </div>
-
-
-
-        <div class="row align-items-center mt-8 sm-mt-40px appear anime-complete" id="example" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }"
-style="">
-<div class="col-12">
-    <div class="bg-solitude-blue p-9 md-p-6 xs-p-9 border-radius-6px overflow-hidden position-relative">
-        <div class="position-absolute right-70px lg-right-20px top-minus-20px w-250px sm-w-180px xs-w-150px opacity-5"><img src="img/faq.png" alt="" data-no-retina=""></div>
-        <h3 class="alt-font fw-600 text-dark-gray ls-minus-1px">Examples</h3>
-        <div class="accordion accordion-style-02" id="accordion-style-02" data-active-icon="icon-feather-minus" data-inactive-icon="icon-feather-plus">
-
-            <div class="accordion-item active-accordion">
-                <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-01" aria-expanded="true" data-bs-parent="#accordion-style-02" aria-label="accordion">
-                        <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                            <i class="feather icon-feather-minus fs-20"></i><span class="fw-600">Zero-Configuration Build</span>
-                        </div>
-                    </a>
-                </div>
-                <div id="accordion-style-02-01" class="accordion-collapse collapse show" data-bs-parent="#accordion-style-02">
-                    <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
-                        <p class="w-90 sm-w-95 xs-w-100">
-                            <a href="https://github.com/jeka-dev/demo-zero-conf" target="_blank"><i class="fa fa-check-circle"></i> <code>Build and Run a Java Application Without Any Configuration</code></a><br>
-                            <a href="https://github.com/jeka-dev/demo-base-application" target="_blank"><i class="fa fa-check-circle"></i> <code>Build and Run a Java Application Without Project Structure</code></a><br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="accordion-item">
-                <div class="accordion-header border-bottom border-color-transparent-dark-very-light">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-02" aria-expanded="false" data-bs-parent="#accordion-style-02" aria-label="accordion">
-                        <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                            <i class="feather icon-feather-plus fs-20"></i><span class="fw-600">Run Java Applications directly from their Source Repository</span>
-                        </div>
-                    </a>
-                </div>
-                <div id="accordion-style-02-02" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
-                    <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent-dark-very-light">
-                        <p class="w-90 sm-w-95 xs-w-100">
-                            <a href="https://github.com/jeka-dev/demo-cowsay" target="_blank"><i class="fa fa-check-circle"></i> <code>Execute the 'cow says' cmd-line program directly from its Github repo</code></a><br>
-                            <a href="https://github.com/djeang/Calculator-jeka" target="_blank"><i class="fa fa-check-circle"></i> <code>Execute a calculator GUI app directly from its Github repo</code></a><br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="accordion-item">
-                <div class="accordion-header border-bottom border-color-transparent">
-                    <a href="#" data-bs-toggle="collapse" data-bs-target="#accordion-style-02-03" aria-expanded="false" data-bs-parent="#accordion-style-02" aria-label="accordion">
-                        <div class="accordion-title mb-0 position-relative text-dark-gray pe-30px">
-                            <i class="feather icon-feather-plus fs-20"></i><span class="fw-600">Build and Create Pipelines</span>
-                        </div>
-                    </a>
-                </div>
-                <div id="accordion-style-02-03" class="accordion-collapse collapse" data-bs-parent="#accordion-style-02">
-                    <div class="accordion-body last-paragraph-no-margin border-bottom border-color-transparent">
-                        <p class="w-90 sm-w-95 xs-w-100">
-                            <a href="https://github.com/djeang/vincer-dom" target="_blank"><i class="fa fa-check-circle"></i> <code>Publish a Java Library on Maven Central</code></a><br>
-                            <a href="https://github.com/jeka-dev/demo-springboot-simple" target="_blank"><i class="fa fa-check-circle"></i> <code>Configure Spring-Boot application Build using properties only</code></a><br>
-                            <a href="https://github.com/jeka-dev/demo-springboot-simple/tree/code-config" target="_blank"><i class="fa fa-check-circle"></i> <code>Configure Spring-Boot application Build using Java code</code></a><br>
-                            <a href="https://github.com/jeka-dev/demo-project-springboot-angular" target="_blank"><i class="fa fa-check-circle"></i> <code>Springboot-Agular application, including Sonarqube analysis and Docker E2E testing</code></a><br>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-
-        <a href="https://jeka-dev.github.io/jeka/examples/" class="btn text-light btn-gradient-light-pink-light-purple btn-box-shadow btn-rounded left-icon mt-3"> See More <i class="bi bi-arrow-right"></i></a>
-
-
-    </div>
-</div>
-</div>-->
 
     </div>
 </section>
@@ -834,119 +740,6 @@ style="">
     <div id="particles-style-02" class="h-100 position-absolute left-0px top-0 w-100" data-particle="true"
          data-particle-options="{&quot;particles&quot;: {&quot;number&quot;: {&quot;value&quot;: 18,&quot;density&quot;: {&quot;enable&quot;: true,&quot;value_area&quot;: 2000}},&quot;color&quot;: {&quot;value&quot;: [&quot;#8f76f5&quot;, &quot;#a65cef&quot;, &quot;#c74ad2&quot;, &quot;#e754a4&quot;, &quot;#ff6472&quot;]},&quot;shape&quot;: {&quot;type&quot;: &quot;circle&quot;,&quot;stroke&quot;:{&quot;width&quot;:0,&quot;color&quot;:&quot;#000000&quot;}},&quot;opacity&quot;: {&quot;value&quot;: 0.3,&quot;random&quot;: false,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;speed&quot;: 1,&quot;sync&quot;: false}},&quot;size&quot;: {&quot;value&quot;: 8,&quot;random&quot;: true,&quot;anim&quot;: {&quot;enable&quot;: false,&quot;sync&quot;: true}},&quot;line_linked&quot;:{&quot;enable&quot;:false,&quot;distance&quot;:0,&quot;color&quot;:&quot;#ffffff&quot;,&quot;opacity&quot;:0.4,&quot;width&quot;:1},&quot;move&quot;: {&quot;enable&quot;: true,&quot;speed&quot;:1,&quot;direction&quot;: &quot;right&quot;,&quot;random&quot;: false,&quot;straight&quot;: false}},&quot;interactivity&quot;: {&quot;detect_on&quot;: &quot;canvas&quot;,&quot;events&quot;: {&quot;onhover&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;repulse&quot;},&quot;onclick&quot;: {&quot;enable&quot;: false,&quot;mode&quot;: &quot;push&quot;},&quot;resize&quot;: true}},&quot;retina_detect&quot;: false}"></div>
     <div class="container">
-        <!--<div class="row align-items-center justify-content-center">
-                <div class="col-xl-5 col-lg-7 col-md-8 position-relative text-center text-xl-start lg-mb-15px" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <h3 class="alt-font fw-600 ls-minus-1px text-dark-gray mb-20px mx-auto">Testimonials</h3>
-                    <div class="d-block mb-30px fs-18 ls-minus-05px">
-                        Hear what peoples saying about JeKa.
-                    </div>
-                    <div class="justify-content-center justify-content-xl-start d-none d-xl-flex">
-                        <div class="slider-one-slide-prev-1 text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></div>
-                        <div class="slider-one-slide-next-1 text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></div>
-                    </div>
-                </div>
-                <div class="col-xl-7 col-lg-10 overflow-hidden" data-anime="{ &quot;translateY&quot;: [0, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 600, &quot;delay&quot;: 0, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
-                    <div class="outside-box-right-15 xl-outside-box-right-20 sm-outside-box-right-0">
-                        <div class="swiper slider-one-slide slider-shadow-right sm-slider-shadow-none overflow-visible ps-25px sm-p-0" data-slider-options="{ &quot;slidesPerView&quot;: 1, &quot;spaceBetween&quot;: 40, &quot;loop&quot;: true, &quot;pagination&quot;: { &quot;el&quot;: &quot;.slider-one-slide-pagination&quot;, &quot;clickable&quot;: true, &quot;dynamicBullets&quot;: false }, &quot;navigation&quot;: { &quot;nextEl&quot;: &quot;.slider-one-slide-next-1&quot;, &quot;prevEl&quot;: &quot;.slider-one-slide-prev-1&quot; }, &quot;autoplay&quot;: { &quot;delay&quot;: 3000, &quot;disableOnInteraction&quot;: false }, &quot;keyboard&quot;: { &quot;enabled&quot;: true, &quot;onlyInViewport&quot;: true }, &quot;breakpoints&quot;: { &quot;992&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;768&quot;: { &quot;slidesPerView&quot;: 2 }, &quot;320&quot;: { &quot;slidesPerView&quot;: 1 } }, &quot;effect&quot;: &quot;slide&quot; }">
-                            <div class="swiper-wrapper pt-30px pb-30px">
-
-                                <div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Sarah T.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-                                            
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Emily M.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Michael T.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">Linda S.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-
-
-                                <div class="swiper-slide review-style-06">
-                                    <div class="d-flex justify-content-center h-100 flex-column bg-white box-shadow-medium p-45px md-p-35px border-radius-6px last-paragraph-no-margin">
-                                        <div class="mb-20px d-flex align-items-center">
-                                            <img class="rounded-circle w-90px h-90px me-20px" src="img/placeholder.png" alt>
-                                            <div class="d-inline-block align-middle last-paragraph-no-margin">
-                                                <div class="alt-font text-dark-gray fw-600 fs-18">John V.</div>
-                                                <p class="lh-24 d-block">USA</p>
-                                            </div>
-
-                                        </div>
-
-                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
-                                    </div>
-                                </div>
-
-
-
-
-
-
-
-
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="justify-content-center justify-content-xl-start d-xl-none d-flex">
-                        <div class="slider-one-slide-prev-1 text-dark-gray swiper-button-prev slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Previous slide"><i class="fa-solid fa-arrow-left"></i></div>
-                        <div class="slider-one-slide-next-1 text-dark-gray swiper-button-next slider-navigation-style-04 border border-1 border-color-extra-medium-gray" tabindex="0" role="button" aria-label="Next slide"><i class="fa-solid fa-arrow-right"></i></div>
-                    </div>
-
-                </div>
-            </div>-->
 
         <div class="row align-items-center justify-content-center mt-5">
             <div class="col-lg-12 position-relative text-center text-md-start page-title-extra-large appear anime-child anime-complete">
