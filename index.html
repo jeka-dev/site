@@ -371,7 +371,7 @@
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Build configuration</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Build Configuration</span>
                                     <span class="snippet-carousel-legend">Configure everything using properties.<br/> Define Java version, import external plugins and configure them with a concise syntax.</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-comment"># force the use of a specific JeKa and Java version</span>
@@ -401,7 +401,7 @@
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Dependencies declaration</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Dependencies Declaration</span>
                                     <span class="snippet-carousel-legend">Declare dependencies in a specific place for better clarity <br/>and separation of concerns.</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-section">[version]</span>
@@ -430,50 +430,62 @@ org.projectlombok:lombok</code></pre>
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Programmatic build configuration</span>
-                                    <span class="snippet-carousel-legend">Legend: Java</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Programmatic Configuration</span>
+                                    <span class="snippet-carousel-legend">Customize builds or create plugins using pure Java and an object-oriented model. <br/>Help your configuration code with 3rd-party librarries.</span>
                                 </div>
-                                <pre class="snippet-carousel-body"><code><span class="snippet-token-type">class</span> Build extends KBean {
-    @Override
-    protected void <span class="snippet-token-method">init</span>() {
-        project.flatFacade
-                .<span class="snippet-token-method">setJvmTargetVersion</span>(<span class="snippet-token-string">"21"</span>)
-                .<span class="snippet-token-method">setModuleId</span>(<span class="snippet-token-string">"dev.demo:app"</span>)
-                .<span class="snippet-token-method">setVersion</span>(<span class="snippet-token-string">"1.0.0"</span>);
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDep</span>(<span class="snippet-token-string">"com.google.guava:guava:33.5.0-jre"</span>)
+<span class="snippet-token-type">class</span> Custom <span class="snippet-token-type">extends</span> KBean {
+    
+    <span class="snippet-token-annotation">@JkPostInit</span>
+    <span class="snippet-token-type">private void</span> <span class="snippet-token-method">postInit</span>(ProjectKBean projectKBean) {
+        JkProject project = projectKBean.project;
+        project.compilation.postCompileActions
+            .<span class="snippet-token-method">append</span>(<span class="snippet-token-string">"import-resources"</span>, () -> <span class="snippet-token-method">importResources</span>(project));
+    }
+    
+    <span class="snippet-token-type">private void</span> <span class="snippet-token-method">importResources</span>(JkProject project) {
+        Path zip = JkPathFile.<span class="snippet-token-method">of</span>(this.<span class="snippet-token-method">getOutputDir</span>().<span class="snippet-token-method">resolve</span>(<span class="snippet-token-string">"res.zip"</span>))
+            .<span class="snippet-token-method">fetchContentFrom</span>(<span class="snippet-token-string">"https://myhost/myres.zip"</span>)
+            .<span class="snippet-token-method">get</span>();
+        JkZipTree.<span class="snippet-token-method">of</span>(zip).<span class="snippet-token-method">copyTo</span>(
+            project.compilation.layout.<span class="snippet-token-method">resolveClassDir</span>());
+    }
+
+}</code></pre>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="snippet-carousel-card">
+                                <div class="snippet-carousel-header">
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Custom Tasks</span>
+                                    <span class="snippet-carousel-legend">Write tasks using pure Java methods. <br/>Invoke from command-line as <code>jeka task: deployFtp</code> </span>
+                                </div>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDep</span>(<span class="snippet-token-string">"commons-net:commons-net:3.11.1"</span>)
+<span class="snippet-token-type">class</span> Task <span class="snippet-token-type">extends</span> KBean {
+
+    <span class="snippet-token-annotation">@JkPropValue</span>(<span class="snippet-token-string">"FTP_PWD"</span>)
+    <span class="snippet-token-type">public</span> String ftpPassword;
+
+    <span class="snippet-token-annotation">@JkInject</span>
+    <span class="snippet-token-type">private</span> ProjectKBean projectKBean;
+
+    <span class="snippet-token-annotation">@JkDoc</span>(<span class="snippet-token-string">"Deploy Spring-Boot application on remote server"</span>)
+    <span class="snippet-token-type">public void</span> <span class="snippet-token-method">deployFtp</span>() <span class="snippet-token-type">throws</span> IOException {
+        Path jar = projectKBean.project.artifactLocator.<span class="snippet-token-method">getMainArtifactPath</span>();
+        FTPClient ftp = <span class="snippet-token-type">new</span> FTPClient();
+        ftp.<span class="snippet-token-method">connect</span>(<span class="snippet-token-string">"my.ftp.server"</span>, <span class="snippet-token-string">21</span>);
+        ftp.<span class="snippet-token-method">login</span>(<span class="snippet-token-string">"myUser"</span>, ftpPassword);
+        <span class="snippet-token-type">try</span> (InputStream input = Files.<span class="snippet-token-method">newInputStream</span>(jar)) {
+            ftp.<span class="snippet-token-method">storeFile</span>(<span class="snippet-token-string">"/usr/local/myapp/app.jar"</span>, input);
+        }
+        ftp.<span class="snippet-token-method">logout</span>();
+        ftp.<span class="snippet-token-method">disconnect</span>();
     }
 }</code></pre>
                             </article>
                         </div>
 
-                        <div class="swiper-slide">
-                            <article class="snippet-carousel-card">
-                                <div class="snippet-carousel-header">
-                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Native Packaging</span>
-                                    <span class="snippet-carousel-legend">Legend: .properties</span>
-                                </div>
-                                <pre class="snippet-carousel-body"><code><span class="snippet-token-key">jeka.native.enabled</span>=<span class="snippet-token-value">true</span>
-<span class="snippet-token-key">jeka.native.mainClass</span>=<span class="snippet-token-value">dev.demo.Main</span>
-<span class="snippet-token-key">jeka.native.graalVersion</span>=<span class="snippet-token-value">23.1.2</span>
-<span class="snippet-token-key">jeka.native.staticLinking</span>=<span class="snippet-token-value">false</span></code></pre>
-                            </article>
-                        </div>
-
-
-
-                        <div class="swiper-slide">
-                            <article class="snippet-carousel-card">
-                                <div class="snippet-carousel-header">
-                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Custom Task</span>
-                                    <span class="snippet-carousel-legend">Legend: Java</span>
-                                </div>
-                                <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDoc</span>(<span class="snippet-token-string">"Runs lint then tests"</span>)
-public void qualityGate() {
-    <span class="snippet-token-method">run</span>(<span class="snippet-token-string">"checkstyle"</span>);
-    <span class="snippet-token-method">run</span>(<span class="snippet-token-string">"test"</span>);
-    <span class="snippet-token-method">run</span>(<span class="snippet-token-string">"jacoco"</span>);
-}</code></pre>
-                            </article>
-                        </div>
                     </div>
                 </div>
 
@@ -490,10 +502,6 @@ public void qualityGate() {
         </div>
     </div>
 </section>
-
-
-
-
 
 <section id="about">
     <div class="container">
