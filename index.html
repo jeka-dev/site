@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="author" content="JeKa Team">
     <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-    <meta name="description" content="Next-Gen build tool for Java & Co.">
+    <meta name="description" content="modern build tool for Java & Co.">
     <meta name="keywords"
           content="build,pipelines,CICD,java,devOps,IaC,infrastructure as code,helm,kotlin,tool,automation,maven,ant,gradle,buildr,sbt,make,compiler,tester,jacoco,pure java build tool,java build tool,build tool,100% java build tool">
     <meta property="og:image" content="https://jeka.dev/img/site-screenshot.png" name="image">
@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="css/responsive.min.css"/>
     <style>
         .snippet-carousel-card {
-            background: #ffffff;
+            background: var(--light-medium-gray);
             border-radius: 8px;
             box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
             overflow: hidden;
@@ -50,26 +50,27 @@
         }
 
         .snippet-carousel-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+            display: block;
             padding: 16px 20px;
-            border-bottom: 1px solid #ececec;
+            border-bottom: 1px solid var(--extra-medium-gray);
         }
 
-        .snippet-carousel-badge {
-            display: inline-block;
+        .snippet-carousel-title {
+            display: block;
+            margin: 0;
+        }
+
+        .snippet-carousel-legend {
+            display: block;
+            margin-top: 4px;
             font-size: 12px;
-            line-height: 1;
-            padding: 6px 10px;
-            border-radius: 999px;
-            background: #f2f3ff;
-            color: #4133b7;
-            font-weight: 600;
+            line-height: 1.4;
+            color: var(--medium-gray);
+            font-weight: 500;
         }
 
         .snippet-carousel-body {
-            background: #141a24;
+            background: var(--charcoal-blue);
             color: #e6ecf2;
             padding: 16px 20px;
             margin: 0;
@@ -106,8 +107,20 @@
             color: #f9f06b;
         }
 
+        .snippet-token-section {
+            color: #f9f06b;
+        }
+
         .snippet-token-annotation {
             color: #c4a3ff;
+        }
+
+        .snippet-token-comment {
+            color: #9aa0a6;
+        }
+
+        .snippet-token-version {
+            color: #7ef07e;
         }
 
         .snippet-carousel-controls {
@@ -192,7 +205,7 @@
                 <script data-loop="true" data-autoplay="1" src="https://asciinema.org/a/6hW6WraVVM1QEVXQYwtP1rpE6.js"
                         id="asciicast-6hW6WraVVM1QEVXQYwtP1rpE6" async="true"></script>
                 <div class="fs-45 xl-fs-40 lh-30 mb-3 text-dark-gray ls-minus-2px mt-3">
-                    <span class="fw-500">Next-Gen Build Tool for Java & Co.</span>
+                    <span class="fw-500">Modern Build Tool for Java & Co.</span>
                 </div>
                 <span class="fs-20 xl-fs-16">Build and deliver Java applications with unparalleled ease.</span>
 
@@ -339,18 +352,16 @@
     </div>
 </section>
 
-<!--
-<section style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
+<section class="pt-3 pb-4" style="background-image:url('img/black_bg.svg'); background-size:cover; background-attachment:fixed;">
     <div class="container">
 
-        <h6 class="text-center text-light fw-600">
-            <i class="bi bi-chat-left bi-chat-square-quote fa-2x text-brand"></i>
-            <i>Drop XML and DSLs: use only Java and properties</i>
+        <h6 class="text-center text-light fw-600 mb-0">
+            <i class="bi bi-braces fa-2x text-brand"></i>
+            <i>Drop XML and DSLs: Configure with Properties, Customize with Java.</i>
         </h6>
     </div>
 </section>
--->
-<section class="bg-very-light-gray pt-5 pb-5">
+<section class="pt-2 pb-5">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -360,21 +371,67 @@
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="alt-font fw-600 text-dark-gray">Basic Build Setup</span>
-                                    <span class="snippet-carousel-badge">Legend: .properties</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Build configuration</span>
+                                    <span class="snippet-carousel-legend">Configure everything using properties.<br/> Define Java version, import external plugins and configure them with a concise syntax.</span>
                                 </div>
-                                <pre class="snippet-carousel-body"><code><span class="snippet-token-key">jeka.java.version</span>=<span class="snippet-token-value">21</span>
-<span class="snippet-token-key">jeka.java.testFramework</span>=<span class="snippet-token-value">junit-jupiter</span>
-<span class="snippet-token-key">jeka.pack.jarType</span>=<span class="snippet-token-value">FAT</span>
-<span class="snippet-token-key">jeka.docker.baseImage</span>=<span class="snippet-token-value">eclipse-temurin:21-jre</span></code></pre>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-comment"># force the use of a specific JeKa and Java version</span>
+<span class="snippet-token-comment"># versions are installed on-the-fly if missing</span>
+<span class="snippet-token-key">jeka.version</span>=<span class="snippet-token-value">0.11.64</span>
+<span class="snippet-token-key">jeka.java.version</span>=<span class="snippet-token-value">25</span>
+
+<span class="snippet-token-comment"># import plugins or libs by mentioning their coordinates</span>
+<span class="snippet-token-key">jeka.classpath</span>=<span class="snippet-token-value">dev.jeka:springboot-plugin dev.jeka:jacoco-plugin</span>
+
+<span class="snippet-token-comment"># activate plugin's KBeans</span>
+<span class="snippet-token-key">@springboot</span>=<span class="snippet-token-value">on</span>
+<span class="snippet-token-key">@jacoco</span>=<span class="snippet-token-value">on</span>
+
+<span class="snippet-token-comment"># configure the different aspects of the build</span>
+<span class="snippet-token-key">@project.gitVersioning.enable</span>=<span class="snippet-token-value">true</span>
+
+<span class="snippet-token-key">@jacoco.htmlReport</span>=<span class="snippet-token-value">false</span>
+
+<span class="snippet-token-key">@docker.jvmImageName</span>=<span class="snippet-token-value">amazoncorretto:25.0.2</span>
+<span class="snippet-token-key">@docker.jvmAgents.0.coordinate</span>=<span class="snippet-token-value">io.opentelemetry.javaagent:opentelemetry-javaagent:2.16.0</span>
+<span class="snippet-token-key">@docker.jvmAgents.0.optionLine</span>=<span class="snippet-token-value">-Dotel.traces.exporter=otlp,-Dotel.metrics.exporter=otlp</span>
+                                    </code></pre>
                             </article>
                         </div>
 
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="alt-font fw-600 text-dark-gray">Programmatic Build Config</span>
-                                    <span class="snippet-carousel-badge">Legend: Java</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Dependencies declaration</span>
+                                    <span class="snippet-carousel-legend">Declare dependencies in a specific place for better clarity <br/>and separation of concerns.</span>
+                                </div>
+                                <pre class="snippet-carousel-body"><code><span class="snippet-token-section">[version]</span>
+org.springframework.boot:spring-boot-dependencies:<span class="snippet-token-version">4.0.5@pom</span>
+org.projectlombok:lombok:<span class="snippet-token-version">1.18.44</span>
+
+<span class="snippet-token-section">[compile]</span>
+org.springframework.boot:spring-boot-starter-webmvc
+org.springframework.boot:spring-boot-starter-data-jpa
+com.google.guava:guava:<span class="snippet-token-version">33.5.0-jre</span>
+
+<span class="snippet-token-section">[compile-only]</span>
+org.projectlombok:lombok
+
+<span class="snippet-token-section">[runtime]</span>
+org.postgresql:postgresql
+
+<span class="snippet-token-section">[test]</span>
+org.springframework.boot:spring-boot-starter-webmvc-test
+
+<span class="snippet-token-section">[processor]</span>
+org.projectlombok:lombok</code></pre>
+                            </article>
+                        </div>
+
+                        <div class="swiper-slide">
+                            <article class="snippet-carousel-card">
+                                <div class="snippet-carousel-header">
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Programmatic build configuration</span>
+                                    <span class="snippet-carousel-legend">Legend: Java</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-type">class</span> Build extends KBean {
     @Override
@@ -391,8 +448,8 @@
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="alt-font fw-600 text-dark-gray">Native Packaging</span>
-                                    <span class="snippet-carousel-badge">Legend: .properties</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Native Packaging</span>
+                                    <span class="snippet-carousel-legend">Legend: .properties</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-key">jeka.native.enabled</span>=<span class="snippet-token-value">true</span>
 <span class="snippet-token-key">jeka.native.mainClass</span>=<span class="snippet-token-value">dev.demo.Main</span>
@@ -401,11 +458,13 @@
                             </article>
                         </div>
 
+
+
                         <div class="swiper-slide">
                             <article class="snippet-carousel-card">
                                 <div class="snippet-carousel-header">
-                                    <span class="alt-font fw-600 text-dark-gray">Custom Task</span>
-                                    <span class="snippet-carousel-badge">Legend: Java</span>
+                                    <span class="snippet-carousel-title alt-font fw-600 text-dark-gray">Custom Task</span>
+                                    <span class="snippet-carousel-legend">Legend: Java</span>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-annotation">@JkDoc</span>(<span class="snippet-token-string">"Runs lint then tests"</span>)
 public void qualityGate() {
