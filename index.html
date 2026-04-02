@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
 
 <head>
-    <title>JeKa : Next-Gen Build Tool for Java & Co.</title>
+    <title>JeKa : Modern Build Tool for Java & Co.</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="author" content="JeKa Team">
@@ -109,8 +109,60 @@
             border: 0;
         }
 
+        .hero-side-snippet .snippet-carousel-card {
+            background: rgba(236, 239, 243, 0.35) !important;
+        }
+
         .hero-side-snippet .snippet-carousel-body {
+            background: rgba(26, 37, 54, 0.35) !important;
             padding-left: 8px;
+        }
+
+        .hero-side-snippet .snippet-carousel-body,
+        .hero-side-snippet .snippet-carousel-body code,
+        .hero-side-snippet .snippet-carousel-body span {
+            opacity: 1 !important;
+            filter: none !important;
+        }
+
+        .hero-side-snippet .snippet-carousel-body {
+            color: #bcc4cf !important;
+        }
+
+        .hero-side-snippet .snippet-token-key {
+            color: #9ea7b3 !important;
+        }
+
+        .hero-side-snippet .snippet-token-value {
+            color: #7c83ff !important;
+        }
+
+        .hero-side-snippet .snippet-token-type {
+            color: #ffb4d4 !important;
+        }
+
+        .hero-side-snippet .snippet-token-method {
+            color: #a9ffd9 !important;
+        }
+
+        .hero-side-snippet .snippet-token-string {
+            color: #5da86a !important;
+        }
+
+        .hero-side-snippet .snippet-token-section {
+            color: #ffb35c !important;
+        }
+
+        .hero-side-snippet .snippet-token-annotation {
+            color: #d9bdff !important;
+        }
+
+        .hero-side-snippet .snippet-token-comment {
+            color: #c0c8d1 !important;
+        }
+
+        .hero-side-snippet .snippet-token-version {
+            color: #74bd81 !important;
         }
 
         @media (min-width: 768px) {
@@ -323,8 +375,8 @@
                 <div class="row g-3 mb-3 d-none d-md-flex hero-snippet-row">
                     <div class="col-12 col-md-5 hero-side-snippet">
                         <div class="swiper-slide text-start h-100">
-                            <article class="snippet-carousel-card">
-                                <pre class="snippet-carousel-body">
+                            <article class="snippet-carousel-card" style="background: rgba(236, 239, 243, 0.08) !important;">
+                                <pre class="snippet-carousel-body" style="background: rgba(26, 37, 54, 0.08) !important; color: #bcc4cf !important; opacity: 1 !important;">
 <code><span class="snippet-token-key">jeka.version</span>=<span class="snippet-token-value">0.11.64</span>
 <span class="snippet-token-key">jeka.java.version</span>=<span class="snippet-token-value">25</span>
 
@@ -343,8 +395,8 @@
                     </div>
                     <div class="col-12 col-md-5 hero-side-snippet">
                         <div class="swiper-slide text-start h-100">
-                            <article class="snippet-carousel-card">
-                                <pre class="snippet-carousel-body">
+                            <article class="snippet-carousel-card" style="background: rgba(236, 239, 243, 0.08) !important;">
+                                <pre class="snippet-carousel-body" style="background: rgba(26, 37, 54, 0.08) !important; color: #bcc4cf !important; opacity: 1 !important;">
 <code><code><span class="snippet-token-section">[compile]</span>
 com.google.guava:guava:<span class="snippet-token-version">33.5.0-jre</span>
 info.picocli:picocli:<span class="snippet-token-version">4.7.0</span>
