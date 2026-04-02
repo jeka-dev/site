@@ -99,6 +99,7 @@
             background: transparent;
             min-height: 200px;
             padding: 0;
+            margin: 0;
             flex: 1;
         }
 
@@ -112,12 +113,47 @@
             padding-left: 8px;
         }
 
+        @media (min-width: 768px) {
+            .hero-snippet-row {
+                display: grid !important;
+                grid-template-columns: minmax(0, 1fr) 120px minmax(0, 1fr);
+                column-gap: 4rem;
+                align-items: stretch;
+            }
+
+            .hero-snippet-row .hero-side-snippet {
+                max-width: none;
+                width: auto;
+            }
+
+            .hero-snippet-row .hero-logo-snippet {
+                max-width: none;
+                width: auto;
+                padding-left: 0;
+                padding-right: 0;
+            }
+
+            .hero-snippet-row .hero-logo-snippet .snippet-logo-card img {
+                width: 100%;
+                max-width: 100%;
+                max-height: none;
+            }
+
+            .hero-snippet-row > [class*="col-"] {
+                flex: initial;
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+
         .snippet-logo-card img {
             max-width: 100%;
             max-height: 140px;
             width: auto;
             height: auto;
             object-fit: contain;
+            margin: 0;
+            display: block;
         }
 
         .snippet-token-key {
@@ -279,12 +315,12 @@
         <div class="row align-items-center h-100 justify-content-center">
 
 
-            <div class="col-xl-8 ps-3 md-ps-15px col-lg-9 col-md-10 position-relative text-center"
+            <div class="col-xl-10 ps-3 md-ps-15px col-lg-11 col-md-12 position-relative text-center"
                  data-anime="{ &quot;el&quot;: &quot;childs&quot;, &quot;translateY&quot;: [50, 0], &quot;perspective&quot;: [1200,1200], &quot;scale&quot;: [1.1, 1], &quot;rotateY&quot;: [50, 0], &quot;opacity&quot;: [0,1], &quot;duration&quot;: 800, &quot;delay&quot;: 200, &quot;staggervalue&quot;: 300, &quot;easing&quot;: &quot;easeOutQuad&quot; }">
                 <img src="img/icon.PNG" class="w-25 my-4 d-block d-md-none mx-auto" alt/>
 
 
-                <div class="row g-3 mb-3 d-none d-md-flex">
+                <div class="row g-3 mb-3 d-none d-md-flex hero-snippet-row">
                     <div class="col-12 col-md-5 hero-side-snippet">
                         <div class="swiper-slide text-start h-100">
                             <article class="snippet-carousel-card">
@@ -298,7 +334,7 @@
                             </article>
                         </div>
                     </div>
-                    <div class="col-12 col-md-2 p-0">
+                    <div class="col-12 col-md-2 p-0 hero-logo-snippet">
                         <div class="swiper-slide text-start h-100">
                                 <div class="snippet-logo-card">
                                     <img src="img/icon.PNG" alt="JeKa logo">
