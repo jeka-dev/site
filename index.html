@@ -578,7 +578,7 @@ org.junit.jupiter:junit-jupiter</code></code></pre>
 
 <span class="snippet-token-key">@jacoco.htmlReport</span>=<span class="snippet-token-value">false</span>
 
-<span class="snippet-token-key">@docker.jvmImageName</span>=<span class="snippet-token-value">amazoncorretto:25.0.2</span>
+<span class="snippet-token-key">@docker.jvmBaseImage</span>=<span class="snippet-token-value">amazoncorretto:25.0.2</span>
 <span class="snippet-token-key">@docker.jvmAgents.0.coordinate</span>=<span class="snippet-token-value">io.opentelemetry.javaagent:opentelemetry-javaagent:2.16.0</span>
 <span class="snippet-token-key">@docker.jvmAgents.0.optionLine</span>=<span class="snippet-token-value">-Dotel.traces.exporter=otlp,-Dotel.metrics.exporter=otlp</span>
                                     </code></pre>
@@ -593,7 +593,7 @@ org.junit.jupiter:junit-jupiter</code></code></pre>
                                 </div>
                                 <pre class="snippet-carousel-body"><code><span class="snippet-token-version">[version]</span>
 org.springframework.boot:spring-boot-dependencies:<span class="snippet-token-version">4.0.5@pom</span>
-org.projectlombok:lombok:<span class="snippet-token-version">1.18.44</span>
+org.projectlombok:*:<span class="snippet-token-version">1.18.44</span>
 
 <span class="snippet-token-section">[compile]</span>
 org.springframework.boot:spring-boot-starter-webmvc
